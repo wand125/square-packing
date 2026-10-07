@@ -1,0 +1,25 @@
+name: n17-kernel-verifier
+on:
+  push:
+    paths: ["tools/n17_kernel_verifier/**", ".github/workflows/n17-kernel-verifier.yml"]
+  pull_request:
+    paths: ["tools/n17_kernel_verifier/**"]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: tools/n17_kernel_verifier
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y m4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.98.0
+          components: clippy, rustfmt
+      - run: cargo fmt --check
+      - run: cargo clippy --locked --all-targets
+      - run: cargo test --locked
+      - run: cargo build --locked --release
+      - run: ./target/release/n17-kernel-verifier tests/data/closed --cells tests/data/cells.json --cells-sha256 41f7cd91b8b51efb26f16c2dfd1fc87a6f89d86bb04ebb6eaa314e963bde693c --threads 2 --output receipt.json
