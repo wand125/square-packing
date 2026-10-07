@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "domino-v1:certificates/n4",
+ "claim": "s(4) = v4, where v4 ≈ 1.93028330671426938847 is the largest real root of 5x³ + 8x² − 32x − 4.",
+ "release_tag": "domino-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/domino-v1",
+ "assets": [
+  {
+   "asset": "certificates__n4.tar.gz",
+   "size": 648,
+   "sha256": "eba36dac069dade1015a79a70fd39d26a1d6f067afe7f884e5d118505e713d28"
+  }
+ ],
+ "unpack": "tar xzf certificates__n4.tar.gz -C problems/domino",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 30 --jobs 4 --u-breaks \"K[-21/37;-11/37;15/37]\"\npython checker/check.py certificates/n4/below/n4_L9651_5000.json --n 4 --max-depth 44 --jobs 4\npython tools/make_cert.py | cmp - certificates/n4/n4_cert.json\ncd checker2 && python sweep_k.py ../certificates/n4/n4_cert.json --n 4 --jobs 4",
+ "check_cwd": "problems/domino",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [
+  "problems/domino/certificates/n4/PROOF.md"
+ ],
+ "source": {
+  "repository": "wand125/squares-in-domino",
+  "commit": "6178f86c86a62f422c1a02c191ddcde3b78cedcb",
+  "path": "certificates/n4"
+ }
+}

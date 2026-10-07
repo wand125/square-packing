@@ -1,0 +1,39 @@
+This repository contains two files taken from evand/square-packing:
+
+  cover/L4_k02_box7.txt
+    source: https://github.com/evand/square-packing
+            commit d9f79bc1beb52a38854b675c330fd25a6d37eeee,
+            path s12/certificates/k2m3/L4_k02_box7.txt (unchanged; sha256
+            c0a6750997897c21ffc693df6df97f89a248dd9eb588a2fe2b83bf359793694b)
+
+  cover/K4_k008_box9.txt
+    source: https://github.com/evand/square-packing
+            commit 0c24309099b28a2ae88d09cb841ca3110b3dd1c2,
+            path s12/certificates/k2m4/K4_k008_box9.txt (unchanged; sha256
+            4151d7c4059d5dcf56130c9373e6b5b60635e1a4250f46562d7ecc4d64a27801)
+
+They are distributed under the following license:
+
+MIT License
+
+Copyright (c) 2026 Evan Daniel
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Everything else in this repository is original work under the MIT license in LICENSE.

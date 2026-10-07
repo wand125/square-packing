@@ -1,0 +1,32 @@
+{
+ "schema": "asset/v1",
+ "id": "hexagon-v1:n3",
+ "claim": "The smallest regular hexagon containing three non-overlapping unit squares has side s(3) = v = (1 + √3)/2 ≈ 1.36603.",
+ "release_tag": "hexagon-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/hexagon-v1",
+ "assets": [
+  {
+   "asset": "n3.tar.gz",
+   "size": 23725,
+   "sha256": "53f985f534c75f825ac157a1eb614836b38c6ac75ca48d03bf4c6c4945acfee4"
+  }
+ ],
+ "unpack": "tar xzf n3.tar.gz -C problems/hexagon",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "(cd n3/local_lemma && python ll_exact.py && python ll_radius.py)\n(cd stage1_checker && python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4)\n(cd stage1_checker2 && python hexcheck.py ../n3/stage1_cert.json --jobs 14 --grid 8)\n(cd stage2_checker && python bb_rig_batch.py --workers 16 --boxes 0-741)\n(cd stage2_checker2 && cargo build --release && ./target/release/hexs2 --cert ../n3/stage1_cert.json --threads 16 --max-depth 80)",
+ "check_cwd": "problems/hexagon",
+ "check_note": "README table 'How to check' (local lemma, stage 1 and 2, two implementations each)",
+ "check_extended": null,
+ "documents": [
+  "problems/hexagon/n3/PROOF.md",
+  "problems/hexagon/n3/SPEC_stage1.md",
+  "problems/hexagon/n3/SPEC_stage2.md",
+  "problems/hexagon/n3/local_lemma/LOCAL_LEMMA.md",
+  "problems/hexagon/n3/local_lemma/LOCAL_LEMMA_SHORT.md"
+ ],
+ "source": {
+  "repository": "wand125/squares-in-hexagon",
+  "commit": "c392bbde9206e300c363c8cc041d093107126f9a",
+  "path": "n3"
+ }
+}

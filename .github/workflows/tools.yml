@@ -1,0 +1,31 @@
+name: tools
+on:
+  push:
+    paths: ["tools/**", "problems/square-lower-bounds/point_n21_L5/verifier-source/**", ".github/workflows/tools.yml"]
+  pull_request:
+    paths: ["tools/**", ".github/workflows/tools.yml"]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -r requirements.txt
+      - name: Tests
+        env:
+          SP_BOUNDS_REPO: ${{ github.workspace }}/problems/square-lower-bounds
+        run: python -m pytest -q
+      - name: End-to-end ladder (n = 3 -> 4, budget recovery)
+        env:
+          SP_SLOW_TESTS: "1"
+        run: python -m pytest -q tests

@@ -1,0 +1,34 @@
+{
+ "schema": "asset/v1",
+ "id": "square-lower-bounds-v1:point_n21_L5",
+ "claim": "s(21) = 5",
+ "release_tag": "square-lower-bounds-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/square-lower-bounds-v1",
+ "assets": [
+  {
+   "asset": "point_n21_L5.tar.gz",
+   "size": 461293024,
+   "sha256": "1430929aafa9e7eda0b5e4ad8dd5cf119f800d34b2d6b54f98a0cdd826c10757"
+  }
+ ],
+ "unpack": "tar xzf point_n21_L5.tar.gz -C problems/square-lower-bounds",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python3 -m venv .venv\n. .venv/bin/activate\npython -m pip install -r requirements-tested.txt\npython inspect_certificate.py\npython unpack_bundle.py\npython verify_portable.py --workers 2 --out /tmp/n21-proof-replay",
+ "check_cwd": "problems/square-lower-bounds/point_n21_L5",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [
+  "problems/square-lower-bounds/point_n21_L5/FORMAT.md",
+  "problems/square-lower-bounds/point_n21_L5/PROOF-LEMMAS.md",
+  "problems/square-lower-bounds/point_n21_L5/PUBLICATION.md",
+  "problems/square-lower-bounds/point_n21_L5/README.md",
+  "problems/square-lower-bounds/point_n21_L5/acceptance/README.md",
+  "problems/square-lower-bounds/point_n21_L5/lean/README.md",
+  "problems/square-lower-bounds/point_n21_L5/lean/zero-margin/README.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing-bounds",
+  "commit": "678aa1d029423177792f51d3e7e42895b749241e",
+  "path": "point_n21_L5"
+ }
+}

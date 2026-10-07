@@ -1,0 +1,27 @@
+{
+  "cover_sha256": "bcb66c7910ef844ce8d39c423d7a5a419bd530a344689331f7665ba6971d0374",
+  "total": "8584985072679551/140737488355328",
+  "total_decimal": 60.99998780001351,
+  "derivation": {
+    "base": "point_n45_L7 cover (this repository), lifted by inserting a central band (a = 7/2, delta = 1, cut atoms split in half) and adding cross-band mass nu = 15.30 from an LP iterated against zmx2 counterexamples",
+    "lp_candidate_sha256": "38fbfb771f1771304f81559b83a806b5d12159bc8c9afef5e2c9768947e5142b",
+    "lp_total_decimal": 60.2951,
+    "scale": "61/M * (1 - 2e-7), M the LP total",
+    "rounding": "each weight multiplied by the scale and rounded up on the 2^49 grid"
+  },
+  "reference_run": {
+    "checker": "evand/square-packing 6e1223cf7ef2be4c70baaa36c0e7e7197076735a s12/verify2 zmx2, unmodified, rustc 1.86.0 x86_64-apple-darwin",
+    "binary_sha256": "4d2e0d3e5a294c61e64f45d56bb0625735d5c88f727d44bd44a7c8cffd5ed9b7",
+    "command": "zmx2 cert cover.txt --d4 --pair-points --threads 4",
+    "result": "VERIFIED-D4",
+    "roots": 6400,
+    "uncertified": 0,
+    "capped": 0,
+    "boxes": 800042,
+    "max_depth": 30,
+    "seconds": 306.8,
+    "host": "Apple M4 (Rosetta)",
+    "roots_sha256": "5a5df57bc62fe6400bfb40122d379cb55efc4a93c8f39cbce0770bf5382c20e5",
+    "second_run": "same source built on Linux (GCP), same box count 800042"
+  }
+}

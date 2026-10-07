@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "square-lower-bounds-v1:certificates/k2m4_n77_L9",
+ "claim": "s(77) >= 9",
+ "release_tag": "square-lower-bounds-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/square-lower-bounds-v1",
+ "assets": [
+  {
+   "asset": "certificates__k2m4_n77_L9.tar.gz",
+   "size": 3145353,
+   "sha256": "53f694397e4f59e22c1480c3c947f9d90c482f17b3723642723d3965e9307539"
+  }
+ ],
+ "unpack": "tar xzf certificates__k2m4_n77_L9.tar.gz -C problems/square-lower-bounds",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "bash verify.sh verify-work 16            # hashes, exact total, D4, zmx2 --d4 (about 20 min)",
+ "check_cwd": "problems/square-lower-bounds/certificates/k2m4_n77_L9",
+ "check_note": "README placeholder workdir -> verify-work (a new directory); longer runs in check_extended",
+ "check_extended": "bash verify.sh verify-work 16 --full     # also zmx2 --full (about 2.5 h more)\nbash verify.sh verify-work 16 --zm       # also zm_mixed --d4 --cert-mode (about 94 CPU-hours)",
+ "documents": [
+  "problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing-bounds",
+  "commit": "678aa1d029423177792f51d3e7e42895b749241e",
+  "path": "certificates/k2m4_n77_L9"
+ }
+}

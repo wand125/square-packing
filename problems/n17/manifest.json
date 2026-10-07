@@ -1,0 +1,493 @@
+{
+ "schema": "n17-manifest/v2",
+ "policy": "Certificate data are available on request; they can be regenerated deterministically with the recorded tools and inputs and checked against the SHA-256 listed here.",
+ "fields": {
+  "nodes": "number of branch-and-bound nodes",
+  "data_sha256": "SHA-256 of each certificate object (or of the sorted list of object digests)",
+  "receipts": "verifier receipts (tool, version, result, wall time, receipt SHA-256)",
+  "provenance": "producer and verifier commits and binary SHA-256, rustc and Python versions",
+  "regenerate": "exact commands that recreate the data"
+ },
+ "published": [
+  {
+   "id": "n17:b2-classes-20261005/C1",
+   "cells": [
+    "side-S0",
+    "side-N0",
+    "interior-SW",
+    "interior-NW",
+    "interior-W",
+    "interior-S",
+    "interior-SE"
+   ],
+   "nodes": 194328,
+   "closed_leaves": 97563,
+   "max_depth": 39,
+   "objects": 391,
+   "bytes": 287584492,
+   "manifest": "problems/n17/b2-classes-20261005/manifest-C1.yaml",
+   "summary": "problems/n17/b2-classes-20261005/C1-summary.json",
+   "checks": [
+    "standing verifier verify_n17_bb_certificate (jlevy/squares), full mode, one process: PASS, 5,906 s",
+    "independent Rust checker (tools/n17_bb_verifier), 4 threads: PASS, 173 s"
+   ],
+   "class": "C1",
+   "status": "certified",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "data": {
+    "release_url": "https://github.com/wand125/n17-certificates/releases/tag/b2-classes-20261005",
+    "note": "original release (kept, not copied); each object's path, size and SHA-256 is in the manifest YAML"
+   },
+   "check": "from jlevy/squares packing/: python -m devtools.verify_n17_bb_certificate <certificate directory> --output receipt.json ; or tools/n17_bb_verifier (cargo build --release; n17bb-verify <dir> --threads 4)"
+  },
+  {
+   "id": "n17:b2-classes-20261005/C2",
+   "cells": [
+    "side-S0",
+    "side-W0",
+    "interior-SW",
+    "interior-NW",
+    "interior-W",
+    "interior-S",
+    "interior-SE"
+   ],
+   "nodes": 79396,
+   "closed_leaves": 40224,
+   "max_depth": 32,
+   "objects": 161,
+   "bytes": 112191343,
+   "manifest": "problems/n17/b2-classes-20261005/manifest-C2.yaml",
+   "summary": "problems/n17/b2-classes-20261005/C2-summary.json",
+   "checks": [
+    "standing verifier verify_n17_bb_certificate (jlevy/squares), full mode, one process: PASS, 2,220 s",
+    "independent Rust checker (tools/n17_bb_verifier), 4 threads: PASS, 68 s"
+   ],
+   "class": "C2",
+   "status": "certified",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "data": {
+    "release_url": "https://github.com/wand125/n17-certificates/releases/tag/b2-classes-20261005",
+    "note": "original release (kept, not copied); each object's path, size and SHA-256 is in the manifest YAML"
+   },
+   "check": "from jlevy/squares packing/: python -m devtools.verify_n17_bb_certificate <certificate directory> --output receipt.json ; or tools/n17_bb_verifier (cargo build --release; n17bb-verify <dir> --threads 4)"
+  }
+ ],
+ "entries": [
+  {
+   "id": "n17:flag-screen/B2d (5 classes)",
+   "group": "flag-screen",
+   "class": "B2d (5 classes)",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:flag-screen/m8257536",
+   "group": "flag-screen",
+   "class": "m8257536",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:flag-screen/stage-3 (7 classes)",
+   "group": "flag-screen",
+   "class": "stage-3 (7 classes)",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m2031968",
+   "group": "m5",
+   "class": "m2031968",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m475217",
+   "group": "m5",
+   "class": "m475217",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m459873",
+   "group": "m5",
+   "class": "m459873",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m7815232",
+   "group": "m5",
+   "class": "m7815232",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m984416",
+   "group": "m5",
+   "class": "m984416",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m984385",
+   "group": "m5",
+   "class": "m984385",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m6164736",
+   "group": "m5",
+   "class": "m6164736",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m3082320",
+   "group": "m5",
+   "class": "m3082320",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m3096896",
+   "group": "m5",
+   "class": "m3096896",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m935012",
+   "group": "m5",
+   "class": "m935012",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m5116178",
+   "group": "m5",
+   "class": "m5116178",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m3096608 (to confirm)",
+   "group": "m5",
+   "class": "m3096608 (to confirm)",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  },
+  {
+   "id": "n17:m5/m214101",
+   "group": "m5",
+   "class": "m214101",
+   "status": "pending",
+   "claim": "certified infeasible: no configuration of 17 non-overlapping unit squares in a square of side at most 1169/250 has one centre in each cell of the class (24-cell cover 'ring-3-voronoi-8-tabbed-unique' of jlevy/squares)",
+   "cells": null,
+   "nodes": null,
+   "data_sha256": null,
+   "receipts": [],
+   "provenance": {
+    "producer": {
+     "tool": null,
+     "commit": null,
+     "sha256": null
+    },
+    "verifier": {
+     "tool": "tools/n17_bb_verifier",
+     "commit": null,
+     "sha256": null
+    },
+    "rustc": null,
+    "python": null
+   },
+   "regenerate": null
+  }
+ ]
+}

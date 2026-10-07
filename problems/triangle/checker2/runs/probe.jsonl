@@ -1,0 +1,3 @@
+{"certificate": "n2_centroid.json", "sha256": "de9325eb0a60c13ab8d159728b8f9927ef5ea3fa9b935665c7f9f08494efd087", "admissible_poses": 20000, "draws": 4452309, "min_captured_weight": "1", "d3_invariant": true}
+{"certificate": "n3_cert.json", "sha256": "ae794baad63e02e2bc7c147cf86cdd0329bec3fe47d1428c87cf980d7e2e2d7e", "admissible_poses": 20000, "draws": 4208607, "min_captured_weight": "1", "d3_invariant": true}
+{"certificate": "n4_cert.json", "sha256": "a0483cf46add5ad9df2e5537629746be5cf2e519bedc8081d4c60daba9d6f24b", "admissible_poses": 20000, "draws": 2905044, "min_captured_weight": "1", "d3_invariant": true}

@@ -1,0 +1,12 @@
+name: index
+on:
+  push:
+    paths: ["INDEX.json", "**/ASSET.json", "**/*.ASSET.json", "problems/n17/manifest.json", ".github/**"]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 .github/scripts/check_index.py

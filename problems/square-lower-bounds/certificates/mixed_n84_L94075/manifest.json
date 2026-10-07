@@ -1,0 +1,24 @@
+{
+  "candidate_digest": "d2b4a5da8e1424f7588bcffd581da1bb298aa62f3b2c40e6ec95cec0bdf09db2",
+  "source_candidate": "/opt/sp/runs/green_k78_20261003/fullnet-n84-94075b1/net-04/candidate-mixed.json",
+  "budget": "8399999/100000",
+  "n": 84,
+  "L": "9.4075",
+  "B": "0.9977",
+  "net": {
+    "step": "83/40000",
+    "count": 201,
+    "endpoint": "83/200",
+    "endpoint_check": "89/40000",
+    "rotated_side_upper": "399908091/400000000",
+    "side_margin": "91909/400000000",
+    "per_edge_margin": "91909/800000000",
+    "conclusion": "Every unit-square orientation contains a concentric B-core at a net angle strictly in its interior.",
+    "remaining": "Every admissible centre at every net angle must have mixed score >= Gamma, and M < n*Gamma. Not checked here."
+  },
+  "source_sha256": "89b674a6feabe24d91c29431de1624907c4bff83280ceb481475455686693652",
+  "workers": 2,
+  "node_limit": 3000000,
+  "priority_angles": [],
+  "stop_on_exact_deficit": true
+}

@@ -1,0 +1,15 @@
+{
+  "status": "AUDITED_AND_PACKAGED",
+  "n": 50,
+  "L": "37/5",
+  "total_mass": "4999999/100000",
+  "green_upper": "91467825139488288298417841203717275916875826596091792248872611650748364696013084513224903219/12500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "improvement_lower": "1032174860511711701582158796282724083124173403908207751127388349251635303986915486775096781/12500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "candidate_digest": "fdfaed937a788e0f2dcd45689927c59ffe62b1436aa06a4363a0ea6dd1a53fda",
+  "all_angles": 201,
+  "certificate_sha256": "3e96341b12e4a3db7ba035fc4853d6fa79fd0e531284c2badc313af0290a91d7",
+  "bundle": "runs/green_rect_740_fullnet_20260928/n50-L7.40-proof-bundle",
+  "archive_sha256": "2c405bbd4e9c6a7000f0095ca6ca494023d75e169b03243526e4fef5a8c8e133",
+  "route": "Direct L7.4 structured/seam/coupled initialization, free-support pricing, full-net counterexample repair (SYD green_rect_740_fullnet, candidate net-03), independent 201-angle verification and replay. Codex A pipeline, completed after takeover by mathematics-f0.",
+  "scope": "All centres at all 201 net angles plus strict core containment for every orientation; independent axis replay, same-algorithm outward-rounded oblique replay."
+}

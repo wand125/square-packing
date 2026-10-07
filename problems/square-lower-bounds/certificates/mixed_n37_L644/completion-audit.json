@@ -1,0 +1,15 @@
+{
+  "status": "AUDITED_AND_PACKAGED",
+  "n": 37,
+  "L": "161/25",
+  "total_mass": "3699999/100000",
+  "green_upper": "11748615584564890327329971450328819074179188565799898184781618520291676678764196062287006973/1850000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "improvement_lower": "165384415435109672670028549671180925820811434200101815218381479708323321235803937712993027/1850000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "candidate_digest": "6f854ead4bf928a491768f56590ef92a2b3c14fa345a9bb7edbd23e421e99fe1",
+  "all_angles": 201,
+  "certificate_sha256": "e7e37a8185ea41b2ffa0ad055ae44a1510b0cd3d09b6e1ad21c145864e056ebf",
+  "bundle": "n37-L6.44-proof-bundle",
+  "archive_sha256": "61a29142ec81cfa0fadffba3e04bd6e512ee0439897fb6dfd7610ecc737542f8",
+  "route": "n37 fresh structured Green initialization at L6.44 (rectangles, green_phase_search fresh, OSA6), full-net counterexample repair (8+ cycles: 169,113,99,52,45,10,7,1,0), 201-angle verification and full replay. mathematics-f0.",
+  "scope": "All centres at all 201 net angles plus strict core containment for every orientation; independent axis replay, same-algorithm outward-rounded oblique replay."
+}

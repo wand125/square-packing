@@ -1,0 +1,15 @@
+{
+  "status": "AUDITED_AND_PACKAGED",
+  "n": 65,
+  "L": "167/20",
+  "total_mass": "6499999/100000",
+  "green_upper": "538847763108502356344219534147260750214057343799003249512968365938795222200073915050550379557/65000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "improvement_lower": "3902236891497643655780465852739249785942656200996750487031634061204777799926084949449620443/65000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "candidate_digest": "cc10ef9189731abaea77cf96b68b0a44743bb13d5b252d4559b6b65e5085beb6",
+  "all_angles": 201,
+  "certificate_sha256": "4938349af713e5ebee4756544304251a6b94705697b5811fd94be5d31ca7ead1",
+  "bundle": "n65-L8.35-proof-bundle",
+  "archive_sha256": "fe2cf2de8686ad86d0c00326d25957828563f9c4043d60d79a2fb20215e1ddf0",
+  "route": "OSA1 n65 L8.40 search checkpoint contracted exactly to L8.35 (x167/168), rectangle repair lane (OSA2), six full-net counterexample repairs, 201-angle verification (181 angles on OSA2, resumed on SYD after a 6h runner timeout; per-angle results accepted only if ANGLE_VERIFIED, empty frontier, matching digest), full 201-angle replay. Codex A pipeline continued by mathematics-f0.",
+  "scope": "All centres at all 201 net angles plus strict core containment for every orientation; independent axis replay, same-algorithm outward-rounded oblique replay."
+}

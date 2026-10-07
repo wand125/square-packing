@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "triangle-v1:certificates/n16",
+ "claim": "The smallest equilateral triangle containing 16 non-overlapping unit squares has side v = 6 + 2/√3 ≈ 7.1547.",
+ "release_tag": "triangle-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/triangle-v1",
+ "assets": [
+  {
+   "asset": "certificates__n16.tar.gz",
+   "size": 374,
+   "sha256": "4742926ea3070b22f37a1dbbc34064f4f4ad3e54a88e8c27be48f18fa29c635b"
+  }
+ ],
+ "unpack": "tar xzf certificates__n16.tar.gz -C problems/triangle",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python checker/check.py certificates/n16/n16_cert.json --n 16 --max-depth 36 --jobs 4",
+ "check_cwd": "problems/triangle",
+ "check_note": "arguments from check_record.json (README: 'likewise')",
+ "check_extended": null,
+ "documents": [
+  "problems/triangle/certificates/n16/PROOF.md"
+ ],
+ "source": {
+  "repository": "wand125/squares-in-triangle",
+  "commit": "78a103b99f411024678bfc47861ec158bb0c7ceb",
+  "path": "certificates/n16"
+ }
+}

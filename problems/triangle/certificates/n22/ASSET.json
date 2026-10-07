@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "triangle-v1:certificates/n22",
+ "claim": "The smallest equilateral triangle containing 22 non-overlapping unit squares has side v = 7 + 2/√3 ≈ 8.1547.",
+ "release_tag": "triangle-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/triangle-v1",
+ "assets": [
+  {
+   "asset": "certificates__n22.tar.gz",
+   "size": 442,
+   "sha256": "74b887bfe87f5d9466285995e19be3dd4e1ff09a64c0a1830b41607daa3e463d"
+  }
+ ],
+ "unpack": "tar xzf certificates__n22.tar.gz -C problems/triangle",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python checker/check.py certificates/n22/n22_cert.json --n 22 --max-depth 36 --jobs 4",
+ "check_cwd": "problems/triangle",
+ "check_note": "arguments from check_record.json (README: 'likewise')",
+ "check_extended": null,
+ "documents": [
+  "problems/triangle/certificates/n22/PROOF.md"
+ ],
+ "source": {
+  "repository": "wand125/squares-in-triangle",
+  "commit": "78a103b99f411024678bfc47861ec158bb0c7ceb",
+  "path": "certificates/n22"
+ }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "AUDITED_AND_PACKAGED",
+  "n": 87,
+  "L": "237/25",
+  "total_mass": "8699999/100000",
+  "compared_with": "92667/10000",
+  "compared_note": "inherited Green n82 9.266733 (record n87 9.46 via n85 9.46 monotonicity)",
+  "improvement_lower": "2133/10000",
+  "candidate_digest": "6b720d7b963bb104b45c5ad543a35c8fad4e1b70fd137969890d7645dd9179d4",
+  "all_angles": 201,
+  "certificate_sha256": "2a27d2cfe82cbe35c2c7a45d659524b1f408877c0c86be496195696e5d5aea0b",
+  "bundle": "n87-L9.48-proof-bundle",
+  "archive_sha256": "c77d8ea193dc345feda1a6000f7e893c861f8f65ca922fb6270689129dd54d28",
+  "route": "n87 fresh structured Green init n87-948 at L9.48, rectangles full-net repair, 201-angle verification and replay.",
+  "scope": "All centres at all 201 net angles plus strict core containment for every orientation; independent axis replay, same-algorithm outward-rounded oblique replay."
+}

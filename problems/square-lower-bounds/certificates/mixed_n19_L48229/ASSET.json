@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "square-lower-bounds-v1:certificates/mixed_n19_L48229",
+ "claim": "s(19) >= 4.8229",
+ "release_tag": "square-lower-bounds-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/square-lower-bounds-v1",
+ "assets": [
+  {
+   "asset": "certificates__mixed_n19_L48229.tar.gz",
+   "size": 21203352,
+   "sha256": "3db73d86f0daadd9bdb9448a9338e7b0bafaf2706a6e2d5c81d0bb72cf01b753"
+  }
+ ],
+ "unpack": "tar xzf certificates__mixed_n19_L48229.tar.gz -C problems/square-lower-bounds",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "tar xzf n19-L4.8229-proof-bundle.tar.gz\ncd n19-L4.8229-proof-bundle\npython3 - <<'CHECK'\nimport hashlib, json\nfrom pathlib import Path\nfor name, expected in json.loads(Path('files-sha256.json').read_text()).items():\n    assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == expected, name\nprint('All file hashes match')\nCHECK\nOPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 code/verify_mixed_full_proof.py proof --workers 1",
+ "check_cwd": "problems/square-lower-bounds/certificates/mixed_n19_L48229",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [
+  "problems/square-lower-bounds/certificates/mixed_n19_L48229/README.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing-bounds",
+  "commit": "678aa1d029423177792f51d3e7e42895b749241e",
+  "path": "certificates/mixed_n19_L48229"
+ }
+}

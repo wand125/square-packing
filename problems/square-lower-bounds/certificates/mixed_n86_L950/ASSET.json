@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "square-lower-bounds-v1:certificates/mixed_n86_L950",
+ "claim": "s(86) >= 9.5",
+ "release_tag": "square-lower-bounds-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/square-lower-bounds-v1",
+ "assets": [
+  {
+   "asset": "certificates__mixed_n86_L950.tar.gz",
+   "size": 17779162,
+   "sha256": "52835dffa6127c80a3673218e97fe4d3eb9c8aff631797cf879cf254331679ef"
+  }
+ ],
+ "unpack": "tar xzf certificates__mixed_n86_L950.tar.gz -C problems/square-lower-bounds",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "tar xzf n86-L9.50-proof-bundle.tar.gz\ncd n86-L9.50-proof-bundle\nOPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 code/verify_mixed_full_proof.py proof --workers 3",
+ "check_cwd": "problems/square-lower-bounds/certificates/mixed_n86_L950",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [
+  "problems/square-lower-bounds/certificates/mixed_n86_L950/README.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing-bounds",
+  "commit": "678aa1d029423177792f51d3e7e42895b749241e",
+  "path": "certificates/mixed_n86_L950"
+ }
+}

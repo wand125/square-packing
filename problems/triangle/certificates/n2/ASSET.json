@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "triangle-v1:certificates/n2",
+ "claim": "The smallest equilateral triangle containing two non-overlapping unit squares has side v = 2 + 2/√3 ≈ 3.1547.",
+ "release_tag": "triangle-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/triangle-v1",
+ "assets": [
+  {
+   "asset": "certificates__n2.tar.gz",
+   "size": 552,
+   "sha256": "e62226509bacd04cfcb2cc302e64cdae2a91677ad1c6485a571f30d9f18d2f93"
+  }
+ ],
+ "unpack": "tar xzf certificates__n2.tar.gz -C problems/triangle",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python checker/check.py certificates/n2/n2_cert.json --n 2\npython certificates/n2/check_n2.py",
+ "check_cwd": "problems/triangle",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [
+  "problems/triangle/certificates/n2/PROOF.md"
+ ],
+ "source": {
+  "repository": "wand125/squares-in-triangle",
+  "commit": "78a103b99f411024678bfc47861ec158bb0c7ceb",
+  "path": "certificates/n2"
+ }
+}

@@ -1,0 +1,1955 @@
+  - path: n17/certificates/b2/C1/00d55dcaea4fcfb17e5ca45d80495ad269701b0a8ab9e960f8a290c9b7cc0584.json.gz
+    asset: 00d55dcaea4fcfb17e5ca45d80495ad269701b0a8ab9e960f8a290c9b7cc0584.json.gz
+    size: 503309
+    sha256: "8a51516d59e9225cffdadd079dfaea41f63a1d9b2d967a4ed8164cacf4dd8909"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/010757a36b14d18748a033ef2c533024adc8ed77a49754ae90eda1ec9ac38fd9.json.gz
+    asset: 010757a36b14d18748a033ef2c533024adc8ed77a49754ae90eda1ec9ac38fd9.json.gz
+    size: 577510
+    sha256: "d4e802f491c501b2b74eab0dcc8550459cbfd5e0099e2f53fb3cdf85ac45d309"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/01af0bb1c91cd6d4ead68af18c9aa719db67f51c6d5bb1e8974573e8231ed57b.json.gz
+    asset: 01af0bb1c91cd6d4ead68af18c9aa719db67f51c6d5bb1e8974573e8231ed57b.json.gz
+    size: 630603
+    sha256: "ea8b85cb91ea0caabbf05b7f1e136ddcc72c5af53984709c240f5bb6d11d1cee"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/01dfbf3f2aa621184e7c9bf3acb5d8150417b45fb2fbac3a7e9ed472f1264ca3.json.gz
+    asset: 01dfbf3f2aa621184e7c9bf3acb5d8150417b45fb2fbac3a7e9ed472f1264ca3.json.gz
+    size: 990419
+    sha256: "70353b58bd5b7a9dc0d3c6305e56152457ed11f23370bd8499a887a071951f8d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/01e5c76f44703911c78120c999e1d5d1515ad0af1fb5e3a1b65bf3756aecafac.json.gz
+    asset: 01e5c76f44703911c78120c999e1d5d1515ad0af1fb5e3a1b65bf3756aecafac.json.gz
+    size: 598265
+    sha256: "a7de610192023e95bd848ef9251d0f6df4a8344a22d39ed3d7032fcea2f8de8a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/03ee82697d80b7b774abd0693cc656e32456b4252db0af6504d23f6cfe6f27cb.json.gz
+    asset: 03ee82697d80b7b774abd0693cc656e32456b4252db0af6504d23f6cfe6f27cb.json.gz
+    size: 672979
+    sha256: "e80915b83248d0e85b4ab31ee5183743aed206ac6898cc448229480be9bd7234"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/05224a83896a4a13260ab69fc1289270c59f87bb2f80609108f6d7043eb303c7.json.gz
+    asset: 05224a83896a4a13260ab69fc1289270c59f87bb2f80609108f6d7043eb303c7.json.gz
+    size: 1023890
+    sha256: "c524a9686086f68dbe4ab5286825da5ab8a634773dba5c673eab048def2d72ad"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/06130ad0169c7228f237916049cc54a671cb48e87956d1594cb863cad5a200dc.json.gz
+    asset: 06130ad0169c7228f237916049cc54a671cb48e87956d1594cb863cad5a200dc.json.gz
+    size: 513637
+    sha256: "40e8e8257b3364d60f411734acb510cc8514de477436a39fc8e1abea29a32480"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/06c8880ad655b3f6a2e987cbf497bc42391580428e816b7b09dccc1669babfd9.json.gz
+    asset: 06c8880ad655b3f6a2e987cbf497bc42391580428e816b7b09dccc1669babfd9.json.gz
+    size: 780796
+    sha256: "2b4695015697511fb5ece1d4912c85067bda53401ebf6779f001d9c13deecc2b"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/0799b9e6824b5647c108afe1dc19b02b8471cd7d2d30a035abad9d640679368d.json.gz
+    asset: 0799b9e6824b5647c108afe1dc19b02b8471cd7d2d30a035abad9d640679368d.json.gz
+    size: 884620
+    sha256: "e52898f20e0edfae452c93eaf8fd06e5fef022f3e0b95ba2c47bc3701bfd1910"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/07f5c42eca5587a26eb0287867fcfb790849b2d84f3d0b7391e9d2a3055ec5b2.json.gz
+    asset: 07f5c42eca5587a26eb0287867fcfb790849b2d84f3d0b7391e9d2a3055ec5b2.json.gz
+    size: 592273
+    sha256: "1cb155351932e41fc2a8cd0111ffdefeffc1103f652ee50169fad48e75b725ee"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/08dfbf054443a9dd8c3a34df34135bea78d8213b9a8fb4a51468697b07ada065.json.gz
+    asset: 08dfbf054443a9dd8c3a34df34135bea78d8213b9a8fb4a51468697b07ada065.json.gz
+    size: 687189
+    sha256: "b459c5938d57ce0c42abb9320f723cbcf14d9a770b4b461bacf1613fa425a3be"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/0915ecaabd68629ed8ed8bb5377deda89540fd746d8fa0fd9bd7cc2c4a50c7f4.json.gz
+    asset: 0915ecaabd68629ed8ed8bb5377deda89540fd746d8fa0fd9bd7cc2c4a50c7f4.json.gz
+    size: 647178
+    sha256: "c5f6219dfbf1d8becba09c3bf7e34549be7b6ac3161b855fbc0abbb7bbeabe0a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/0a025064186b1cef8ebd9c7e8b8ee444783f7a8eaf8d49701a448e15dc7670fc.json.gz
+    asset: 0a025064186b1cef8ebd9c7e8b8ee444783f7a8eaf8d49701a448e15dc7670fc.json.gz
+    size: 574145
+    sha256: "b6fe4600ca973c71e64927654262b4177a87fe18839041a6b0a638e482eaa8a5"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/0c3b2722744ab318b84ecdfde64b082ee78901ddaf041d514c7a38bc9b925edb.json.gz
+    asset: 0c3b2722744ab318b84ecdfde64b082ee78901ddaf041d514c7a38bc9b925edb.json.gz
+    size: 945050
+    sha256: "f247a3eaec717cd821c8ecb55f84363d2718baca25bf3513fdfa8cad6d4f2eea"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/0c47e550774322cb2f47bf350a9f724040715d279b8f86b127cee52d2e2962be.json.gz
+    asset: 0c47e550774322cb2f47bf350a9f724040715d279b8f86b127cee52d2e2962be.json.gz
+    size: 683764
+    sha256: "382ae7f8486dd2311e6d67490b2a6a05644b9858064340d234f5737f2e590867"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/0d07a3660723344ba94f4e97182ad6bf1ce2d2604df41f1cf401eabe80a1a4df.json.gz
+    asset: 0d07a3660723344ba94f4e97182ad6bf1ce2d2604df41f1cf401eabe80a1a4df.json.gz
+    size: 922769
+    sha256: "eb2443be84bd790df6542a82c95138cf5246a7e22dba8530af4ca26990878625"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/0ec90fec4137481386e0b2e86fb39146ef111daddb644625207d276eae64822b.json.gz
+    asset: 0ec90fec4137481386e0b2e86fb39146ef111daddb644625207d276eae64822b.json.gz
+    size: 820406
+    sha256: "6d31d37665a39262f5bcf1aca49665e3457e7387040ec0483fc240ecb98825d8"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/0f0d2cf47c875b46fe1b8a2e0d7ed7c592b831d3e34a04e7a8241b3ee1ce34f2.json.gz
+    asset: 0f0d2cf47c875b46fe1b8a2e0d7ed7c592b831d3e34a04e7a8241b3ee1ce34f2.json.gz
+    size: 1001876
+    sha256: "d5770cede5a3d6b7e00582c947d91b705d4e35f43b4304269342bc16afbcfe18"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/0f12fbff4c4187a39dbfa79de945be69a424a52c3a1856c51c60e88056d25134.json.gz
+    asset: 0f12fbff4c4187a39dbfa79de945be69a424a52c3a1856c51c60e88056d25134.json.gz
+    size: 789064
+    sha256: "beef96742ba615d4038156a32a7a50c2c0a7d566ae98a68e6fc3ee7c0bb4fe75"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/0fc1bc96ccb831ebd072dc3a5cbb83a544cd60b5f0e615d7de9f9f9b1bcf210c.json.gz
+    asset: 0fc1bc96ccb831ebd072dc3a5cbb83a544cd60b5f0e615d7de9f9f9b1bcf210c.json.gz
+    size: 509646
+    sha256: "b5be33af90ddfd225a6549f2636d0945970a8fd6a986372982d9b0bb25652114"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/11182093f2f1bddefe045085bfc5dc248ec06b42c1702134b6730b09e33c7adc.json.gz
+    asset: 11182093f2f1bddefe045085bfc5dc248ec06b42c1702134b6730b09e33c7adc.json.gz
+    size: 611126
+    sha256: "7cab7b797400cfd22becc3b936c2f07e93b7762e3fe914d2e5f85c0eb092e240"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/13115cffc18edec95880c37fe65c72b8800236cfda5ce58c26ace3bf89dbc921.json.gz
+    asset: 13115cffc18edec95880c37fe65c72b8800236cfda5ce58c26ace3bf89dbc921.json.gz
+    size: 1036069
+    sha256: "c7f6e1746231440bc94164480df9af2759dd8ec1513ddf75771508f9cf08d6f9"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/131e014393e8cc50ea643e38ae8a11d19bb3a1d133f3df23b54225d781a8db64.json.gz
+    asset: 131e014393e8cc50ea643e38ae8a11d19bb3a1d133f3df23b54225d781a8db64.json.gz
+    size: 16428
+    sha256: "68125ef700518c52eb3e0a2c7e5e4b7e3ffed22cf920c64a8dbb3c46f407e560"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/145de079c5368b7d16d43c87cece273b62040050924343e67a855e03f49ee344.json.gz
+    asset: 145de079c5368b7d16d43c87cece273b62040050924343e67a855e03f49ee344.json.gz
+    size: 690720
+    sha256: "3c050dcb730aad82d6c117a4443c80fa407154de5a756c5280c54be132fa493d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1513071bbe67938cd1a418dc3b784755db51995d6419a5b24b28271844461852.json.gz
+    asset: 1513071bbe67938cd1a418dc3b784755db51995d6419a5b24b28271844461852.json.gz
+    size: 665725
+    sha256: "b95b6a0e1d72ccb4a04981b12dae6820c8023c85f9371b9785e9b2b3f8300102"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/155faf97df7fd83786d3275169984e077a7702fb1627991fee0e86441cafb068.json.gz
+    asset: 155faf97df7fd83786d3275169984e077a7702fb1627991fee0e86441cafb068.json.gz
+    size: 1232725
+    sha256: "321c1705118306d6f11477f95c7f71c5bfa15345b73e7cd3af4a43675831047f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/17516178d15908b1685cdba9a78497ccd4ba425d629cf655519a75dad6a6d253.json.gz
+    asset: 17516178d15908b1685cdba9a78497ccd4ba425d629cf655519a75dad6a6d253.json.gz
+    size: 1080015
+    sha256: "b0ddcc315bbfd533b40dc110000e057b4d66e67c3f6760e5a6a357a9910df1d8"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/17e9dc08dfe03104d099f220b232b17146ceb1d09a73a5e8a348e5e396beb55e.json.gz
+    asset: 17e9dc08dfe03104d099f220b232b17146ceb1d09a73a5e8a348e5e396beb55e.json.gz
+    size: 710277
+    sha256: "e5415734f9b25372e593fb2e139cc91f01c389bee14bfa0e3d8aaa56f8b55a1d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/185cd156ba80eec6ed9340cead26714607135247e35247bee99ad614bf429ddd.json.gz
+    asset: 185cd156ba80eec6ed9340cead26714607135247e35247bee99ad614bf429ddd.json.gz
+    size: 446890
+    sha256: "e011dd02bb28cb2c9e6cf5839b552892303060cd324026b249949275aca2d619"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/188ebf1d9a884b28a4c469df26978f4b4a02a5d07e6717d455caaa3f68642d23.json.gz
+    asset: 188ebf1d9a884b28a4c469df26978f4b4a02a5d07e6717d455caaa3f68642d23.json.gz
+    size: 666331
+    sha256: "a739db50630dc09f31321412e5dc5ae8e8e3e5a04ca31c2345c2655c5ff0ef46"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/18f3a6c5f3b94628357f80cf02bd8006ffb304e34c2ca49a3d321587fe0d9a7c.json.gz
+    asset: 18f3a6c5f3b94628357f80cf02bd8006ffb304e34c2ca49a3d321587fe0d9a7c.json.gz
+    size: 652352
+    sha256: "25ddeeb9f4d6aff4ee3f9e1a8ffc79a0d7a8b921a9092d19f06c6045ec38ad1d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1941487f658d69189474b4ccd47abd9a1838c2e04b6ff0c68cdc2dd54fccbb0b.json.gz
+    asset: 1941487f658d69189474b4ccd47abd9a1838c2e04b6ff0c68cdc2dd54fccbb0b.json.gz
+    size: 765056
+    sha256: "85c68c4f169db3fd5ff6272239fa968a2aae54968c9fc5515be61de466dccd18"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1a138de502f08031af81d0dcd01354fc941d31bfa196934144fb50acc9a67387.json.gz
+    asset: 1a138de502f08031af81d0dcd01354fc941d31bfa196934144fb50acc9a67387.json.gz
+    size: 559800
+    sha256: "7653926f8f1823d1deb34b02c91b8e4d3518521345def5b93d55e383e430a651"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1acd1000ddf72f12cea5cfccbf9a245c58ba355a425682338aa3793071840d30.json.gz
+    asset: 1acd1000ddf72f12cea5cfccbf9a245c58ba355a425682338aa3793071840d30.json.gz
+    size: 1007052
+    sha256: "84b25e3c8d067949b60ff41f0949a2b916440cf1adccee3ed4b08eaa937efb76"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1ae0f608665c68e357efdaf6582d5101064d29802bd9e64fbea6d10e9913165f.json.gz
+    asset: 1ae0f608665c68e357efdaf6582d5101064d29802bd9e64fbea6d10e9913165f.json.gz
+    size: 912471
+    sha256: "ab55a1e8c37c295760173c714e681a86f0540ac6a016569fd60d25118045f1d0"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1aef460b5a328330498bfa0eefb569b1795c71cad90dff0b955c6aa37896fa71.json.gz
+    asset: 1aef460b5a328330498bfa0eefb569b1795c71cad90dff0b955c6aa37896fa71.json.gz
+    size: 628283
+    sha256: "52434d88c58db19d69ce21e4117ac831a4fe1f48c6e3160992b0a5acb3b29d58"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1c305ecb17af59d9c9fb3b0e4042dbcdf593ad3667b6878a4eba7801399a3094.json.gz
+    asset: 1c305ecb17af59d9c9fb3b0e4042dbcdf593ad3667b6878a4eba7801399a3094.json.gz
+    size: 573168
+    sha256: "0ffdaefe36098cb94ac98ae22ff1a5ec6812f53d9ec3aafdc5e8ee9b5d4afd2e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1c6a717956c0e08701a9145eeda26da8cae9c6c370e42990b3415bbe47e11d7d.json.gz
+    asset: 1c6a717956c0e08701a9145eeda26da8cae9c6c370e42990b3415bbe47e11d7d.json.gz
+    size: 583382
+    sha256: "0088fa0b821062587335d61e0598cadc3a206f56f4185a147eefa39989fa9828"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1c96318a9cb6ab20dd6a67bb1be026cc06c8ea048642b8dbff326e861800658c.json.gz
+    asset: 1c96318a9cb6ab20dd6a67bb1be026cc06c8ea048642b8dbff326e861800658c.json.gz
+    size: 485663
+    sha256: "30dd40a81555610b2eee666b2f4cb3920a4498df512cfe84474dc07646c7ee56"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1cac910b1864df3376ba770248eac1f36633e6303bcbd413b03dd22764336b2b.json.gz
+    asset: 1cac910b1864df3376ba770248eac1f36633e6303bcbd413b03dd22764336b2b.json.gz
+    size: 837587
+    sha256: "6403725190aab26dd035503f52a0bf7fd24b372ba4f0fa2d2e78ff20adbda92e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1d885cc97f81eeb998285881b26885c359e8327453af55b55dc56ac26f2d390d.json.gz
+    asset: 1d885cc97f81eeb998285881b26885c359e8327453af55b55dc56ac26f2d390d.json.gz
+    size: 479886
+    sha256: "2370336ae7514de3f5482f4cca5ad0a55ca28fed26fe6aec9bf322240804edda"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1d95f459a573f5b83871c088a6ef7c3773c79f898669eadc104d10129f212c64.json.gz
+    asset: 1d95f459a573f5b83871c088a6ef7c3773c79f898669eadc104d10129f212c64.json.gz
+    size: 712342
+    sha256: "859d264c2b213dad7bb1c6b9fbfa81ce73dbabf9806908e3bdb172ee82b6efe7"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/1f1b54d959b142d7a218a5c54c0201eae17592d7b0a89c969defb0be98b9f64e.json.gz
+    asset: 1f1b54d959b142d7a218a5c54c0201eae17592d7b0a89c969defb0be98b9f64e.json.gz
+    size: 585719
+    sha256: "5d04812206856a0573db5cdeb28422ffc8611d570181d2d55cecfec476af3aac"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/20389c70cab40df71e9a55f3a6b00d4d9017ec46887a29b2dfb046d7316ad0af.json.gz
+    asset: 20389c70cab40df71e9a55f3a6b00d4d9017ec46887a29b2dfb046d7316ad0af.json.gz
+    size: 876246
+    sha256: "800b6bf997a33165ca51beb15c269eaaa9144ddcf8a73b75af815ddfb99c34a5"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/20da7a7e5039fe040268d7c4d42c427918da5319b83d50f634a12e223eee189b.json.gz
+    asset: 20da7a7e5039fe040268d7c4d42c427918da5319b83d50f634a12e223eee189b.json.gz
+    size: 707412
+    sha256: "68853d08c4be468b1ac1dbf49fad36b3be983da9a7b58d8294df5fe0b6b20020"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/2238a025aee4d66bf53f049236ee0a4399a998c9db79305300244da29f9f011d.json.gz
+    asset: 2238a025aee4d66bf53f049236ee0a4399a998c9db79305300244da29f9f011d.json.gz
+    size: 771211
+    sha256: "c20ec19ef64607323f299b6f7d158eb1e02ebd20317a9f170ee1f1c077bb3136"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/22e6005f8fca289c9a24e6a05fdef3961382ac803578317e7d435b922309b110.json.gz
+    asset: 22e6005f8fca289c9a24e6a05fdef3961382ac803578317e7d435b922309b110.json.gz
+    size: 616849
+    sha256: "95af264cbb8effda02411e10e1f152e19b9b4757211879d6759e0b25cc9d8399"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/23f51ac87ad38d311b831d80edb21f9c271f4489d4a91d8045994c046f11ba29.json.gz
+    asset: 23f51ac87ad38d311b831d80edb21f9c271f4489d4a91d8045994c046f11ba29.json.gz
+    size: 481850
+    sha256: "97b36af52ff62cc81ea1be8355d8b7545997417f180b76b9fd7d6acea8292169"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/25c2df20df299bc36bfc20923e34401da7f73dd425d677779614822f4c0f2634.json.gz
+    asset: 25c2df20df299bc36bfc20923e34401da7f73dd425d677779614822f4c0f2634.json.gz
+    size: 551390
+    sha256: "acd288186125ef7ab457fb55502c7b7a8739b651fe94fa8a483bc1c4217cd42a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/26e6bd2e57188ec805d0e2370ede1d638e6cc6ee4a4a866067b2526feeeb879f.json.gz
+    asset: 26e6bd2e57188ec805d0e2370ede1d638e6cc6ee4a4a866067b2526feeeb879f.json.gz
+    size: 463013
+    sha256: "b9bfe804a22a4242e6889b4513d1a2f0a3c55cafddcd6c6fbe8b74a7801f390b"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/27a6bfc962549ecd3acd64c90ced153a6f765057bd52c0f9e64e41bcbfc538c4.json.gz
+    asset: 27a6bfc962549ecd3acd64c90ced153a6f765057bd52c0f9e64e41bcbfc538c4.json.gz
+    size: 852907
+    sha256: "0500cf2c4426f0fb04aa718514993700613eeefe8823f1d120929d6a6bd3e4ca"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/27f7ec4a7cfa78df420976d49f5800f69d047dfa67f3760fed7fc5aa71ccce42.json.gz
+    asset: 27f7ec4a7cfa78df420976d49f5800f69d047dfa67f3760fed7fc5aa71ccce42.json.gz
+    size: 535183
+    sha256: "9f506fe4ee959525bd668890c2ef02168132b29ea2e3cdeb0b04e4e7179f912e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/28d3c7d9782b50dde8a700412033623e215ad9d3ff1f0eda934b5be0d90e6f14.json.gz
+    asset: 28d3c7d9782b50dde8a700412033623e215ad9d3ff1f0eda934b5be0d90e6f14.json.gz
+    size: 1166970
+    sha256: "8d3f2200379a91eeab18a51b549b363136d1e8499649d2e3dc1000fd4131aade"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/291ae26ecbd495710c00e1c7c7b49bf4e8b42d6de5a082a54d1232c2a2603192.json.gz
+    asset: 291ae26ecbd495710c00e1c7c7b49bf4e8b42d6de5a082a54d1232c2a2603192.json.gz
+    size: 634813
+    sha256: "fbd79ded2d92e045111cf05e4d2c052a5e09defb2130f79a499073e6ef0f60de"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/299428b98cd76785296b4872f4df930ff67330e92dd00c3459eae9290b6288c1.json.gz
+    asset: 299428b98cd76785296b4872f4df930ff67330e92dd00c3459eae9290b6288c1.json.gz
+    size: 626089
+    sha256: "f18c0d0aada8401a099c59bc052dbca2937c9d9188879afdcb4aad6c87ba628b"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/299fed3aa2ccb2eec8ae68ef51d97bcf5ae98ecdd8e1750a4ef989108434c542.json.gz
+    asset: 299fed3aa2ccb2eec8ae68ef51d97bcf5ae98ecdd8e1750a4ef989108434c542.json.gz
+    size: 727920
+    sha256: "116c56162e346f6a78d6fcedb7c0bd0982920e7926c6cd62d13f2cad538b0253"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/29f2c28f5e734155916aa95f640c6133c77fde93efcbf865d46ee6597a67c8ec.json.gz
+    asset: 29f2c28f5e734155916aa95f640c6133c77fde93efcbf865d46ee6597a67c8ec.json.gz
+    size: 949114
+    sha256: "9fd812ddb5ebad81efeed7bf40153cc3144de0ae3eb305b7a375d9beb935c77d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/2b78ea3eda7936a6434f01c3e19684f18f19ebf379e0ccd9d2e7f50213f304fc.json.gz
+    asset: 2b78ea3eda7936a6434f01c3e19684f18f19ebf379e0ccd9d2e7f50213f304fc.json.gz
+    size: 632438
+    sha256: "632f9ebb00303436f5e7f61844df63be0e2c9834bb10957253ea4c566fd7ef2b"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/2c4cdea7b74e50537ab5cc43871699c92b56fd9437037806dadce652b8ed5de2.json.gz
+    asset: 2c4cdea7b74e50537ab5cc43871699c92b56fd9437037806dadce652b8ed5de2.json.gz
+    size: 871284
+    sha256: "cb30d66ee2f90a3af4150deced33d267fed46575e5149c3bdeb59ba4c028ed88"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/2d689998f8bd9a620dca19e9ee17197d8d1d23383aa123c2d1965968ca820b8e.json.gz
+    asset: 2d689998f8bd9a620dca19e9ee17197d8d1d23383aa123c2d1965968ca820b8e.json.gz
+    size: 567895
+    sha256: "210ee58c91c5c0baad90fc6c8043b6da39d7b12f860d3841ae8305d83b6eb541"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/2dab0c6a6032837ed0c0be438860d242ab85ab3047d0db9a60dca42e9687a291.json.gz
+    asset: 2dab0c6a6032837ed0c0be438860d242ab85ab3047d0db9a60dca42e9687a291.json.gz
+    size: 542428
+    sha256: "55405c1d50d88c954c47ce52f70ae90fa744b8787358217c1fa666e756e1e79f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/2e974a5006ed43ea3648f9b32d1dfa4a241996172cd07b485b85d02b2a23287e.json.gz
+    asset: 2e974a5006ed43ea3648f9b32d1dfa4a241996172cd07b485b85d02b2a23287e.json.gz
+    size: 599465
+    sha256: "c6e68e7f461f11e2c7c7a743cc132ae4d6e121cef154d79db721871c0e57c964"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/2f5a3d213f9f28e26d3449b36be54220ef6ff347bdb36a96787b1ad86ac35733.json.gz
+    asset: 2f5a3d213f9f28e26d3449b36be54220ef6ff347bdb36a96787b1ad86ac35733.json.gz
+    size: 913494
+    sha256: "008aa6ca40d415237da2d4422f1bafa48aa4c035b3120ca373582a1569e27430"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/30c0ebb49deb888d0ea4be0400cd80f4445519385f69fd4c245e51cfc820e065.json.gz
+    asset: 30c0ebb49deb888d0ea4be0400cd80f4445519385f69fd4c245e51cfc820e065.json.gz
+    size: 1141644
+    sha256: "1b602620ccf7f2b9c5daa9f333f46abfa5fa9226ab0221b0e458a682ca595227"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/30cfdafed2b8a0eed66fd493312d2d8ffc7e964e2273e2226358be45a71268a3.json.gz
+    asset: 30cfdafed2b8a0eed66fd493312d2d8ffc7e964e2273e2226358be45a71268a3.json.gz
+    size: 302476
+    sha256: "754c8f92dd049d491dd1ca7cb8236f261881aa7a58d258e05ce7e431ff30b571"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/30daec847b54166a420c1d732a0ed33b10dca6a277fb0524e8c887fc0b0cf5cb.json.gz
+    asset: 30daec847b54166a420c1d732a0ed33b10dca6a277fb0524e8c887fc0b0cf5cb.json.gz
+    size: 1046964
+    sha256: "219c5f24e0a31ebb25c6613e06a6be7e9038272fd641155e539505d5cbcf0139"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/31bfa85e369cb201f0e6edc578de172d11f02afa893045760e20fc19a405eefd.json.gz
+    asset: 31bfa85e369cb201f0e6edc578de172d11f02afa893045760e20fc19a405eefd.json.gz
+    size: 456734
+    sha256: "3099fff1054cc3cb8b7abb2761abdc1278d13880678f42c16f321c1cd0d0bf54"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/31dc99119aced9a4d2e724165b204992141ff2ba083c162d47eff76891dc2335.json.gz
+    asset: 31dc99119aced9a4d2e724165b204992141ff2ba083c162d47eff76891dc2335.json.gz
+    size: 666045
+    sha256: "e24d6e0aa37c7f53db4db1fe9f14ef050eb41f44a5cfb71cbd94c3cdbd5ac5c0"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/323bc66b83faf717ba8ef98ae5d1cca64db47c21d12a0b926e3556d4b7090ab3.json.gz
+    asset: 323bc66b83faf717ba8ef98ae5d1cca64db47c21d12a0b926e3556d4b7090ab3.json.gz
+    size: 484498
+    sha256: "d8648661794ef45d4392a61f55f6f068f2ac42b30da959a659806f7f0f140c04"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/328f7dd0d4d7ba95d136b1e91b2bd509380bc9882b50e135e35c2c04b27ef3a8.json.gz
+    asset: 328f7dd0d4d7ba95d136b1e91b2bd509380bc9882b50e135e35c2c04b27ef3a8.json.gz
+    size: 597644
+    sha256: "8b22e503c14683028195fb8f877cdd57c9e45e2ab696c20783397d03844a132f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/32f5c3274b2b362175ab48e24ee74cb24b2aeca1c155ef90ada5d015754e0182.json.gz
+    asset: 32f5c3274b2b362175ab48e24ee74cb24b2aeca1c155ef90ada5d015754e0182.json.gz
+    size: 408446
+    sha256: "b89c51976c5d887664824ee01565210c4c9093ce12f86e8b6a0a36db32072cdf"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/333bcf71f1579ded9f00162edbbc24a36a3e05ebdd94c2a68975b194d682ac3f.json.gz
+    asset: 333bcf71f1579ded9f00162edbbc24a36a3e05ebdd94c2a68975b194d682ac3f.json.gz
+    size: 979164
+    sha256: "13ed688f1dd6d118b019c6c9b1e4d42059752102087875069d892a3fbe1d4182"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/34ec362310d15c40375005ccc9c023eeaa877c0f9757094f9c97005b19caddf6.json.gz
+    asset: 34ec362310d15c40375005ccc9c023eeaa877c0f9757094f9c97005b19caddf6.json.gz
+    size: 815777
+    sha256: "0ef0f6b969b248106eeede37a23cb6804c497284a8b95413e8056ef193d28ce5"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/351f5b666a16a1ab7a690a81afce5886f9990fc819fa1fa745969dd45926afaa.json.gz
+    asset: 351f5b666a16a1ab7a690a81afce5886f9990fc819fa1fa745969dd45926afaa.json.gz
+    size: 531569
+    sha256: "ec81882fea82d93f4b79f9c9153eba570658a81848b463b7254fe0fd0a6f5180"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/3588e1894d021527861c54c0ddfec5d492dae972080185ad12ba6a6d758ed291.json.gz
+    asset: 3588e1894d021527861c54c0ddfec5d492dae972080185ad12ba6a6d758ed291.json.gz
+    size: 736977
+    sha256: "c2b1ca7d9ab5284672a0ef8b80771740aa70ce9ce479f8bca14cbc1151810f2c"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/36a822f932f5a67d09c6a95f472f12e73c03961f7aed9f1f2c65e665a2602ef6.json.gz
+    asset: 36a822f932f5a67d09c6a95f472f12e73c03961f7aed9f1f2c65e665a2602ef6.json.gz
+    size: 633118
+    sha256: "fa747a3a82b343f0c854859bc457577fc2f733843ff8e901a84ff4b033644e41"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/36dc821b052169f098850d7d5a0e61cfcdba9280522b0ad8f14012e622640d13.json.gz
+    asset: 36dc821b052169f098850d7d5a0e61cfcdba9280522b0ad8f14012e622640d13.json.gz
+    size: 480991
+    sha256: "58dd5602ff783d96995a941730b3058918be5609af2b9e831f949493f78f632c"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/381bf8fab2e0f7832cbcd4960bb9ade1460d962a6009ad90d30b93765624b6e9.json.gz
+    asset: 381bf8fab2e0f7832cbcd4960bb9ade1460d962a6009ad90d30b93765624b6e9.json.gz
+    size: 638489
+    sha256: "1f3c56dd6cdce8f6322d6340a881ac13b152da430c2cae3fb582abd21eafb9ee"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/383865d1ad433fd9c56758f79f1565ff9138f75bc31a0d4cf51833c3b167ccdf.json.gz
+    asset: 383865d1ad433fd9c56758f79f1565ff9138f75bc31a0d4cf51833c3b167ccdf.json.gz
+    size: 758381
+    sha256: "f02a95fa923a17164afe7191150c3968386880747d1c03662881569c2d759ca5"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/384c5cfb5bbfce0f0396299295bfeae7b9987fe3fbe0a195cf4913860c4ffb5a.json.gz
+    asset: 384c5cfb5bbfce0f0396299295bfeae7b9987fe3fbe0a195cf4913860c4ffb5a.json.gz
+    size: 682727
+    sha256: "a944cbdc9c948923a8220cdc5ffcf669fa28add1f3c7d7d2a3e19a04e1e66041"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/3875350811eb57774f6b69fc3b3c4d496ea5dac9d69152e28278b77cf7e60079.json.gz
+    asset: 3875350811eb57774f6b69fc3b3c4d496ea5dac9d69152e28278b77cf7e60079.json.gz
+    size: 566832
+    sha256: "f2785c4344b9dbf9d76519f41b01b31034d82c342e083b10f03bbcf03a2f3d3d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/390d6cd1a74560a48c4ec807d8eb8ab4d35ac350b61ced3db39a1e90fe1f0355.json.gz
+    asset: 390d6cd1a74560a48c4ec807d8eb8ab4d35ac350b61ced3db39a1e90fe1f0355.json.gz
+    size: 798373
+    sha256: "c440afab04200db1fb8c11a5aed777f2bea9c23ed33fbc2e4744446122464be3"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/39700dae39f14116ba311e43ceda7362e1cceeced057f83a896cb9125c8e4a1b.json.gz
+    asset: 39700dae39f14116ba311e43ceda7362e1cceeced057f83a896cb9125c8e4a1b.json.gz
+    size: 640763
+    sha256: "08364f17dd0da037316f37eac8671d2bb9824f72eafc96abc072500c2c6f434a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/3b51b25994bdaf94667019a9b9df7138d322be3620e7d891d6c2202cab15a062.json.gz
+    asset: 3b51b25994bdaf94667019a9b9df7138d322be3620e7d891d6c2202cab15a062.json.gz
+    size: 476562
+    sha256: "18da1442d5456d6dd51eec5f4ad61d9105d6d1fe2be2227d1e9846560cc7980f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/3bf108c77626fe2dfefc1a258f995f64c1ee21be8d4a14cf9df1ae3f01dd3315.json.gz
+    asset: 3bf108c77626fe2dfefc1a258f995f64c1ee21be8d4a14cf9df1ae3f01dd3315.json.gz
+    size: 763481
+    sha256: "77d42014e4088a71ffd4ddaf80a83a2c40a5fc40b28c57fbde64f9c6ec9a3ce8"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/3d67d2a8072814bcf8e4660d186e459c145025ceda8dda3917b114fbb75b419a.json.gz
+    asset: 3d67d2a8072814bcf8e4660d186e459c145025ceda8dda3917b114fbb75b419a.json.gz
+    size: 953217
+    sha256: "a0043dd115df366ac2f6556231e690192ef03f7835f2e8bb6a5a9d16c7b96ddd"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/3e4f0f2934b0156366f5136d37ca4085290fd8c9945ce0bb47e452d9586e2a10.json.gz
+    asset: 3e4f0f2934b0156366f5136d37ca4085290fd8c9945ce0bb47e452d9586e2a10.json.gz
+    size: 714086
+    sha256: "f603b3f9cdb0f5c346340db703ce54cc4845f595ace9b941f5204a53a0b4ce6c"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/3ea339d3daa4702b6506814dff4c3b4383f16b72d3e74687187aa1d086b4745a.json.gz
+    asset: 3ea339d3daa4702b6506814dff4c3b4383f16b72d3e74687187aa1d086b4745a.json.gz
+    size: 1211111
+    sha256: "b938751ed1ebc0a2155470efcb26d5d0dd2beb360475b30b57050a65674c11cf"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/3ec32fd8189d5aacdae9a8f1bb6b3799355b11cd200e7646ed2dd3c56b9f1981.json.gz
+    asset: 3ec32fd8189d5aacdae9a8f1bb6b3799355b11cd200e7646ed2dd3c56b9f1981.json.gz
+    size: 703675
+    sha256: "9512876f0675af8c0df81f51460e50dde864a4d52ed5dc5e8298a96a1f17cac9"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/3fbfb4096912afa534a99f053e546b15267e9be89425c43dca2f3902b472e1ac.json.gz
+    asset: 3fbfb4096912afa534a99f053e546b15267e9be89425c43dca2f3902b472e1ac.json.gz
+    size: 443335
+    sha256: "a383195004077a183875343481767b990674095d8a8a8ccfcc01bb5c007a5bdf"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/3ff9fca9942a072c1cc370690a5af2260c85e2742d41f392b255a9c702490e5f.json.gz
+    asset: 3ff9fca9942a072c1cc370690a5af2260c85e2742d41f392b255a9c702490e5f.json.gz
+    size: 593473
+    sha256: "c6ee3b9abc88d0ac393a1f2632b383b9a59e0c001ecef45187005fb7a1a294fc"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/40628c542733f3d12ed577d3aaba0bfc225c8d7ad8c1ad1dfab2115bd669146b.json.gz
+    asset: 40628c542733f3d12ed577d3aaba0bfc225c8d7ad8c1ad1dfab2115bd669146b.json.gz
+    size: 1229512
+    sha256: "5788575d147a91f81921af70c3a13add4acbc1436f1843e12e53210944dde431"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/40803c11da63fb63c0f62cae4c83771c8590cdf0c9eecff2beceacf315964bab.json.gz
+    asset: 40803c11da63fb63c0f62cae4c83771c8590cdf0c9eecff2beceacf315964bab.json.gz
+    size: 758243
+    sha256: "f434cc3322f60604b835e4c6018b7bdc3c46b7a72b761722c3990fa4cfe4c308"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/40d67ccce3bddf1db3dedd2d164db0d7370ee5089625b9c7e529fd5b76bd9a6f.json.gz
+    asset: 40d67ccce3bddf1db3dedd2d164db0d7370ee5089625b9c7e529fd5b76bd9a6f.json.gz
+    size: 700999
+    sha256: "64f71a9b202b676562e1c86eca0065ba50963f07cbd13ff7f12f1756bff964b2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/414430f29ced82dbfff3f69de521b5f9d90993c71245bd856e12754403da9566.json.gz
+    asset: 414430f29ced82dbfff3f69de521b5f9d90993c71245bd856e12754403da9566.json.gz
+    size: 851038
+    sha256: "1abea9bb0357248a119d6f41f6fb0c7489f220ebe8840f30d05f0a54a5dcda04"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/42483af92581dfdd605cd860cc590684c9ce0d999cc050fa5d9aeb4c9480d1f1.json.gz
+    asset: 42483af92581dfdd605cd860cc590684c9ce0d999cc050fa5d9aeb4c9480d1f1.json.gz
+    size: 999734
+    sha256: "381b5051be42783deaf4c7b58806dbc5abdc7edcd8c7c910ec73400540a2757d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/424a6aedae2c2e6ff6fcae5ae02642d8e8f5730d2dd3867796e00a7ee7dd611e.json.gz
+    asset: 424a6aedae2c2e6ff6fcae5ae02642d8e8f5730d2dd3867796e00a7ee7dd611e.json.gz
+    size: 896279
+    sha256: "3326db7657dca1b99dc151fbe8aa031c26fb0b7c916ed5cdd39d296716aa44bf"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/42c26f3427ec2b07ab81f5ca50ab8d4bb666fc25e22fb2ccfc67111e7fefff52.json.gz
+    asset: 42c26f3427ec2b07ab81f5ca50ab8d4bb666fc25e22fb2ccfc67111e7fefff52.json.gz
+    size: 600171
+    sha256: "58256d6deaab1127c5a974b00d35c46590d44375f4b5d670bd5361a9408e6c17"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/42dcfa403ab5bb2db051379cf7b6f0bb165f37fc4902c61c254dbcc0c5d3ad82.json.gz
+    asset: 42dcfa403ab5bb2db051379cf7b6f0bb165f37fc4902c61c254dbcc0c5d3ad82.json.gz
+    size: 701335
+    sha256: "0cff6bf47ef07c8b3ae84fb98b89dcd3738ad0c6d204c57979b12a3a5c500483"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/432c6377925b66dbd8531173d9c116cb71b5b8aed24157b2990ff4d861e8a6b4.json.gz
+    asset: 432c6377925b66dbd8531173d9c116cb71b5b8aed24157b2990ff4d861e8a6b4.json.gz
+    size: 1020163
+    sha256: "25800eb2a6f27844c0911f5bf671bb35d34b04f254681a54fe087d6f76a57c17"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/43e55afcece779f602e360d14882dd002775aad5e77e510efabe6b6a596aa429.json.gz
+    asset: 43e55afcece779f602e360d14882dd002775aad5e77e510efabe6b6a596aa429.json.gz
+    size: 559490
+    sha256: "398b53b3cf393a045887a1ab16b7c6630c81f3dd9e9ac1a82abfd3894900e82d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/440df7bfc7f5dfe67313bee4c69e018c4f059739306556ef0ef1f43e42b584fa.json.gz
+    asset: 440df7bfc7f5dfe67313bee4c69e018c4f059739306556ef0ef1f43e42b584fa.json.gz
+    size: 890336
+    sha256: "9200b5a0fbfd9cb7232ce3535bb88ff44033236ab604487d2f7d55462007df5a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/44f35d17165798a4ca36bac2339e774ee68a2439c81c4a3bcb9556fffa5a7d34.json.gz
+    asset: 44f35d17165798a4ca36bac2339e774ee68a2439c81c4a3bcb9556fffa5a7d34.json.gz
+    size: 918833
+    sha256: "742a0274a33bbae9fca7eb9e1c3a0fe9868555f441aff6985cd270ebb959d3c8"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/4575c75ab31add79b5a904541de2a4c90f90f42ac76de5d63e08fd13907c43e3.json.gz
+    asset: 4575c75ab31add79b5a904541de2a4c90f90f42ac76de5d63e08fd13907c43e3.json.gz
+    size: 920711
+    sha256: "6891dfdd4c4fd1dd6e50fb4f3c4943bcab3b94ed11e5a851d16acfb8223842b5"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/46a6fc222e9e3946756bc3e7413ba4c5aa89fc78ec765677b58a398ce4296efa.json.gz
+    asset: 46a6fc222e9e3946756bc3e7413ba4c5aa89fc78ec765677b58a398ce4296efa.json.gz
+    size: 507160
+    sha256: "a3a60fc56dfdd48f7bfb6ea095301666a790d91f0a8b086da7ec9bfcf2907555"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/47663185fcf1e3308908a426ecfd751223be9b43b909f4c92120eec5ad9a7145.json.gz
+    asset: 47663185fcf1e3308908a426ecfd751223be9b43b909f4c92120eec5ad9a7145.json.gz
+    size: 1062204
+    sha256: "c164691cb3ef4c8537a6c53cdc35817e37c061b2ca8395d9611643b75ae0f818"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/485f14289e6c1562f7f0b0039c796f8c732c70add234bcc4bc215c556e9a68fa.json.gz
+    asset: 485f14289e6c1562f7f0b0039c796f8c732c70add234bcc4bc215c556e9a68fa.json.gz
+    size: 1004538
+    sha256: "9a7e5b3d2c3db7c75cd88c228676386513e7bbb047a6f2c5e911ea66da016e33"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/49004dfb54afaafd306418150b59211dd6c11b904f5702e67c6b47f931e73d27.json.gz
+    asset: 49004dfb54afaafd306418150b59211dd6c11b904f5702e67c6b47f931e73d27.json.gz
+    size: 608469
+    sha256: "0a0477e8a2055ec4b6c171cbe959ae1b0ac57dd24f86a95fb261e3bf7397db16"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/49de43f3414dabead6f8e4218b761f4228ce87c00d7151593de4f21d64629aca.json.gz
+    asset: 49de43f3414dabead6f8e4218b761f4228ce87c00d7151593de4f21d64629aca.json.gz
+    size: 1142518
+    sha256: "9ea27dcf0807209aba7498a9dfb3d280062e6b1dd40a1a03e9f646f3ea145cc6"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/4a0ce14aa6ed8011847c23411d91fae9b758d20983a82346e129d32b41f2012a.json.gz
+    asset: 4a0ce14aa6ed8011847c23411d91fae9b758d20983a82346e129d32b41f2012a.json.gz
+    size: 948088
+    sha256: "9a1a210fa6c7d1f8274466ac7b81f24cac85a61322fc662b86b39796db66427f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/4a961a82b5a7368e8a5f941004067c9ae63c27ac414fe7aed116befa3fd03fd1.json.gz
+    asset: 4a961a82b5a7368e8a5f941004067c9ae63c27ac414fe7aed116befa3fd03fd1.json.gz
+    size: 902090
+    sha256: "f5431f94775317c6ff46ef5b48ef46581bd4e31ff53ebe63ca93ab415445ca78"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/4ab066574eb64ec46b4da825020d4aab03ce4f5c19882663b5eb846381ff9fdf.json.gz
+    asset: 4ab066574eb64ec46b4da825020d4aab03ce4f5c19882663b5eb846381ff9fdf.json.gz
+    size: 528011
+    sha256: "239dcb039e7dd6c94439a4bf989168fce838bf15484b7e593c132fe9a00e0451"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/4cc2c7fe841edc45c7e5830a994e8dfae30e43a6f345d7339103909e65f63962.json.gz
+    asset: 4cc2c7fe841edc45c7e5830a994e8dfae30e43a6f345d7339103909e65f63962.json.gz
+    size: 801584
+    sha256: "c2250668d627807a8821d285c33ba278ee9eddee369989f9ebffc1c43f32b426"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/4e678257dfd83b889fbf2c237b5e105c6ad76d5959cbdd14cb2a244eb8b4accd.json.gz
+    asset: 4e678257dfd83b889fbf2c237b5e105c6ad76d5959cbdd14cb2a244eb8b4accd.json.gz
+    size: 774548
+    sha256: "ee1efa0357f34f6a81b60ab2549bbbe3a873f2db1736ac5060fb9e5f17c21760"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/4f1d28af2a5f14d5c080334b764626928acafec04ed31cc923407915940246cd.json.gz
+    asset: 4f1d28af2a5f14d5c080334b764626928acafec04ed31cc923407915940246cd.json.gz
+    size: 562306
+    sha256: "caffbbe2db4c8fd86f0d71407d894bdd0d869dd1a63a0f1bbcbb5b855e6c1b09"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/4f7d75f7d489b2c683944ae3e655d38049f5fc690c4f34b73c8022c2389822ff.json.gz
+    asset: 4f7d75f7d489b2c683944ae3e655d38049f5fc690c4f34b73c8022c2389822ff.json.gz
+    size: 688442
+    sha256: "46538acfcd23cfeea22a92ad53c21ef94759dfd332cc7d7eab6d0cc8066a857a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/4fde06e6612a8479c297dfe8ed90f25d99a4cdf7cee7a511096660c5302954ed.json.gz
+    asset: 4fde06e6612a8479c297dfe8ed90f25d99a4cdf7cee7a511096660c5302954ed.json.gz
+    size: 680918
+    sha256: "3a6e89c98742c94aad6de663b079105217e6f2005f6739a228165a1b0a40d5a6"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5056bb3187d216ddbf2a5432baac445fc0b4c4aec8982cd0a44d28428caba7d4.json.gz
+    asset: 5056bb3187d216ddbf2a5432baac445fc0b4c4aec8982cd0a44d28428caba7d4.json.gz
+    size: 700243
+    sha256: "bbd9f209f486cfe665539cf444559ea3eb674b5068a7d691bc635ae2c4a31b08"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/50bbcb778fc5c299cd2f8446219255b4060534585a05fe21ff59667ef354e00e.json.gz
+    asset: 50bbcb778fc5c299cd2f8446219255b4060534585a05fe21ff59667ef354e00e.json.gz
+    size: 790175
+    sha256: "f86af96c4dcba974f64bbf9f89740adbc9a18a5a275f349adf79279652f38886"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/51865f245c4dda6061952ac7bb7927f7b429e7c3367b74a57815f6b9f1c58d7f.json.gz
+    asset: 51865f245c4dda6061952ac7bb7927f7b429e7c3367b74a57815f6b9f1c58d7f.json.gz
+    size: 705596
+    sha256: "779023913c9bb4773813b6b276c7d572fce891063aee3165bbeedf49b9684830"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/52548ae463538256964b0e857ef83c4e846f8a8eaeebb8a3883690e9753d20fe.json.gz
+    asset: 52548ae463538256964b0e857ef83c4e846f8a8eaeebb8a3883690e9753d20fe.json.gz
+    size: 652569
+    sha256: "5efc0c5204ff434111f8e09798a02012a657143d102037fcd3ab300a9ccbe920"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/53cc7d2febed700acf7b892dc66719d3b65d66898c8fbaf2246abd0684a5925c.json.gz
+    asset: 53cc7d2febed700acf7b892dc66719d3b65d66898c8fbaf2246abd0684a5925c.json.gz
+    size: 461544
+    sha256: "7af5d50aa373f35b8b32cac24017328153522f7ba74f54922e7f19d8ac0443c2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/549102e642d20e4c4656c275a52fd924eba9d58b8a97f27791e8a7995ace12e2.json.gz
+    asset: 549102e642d20e4c4656c275a52fd924eba9d58b8a97f27791e8a7995ace12e2.json.gz
+    size: 526285
+    sha256: "44594ea0c7edfcff978b84c0bc579ed363e76ae1fd8cb3cf16deb8c1ee6668c1"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/563c5b1636fa13294449f2ea79a978d275f1f09d25d71c1a6063e70b217b8a3a.json.gz
+    asset: 563c5b1636fa13294449f2ea79a978d275f1f09d25d71c1a6063e70b217b8a3a.json.gz
+    size: 532907
+    sha256: "f62a559491f60b668d41ce2057761ab20a54a1a236fa7dcdc9a92b1b308c6b90"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/567742509b13615aa0bbc08efe61c42439cb5eaa11be609da136214c2479da18.json.gz
+    asset: 567742509b13615aa0bbc08efe61c42439cb5eaa11be609da136214c2479da18.json.gz
+    size: 900007
+    sha256: "e64322e7ceb1b13354f25cbc7dd2a3d63d352eedf33060e4a2513cc6341dec8b"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/56cadcf9237cc7eed953059f2f444842602fd2b6890a31f90556ad744e84b976.json.gz
+    asset: 56cadcf9237cc7eed953059f2f444842602fd2b6890a31f90556ad744e84b976.json.gz
+    size: 950517
+    sha256: "6da9b4fcca679a7b8569d95b48255a53f74e75a34c53a7ee20f9ba6843a9e222"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/57ab27dbfb2e1cd86c955824571134c108e78f7893ac462d38cf67d1b902119a.json.gz
+    asset: 57ab27dbfb2e1cd86c955824571134c108e78f7893ac462d38cf67d1b902119a.json.gz
+    size: 439360
+    sha256: "c824b37186cef3df9fac3bffbc54d92f25a89559730c591ae0ee959aaf272599"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5813e511903592e521395404be2d8f5edc5538afabc008a7d8f11f77fd563250.json.gz
+    asset: 5813e511903592e521395404be2d8f5edc5538afabc008a7d8f11f77fd563250.json.gz
+    size: 811873
+    sha256: "ab137a8e434463d3b589b99d34b5c5db22424658fd71ecc4fc4a931b822b8132"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/585a6891fa96d3404dfff195c8de2f81bcb275967e7848f1b897961ec069bd00.json.gz
+    asset: 585a6891fa96d3404dfff195c8de2f81bcb275967e7848f1b897961ec069bd00.json.gz
+    size: 636147
+    sha256: "10ec4167a223640b8a31caacbd029e42e435dcbbc137531fef9cb20fd0e6e749"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/588e4dbb64ef431a6b15250abec4c839562dcaeae3c70cf53dab909c35098ed1.json.gz
+    asset: 588e4dbb64ef431a6b15250abec4c839562dcaeae3c70cf53dab909c35098ed1.json.gz
+    size: 792946
+    sha256: "65178aa15f21ad8832261552363fbdb298b6da598b2d247528a5196c80916c45"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/58bb6ae6417ec9d3a69739f340d59c1495144f395089d48e132ee4b9de95a148.json.gz
+    asset: 58bb6ae6417ec9d3a69739f340d59c1495144f395089d48e132ee4b9de95a148.json.gz
+    size: 529532
+    sha256: "236b0dd7b541d1bcbd8b80257830812e32080785faecf3be9143aab230e022cd"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/58cbbb80522aac6d5e81d50c98814a50d788fd717572b15239bb42b3e6e4278e.json.gz
+    asset: 58cbbb80522aac6d5e81d50c98814a50d788fd717572b15239bb42b3e6e4278e.json.gz
+    size: 997251
+    sha256: "82149d72873d53971d4195d102f8fa0f2727dbfbc8fda6aaaf8e66a4a404d07d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5a0173257dcfa5f46bf489d31a6e402db1c70562d57937cc1b4745f759e84a91.json.gz
+    asset: 5a0173257dcfa5f46bf489d31a6e402db1c70562d57937cc1b4745f759e84a91.json.gz
+    size: 415712
+    sha256: "e3384db99b96faef3cee64135c86b4859566802fcfd25fc4d0fd266793c23c51"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5a3f46f7e23940cba9b6b48b85dca353b9a59f763ef6bc6eb3662ecca62510ba.json.gz
+    asset: 5a3f46f7e23940cba9b6b48b85dca353b9a59f763ef6bc6eb3662ecca62510ba.json.gz
+    size: 1065299
+    sha256: "084d5d5f8e50462f6a904c93ab45ad6f904bceb6f020d18f1d0eb015e10e93be"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5bcff621429540228ccc197422bfa66b5df47244e9e4ac2211c6ff7bab7fed3a.json.gz
+    asset: 5bcff621429540228ccc197422bfa66b5df47244e9e4ac2211c6ff7bab7fed3a.json.gz
+    size: 703107
+    sha256: "a34b6859e8e66903b6b285440932fb64b1a980ca9f92c1b34884aa5aa2f9f917"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5cb07ab6fd5b25e073e6c6f8936b7b017eb6fd83189689e6da7c068604ea6f09.json.gz
+    asset: 5cb07ab6fd5b25e073e6c6f8936b7b017eb6fd83189689e6da7c068604ea6f09.json.gz
+    size: 557094
+    sha256: "e8d992019bc4a5aea6d465493481f02d74a7cfd2e93ca5f78d7f67be105e0dea"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5d32bca16081695122ba022b6bd40e05048924c588d2b5703025511b7f026ead.json.gz
+    asset: 5d32bca16081695122ba022b6bd40e05048924c588d2b5703025511b7f026ead.json.gz
+    size: 605956
+    sha256: "cc9ec3b644cd7a03664b8c1f47fd079266cc392b807d34825fc59b5d58bb1026"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5e26f81eb7aaedc9d35e7f54168a9a5db0a393e1a23d5121819c001a376e0c99.json.gz
+    asset: 5e26f81eb7aaedc9d35e7f54168a9a5db0a393e1a23d5121819c001a376e0c99.json.gz
+    size: 743173
+    sha256: "dad136697991fd40b51c280bf1023b0b4b2c526758ac5fadd153f92a2104dfa2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5eaa140f23d9bb832e0c39577ec90ce82240f9a35d725bb0b44cfebebc3b8911.json.gz
+    asset: 5eaa140f23d9bb832e0c39577ec90ce82240f9a35d725bb0b44cfebebc3b8911.json.gz
+    size: 891095
+    sha256: "59b37fbf7097b33f8a4257ad74395d56f13e5bd7ff88dc3e95d432ff99487726"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5ec6d9641ad9c7f41ccb98dae077e50a5b9f009ba92e7669c2f6f138890f6c11.json.gz
+    asset: 5ec6d9641ad9c7f41ccb98dae077e50a5b9f009ba92e7669c2f6f138890f6c11.json.gz
+    size: 694082
+    sha256: "6618e28043cf8e9f937b160219df3fa98e6c5e4da190faad73d0326997937d23"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5ed6e6b4016da3775d0d5e4d314a1b5a20d16a7036e87c609f7d136bec081c33.json.gz
+    asset: 5ed6e6b4016da3775d0d5e4d314a1b5a20d16a7036e87c609f7d136bec081c33.json.gz
+    size: 869534
+    sha256: "09213dcfb07c562df04502d4cd4c92d4440ae2b3e2c89f914afca40fa326e9d1"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5eefbe28ed5912a3d29de71cc860590aa9c439d670c1b930695b94b6dc578d84.json.gz
+    asset: 5eefbe28ed5912a3d29de71cc860590aa9c439d670c1b930695b94b6dc578d84.json.gz
+    size: 646090
+    sha256: "819e68a5688a65b53cd3b54a10d720118025c1f9c2e883a18a1072ac2775aa5f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/5f40a01cefa8b92b27131a10776a7d3ed28aac48dedba89aa3f1c4c86ae7ad75.json.gz
+    asset: 5f40a01cefa8b92b27131a10776a7d3ed28aac48dedba89aa3f1c4c86ae7ad75.json.gz
+    size: 935915
+    sha256: "d9567fb157cb0f0a29b616068847ea17f99a7a6a1c7720afee2478675dd5e339"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/617c2f48e0b128037dd2505301739bc8855bc9a1abc7cfb4a3b436f0d3338536.json.gz
+    asset: 617c2f48e0b128037dd2505301739bc8855bc9a1abc7cfb4a3b436f0d3338536.json.gz
+    size: 566585
+    sha256: "bbf3a3e8ddcbb8a1ad455b1617f160e05efc93c099126b30a9e9e2b94eb7d515"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/62f97463b0dbf109e1f5418f5a2218a6c2876cd392cecbca5253b463c9c8e3f5.json.gz
+    asset: 62f97463b0dbf109e1f5418f5a2218a6c2876cd392cecbca5253b463c9c8e3f5.json.gz
+    size: 988733
+    sha256: "f80ea60f61cfc3dcfa30d8417e47b642add6d75a97899a7b9428f16e519cbbb5"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/630ae067450f30e23d2451a8043da2cf3e017268ac04313c3c3dd9952490578d.json.gz
+    asset: 630ae067450f30e23d2451a8043da2cf3e017268ac04313c3c3dd9952490578d.json.gz
+    size: 585680
+    sha256: "609866264335d56b5a0f088f5f0833568789427f2857438f1a14cca503c575f8"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/635d63fc65d7876ce7c1bbaf2c30c6f35c2061fb16cc1d8e4c468e71cde23225.json.gz
+    asset: 635d63fc65d7876ce7c1bbaf2c30c6f35c2061fb16cc1d8e4c468e71cde23225.json.gz
+    size: 977728
+    sha256: "5a3ce6963b139cc150f4b342b8383b349531fd4d2f01a04e5f630a720ef99f3a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/6587aac9725ea5b291e69cb85dd58642279ac843322f3632cfad8c1ee53a035c.json.gz
+    asset: 6587aac9725ea5b291e69cb85dd58642279ac843322f3632cfad8c1ee53a035c.json.gz
+    size: 549686
+    sha256: "1001176a6af5da825f86992e2974cb6ac999b4f8abf26713d22e6fb632bac80e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/6594ab5a3f2f7415c5502aa0e08ff4be8d1982d6ad65177cfda750a27cfccddc.json.gz
+    asset: 6594ab5a3f2f7415c5502aa0e08ff4be8d1982d6ad65177cfda750a27cfccddc.json.gz
+    size: 595742
+    sha256: "153532fcf93d738c4f1f7bde0f1328ba44e04381b2ad6ff766c9349c065dc4f0"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/65d29d73cd541fe4115f51c7a2b009a37a67de29f31e87d6a3668d17cc6dcd19.json.gz
+    asset: 65d29d73cd541fe4115f51c7a2b009a37a67de29f31e87d6a3668d17cc6dcd19.json.gz
+    size: 498256
+    sha256: "d237396afe0a98312611f107981859c15879d8b539818ee7a66c2ad5ddfe0251"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/66180db07133be7bb4422ca86887fe6d31866b6f09dd0e3cb6e2ba36953aefff.json.gz
+    asset: 66180db07133be7bb4422ca86887fe6d31866b6f09dd0e3cb6e2ba36953aefff.json.gz
+    size: 819381
+    sha256: "646504103be6f6df1d95b3181eadec434d6a9a474cb12f193c181c705f8c895e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/66265a82a2abd3901d9eef52818b6318fcd134209fbfbeece6b321198387dfce.json.gz
+    asset: 66265a82a2abd3901d9eef52818b6318fcd134209fbfbeece6b321198387dfce.json.gz
+    size: 845749
+    sha256: "cdcac100a4026fb527f7514aedb93bdde453c57aaf60a37b86da8174f444ed96"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/678a6696d5cd06845271767c89a30883d84f4c1b1e2f5ac55ef09df7b3b48a79.json.gz
+    asset: 678a6696d5cd06845271767c89a30883d84f4c1b1e2f5ac55ef09df7b3b48a79.json.gz
+    size: 844809
+    sha256: "76eafc65a4af613c82534b45c7b29169a87732866e6b742f0109a1aa4594ab48"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/67bb7dc5c0c94fa27e574039bd88d28aa70563594020436a387b48c2988a3deb.json.gz
+    asset: 67bb7dc5c0c94fa27e574039bd88d28aa70563594020436a387b48c2988a3deb.json.gz
+    size: 1021248
+    sha256: "62b00878421962232a8db677d3a2f22a4c2bce623a7dac0809b138cd91566bee"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/68769bb4bcfc12aa69ec7dab324eeef8f2b68f898c0e6e9d81d348a9ae61ce11.json.gz
+    asset: 68769bb4bcfc12aa69ec7dab324eeef8f2b68f898c0e6e9d81d348a9ae61ce11.json.gz
+    size: 714790
+    sha256: "daa802ed947b9dc0828f658569a15c4faa3af24eec7f243d0f2abcb533032abd"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/68dcbd66fb95fe85687974c524b425455f47d2435f6c7a10ab72bffc844c23c5.json.gz
+    asset: 68dcbd66fb95fe85687974c524b425455f47d2435f6c7a10ab72bffc844c23c5.json.gz
+    size: 960126
+    sha256: "08a29d95eb27a6c915ceaf9e60050aba83e8eddd971c4b6d433a3dc981103f14"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/69364f174ce671a43b60c3478410b26bfc36616ba6caa4119db868d80d8f96e2.json.gz
+    asset: 69364f174ce671a43b60c3478410b26bfc36616ba6caa4119db868d80d8f96e2.json.gz
+    size: 472051
+    sha256: "90a2bd9902e40cf46104f9f03f8d7816f80f9a3c40fb66726a2383cc26c45fb3"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/6a8cc4b04eace67ecc02d08f5d188f1ebfd02f1e820981681e2abf12695c5f04.json.gz
+    asset: 6a8cc4b04eace67ecc02d08f5d188f1ebfd02f1e820981681e2abf12695c5f04.json.gz
+    size: 590685
+    sha256: "44ce39b2fd8da5fca5619a035f49b4ad2bfc27197924d9356ea4995df0b38201"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/6b24a1505712c92c92d0028195f99a02a6dab55912857a919fc48a7970534240.json.gz
+    asset: 6b24a1505712c92c92d0028195f99a02a6dab55912857a919fc48a7970534240.json.gz
+    size: 681561
+    sha256: "45dd5ffea45b9060b476e36d1717e8fc280b9a3473903e55aca616b1f756b9da"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/6b36ebad9dbe73b8483822d9f68f93b56c57c0b9f81e836a325045d298c640ed.json.gz
+    asset: 6b36ebad9dbe73b8483822d9f68f93b56c57c0b9f81e836a325045d298c640ed.json.gz
+    size: 688336
+    sha256: "407cfd4b87492d0cc1c1b150acca0f46f099aaf8c0c0f288b9e3b281804d58ac"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/6b8b9d682c0281669a97a3bb5d4eb91201e6780e2fc259d8a039b1a131d592ad.json.gz
+    asset: 6b8b9d682c0281669a97a3bb5d4eb91201e6780e2fc259d8a039b1a131d592ad.json.gz
+    size: 775673
+    sha256: "85f606063102d7422025443e4ed4d3a5dd04b4eb089d572423ce805090428a5d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/6b9f0cf756554ee942c4b930807a490d472550d6a91abd4deb52b29528545505.json.gz
+    asset: 6b9f0cf756554ee942c4b930807a490d472550d6a91abd4deb52b29528545505.json.gz
+    size: 721250
+    sha256: "fde4f846c08cab3b609df095fd19d237974a172f38ea314c6198fd08032af81e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/6c5065956398d945a51d912d960284f694577d1e48ffdfe3f100e6da647e9425.json.gz
+    asset: 6c5065956398d945a51d912d960284f694577d1e48ffdfe3f100e6da647e9425.json.gz
+    size: 465795
+    sha256: "59da33b1971c76f5a1e81307065d60c97e2654377c9693cde222e79c6c9ec5ff"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/6da5cb7350c89544e20aebc92d71429e9bf1ac3232de05fa695255c32db507d7.json.gz
+    asset: 6da5cb7350c89544e20aebc92d71429e9bf1ac3232de05fa695255c32db507d7.json.gz
+    size: 886820
+    sha256: "100266d770c13975be82d28b176a1a2d27033ad521715831b521ea1cd509a8c2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/6dbed2dbf43d0c483173a651975c3a0bf03ca293a592cbb463b2383af4331f6d.json.gz
+    asset: 6dbed2dbf43d0c483173a651975c3a0bf03ca293a592cbb463b2383af4331f6d.json.gz
+    size: 625543
+    sha256: "57265414995f1fd6f9494bfc0b774802d81f7e4aa7ea81c4ed12d598a7a07547"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/710e4b3094fd075d61b3925c93e853703655243c919ca966530945e0bf04a221.json.gz
+    asset: 710e4b3094fd075d61b3925c93e853703655243c919ca966530945e0bf04a221.json.gz
+    size: 517470
+    sha256: "1b26e3e60fc551352f0493c200e8677eb75fb9017c9a4cf124688a2cb24590c5"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/711328941709a6f33891df2daa7775e4565724629dbbf7eb5f7d134a054666ee.json.gz
+    asset: 711328941709a6f33891df2daa7775e4565724629dbbf7eb5f7d134a054666ee.json.gz
+    size: 659284
+    sha256: "f9793fd47f61734fd2a5b6ff4d643a349bd206ea9f6aaef98918def8b1cc1c37"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/72d5653a817006bb16fc4f5fb9db8cc02440dbdc093973010c7902a7891c06d7.json.gz
+    asset: 72d5653a817006bb16fc4f5fb9db8cc02440dbdc093973010c7902a7891c06d7.json.gz
+    size: 395861
+    sha256: "e40e0ba5749d9e123cfb4d1a98d0488e9be634c610c4e8993c9631fc956d3fe3"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/72dc529bcca4c68c4215da565a76c052f71393231925e9fc06e3519a271075e1.json.gz
+    asset: 72dc529bcca4c68c4215da565a76c052f71393231925e9fc06e3519a271075e1.json.gz
+    size: 697926
+    sha256: "eb45d6cf424095e5f8d075507a52756949ca2ca9a75d9f37fb983a319fea7387"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/733979072f8a8ea819f875b9c65cf91b936844344e7baae51315f28d6bcbc9c6.json.gz
+    asset: 733979072f8a8ea819f875b9c65cf91b936844344e7baae51315f28d6bcbc9c6.json.gz
+    size: 689550
+    sha256: "0ef21f212884d0694ddf3e0f557caac01769d37946d8db27e643c770eb61abd8"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/7382246b9721934141657809e0f6a41b974cedda1af348e296c9a840c2dc87d4.json.gz
+    asset: 7382246b9721934141657809e0f6a41b974cedda1af348e296c9a840c2dc87d4.json.gz
+    size: 743181
+    sha256: "e0f6ec4ab48ad66cdf96d25400f88f89aff27e76e89080dcff52781195a504e2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/742e1570eadd25092a1a4e01ef263eb98ef1cd0bd5a9db684103a5050fb34181.json.gz
+    asset: 742e1570eadd25092a1a4e01ef263eb98ef1cd0bd5a9db684103a5050fb34181.json.gz
+    size: 797157
+    sha256: "cd35e274bc4df89fce21ef8bd66c3a54a9e400e3fd02f741df121bb3b4dd07b6"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/7463e21e0aaabae86f7ffd0684fc6a96040348a583776b196e3a3b6e704ce5d3.json.gz
+    asset: 7463e21e0aaabae86f7ffd0684fc6a96040348a583776b196e3a3b6e704ce5d3.json.gz
+    size: 1061389
+    sha256: "d7928e1b00fcbc3a4862797fcc65c70d2979813ea5806fba4ac42d8a45af353f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/7587843f57260b17a0e18131c11464c5ceb5419c3125f8472cfef34047772269.json.gz
+    asset: 7587843f57260b17a0e18131c11464c5ceb5419c3125f8472cfef34047772269.json.gz
+    size: 805020
+    sha256: "72c069c69404311611df2b3b86b9d82b555f6e66481d002cd569e92c3a5a50aa"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/75b6d488fad17ca3c6938386afbc6cc2b13adc681dccc8ba00f18c24a92f5717.json.gz
+    asset: 75b6d488fad17ca3c6938386afbc6cc2b13adc681dccc8ba00f18c24a92f5717.json.gz
+    size: 584416
+    sha256: "a50a7a2f09b23b39149ade329dbecb436087bb8b7d83635934d052ae0e2d8dcb"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/75c207a2074fa2bae4908096cb0e1abace6a1283840aa33725e56da25f54d836.json.gz
+    asset: 75c207a2074fa2bae4908096cb0e1abace6a1283840aa33725e56da25f54d836.json.gz
+    size: 589065
+    sha256: "bb2ffed5200a92c238f6e861f764d72e8c722c1e7945020c0a50975dc49c9d05"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/75ea112d7ed357ab65f6b15f6a5836627ee32c0e93da3d18880810dfc0ba8e9b.json.gz
+    asset: 75ea112d7ed357ab65f6b15f6a5836627ee32c0e93da3d18880810dfc0ba8e9b.json.gz
+    size: 342058
+    sha256: "8c28885c04416ae6bf2b5acbf79911579f4fc0e697122ac43cd5e79459d64ff8"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/77a81ea65f44fa756a4fc9de49099afe3461df6f9876add2003d76b9751925f1.json.gz
+    asset: 77a81ea65f44fa756a4fc9de49099afe3461df6f9876add2003d76b9751925f1.json.gz
+    size: 482428
+    sha256: "0cabf647b999de2da49ac0c3c979f0f9e367da8804bb563e6d48eaefadfa60b9"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/7844c6e3cf65356d7a7b08a326262fe32f503a3c4032a8a28dd362f9c6252399.json.gz
+    asset: 7844c6e3cf65356d7a7b08a326262fe32f503a3c4032a8a28dd362f9c6252399.json.gz
+    size: 724520
+    sha256: "7f0d3c18da023f787401ca99d38f7a793a8daf750def7864386aed31d3cd8724"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/7846d1c0301a562126d918fc9c8788af42b4d0726e6de72d8ed883f5308b0c5e.json.gz
+    asset: 7846d1c0301a562126d918fc9c8788af42b4d0726e6de72d8ed883f5308b0c5e.json.gz
+    size: 703607
+    sha256: "e771f45f3160e7b64652b8e75c3888981df12b474fbbaa891c6e19ba7a3c28ab"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/7975b4deb132c01263065ee61a4c3258f05f521c5a15d7f0a8d428f90eabb11d.json.gz
+    asset: 7975b4deb132c01263065ee61a4c3258f05f521c5a15d7f0a8d428f90eabb11d.json.gz
+    size: 897446
+    sha256: "bc456cb27de8d2ff204fe94d7b70188496bdef0c357f675c4ef655bd0392853b"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/79a5e103697d43c8048f610b2dbef485db45832c04f6f98e69334141592a0572.json.gz
+    asset: 79a5e103697d43c8048f610b2dbef485db45832c04f6f98e69334141592a0572.json.gz
+    size: 953488
+    sha256: "a713577a05f611be7a85a8945f7a0bd060d5db891d807a053585130892ce6386"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/7a08f58ab2fe02d616cd45c3c8d3e5c054002c25fd9369bae0669b7e0559b2f0.json.gz
+    asset: 7a08f58ab2fe02d616cd45c3c8d3e5c054002c25fd9369bae0669b7e0559b2f0.json.gz
+    size: 643010
+    sha256: "d544539d91b3d2676dfee3ea0da9ec3cb3e093ca2f38def90418e138a155c613"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/7a2ca96cda8caa92db6ec922402d662b7b46e33da15c43cabb2c6ea4430fafa5.json.gz
+    asset: 7a2ca96cda8caa92db6ec922402d662b7b46e33da15c43cabb2c6ea4430fafa5.json.gz
+    size: 542876
+    sha256: "656f04e4c8f3af22003b403680bd07954e31275b29cea4a933608272ba4e86fc"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/7c46b7137f7158a7b8b8656a6b1d4ee9220212824b679b7a55ba5951ac81fdbc.json.gz
+    asset: 7c46b7137f7158a7b8b8656a6b1d4ee9220212824b679b7a55ba5951ac81fdbc.json.gz
+    size: 776842
+    sha256: "da58d55406524a97c21ba795593393984f1627f89bfff147a879852c903a12ba"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/8067eab55aae04706df93ef3ee5d3e09cd02f63abe7b4b36baa5078eb6f342a2.json.gz
+    asset: 8067eab55aae04706df93ef3ee5d3e09cd02f63abe7b4b36baa5078eb6f342a2.json.gz
+    size: 875990
+    sha256: "4c64f3e36ab0dba321081e6d822afbfe9fba7b865e561f1aff4070a495518536"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/811c30829815e571c8445c276da46f722fbd140ef0d1d141fafa8ca48a496a34.json.gz
+    asset: 811c30829815e571c8445c276da46f722fbd140ef0d1d141fafa8ca48a496a34.json.gz
+    size: 931743
+    sha256: "d813f640ca04bb18a6b4991279c1c45304c299dd7e93e7ce5133c5a8cdfc9191"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/8135439adbcaa30bc65e9c2a98a78c37c4910021a95a2067fc494e4f257f90e1.json.gz
+    asset: 8135439adbcaa30bc65e9c2a98a78c37c4910021a95a2067fc494e4f257f90e1.json.gz
+    size: 900954
+    sha256: "583e9ac8ba8ffc2a91e42c2c5cbe0444f78b4650bc88786e69c19765797a7098"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/8161b51f4ad89a4bbfa68f5e92073ee9b4483b1b38165a116290afb839e162e8.json.gz
+    asset: 8161b51f4ad89a4bbfa68f5e92073ee9b4483b1b38165a116290afb839e162e8.json.gz
+    size: 1059198
+    sha256: "d46e0eeb78471870a980d6d12e5d837d24d9fe957e8993a2d0795bd37df1ddd8"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/816cecad35dd873d6e27014f9c5249f848417e0d13119d39059c61b7ab08d501.json.gz
+    asset: 816cecad35dd873d6e27014f9c5249f848417e0d13119d39059c61b7ab08d501.json.gz
+    size: 476303
+    sha256: "b505cfb93aa27940ee50dc4d69a30b883e1f70e30d9346dd7004b32786935099"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/81a7bec8f8d03d7515fa5aefbbb17537f4e00f521810de80e495a2138384f485.json.gz
+    asset: 81a7bec8f8d03d7515fa5aefbbb17537f4e00f521810de80e495a2138384f485.json.gz
+    size: 559159
+    sha256: "c0b027d7e716d103405b5b3bc7e24d2faba65815246807e09b6b4d10817bc7ff"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/829dcb747632e05b3469e89bce09897d443744ae5abb8b9a16c9eb72194288a1.json.gz
+    asset: 829dcb747632e05b3469e89bce09897d443744ae5abb8b9a16c9eb72194288a1.json.gz
+    size: 673590
+    sha256: "40cb5cdf7759779f5aec2bbf6fbf7e932423d801dbbfafd6e65e808af52348af"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/8321c3c8aa56b5cc5c41df19f85c06645f5a9567c9d43e10e36b7d7f5cb8821b.json.gz
+    asset: 8321c3c8aa56b5cc5c41df19f85c06645f5a9567c9d43e10e36b7d7f5cb8821b.json.gz
+    size: 694658
+    sha256: "7b08ccd4b1d21b66c3b8e80bd489fdd23a5734578a2542f13dcd83a677363b17"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/836e1901613aad28fb438c7ed33a4a5c7f5ddf24dcfbb11300a36f83b700f0d9.json.gz
+    asset: 836e1901613aad28fb438c7ed33a4a5c7f5ddf24dcfbb11300a36f83b700f0d9.json.gz
+    size: 527712
+    sha256: "5eac771f56211cc645a730c54011490b6ef966cf58e440c9e89a5b9b9fe684ff"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/83d47ecb23658515e51e585c1a9059eaf67afeefba4e95bf0d1ebe215063ba04.json.gz
+    asset: 83d47ecb23658515e51e585c1a9059eaf67afeefba4e95bf0d1ebe215063ba04.json.gz
+    size: 598404
+    sha256: "af83c4ea76ee8655da4ae96593a75bd68c13d5686cb7be1a21c3d024a487107f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/843201c75f7794a30fd22f95eba85df7a7ee4626114cc796aa90676034a86215.json.gz
+    asset: 843201c75f7794a30fd22f95eba85df7a7ee4626114cc796aa90676034a86215.json.gz
+    size: 868391
+    sha256: "28f351f45b2acdd8dbf79d8a062f70d28d4c96bec9af1aab0904c6a67d809dc4"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/84b96c31ab29b2ac3afc0b73c3cfb5d4cd4552523bc11bbb8c6ae377feec065c.json.gz
+    asset: 84b96c31ab29b2ac3afc0b73c3cfb5d4cd4552523bc11bbb8c6ae377feec065c.json.gz
+    size: 579512
+    sha256: "4f222d39fedba2ad4ec519fc9f67f5a82b77be514905ae83ff3b566fff935b05"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/84c400ddd1b5ee7127b5ffacaf64cb8be4e8a7871a77f1b726fc4b2850b23cfb.json.gz
+    asset: 84c400ddd1b5ee7127b5ffacaf64cb8be4e8a7871a77f1b726fc4b2850b23cfb.json.gz
+    size: 932095
+    sha256: "b7112a7f392ba785ac54d6f10431864a35ae41c2f172ae88e7385814a6c397ce"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/85034825ee64e7e98a128154298fb5b46f7aab5940469792a4d03c7ed1507c3a.json.gz
+    asset: 85034825ee64e7e98a128154298fb5b46f7aab5940469792a4d03c7ed1507c3a.json.gz
+    size: 947498
+    sha256: "404e5e0695eb690c51fb937a08ff7fdc0f1d04bb9901363471d77d8fb030e596"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/850b7212676c220a133f51f7a9d102bc8733ccddb5bebd9b473485635cde334b.json.gz
+    asset: 850b7212676c220a133f51f7a9d102bc8733ccddb5bebd9b473485635cde334b.json.gz
+    size: 965106
+    sha256: "2db1f9721b24d04eec4fdec55a52a67f2111c7ad938ea4ac3bbc11f1435bf900"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/85bde727cb4ac1f06f72400c7c038c2c81fc41bbbc513c7a60e53bf432b32fed.json.gz
+    asset: 85bde727cb4ac1f06f72400c7c038c2c81fc41bbbc513c7a60e53bf432b32fed.json.gz
+    size: 1028278
+    sha256: "fc366d7dacb0d569e088cde24db406cb4aec8c09a609d12a4e35495f0411a548"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/85d6ed7fbb337b57a16376ff0a1d453234e7a76f2d90241324863ec4a8bbb1a2.json.gz
+    asset: 85d6ed7fbb337b57a16376ff0a1d453234e7a76f2d90241324863ec4a8bbb1a2.json.gz
+    size: 919642
+    sha256: "fd610ce21f7f4100a612cc66f7f2c93986a2893442084edfdebc93e9a8d0479c"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/868511b5b8183e63e441dafca429f205e1d425914abb1f0704530c24c6b03587.json.gz
+    asset: 868511b5b8183e63e441dafca429f205e1d425914abb1f0704530c24c6b03587.json.gz
+    size: 545457
+    sha256: "e7b1bf1d449880f5c5430cab1a0e5455b476072ff031192f84eeb5c2d164a632"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/87c32283208423ce8ec9b3438a91e061014cf34e3f50379188c48fec17762e23.json.gz
+    asset: 87c32283208423ce8ec9b3438a91e061014cf34e3f50379188c48fec17762e23.json.gz
+    size: 573813
+    sha256: "abe82feee3789ddf10e3190771786f0ce623e3fa6e6477af4484ffd791ea3550"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/87de902abd0f2a0e7edd1f8ee500f4506379b6e0a512216d6d2ce67569dda44e.json.gz
+    asset: 87de902abd0f2a0e7edd1f8ee500f4506379b6e0a512216d6d2ce67569dda44e.json.gz
+    size: 805419
+    sha256: "c20d89aaba461ad36250a302e47dc8a1e64ef22ff891ec6abde28ef6d569ac3c"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/88552ee078375d0f92d4a855b236d3383eae95d7edbc03ce8f446f6ae7a526d9.json.gz
+    asset: 88552ee078375d0f92d4a855b236d3383eae95d7edbc03ce8f446f6ae7a526d9.json.gz
+    size: 634402
+    sha256: "3c74693c629dc43a0c605d433040529ba805c4da1a97c4005f028ed5ecd704d6"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/88a3c0419151cfe7ed2437720c4a5eb1117a7f91754380681bf058310f67725d.json.gz
+    asset: 88a3c0419151cfe7ed2437720c4a5eb1117a7f91754380681bf058310f67725d.json.gz
+    size: 1038980
+    sha256: "d69c3c7e5d8e574ff8a2057e9148af08cc30a62e107ac6d9dbc4c80b64527fa0"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/890c73dd5566d522d8fb58793ec971403fd856ade96668cc5bcadf875c1b6e66.json.gz
+    asset: 890c73dd5566d522d8fb58793ec971403fd856ade96668cc5bcadf875c1b6e66.json.gz
+    size: 577124
+    sha256: "8674fe05944648d9ecad546b06c08af00493ef15e7b848187d69d1da7308580f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/892980a124bd0262a57ebd99eb733920b92c1d468ca3b646713e05b1f2f719a9.json.gz
+    asset: 892980a124bd0262a57ebd99eb733920b92c1d468ca3b646713e05b1f2f719a9.json.gz
+    size: 991023
+    sha256: "68103762d595021bbe2e320873a14e1f5ad479576efcda39fb8ff25fbba0a4c0"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/89ae7ed989fadc6e8a4c521653a22b1ba496b422e4c9218f67014feddc443a9d.json.gz
+    asset: 89ae7ed989fadc6e8a4c521653a22b1ba496b422e4c9218f67014feddc443a9d.json.gz
+    size: 781705
+    sha256: "43a14325683770c09e7392a4ec4a3134f9e6f6fe4ab8cca7539678336ee5f349"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/8a5a22468d155b2d627d5c424659a04ca64b0a2ba77cd906cd0f324272fea696.json.gz
+    asset: 8a5a22468d155b2d627d5c424659a04ca64b0a2ba77cd906cd0f324272fea696.json.gz
+    size: 886639
+    sha256: "2efee8a36d7d428b734150240bef271483069983786b6a4d9c6c75ac5b140cdb"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/8b4f6c6764e9cbfb85c73acda9d738166ba8dbacc7331ec8dd043c94a7ff5004.json.gz
+    asset: 8b4f6c6764e9cbfb85c73acda9d738166ba8dbacc7331ec8dd043c94a7ff5004.json.gz
+    size: 1185840
+    sha256: "3c1bec28b324264908af729e6d4d03579f7acdd90ddaa417b751399f146e02a4"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/8b96c448498fd7d494dfc998bcf049e30e66fe97137f0ebf03d77af1599ebac6.json.gz
+    asset: 8b96c448498fd7d494dfc998bcf049e30e66fe97137f0ebf03d77af1599ebac6.json.gz
+    size: 994911
+    sha256: "2d7a0c566902dd1082a5e9c0243e17be1e775f4259ba036a4982f331d9a20db2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/8cebe3eadc4227735366690af73c95ef07d8ce5c4f3cb3102b17402a3966c64c.json.gz
+    asset: 8cebe3eadc4227735366690af73c95ef07d8ce5c4f3cb3102b17402a3966c64c.json.gz
+    size: 589458
+    sha256: "7d83e869e9fa95c46bd8d7cd3dc3ebb6f7fdb7dfe622ba4bbccb00e13eaaf10e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/8e34009af2ac1d8f6332827978b376e3889bdb757ebd911628105c441e105b58.json.gz
+    asset: 8e34009af2ac1d8f6332827978b376e3889bdb757ebd911628105c441e105b58.json.gz
+    size: 660313
+    sha256: "8ebcea22a0d07a074874001f41ea52b6d7649abd60f38a79cdcca9f89d5a1818"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9130f6213924ca6adb555e97bbdd71ad6a3103e052bb553de04e3a4cac4f5fb6.json.gz
+    asset: 9130f6213924ca6adb555e97bbdd71ad6a3103e052bb553de04e3a4cac4f5fb6.json.gz
+    size: 1067962
+    sha256: "3655fb0239cb1d859c5c3428b3e90039a367d9382f65ffcde22bf6904803d475"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/91328c1178d4449f58419523a77fc32ce7751da7859667f709024ae087d514b6.json.gz
+    asset: 91328c1178d4449f58419523a77fc32ce7751da7859667f709024ae087d514b6.json.gz
+    size: 764844
+    sha256: "dc64361fccc5dc02d0a9969cd046f068bbbee4ec2d13972994a385b8f03ea1c2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/91cbc514a30774cafc20cfc26b33caddb43c5446e0802ce13e9f82297744ff61.json.gz
+    asset: 91cbc514a30774cafc20cfc26b33caddb43c5446e0802ce13e9f82297744ff61.json.gz
+    size: 599491
+    sha256: "925f518a549eba4de1d257d7a8cb1d189e66a44b2adf3ab957750e423335a0ce"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9215a246f5bf49f5443c6d4255adc35a48ee6ea69670907cfbc375ca21e213c1.json.gz
+    asset: 9215a246f5bf49f5443c6d4255adc35a48ee6ea69670907cfbc375ca21e213c1.json.gz
+    size: 519139
+    sha256: "12be7ea310d7f744d449d5c398bc7f13844ab194234cb534ec6e751ec6ebd19f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/92fd8a607d23d8e7ea556c2c0f4646dcac5b8154e562ee67dc20870f80255a53.json.gz
+    asset: 92fd8a607d23d8e7ea556c2c0f4646dcac5b8154e562ee67dc20870f80255a53.json.gz
+    size: 407259
+    sha256: "405d7ba36658fa2773308329d9f39174358d15fe35fec2a17dbf3c8009f0d281"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/94474f21af0b28e472901a0e327af3fe49fe99ff033bf925748e83b82d411f27.json.gz
+    asset: 94474f21af0b28e472901a0e327af3fe49fe99ff033bf925748e83b82d411f27.json.gz
+    size: 745318
+    sha256: "40dc410bbc941b2422c4ed2af44d01282659f2a73eb094e934baad2bfdc8996c"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/94bd597cedc7bc9f2c8f8d3631b9d13262dacf5b12bdfa6972a0f4713639d68c.json.gz
+    asset: 94bd597cedc7bc9f2c8f8d3631b9d13262dacf5b12bdfa6972a0f4713639d68c.json.gz
+    size: 564393
+    sha256: "510460fa7a60ad59dd2df6bbcd48f76f7a6b6202a9131f548f23efc98e6cbebf"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/95656e0a20a022dcd4488e0e15f12c60fb098733202dae57f816766e62efc0d2.json.gz
+    asset: 95656e0a20a022dcd4488e0e15f12c60fb098733202dae57f816766e62efc0d2.json.gz
+    size: 820875
+    sha256: "2672952c4ff97eaa3c813809820a308d646fde9ff32b272b5998a4e9706e5fb3"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/957f29424045d023d660b65682e316e8a1a1c832de6177ed7479e62794625387.json.gz
+    asset: 957f29424045d023d660b65682e316e8a1a1c832de6177ed7479e62794625387.json.gz
+    size: 733234
+    sha256: "1ae2a91c97e5c4eba0bc77b309a43e485bd59d21636f6c19681d7101f5c1cdcb"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/962a00a64854d3a260c0ff42ce2bf9270a82aee1d24fb3258267840c7ec587ae.json.gz
+    asset: 962a00a64854d3a260c0ff42ce2bf9270a82aee1d24fb3258267840c7ec587ae.json.gz
+    size: 1166248
+    sha256: "2a01ad9cbbd00a43be53e1c9357c5da075a7d30eb79c204b3436284538ccd315"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/96dd1a6331f214c924307f553a0924c818dbd24f0a3e8d48854ba5a080d9a6c9.json.gz
+    asset: 96dd1a6331f214c924307f553a0924c818dbd24f0a3e8d48854ba5a080d9a6c9.json.gz
+    size: 781742
+    sha256: "4b624f155ec55899fde53583a1160edf32f96f38f132d486fc46869ea976b5be"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/96f6cf4a36a1e929960caa68d51633e3a92292b9701f5f28bd0f06767e6cf859.json.gz
+    asset: 96f6cf4a36a1e929960caa68d51633e3a92292b9701f5f28bd0f06767e6cf859.json.gz
+    size: 631706
+    sha256: "3b0293a82b890cb4424dab366ad458380c13eeaa6e36358f9d6f920840a8555c"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/979ce8815387d26f6be168984e158b1fd6841ca93a7673497878d2483cce8fd8.json.gz
+    asset: 979ce8815387d26f6be168984e158b1fd6841ca93a7673497878d2483cce8fd8.json.gz
+    size: 1055992
+    sha256: "2745ba4efbb4bf9c2c547649a51170e172a66996faebd2d8b1426db480b9b474"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/97c296cea0fce3dae107942a1d8c5fa6d4275e1e2e4b5786675bf81ccce6b909.json.gz
+    asset: 97c296cea0fce3dae107942a1d8c5fa6d4275e1e2e4b5786675bf81ccce6b909.json.gz
+    size: 620465
+    sha256: "d254259996bd9ee116e331377554ead21f65741e23624765115b3b315b53f14a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/982ca321b435c21f1e787b61bc81fcc802dec8940c92fd3f76057013d9d2380b.json.gz
+    asset: 982ca321b435c21f1e787b61bc81fcc802dec8940c92fd3f76057013d9d2380b.json.gz
+    size: 648116
+    sha256: "8bbd441062bfde800b32f8153e39fd4192233325ab50e454a660f68c580dc51c"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/990a34934002d61869b85316e762629e6b570280882c8d1ea11b71c9f43954ea.json.gz
+    asset: 990a34934002d61869b85316e762629e6b570280882c8d1ea11b71c9f43954ea.json.gz
+    size: 600836
+    sha256: "9640af105e93b4ff5f55cc19ea049e84f4e2020c5bc4f2e5b97c5c456c5c6bc7"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/995278e0d045cbb67f5fa4104c9abb1f10e3769d85299f22de4396d688f85155.json.gz
+    asset: 995278e0d045cbb67f5fa4104c9abb1f10e3769d85299f22de4396d688f85155.json.gz
+    size: 756797
+    sha256: "32271ae83d11a1de5c6f909c5d845cd0abb7269e466f2a0744985fcca29be9de"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9953802eacbf1561d68f087704b421febef6a75ae90b650fbbf056a3fd8a887a.json.gz
+    asset: 9953802eacbf1561d68f087704b421febef6a75ae90b650fbbf056a3fd8a887a.json.gz
+    size: 1198373
+    sha256: "3891255c95648313a615d8dc355861c9332c2adb4bc43766f9fec8cec025d8f8"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/99907e3be4f1ec3fa1a44e949583adb072e5504b5560b1f5f9165b71d9034519.json.gz
+    asset: 99907e3be4f1ec3fa1a44e949583adb072e5504b5560b1f5f9165b71d9034519.json.gz
+    size: 734768
+    sha256: "d0d30fd1627259ce4ddda90d07c578d1c6a2ba176559664aba2f3d7395530763"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9a7afc4313842a443333f6d5881e0bb29c1e77997a8106aa4f246dff9eadc706.json.gz
+    asset: 9a7afc4313842a443333f6d5881e0bb29c1e77997a8106aa4f246dff9eadc706.json.gz
+    size: 824080
+    sha256: "823f9d2fb64a80bc269d8fdc0811304ac5060fcc6f572d91f6a0d2957447a3ca"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9a86cb2dbdda206304a35e9b2ccf9dc00f3a641aad3f6db52ee2576da7193be1.json.gz
+    asset: 9a86cb2dbdda206304a35e9b2ccf9dc00f3a641aad3f6db52ee2576da7193be1.json.gz
+    size: 765354
+    sha256: "f8cc4d5c7fd5660850be289ab1fb50dfeaeed2775b1b9096f72ae6f6507871c5"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9a950768b9b6659b8ef5f3ec98d71bb73280c6adac92575e606905588c9be49b.json.gz
+    asset: 9a950768b9b6659b8ef5f3ec98d71bb73280c6adac92575e606905588c9be49b.json.gz
+    size: 690245
+    sha256: "8f53732358dca0fbbd8dbc69f1ff17d5260ac70a1837583ddb29eb46bb195bb2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9aa5ec510bf1580db4d827da8c5c2e2ba7655cfd3c84097fd5b659260767be61.json.gz
+    asset: 9aa5ec510bf1580db4d827da8c5c2e2ba7655cfd3c84097fd5b659260767be61.json.gz
+    size: 869202
+    sha256: "1db1d28a67b955cb2603b86ddac3f23aeace17b4177072a691663dcb14a7dff0"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9aadc04118f3bc1ecf5980562b35a39a52edb2c3e46e435105d047ab6cbbcaca.json.gz
+    asset: 9aadc04118f3bc1ecf5980562b35a39a52edb2c3e46e435105d047ab6cbbcaca.json.gz
+    size: 573043
+    sha256: "9265484b878224900b0dcdce2fe39d176914e9e93da2aa7c13e9f562e2af6420"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9ab0a3f424f7cbf70e2b32ab51a00ec6dc6b46961f9464f81c7c4c6dd5edf511.json.gz
+    asset: 9ab0a3f424f7cbf70e2b32ab51a00ec6dc6b46961f9464f81c7c4c6dd5edf511.json.gz
+    size: 398362
+    sha256: "d0e6c50dea7082d7b51da82d204a96affe368f550512dd956975ea12c961e097"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9b2f2b0c3a2fb41f5aac1eb4459d444f8c5ffaf0882a17f12e90cd0dd087f934.json.gz
+    asset: 9b2f2b0c3a2fb41f5aac1eb4459d444f8c5ffaf0882a17f12e90cd0dd087f934.json.gz
+    size: 1168985
+    sha256: "3633374b57b033544eebeb5a286a47324c0539930e8a3d7e42e1d3d9050427a8"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9c0f691688d9169b6cbbcb5ae8f21e96d3ea2e244936b0a34ea0eddd7d8d3127.json.gz
+    asset: 9c0f691688d9169b6cbbcb5ae8f21e96d3ea2e244936b0a34ea0eddd7d8d3127.json.gz
+    size: 668611
+    sha256: "3d82579c2733ca898553573c1c89adf35d3897a875908af7a12465b10531dfdf"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9c1f2a9416c6030275f6798b370592bab60fa07f4ab325541cb86c0c9d61971e.json.gz
+    asset: 9c1f2a9416c6030275f6798b370592bab60fa07f4ab325541cb86c0c9d61971e.json.gz
+    size: 884847
+    sha256: "1caaade2b7e5175d63edb47151bb16842744dac7b7fa46de59dc36315dcccc42"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9c3acfc531f8cc4a1f38c0f2ccde1e944c7de19f90381682a1baacd149578d9e.json.gz
+    asset: 9c3acfc531f8cc4a1f38c0f2ccde1e944c7de19f90381682a1baacd149578d9e.json.gz
+    size: 603674
+    sha256: "b1476adf08f20f88b4eb9b5ec1d24a09064f327e8fd30a6d5ab8b5b8d0df1a34"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9c4f591b05ab3dc69e2bc1e6a8be06e27b2e6bef7d09570a5a7b0d8d50124498.json.gz
+    asset: 9c4f591b05ab3dc69e2bc1e6a8be06e27b2e6bef7d09570a5a7b0d8d50124498.json.gz
+    size: 1124469
+    sha256: "b68920567a7f65a9154c31ca90f0208317d342b9efe01235bec4393177888bbf"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9c7ac7129cd2db163edd59af61fd492301b147c3deccf7ef98be7ed9b57bb6d6.json.gz
+    asset: 9c7ac7129cd2db163edd59af61fd492301b147c3deccf7ef98be7ed9b57bb6d6.json.gz
+    size: 378425
+    sha256: "0a39389ea453be2bdf09c9a4984dfd94a27137b1d947124f4520f840dfbab4ec"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9e0b3359cf5096e3682a2cbcfb2e40929ffa2cdfdef52c70f366ef3918a298f0.json.gz
+    asset: 9e0b3359cf5096e3682a2cbcfb2e40929ffa2cdfdef52c70f366ef3918a298f0.json.gz
+    size: 751401
+    sha256: "f57b47d371c58c66af4ee9fea7b2af890309b1d445e7152f28273622d96fe51a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9f2d2c0bd29d1b079173c38f267517f7cd637438f419c272fdae7be05626a065.json.gz
+    asset: 9f2d2c0bd29d1b079173c38f267517f7cd637438f419c272fdae7be05626a065.json.gz
+    size: 1063302
+    sha256: "78e2a862aec77bd2e142df8f63e3625290d1510e45dd530545017be7476395c1"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9f52f3c4d101c9bb00eaf1e2b2f7f5c5b5d2e31b6b9bb49e500f8d2d3cc919eb.json.gz
+    asset: 9f52f3c4d101c9bb00eaf1e2b2f7f5c5b5d2e31b6b9bb49e500f8d2d3cc919eb.json.gz
+    size: 710707
+    sha256: "5867977ac74bd5218070032599497c42cadbf6fd49555bfd3e419238a782bb1e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9faffdcc85db1a7224c9f4b31f0abb0028d7c45fc8690f99d5229cdfd1a8f8d6.json.gz
+    asset: 9faffdcc85db1a7224c9f4b31f0abb0028d7c45fc8690f99d5229cdfd1a8f8d6.json.gz
+    size: 429872
+    sha256: "ea356d5a2511df4ab5ee4aef8fdcc8271dee698c0d1ecf2a0d074d919e9c8148"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/9fef3b82b043a381c8a9caa58ed32cbf562065e1efb5974fc88ab50ce8f685cb.json.gz
+    asset: 9fef3b82b043a381c8a9caa58ed32cbf562065e1efb5974fc88ab50ce8f685cb.json.gz
+    size: 714271
+    sha256: "731e3ba0122c69ab700ebaf4eccf3bd777437dc9005c853557748abe905b479e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a029e91b57a3f356768c943c28478a7dda7643ef4bdad6c8a5b165db4be5e6db.json.gz
+    asset: a029e91b57a3f356768c943c28478a7dda7643ef4bdad6c8a5b165db4be5e6db.json.gz
+    size: 563397
+    sha256: "b5bf2e4e45f61054075965c91ab4ead3037074c3871807fa65fe2c7cdcc4fa58"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a0d347ac9a3218f5ace391402788c36cd4624f575bdac25c670a0c53c78edad1.json.gz
+    asset: a0d347ac9a3218f5ace391402788c36cd4624f575bdac25c670a0c53c78edad1.json.gz
+    size: 1001017
+    sha256: "33f122ae1e05c328354255d47a16fb09fa385d628578e55b8a1627a64d3d8376"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a12bf9d6513f3be016b9cfd6996664207a4ac98b7d817bd6ec89d15eeb9733ca.json.gz
+    asset: a12bf9d6513f3be016b9cfd6996664207a4ac98b7d817bd6ec89d15eeb9733ca.json.gz
+    size: 573969
+    sha256: "3fb74620d0f52fb8e8b75fe60927ca7b0b6b7c48fa55998dd90480fdd292dcc8"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a13153e9af93c9ca92e6447a5b6531e8f42e9c3b8d5bf330d6fb9934b7da3cb1.json.gz
+    asset: a13153e9af93c9ca92e6447a5b6531e8f42e9c3b8d5bf330d6fb9934b7da3cb1.json.gz
+    size: 883435
+    sha256: "3929685e60edfe6b046b6d1f303bc573bb8f31d094f19aa7a6d7a1fc0d8b509a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a1c3616c53677ff42371fd25736f8770cbeb507fc5011e5942cbd97760ff0c53.json.gz
+    asset: a1c3616c53677ff42371fd25736f8770cbeb507fc5011e5942cbd97760ff0c53.json.gz
+    size: 1027459
+    sha256: "e30c1b369969603f364a456f437f28f8e95cd203f569574bf0699b999e71ccfb"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a20df7e4bf520d32ff0e6c0ba2ad2105eeca19f78ec96cdf705be5233115fe69.json.gz
+    asset: a20df7e4bf520d32ff0e6c0ba2ad2105eeca19f78ec96cdf705be5233115fe69.json.gz
+    size: 623185
+    sha256: "1aa153d93becd46ad615cc958cb8493ce0d72e0f1728b4dfaf0ad67673f9d442"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a2492101a7a733cc0ea90fba4c7969cf243530f2890a3ba20de94be301b72bfb.json.gz
+    asset: a2492101a7a733cc0ea90fba4c7969cf243530f2890a3ba20de94be301b72bfb.json.gz
+    size: 571149
+    sha256: "7509729c3ce55abb70fc4cb725fcdbaf3a89b58147dce9392da9b578841a1cda"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a31c739314ba5677306521feb974277bc2741be014d1b79465551ece21a945c9.json.gz
+    asset: a31c739314ba5677306521feb974277bc2741be014d1b79465551ece21a945c9.json.gz
+    size: 708816
+    sha256: "f1d8c41543011495ccb9cd13e795fd3946104541746bffd509709f2e302c3c8f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a37220a7165956d0593e09c4379aab19642c692d1f3e677e270287d7daeaa60f.json.gz
+    asset: a37220a7165956d0593e09c4379aab19642c692d1f3e677e270287d7daeaa60f.json.gz
+    size: 1029106
+    sha256: "66a2a0901a62d21a947a668b955744fb28a451554ffd27f3653a369846ef16b7"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a41a024db966c69661908605c776e6f899983075d99dc226505955daa61f16c0.json.gz
+    asset: a41a024db966c69661908605c776e6f899983075d99dc226505955daa61f16c0.json.gz
+    size: 686818
+    sha256: "1291faf62e092836bdbf0669ed3b07e6a36ffe30390c2aea882f4ce8dcc29363"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a490f08aa8faf35e08fb93f4d31c84d4053cf75c36d24c98830add59decbf586.json.gz
+    asset: a490f08aa8faf35e08fb93f4d31c84d4053cf75c36d24c98830add59decbf586.json.gz
+    size: 695058
+    sha256: "eaee3a45351df85ff715fef328a09a1290646685a0e5d033a5ee34dea497a07e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a509eac771edd9c5c851f940211553bf6915cf939da7af25115b52629a62529b.json.gz
+    asset: a509eac771edd9c5c851f940211553bf6915cf939da7af25115b52629a62529b.json.gz
+    size: 830368
+    sha256: "874c4955c76acf5727c01dbba70bb340a2936cfc382ad650c21414662cec665e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a636d22daa52c2d09ee7288bb94cf29ccb251c067cc581202f7d4c824b839d63.json.gz
+    asset: a636d22daa52c2d09ee7288bb94cf29ccb251c067cc581202f7d4c824b839d63.json.gz
+    size: 1022385
+    sha256: "4b4d7a3ecb38cc53723705b30b3955cf09d6a35983a770f938fc08f6e3c85cce"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a6bd8092a8239a792b44e89b8894e2d2740a84d24494508bfa0b3205a4a630ee.json.gz
+    asset: a6bd8092a8239a792b44e89b8894e2d2740a84d24494508bfa0b3205a4a630ee.json.gz
+    size: 753406
+    sha256: "5629e1e3636128a8870368cb18e56ad55e85b89e9a9c53ea1882c7757176dbb5"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a85a0469563e5e7cc8b51aa780cd74f84ae06e861c30e3f7fe7c78404cd36061.json.gz
+    asset: a85a0469563e5e7cc8b51aa780cd74f84ae06e861c30e3f7fe7c78404cd36061.json.gz
+    size: 728621
+    sha256: "2b7a81a537751bfa9253d4ab586719a502bc001a7ed8c9e7678f23c42158d6e6"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/a925d3ab976cd14eb84905b8ced21875f0d4aad20aa2c47964a2bc85a60dfca2.json.gz
+    asset: a925d3ab976cd14eb84905b8ced21875f0d4aad20aa2c47964a2bc85a60dfca2.json.gz
+    size: 713662
+    sha256: "f4d6cf57556b1584c01fca88e91856d1372d1da1e69c2b2536dfd58f98e7c0ab"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/aa19fc96c1d5eb52c852c09b7e42436e316e37cc3c50bde4d98722c6c30836f6.json.gz
+    asset: aa19fc96c1d5eb52c852c09b7e42436e316e37cc3c50bde4d98722c6c30836f6.json.gz
+    size: 1035243
+    sha256: "cf0d73f7a8d1d158c3542c743b06ea3212351f038bb1ec48493a721b7de6d0b1"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/aa246be42c2084e488994cc3a5cb09ce8af72afddc5a5444edd32a3cf656bef5.json.gz
+    asset: aa246be42c2084e488994cc3a5cb09ce8af72afddc5a5444edd32a3cf656bef5.json.gz
+    size: 924313
+    sha256: "382b1b384eaba32593a3517147fdd29767f4ca2fb35149d67507c2d6667cd95a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/aa55263b2a99093fcfd8517040931c645019dd5e0a50e072d95e91fed10a4c71.json.gz
+    asset: aa55263b2a99093fcfd8517040931c645019dd5e0a50e072d95e91fed10a4c71.json.gz
+    size: 922369
+    sha256: "5d58ec38e6f22c16a3bae0e10b30f42c58438e7d5b338d5e5c0e52969ccf5c4d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ac6890e51135cf16b44532622e3941b7f3bef15c6922fed4d3f37818c52748be.json.gz
+    asset: ac6890e51135cf16b44532622e3941b7f3bef15c6922fed4d3f37818c52748be.json.gz
+    size: 1011215
+    sha256: "bc3981afd0439f7e1405f5b1886cb066fc06654de2e71476669c64bbfc759426"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/aca8eae885ad0d572d4113853df68eccb9c333671606cf25ceb59a9d3e2aec0f.json.gz
+    asset: aca8eae885ad0d572d4113853df68eccb9c333671606cf25ceb59a9d3e2aec0f.json.gz
+    size: 567654
+    sha256: "88cec9582a63607d3d83bdd5c1177864a3de048150455120b8c2fe270f96a243"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ad20801e916c7b6c205f93dfdd5aa6c88d26a2dbdc0a21e8cb4e954ec1aeeb5f.json.gz
+    asset: ad20801e916c7b6c205f93dfdd5aa6c88d26a2dbdc0a21e8cb4e954ec1aeeb5f.json.gz
+    size: 549461
+    sha256: "f45f3b8cd4c741e110f01e81a8963f7335900d0d8f17ca1095279a10cb0b831e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ad6fc56ac37db9c7764111ed2011fdcbb0fe667c218223ac9e5125d011263cc8.json.gz
+    asset: ad6fc56ac37db9c7764111ed2011fdcbb0fe667c218223ac9e5125d011263cc8.json.gz
+    size: 737673
+    sha256: "1536c125c92017845abc4aab9d17826dc7270f77145c530204bd3d61a0760b03"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/af20d1c4cd830e64a1c597d35d5d31fb6573356ea9851d775e09abca3d5d82b9.json.gz
+    asset: af20d1c4cd830e64a1c597d35d5d31fb6573356ea9851d775e09abca3d5d82b9.json.gz
+    size: 598979
+    sha256: "1d4c13a34b9902e879c5ec28ef60b984bb359e271ac67dc0c556f1d72747dca1"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b0ec02dccddd2c76feea091c072a6d99f34d8793b70629deb6d567358867e422.json.gz
+    asset: b0ec02dccddd2c76feea091c072a6d99f34d8793b70629deb6d567358867e422.json.gz
+    size: 741491
+    sha256: "3eb04736461cbacbf3aacef75438b242e45e5625f4ebd04a4a6de8eb1526510e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b277409d04b86a625b91558ac8b16cab0ed4918425844f626a1d88ff09fc466d.json.gz
+    asset: b277409d04b86a625b91558ac8b16cab0ed4918425844f626a1d88ff09fc466d.json.gz
+    size: 536161
+    sha256: "cc5ddfcd1d60f14864496d66bea86f2279c2c711eeef0461f32fd7d0ceec6945"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b34368d1079bbd2ad17fd7514b028a886098e477a2c98427784b3b02c6b3e681.json.gz
+    asset: b34368d1079bbd2ad17fd7514b028a886098e477a2c98427784b3b02c6b3e681.json.gz
+    size: 1158138
+    sha256: "8e858ad3386a1973f0ff13d50d990009ec1333554849aed70127de68753397c6"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b4241b6e13d77ca100f99fd08429ab70e8cc7f62c05293f2dc85155e955a94a9.json.gz
+    asset: b4241b6e13d77ca100f99fd08429ab70e8cc7f62c05293f2dc85155e955a94a9.json.gz
+    size: 887839
+    sha256: "1208d23144e5b4e19534b59b8eea6420f6b72dc6dbf48025b700daabeacbb88a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b42d335dab9f2570e6411b74266691f957731afa08331eb3f2744300c0b61660.json.gz
+    asset: b42d335dab9f2570e6411b74266691f957731afa08331eb3f2744300c0b61660.json.gz
+    size: 760670
+    sha256: "20ca106b272d00bca435aa6814087926230474d3266b68384b714284bcf7aa0a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b436e820006c66184e52156b81bc9ce2596d27dabb863c7197930e78574253a1.json.gz
+    asset: b436e820006c66184e52156b81bc9ce2596d27dabb863c7197930e78574253a1.json.gz
+    size: 699676
+    sha256: "50bbfc35fe43f32a4619ca9da8c4fcbebdd71ccadb19485a280410a45e9c4c62"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b5585eee72c7cc0913ef9f7718ff51b756fc4f71c14bcbd009a590457fda081a.json.gz
+    asset: b5585eee72c7cc0913ef9f7718ff51b756fc4f71c14bcbd009a590457fda081a.json.gz
+    size: 967442
+    sha256: "9491e761b75201bd0dc325fc4cc6fac457e2313c2d155f04a732049f455a1d08"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b608273b50eeb473683b46406f271cecc6c3e832b6ae879bb883ca9d538e7f43.json.gz
+    asset: b608273b50eeb473683b46406f271cecc6c3e832b6ae879bb883ca9d538e7f43.json.gz
+    size: 505466
+    sha256: "ed4465776325b569bbb977ef8a36853a8eb09f49e091055c098442b1df1056f2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b7fc1d3663e5e89e1c7d283e6a5f33d8ebef2aa8ce4c27a2eea1a7526bf97bf8.json.gz
+    asset: b7fc1d3663e5e89e1c7d283e6a5f33d8ebef2aa8ce4c27a2eea1a7526bf97bf8.json.gz
+    size: 683273
+    sha256: "09cc40af203671549ae4d20e17849c5f88fb656327f3ea23d2e04131100535db"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b8188045aefb7d7c815117191885f18e097b3c84a3952b4a479479709c76f9f3.json.gz
+    asset: b8188045aefb7d7c815117191885f18e097b3c84a3952b4a479479709c76f9f3.json.gz
+    size: 853065
+    sha256: "d1a387c78704436d8a8e118dd853e6c49b1f47a0a25bccd6cd27653c039deae5"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b896f0ebdd86516a8ea1bc582eaea1bbfd5bafc9a07024f296c5d074a01370bf.json.gz
+    asset: b896f0ebdd86516a8ea1bc582eaea1bbfd5bafc9a07024f296c5d074a01370bf.json.gz
+    size: 957081
+    sha256: "424cfa1ee48fc926e2504b1a7d0c6b503e76628b4b4244fbee0137b33f055441"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b95df1478e0db6f562abf3d011ab774b02d4c74b62d347a9b8c56553ddf6a27b.json.gz
+    asset: b95df1478e0db6f562abf3d011ab774b02d4c74b62d347a9b8c56553ddf6a27b.json.gz
+    size: 533726
+    sha256: "2c4d01bdcdcd5337a838752e329a3536a851497df3a3a4f3d4b55630c31f9541"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b990865c1969cab522acd1a92b42d8668278e8f5abcb6575bf2f003f7198be7d.json.gz
+    asset: b990865c1969cab522acd1a92b42d8668278e8f5abcb6575bf2f003f7198be7d.json.gz
+    size: 746370
+    sha256: "97463022e3cda2b47c1c1174367fdf305af95319740ac1df5ff70a2de06e5b4a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b9a2e6c0fbcc656731a872ad078a672cb17323bbb99818c05df7c389386da13e.json.gz
+    asset: b9a2e6c0fbcc656731a872ad078a672cb17323bbb99818c05df7c389386da13e.json.gz
+    size: 1226603
+    sha256: "f0e856869f1c4e8cca1c9a5803052c1dfb99188783b972fca615aef43e446040"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/b9b64e6e2768355bca9e7323707d88b3c7b1d5a31477d1076cfc64c7c1bc4af9.json.gz
+    asset: b9b64e6e2768355bca9e7323707d88b3c7b1d5a31477d1076cfc64c7c1bc4af9.json.gz
+    size: 434465
+    sha256: "3934fe15710c3a75d8340796c9c342c1133308635421cd494e04efb96ab6300d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ba800222c38ecbac342ca61f1f2548ec5ee30484cd71d2f8ba37ea915f712b3d.json.gz
+    asset: ba800222c38ecbac342ca61f1f2548ec5ee30484cd71d2f8ba37ea915f712b3d.json.gz
+    size: 835193
+    sha256: "4cd53845303d0823b54fa24920f986228f80fb4e2f16ea2da30d4e8ef9df7e02"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/bb7342fd121ebb7bfdb484a6ad349e7ac669ef160ff4b2e29a1001859beef653.json.gz
+    asset: bb7342fd121ebb7bfdb484a6ad349e7ac669ef160ff4b2e29a1001859beef653.json.gz
+    size: 477396
+    sha256: "b854d37320409c1d864ef16edd5ffef032bedcd64004b110ae998ce54727d0fd"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/bc6aff455796b60f3f9336c24268710dda0825573a4144e1a29e08702d565031.json.gz
+    asset: bc6aff455796b60f3f9336c24268710dda0825573a4144e1a29e08702d565031.json.gz
+    size: 720957
+    sha256: "3afc8386c5d24dfca9a3479ff6163c9f37f43a3a6c0a9c6b7427a77af07774b2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/bd5d971abdaa37736baed27bbf97826477e139afe8f638123468f5c63522cfc6.json.gz
+    asset: bd5d971abdaa37736baed27bbf97826477e139afe8f638123468f5c63522cfc6.json.gz
+    size: 497045
+    sha256: "85f072135df35037fa640b655f2b93fe9d64cd717d4fadc5bbb2cfe89aabb224"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/bd9f52fa6a5e7ef63700a184e6d89e3c423903410988909af2f1de25ab302202.json.gz
+    asset: bd9f52fa6a5e7ef63700a184e6d89e3c423903410988909af2f1de25ab302202.json.gz
+    size: 974680
+    sha256: "2fb9faf6726fda9914f7e2c5a575448275e042c664819d8b8bba311002eb003f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/bec4cdd5000a7aeb5f206128d3fc3bf1f00f2a1fb3f0fd1f0ee6534987f24ace.json.gz
+    asset: bec4cdd5000a7aeb5f206128d3fc3bf1f00f2a1fb3f0fd1f0ee6534987f24ace.json.gz
+    size: 371586
+    sha256: "e9415295af4c37100ff3189c0b8fcb94e85c309a1aec9f7e90b658f4fd402446"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/bf125cdcbeffa230265f176b49ae6aae21845a26bc0a052d2b7ffaf2ef7d96d7.json.gz
+    asset: bf125cdcbeffa230265f176b49ae6aae21845a26bc0a052d2b7ffaf2ef7d96d7.json.gz
+    size: 797585
+    sha256: "2270ad639967b0536622540dcc8ada003b2b7a6b3cdbcd16fe9c82830dfb23ae"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/bf8f7bf295017940cb82df2af01b92dd135ed5c150794685d47e8259ed976972.json.gz
+    asset: bf8f7bf295017940cb82df2af01b92dd135ed5c150794685d47e8259ed976972.json.gz
+    size: 560719
+    sha256: "79664c89efb45673b20d6573ef17b8e63ff96d3c7b7bd1a310dea0a1008e4f23"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c0913bfa332f5515b2b574f7942c33501e8618453631b9bc00932ac1c9cbd489.json.gz
+    asset: c0913bfa332f5515b2b574f7942c33501e8618453631b9bc00932ac1c9cbd489.json.gz
+    size: 548971
+    sha256: "4879b15ac54d3c2f9e33631ead7e0b15bf49a9d7874f326107143c4bb0b96ef3"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c158c9187f4ec887b7484518c64213c5589975ce67641b90ce87766e4abc3c40.json.gz
+    asset: c158c9187f4ec887b7484518c64213c5589975ce67641b90ce87766e4abc3c40.json.gz
+    size: 978267
+    sha256: "8b8db454375d7f8de5c12f24bb1c764f4c53c89554198d17cb7882f2fc3fda36"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c16b2502564f0c970a192a2fe323902b3734b804e749b3fa5a91b8bb7e9ba63e.json.gz
+    asset: c16b2502564f0c970a192a2fe323902b3734b804e749b3fa5a91b8bb7e9ba63e.json.gz
+    size: 642946
+    sha256: "cf75d9f453959fbfda9f5b5ddfe8e3dcfd839ed953c092768c1e211db24f1bdc"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c1f9fda1ccdf9b419a963f3f0ae616f3f026f68b3fd5299faf3fd32e7debf0d9.json.gz
+    asset: c1f9fda1ccdf9b419a963f3f0ae616f3f026f68b3fd5299faf3fd32e7debf0d9.json.gz
+    size: 607288
+    sha256: "30a230da548e6110d226d2f4f3bbcce18b0cb1d3a8649b51d5d70645242786dc"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c37abe737c0facb1c79be99b27f6596adc216fbc8f951ab1d0c487757dfcdcb4.json.gz
+    asset: c37abe737c0facb1c79be99b27f6596adc216fbc8f951ab1d0c487757dfcdcb4.json.gz
+    size: 714956
+    sha256: "4c4991dfdfbb478d156058edfd49d100680c19e2152c2c94cbbc778520b6fa6e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c3f31d28bd46af2823186f28b5a4ba2c7f4025df2e7854d5fae67c1fac522d88.json.gz
+    asset: c3f31d28bd46af2823186f28b5a4ba2c7f4025df2e7854d5fae67c1fac522d88.json.gz
+    size: 851921
+    sha256: "853595bdca4a1986ef08efdb783818fb47d3c957505fec3dacb2b96be36f9693"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c421273ad10a810fc74f0bf8cceac15373426176a5524ce33566003a5e18f747.json.gz
+    asset: c421273ad10a810fc74f0bf8cceac15373426176a5524ce33566003a5e18f747.json.gz
+    size: 955253
+    sha256: "a750aaa44d2bd8f9f186fe754b4c8542e678890b62e249fdd0a4d7d50a0798f9"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c53fb87f49601a54108b60c87c70b8818356091087c6bc32d6f89ee7d2940f2d.json.gz
+    asset: c53fb87f49601a54108b60c87c70b8818356091087c6bc32d6f89ee7d2940f2d.json.gz
+    size: 659082
+    sha256: "a434709b5be159f95666ae67e635ff74adaaf69a1865e6d22248cf78d470538b"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c59cbe9781eb18f646d3cf048d1ec11d57c791921013407cd252eb2cdd4a623a.json.gz
+    asset: c59cbe9781eb18f646d3cf048d1ec11d57c791921013407cd252eb2cdd4a623a.json.gz
+    size: 979472
+    sha256: "dea983a8a0f875d1ee68512048652455db7945bbba836d0a826b0c764ce9e646"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c5fccbf1de960f9518651330e9806c6bfa740b164e6c3e7352f1165267d7a1a8.json.gz
+    asset: c5fccbf1de960f9518651330e9806c6bfa740b164e6c3e7352f1165267d7a1a8.json.gz
+    size: 690477
+    sha256: "863614c834f423ac4af1ef2c0e478a75c9633ff7cb3304c8c3dbf0c4c906f7ca"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c65f9f514f09ca2796e11d25c3e0f92c31a33e0e4560637d7fa59f8cef0cb0d1.json.gz
+    asset: c65f9f514f09ca2796e11d25c3e0f92c31a33e0e4560637d7fa59f8cef0cb0d1.json.gz
+    size: 770300
+    sha256: "0b7b699243df2720feaa88153d7a1ef690e4d379fcc826ea29246d4147d9d115"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c69b393b0a0f3d7be5599e08c19c6e4edf5fc07070300006871134881c75b89c.json.gz
+    asset: c69b393b0a0f3d7be5599e08c19c6e4edf5fc07070300006871134881c75b89c.json.gz
+    size: 710933
+    sha256: "fd4a855197b070d16df2c4506b32bd8c29f960598f8a6a74c62f995d56e9b21e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c6be8cad4066b93b9f444a286a16d61b17dffe4fd159ef9fb6d86fe052589234.json.gz
+    asset: c6be8cad4066b93b9f444a286a16d61b17dffe4fd159ef9fb6d86fe052589234.json.gz
+    size: 344330
+    sha256: "682f08d4cf621f6bb7eba0827ccdb8ff28e3b8127c5965ed6ca8c4635402452a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c7146f5d8270e76d2bd4fa089a851bad470b8fb175458d075afca803e504be15.json.gz
+    asset: c7146f5d8270e76d2bd4fa089a851bad470b8fb175458d075afca803e504be15.json.gz
+    size: 598294
+    sha256: "9e4a6df6ea51659d17e784b1cf6727f89291c2fd9ffb80504fa09481a26e8d80"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c753f332fae70f7e13cd5b6c413f66526a4a7b1493beab702140a66bde55253b.json.gz
+    asset: c753f332fae70f7e13cd5b6c413f66526a4a7b1493beab702140a66bde55253b.json.gz
+    size: 874209
+    sha256: "3c004d7b542999481d590ed3436df38ac24b8bd20880802b9b6555cf530b4b48"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c77589e2cc1f15e342895119ea6277fd6aa4d440073cf97c1a3b48d222a06ba5.json.gz
+    asset: c77589e2cc1f15e342895119ea6277fd6aa4d440073cf97c1a3b48d222a06ba5.json.gz
+    size: 420174
+    sha256: "669a695e12a4b0dbf432f8947b29da321e1a70acabc0780cbe1a98603fd29a8f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c78f8f65b1a58720103e431051c2336f4333444304f8a67cc4deef69b27f63f0.json.gz
+    asset: c78f8f65b1a58720103e431051c2336f4333444304f8a67cc4deef69b27f63f0.json.gz
+    size: 492430
+    sha256: "71c0eafff43c03d1fc60034ef9c48ac813292c29214383c8878dbf122299a7f3"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c7991b59f9dc166daebaf72caa6a90a681adddc62eb25ef9cbdf7fcb5b4c6c69.json.gz
+    asset: c7991b59f9dc166daebaf72caa6a90a681adddc62eb25ef9cbdf7fcb5b4c6c69.json.gz
+    size: 711782
+    sha256: "1e5ede61c197699789a94f125f57471797dfd4e934bc6ac3041c7dbbaff3751a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c7ae06bf13df8fc94c776e99b75dbda3f41757d4f91c1e5d805335b49d31f437.json.gz
+    asset: c7ae06bf13df8fc94c776e99b75dbda3f41757d4f91c1e5d805335b49d31f437.json.gz
+    size: 1047492
+    sha256: "9aa2ec4694e695cb1608e9b2074593c16e1ea1f9031f948b80c04ff3d9a79f66"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c9c7aa02f4a511755b5a6909d144ad616dd1b479d29a59b94534b2d3957f1411.json.gz
+    asset: c9c7aa02f4a511755b5a6909d144ad616dd1b479d29a59b94534b2d3957f1411.json.gz
+    size: 569056
+    sha256: "b6e308e7da84eade864a65f747ec9259143c824b86ee35eb306f9ca82ec696a9"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/c9dc993ebe8e2f8c9cdfb5a76760a069fa3f2c6c7c44800f5812ef42cfdb80c8.json.gz
+    asset: c9dc993ebe8e2f8c9cdfb5a76760a069fa3f2c6c7c44800f5812ef42cfdb80c8.json.gz
+    size: 459151
+    sha256: "611ef4d3757f125508607b4c0418d332f9b3eae94483dae85ee4b9fb99d3b4f2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/cc39ab72ad8776129c600246090ff11f1baecc2ed2ed649107646e93de3900df.json.gz
+    asset: cc39ab72ad8776129c600246090ff11f1baecc2ed2ed649107646e93de3900df.json.gz
+    size: 1082876
+    sha256: "851be7f791f7638f36878d06a0ec94dee5f66edbfc75d45706c198d8902189e4"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/cd3957c5a707459fdc992db8b302b7158b0fd2911d0c89517e812fa3dad1427f.json.gz
+    asset: cd3957c5a707459fdc992db8b302b7158b0fd2911d0c89517e812fa3dad1427f.json.gz
+    size: 563315
+    sha256: "6833bc702c5625958b6d4c990078d2e08c65bcadb8e4d5fa07e38ae0a69ddfc4"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/cd69805a3c626d597ade4350dfb15ff392ffcfd8b2f839abb7f8831be694bcae.json.gz
+    asset: cd69805a3c626d597ade4350dfb15ff392ffcfd8b2f839abb7f8831be694bcae.json.gz
+    size: 602793
+    sha256: "a266b4091323bb210f72345c40e825a8efbdb9d4c2be9086b6a632bd0b864d89"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/cec8a01b9917e36deb6eaa2f39f51156c2bcb2512629ca117c890ec5e470ef07.json.gz
+    asset: cec8a01b9917e36deb6eaa2f39f51156c2bcb2512629ca117c890ec5e470ef07.json.gz
+    size: 480695
+    sha256: "dafbb2ddb9e30e858c016372660b01e8a1932d76d3260060b8d276da442cd962"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/d09a7128a9fcf9eef1621b02c63ecdc07fe661552d8be5f855af7436e171dd51.json.gz
+    asset: d09a7128a9fcf9eef1621b02c63ecdc07fe661552d8be5f855af7436e171dd51.json.gz
+    size: 433169
+    sha256: "fccc71112d2e96fed1f8c23420439c7ce2d1fa26fab5bbd13b4971d764f1d1bf"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/d1bcc53af18f15ffae5611b428345356a2272d2dd4cb8d0f84bdfe47fe592fac.json.gz
+    asset: d1bcc53af18f15ffae5611b428345356a2272d2dd4cb8d0f84bdfe47fe592fac.json.gz
+    size: 568482
+    sha256: "d9798299b4bdd375d8f8681975aa288ff03f189b80a2aad30a3ac550e9b5436a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/d1f77830c0eefc38f66b3a208da8245da0c41740df2be0b2bfa23346bf9fd661.json.gz
+    asset: d1f77830c0eefc38f66b3a208da8245da0c41740df2be0b2bfa23346bf9fd661.json.gz
+    size: 725346
+    sha256: "f02a248136b10beff00b7dfa527f878ea94e8d4dae9243eeaf29fe66442c5b5a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/d240d867879636fcb2b5b67c5aaf8a615a76183b89fb17d86b8d3d1123a10da7.json.gz
+    asset: d240d867879636fcb2b5b67c5aaf8a615a76183b89fb17d86b8d3d1123a10da7.json.gz
+    size: 1064834
+    sha256: "55589cfe7f1944406c14a38c311fe80762cb979d7eed4b3b5867c3397777f96e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/d3fabdab5540290522d258f8611b2d69b3885a86c5e4c50819448aa2e490d11a.json.gz
+    asset: d3fabdab5540290522d258f8611b2d69b3885a86c5e4c50819448aa2e490d11a.json.gz
+    size: 451641
+    sha256: "63524f982f4757a41d6a07f01b40d9efe2cfbc248ea13290ebf3bb0971d34217"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/d429c3db80f6d1470639d58d26e9d51ad3d0edd5c1e0e3143b7425cf2867533f.json.gz
+    asset: d429c3db80f6d1470639d58d26e9d51ad3d0edd5c1e0e3143b7425cf2867533f.json.gz
+    size: 1081099
+    sha256: "f585cebd3b7783e621c513ec5fd643dfbcdcd121c99353a0b96bba9775222d92"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/d509ff838b94048f425fd7450f9c6f7bf9282b09a0444ce960097ef8432178d2.json.gz
+    asset: d509ff838b94048f425fd7450f9c6f7bf9282b09a0444ce960097ef8432178d2.json.gz
+    size: 30635
+    sha256: "a5cae78ee2fafc66c807f62a78405e98af4fe79387f63ba937dff95f12a978a3"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/d5e51ae71237ef0183d6ea48aff6a18e3e2ee4dcbb01896439fcd34347a037a4.json.gz
+    asset: d5e51ae71237ef0183d6ea48aff6a18e3e2ee4dcbb01896439fcd34347a037a4.json.gz
+    size: 555446
+    sha256: "1213c6ed80909af9d79b2109416b9bdf6540ca0a50296a0b2e7cfe4d5702d6e2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/d7b6082d4de47245a9fdeb6bdcae9305c2abe2ab16a642243ff8b2c049c11690.json.gz
+    asset: d7b6082d4de47245a9fdeb6bdcae9305c2abe2ab16a642243ff8b2c049c11690.json.gz
+    size: 757703
+    sha256: "e2a260a3edb43c02204287a1188191cc3a660a2f3e216ab9cb512746fd5e35a3"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/d8225aeaf1850a23f6870ffe26b93a9c05678333222dec67ac68989f95c4c44a.json.gz
+    asset: d8225aeaf1850a23f6870ffe26b93a9c05678333222dec67ac68989f95c4c44a.json.gz
+    size: 295834
+    sha256: "dcb1eb091ce17a00af12a02509692e525cdf46e85a900db628b8dc2e2c618e54"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/d9c7571730b56ad4059ee282388a0f26c10973087396e3c7dc657a0e409f4ea5.json.gz
+    asset: d9c7571730b56ad4059ee282388a0f26c10973087396e3c7dc657a0e409f4ea5.json.gz
+    size: 1184646
+    sha256: "f60bc8f6fd61ee09924ea27e036566dbb036b3e9584134ac2ccb27fcef910011"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/dabe274f6a4c15c08045a8c76e0aa7c236894b128280ddf9357cf2416e410fe2.json.gz
+    asset: dabe274f6a4c15c08045a8c76e0aa7c236894b128280ddf9357cf2416e410fe2.json.gz
+    size: 576569
+    sha256: "79e025926cd78d01d039bdf72a5ef3db8e2e99c747f249bad93aae356c66b60b"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/db5d585afbad431a962571cd63c80ada5ff76ef140f087024ddb0aec8a27bf2f.json.gz
+    asset: db5d585afbad431a962571cd63c80ada5ff76ef140f087024ddb0aec8a27bf2f.json.gz
+    size: 559950
+    sha256: "3eb51b43338aa1b4b0ed75568c13f504fab8f56d9a081f51c9fea4cc0c61bf19"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/db931f6dd3bab41c4c5b5743b21ae41a24aef8c968f3c17be3100ca95fc35554.json.gz
+    asset: db931f6dd3bab41c4c5b5743b21ae41a24aef8c968f3c17be3100ca95fc35554.json.gz
+    size: 654549
+    sha256: "8fd172b28e9b7f346f0b67a0f87069ba4eb8b8780460f58ed58fc6b2ceca938d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/dbdd1bf49a6caf2a9874b8cee1e39156fecaee86a711e17dff49d56ff3464ec7.json.gz
+    asset: dbdd1bf49a6caf2a9874b8cee1e39156fecaee86a711e17dff49d56ff3464ec7.json.gz
+    size: 773031
+    sha256: "294533ca1bfbbd91b9653bcc160056db4aa1f393d8e1b2a318c62fdd02edb66d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/dc3fbcd7f40444b378ea5895b1c4935f91d8452dff729b151b898fcb4f128141.json.gz
+    asset: dc3fbcd7f40444b378ea5895b1c4935f91d8452dff729b151b898fcb4f128141.json.gz
+    size: 1004310
+    sha256: "c5b1994038f65c7ee43148029d386938def1a6247c81017d938c1d001d98d75e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/dc7538e58171276e6f129be4b855be6ddd325e6d2e0e5f464cf76817d64e3a08.json.gz
+    asset: dc7538e58171276e6f129be4b855be6ddd325e6d2e0e5f464cf76817d64e3a08.json.gz
+    size: 776275
+    sha256: "faaf7b836b82a1841613027bd89a0033f926f70ac23673e929a1dae57c4b22ed"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/dd26635eab411b696cbb9c2d84fde6792f63049413c4ca4f2ca96bf6fed7d833.json.gz
+    asset: dd26635eab411b696cbb9c2d84fde6792f63049413c4ca4f2ca96bf6fed7d833.json.gz
+    size: 639940
+    sha256: "897786ea9053b9b702ceaab28b6f3c273291c7618ccf4a90ffb22db1a655325f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/dd62cf76a63338c424d6ff52cf6728ad7f61f3f121901777f50f878409cdb7fe.json.gz
+    asset: dd62cf76a63338c424d6ff52cf6728ad7f61f3f121901777f50f878409cdb7fe.json.gz
+    size: 555879
+    sha256: "f72c1adffabfcbeb667bef8c24f8c0b86d15e293af1415dad6bc78582c292606"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/dd7b7683592eff377d05b8ca1e86d91852250dec88d7b97558ca479f5157fcd8.json.gz
+    asset: dd7b7683592eff377d05b8ca1e86d91852250dec88d7b97558ca479f5157fcd8.json.gz
+    size: 1002362
+    sha256: "6b190db80460b9c7e92c8ed883efe98f35ea9d0495bf022355a9d76eb74bbc69"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/e03684b58460de3a06d965b9f02a0928e4b43ffe2736d81ec186941b38ada27e.json.gz
+    asset: e03684b58460de3a06d965b9f02a0928e4b43ffe2736d81ec186941b38ada27e.json.gz
+    size: 993327
+    sha256: "736e7055ce8fa632d72dc2d3f8733f5e8d869fd85bef2058e129c1735ccaca58"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/e048f4363340b5368dccfe7b7a6fb8775e5306561046ab51e6b9fa23215c5f83.json.gz
+    asset: e048f4363340b5368dccfe7b7a6fb8775e5306561046ab51e6b9fa23215c5f83.json.gz
+    size: 618199
+    sha256: "acc5d1dfda8e37bd3b254b13a6152ebd607d26fbe2e252c43860c68ae1844405"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/e05cb45c77a3dab5a2ab77638fb6cfc8756e4a151d0e3a941df524ceb490e7e8.json.gz
+    asset: e05cb45c77a3dab5a2ab77638fb6cfc8756e4a151d0e3a941df524ceb490e7e8.json.gz
+    size: 911484
+    sha256: "154d3ff9577505184407a2fd39df06b77b949953e08cffd5fab9008b77172327"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/e1219a2a306fe88f471a8ca41c347f75c8f840ad607847438c74be3a35c1d672.json.gz
+    asset: e1219a2a306fe88f471a8ca41c347f75c8f840ad607847438c74be3a35c1d672.json.gz
+    size: 672983
+    sha256: "8b3c2f65e45eb41212c25a1b30dc8b0f24d85064536acdcf5b0ad1be82173d47"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/e150bb040dd014e0eb097293092538f5dbb47f5841713619918b4b9cba25061f.json.gz
+    asset: e150bb040dd014e0eb097293092538f5dbb47f5841713619918b4b9cba25061f.json.gz
+    size: 595659
+    sha256: "4ccf2736636b17543e77056a40451da9a28d46315ec97d357383669268a1291b"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/e589da4e109c3005eb36e6a444fb03463c089d9c14570939051b6486c05d240a.json.gz
+    asset: e589da4e109c3005eb36e6a444fb03463c089d9c14570939051b6486c05d240a.json.gz
+    size: 650302
+    sha256: "99c2adbf51e32e491d5e0d236f8147f2d82ecef89d35339aea7927597a86056a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/e6f3916b1ae90fb4866a0fa66eed31e762f773dff190cab541b1a83611196bd2.json.gz
+    asset: e6f3916b1ae90fb4866a0fa66eed31e762f773dff190cab541b1a83611196bd2.json.gz
+    size: 670477
+    sha256: "cec2a10b9067b792b8435a04a44c0ea79817c3da52275767bc60f312bab49f75"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/e7b9ab923e95967864637683013af1eef05706714423ac3db0cf372b8dc461be.json.gz
+    asset: e7b9ab923e95967864637683013af1eef05706714423ac3db0cf372b8dc461be.json.gz
+    size: 619824
+    sha256: "dce4f70bf554d5e81e6f8a3db673288d6f86cce0dbef30929595977df6d83cfb"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/e89e7ade93bff641fdf8781c59f98b6b19183fbd2864c86401781576d3fe5911.json.gz
+    asset: e89e7ade93bff641fdf8781c59f98b6b19183fbd2864c86401781576d3fe5911.json.gz
+    size: 552155
+    sha256: "c14602a75a90b12f6994ceb8fed6381c928fd19b8ce80d809243d7c9415a7d7c"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/e932eb058025e943b1153cfeb9aac22a071be6e656a513069d0c6ad7060a5bb2.json.gz
+    asset: e932eb058025e943b1153cfeb9aac22a071be6e656a513069d0c6ad7060a5bb2.json.gz
+    size: 710371
+    sha256: "96273bb7966befa2706119466642c549a75f4c97a34ebc5067ebc9f9601fa0f1"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/e992aaaf194f8cba631da5dca97469915271cd2dec5652d1a482e78ea45c8d0c.json.gz
+    asset: e992aaaf194f8cba631da5dca97469915271cd2dec5652d1a482e78ea45c8d0c.json.gz
+    size: 522027
+    sha256: "01bd15b8f94d663a1c822c769130a2ba5242b663bd0280454cf1bc42a8d9b398"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/eaa816fc11788ad34a0f01fb757a27672f4ec19ac73a81c761c389696923a7db.json.gz
+    asset: eaa816fc11788ad34a0f01fb757a27672f4ec19ac73a81c761c389696923a7db.json.gz
+    size: 851852
+    sha256: "a231d6e333bf9f4999ed04072ca7260827698b449a9cf9c55c1fc46a2ae8678f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/eb1a67eed00c15363a93b40f9b21a3fba34dd5d192b281f8a2f8c87c2828d515.json.gz
+    asset: eb1a67eed00c15363a93b40f9b21a3fba34dd5d192b281f8a2f8c87c2828d515.json.gz
+    size: 836798
+    sha256: "a9af93715307691b3204be115f9929b7042523d41ab07f5c9542bedd26563855"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/eb343be42296c27d4f0a942a7e2fb26a902b5bf674a97e60d1cf69cd38d24bd3.json.gz
+    asset: eb343be42296c27d4f0a942a7e2fb26a902b5bf674a97e60d1cf69cd38d24bd3.json.gz
+    size: 768230
+    sha256: "58fe27fd963a51bf193db762ec94f1b5bb3b946041d6f924c54942ff935cba24"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/eb9d07200c10ba27eb40a344689225cbdfd4a0833ddda84518f90810a737f9a3.json.gz
+    asset: eb9d07200c10ba27eb40a344689225cbdfd4a0833ddda84518f90810a737f9a3.json.gz
+    size: 575211
+    sha256: "8a5ab2fa6ba51ec8093c05a456557b94b79a6d655eeb4b723c93b42de9a38a03"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ec2055fc42840c43ca79b8f62f672a709511e48033885909be1b47590d67c321.json.gz
+    asset: ec2055fc42840c43ca79b8f62f672a709511e48033885909be1b47590d67c321.json.gz
+    size: 567342
+    sha256: "6783f3e4cde60b0350bb3db7e4645715621e50d6df3b287c39a33246b4fcd37f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ec808829abbcbfde71cb30e092e76c222ba89bf7f1b48484bb7407d45e648689.json.gz
+    asset: ec808829abbcbfde71cb30e092e76c222ba89bf7f1b48484bb7407d45e648689.json.gz
+    size: 666844
+    sha256: "ea80b07e775bce6e26ed64430d0e2c1dab7088ac62d83e7ccd9a2caa83d1d7b2"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ed1ef8951188d8796b1da8af44856e5adcc352b068f58e6279db4de2944aea0d.json.gz
+    asset: ed1ef8951188d8796b1da8af44856e5adcc352b068f58e6279db4de2944aea0d.json.gz
+    size: 474984
+    sha256: "fa448e4304bddf7b6c559ec376b9c0c334f2df9efcce6d4ad92f3a851631fa2d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ed1f6ddc61215873012af84f2087276a01d26bb390db49b95e2c45b4f5793536.json.gz
+    asset: ed1f6ddc61215873012af84f2087276a01d26bb390db49b95e2c45b4f5793536.json.gz
+    size: 891048
+    sha256: "1c2f7ed7c2917b769ee6400d3bd7dc9891c05f6b20f3d130b149177b989b78b3"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ee48d31f73a343794dcfd92d620da7c464193c0d1aee3770bb0fe1edc681cd97.json.gz
+    asset: ee48d31f73a343794dcfd92d620da7c464193c0d1aee3770bb0fe1edc681cd97.json.gz
+    size: 721262
+    sha256: "a94f8b59c5b723028fadb1e2e779f00936f8ed1cd15a8b1b86a46cf6e0d70d8a"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ee7a44ebbe8615bd32fdb6f919d12d5ebbd710751fe97ee51db131cd285f9a20.json.gz
+    asset: ee7a44ebbe8615bd32fdb6f919d12d5ebbd710751fe97ee51db131cd285f9a20.json.gz
+    size: 880223
+    sha256: "a758f8a0c0109d6b392fb04892fd11e4294925c26f7f9b881af00142b43d15ac"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ee7ae1fb5ec0f86da2705347d63330d935ad70b8a997ff8aebdb7f37efc7968b.json.gz
+    asset: ee7ae1fb5ec0f86da2705347d63330d935ad70b8a997ff8aebdb7f37efc7968b.json.gz
+    size: 1221115
+    sha256: "0e7b88b6c813edc5e1c6d1fce96e33cffb394df1a4f6decdbb068a07f4d53486"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f0af89ed359be6ec92413e251a3f754ddf8accf301a2ff2c924a048426adeddb.json.gz
+    asset: f0af89ed359be6ec92413e251a3f754ddf8accf301a2ff2c924a048426adeddb.json.gz
+    size: 763177
+    sha256: "4af51dcb45093f7ea8a85d63f76f98ec0d520260402fcd59301082e5664b0b19"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f3adaae7ca2dd834bb6f3ef1eeced3457ca0947ca3fbbb9c2aecb360fccb389b.json.gz
+    asset: f3adaae7ca2dd834bb6f3ef1eeced3457ca0947ca3fbbb9c2aecb360fccb389b.json.gz
+    size: 820781
+    sha256: "6ca30204dd1ac9566cecdfd7129384f9fea61752d8fcca59ae42ac6fa0c4384e"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f3c397194f2c80890443512a2d99820e6cc256085171cfda883ab6e6abc722fc.json.gz
+    asset: f3c397194f2c80890443512a2d99820e6cc256085171cfda883ab6e6abc722fc.json.gz
+    size: 1037590
+    sha256: "8f79c0d45624bda3c8d27d6c459298bc8b41aba53d7ef300262a5ca738d0932f"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f4b8bfffcd18a17c4e5ff11f0c8268d87df2060932f9fad5e9f4c683b49aa94d.json.gz
+    asset: f4b8bfffcd18a17c4e5ff11f0c8268d87df2060932f9fad5e9f4c683b49aa94d.json.gz
+    size: 1172188
+    sha256: "aa132c0ebd86232e1ef90787744ffc8cfb7dad804d9d2e6570db99fee4aaa9d0"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f54614e4ab674fba4cfa0bd4ceeab98c25ba10e354b8ab8e9f2616021c87237b.json.gz
+    asset: f54614e4ab674fba4cfa0bd4ceeab98c25ba10e354b8ab8e9f2616021c87237b.json.gz
+    size: 789999
+    sha256: "0ea76163205d12f53c057846b672019a3cda390defb73dc5bf0426cccc956786"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f590ec69314654a2f4f3bfeee962a7b88338f1a6909f360dbc439bdcb01b4dfb.json.gz
+    asset: f590ec69314654a2f4f3bfeee962a7b88338f1a6909f360dbc439bdcb01b4dfb.json.gz
+    size: 1090031
+    sha256: "f8f42e720e2652b3f58d43d6702828be52ef04cd489232fdfa8fd891fd81d4f6"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f59db530a90a25e8f6e34a9490cbff3d4f6eb775319526cc49ff6b66a4487221.json.gz
+    asset: f59db530a90a25e8f6e34a9490cbff3d4f6eb775319526cc49ff6b66a4487221.json.gz
+    size: 585210
+    sha256: "94891cc4db566afbfe77a4cffc9d736b9f6dc5c6ff5650502263de8b1099d3cb"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f6eedc686ba1247325ea37a3d56666846506683fab8d576c0fe8198ed6f20092.json.gz
+    asset: f6eedc686ba1247325ea37a3d56666846506683fab8d576c0fe8198ed6f20092.json.gz
+    size: 849047
+    sha256: "9f3738f9bd242bb82364649c1a6ba0ff1150b33b9efcba737948f02e17911eaa"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f6fc4632376e61621fb4b16dd5a1152b423f6e2ead8891f44e65204d0f65210c.json.gz
+    asset: f6fc4632376e61621fb4b16dd5a1152b423f6e2ead8891f44e65204d0f65210c.json.gz
+    size: 919337
+    sha256: "72ef85a817cf14edb61ea3366a0e397bb166c6707654356dfb02444a568afe7c"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f8568825daa05c41e6ebf287697f85ebaecd3e50b3288c8767aa8fa4796ff139.json.gz
+    asset: f8568825daa05c41e6ebf287697f85ebaecd3e50b3288c8767aa8fa4796ff139.json.gz
+    size: 942057
+    sha256: "99a80e0b2a0094ca6431b317cfbdd62515c18eea5f4db781a88d93d8a4b01154"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f8be447adb9ce377fab602605d9c9d0e94da40c8787d9fbbcb080455feacce5c.json.gz
+    asset: f8be447adb9ce377fab602605d9c9d0e94da40c8787d9fbbcb080455feacce5c.json.gz
+    size: 1058127
+    sha256: "48bf1067a53127650c3a95aad324684973185f870fceeb2566dd144c5bfd7bda"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f8f8d5bdbbf3c5873864f7d1a85ee248525ed9bc0936c56ebe32a2092bfa9894.json.gz
+    asset: f8f8d5bdbbf3c5873864f7d1a85ee248525ed9bc0936c56ebe32a2092bfa9894.json.gz
+    size: 410569
+    sha256: "30f9c390faa964f892aff2541b064e7f67848dcdaaa41cbea88ab22114a0804b"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f92e6ef475ea98a395f1d7fe8a9c2008a01cb541f260d747e9b057cab78da5ae.json.gz
+    asset: f92e6ef475ea98a395f1d7fe8a9c2008a01cb541f260d747e9b057cab78da5ae.json.gz
+    size: 1085959
+    sha256: "f243fe07648e6ba0085c68886a6a5f5334f35453cf30ce189a9b584c5bef638b"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f9554283120e8a1f780b86e90b885c3894f5c000677edc66af27c71a59c9b416.json.gz
+    asset: f9554283120e8a1f780b86e90b885c3894f5c000677edc66af27c71a59c9b416.json.gz
+    size: 1067069
+    sha256: "230885e9aa8a7f12bf548c85d6873f44fd02d17376a3b837e827ae9db07d2dc9"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/f9d4642b8e630da3bfa73d64420fca1822d95a75d63b3fba42b5ad40a6d0d6d3.json.gz
+    asset: f9d4642b8e630da3bfa73d64420fca1822d95a75d63b3fba42b5ad40a6d0d6d3.json.gz
+    size: 458061
+    sha256: "a1b2b7b6227a6fdd2bac636735f3de733f0fe4477e5a3956560007a4ba841378"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/fa0bbfe8395e6eba1f8b633f67163f50ef67d7dce590d642817109147183b504.json.gz
+    asset: fa0bbfe8395e6eba1f8b633f67163f50ef67d7dce590d642817109147183b504.json.gz
+    size: 632998
+    sha256: "6a4076176c0f4e7fe7ac617a2be12e8822024d24a28901089e42d228d42a01c3"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/fa2503e939e7cc49889ec6b6e318b0523b7eb9f2ccde25ce16f30940962c31d8.json.gz
+    asset: fa2503e939e7cc49889ec6b6e318b0523b7eb9f2ccde25ce16f30940962c31d8.json.gz
+    size: 614189
+    sha256: "c3829847fdda7a62f92e84e141512e6ea31c89746db1c6202df073ee4a701fb4"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/fae5249d3c5d3de10dabe074aca97e6ed990c24a9414476d16e6280b4da6f088.json.gz
+    asset: fae5249d3c5d3de10dabe074aca97e6ed990c24a9414476d16e6280b4da6f088.json.gz
+    size: 689421
+    sha256: "f9f928b52035e557c7ef3c15b67863291b673e59750fe5a7c88211cd88351158"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/fb0febe92f568be31feaa8334445a6a813d0fd81d05bd18f639943da5d896875.json.gz
+    asset: fb0febe92f568be31feaa8334445a6a813d0fd81d05bd18f639943da5d896875.json.gz
+    size: 538619
+    sha256: "b58d7a27f6c4bc9a528290b17aba2f0278d1b60e3c08cc753017839bcc3041af"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/fd1b119ef0d179e776663eeebb21f5d73612390a039d3cf866c24fb3a2a6ea14.json.gz
+    asset: fd1b119ef0d179e776663eeebb21f5d73612390a039d3cf866c24fb3a2a6ea14.json.gz
+    size: 1014432
+    sha256: "721a66ff2e066f486a56cee58d8994ae43759f0868b25cc6bc2824d49fd38564"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/fdce503f46b11a2e9549fe7228b047a5603082fc1071d957f176ad9a3d69ca0b.json.gz
+    asset: fdce503f46b11a2e9549fe7228b047a5603082fc1071d957f176ad9a3d69ca0b.json.gz
+    size: 740861
+    sha256: "6116a9c5e0995b24b73a6cb782fee7d823dadb9779f827a52d53302d7c970e7d"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ff3290751b61ace55dfc8caa3da4c78072ae332cca92454a7fafa9907a7b0762.json.gz
+    asset: ff3290751b61ace55dfc8caa3da4c78072ae332cca92454a7fafa9907a7b0762.json.gz
+    size: 1048783
+    sha256: "8e7dbbda9425ca6a93369bab17587b41ba3c440da563e675dfb1d04afbdece81"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ff897f8145ae77f6af72ff18fdc5f17871519a985b60f2df5d3e1615f95ddada.json.gz
+    asset: ff897f8145ae77f6af72ff18fdc5f17871519a985b60f2df5d3e1615f95ddada.json.gz
+    size: 804610
+    sha256: "2c89cb814d3e4b7e3c72af8f45c695b8be92c80ac3c59a880cd7e146660a81ee"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/ffae4494ab4e61982344c20d2f3af3dd5b60ea36e7f4089417b6253bc8d78166.json.gz
+    asset: ffae4494ab4e61982344c20d2f3af3dd5b60ea36e7f4089417b6253bc8d78166.json.gz
+    size: 472903
+    sha256: "a78166136d9709a63733734c8de7368fd19f27060842b86e1293eb000aebc7a1"
+    description: n17 sub-pattern B2 certificate, class C1
+  - path: n17/certificates/b2/C1/fffd0d67200c99e447707c3cde9aa822fd27c8b399e404d73d2f508abb5af887.json.gz
+    asset: fffd0d67200c99e447707c3cde9aa822fd27c8b399e404d73d2f508abb5af887.json.gz
+    size: 535956
+    sha256: "6c9fcb34a9749f926793269903c8335999c827697f470de6aa9d1445b7841e73"
+    description: n17 sub-pattern B2 certificate, class C1

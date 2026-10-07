@@ -1,0 +1,12 @@
+{
+  "status": "VERIFIED",
+  "angle_cases": 201,
+  "target_lower_bound_exact": "10001/10000",
+  "nodes": 18911255,
+  "leaves": 11608540,
+  "minimum_printed_leaf_lower_bound": 1.0001000016275197,
+  "wall_seconds": 6114.132058143616,
+  "input_sha256": "d7108c9046c550a0aa0384d48b66ff79ff4c9cd872629717aae67b13c0b7fee7",
+  "verifier_source_sha256": "a75140df1b484ad104a214d2e8de87afda9fca5929341ec40121afde0c1af602",
+  "method": "Outward-rounded binary64 intervals; certified inscribed polygon area; derivative bounds over center boxes; rational angular net."
+}

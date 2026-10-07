@@ -1,0 +1,16 @@
+{
+  "status": "AUDITED_AND_PACKAGED",
+  "n": 66,
+  "L": "421/50",
+  "total_mass": "6599999/100000",
+  "compared_with": "1677/200",
+  "compared_note": "published rectangle 8.385",
+  "improvement_lower": "7/200",
+  "candidate_digest": "eb86256982300d42ada314676302394b433822b1673fafe8e3c53b3a4499a3e6",
+  "all_angles": 201,
+  "certificate_sha256": "304f36d50b58d462e8a754fe62da29496bc8bc9bb48cad8f221fb7aceb726053",
+  "bundle": "n66-L8.42-proof-bundle",
+  "archive_sha256": "f7c7d908f00ec5f9e88224f96250ce57eb243d310929e95b3e16c0ab242e02bf",
+  "route": "n66 fresh Green initialization at L8.42 with budget n66 (rectangles), full-net repair, 201-angle verification and replay.",
+  "scope": "All centres at all 201 net angles plus strict core containment for every orientation; independent axis replay, same-algorithm outward-rounded oblique replay."
+}

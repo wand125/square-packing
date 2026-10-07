@@ -1,0 +1,33 @@
+{
+  "certificate": "certificates/n2/n2_cert.json",
+  "sha256": "de9325eb0a60c13ab8d159728b8f9927ef5ea3fa9b935665c7f9f08494efd087",
+  "L": "2+2/3*sqrt3",
+  "points": 1,
+  "total_weight": "1",
+  "lines": 16,
+  "event_polynomials": 682,
+  "distinct_rational_polys": 224,
+  "irreducible_factors": 200,
+  "critical_roots_in_0_1": 157,
+  "samples": 156,
+  "vertices_checked": 15600,
+  "sectors_checked": 468,
+  "min_capture_weight": "1",
+  "min_attained_at_u": [
+    "1/267",
+    "1/59",
+    "1/47",
+    "1/35",
+    "1/29",
+    "1/24",
+    "5/117",
+    "4/93",
+    "2/43",
+    "1/18"
+  ],
+  "seconds_events": 5.4,
+  "seconds_total": 6.5,
+  "status": "verified",
+  "n": 2,
+  "total_below_n": true
+}

@@ -1,0 +1,16 @@
+{
+  "status": "AUDITED_AND_PACKAGED",
+  "n": 87,
+  "L": "47/5",
+  "total_mass": "8699999/100000",
+  "compared_with": "93667/10000",
+  "compared_note": "Nagamochi 9.366600 (and our published 9.39)",
+  "improvement_lower": "333/10000",
+  "candidate_digest": "feca31d67094466ec2eb63a731ef657a122b59bccc114e31fd018df713a17fd7",
+  "all_angles": 201,
+  "certificate_sha256": "576d4117783bfdbdc8274517f1638a83c6fa08bbcffc584ce499d5adfa5513aa",
+  "bundle": "n87-L9.40-proof-bundle",
+  "archive_sha256": "c33a44d66f4656f23f0f20eef82eacddc053a991b2c581a75df417fb1f5f4435",
+  "route": "rect_n86_L9365 certificate read with the n87 budget, expanded to L9.40 by n87-centralw05-9.40 (resize_initial), rectangles full-net repair, 201-angle verification and replay.",
+  "scope": "All centres at all 201 net angles plus strict core containment for every orientation; independent axis replay, same-algorithm outward-rounded oblique replay."
+}

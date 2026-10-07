@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "triangle-v1:certificates/n29",
+ "claim": "The smallest equilateral triangle containing 29 non-overlapping unit squares has side v = 8 + 2/√3 ≈ 9.1547.",
+ "release_tag": "triangle-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/triangle-v1",
+ "assets": [
+  {
+   "asset": "certificates__n29.tar.gz",
+   "size": 521,
+   "sha256": "2753b4b7c9a1148c7dc0ca373c3bed9e3aacacc7d8b05cb29ecdc3a74b5ec5f7"
+  }
+ ],
+ "unpack": "tar xzf certificates__n29.tar.gz -C problems/triangle",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python checker/check.py certificates/n29/n29_cert.json --n 29 --max-depth 36 --jobs 12",
+ "check_cwd": "problems/triangle",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [
+  "problems/triangle/certificates/n29/PROOF.md"
+ ],
+ "source": {
+  "repository": "wand125/squares-in-triangle",
+  "commit": "78a103b99f411024678bfc47861ec158bb0c7ceb",
+  "path": "certificates/n29"
+ }
+}

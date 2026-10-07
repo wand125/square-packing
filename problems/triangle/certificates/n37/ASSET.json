@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "triangle-v1:certificates/n37",
+ "claim": "No 37 non-overlapping unit squares fit in an equilateral triangle of side less than v = 9 + 2/√3 ≈ 10.15470; that is, s△(37) ≥ 9 + 2/√3.",
+ "release_tag": "triangle-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/triangle-v1",
+ "assets": [
+  {
+   "asset": "certificates__n37.tar.gz",
+   "size": 613,
+   "sha256": "5c6052f773626195f4a2c3b1a6363bce0f84186d157cc988bcfeca1b2ed94736"
+  }
+ ],
+ "unpack": "tar xzf certificates__n37.tar.gz -C problems/triangle",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python checker/check.py certificates/n37/n37_cert.json --n 37 --max-depth 40 --jobs 16\npython tools/make_lattice_cert.py 9 out.json",
+ "check_cwd": "problems/triangle",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [
+  "problems/triangle/certificates/n37/PROOF.md"
+ ],
+ "source": {
+  "repository": "wand125/squares-in-triangle",
+  "commit": "78a103b99f411024678bfc47861ec158bb0c7ceb",
+  "path": "certificates/n37"
+ }
+}

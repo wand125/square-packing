@@ -1,0 +1,3 @@
+'SquarePacking.Tri.minSideTri_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SquarePacking.Tri.minSideTri_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SquarePacking.Tri.minSideTri_four' depends on axioms: [propext, Classical.choice, Quot.sound]

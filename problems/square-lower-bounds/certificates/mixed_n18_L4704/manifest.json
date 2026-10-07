@@ -1,0 +1,24 @@
+{
+  "candidate_digest": "9ae8403ba1b881e3f1933fa1d98aab29f253b8dd21874404e959b6424e18acae",
+  "source_candidate": "proof/candidate.json",
+  "budget": "1799999/100000",
+  "n": 18,
+  "L": "4.704",
+  "B": "0.9995",
+  "net": {
+    "step": "1/2006",
+    "count": 832,
+    "endpoint": "831/2006",
+    "endpoint_check": "497/4024036",
+    "rotated_side_upper": "4011993/4012000",
+    "side_margin": "7/4012000",
+    "per_edge_margin": "7/8024000",
+    "conclusion": "Every unit-square orientation contains a concentric B-core at a net angle strictly in its interior.",
+    "remaining": "Every admissible centre at every net angle must have mixed score >= Gamma, and M < n*Gamma. Not checked here."
+  },
+  "source_sha256": "89b674a6feabe24d91c29431de1624907c4bff83280ceb481475455686693652",
+  "workers": 3,
+  "node_limit": 3000000,
+  "priority_angles": [],
+  "stop_on_exact_deficit": true
+}

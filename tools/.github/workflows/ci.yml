@@ -1,0 +1,52 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Check out square-packing-bounds (for the n = 21 separator comparison)
+        uses: actions/checkout@v7
+        with:
+          repository: wand125/square-packing-bounds
+          path: square-packing-bounds
+      - name: Tests
+        env:
+          SP_BOUNDS_REPO: ${{ github.workspace }}/square-packing-bounds
+        run: python -m pytest -q
+      - name: End-to-end ladder (n = 3 -> 4, budget recovery)
+        env:
+          SP_SLOW_TESTS: "1"
+        run: python -m pytest -q tests
+
+  n17-bb-verifier:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: n17_bb_verifier
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y libgmp-dev m4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.98.0
+          components: clippy, rustfmt
+      - run: cargo fmt --check
+      - run: cargo clippy --locked --all-targets
+      - run: cargo test --locked
+      - run: cargo build --locked --release
+      - run: ./target/release/n17bb-verify tests/fixtures/small-certificate --threads 2 --output receipt.json

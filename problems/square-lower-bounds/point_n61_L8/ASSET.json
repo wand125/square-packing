@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "square-lower-bounds-v1:point_n61_L8",
+ "claim": "s(61) = 8",
+ "release_tag": "square-lower-bounds-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/square-lower-bounds-v1",
+ "assets": [
+  {
+   "asset": "point_n61_L8.tar.gz",
+   "size": 111705,
+   "sha256": "28b0552836d91cd5b49627e427576f9d502e727b4ba21efee5bfc8a02b196d75"
+  }
+ ],
+ "unpack": "tar xzf point_n61_L8.tar.gz -C problems/square-lower-bounds",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python3 check_cover.py                 # exact: hash, format, D4 invariance, total < 61\nsh verify.sh /tmp/n61-verify 8         # new directory; 8 threads",
+ "check_cwd": "problems/square-lower-bounds/point_n61_L8",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [
+  "problems/square-lower-bounds/point_n61_L8/README.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing-bounds",
+  "commit": "678aa1d029423177792f51d3e7e42895b749241e",
+  "path": "point_n61_L8"
+ }
+}

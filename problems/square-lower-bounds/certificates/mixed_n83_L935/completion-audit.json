@@ -1,0 +1,16 @@
+{
+  "status": "AUDITED_AND_PACKAGED",
+  "n": 83,
+  "L": "187/20",
+  "total_mass": "8299999/100000",
+  "compared_with": "92667/10000",
+  "compared_note": "Green's reported bound for n = 82-85, 2*sqrt2 + (247 + 12*sqrt2)/41 = 9.266733 (Friedman DS7, Theorem 9 with k = 9); our previously published rectangle certificate for n = 83 was 9.15",
+  "improvement_lower": "833/10000",
+  "candidate_digest": "159f4c9ec8342d70d3bbf509c21edd95e9d344f3d25b8f2250e8d558cc76d0b5",
+  "all_angles": 201,
+  "certificate_sha256": "ae29a32388626af4933293536d6cbd867cc6592ce64ab61a8271343cce3b898b",
+  "verifier_source_sha256": "0249726ab1e67dc481e0c53f43b524902a48f95d051b1b08865a3cf3ef89a06d",
+  "archive_sha256": "ca8bf31319a02ee58d978e3de3a86289c4893a2c68eead34e72f22841e111705",
+  "replay_scope": "All angles including axis use regenerated inputs and the SAME outward-rounded implementation. Not an independent second algorithm or proof-assistant formalization.",
+  "bundle": "n83-L9.35-proof-bundle"
+}

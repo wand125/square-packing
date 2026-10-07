@@ -1,0 +1,26 @@
+{
+ "schema": "asset/v1",
+ "id": "square-lower-bounds-v1:certificates/rect_n78_L8955",
+ "claim": "s(78) >= 1791/200",
+ "release_tag": "square-lower-bounds-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/square-lower-bounds-v1",
+ "assets": [
+  {
+   "asset": "certificates__rect_n78_L8955.tar.gz",
+   "size": 166835,
+   "sha256": "f6ecf50cc0b666cdd3a3e7bf607b86215ff06f0522a9567f936108747b2faa2c"
+  }
+ ],
+ "unpack": "tar xzf certificates__rect_n78_L8955.tar.gz -C problems/square-lower-bounds",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python3 run_verify.py --workers 4",
+ "check_cwd": "problems/square-lower-bounds/certificates/rect_n78_L8955",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [],
+ "source": {
+  "repository": "wand125/square-packing-bounds",
+  "commit": "678aa1d029423177792f51d3e7e42895b749241e",
+  "path": "certificates/rect_n78_L8955"
+ }
+}

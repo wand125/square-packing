@@ -1,0 +1,63 @@
+✔ [8706/8730] Built Sqtri.Evand (11s)
+✔ [8707/8730] Built Sqtri.Poly (8.3s)
+⚠ [8708/8730] Built Sqtri.Check (7.2s)
+warning: Sqtri/Check.lean:56:10: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Sqtri/Check.lean:56:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [8709/8730] Built Sqtri.Data.N2.Base (5.9s)
+✔ [8710/8730] Built Sqtri.Data.N4.Base (5.9s)
+✔ [8711/8730] Built Sqtri.Data.N3.Base (5.0s)
+✔ [8712/8730] Built Sqtri.Geom (8.7s)
+✔ [8713/8730] Built Sqtri.MinSide (18s)
+✔ [8714/8730] Built Sqtri.Data.N2.Leaves0 (33s)
+✔ [8715/8730] Built Sqtri.Data.N2.All (10s)
+⚠ [8716/8730] Built Sqtri.Upper (27s)
+warning: Sqtri/Upper.lean:186:87: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Sqtri/Upper.lean:186:87: Unused tactic linter: `norm_num` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Sqtri/Upper.lean:211:2: Unused tactic linter: `push_cast at h2` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [8717/8730] Built Sqtri.Data.N3.Leaves2 (107s)
+✔ [8718/8730] Built Sqtri.Data.N4.Leaves3 (232s)
+✔ [8719/8730] Built Sqtri.Data.N4.Leaves1 (232s)
+✔ [8720/8730] Built Sqtri.Data.N4.Leaves2 (233s)
+✔ [8721/8730] Built Sqtri.Data.N4.Leaves0 (233s)
+✔ [8722/8730] Built Sqtri.Data.N4.Leaves4 (234s)
+✔ [8723/8730] Built Sqtri.Data.N4.Leaves5 (234s)
+✔ [8724/8730] Built Sqtri.Data.N3.Leaves0 (299s)
+✔ [8725/8730] Built Sqtri.Data.N3.Leaves1 (315s)
+✔ [8726/8730] Built Sqtri.Data.N3.All (84s)
+✔ [8727/8730] Built Sqtri.Data.N4.All (255s)
+✔ [8728/8730] Built Sqtri.Main (8.8s)
+✔ [8729/8730] Built Sqtri (5.2s)
+Build completed successfully (8730 jobs).
+	Command being timed: "lake build"
+	User time (seconds): 2050.16
+	System time (seconds): 124.35
+	Percent of CPU this job got: 401%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 9:01.83
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8786008
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 116964
+	Minor (reclaiming a frame) page faults: 13007698
+	Voluntary context switches: 517581
+	Involuntary context switches: 262288
+	Swaps: 0
+	File system inputs: 20379120
+	File system outputs: 326552
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

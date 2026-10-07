@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "square-lower-bounds-v1:certificates/mixed_n88_L96125",
+ "claim": "s(88) >= 9.6125",
+ "release_tag": "square-lower-bounds-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/square-lower-bounds-v1",
+ "assets": [
+  {
+   "asset": "certificates__mixed_n88_L96125.tar.gz",
+   "size": 17854478,
+   "sha256": "260df4e1a6fa7a583b37426cba17a0615f2ec3e2fc0a6221e4ae49c9103ca8d8"
+  }
+ ],
+ "unpack": "tar xzf certificates__mixed_n88_L96125.tar.gz -C problems/square-lower-bounds",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "tar xzf n88-L9.6125-proof-bundle.tar.gz\ncd n88-L9.6125-proof-bundle\nOPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 code/verify_mixed_full_proof.py proof --workers 3",
+ "check_cwd": "problems/square-lower-bounds/certificates/mixed_n88_L96125",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [
+  "problems/square-lower-bounds/certificates/mixed_n88_L96125/README.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing-bounds",
+  "commit": "678aa1d029423177792f51d3e7e42895b749241e",
+  "path": "certificates/mixed_n88_L96125"
+ }
+}

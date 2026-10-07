@@ -1,0 +1,44 @@
+{
+ "certificate": "controls/control_v4_plus_1e-6.json",
+ "container": "rect2",
+ "sha256": "f71bf72b7a1557611846a5c6ddc239d5f0bd49195d06b94e73935454dde071dc",
+ "L": "K[1/1000000;1;0]",
+ "points": 7,
+ "total_weight": "7/2",
+ "lines": 44,
+ "event_polynomials": 13532,
+ "distinct_rational_polys": 1681,
+ "irreducible_factors": 1350,
+ "critical_roots_in_0_1": 1735,
+ "samples": 1734,
+ "vertices_checked": 1227672,
+ "sectors_checked": 453000,
+ "min_capture_weight": "1/2",
+ "min_attained_at_u": [
+  "121/329",
+  "39/106",
+  "172/467",
+  "186/505",
+  "31/84",
+  "189/512",
+  "17/46",
+  "357/965",
+  "37/100",
+  "10/27"
+ ],
+ "seconds_events": 28.72,
+ "seconds_total": 335.6,
+ "counterexample": {
+  "u": "121/329",
+  "centre": [
+   "K[-31683018103751525157525653/10198724481869414400000000;133409/46800;0]",
+   "19660055206312813/27893947300839424"
+  ],
+  "captured_weight": "1/2",
+  "admissible": true,
+  "note": "explicit pose, checked exactly"
+ },
+ "status": "failed",
+ "n": 4,
+ "total_below_n": true
+}

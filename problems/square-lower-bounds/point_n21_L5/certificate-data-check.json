@@ -1,0 +1,17 @@
+{
+  "status": "EXACT_CERTIFICATE_DATA_CHECKED",
+  "entries": 4604,
+  "positive_entries": 4520,
+  "threshold": "249987/250000",
+  "mass": "2624862500021/125000000000",
+  "normalized_mass": "2624862500021/124993500000",
+  "strict_gap": "999979/125000000000",
+  "d4_invariant": true,
+  "ordered_upstream_support_scale": "1001/1000",
+  "hashes": {
+    "n21-original.txt": "84a7dae793f05ff72de52ddcd3058e8518c1f84c461f94d11305adefe6137679",
+    "n21-capture-one.txt": "9f631fbae420e0376ea636a232b7680e937deebe205dc035cfb9c43a3d74b456",
+    "upstream-s21-lower-4.9950.txt": "c8e8f878205f2da9c213e4a87c06f17c5a759dce7e695e676dd5c50e0994f2ef"
+  },
+  "all_pose_capture_verified_by_this_script": false
+}

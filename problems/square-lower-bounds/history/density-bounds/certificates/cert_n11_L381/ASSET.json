@@ -1,0 +1,26 @@
+{
+ "schema": "asset/v1",
+ "id": "square-lower-bounds-history-v1:certificates/cert_n11_L381",
+ "claim": "s(11) >= 381/100",
+ "release_tag": "square-lower-bounds-history-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/square-lower-bounds-history-v1",
+ "assets": [
+  {
+   "asset": "certificates__cert_n11_L381.tar.gz",
+   "size": 166528,
+   "sha256": "b70a616c3f43dc22d2d358067f9fc36777e2e3064fae9e2b556a1e3897486ac0"
+  }
+ ],
+ "unpack": "tar xzf certificates__cert_n11_L381.tar.gz -C problems/square-lower-bounds/history/density-bounds",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python3 run_verify.py --workers 4",
+ "check_cwd": "problems/square-lower-bounds/history/density-bounds/certificates/cert_n11_L381",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [],
+ "source": {
+  "repository": "wand125/square-packing-density-bounds",
+  "commit": "096294aeb5f8b604df5890beda6cd601d05f4561",
+  "path": "certificates/cert_n11_L381"
+ }
+}

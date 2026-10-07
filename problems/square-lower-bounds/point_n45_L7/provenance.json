@@ -1,0 +1,41 @@
+{
+  "cover_sha256": "f7d706aa07506c351d9c4b76082cc391ae3f1fd20f6759496bd7c601bb0ca192",
+  "total": "12666371418707823/281474976710656",
+  "total_decimal": 44.99999100001099,
+  "derivation": {
+    "lp_candidate_sha256": "55ceb945bcfb15df20db9d5356e9a1f8db1ad5fce254c8d108217cafccb2b888",
+    "scale": "14999997000000/14987483391827",
+    "rounding": "each weight multiplied by scale and rounded up on the 2^49 grid"
+  },
+  "reference_run": {
+    "checker": "evand/square-packing 6e1223cf7ef2be4c70baaa36c0e7e7197076735a s12/verify2 zmx2, unmodified, rustc 1.86.0 x86_64-apple-darwin",
+    "binary_sha256": "4d2e0d3e5a294c61e64f45d56bb0625735d5c88f727d44bd44a7c8cffd5ed9b7",
+    "command": "zmx2 cert cover.txt --d4 --pair-points --threads 8",
+    "result": "VERIFIED-D4",
+    "roots": 4900,
+    "uncertified": 0,
+    "capped": 0,
+    "boxes": 1295460,
+    "max_depth": 38,
+    "seconds": 204.4,
+    "host": "Apple M4 (Rosetta)",
+    "roots_sha256": "a353a0ca945241f2f6dc46bb3d5b2beb91720b42ba7b9637620b280d66df746b",
+    "shipped_files": {
+      "reference/roots.txt": "a353a0ca945241f2f6dc46bb3d5b2beb91720b42ba7b9637620b280d66df746b",
+      "reference/run.txt": "43f97d11741bf478302807a6748c4646af6c08d7a4fe1673bade42801d95ea20"
+    }
+  },
+  "replay_2026_10_04": {
+    "command": "bash verify.sh <work> 4 (corrected D4 check, pipefail)",
+    "checker": "evand/square-packing 6e1223cf7ef2be4c70baaa36c0e7e7197076735a s12/verify2 zmx2, unmodified, rustc 1.86.0 / cargo 1.86.0, Linux x86_64",
+    "binary_sha256": "80596601b3d9b58354a159d8c754a185db30f55d8d2ed9e4f5edd9bd98063232",
+    "result": "VERIFIED-D4",
+    "roots": 4900,
+    "uncertified": 0,
+    "capped": 0,
+    "boxes": 1295460,
+    "max_depth": 38,
+    "roots_sha256": "a0ccfeefa77c7c503070937299c6caf59bf862c389941a218de508c08c8f666d",
+    "per_root_comparison_with_reference": "4900 roots, identical root set, 0 roots with different box/cert/empty/uncert counts"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "status": "AUDITED_AND_PACKAGED",
+  "n": 87,
+  "L": "939/100",
+  "total_mass": "8699999/100000",
+  "record_upper": "93667/10000",
+  "improvement_lower": "233/10000",
+  "candidate_digest": "71969de528d3afda07d54dba92e5c21cf8c883e1dd777d09f38b346762999be4",
+  "all_angles": 201,
+  "certificate_sha256": "61fdf5103522b2b19108e177e3f56465fefaac8d89943b3838453a220879183d",
+  "bundle": "n87-L9.39-proof-bundle",
+  "archive_sha256": "9f1f1210aaa251ff5fe38ed97e108adf65d65f98cf4b9ca1246d800b925c7095",
+  "route": "rect_n86_L9365 certificate read with the n87 budget (86.99999), expanded to L9.39 by resize_initial central (wall 1, power 2, mass-power 1); rectangles full-net repair (no new rows); 201-angle verification and replay on osa7. mathematics-f0.",
+  "scope": "All centres at all 201 net angles plus strict core containment for every orientation; independent axis replay, same-algorithm outward-rounded oblique replay."
+}

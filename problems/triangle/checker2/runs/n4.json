@@ -1,0 +1,33 @@
+{
+  "certificate": "certificates/n4/n4_cert.json",
+  "sha256": "a0483cf46add5ad9df2e5537629746be5cf2e519bedc8081d4c60daba9d6f24b",
+  "L": "3+2/3*sqrt3",
+  "points": 3,
+  "total_weight": "3",
+  "lines": 24,
+  "event_polynomials": 2290,
+  "distinct_rational_polys": 708,
+  "irreducible_factors": 642,
+  "critical_roots_in_0_1": 523,
+  "samples": 522,
+  "vertices_checked": 119016,
+  "sectors_checked": 35718,
+  "min_capture_weight": "1",
+  "min_attained_at_u": [
+    "1/499",
+    "1/193",
+    "1/125",
+    "5/617",
+    "1/112",
+    "1/81",
+    "1/69",
+    "1/60",
+    "3/175",
+    "2/115"
+  ],
+  "seconds_events": 8.52,
+  "seconds_total": 11.55,
+  "status": "verified",
+  "n": 4,
+  "total_below_n": true
+}

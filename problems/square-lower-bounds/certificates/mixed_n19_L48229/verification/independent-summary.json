@@ -1,0 +1,9 @@
+{
+  "candidate": "candidate.json",
+  "file_sha256": "98ab7347d21776d54d45026414e00f89eabbb8747b302e2a00fe539e927d54a7",
+  "candidate_digest": "68706528d7bc3d2f3c9743d9ceb8c91d4fe70b05599b2a9056228165077ffd14",
+  "status": "VERIFIED",
+  "directions": 416,
+  "failed": 0,
+  "stderr": ""
+}

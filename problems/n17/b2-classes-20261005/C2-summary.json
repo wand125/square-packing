@@ -1,0 +1,92 @@
+{
+  "schema": "n17-subpattern-bb-pilot/v1",
+  "status": "pilot second certifier: a certified verdict is an exact Farkas-checked exhaustion of the pose space, replayable by rerunning; not yet a record",
+  "label": "b2",
+  "design": "ring-3-voronoi-8-tabbed-unique",
+  "cap": "1169/250",
+  "pattern": [
+    "side-S0",
+    "side-W0",
+    "interior-SW",
+    "interior-NW",
+    "interior-W",
+    "interior-S",
+    "interior-SE"
+  ],
+  "source": {
+    "cells": [
+      "side-S0",
+      "side-W0",
+      "interior-SW",
+      "interior-NW",
+      "interior-W",
+      "interior-S",
+      "interior-SE"
+    ]
+  },
+  "control": false,
+  "parameters": {
+    "theta0": 0.4,
+    "floor": 1e-06,
+    "merge_gap": 0.0,
+    "max_seconds": 600.0,
+    "max_nodes": null,
+    "split_ratio": 0.25,
+    "obbt_rounds": 3,
+    "taylor": false
+  },
+  "module_sha256": "c626beb97b606cf5eb8de0050a275a0df88e19575b1ac862537e8db2038d2aec",
+  "verdict": "certified-infeasible",
+  "nodes": 79396,
+  "leaves": 40224,
+  "open_at_stop": 0,
+  "max_depth": 32,
+  "prune_reasons": {
+    "cell": 1149,
+    "disc": 10266,
+    "lp": 5575,
+    "pair": 23234
+  },
+  "branches": {
+    "angle": 34667,
+    "pair": 4505
+  },
+  "farkas_failures": 0,
+  "closed_tree_share": 0.9999999999999716,
+  "closures_by_pair": {
+    "cell": {},
+    "disc": {
+      "side-W0|interior-SW": 3344.0,
+      "interior-NW|interior-W": 2385.0,
+      "interior-S|interior-SE": 2192.0,
+      "side-S0|interior-SW": 1544.0,
+      "interior-SW|interior-S": 284.0,
+      "interior-SW|interior-W": 241.0,
+      "side-W0|interior-W": 112.0,
+      "interior-W|interior-S": 81.0
+    },
+    "lp": {
+      "interior-SW|interior-S": 820.404,
+      "side-S0|interior-SW": 771.177,
+      "interior-SW|interior-W": 676.599,
+      "interior-S|interior-SE": 667.068,
+      "cells": 658.263,
+      "interior-NW|interior-W": 600.78,
+      "interior-W|interior-S": 503.05,
+      "side-W0|interior-SW": 399.369
+    },
+    "pair": {
+      "interior-SW|interior-W": 4783.0,
+      "side-S0|interior-SW": 4093.0,
+      "interior-S|interior-SE": 3882.0,
+      "interior-NW|interior-W": 3857.0,
+      "interior-SW|interior-S": 3493.0,
+      "side-W0|interior-SW": 1597.0,
+      "interior-W|interior-S": 1052.0,
+      "interior-W|interior-SE": 231.0
+    }
+  },
+  "wall_seconds": 165.684,
+  "cpu_seconds": 165.677,
+  "certificate_manifest": "505d611c98703789d574ad2ad0311b12f57fdd59124863c8dc444377a19d7e57"
+}

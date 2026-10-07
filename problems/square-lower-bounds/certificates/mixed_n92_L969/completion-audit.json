@@ -1,0 +1,16 @@
+{
+  "status": "AUDITED_AND_PACKAGED",
+  "n": 92,
+  "L": "969/100",
+  "total_mass": "9199999/100000",
+  "compared_with": "24151/2500",
+  "compared_note": "Nagamochi 9.660254 (published 9.6475)",
+  "improvement_lower": "37/1250",
+  "candidate_digest": "2b2624e8d6ebdd620cb13c728634872a8a7d7c4b10313568af824750e7138eb0",
+  "all_angles": 201,
+  "certificate_sha256": "d4a9aeacf4409efa2aec531df3163a7bb0b74bfdc02e6416b625c66914218469",
+  "bundle": "n92-L9.69-proof-bundle",
+  "archive_sha256": "2037c8fabc6dafd300b14df7c3493ee65af4d5925eb5744d682f80daf8be9696",
+  "route": "n-1 rectangle certificate read with the n budget, expanded to L9.69 by n92-wall-9.69 (resize_initial), rectangles full-net repair, 201-angle verification and replay.",
+  "scope": "All centres at all 201 net angles plus strict core containment for every orientation; independent axis replay, same-algorithm outward-rounded oblique replay."
+}

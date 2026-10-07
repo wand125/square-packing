@@ -1,0 +1,14 @@
+{
+  "source_sha256": "9cd4f58e9c91b0959cc9eae6e9d3b82b9590f7370a7b01d897e294fb793e05f8",
+  "density_sha256": "fd6b266de8fdef7f97bbc19f00f6b00a5ae2915ac39fc8af56ee6d3720693b61",
+  "input_sha256": "042c528e08add0fde73a1407880e17056aca5a71814e841d927a26edf4487b7d",
+  "L": "3827/400",
+  "B": "9977/10000",
+  "mass_exact": "8999/100",
+  "mass_decimal": 89.99,
+  "epsilon": "1/20000",
+  "D": "83/40000",
+  "angle_count": 201,
+  "safety_exact": "399968091/400000000",
+  "rescaled": false
+}

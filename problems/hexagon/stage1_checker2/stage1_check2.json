@@ -1,0 +1,21 @@
+{
+  "certificate": "stage1_cert.json",
+  "sha256": "ab0bdfdd8662c9dfb7827f36bd2b520604f3f76e5657b80c4f7123f83e623d27",
+  "L": "1/2+1/2*sqrt3",
+  "points": 630,
+  "excused_boxes": 742,
+  "total_weight": "749319/250000",
+  "total_below_3": true,
+  "d6_invariant": true,
+  "root_pieces": 512,
+  "boxes": 58894,
+  "excused": 1264,
+  "empty": 10687,
+  "cover": 11728,
+  "swept": 6024,
+  "failed": 0,
+  "max_depth": 22,
+  "failed_boxes": [],
+  "seconds": 10107.2,
+  "status": "verified"
+}

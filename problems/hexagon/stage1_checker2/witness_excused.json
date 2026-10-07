@@ -1,0 +1,58 @@
+{
+  "certificate": "stage1_cert.json",
+  "sha256": "ab0bdfdd8662c9dfb7827f36bd2b520604f3f76e5657b80c4f7123f83e623d27",
+  "failed_boxes_tried": 742,
+  "witnesses": 54,
+  "examples": [
+    {
+      "centre": [
+        "303253/250000",
+        "1/2"
+      ],
+      "u": "0",
+      "captured_weight": "495031/500000",
+      "admissible": true,
+      "excused": true
+    },
+    {
+      "centre": [
+        "1519039/1000000",
+        "1/2"
+      ],
+      "u": "0",
+      "captured_weight": "495031/500000",
+      "admissible": true,
+      "excused": true
+    },
+    {
+      "centre": [
+        "1212011/1000000",
+        "1001997/2000000"
+      ],
+      "u": "0",
+      "captured_weight": "993201/1000000",
+      "admissible": true,
+      "excused": true
+    },
+    {
+      "centre": [
+        "38001/25000",
+        "1001997/2000000"
+      ],
+      "u": "0",
+      "captured_weight": "993201/1000000",
+      "admissible": true,
+      "excused": true
+    },
+    {
+      "centre": [
+        "38001/25000",
+        "3730053/2000000"
+      ],
+      "u": "0",
+      "captured_weight": "993201/1000000",
+      "admissible": true,
+      "excused": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "AUDITED_AND_PACKAGED",
+  "n": 96,
+  "L": "248/25",
+  "total_mass": "9599999/100000",
+  "compared_with": "49441/5000",
+  "compared_note": "Nagamochi reference 9.8882 (unproven); our published rectangle n96 9.8518",
+  "improvement_lower": "159/5000",
+  "candidate_digest": "da3680fd57eaf2607686a12fa6f7ed35b1530c9b3fe73ed8b1b781b95647d7d1",
+  "all_angles": 201,
+  "certificate_sha256": "0e1040311c0afdcfad4bc5841999819c5adbce18bb431718990687ec25bc1dbc",
+  "bundle": "n96-L9.92-proof-bundle",
+  "archive_sha256": "6268691936190b2e11617e22674f8966a3bae4d04c8d7f23654cdfb3c8acdbd6",
+  "route": "n96 fresh structured Green init n96-992 at L9.92, rectangles full-net repair, 201-angle verification and replay.",
+  "scope": "All centres at all 201 net angles plus strict core containment for every orientation; independent axis replay, same-algorithm outward-rounded oblique replay."
+}

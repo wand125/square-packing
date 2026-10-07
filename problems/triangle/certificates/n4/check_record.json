@@ -1,0 +1,26 @@
+{
+  "certificate_sha256": "a0483cf46add5ad9df2e5537629746be5cf2e519bedc8081d4c60daba9d6f24b",
+  "L": "3+2/3*sqrt3",
+  "points": 3,
+  "total_weight": "3",
+  "symmetry": "D3",
+  "n": 4,
+  "total_weight_lt_n": true,
+  "U": "1/7",
+  "u_breaks": [
+    "0",
+    "1/7"
+  ],
+  "pairs": 3,
+  "root_boxes": 16,
+  "root_grid": 4,
+  "empty_leaves": 19,
+  "cover_leaves": 228,
+  "uncertified": 0,
+  "uncertified_boxes": [],
+  "nodes": 478,
+  "max_depth": 23,
+  "max_depth_limit": 32,
+  "seconds": 2.629,
+  "status": "verified"
+}
