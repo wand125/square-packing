@@ -5726,6 +5726,10 @@
    "readme": true
   },
   {
+   "path": "tools/n17_kernel_verifier",
+   "readme": true
+  },
+  {
    "path": "tools/performance",
    "readme": false
   },

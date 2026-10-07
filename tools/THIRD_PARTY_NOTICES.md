@@ -77,6 +77,11 @@ listed in PROVENANCE.md.
 <https://github.com/jlevy/squares> and are used under the same MIT License below. The verifier's code in
 `n17_bb_verifier/` is ours (MIT, `n17_bb_verifier/LICENSE`).
 
+`n17_kernel_verifier/` is a Rust port of `packing/devtools/verify_n17_kernel_certificate.py`
+of <https://github.com/jlevy/squares> (commit `ef79288a4`), under the MIT License below; its
+test fixture `tests/data/stall-w7-bins8/` is from that repository's campaign record, under
+CC BY 4.0 as described above for the documentation of `sqverify_fast`. See `n17_kernel_verifier/PROVENANCE.md`.
+
 ```
 MIT License
 
