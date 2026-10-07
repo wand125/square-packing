@@ -5678,6 +5678,21 @@
     ]
    },
    {
+    "id": "triangle-v1:certificates/n6",
+    "claim": "The smallest equilateral triangle containing six non-overlapping unit squares has side v = 2 + 4/√3 ≈ 4.3094.",
+    "release_tag": "triangle-v1",
+    "assets": [
+     "certificates__n6.tar.gz"
+    ],
+    "path": "problems/triangle/certificates/n6/ASSET.json",
+    "check": "python checker/check.py certificates/n6/loc3/cert_e1_100.json --n 6 --max-depth 40 --jobs 8\npython checker/check.py certificates/n6/stage2/cert_w_o1.json --n 5 --max-depth 40 --jobs 8\npython checker/check.py certificates/n6/stage2/cert_w_o0_p13_auto.json --n 5 --max-depth 40 --jobs 16\npython checker/check.py certificates/n6/stage2/cert_s3u2.json --n 4 --max-depth 40 --jobs 8\npython checker/check.py certificates/n6/stage2/cert_o03d.json --n 4 --max-depth 40 --jobs 8\npython checker/check.py certificates/n6/stage2/cert_o13b.json --n 4 --max-depth 40 --jobs 8\npython certificates/n6/stage2/reprove_obstacles.py",
+    "check_cwd": "problems/triangle",
+    "documents": [
+     "problems/triangle/certificates/n6/PROOF.md",
+     "problems/triangle/certificates/n6/triple/LEMMA.md"
+    ]
+   },
+   {
     "id": "triangle-v1:certificates/n7",
     "claim": "The smallest equilateral triangle containing 7 non-overlapping unit squares has side v = 4 + 2/√3 ≈ 5.1547.",
     "release_tag": "triangle-v1",

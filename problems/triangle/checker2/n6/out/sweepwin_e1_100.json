@@ -1,0 +1,26 @@
+{
+ "cert_sha256": "bbf90e7aafe5c72155fb9d1dadb4c9b5adee2aef2f347547511478de63d50ebe",
+ "window": "2,23/10,4999/10000,50001/100000",
+ "E": "1/100000000",
+ "points": 138,
+ "exclusion_boxes_used": 4,
+ "region_lines": 6,
+ "capturer_lines": 83,
+ "capturers_kept": 71,
+ "capturers_never": 71,
+ "constant_weight": "0",
+ "event_polys": 67333,
+ "polys_with_possible_root": 0,
+ "samples": 1,
+ "interior_ok": true,
+ "vertices": 183,
+ "sectors": 420,
+ "min_weight": "109/100",
+ "min_at": [
+  "1/100000001",
+  2.1536073990131737,
+  0.5000000099999998
+ ],
+ "status": "verified",
+ "seconds": 143.4
+}

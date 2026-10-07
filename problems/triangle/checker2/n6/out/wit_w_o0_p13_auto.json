@@ -1,0 +1,15 @@
+{
+ "cert": "cert_w_o0_p13_auto.json",
+ "obstacle_points": 456,
+ "proved_by_square": {
+  "0": 456
+ },
+ "unproved": [],
+ "unproved_count": 0,
+ "max_nodes": 6663,
+ "D": "1/100",
+ "DTH": "1/100",
+ "chain": null,
+ "status": "verified",
+ "seconds": 3.0
+}

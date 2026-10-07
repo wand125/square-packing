@@ -1,0 +1,16 @@
+{
+ "cert": "cert_s3u2.json",
+ "obstacle_points": 162,
+ "proved_by_square": {
+  "0": 81,
+  "1": 81
+ },
+ "unproved": [],
+ "unproved_count": 0,
+ "max_nodes": 1,
+ "D": "41/2500",
+ "DTH": "3/250",
+ "chain": null,
+ "status": "verified",
+ "seconds": 0.2
+}

@@ -1,0 +1,16 @@
+{
+ "cert": "cert_o03d.json",
+ "obstacle_points": 622,
+ "proved_by_square": {
+  "0": 447,
+  "3": 175
+ },
+ "unproved": [],
+ "unproved_count": 0,
+ "max_nodes": 37415,
+ "D": "41/2500",
+ "DTH": "3/250",
+ "chain": null,
+ "status": "verified",
+ "seconds": 14.7
+}

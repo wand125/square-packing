@@ -1,0 +1,17 @@
+{
+ "cert_sha256": "cf8b6d7d24bbb95f777c526169b328ef1960527e769ec72774292abc31ed14a8",
+ "L": "2+4/3*sqrt3",
+ "points": 14,
+ "obstacle_points": 456,
+ "exclusions": 3,
+ "symmetry": "none",
+ "total_weight": "14/3",
+ "n": 5,
+ "total_below_n": true,
+ "window_left_to_sweepwin": null,
+ "u_intervals_checked": 2188,
+ "failed_pieces": 0,
+ "failures": [],
+ "status": "verified",
+ "seconds": 25.7
+}

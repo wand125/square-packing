@@ -1,0 +1,19 @@
+{
+ "cert_sha256": "bbf90e7aafe5c72155fb9d1dadb4c9b5adee2aef2f347547511478de63d50ebe",
+ "L": "2+4/3*sqrt3",
+ "points": 138,
+ "obstacle_points": 0,
+ "exclusions": 5,
+ "symmetry": "D3",
+ "total_weight": "137013/22900",
+ "n": 6,
+ "total_below_n": true,
+ "window_left_to_sweepwin": "2,23/10,4999/10000,50001/100000,1/100000000",
+ "d3_invariant": true,
+ "U_exceeds_tan_pi_24": true,
+ "u_intervals_checked": 2695,
+ "failed_pieces": 0,
+ "failures": [],
+ "status": "verified",
+ "seconds": 2.2
+}

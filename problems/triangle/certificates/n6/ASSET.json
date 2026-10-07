@@ -1,0 +1,29 @@
+{
+ "schema": "asset/v1",
+ "id": "triangle-v1:certificates/n6",
+ "claim": "The smallest equilateral triangle containing six non-overlapping unit squares has side v = 2 + 4/√3 ≈ 4.3094.",
+ "release_tag": "triangle-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/triangle-v1",
+ "assets": [
+  {
+   "asset": "certificates__n6.tar.gz",
+   "size": 20623,
+   "sha256": "e7f9d01cb6edf981772ae4dcdff6dce981dcf4a8b21cfa81c615cdfef0bce4a5"
+  }
+ ],
+ "unpack": "tar xzf certificates__n6.tar.gz -C problems/triangle",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python checker/check.py certificates/n6/loc3/cert_e1_100.json --n 6 --max-depth 40 --jobs 8\npython checker/check.py certificates/n6/stage2/cert_w_o1.json --n 5 --max-depth 40 --jobs 8\npython checker/check.py certificates/n6/stage2/cert_w_o0_p13_auto.json --n 5 --max-depth 40 --jobs 16\npython checker/check.py certificates/n6/stage2/cert_s3u2.json --n 4 --max-depth 40 --jobs 8\npython checker/check.py certificates/n6/stage2/cert_o03d.json --n 4 --max-depth 40 --jobs 8\npython checker/check.py certificates/n6/stage2/cert_o13b.json --n 4 --max-depth 40 --jobs 8\npython certificates/n6/stage2/reprove_obstacles.py",
+ "check_cwd": "problems/triangle",
+ "check_note": "stage 2 X = 0 takes about 2 hours on 16 cores; the triple lemma and its hypotheses are checked by the commands in PROOF.md (Reproducing); the second checker is in checker2/n6/",
+ "check_extended": null,
+ "documents": [
+  "problems/triangle/certificates/n6/PROOF.md",
+  "problems/triangle/certificates/n6/triple/LEMMA.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing",
+  "commit": null,
+  "path": "problems/triangle/certificates/n6"
+ }
+}

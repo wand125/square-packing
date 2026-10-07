@@ -1,0 +1,170 @@
+{
+ "L1_pinwheel_C3": true,
+ "L2_stage1": {
+  "boxes_match": true,
+  "u_ok": true,
+  "angle_le_1_100": true
+ },
+ "L3_stage2": {
+  "stage2/cert_w_o1.json": {
+   "X": 1,
+   "partners": [
+    0,
+    3,
+    4,
+    5
+   ],
+   "header_partners": [
+    0,
+    3,
+    4,
+    5
+   ],
+   "partners_match": true,
+   "exclusion_owner": [
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     3
+    ],
+    [
+     4
+    ],
+    [
+     5
+    ]
+   ],
+   "all_boxes_inside": true,
+   "all_partners_covered": true,
+   "header_obstacle": true
+  },
+  "stage2/cert_w_o0_p13_auto.json": {
+   "X": 0,
+   "partners": [
+    1,
+    3
+   ],
+   "header_partners": [
+    1,
+    3
+   ],
+   "partners_match": true,
+   "exclusion_owner": [
+    [
+     1
+    ],
+    [
+     1
+    ],
+    [
+     3
+    ]
+   ],
+   "all_boxes_inside": true,
+   "all_partners_covered": true,
+   "header_obstacle": true
+  }
+ },
+ "L4_stage3": {
+  "pair_to_case": {
+   "0+1": {
+    "case": "0,1:3",
+    "rotations": 0
+   },
+   "0+3": {
+    "case": "0,3:1",
+    "rotations": 0
+   },
+   "1+0": {
+    "case": "0,1:3",
+    "rotations": 0
+   },
+   "1+3": {
+    "case": "1,3:0",
+    "rotations": 0
+   },
+   "1+4": {
+    "case": "0,3:1",
+    "rotations": 1
+   },
+   "1+5": {
+    "case": "1,3:0",
+    "rotations": 1
+   }
+  },
+  "rotated_box_fits": {
+   "1/100": true,
+   "3/250": true
+  },
+  "DTH_ok": true,
+  "stage3": {
+   "0,1:3": {
+    "inside": [
+     true
+    ],
+    "header": true
+   },
+   "0,3:1": {
+    "inside": [
+     true,
+     true
+    ],
+    "header": true
+   },
+   "1,3:0": {
+    "inside": [
+     true,
+     true
+    ],
+    "header": true
+   }
+  }
+ },
+ "lemma_hypotheses": {
+  "0,1:3": {
+   "H1": true,
+   "H2": {
+    "0": true,
+    "1": true
+   },
+   "H3": true,
+   "t_range_at_box_corners": [
+    0.0552,
+    0.2568
+   ]
+  },
+  "0,3:1": {
+   "H1": true,
+   "H2": {
+    "0": true,
+    "1": true
+   },
+   "H3": true,
+   "t_range_at_box_corners": [
+    0.0479,
+    0.2618
+   ]
+  },
+  "1,3:0": {
+   "H1": true,
+   "H2": {
+    "0": true,
+    "1": true
+   },
+   "H3": true,
+   "t_range_at_box_corners": [
+    0.0959,
+    0.2139
+   ]
+  }
+ },
+ "H4_step2": {
+  "1/20,7/100": true,
+  "1/10,3/25": true
+ },
+ "status": "verified"
+}

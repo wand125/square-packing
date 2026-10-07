@@ -1,4 +1,4 @@
-# Unit squares in an equilateral triangle: optimal packings for n = 2, 3, 4, 7, 11, 16, 22, 29 and a lower bound for n = 37
+# Unit squares in an equilateral triangle: optimal packings for n = 2, 3, 4, 6, 7, 11, 16, 22, 29 and a lower bound for n = 37
 
 Let s△(n) be the side of the smallest equilateral triangle that contains n non-overlapping unit
 squares (any positions, any angles).
@@ -8,6 +8,7 @@ squares (any positions, any angles).
 | 2 | 2 + 2/√3 | 3.1547 | two squares side by side on the base | the centroid, weight 1 (total 1) |
 | 3 | 3/2 + √3 | 3.2321 | "pinwheel": one square on each side | 7 points of weight 1/3 (total 7/3) |
 | 4 | 3 + 2/√3 | 4.1547 | three squares on the base, one on top | 3 points of weight 1 (total 3) and Lemma P |
+| 6 | 2 + 4/√3 | 4.3094 | pinwheel of three side-by-side pairs, one pair on each side | localization tree: 6 certificates with exclusion boxes and obstacle points, closed by a lemma on three squares |
 | 7 | 4 + 2/√3 | 5.1547 | rows 4 + 2 + 1 | lattice, 6 points of weight 1 |
 | 11 | 5 + 2/√3 | 6.1547 | rows 5 + 3 + 2 + 1 | lattice, 10 points |
 | 16 | 6 + 2/√3 | 7.1547 | rows 6 + 4 + 3 + 2 + 1 | lattice, 15 points |
@@ -19,13 +20,13 @@ The packings are the best known ones in Erich Friedman's Packing Center, "Square
 (https://erich-friedman.github.io/packing/squintri/). The certificates show that they are optimal. For n = 7, …, 29 the packing is rows of
 axis-parallel squares standing on the base, and the certificate is a patch of the unit triangular lattice (all weights 1, with Lemma P);
 the series and why it stops being sharp at n = 37 are described in `SERIES.md`.
-The results are computer-assisted, checked by two independent checkers and in Lean 4, and have not been peer reviewed.
+The results are computer-assisted and checked by two independent checkers; all except n = 6 are also checked in Lean 4. They have not been peer reviewed.
 
 ## Novelty
 
 - Friedman's table lists n = 1 and n = 2 as "Trivial". The proof for n = 2 is included because it
   is the simplest instance of the method.
-- For n = 3, 4, 7, 11, 16, 22 and 29 we are not aware of a previous proof of optimality. We checked:
+- For n = 3, 4, 6, 7, 11, 16, 22 and 29 we are not aware of a previous proof of optimality. We checked:
   - Friedman's page (as of 2026-09-30), which gives the packings but no proofs or lower bounds;
   - an arXiv search of abstracts containing "equilateral triangle", "squares" and "packing";
   - general web searches.
@@ -54,6 +55,21 @@ Then n squares do not fit in a triangle of side L < v.
 
 With the packing of side v, this gives s△(n) = v. Details are in `certificates/n*/PROOF.md`.
 
+**Localization (n = 6).** The optimal packing for n = 6 is held in place by contacts between squares, not only
+by the walls, and the proof uses a tree of certificates instead of a single one (`certificates/n6/PROOF.md`):
+
+1. A D3 certificate with total < 6 whose exceptions are small boxes around the pinwheel positions. So some square
+   is within 0.01 of its pinwheel pose.
+2. With that square fixed in its box (an obstacle, given by obstacle points that every square disjoint from it
+   avoids), a certificate with total < 5 forces a second square into its box.
+3. With two squares in their boxes, a certificate with total < 4 forces the third square of a C3 image of the
+   triple {0, 1, 3} into its box.
+4. A lemma on three squares, checked in interval arithmetic, shows that three squares in these boxes need
+   L ≥ v. With strictly disjoint squares this is a contradiction.
+
+The checker handles exclusion boxes and obstacle points (`checker/SPEC.md`, last section); the obstacle points
+are proved separately (`certificates/n6/stage2/`).
+
 **Lemma P (used for n = 4).** For two points p, q at distance exactly 1, a square whose chord
 along the line pq crosses two opposite edges and meets the segment [p, q] contains p or q. This
 handles the middle square of the base row, which holds both lower points on its two edges.
@@ -70,6 +86,9 @@ handles the middle square of the base row, which holds both lower points on its 
   certificate format, with a different method. Its README describes the method and what its
   author read (Independence section). It verifies the same certificates (n = 2, 3, 4 and the
   series up to n = 37) and rejects the negative controls.
+- **`checker2/n6/`** re-checks every part of the n = 6 proof (the six certificates, the obstacle points,
+  the triple lemma and its hypotheses, and the links between the stages) by other methods, written
+  without reading the first checker's code.
 
 ## Reproducing
 
@@ -85,6 +104,10 @@ cd checker && python -m pytest -q tests          # needs pytest; about 1.5 minut
 
 # stand-alone check of the n = 2 lemma (needs sympy and mpmath)
 python certificates/n2/check_n2.py
+
+# n = 6: six certificates, obstacle points, triple lemma (commands in certificates/n6/PROOF.md)
+python checker/check.py certificates/n6/loc3/cert_e1_100.json --n 6 --max-depth 40 --jobs 8
+python certificates/n6/stage2/reprove_obstacles.py
 ```
 
 Each run prints a JSON summary with `"status": "verified"`. The summary also contains the
@@ -110,8 +133,8 @@ described in `lean/README.md`.
 
 ## Not done yet
 
-- n = 5 and n = 6. Their best known side is the same value, 2 + 4/√3, and they are work in progress.
-  s△(5) = 2 + 4/√3 would also give s△(6).
+- n = 5. Its best known side is 2 + 4/√3, the same as s△(6), so s△(5) ≤ s△(6) = 2 + 4/√3; the lower
+  bound is work in progress.
 
 ## Licence
 

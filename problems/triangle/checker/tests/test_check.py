@@ -224,3 +224,25 @@ def test_n3_endpoint_verifies():
 def test_n3_negative_Lplus():
     s = C.check(os.path.join(EX, "neg_n3_Lplus.json"), max_depth=12, jobs=2, n=3)
     assert s["status"] == "failed"
+
+
+# ---- obstacle points (README 6d)
+def _obs_cert(sym="none"):
+    return {"L": "2+2/3*sqrt3", "symmetry": sym, "points": [],
+            "obstacle_points": [{"x": "1+1/3*sqrt3", "y": "1/3+1/3*sqrt3"}]}
+
+
+def test_obstacle_point_exempts_and_is_not_budget():
+    s = C.check(_obs_cert(), n=1)
+    assert s["status"] == "verified"
+    assert s["total_weight"] == "0" and s["obstacle_points"] == 1
+
+
+def test_obstacle_point_needs_symmetry_none():
+    with pytest.raises(C.CertError):
+        C.check(_obs_cert("D3"), n=1)
+
+
+def test_obstacle_point_off_centre_does_not_cover_everything():
+    c = _obs_cert(); c["obstacle_points"] = [{"x": "1/2", "y": "1/10"}]
+    assert C.check(c, n=1, max_depth=8)["status"] != "verified"

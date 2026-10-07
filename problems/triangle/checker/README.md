@@ -7,7 +7,8 @@ When the output says `"status": "verified"`, the following holds:
 
     every closed unit square Q with Q ⊆ T_L (any centre, any angle) satisfies  Σ_{p_i ∈ Q} w_i ≥ 1,
 
-where T_L has vertices (0,0), (L,0), (L/2, L√3/2). Points on ∂Q count. Contacts with margin zero are
+where T_L has vertices (0,0), (L,0), (L/2, L√3/2). With segment masses (item 6b), the left side also
+includes Σ rho·|Q ∩ pq| over the segments. Points on ∂Q count. Contacts with margin zero are
 supported when they happen at the endpoint of a u-bin.
 
 ## How to run
@@ -18,14 +19,15 @@ python check.py cert.json --root 4 --max-depth 40 --jobs 8 --u-breaks "1/3,2-sqr
 python -m pytest -q tests                                     # needs pytest
 ```
 
-The certificate format is `{"L": "2+2/3*sqrt3", "symmetry": "D3"|"none", "points": [{"x", "y", "w"}]}`.
+The certificate format is `{"L": "2+2/3*sqrt3", "symmetry": "D3"|"none", "points": [{"x", "y", "w"}]}`,
+with optional `pairs`, `features` and `segments: [{"p": {"x", "y"}, "q": {"x", "y"}, "rho"}]`.
 L and the coordinates are `a` or `a+b*sqrt3` with rational `a, b`. The weights are rationals.
 The JSON summary contains the sha256 of the certificate, the exact total weight, the leaf counts,
 the uncertified boxes (the first 200 are listed), the depth and the time.
 Only the standard library is used; Python 3.10+.
 
 Files: `q3.py` (the field Q(√3)), `poly.py` (polynomials and Bernstein tests), `check.py` (CLI and
-subdivision), `tests/`.
+subdivision), `seg_probe.py` (float sanity probe for points + segments), `tests/`.
 
 ## Why each accepted step is sound
 
@@ -101,6 +103,84 @@ soundness.
      distance, and which of the two switches inside the box. An example is the middle square of the
      n = 4 row, where both points sit on its two vertical edges.
 
+6b. **Segment masses.** A certificate may list `segments` {p, q, rho}: mass of density rho ≥ 0 spread
+   along the closed segment pq. The checker verifies exactly that |q − p|² = 1 (unit segments only)
+   and rho ≥ 0. A square Q captures rho·|Q ∩ pq|. The budget adds Σ rho·1. This is valid for
+   pairwise disjoint closed squares (which centre scaling produces): their intersections with a
+   segment are disjoint up to endpoints. With `D3`, the multiset of segments (unordered endpoint
+   pair, rho) must be invariant under both generators, exactly like the points.
+   - **Claim (vertices suffice).** Write σ = p + t d, t ∈ [0, 1], d = q − p. Fix θ. For each axis
+     e_k with d·e_k ≠ 0, the slab |(p + t d − c)·e_k| ≤ ½ is an interval of t with endpoints affine
+     in c. So the lower end a(c) = max(lower endpoints) is convex in c, and the upper end
+     b(c) = min(upper endpoints) is concave. (An axis with d·e_k = 0 gives no constraint on t, but
+     it restricts c to a strip.) The intersection is [max(a, 0), min(b, 1)], with length
+     g(c) = min(b, 1) − max(a, 0), which is concave in c. Let K be the set of c (in the strip, if
+     any) where g(c) ≥ 0. It is convex. If every vertex of the convex polygon P_θ has length
+     ≥ lmin > 0, all vertices lie in K. Then P_θ ⊆ K, and the concave g attains its minimum over
+     P_θ at a vertex. So the length is ≥ lmin on all of P_θ.
+   - **Exact vertex proof.** At a vertex V(u) = (X, Y)/D, put N_k = (X,Y)·E_k − p·(D E_k)
+     (= D² (V − p)·e_k) and M_k = d·E_k. The slab of axis k is
+     −D²/2 ≤ N_k − t·D·M_k ≤ D²/2. This is linear in t and needs no sign of M_k.
+     - Floats choose an active candidate for each end: t0 is 0 or the lower slab end
+       (s N_k − D²/2)/(s D M_k) of some axis k with sign s, plus a rational slack δ0 ≥ 0;
+       t1 is 1 or an upper end (s N_k + D²/2)/(s D M_k), minus δ1 ≥ 0.
+     - First s·M_k > 0 is proved strictly on the u-interval, so the denominators are positive.
+     - Then, multiplied by the positive denominators, these polynomials in u (degree ≤ 8) are proved
+       ≥ 0 with exact Bernstein coefficients: t0 ≥ 0; t1 ≤ 1; both slab inequalities for both axes
+       at t = t0 and at t = t1; and t1 − t0 ≥ lmin.
+     - The slab and [0,1] conditions are linear in t, so they hold on all of [t0, t1].
+       Hence [t0, t1] ⊆ Q ∩ σ in the t-parameter, and the length (|d| = 1) is ≥ t1 − t0 ≥ lmin.
+       This is the same as "chosen lower ≥ every other lower candidate (including 0), chosen upper
+       ≤ every other upper candidate (including 1)", but stated without dividing by M_k, so an axis
+       whose d·e_k vanishes in the bin is fine.
+   - The vertex candidates are the non-infeasible pairs V_ij of step 5, as for capture. A wrong float
+     choice only makes the proof fail. If no choice works on the u-interval, it is halved, up to 3
+     times, and each half is proved with its own choice. Each vertex has its own choice. The
+     slacks δ handle the sub-interval where the active end switches.
+   - **Choice of lmin.** The candidates are tried in order, and the first one that is proved for every
+     vertex is used:
+     1. 1, if the float minimum length (over the vertices and 9 sample angles) is > 1 − 10⁻⁹;
+     2. the float minimum snapped to a fraction with denominator ≤ 1000, if it is within 10⁻⁹;
+     3. the float minimum minus 10⁻⁶, rounded down to a multiple of 2⁻²⁰;
+     4. half of that.
+
+     Otherwise the segment gets credit 0, which is always sound. Each vertex proof tries the
+     slack-free choice (δ0 = δ1 = 0) first. The snap steps are needed for margin-zero certificates,
+     where a square stands exactly on a unit segment (length exactly 1, total capture exactly 1).
+     Step 3 is a ladder: the float minimum minus 10⁻⁶, 10⁻⁵, 10⁻⁴, 10⁻³ and 10⁻², each rounded down
+     to a multiple of 2⁻²⁰, tried in that order. Step 4 is half of the first ladder value.
+   - **Joint credit (concavity of the sum).** Summing per-segment minima loses whatever one segment
+     gains when another loses (for example, a square shifted along two collinear unit segments).
+     The checker therefore also proves a bound on the minimum of the sum:
+     - **Lower bounds per vertex.** For each segment i and each vertex candidate v (each pair not
+       proved infeasible), it proves c_{i,v} with len_i(V_v(u)) ≥ c_{i,v} for all u in the bin. This
+       uses the same exact vertex proof and the same candidate list (snap, ladder, half), started
+       above the per-segment credit, so that c_{i,v} ≥ that credit.
+     - **The set P.** P is the set of segments with c_{i,v} > 0 at every candidate.
+     - **Concavity.** Fix u. The actual extreme points of P_u are among the candidates. So for
+       i ∈ P every extreme point has positive length, P_u ⊆ K_i, and g_i is concave on P_u.
+       Hence S = Σ_{i∈P} rho_i g_i is concave on P_u, and its minimum is at an extreme point, which
+       is some V_v(u).
+     - **Credit.** So the credit is J = min_v Σ_{i∈P} rho_i c_{i,v}, plus Σ_{i∉P} rho_i·(per-segment
+       credit), which is a constant lower bound valid on the whole box.
+     - **Non-vertex candidates.** Some candidates are not extreme points of P_u for some u. Including
+       them in the min only makes J smaller (more conservative). The positivity c_{i,v} > 0 is also
+       required at them, which may only shrink P. Both effects are sound.
+     - **When it runs.** COVER uses points + features + pairs + max(joint credit, sum of
+       per-segment credits). The joint computation runs only when the float joint estimate
+       (min over candidates of Σ rho_i·(min over samples of the float length)) clears the deficit
+       and beats the per-segment credits. It stops early when the proved sum at some candidate is
+       already below the deficit. The joint credit is at most that sum, because c_{i,v} ≥ the
+       per-segment credit.
+   - **COVER** with segments: the sum of individually captured point weights, plus the features and
+     Lemma P pairs as before, plus Σ rho·lmin over the segments (or the joint credit above when it
+     is larger). Segments are separate mass, so
+     there is no double counting with the points. Segment credits are computed only when the float
+     estimate of the points, features and pairs is < 1. The float screen counts the better of
+     the sum of per-segment float minima and the joint float estimate.
+   - `seg_probe.py cert.json` samples random admissible poses in floats and reports the minimum of
+     points + Σ rho·length. It is a sanity check only, not a proof.
+
 7. **Coverage of all poses.** The root boxes cover [0, Lx]×[0, Ly] ⊇ T_L, which contains every
    admissible centre; Lx and Ly are rational and checked exactly against L and L√3/2. The root u-bins
    cover [0,1], or [0,U] with D3. Splitting halves one side; the u midpoint is exact in Q(√3).
@@ -126,3 +206,8 @@ soundness.
   gets deep but stays finite. For n = 2 with `none` and `--root 4`, one corner goes to depth 31.
   Use `--max-depth` ≥ 35 for margin-zero certificates.
 - Only the first 200 uncertified boxes are listed in the output; all of them are counted.
+- Segments must have length exactly 1. A zero-margin segment credit is only possible when the exact
+  minimum is 1 or a fraction with denominator ≤ 1000 (the snap step). Otherwise the credit is at
+  most the float minimum minus 10⁻⁶.
+- Segment tests are degree-8 polynomials and cost more than point tests. They run only on boxes
+  where the points, features and pairs do not already reach 1 (by the float estimate).

@@ -1,0 +1,15 @@
+{
+ "cert": "cert_w_o1.json",
+ "obstacle_points": 178,
+ "proved_by_square": {
+  "1": 178
+ },
+ "unproved": [],
+ "unproved_count": 0,
+ "max_nodes": 13579,
+ "D": "1/100",
+ "DTH": "1/100",
+ "chain": null,
+ "status": "verified",
+ "seconds": 5.0
+}

@@ -204,3 +204,108 @@ Certificate field `"features": [{"sites": [{"x":…, "y":…}, …], "k": k, "w"
 Squares with disjoint interiors in T_L, L < v, are translated by (v/L − 1)(c_i − G), where G is the
 common centroid. The results are pairwise disjoint closed unit squares in T_v. Proofs are in
 `../certificates/n2/PROOF.md`.
+
+### Segment masses (implemented; not used by the published certificates)
+
+Certificate field `"segments": [{"p": {"x":…, "y":…}, "q": {"x":…, "y":…}, "rho": "p/q"}, …]`:
+mass spread uniformly with density ρ along the closed segment pq.
+
+- **Capture.** A square Q captures ρ·|Q ∩ pq|, the length of the intersection.
+- **Budget.** Σ w_p + Σ ρ·|pq| < n. This is valid for pairwise disjoint closed squares, which is
+  what centre scaling produces: their intersections with a segment are disjoint.
+- **D3.** The multiset of segments must be invariant.
+
+**Lemma S (concavity).** For fixed θ and a fixed segment σ, the function g(c) = |Q(c,θ) ∩ ℓ_σ|
+(intersection with the full line, possibly negative when extended linearly) is concave on the set
+where the intersection is non-empty. This is 1-D Brunn–Minkowski: a convex body translated across
+a line. Hence on the admissible-centre polygon P_θ the minimum of |Q ∩ σ| = max(0, …) is attained
+at a vertex, and it is enough to bound the length from below at every vertex V(u) of P_θ, for all
+u in the bin. This is the same vertex machinery used for points and Lemma P.
+
+**Exact lower bound at a vertex.** Parametrise σ as p + t(q − p), t ∈ [0, 1].
+- For each square axis e_k, the slab |(p + t d − c)·e_k| ≤ ½ gives t in an interval with
+  endpoints t = ((c − p)·e_k ± ½)/(d·e_k). If d·e_k = 0 there is no constraint, or no intersection.
+- The intersection is [t_lo, t_hi] ∩ [0, 1], where t_lo is the maximum of the lower endpoints and
+  t_hi the minimum of the upper endpoints.
+- To prove |Q ∩ σ| ≥ ℓ_min on a bin, choose (by floats) which candidate endpoint is active for
+  t_lo and for t_hi. Then prove exactly with Bernstein bounds:
+  1. the signs of d·e_k on the bin;
+  2. the chosen lower endpoint is ≥ every other lower candidate (including 0), and the chosen
+     upper endpoint is ≤ every other upper candidate (including 1);
+  3. (t_hi − t_lo)·|d| ≥ ℓ_min.
+- Every inequality, multiplied by the positive denominators, is a polynomial in u with Q3
+  coefficients.
+- |d| may be irrational (d has Q3 coordinates). To avoid square roots, bound
+  (t_hi − t_lo)·|d| ≥ ℓ_min using |d|² ≥ (rational lower bound)², or require the segments to have
+  |d|² ∈ Q3 and compare squares. The simplest is to allow only segments of length exactly 1
+  (checked exactly), which is the case in practice.
+- A box gets capture weight Σ_points + Σ_segments ρ·ℓ_min(segment, box). It is COVER if this is ≥ 1.
+  For each segment use the best ℓ_min that can be proved, e.g. try ℓ_min from the float minimum
+  over the vertex samples, rounded down to a dyadic rational, and fall back to 0.
+
+**As implemented** (`check.py`: `segment_credit`, `_seg_vertex_prove`, `_seg_vertex_exact`; README
+item 6b):
+- Only unit segments are accepted (|q − p|² = 1 exactly), with ρ ≥ 0. The budget adds Σ ρ. With D3,
+  the multiset of (unordered endpoint pair, ρ) must be invariant.
+- The vertex conditions are stated without dividing by d·e_k. For t0 = a0/b0 and t1 = a1/b1 with
+  b0, b1 > 0 proved, require t0 ≥ 0, t1 ≤ 1, both slab inequalities
+  −D²/2 ≤ N_k − t·D·M_k ≤ D²/2 for both axes at t = t0 and at t = t1, and t1 − t0 ≥ ℓ_min. They are
+  linear in t, so they hold on [t0, t1]. An inactive axis with vanishing d·e_k is therefore fine.
+- t0 is 0 or an active lower slab end, plus a rational slack δ0 ≥ 0. t1 is 1 or an active upper
+  end, minus δ1 ≥ 0. Floats choose the active ends per vertex.
+  - The slack-free attempt (δ0 = δ1 = 0) is tried first.
+  - If no choice works on the u-interval, it is halved, up to 3 times, with a fresh choice per half.
+- **Order of ℓ_min candidates.** The first one that is proved for every vertex is used:
+  1. **snap:** 1, if the float minimum exceeds 1 − 10⁻⁹;
+  2. **snap:** the float minimum snapped by `Fraction(fmin).limit_denominator(1000)`, if it is within
+     10⁻⁹ of the float minimum;
+  3. the ladder: the float minimum minus 10⁻⁶, 10⁻⁵, 10⁻⁴, 10⁻³ and 10⁻², each rounded down to a
+     multiple of 2⁻²⁰;
+  4. half of the first ladder value;
+  5. otherwise credit 0.
+
+  The snap steps make margin-zero certificates at the container endpoint possible. There, a square
+  stands exactly on a unit segment, the length is exactly 1, and any safety margin would make the
+  box fail. Floats only propose the candidates; each accepted value is proved exactly.
+- **Joint credit.** For each segment i and vertex candidate v, prove c_{i,v} ≤ len_i(V_v(u)) for all
+  u in the bin, using the same proof and candidate list, starting above the per-segment credit.
+  - Let P be the set of segments with c_{i,v} > 0 at every candidate. Then
+    J = min_v Σ_{i∈P} ρ_i c_{i,v} + Σ_{i∉P} ρ_i·(per-segment credit) is a lower bound.
+  - It is sound by concavity: for i ∈ P, g_i is concave on P_u, so the sum is concave, and its
+    minimum is at an extreme point of P_u, which is among the candidates.
+  - COVER uses max(J, Σ per-segment credits). J runs only when the float joint estimate clears the
+    deficit and beats the per-segment credits.
+- Segment credits are computed only when the float estimate of points + features + pairs is < 1. If
+  the exact point proofs fall short, the segment credits are still tried.
+- `seg_probe.py` is a float sanity tool: it gives the minimum capture over random admissible poses.
+
+### Exclusion boxes and obstacle points (used for n = 6)
+
+Both fields serve the localization tree of `../certificates/n6/PROOF.md`.
+
+**Exclusions.** Certificate field `"exclusions": [{"x": [x0, x1], "y": [y0, y1], "u": [u0, u1]}, …]`,
+with Q3 endpoints.
+- A pose (c, u) is exempt if x0 ≤ c_x ≤ x1, y0 ≤ c_y ≤ y1 and u0 ≤ u ≤ u1 (closed box) for some entry.
+- With `symmetry: "D3"`, the box is tested on the pose's image in the fundamental domain u ∈ [0, U].
+  Equivalently, a pose is exempt if one of its 6 images (with u reduced mod the period) lies in a box.
+  `../certificates/n6/loc3/cert_e1_100.json` is the only D3 certificate that uses exclusions.
+- Claim checked: every admissible pose that is not exempt captures ≥ 1.
+
+**Obstacle points.** Certificate field `"obstacle_points": [{"x": …, "y": …}, …]`, unweighted.
+Only with `symmetry: "none"`.
+- A pose whose closed square contains an obstacle point is exempt.
+- Obstacle points are not part of the budget: the budget is Σ w_p < n over `points` only.
+- Claim checked: every admissible pose that is neither excluded nor contains an obstacle point
+  captures ≥ 1 from `points`. (The first checker implements this by giving obstacle points weight 1
+  in the box test; any method proving the claim above is fine.)
+
+**What makes obstacle points valid (not checked by this checker).** Each point lies strictly inside
+every placement of an earlier-stage square allowed by its box, or is a wall or chain witness: a point
+that no square disjoint from that earlier square can contain. These facts are proved by
+`../certificates/n6/stage2/stage_inputs.py`, `wall_witness2.py` and `chain_witness.py`, with the statements in
+their headers. A second system should re-prove them independently from those statements.
+
+**Sizes.** The n = 6 certificates have 3 to 14 weighted points and 81 to 622 obstacle points, and
+`cert_e1_100.json` has 138 weighted points with D3. A method whose cost grows like (number of
+lines)³ over the whole triangle will not finish on them; localise (for example by centre cells or
+short u-intervals), because only obstacle points near the exclusion boxes matter for most poses.
