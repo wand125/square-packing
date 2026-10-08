@@ -1,0 +1,484 @@
+[
+ {
+  "row": 1,
+  "cells": [
+   "side-S1",
+   "side-S2",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-SE"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "upstream standing verifier (full) and our fast verifier"
+ },
+ {
+  "row": 2,
+  "cells": [
+   "side-W0",
+   "side-N1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-SE"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "upstream standing verifier (full) and our fast verifier"
+ },
+ {
+  "row": 3,
+  "cells": [
+   "side-S0",
+   "side-S1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-N"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "upstream standing verifier (full) and our fast verifier"
+ },
+ {
+  "row": 4,
+  "cells": [
+   "side-W0",
+   "side-W2",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-N"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "upstream standing verifier (full) and our fast verifier"
+ },
+ {
+  "row": 5,
+  "cells": [
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-N",
+   "interior-E",
+   "interior-SE"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 6,
+  "cells": [
+   "side-S1",
+   "side-N1",
+   "interior-SW",
+   "interior-NW",
+   "interior-S",
+   "interior-N",
+   "interior-SE",
+   "interior-NE"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 7,
+  "cells": [
+   "side-W0",
+   "side-S1",
+   "side-W1",
+   "side-W2",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 8,
+  "cells": [
+   "side-N0",
+   "side-W0",
+   "side-S1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-N"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 9,
+  "cells": [
+   "side-S0",
+   "side-W0",
+   "side-W2",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 10,
+  "cells": [
+   "corner-SE",
+   "side-S0",
+   "side-S1",
+   "side-S2",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 11,
+  "cells": [
+   "side-W0",
+   "side-W1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-N"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 12,
+  "cells": [
+   "side-N0",
+   "side-N1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-N",
+   "interior-E",
+   "interior-SE"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 13,
+  "cells": [
+   "side-E1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-N",
+   "interior-E",
+   "interior-SE"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 14,
+  "cells": [
+   "corner-SW",
+   "side-S0",
+   "side-W0",
+   "side-W2",
+   "interior-SW",
+   "interior-NW",
+   "interior-W"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 15,
+  "cells": [
+   "corner-SW",
+   "side-N0",
+   "side-W0",
+   "side-W1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W"
+  ],
+  "status": "Computed",
+  "verified_with": "\u2014"
+ },
+ {
+  "row": 16,
+  "cells": [
+   "side-N0",
+   "side-W2",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-E"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 17,
+  "cells": [
+   "side-W0",
+   "side-W2",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-N",
+   "interior-E",
+   "interior-SE"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 18,
+  "cells": [
+   "side-N0",
+   "side-W0",
+   "side-S1",
+   "side-W1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 19,
+  "cells": [
+   "side-S0",
+   "side-W0",
+   "side-E1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-E"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 20,
+  "cells": [
+   "side-W0",
+   "side-S1",
+   "side-W2",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-E"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 21,
+  "cells": [
+   "side-S1",
+   "side-S2",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-N",
+   "interior-SE"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 22,
+  "cells": [
+   "corner-SW",
+   "side-W0",
+   "side-S1",
+   "side-W1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 23,
+  "cells": [
+   "corner-NW",
+   "side-N0",
+   "side-W0",
+   "side-W1",
+   "side-W2",
+   "interior-NW",
+   "interior-W",
+   "interior-S"
+  ],
+  "status": "Computed",
+  "verified_with": "\u2014"
+ },
+ {
+  "row": 24,
+  "cells": [
+   "corner-SE",
+   "side-S0",
+   "side-S1",
+   "side-S2",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-SE"
+  ],
+  "status": "Computed",
+  "verified_with": "\u2014"
+ },
+ {
+  "row": 25,
+  "cells": [
+   "corner-SW",
+   "corner-NW",
+   "side-S0",
+   "side-W0",
+   "side-W1",
+   "side-W2",
+   "interior-SW",
+   "interior-NW"
+  ],
+  "status": "Computed",
+  "verified_with": "\u2014"
+ },
+ {
+  "row": 26,
+  "cells": [
+   "side-N0",
+   "side-W0",
+   "side-W1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-E"
+  ],
+  "status": "Certificate verified",
+  "verified_with": "our fast verifier"
+ },
+ {
+  "row": 27,
+  "cells": [
+   "side-N1",
+   "side-E1",
+   "interior-SW",
+   "interior-W",
+   "interior-S",
+   "interior-N",
+   "interior-E"
+  ],
+  "status": "Computed",
+  "verified_with": "\u2014"
+ },
+ {
+  "row": 28,
+  "cells": [
+   "side-N0",
+   "side-W0",
+   "side-S1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-E"
+  ],
+  "status": "Computed",
+  "verified_with": "\u2014"
+ },
+ {
+  "row": 29,
+  "cells": [
+   "side-N0",
+   "side-W2",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-N",
+   "interior-E",
+   "interior-SE"
+  ],
+  "status": "Computed",
+  "verified_with": "\u2014"
+ },
+ {
+  "row": 30,
+  "cells": [
+   "corner-NW",
+   "side-S1",
+   "side-W1",
+   "side-W2",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S"
+  ],
+  "status": "Computed",
+  "verified_with": "\u2014"
+ },
+ {
+  "row": 31,
+  "cells": [
+   "corner-NW",
+   "side-N0",
+   "side-W0",
+   "side-S1",
+   "interior-SW",
+   "interior-NW",
+   "interior-W",
+   "interior-S"
+  ],
+  "status": "Computed",
+  "verified_with": "\u2014"
+ },
+ {
+  "row": 32,
+  "cells": [
+   "side-W0",
+   "side-S1",
+   "side-W1",
+   "interior-SW",
+   "interior-NW",
+   "interior-S",
+   "interior-N",
+   "interior-SE",
+   "interior-NE"
+  ],
+  "status": "Computed",
+  "verified_with": "\u2014"
+ },
+ {
+  "row": 33,
+  "cells": [
+   "corner-SW",
+   "side-N0",
+   "side-W0",
+   "interior-NW",
+   "interior-W",
+   "interior-S",
+   "interior-N",
+   "interior-SE"
+  ],
+  "status": "Computed",
+  "verified_with": "\u2014"
+ }
+]
