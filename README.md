@@ -15,6 +15,7 @@ command, and every checker, tool and Lean project.
 | `problems/square-lower-bounds/` | Lower bounds for s(n), n unit squares in the smallest square: point, rectangle-density and mixed certificates (n = 18 to 101) |
 | `problems/n17/` | Sub-pattern branch-and-bound certificates for n = 17 (for jlevy/squares): receipts, SHA-256, node counts and provenance; the data are available on request |
 | `problems/triangle/` | Unit squares in an equilateral triangle |
+| `problems/right-isosceles/` | Unit squares in a right isosceles triangle: optimality for n = 2, 3, 4, 6, 10 |
 | `problems/domino/` | Unit squares in a 1:2 rectangle |
 | `problems/hexagon/` | Unit squares in a regular hexagon |
 | `checks/valid7/` | An independent exact check of Valid7 (evand/square-packing) |
