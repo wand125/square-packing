@@ -107,8 +107,8 @@ values; see [Matching certificates](#matching-certificates).
 
 The highest bound among our published certificates for each `n`, whatever the
 kind, with the best value others have published as a proved result or a preprint
-(`vs previous`: `record` if the bound is above it, `match` if it equals or is
-below it). Nagamochi's closed form and Green's reported bound are reference
+(`vs previous`: `record` if the bound is above it, `match` if it equals it,
+`below` if it is lower; such certificates are kept as independent checks). Nagamochi's closed form and Green's reported bound are reference
 values only, since their published proofs are incomplete: Nagamochi's is
 `sqrt(n - 2r + 1) + 1` with `r = floor(sqrt(n))` for `n` not a square, and
 Green's is `2*sqrt(2) - 1 + (k(k-1)^2 + (k-1)*sqrt(2k))/(k^2+1)` with `k = r`
@@ -119,7 +119,7 @@ and list earlier rungs.
 <!-- auto:standing:begin -->
 | `n` | bound | exact | kind | directory | previous published record by others | vs previous | reference values |
 |---|---|---|---|---|---|---|---|
-| 11 | **3.81** | 381/100 | point | [`cert_n11_L381`](history/density-bounds/certificates/cert_n11_L381) | 3.877084 (Queuingtheorydotcom, 2026) | match | Nagamochi 3.4495… |
+| 11 | **3.81** | 381/100 | point | [`cert_n11_L381`](history/density-bounds/certificates/cert_n11_L381) | 3.877084 (Queuingtheorydotcom, 2026) | below | Nagamochi 3.4495… |
 | 18 | **4.705** | 941/200 | mixed | [`mixed_n18_L4705`](certificates/mixed_n18_L4705) | 4.679000 (jlevy, 2026) | record | Nagamochi 4.3166…; Green 4.4452… |
 | 19 | **4.8275** | 1931/400 | mixed | [`mixed_n19_L48275`](certificates/mixed_n19_L48275) | 4.800000 (jlevy, 2026) | record | Nagamochi 4.4641…; Green 4.4452… |
 | 20 | **4.9125** | 393/80 | mixed | [`mixed_n20_L49125`](certificates/mixed_n20_L49125) | 4.850000 (jlevy, 2026) | record | Nagamochi 4.6056…; Green 4.4452… |
@@ -130,7 +130,7 @@ and list earlier rungs.
 | 29 | **5.82** | 291/50 | mixed | [`mixed_n29_L582`](certificates/mixed_n29_L582) | 5.710000 (tokoharu, 2026) | record | Nagamochi 5.4721…; Green 5.3919… |
 | 30 | **5.8925** | 2357/400 | mixed | [`mixed_n30_L58925`](certificates/mixed_n30_L58925) | 5.710000 (tokoharu, 2026) | record | Nagamochi 5.5826…; Green 5.3919… |
 | 31 | **5.97** | 597/100 | mixed | [`mixed_n31_L597`](certificates/mixed_n31_L597) | 5.710000 (tokoharu, 2026) | record | Nagamochi 5.6904…; Green 5.3919… |
-| 32 | **5.95** | 119/20 | rectangle | [`rect_n32_L595`](certificates/rect_n32_L595) | 6.000000 (evand, 2026) | match | Nagamochi 5.7958…; Green 5.3919… |
+| 32 | **5.95** | 119/20 | rectangle | [`rect_n32_L595`](certificates/rect_n32_L595) | 6.000000 (evand, 2026) | below | Nagamochi 5.7958…; Green 5.3919… |
 | 37 | **6.44** | 161/25 | mixed | [`mixed_n37_L644`](certificates/mixed_n37_L644) | 6.090170 (Karakus, 2026) | record | Nagamochi 6.0990…; Green 6.3506… |
 | 38 | **6.545** | 1309/200 | rectangle | [`rect_n38_L6545`](certificates/rect_n38_L6545) | 6.178908 (Karakus, 2026) | record | Nagamochi 6.1962…; Green 6.3506… |
 | 39 | **6.65** | 133/20 | mixed | [`mixed_n39_L665`](certificates/mixed_n39_L665) | 6.266281 (Karakus, 2026) | record | Nagamochi 6.2915…; Green 6.3506… |
@@ -150,7 +150,7 @@ and list earlier rungs.
 | 57 | **7.8725** | 3149/400 | mixed | [`mixed_n57_L78725`](certificates/mixed_n57_L78725) | 7.588723 (Karakus, 2026) | record | Nagamochi 7.6332…; Green 7.3174… |
 | 58 | **7.935** | 1587/200 | mixed | [`mixed_n58_L7935`](certificates/mixed_n58_L7935) | 7.658911 (Karakus, 2026) | record | Nagamochi 7.7082…; Green 7.3174… |
 | 59 | **8** | 8 | mixed | [`k2m5_n59_L8`](certificates/k2m5_n59_L8) | 7.728416 (Karakus, 2026) | record | Nagamochi 7.7823…; Green 7.3174… |
-| 60 | **7.94** | 397/50 | rectangle | [`rect_n60_L794`](certificates/rect_n60_L794) | 8.000000 (evand, 2026) | match | Nagamochi 7.8557…; Green 7.3174… |
+| 60 | **7.94** | 397/50 | rectangle | [`rect_n60_L794`](certificates/rect_n60_L794) | 8.000000 (evand, 2026) | below | Nagamochi 7.8557…; Green 7.3174… |
 | 61 | **8** | 8 | point | [`point_n61_L8`](point_n61_L8) | 8.000000 (evand, 2026) | match | Nagamochi 7.9282…; Green 7.3174… |
 | 65 | **8.35** | 167/20 | mixed | [`mixed_n65_L835`](certificates/mixed_n65_L835) | 8.066373 (Karakus, 2026) | record | Nagamochi 8.0711…; Green 8.2900… |
 | 66 | **8.43** | 843/100 | mixed | [`mixed_n66_L843`](certificates/mixed_n66_L843) | 8.132169 (Karakus, 2026) | record | Nagamochi 8.1414…; Green 8.2900… |
@@ -165,7 +165,7 @@ and list earlier rungs.
 | 75 | **8.94** | 447/50 | mixed | [`mixed_n75_L894`](certificates/mixed_n75_L894) | 8.700610 (Karakus, 2026) | record | Nagamochi 8.7460…; Green 8.2900… |
 | 76 | **8.965** | 1793/200 | mixed | [`mixed_n76_L8965`](certificates/mixed_n76_L8965) | 8.761356 (Karakus, 2026) | record | Nagamochi 8.8102…; Green 8.2900… |
 | 77 | **9** | 9 | mixed | [`k2m4_n77_L9`](certificates/k2m4_n77_L9) | 9.000000 (evand, 2026) | match | Nagamochi 8.8740…; Green 8.2900… |
-| 78 | **8.965** | 1793/200 | rectangle | [`rect_n78_L8965`](certificates/rect_n78_L8965) | 9.000000 (evand, 2026) | match | Nagamochi 8.9373…; Green 8.2900… |
+| 78 | **8.965** | 1793/200 | rectangle | [`rect_n78_L8965`](certificates/rect_n78_L8965) | 9.000000 (evand, 2026) | below | Nagamochi 8.9373…; Green 8.2900… |
 | 82 | **9.32** | 233/25 | mixed | [`mixed_n82_L932`](certificates/mixed_n82_L932) | 9.058621 (Karakus, 2026) | record | Nagamochi 9.0623…; Green 9.2667… |
 | 83 | **9.37** | 937/100 | mixed | [`mixed_n83_L937`](certificates/mixed_n83_L937) | 9.116844 (Karakus, 2026) | record | Nagamochi 9.1240…; Green 9.2667… |
 | 84 | **9.411** | 9411/1000 | mixed | [`mixed_n84_L9411`](certificates/mixed_n84_L9411) | 9.174676 (Karakus, 2026) | record | Nagamochi 9.1854…; Green 9.2667… |
@@ -180,7 +180,7 @@ and list earlier rungs.
 | 93 | **9.88** | 247/25 | mixed | [`mixed_n93_L988`](certificates/mixed_n93_L988) | 9.678780 (Karakus, 2026) | record | Nagamochi 9.7178…; Green 9.2667… |
 | 94 | **9.95** | 199/20 | mixed | [`mixed_n94_L995`](certificates/mixed_n94_L995) | 9.733093 (Karakus, 2026) | record | Nagamochi 9.7750…; Green 9.2667… |
 | 95 | **9.965** | 1993/200 | mixed | [`mixed_n95_L9965`](certificates/mixed_n95_L9965) | 9.787088 (Karakus, 2026) | record | Nagamochi 9.8318…; Green 9.2667… |
-| 96 | **9.97** | 997/100 | mixed | [`mixed_n96_L997`](certificates/mixed_n96_L997) | 10.000000 (evand, 2026) | match | Nagamochi 9.8882…; Green 9.2667… |
+| 96 | **9.97** | 997/100 | mixed | [`mixed_n96_L997`](certificates/mixed_n96_L997) | 10.000000 (evand, 2026) | below | Nagamochi 9.8882…; Green 9.2667… |
 | 101 | **10.28** | 257/25 | mixed | [`mixed_n101_L1028`](certificates/mixed_n101_L1028) | — | record | Nagamochi 10.0554…; Green 10.2467… |
 | 122 | **11.26** | 563/50 | mixed | [`mixed_n122_L1126`](certificates/mixed_n122_L1126) | — | record | Nagamochi 11.0499…; Green 11.2293… |
 <!-- auto:standing:end -->
