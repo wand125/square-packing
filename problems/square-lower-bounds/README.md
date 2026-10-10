@@ -610,6 +610,21 @@ This is above Green's reported bound for `k = 10` (Friedman DS7, Theorem 9),
 `mixed_n50_L735` (`unified_linear_verify.cpp`). The full replay was run again from the published tarball before
 publication.
 
+## n = 122: a linear certificate past Green's bound
+
+[`certificates/mixed_n122_L1126`](certificates/mixed_n122_L1126/README.md) proves
+
+```
+s(122) >= 563/50 = 11.26
+```
+
+This is above Green's reported bound for `k = 11` (Friedman DS7, Theorem 9),
+`2√2 − 1 + (1100 + 10√22)/122 = 11.2292…`, by more than `0.0307`. The measure is linear: 502 point masses,
+1268 segments and 3 rectangles, total mass `12199999/100000`, checked at all 201 net angles with the verifier of
+`mixed_n101_L1028` (`unified_linear_verify.cpp`). Since the total mass is below 122, it also gives `s(N) >= 11.26` for
+every `N >= 122`. Before publication the full replay was run again from the published tarball on a fresh Ubuntu 24.04
+machine with only the README's requirements installed.
+
 ## n = 83: a linear certificate past Green's bound
 
 [`certificates/mixed_n83_L935`](certificates/mixed_n83_L935/README.md) proves
