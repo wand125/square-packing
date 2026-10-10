@@ -1,7 +1,7 @@
 # Streaming verifier results
 
-Implemented and validated locally on macOS / Apple silicon, 2026-10-10,
-Rust 1.98.0 with the task's system GMP environment. No remote commands or pushes.
+Implemented and validated on macOS / Apple silicon, 2026-10-10, Rust 1.98.0 with
+system GMP. The large-certificate measurement below was made on a Linux host.
 
 ## Implementation
 
@@ -149,7 +149,22 @@ rustc -O scripts/measure_seen.rs -o target/measure-seen
 /usr/bin/time -l target/measure-seen 1000000
 ```
 
-Local implementation/test commits: `3530209`, `39507df`. The final commit adds this
-report and retained measurement evidence, completes the retired-parent regression,
-and deletes TASK_STREAM.md as requested. Unrelated `../../codex_stream.log` was
-left untouched.
+## Large certificate
+
+On the 8,983,825-node certificate `m475217` (Linux, 8 threads, GNU time), the
+streaming receipt matches the classic receipt in every field except `directory` and
+`seconds`:
+
+| Run | Peak RSS | Wall time |
+|---|---:|---:|
+| Classic (4 threads) | 20.8 GB | 17:17:27 |
+| Stream, unbounded trig cache | 5.87 GB | 2:12:17 |
+| Stream, bounded trig cache | 0.81 GB | 2:08:27 |
+
+The first streaming run still grew by about 0.5 KB per node. The cause was the
+per-thread `cos_sin` memo table in `src/exact.rs`, which kept every angle met. It is
+now cleared when it reaches 65,536 entries per thread; the table only caches a pure
+function, so receipts are unchanged. The remaining growth is the seen-ID table
+(`seen_bytes_estimate=150994960`, about 17 bytes per node). Two damaged copies of a
+smaller certificate (a broken tighten split and a dropped leaf) FAIL with receipts
+identical to the classic verifier, through the fallback.

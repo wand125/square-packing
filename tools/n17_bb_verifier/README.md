@@ -175,3 +175,6 @@ classic verifier from scratch. All receipt fields match the classic path except
 nodes visited by the streaming attempt. Header errors can precede that attempt.
 `--stream --node-ids ...` is rejected with exit code 2; sample mode uses the classic
 path without `--stream`. Omitting `--stream` preserves existing behavior.
+
+On an 8,983,825-node certificate the streaming run peaked at 0.81 GB RSS against
+20.8 GB for the classic path, with an identical receipt (see `RESULT_STREAM.md`).
