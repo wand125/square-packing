@@ -52,7 +52,8 @@ def square_rows(idx):
             short = f's({n}) > {a} = {d}'
             ja = f'{n} 個の閉じた単位正方形は、辺 {a}（= {d}）の閉じた正方形に入らない。'
         key = i.split(':', 1)[1]
-        meth = ('rect' if 'rect_n' in key else 'mixed' if 'mixed_n' in key else 'lift' if re.search(r'/k2m\d', key)
+        # the cert_n* entries of the history release are rectangle-density certificates (history/density-bounds)
+        meth = ('rect' if 'rect_n' in key or (c['release_tag'] == 'square-lower-bounds-history-v1' and '/cert_n' in key) else 'mixed' if 'mixed_n' in key else 'lift' if re.search(r'/k2m\d', key)
                 else 'point')
         rows.append(dict(cont='square', n=n, v=v, kind=kind, short=short, claim_en=cl, claim_ja=ja, meth=meth,
                          rel=c['release_tag'], assets=c['assets'], check=c['check'], cwd=c['check_cwd'],
