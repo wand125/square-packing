@@ -2,6 +2,7 @@
 mod compact;
 mod exact;
 mod nodes;
+mod stream;
 mod tighten;
 
 use std::collections::{BTreeMap, BTreeSet};
@@ -76,6 +77,7 @@ struct Options {
     output: Option<PathBuf>,
     node_ids: Option<PathBuf>,
     threads: usize,
+    stream: bool,
 }
 impl Options {
     fn parse() -> Check<Self> {
@@ -87,11 +89,12 @@ impl Options {
         while let Some(arg) = args.next() {
             if arg == "--help" || arg == "-h" {
                 println!(
-                    "n17bb-verify DIRECTORY [--manifest NAME] [--cells JSON --cells-sha256 SHA256] [--threads N] [--node-ids JSON] [--output JSON]\nDefault cells: independently exported cover bundled with the verifier. --node-ids is a planning sample, never a full verdict."
+                    "n17bb-verify DIRECTORY [--manifest NAME] [--cells JSON --cells-sha256 SHA256] [--threads N] [--stream] [--node-ids JSON] [--output JSON]\nDefault cells: independently exported cover bundled with the verifier. --node-ids is a planning sample, never a full verdict."
                 );
                 std::process::exit(0);
             }
             match arg.as_str() {
+                "--stream" => result.stream = true,
                 "--manifest" => result.manifest = Some(args.next().ok_or("missing manifest")?),
                 "--cells" => result.cells = Some(args.next().ok_or("missing cells")?.into()),
                 "--cells-sha256" => {
@@ -119,6 +122,9 @@ impl Options {
         }
         if result.cells.is_some() != result.cells_sha256.is_some() {
             return Err("--cells requires --cells-sha256".into());
+        }
+        if result.stream && result.node_ids.is_some() {
+            return Err("--stream cannot be combined with --node-ids".into());
         }
         Ok(result)
     }
@@ -579,6 +585,22 @@ fn check_nodes(
 }
 
 fn run(options: &Options, receipt: &mut Value) -> Check<()> {
+    if options.stream {
+        let mut candidate = receipt.clone();
+        match run_attempt(options, &mut candidate, true) {
+            Ok(()) => {
+                *receipt = candidate;
+                return Ok(());
+            }
+            Err(reason) => eprintln!("stream fallback: {}", reason.replace(['\n', '\r'], " ")),
+        }
+    }
+    run_attempt(options, receipt, false)
+}
+
+// Keep the classic receipt assembly together and unchanged below the stream dispatch.
+#[allow(clippy::too_many_lines)]
+fn run_attempt(options: &Options, receipt: &mut Value, streaming: bool) -> Check<()> {
     if !exact::constants_hold() {
         return Err("the pi enclosure does not hold".into());
     }
@@ -619,6 +641,12 @@ fn run(options: &Options, receipt: &mut Value) -> Check<()> {
     }
     check_trig(&trig, &mut failures, &mut counts)?;
     drop(trig);
+    if streaming {
+        if let Some(failure) = failures.first() {
+            return Err(failure.clone());
+        }
+        return stream::check(options, &manifest, &verifier, counts, receipt);
+    }
     let tree = load_tree(options, &manifest, &mut failures)?;
     if verifier.v3 {
         let tightening = tree
@@ -717,7 +745,7 @@ fn main() {
 mod tree_tests {
     use super::*;
 
-    fn split_tree() -> Tree {
+    pub(super) fn split_tree() -> Tree {
         let root = json!({"id":0,"parent":null,"angles":[["0/1","2/1"]],"windows":[],"closed":null,"final":[],"split":{"angle":[0,"1/1"]}});
         let left = json!({"id":1,"parent":0,"angles":[["0/1","1/1"]],"windows":[],"closed":"disc"});
         let right =
