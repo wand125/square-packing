@@ -150,3 +150,28 @@ Three kinds of data come from the squares project, by Joshua Levy, under CC BY 4
 - `tests/cells.json` is the project’s capacity-one cover, exported from its tools.
 - `tests/fixtures/small-certificate` was written by the project’s branch-and-bound pilot, including its `README.txt`. The `mutated-*` copies change one field each.
 - The exact endpoints in the unit tests were exported from the standing verifier.
+
+### Streaming verification
+
+Add `--stream` to verify chunks once in manifest order while retaining only live
+parents, their child states, and a sparse `HashSet<u64>` of seen IDs. Parents are
+retired after their last expected child's parallel verification completes. Memory
+is proportional to the peak live metadata plus the largest decoded chunk and the
+seen-ID table, rather than compact metadata for the entire tree. The table uses
+approximately 10–21 bytes per ID at scale (temporarily about 31 during growth),
+independent of ID density.
+
+```bash
+./target/release/n17bb-verify CERT_DIR --stream --threads 4
+python3 scripts/compare_stream.py CERT_DIR --threads 4
+# Custom cells: add --cells cells.json to the comparison script; it computes SHA256.
+```
+
+Streaming emits only PASS receipts. Any failure, helper error, or unsupported
+arrival order logs one `stream fallback:` line to stderr and reruns the unchanged
+classic verifier from scratch. All receipt fields match the classic path except
+`seconds`; fallback therefore has classic memory requirements. Stderr also reports
+`peak_live`, seen-ID count/capacity and estimated table bytes, and the number of
+nodes visited by the streaming attempt. Header errors can precede that attempt.
+`--stream --node-ids ...` is rejected with exit code 2; sample mode uses the classic
+path without `--stream`. Omitting `--stream` preserves existing behavior.

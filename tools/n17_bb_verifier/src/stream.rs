@@ -90,7 +90,6 @@ impl Stream {
                 if live.children != expected_children(&live.node)? {
                     return Err("T2: split children mismatch".into());
                 }
-                self.live.remove(&parent_id);
             }
             (depth, Some(parent))
         };
@@ -140,6 +139,11 @@ impl Stream {
             self.tightening += 1;
         }
         Ok(parent)
+    }
+
+    fn retire_checked(&mut self) {
+        self.live
+            .retain(|_, node| node.children.len() != node.expected);
     }
 
     fn finish(&self, manifest: &Value) -> Check<()> {
@@ -219,6 +223,8 @@ pub(super) fn check(
                 *counts.entry(key).or_default() += count;
             }
         }
+        // Retire only after every child in this chunk has passed check_node.
+        stream.retire_checked();
     }
     stream.finish(manifest)?;
     receipt["nodes"] = json!(stream.seen.len());
@@ -258,6 +264,7 @@ mod tests {
         for node in nodes {
             stream.arrive(node, &manifest)?;
         }
+        stream.retire_checked();
         stream.finish(&manifest)?;
         Ok(stream)
     }
