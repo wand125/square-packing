@@ -1,6 +1,6 @@
 # s(66) >= 843/100 = 8.43
 
-A density certificate proving that 66 unit squares do not fit in a square of side `L = 843/100 = 8.43`. This exceeds our earlier certificate `mixed_n66_L842` (8.42) and Green's reported bound `8.2900…` (a reference value).
+A density certificate proving that 66 unit squares do not fit in a square of side `L = 843/100 = 8.43`. This exceeds our earlier certificate `mixed_n66_L842` (8.42). For reference, Nagamochi's closed form gives `8.1414…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete.
 
 This supersedes [`mixed_n66_L842`](../mixed_n66_L842/README.md) for `n = 66`.
 

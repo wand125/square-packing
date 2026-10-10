@@ -1,6 +1,6 @@
 # s(84) >= 3763/400 = 9.4075
 
-A density certificate proving that 84 unit squares do not fit in a square of side `L = 3763/400 = 9.4075`. This exceeds our earlier certificate `mixed_n84_L940` (9.4) and Green's reported bound `9.2667…` (a reference value).
+A density certificate proving that 84 unit squares do not fit in a square of side `L = 3763/400 = 9.4075`. This exceeds our earlier certificate `mixed_n84_L940` (9.4). For reference, Nagamochi's closed form gives `9.1854…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete.
 
 This supersedes [`mixed_n84_L940`](../mixed_n84_L940/README.md) for `n = 84`.
 

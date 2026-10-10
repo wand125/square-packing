@@ -741,8 +741,7 @@ again from the published tarball on a fresh Ubuntu 24.04 machine with only the R
 s(95) >= 249/25 = 9.96
 ```
 
-This exceeds our rectangle certificate `rect_n95_L98518` (9.8518) and Nagamochi's closed form `1 + √78 = 9.8317…`
-(a reference value). The measure is 438 rectangles, built from scratch from a structured initial measure and repaired
+This exceeds our rectangle certificate `rect_n95_L98518` (9.8518). For reference, Nagamochi's closed form gives `9.8318…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 438 rectangles, built from scratch from a structured initial measure and repaired
 on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a
 fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
@@ -754,8 +753,7 @@ fresh Ubuntu 24.04 machine with only the README's requirements installed.
 s(94) >= 248/25 = 9.92
 ```
 
-This exceeds our rectangle certificate `rect_n94_L9805` (9.805) and Nagamochi's closed form `1 + √77 = 9.7749…`
-(a reference value). The measure is 488 rectangles, built from scratch from a structured initial measure and repaired
+This exceeds our rectangle certificate `rect_n94_L9805` (9.805). For reference, Nagamochi's closed form gives `9.7750…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 488 rectangles, built from scratch from a structured initial measure and repaired
 on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a
 fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
@@ -768,7 +766,7 @@ s(86) >= 19/2 = 9.5
 ```
 
 This exceeds the bound 9.46 that `mixed_n85_L946` gives for n = 86 by monotonicity, our rectangle certificate
-`rect_n86_L9365` (9.365), and Nagamochi's closed form `1 + √69 = 9.3066…` (a reference value). The measure is 509
+`rect_n86_L9365` (9.365). For reference, Nagamochi's closed form gives `9.3066…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 509
 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier
 as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the
 README's requirements installed.
@@ -795,7 +793,7 @@ s(93) >= 493/50 = 9.86
 ```
 
 This exceeds the bound 9.75 that `mixed_n92_L975` gives for n = 93 by monotonicity, our rectangle certificate
-`rect_n93_L9735` (9.735), and Nagamochi's closed form `1 + √76 = 9.7178…` (a reference value). The measure is 443
+`rect_n93_L9735` (9.735). For reference, Nagamochi's closed form gives `9.7178…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 443
 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier
 as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the
 README's requirements installed.
@@ -808,8 +806,7 @@ README's requirements installed.
 s(89) >= 193/20 = 9.65
 ```
 
-This exceeds our rectangle certificate `rect_n89_L9565` (9.565) and Nagamochi's closed form `1 + √72 = 9.4853…`
-(a reference value). The measure is 416 rectangles, built from scratch from a structured initial measure and repaired
+This exceeds our rectangle certificate `rect_n89_L9565` (9.565). For reference, Nagamochi's closed form gives `9.4853…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 416 rectangles, built from scratch from a structured initial measure and repaired
 on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a
 fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
@@ -821,8 +818,7 @@ fresh Ubuntu 24.04 machine with only the README's requirements installed.
 s(52) >= 151/20 = 7.55
 ```
 
-This exceeds our rectangle certificate `rect_n52_L7535` (7.535) and Green's reported bound for k = 7, `7.3174…`
-(a reference value). The measure is 455 rectangles, built from scratch from a structured initial measure and repaired
+This exceeds our rectangle certificate `rect_n52_L7535` (7.535). For reference, Nagamochi's closed form gives `7.2450…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete. The measure is 455 rectangles, built from scratch from a structured initial measure and repaired
 on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a
 fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
@@ -834,8 +830,7 @@ fresh Ubuntu 24.04 machine with only the README's requirements installed.
 s(75) >= 223/25 = 8.92
 ```
 
-This exceeds our rectangle certificate `rect_n75_L89` (8.9) and Nagamochi's closed form `1 + √60 = 8.7459…`
-(a reference value). The measure is 340 rectangles, built from scratch from a structured initial measure and repaired
+This exceeds our rectangle certificate `rect_n75_L89` (8.9). For reference, Nagamochi's closed form gives `8.7460…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 340 rectangles, built from scratch from a structured initial measure and repaired
 on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a
 fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
@@ -847,8 +842,7 @@ fresh Ubuntu 24.04 machine with only the README's requirements installed.
 s(51) >= 373/50 = 7.46
 ```
 
-This exceeds our rectangle certificate `rect_n51_L74425` (7.4425) and Green's reported bound for k = 7, `7.3174…`
-(a reference value). The measure is 446 rectangles, built from scratch from a structured initial measure and repaired
+This exceeds our rectangle certificate `rect_n51_L74425` (7.4425). For reference, Nagamochi's closed form gives `7.1644…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete. The measure is 446 rectangles, built from scratch from a structured initial measure and repaired
 on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a
 fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
@@ -860,7 +854,7 @@ fresh Ubuntu 24.04 machine with only the README's requirements installed.
 s(88) >= 48/5 = 9.6
 ```
 
-This exceeds the bound 9.55 that `mixed_n87_L955` gives for n = 88 by monotonicity, and Nagamochi's closed form `1 + √71 = 9.4261…` (a reference value). The measure is 443 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds the bound 9.55 that `mixed_n87_L955` gives for n = 88 by monotonicity. For reference, Nagamochi's closed form gives `9.4261…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 443 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 58: 7.905, a Green-series certificate
 
@@ -870,7 +864,7 @@ This exceeds the bound 9.55 that `mixed_n87_L955` gives for n = 88 by monotonici
 s(58) >= 1581/200 = 7.905
 ```
 
-This exceeds our rectangle certificate `rect_n58_L789` (7.89) and Nagamochi's closed form `1 + √45 = 7.7082…` (a reference value). The measure is 319 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n58_L789` (7.89). For reference, Nagamochi's closed form gives `7.7082…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete. The measure is 319 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 91: 9.75, a Green-series certificate
 
@@ -880,7 +874,7 @@ This exceeds our rectangle certificate `rect_n58_L789` (7.89) and Nagamochi's cl
 s(91) >= 39/4 = 9.75
 ```
 
-This supersedes `mixed_n91_L970` above. This exceeds our earlier certificate `mixed_n91_L970` (9.7) and Nagamochi's closed form `1 + √74 = 9.6023…` (a reference value). The measure is 457 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n91_L970` above. This exceeds our earlier certificate `mixed_n91_L970` (9.7). For reference, Nagamochi's closed form gives `9.6023…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 457 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 55: 7.728, a Green-series certificate
 
@@ -890,7 +884,7 @@ This supersedes `mixed_n91_L970` above. This exceeds our earlier certificate `mi
 s(55) >= 966/125 = 7.728
 ```
 
-This exceeds our rectangle certificate `rect_n55_L77125` (7.7125) and Nagamochi's closed form `1 + √42 = 7.4807…` (a reference value). The measure is 303 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n55_L77125` (7.7125). For reference, Nagamochi's closed form gives `7.4807…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete. The measure is 303 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 90: 9.725, a Green-series certificate
 
@@ -900,7 +894,7 @@ This exceeds our rectangle certificate `rect_n55_L77125` (7.7125) and Nagamochi'
 s(90) >= 389/40 = 9.725
 ```
 
-This supersedes `mixed_n90_L960` above. This exceeds our earlier certificate `mixed_n90_L960`, the bound 9.65 that `mixed_n89_L965` gives for n = 90 by monotonicity, and Nagamochi's closed form `1 + √73 = 9.5440…` (a reference value). The measure is 571 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n90_L960` above. This exceeds our earlier certificate `mixed_n90_L960`, the bound 9.65 that `mixed_n89_L965` gives for n = 90 by monotonicity. For reference, Nagamochi's closed form gives `9.5440…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 571 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 92: 9.77, a Green-series certificate
 
@@ -910,7 +904,7 @@ This supersedes `mixed_n90_L960` above. This exceeds our earlier certificate `mi
 s(92) >= 977/100 = 9.77
 ```
 
-This supersedes `mixed_n92_L975` above. This exceeds our earlier certificate `mixed_n92_L975` (9.75) and Nagamochi's closed form `1 + √75 = 9.6603…` (a reference value). The measure is 345 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n92_L975` above. This exceeds our earlier certificate `mixed_n92_L975` (9.75). For reference, Nagamochi's closed form gives `9.6603…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 345 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 76: 8.96, a Green-series certificate
 
@@ -920,7 +914,7 @@ This supersedes `mixed_n92_L975` above. This exceeds our earlier certificate `mi
 s(76) >= 224/25 = 8.96
 ```
 
-This supersedes `mixed_n76_L894` above. This exceeds our earlier certificate `mixed_n76_L894` (8.94) and Nagamochi's closed form `1 + √61 = 8.8102…` (a reference value). The measure is 341 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n76_L894` above. This exceeds our earlier certificate `mixed_n76_L894` (8.94). For reference, Nagamochi's closed form gives `8.8102…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 341 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 74: 8.8675, a Green-series certificate
 
@@ -930,7 +924,7 @@ This supersedes `mixed_n76_L894` above. This exceeds our earlier certificate `mi
 s(74) >= 3547/400 = 8.8675
 ```
 
-This exceeds our rectangle certificate `rect_n74_L88475` (8.8475) and Nagamochi's closed form `1 + √59 = 8.6811…` (a reference value). The measure is 505 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n74_L88475` (8.8475). For reference, Nagamochi's closed form gives `8.6811…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 505 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 71: 8.705, a Green-series certificate
 
@@ -940,7 +934,7 @@ This exceeds our rectangle certificate `rect_n74_L88475` (8.8475) and Nagamochi'
 s(71) >= 1741/200 = 8.705
 ```
 
-This exceeds our rectangle certificate `rect_n71_L8685` (8.685) and Nagamochi's closed form `1 + √56 = 8.4833…` (a reference value). The measure is 471 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n71_L8685` (8.685). For reference, Nagamochi's closed form gives `8.4833…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 471 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 70: 8.6475, a Green-series certificate
 
@@ -950,7 +944,7 @@ This exceeds our rectangle certificate `rect_n71_L8685` (8.685) and Nagamochi's 
 s(70) >= 3459/400 = 8.6475
 ```
 
-This exceeds our rectangle certificate `rect_n70_L86275` (8.6275) and Nagamochi's closed form `1 + √55 = 8.4162…` (a reference value). The measure is 495 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n70_L86275` (8.6275). For reference, Nagamochi's closed form gives `8.4162…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 495 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 73: 8.809, a Green-series certificate
 
@@ -960,7 +954,7 @@ This exceeds our rectangle certificate `rect_n70_L86275` (8.6275) and Nagamochi'
 s(73) >= 8809/1000 = 8.809
 ```
 
-This exceeds our rectangle certificate `rect_n73_L878` (8.78) and Nagamochi's closed form `1 + √58 = 8.6158…` (a reference value). The measure is 450 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n73_L878` (8.78). For reference, Nagamochi's closed form gives `8.6158…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 450 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 96: 9.97, a Green-series certificate
 
@@ -970,7 +964,7 @@ This exceeds our rectangle certificate `rect_n73_L878` (8.78) and Nagamochi's cl
 s(96) >= 997/100 = 9.97
 ```
 
-This supersedes `mixed_n96_L996` above. This exceeds our earlier certificate `mixed_n96_L996` (9.96) and Nagamochi's closed form `1 + √79 = 9.8882…` (a reference value). The measure is 376 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n96_L996` above. This exceeds our earlier certificate `mixed_n96_L996` (9.96). For reference, Nagamochi's closed form gives `9.8882…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 376 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 69: 8.612, a Green-series certificate
 
@@ -980,7 +974,7 @@ This supersedes `mixed_n96_L996` above. This exceeds our earlier certificate `mi
 s(69) >= 2153/250 = 8.612
 ```
 
-This exceeds our rectangle certificate `rect_n69_L8585` (8.585) and Nagamochi's closed form `1 + √54 = 8.3485…` (a reference value). The measure is 556 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n69_L8585` (8.585). For reference, Nagamochi's closed form gives `8.3485…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 556 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 93: 9.88, a Green-series certificate
 
@@ -990,7 +984,7 @@ This exceeds our rectangle certificate `rect_n69_L8585` (8.585) and Nagamochi's 
 s(93) >= 247/25 = 9.88
 ```
 
-This supersedes `mixed_n93_L986` above. This exceeds our earlier certificate `mixed_n93_L986` (9.86) and Nagamochi's closed form `1 + √76 = 9.7178…` (a reference value). The measure is 501 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n93_L986` above. This exceeds our earlier certificate `mixed_n93_L986` (9.86). For reference, Nagamochi's closed form gives `9.7178…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 501 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 44: 6.9725, a Green-series certificate
 
@@ -1000,7 +994,7 @@ This supersedes `mixed_n93_L986` above. This exceeds our earlier certificate `mi
 s(44) >= 2789/400 = 6.9725
 ```
 
-This exceeds our rectangle certificate `rect_n44_L69425` (6.9425) and Nagamochi's closed form `1 + √33 = 6.7446…` (a reference value). The measure is 399 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n44_L69425` (6.9425). For reference, Nagamochi's closed form gives `6.7446…` and Green's reported bound gives `6.3506…`; both are reference values only, since their published proofs are incomplete. The measure is 399 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 56: 7.8025, a Green-series certificate
 
@@ -1010,7 +1004,7 @@ This exceeds our rectangle certificate `rect_n44_L69425` (6.9425) and Nagamochi'
 s(56) >= 3121/400 = 7.8025
 ```
 
-This exceeds our rectangle certificate `rect_n56_L77825` (7.7825) and Nagamochi's closed form `1 + √43 = 7.5574…` (a reference value). The measure is 453 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n56_L77825` (7.7825). For reference, Nagamochi's closed form gives `7.5574…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete. The measure is 453 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 84: 9.4075, a Green-series certificate
 
@@ -1020,7 +1014,7 @@ This exceeds our rectangle certificate `rect_n56_L77825` (7.7825) and Nagamochi'
 s(84) >= 3763/400 = 9.4075
 ```
 
-This supersedes `mixed_n84_L940` above. This exceeds our earlier certificate `mixed_n84_L940` (9.4) and Green's reported bound `9.2667…` (a reference value). The measure is 569 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n84_L940` above. This exceeds our earlier certificate `mixed_n84_L940` (9.4). For reference, Nagamochi's closed form gives `9.1854…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 569 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 67: 8.475, a Green-series certificate
 
@@ -1030,7 +1024,7 @@ This supersedes `mixed_n84_L940` above. This exceeds our earlier certificate `mi
 s(67) >= 339/40 = 8.475
 ```
 
-This exceeds our rectangle certificate `rect_n67_L8455` (8.455) and Green's reported bound `8.2900…` (a reference value). The measure is 485 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n67_L8455` (8.455). For reference, Nagamochi's closed form gives `8.2111…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 485 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 88: 9.6125, a Green-series certificate
 
@@ -1040,7 +1034,7 @@ This exceeds our rectangle certificate `rect_n67_L8455` (8.455) and Green's repo
 s(88) >= 769/80 = 9.6125
 ```
 
-This supersedes `mixed_n88_L960` above. This exceeds our earlier certificate `mixed_n88_L960` (9.6) and Nagamochi's closed form `1 + √71 = 9.4261…` (a reference value). The measure is 502 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n88_L960` above. This exceeds our earlier certificate `mixed_n88_L960` (9.6). For reference, Nagamochi's closed form gives `9.4261…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 502 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 94: 9.94, a Green-series certificate
 
@@ -1050,7 +1044,7 @@ This supersedes `mixed_n88_L960` above. This exceeds our earlier certificate `mi
 s(94) >= 497/50 = 9.94
 ```
 
-This supersedes `mixed_n94_L992` above. This exceeds our earlier certificate `mixed_n94_L992` (9.92) and Nagamochi's closed form `1 + √77 = 9.7750…` (a reference value). The measure is 630 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n94_L992` above. This exceeds our earlier certificate `mixed_n94_L992` (9.92). For reference, Nagamochi's closed form gives `9.7750…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 630 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 51: 7.47, a Green-series certificate
 
@@ -1060,7 +1054,7 @@ This supersedes `mixed_n94_L992` above. This exceeds our earlier certificate `mi
 s(51) >= 747/100 = 7.47
 ```
 
-This supersedes `mixed_n51_L746` above. This exceeds our earlier certificate `mixed_n51_L746` (7.46) and Green's reported bound `7.3174…` (a reference value). The measure is 489 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n51_L746` above. This exceeds our earlier certificate `mixed_n51_L746` (7.46). For reference, Nagamochi's closed form gives `7.1644…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete. The measure is 489 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 75: 8.94, a Green-series certificate
 
@@ -1070,7 +1064,7 @@ This supersedes `mixed_n51_L746` above. This exceeds our earlier certificate `mi
 s(75) >= 447/50 = 8.94
 ```
 
-This supersedes `mixed_n75_L892` above. This exceeds our earlier certificate `mixed_n75_L892` (8.92) and Nagamochi's closed form `1 + √60 = 8.7460…` (a reference value). The measure is 589 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n75_L892` above. This exceeds our earlier certificate `mixed_n75_L892` (8.92). For reference, Nagamochi's closed form gives `8.7460…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 589 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 72: 8.76, a Green-series certificate
 
@@ -1080,7 +1074,7 @@ This supersedes `mixed_n75_L892` above. This exceeds our earlier certificate `mi
 s(72) >= 219/25 = 8.76
 ```
 
-This exceeds our rectangle certificate `rect_n72_L874` (8.74) and Nagamochi's closed form `1 + √57 = 8.5498…` (a reference value). The measure is 488 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n72_L874` (8.74). For reference, Nagamochi's closed form gives `8.5498…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 488 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 57: 7.8725, a Green-series certificate
 
@@ -1090,7 +1084,7 @@ This exceeds our rectangle certificate `rect_n72_L874` (8.74) and Nagamochi's cl
 s(57) >= 3149/400 = 7.8725
 ```
 
-This exceeds our rectangle certificate `rect_n57_L7835` (7.835) and Nagamochi's closed form `1 + √44 = 7.6332…` (a reference value). The measure is 532 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n57_L7835` (7.835). For reference, Nagamochi's closed form gives `7.6332…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete. The measure is 532 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 43: 6.9075, a Green-series certificate
 
@@ -1100,7 +1094,7 @@ This exceeds our rectangle certificate `rect_n57_L7835` (7.835) and Nagamochi's 
 s(43) >= 2763/400 = 6.9075
 ```
 
-This exceeds our rectangle certificate `rect_n43_L68875` (6.8875) and Nagamochi's closed form `1 + √32 = 6.6569…` (a reference value). The measure is 358 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n43_L68875` (6.8875). For reference, Nagamochi's closed form gives `6.6569…` and Green's reported bound gives `6.3506…`; both are reference values only, since their published proofs are incomplete. The measure is 358 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 42: 6.8475, a Green-series certificate
 
@@ -1110,7 +1104,7 @@ This exceeds our rectangle certificate `rect_n43_L68875` (6.8875) and Nagamochi'
 s(42) >= 2739/400 = 6.8475
 ```
 
-This exceeds our rectangle certificate `rect_n42_L68275` (6.8275) and Nagamochi's closed form `1 + √31 = 6.5678…` (a reference value). The measure is 431 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n42_L68275` (6.8275). For reference, Nagamochi's closed form gives `6.5678…` and Green's reported bound gives `6.3506…`; both are reference values only, since their published proofs are incomplete. The measure is 431 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 95: 9.965, a Green-series certificate
 
@@ -1120,7 +1114,7 @@ This exceeds our rectangle certificate `rect_n42_L68275` (6.8275) and Nagamochi'
 s(95) >= 1993/200 = 9.965
 ```
 
-This supersedes `mixed_n95_L996` above. This exceeds our earlier certificate `mixed_n95_L996` (9.96) and Nagamochi's closed form `1 + √78 = 9.8318…` (a reference value). The measure is 480 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n95_L996` above. This exceeds our earlier certificate `mixed_n95_L996` (9.96). For reference, Nagamochi's closed form gives `9.8318…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 480 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 86: 9.503, a Green-series certificate
 
@@ -1130,7 +1124,7 @@ This supersedes `mixed_n95_L996` above. This exceeds our earlier certificate `mi
 s(86) >= 9503/1000 = 9.503
 ```
 
-This supersedes `mixed_n86_L950` above. This exceeds our earlier certificate `mixed_n86_L950` (9.5) and Nagamochi's closed form `1 + √69 = 9.3066…` (a reference value). The measure is 533 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n86_L950` above. This exceeds our earlier certificate `mixed_n86_L950` (9.5). For reference, Nagamochi's closed form gives `9.3066…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 533 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 69: 8.62, a Green-series certificate
 
@@ -1140,7 +1134,7 @@ This supersedes `mixed_n86_L950` above. This exceeds our earlier certificate `mi
 s(69) >= 431/50 = 8.62
 ```
 
-This supersedes `mixed_n69_L8612` above. This exceeds our earlier certificate `mixed_n69_L8612` (8.612) and Nagamochi's closed form `1 + √54 = 8.3485…` (a reference value). The measure is 547 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n69_L8612` above. This exceeds our earlier certificate `mixed_n69_L8612` (8.612). For reference, Nagamochi's closed form gives `8.3485…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 547 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 91: 9.7625, a Green-series certificate
 
@@ -1150,7 +1144,7 @@ This supersedes `mixed_n69_L8612` above. This exceeds our earlier certificate `m
 s(91) >= 781/80 = 9.7625
 ```
 
-This supersedes `mixed_n91_L975` above. This exceeds our earlier certificate `mixed_n91_L975` (9.75) and Nagamochi's closed form `1 + √74 = 9.6023…` (a reference value). The measure is 438 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n91_L975` above. This exceeds our earlier certificate `mixed_n91_L975` (9.75). For reference, Nagamochi's closed form gives `9.6023…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 438 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 76: 8.965, a Green-series certificate
 
@@ -1160,7 +1154,7 @@ This supersedes `mixed_n91_L975` above. This exceeds our earlier certificate `mi
 s(76) >= 1793/200 = 8.965
 ```
 
-This supersedes `mixed_n76_L896` above. This exceeds our earlier certificate `mixed_n76_L896` (8.96) and Nagamochi's closed form `1 + √61 = 8.8102…` (a reference value). The measure is 312 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n76_L896` above. This exceeds our earlier certificate `mixed_n76_L896` (8.96). For reference, Nagamochi's closed form gives `8.8102…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 312 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 90: 9.73, a Green-series certificate
 
@@ -1170,7 +1164,7 @@ This supersedes `mixed_n76_L896` above. This exceeds our earlier certificate `mi
 s(90) >= 973/100 = 9.73
 ```
 
-This supersedes `mixed_n90_L9725` above. This exceeds our earlier certificate `mixed_n90_L9725` (9.725) and Nagamochi's closed form `1 + √73 = 9.5440…` (a reference value). The measure is 525 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n90_L9725` above. This exceeds our earlier certificate `mixed_n90_L9725` (9.725). For reference, Nagamochi's closed form gives `9.5440…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 525 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 71: 8.721, a Green-series certificate
 
@@ -1180,7 +1174,7 @@ This supersedes `mixed_n90_L9725` above. This exceeds our earlier certificate `m
 s(71) >= 8721/1000 = 8.721
 ```
 
-This supersedes `mixed_n71_L8705` above. This exceeds our earlier certificate `mixed_n71_L8705` (8.705) and Nagamochi's closed form `1 + √56 = 8.4833…` (a reference value). The measure is 529 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n71_L8705` above. This exceeds our earlier certificate `mixed_n71_L8705` (8.705). For reference, Nagamochi's closed form gives `8.4833…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 529 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 87: 9.58, a Green-series certificate
 
@@ -1190,7 +1184,7 @@ This supersedes `mixed_n71_L8705` above. This exceeds our earlier certificate `m
 s(87) >= 479/50 = 9.58
 ```
 
-This supersedes `mixed_n87_L955` above. This exceeds our earlier certificate `mixed_n87_L955` (9.55) and Nagamochi's closed form `1 + √70 = 9.3666…` (a reference value). The measure is 594 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n87_L955` above. This exceeds our earlier certificate `mixed_n87_L955` (9.55). For reference, Nagamochi's closed form gives `9.3666…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 594 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 54: 7.685, a Green-series certificate
 
@@ -1200,7 +1194,7 @@ This supersedes `mixed_n87_L955` above. This exceeds our earlier certificate `mi
 s(54) >= 1537/200 = 7.685
 ```
 
-This exceeds our rectangle certificate `rect_n54_L76725` (7.6725) and Nagamochi's closed form `1 + √41 = 7.4031…` (a reference value). The measure is 364 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n54_L76725` (7.6725). For reference, Nagamochi's closed form gives `7.4031…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete. The measure is 364 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 73: 8.813, a Green-series certificate
 
@@ -1210,7 +1204,7 @@ This exceeds our rectangle certificate `rect_n54_L76725` (7.6725) and Nagamochi'
 s(73) >= 8813/1000 = 8.813
 ```
 
-This supersedes `mixed_n73_L8809` above. This exceeds our earlier certificate `mixed_n73_L8809` (8.809) and Nagamochi's closed form `1 + √58 = 8.6158…` (a reference value). The measure is 462 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n73_L8809` above. This exceeds our earlier certificate `mixed_n73_L8809` (8.809). For reference, Nagamochi's closed form gives `8.6158…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 462 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 94: 9.95, a Green-series certificate
 
@@ -1220,7 +1214,7 @@ This supersedes `mixed_n73_L8809` above. This exceeds our earlier certificate `m
 s(94) >= 199/20 = 9.95
 ```
 
-This supersedes `mixed_n94_L994` above. This exceeds our earlier certificate `mixed_n94_L994` (9.94) and Nagamochi's closed form `1 + √77 = 9.7750…` (a reference value). The measure is 853 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n94_L994` above. This exceeds our earlier certificate `mixed_n94_L994` (9.94). For reference, Nagamochi's closed form gives `9.7750…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 853 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 53: 7.6275, a Green-series certificate
 
@@ -1230,7 +1224,7 @@ This supersedes `mixed_n94_L994` above. This exceeds our earlier certificate `mi
 s(53) >= 3051/400 = 7.6275
 ```
 
-This exceeds our rectangle certificate `rect_n53_L76075` (7.6075) and Nagamochi's closed form `1 + √40 = 7.3246…` (a reference value). The measure is 505 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This exceeds our rectangle certificate `rect_n53_L76075` (7.6075). For reference, Nagamochi's closed form gives `7.3246…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete. The measure is 505 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 88: 9.62, a Green-series certificate
 
@@ -1240,7 +1234,7 @@ This exceeds our rectangle certificate `rect_n53_L76075` (7.6075) and Nagamochi'
 s(88) >= 481/50 = 9.62
 ```
 
-This supersedes `mixed_n88_L96125` above. This exceeds our earlier certificate `mixed_n88_L96125` (9.6125) and Nagamochi's closed form `1 + √71 = 9.4261…` (a reference value). The measure is 562 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n88_L96125` above. This exceeds our earlier certificate `mixed_n88_L96125` (9.6125). For reference, Nagamochi's closed form gives `9.4261…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 562 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 70: 8.6575, a Green-series certificate
 
@@ -1250,7 +1244,7 @@ This supersedes `mixed_n88_L96125` above. This exceeds our earlier certificate `
 s(70) >= 3463/400 = 8.6575
 ```
 
-This supersedes `mixed_n70_L86475` above. This exceeds our earlier certificate `mixed_n70_L86475` (8.6475) and Nagamochi's closed form `1 + √55 = 8.4162…` (a reference value). The measure is 513 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n70_L86475` above. This exceeds our earlier certificate `mixed_n70_L86475` (8.6475). For reference, Nagamochi's closed form gives `8.4162…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 513 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 58: 7.935, a Green-series certificate
 
@@ -1260,7 +1254,7 @@ This supersedes `mixed_n70_L86475` above. This exceeds our earlier certificate `
 s(58) >= 1587/200 = 7.935
 ```
 
-This supersedes `mixed_n58_L7905` above. This exceeds our earlier certificate `mixed_n58_L7905` (7.905) and Nagamochi's closed form `1 + √45 = 7.7082…` (a reference value). The measure is 543 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n58_L7905` above. This exceeds our earlier certificate `mixed_n58_L7905` (7.905). For reference, Nagamochi's closed form gives `7.7082…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete. The measure is 543 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 67: 8.48, a Green-series certificate
 
@@ -1270,7 +1264,7 @@ This supersedes `mixed_n58_L7905` above. This exceeds our earlier certificate `m
 s(67) >= 212/25 = 8.48
 ```
 
-This supersedes `mixed_n67_L8475` above. This exceeds our earlier certificate `mixed_n67_L8475` (8.475) and Green's reported bound `8.2900…` (a reference value). The measure is 536 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n67_L8475` above. This exceeds our earlier certificate `mixed_n67_L8475` (8.475). For reference, Nagamochi's closed form gives `8.2111…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 536 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 84: 9.411, a Green-series certificate
 
@@ -1280,7 +1274,7 @@ This supersedes `mixed_n67_L8475` above. This exceeds our earlier certificate `m
 s(84) >= 9411/1000 = 9.411
 ```
 
-This supersedes `mixed_n84_L94075` above. This exceeds our earlier certificate `mixed_n84_L94075` (9.4075) and Green's reported bound `9.2667…` (a reference value). The measure is 686 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n84_L94075` above. This exceeds our earlier certificate `mixed_n84_L94075` (9.4075). For reference, Nagamochi's closed form gives `9.1854…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The measure is 686 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 66: 8.43, a Green-series certificate
 
@@ -1290,7 +1284,7 @@ This supersedes `mixed_n84_L94075` above. This exceeds our earlier certificate `
 s(66) >= 843/100 = 8.43
 ```
 
-This supersedes `mixed_n66_L842` above. This exceeds our earlier certificate `mixed_n66_L842` (8.42) and Green's reported bound `8.2900…` (a reference value). The measure is 713 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
+This supersedes `mixed_n66_L842` above. This exceeds our earlier certificate `mixed_n66_L842` (8.42). For reference, Nagamochi's closed form gives `8.1414…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The measure is 713 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996`; the pre-publication replay was run from the bundle on a fresh Ubuntu 24.04 machine with only the README's requirements installed.
 
 ## n = 18: 4.7, a mixed certificate on a finer angle net
 
@@ -1325,7 +1319,7 @@ These are lower bounds, not optimality claims.
 s(29) >= 581/100 = 5.81
 ```
 
-This exceeds our rectangle certificate `rect_n29_L57975` (5.7975) and Nagamochi's closed form `1 + √20 = 5.4721…` (a reference value). The measure is 505 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996` and a finer angle net (see the certificate README); before publication the candidate was checked with the independent `sqverify_fast` on a fresh Ubuntu 24.04 machine (see the certificate README).
+This exceeds our rectangle certificate `rect_n29_L57975` (5.7975). For reference, Nagamochi's closed form gives `5.4721…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The measure is 505 rectangles, built from scratch from a structured initial measure and repaired on the full net, with the same verifier as `mixed_n96_L996` and a finer angle net (see the certificate README); before publication the candidate was checked with the independent `sqverify_fast` on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 20: 4.905, a mixed certificate on a finer angle net
 
@@ -1335,7 +1329,7 @@ This exceeds our rectangle certificate `rect_n29_L57975` (5.7975) and Nagamochi'
 s(20) >= 981/200 = 4.905
 ```
 
-This exceeds our earlier certificate rect_n20_L49 (4.9) and Nagamochi's closed form `4.6056…` (a reference value). The certificate is a rational rectangle measure of mass 1999999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This exceeds our earlier certificate rect_n20_L49 (4.9). For reference, Nagamochi's closed form gives `4.6056…` and Green's reported bound gives `4.4452…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 1999999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 26: 5.545, a mixed certificate on a finer angle net
 
@@ -1345,7 +1339,7 @@ This exceeds our earlier certificate rect_n20_L49 (4.9) and Nagamochi's closed f
 s(26) >= 1109/200 = 5.545
 ```
 
-This exceeds our earlier certificate rect_n26_L55325 (5.5325) and Green's reported bound `5.3919…` (a reference value). The certificate is a rational rectangle measure of mass 2599999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This exceeds our earlier certificate rect_n26_L55325 (5.5325). For reference, Nagamochi's closed form gives `5.1231…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 2599999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 27: 5.6435, a mixed certificate on a finer angle net
 
@@ -1355,7 +1349,7 @@ This exceeds our earlier certificate rect_n26_L55325 (5.5325) and Green's report
 s(27) >= 11287/2000 = 5.6435
 ```
 
-This exceeds our earlier certificate rect_n27_L5635 (5.635) and Green's reported bound `5.3919…` (a reference value). The certificate is a rational rectangle measure of mass 2699999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This exceeds our earlier certificate rect_n27_L5635 (5.635). For reference, Nagamochi's closed form gives `5.2426…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 2699999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 28: 5.735, a mixed certificate on a finer angle net
 
@@ -1365,7 +1359,7 @@ This exceeds our earlier certificate rect_n27_L5635 (5.635) and Green's reported
 s(28) >= 1147/200 = 5.735
 ```
 
-This exceeds our earlier certificate rect_n28_L57225 (5.7225) and Green's reported bound `5.3919…` (a reference value). The certificate is a rational rectangle measure of mass 2799999/100000 with core B = 999/1000 on a declared half-angle net of 416 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This exceeds our earlier certificate rect_n28_L57225 (5.7225). For reference, Nagamochi's closed form gives `5.3589…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 2799999/100000 with core B = 999/1000 on a declared half-angle net of 416 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 30: 5.8835, a mixed certificate on a finer angle net
 
@@ -1375,7 +1369,7 @@ This exceeds our earlier certificate rect_n28_L57225 (5.7225) and Green's report
 s(30) >= 11767/2000 = 5.8835
 ```
 
-This exceeds our earlier certificate rect_n30_L5875 (5.875) and Nagamochi's closed form `5.5826…` (a reference value). The certificate is a rational rectangle measure of mass 2999999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This exceeds our earlier certificate rect_n30_L5875 (5.875). For reference, Nagamochi's closed form gives `5.5826…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 2999999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 18: 4.705, a mixed certificate on a finer angle net
 
@@ -1385,7 +1379,7 @@ This exceeds our earlier certificate rect_n30_L5875 (5.875) and Nagamochi's clos
 s(18) >= 941/200 = 4.705
 ```
 
-This supersedes `mixed_n18_L4704` above. This exceeds our earlier certificate mixed_n18_L4704 (4.704) and Green's reported bound `4.4452…` (a reference value). The certificate is a rational rectangle measure of mass 1799999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This supersedes `mixed_n18_L4704` above. This exceeds our earlier certificate mixed_n18_L4704 (4.704). For reference, Nagamochi's closed form gives `4.3166…` and Green's reported bound gives `4.4452…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 1799999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 19: 4.825, a mixed certificate on a finer angle net
 
@@ -1395,7 +1389,7 @@ This supersedes `mixed_n18_L4704` above. This exceeds our earlier certificate mi
 s(19) >= 193/40 = 4.825
 ```
 
-This supersedes `mixed_n19_L48229` above. This exceeds our earlier certificate mixed_n19_L48229 (4.8229) and Nagamochi's closed form `4.4641…` (a reference value). The certificate is a rational rectangle measure of mass 1899999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This supersedes `mixed_n19_L48229` above. This exceeds our earlier certificate mixed_n19_L48229 (4.8229). For reference, Nagamochi's closed form gives `4.4641…` and Green's reported bound gives `4.4452…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 1899999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 39: 6.65, a mixed certificate on a finer angle net
 
@@ -1405,7 +1399,7 @@ This supersedes `mixed_n19_L48229` above. This exceeds our earlier certificate m
 s(39) >= 133/20 = 6.65
 ```
 
-This exceeds our earlier certificate rect_n39_L6635 (6.635) and Green's reported bound `6.3506…` (a reference value). The certificate is a rational rectangle measure of mass 3899999/100000 with core B = 999/1000 on a declared half-angle net of 416 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This exceeds our earlier certificate rect_n39_L6635 (6.635). For reference, Nagamochi's closed form gives `6.2915…` and Green's reported bound gives `6.3506…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 3899999/100000 with core B = 999/1000 on a declared half-angle net of 416 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 41: 6.775, a mixed certificate on a finer angle net
 
@@ -1415,7 +1409,7 @@ This exceeds our earlier certificate rect_n39_L6635 (6.635) and Green's reported
 s(41) >= 271/40 = 6.775
 ```
 
-This exceeds our earlier certificate rect_n41_L676 (6.76) and Nagamochi's closed form `6.4772…` (a reference value). The certificate is a rational rectangle measure of mass 4099999/100000 with core B = 999/1000 on a declared half-angle net of 416 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This exceeds our earlier certificate rect_n41_L676 (6.76). For reference, Nagamochi's closed form gives `6.4772…` and Green's reported bound gives `6.3506…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 4099999/100000 with core B = 999/1000 on a declared half-angle net of 416 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 31: 5.97, a mixed certificate on a finer angle net
 
@@ -1425,7 +1419,7 @@ This exceeds our earlier certificate rect_n41_L676 (6.76) and Nagamochi's closed
 s(31) >= 597/100 = 5.97
 ```
 
-This exceeds our earlier certificate rect_n31_L59525 (5.9525) and Nagamochi's closed form `5.6904…` (a reference value). The certificate is a rational rectangle measure of mass 3099999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This exceeds our earlier certificate rect_n31_L59525 (5.9525). For reference, Nagamochi's closed form gives `5.6904…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 3099999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 19: 4.8275, a mixed certificate on a finer angle net
 
@@ -1435,7 +1429,7 @@ This exceeds our earlier certificate rect_n31_L59525 (5.9525) and Nagamochi's cl
 s(19) >= 1931/400 = 4.8275
 ```
 
-This supersedes `mixed_n19_L4825` above. This exceeds our earlier certificate mixed_n19_L4825 (4.825) and Nagamochi's closed form `4.4641…` (a reference value). The certificate is a rational rectangle measure of mass 1899999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This supersedes `mixed_n19_L4825` above. This exceeds our earlier certificate mixed_n19_L4825 (4.825). For reference, Nagamochi's closed form gives `4.4641…` and Green's reported bound gives `4.4452…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 1899999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 28: 5.74, a mixed certificate on a finer angle net
 
@@ -1445,7 +1439,7 @@ This supersedes `mixed_n19_L4825` above. This exceeds our earlier certificate mi
 s(28) >= 287/50 = 5.74
 ```
 
-This supersedes `mixed_n28_L5735` above. This exceeds our earlier certificate mixed_n28_L5735 (5.735) and Green's reported bound `5.3919…` (a reference value). The certificate is a rational rectangle measure of mass 2799999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This supersedes `mixed_n28_L5735` above. This exceeds our earlier certificate mixed_n28_L5735 (5.735). For reference, Nagamochi's closed form gives `5.3589…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 2799999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 29: 5.815, a mixed certificate on a finer angle net
 
@@ -1455,7 +1449,7 @@ This supersedes `mixed_n28_L5735` above. This exceeds our earlier certificate mi
 s(29) >= 1163/200 = 5.815
 ```
 
-This supersedes `mixed_n29_L581` above. This exceeds our earlier certificate mixed_n29_L581 (5.81) and Nagamochi's closed form `5.4721…` (a reference value). The certificate is a rational rectangle measure of mass 2899999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This supersedes `mixed_n29_L581` above. This exceeds our earlier certificate mixed_n29_L581 (5.81). For reference, Nagamochi's closed form gives `5.4721…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 2899999/100000 with core B = 1999/2000 on a declared half-angle net of 832 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 27: 5.6525, a mixed certificate on a finer angle net
 
@@ -1465,7 +1459,7 @@ This supersedes `mixed_n29_L581` above. This exceeds our earlier certificate mix
 s(27) >= 2261/400 = 5.6525
 ```
 
-This supersedes `mixed_n27_L56435` above. This exceeds our earlier certificate mixed_n27_L56435 (5.6435) and Green's reported bound `5.3919…` (a reference value). The certificate is a rational rectangle measure of mass 2699999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This supersedes `mixed_n27_L56435` above. This exceeds our earlier certificate mixed_n27_L56435 (5.6435). For reference, Nagamochi's closed form gives `5.2426…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 2699999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 26: 5.555, a mixed certificate on a finer angle net
 
@@ -1475,7 +1469,7 @@ This supersedes `mixed_n27_L56435` above. This exceeds our earlier certificate m
 s(26) >= 1111/200 = 5.555
 ```
 
-This supersedes `mixed_n26_L5545` above. This exceeds our earlier certificate mixed_n26_L5545 (5.545) and Green's reported bound `5.3919…` (a reference value). The certificate is a rational rectangle measure of mass 2599999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
+This supersedes `mixed_n26_L5545` above. This exceeds our earlier certificate mixed_n26_L5545 (5.545). For reference, Nagamochi's closed form gives `5.1231…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 2599999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README).
 
 ## n = 20: 4.9125, a mixed certificate on a finer angle net
 
@@ -1485,7 +1479,7 @@ This supersedes `mixed_n26_L5545` above. This exceeds our earlier certificate mi
 s(20) >= 393/80 = 4.9125
 ```
 
-This supersedes `mixed_n20_L4905` above. This exceeds our earlier certificate mixed_n20_L4905 (4.905) and Nagamochi's closed form `4.6056…` (a reference value). The certificate is a rational rectangle measure of mass 1999999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n20_L49125/ASSET.json`).
+This supersedes `mixed_n20_L4905` above. This exceeds our earlier certificate mixed_n20_L4905 (4.905). For reference, Nagamochi's closed form gives `4.6056…` and Green's reported bound gives `4.4452…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 1999999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n20_L49125/ASSET.json`).
 
 ## n = 27: 5.655, a mixed certificate on a finer angle net
 
@@ -1495,7 +1489,7 @@ This supersedes `mixed_n20_L4905` above. This exceeds our earlier certificate mi
 s(27) >= 1131/200 = 5.655
 ```
 
-This supersedes `mixed_n27_L56525` above. This exceeds our earlier certificate mixed_n27_L56525 (5.6525) and Green's reported bound `5.3919…` (a reference value). The certificate is a rational rectangle measure of mass 2699999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n27_L5655/ASSET.json`).
+This supersedes `mixed_n27_L56525` above. This exceeds our earlier certificate mixed_n27_L56525 (5.6525). For reference, Nagamochi's closed form gives `5.2426…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 2699999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n27_L5655/ASSET.json`).
 
 ## n = 29: 5.8175, a mixed certificate on a finer angle net
 
@@ -1505,7 +1499,7 @@ This supersedes `mixed_n27_L56525` above. This exceeds our earlier certificate m
 s(29) >= 2327/400 = 5.8175
 ```
 
-This supersedes `mixed_n29_L5815` above. This exceeds our earlier certificate mixed_n29_L5815 (5.815) and Nagamochi's closed form `5.4721…` (a reference value). The certificate is a rational rectangle measure of mass 2899999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n29_L58175/ASSET.json`).
+This supersedes `mixed_n29_L5815` above. This exceeds our earlier certificate mixed_n29_L5815 (5.815). For reference, Nagamochi's closed form gives `5.4721…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 2899999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n29_L58175/ASSET.json`).
 
 ## n = 29: 5.82, a mixed certificate on a finer angle net
 
@@ -1515,7 +1509,7 @@ This supersedes `mixed_n29_L5815` above. This exceeds our earlier certificate mi
 s(29) >= 291/50 = 5.82
 ```
 
-This supersedes `mixed_n29_L58175` above. This exceeds our earlier certificate mixed_n29_L58175 (5.8175) and Nagamochi's closed form `5.4721…` (a reference value). The certificate is a rational rectangle measure of mass 2899999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n29_L582/ASSET.json`).
+This supersedes `mixed_n29_L58175` above. This exceeds our earlier certificate mixed_n29_L58175 (5.8175). For reference, Nagamochi's closed form gives `5.4721…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 2899999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n29_L582/ASSET.json`).
 
 ## n = 28: 5.7425, a mixed certificate on a finer angle net
 

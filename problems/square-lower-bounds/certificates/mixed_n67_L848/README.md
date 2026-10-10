@@ -1,6 +1,6 @@
 # s(67) >= 212/25 = 8.48
 
-A density certificate proving that 67 unit squares do not fit in a square of side `L = 212/25 = 8.48`. This exceeds our earlier certificate `mixed_n67_L8475` (8.475) and Green's reported bound `8.2900…` (a reference value).
+A density certificate proving that 67 unit squares do not fit in a square of side `L = 212/25 = 8.48`. This exceeds our earlier certificate `mixed_n67_L8475` (8.475). For reference, Nagamochi's closed form gives `8.2111…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete.
 
 This supersedes [`mixed_n67_L8475`](../mixed_n67_L8475/README.md) for `n = 67`.
 
