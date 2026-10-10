@@ -322,19 +322,14 @@
  ],
  "n17": [
   {
-   "en": "The n = 17 certificate data are not in a release.",
-   "ja": "n = 17 の証明書データは Release にない。",
-   "source": "README.md#L68"
-  },
-  {
    "en": "`problems/n17/manifest.json` records, for each class, the claim, node count, SHA-256, verifier receipts and the tools that made it.",
    "ja": "`problems/n17/manifest.json` に、各クラスの主張、ノード数、SHA-256、検査器の receipt、作成に用いたツールが記録されている。",
    "source": "README.md#L68-L70"
   },
   {
-   "en": "Certificate data are available on request.",
-   "ja": "証明書データは請求に応じて提供される。",
-   "source": "README.md#L70"
+   "en": "For entries covered by the on-request policy in `problems/n17/manifest.json`, certificate data are available on request.",
+   "ja": "`problems/n17/manifest.json` の請求時提供の方針が適用される項目は、証明書データを請求に応じて提供する。",
+   "source": "problems/n17/manifest.json"
   },
   {
    "en": "They can be regenerated deterministically with the recorded tools and inputs and checked against the SHA-256 listed there.",

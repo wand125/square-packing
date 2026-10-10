@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the static site from the repository (INDEX.json, problem folders) and site/content/*.json.
+"""Build the static site from the repository (INDEX.json, problem folders) and docs/data/*.json.
 
 python3 site/build.py           -> site/_site/
 python3 site/build.py OUTDIR    -> OUTDIR/
@@ -9,7 +9,7 @@ from fractions import Fraction
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
-CONTENT = os.path.join(HERE, 'content')
+CONTENT = os.path.join(REPO, 'docs', 'data')
 GH = 'https://github.com/wand125/square-packing'
 BLOB = GH + '/blob/main/'
 OUT = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else os.path.join(HERE, '_site')
@@ -198,7 +198,7 @@ def other_rows(idx):
                          claim_en=c['claim'],
                          claim_ja='認証済みの不可能：辺 1169/250 以下の正方形に重ならない単位正方形 17 個を、型の各セルに中心が 1 つずつあるように置くことはできない（jlevy/squares の 24 セルの被覆 \'ring-3-voronoi-8-tabbed-unique\'）。',
                          meth='bb', rel='', rel_url=c['data']['release_url'], assets=[],
-                         check='\n'.join(c['checks']), cwd='', docs=[c['manifest'], 'problems/n17/README.md'], id=c['id']))
+                         check='\n'.join(c['checks']), cwd='', docs=[c['manifest'], 'problems/n17/manifest.json'], id=c['id']))
     return rows
 
 
@@ -225,6 +225,10 @@ def page_results():
     rows.sort(key=lambda r: (order.index(r['cont']), r['n'], -r['v']))
     KIND = {'exact': ('optimal value', '最適値'), 'lb': ('lower bound', '下界'), 'gt': ('lower bound (strict)', '下界（真に大きい）'),
             'sub': ('sub-pattern excluded', '部分型の除外')}
+    notes = {}
+    for method in load('methods.json')['rows']:
+        for result_id, note in method.get('result_notes', {}).items():
+            notes[result_id] = dict(note, review_status=method.get('review_status'))
     tr = []
     for r in rows:
         relurl = r.get('rel_url') or (f'{GH}/releases/tag/{r["rel"]}' if r['rel'] else '')
@@ -232,14 +236,22 @@ def page_results():
         docs = ''.join(f'<a href="{BLOB}{e(d)}">{e(d.split("/")[-1] if d.count("/") < 3 else "/".join(d.split("/")[-2:]))}</a>'
                        for d in r['docs'][:2])
         st = 'ex' if r['kind'] in ('exact',) else ''
+        note = notes.get(r['id'])
+        consequence = ''
+        if note:
+            consequence = (
+                f'<dt>{bi("Consequence in the source", "原典での帰結")}</dt><dd>'
+                + bd(note['consequence']) + ' ' + bd(note.get('review_status'))
+                + f' <a href="{BLOB}{e(note["source"])}">README · {bi("statement and status", "主張と検証状況")}</a></dd>')
         tr.append(
             f'<tr class="r{"" if r["best"] else " old"}" data-cont="{r["cont"]}" data-meth="{r["meth"]}" data-best="{"1" if r["best"] else ""}" '
-            f'data-n="{r["n"]}" data-v="{r["v"]:.6f}">'
+            f'data-kind="{r["kind"]}" data-n="{r["n"]}" data-v="{r["v"]:.6f}">'
             f'<td class="nw">{bi(*CONT[r["cont"]])}</td><td class="num">{r["n"]}</td><td class="num">{e(r["short"])}</td>'
             f'<td class="nw"><span class="st {st}">{bi(*KIND[r["kind"]])}</span></td><td class="nw dim">{bi(*METH[r["meth"]])}</td>'
             f'<td class="links">{rel}</td><td class="links">{docs}</td></tr>'
             f'<tr class="x" hidden><td colspan="7"><dl>'
-            f'<dt>{bi("Claim", "主張")}</dt><dd>{bi(r["claim_en"], r["claim_ja"])}</dd>'
+            f'<dt>{bi("Certificate claim", "証明書の主張") if note else bi("Claim", "主張")}</dt><dd>{bi(r["claim_en"], r["claim_ja"])}</dd>'
+            + consequence
             + (f'<dt>{bi("Assets", "資産")}</dt><dd><code>{e(" ".join(r["assets"]))}</code></dd>' if r['assets'] else '')
             + (f'<dt>{bi("Check", "検算")}</dt><dd><pre>{e(r["check"])}</pre></dd>' if r['check'] else '')
             + (f'<dt>{bi("Run in", "実行場所")}</dt><dd><code>{e(r["cwd"])}</code></dd>' if r['cwd'] else '')
@@ -248,12 +260,14 @@ def page_results():
     # <option> cannot hold spans: render options per language via data attributes
     opts_c = ''.join(f'<option value="{k}" data-en="{e(v[0])}" data-ja="{e(v[1])}">{e(v[0])}</option>' for k, v in CONT.items())
     opts_m = ''.join(f'<option value="{k}" data-en="{e(v[0])}" data-ja="{e(v[1])}">{e(v[0])}</option>' for k, v in METH.items())
+    opts_k = ''.join(f'<option value="{k}" data-en="{e(v[0])}" data-ja="{e(v[1])}">{e(v[0])}</option>' for k, v in KIND.items())
     nbest = sum(r['best'] for r in rows)
-    body = f'''<p class="note">{bi(f"{len(rows)} certificates and proofs from INDEX.json and the problem folders of wand125/square-packing; {nbest} are the strongest result for their container and n. Click a row for the claim, the check command and the release assets.",
-                f"wand125/square-packing の INDEX.json と問題のフォルダから、証明書と証明 {len(rows)} 件。容器と n ごとの最強の結果は {nbest} 件。行を押すと主張・検算のコマンド・Release の資産が出る。")}</p>
+    body = f'''<p class="note">{bi(f"{len(rows)} certificates and proofs from INDEX.json and the problem folders of wand125/square-packing; {nbest} are selected by the strongest recorded bound for each container and n (including the published n = 17 sub-patterns). Click a row for the claim, the check command and the release assets.",
+                f"wand125/square-packing の INDEX.json と問題のフォルダから、証明書と証明 {len(rows)} 件。容器と n ごとの記録内の最強の下界（公開済み n = 17 の部分型を含む）として {nbest} 件を選択。行を押すと主張・検算のコマンド・Release の資産が出る。")}</p>
 <div class="bar" data-filterbar="res">
   <label>{bi("Container", "容器")} <select data-key="cont" id="f-cont"><option value="" data-en="all" data-ja="すべて">all</option>{opts_c}</select></label>
   <label>{bi("Method", "手法")} <select data-key="meth" id="f-meth"><option value="" data-en="all" data-ja="すべて">all</option>{opts_m}</select></label>
+  <label>{bi("Kind", "種類")} <select data-key="kind" id="f-kind"><option value="" data-en="all" data-ja="すべて">all</option>{opts_k}</select></label>
   <label>n <input type="number" data-key="nmin" id="f-nmin" min="1" aria-label="n min"> – <input type="number" data-key="nmax" id="f-nmax" min="1" aria-label="n max"></label>
   <label><input type="checkbox" data-key="best" id="f-best" checked> {bi("strongest per n only", "n ごとの最強のみ")}</label>
   <input type="search" data-key="q" id="f-q" data-ph-en="filter text" data-ph-ja="文字で絞り込み" aria-label="filter">
@@ -270,7 +284,7 @@ def page_results():
 
 
 def missing(name):
-    return f'<p class="note">{bi(f"(content/{name} not built yet)", f"（content/{name} はまだ）")}</p>'
+    return f'<p class="note">{bi(f"(docs/data/{name} not built yet)", f"（docs/data/{name} はまだ）")}</p>'
 
 
 def main():

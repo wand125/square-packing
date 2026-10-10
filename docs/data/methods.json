@@ -179,10 +179,30 @@
    ],
    "sources": [
     "problems/square-lower-bounds/README.md#L507-L537",
-    "problems/square-lower-bounds/certificates/k2m5_n59_L8/README.md#L10-L33",
-    "problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md#L10-L33",
+    "problems/square-lower-bounds/certificates/k2m5_n59_L8/README.md#L1-L33",
+    "problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md#L1-L33",
     "problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md#L41-L60"
-   ]
+   ],
+   "review_status": {
+    "en": "The s(59) = 8 and s(77) = 9 results are computer-assisted; neither has yet been reviewed outside this project or formalised in Lean.",
+    "ja": "s(59) = 8 と s(77) = 9 は計算機援用による結果。いずれもプロジェクト外のレビューと Lean での形式化は未実施。"
+   },
+   "result_notes": {
+    "square-lower-bounds-v1:certificates/k2m5_n59_L8": {
+     "consequence": {
+      "en": "s(59) = 8: the certificate's lower bound together with the 8×8 grid, which packs 64 ≥ 59 unit squares.",
+      "ja": "s(59) = 8。証明書の下界と、単位正方形 64 ≥ 59 個を置ける 8×8 の格子配置による。"
+     },
+     "source": "problems/square-lower-bounds/certificates/k2m5_n59_L8/README.md#L1-L15"
+    },
+    "square-lower-bounds-v1:certificates/k2m4_n77_L9": {
+     "consequence": {
+      "en": "s(77) = 9: the certificate's lower bound together with the 9×9 grid, which packs 81 ≥ 77 unit squares.",
+      "ja": "s(77) = 9。証明書の下界と、単位正方形 81 ≥ 77 個を置ける 9×9 の格子配置による。"
+     },
+     "source": "problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md#L1-L15"
+    }
+   }
   },
   {
    "id": "point-endpoint",

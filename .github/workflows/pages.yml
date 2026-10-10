@@ -1,11 +1,11 @@
 name: pages
 
-# Builds site/ from INDEX.json, the problem folders and site/content/, and deploys it to GitHub Pages.
+# Builds site/ from INDEX.json, the problem folders and docs/data/, and deploys it to GitHub Pages.
 
 on:
   push:
     branches: [main]
-    paths: ['site/**', 'INDEX.json', 'problems/right-isosceles/README.md', 'problems/n17/manifest.json', '.github/workflows/pages.yml']
+    paths: ['site/**', 'docs/data/**', 'INDEX.json', 'problems/right-isosceles/README.md', 'problems/n17/manifest.json', '.github/workflows/pages.yml']
   workflow_dispatch:
 
 permissions:

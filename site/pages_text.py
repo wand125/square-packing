@@ -1,4 +1,4 @@
-"""Renderers for the text pages (methods, themes, verify, about) from content/*.json."""
+"""Renderers for the text pages (methods, themes, verify, about) from docs/data/*.json."""
 import re
 from build import bi, bd, e, load, missing, BLOB
 
@@ -24,8 +24,14 @@ def src_links(s):
     if not s:
         return ''
     items = s if isinstance(s, list) else re.split(r';\s*', s)
+    expanded = []
+    for item in items:
+        # A source can name several line ranges in one file.
+        parts = re.split(r',\s*(?=L\d)', item)
+        expanded.append(parts[0])
+        expanded.extend(parts[0].split('#')[0] + '#' + part for part in parts[1:])
     out = []
-    for it in items:
+    for it in expanded:
         it = it.strip()
         if not it:
             continue
@@ -46,11 +52,11 @@ def methods():
     tr = []
     for r in d['rows']:
         tools = ''.join(f'<a href="{BLOB}{e(t.rstrip("/"))}">{e(t.rstrip("/").split("/")[-1])}</a>' for t in r.get('tools', []))
-        tr.append(f'<tr class="r" data-n="0"><td class="nw"><b>{bd(r.get("name"))}</b></td><td>{bc(r.get("what") or r.get("consists") or r.get("description"))}</td>'
-                  f'<td>{bc(r.get("used") or r.get("used_for"))}</td><td>{bc(r.get("origin") or r.get("credit"))}</td>'
+        tr.append(f'<tr class="r" data-n="0"><td><b>{bd(r.get("name"))}</b></td><td>{bc(r.get("what") or r.get("consists") or r.get("description"))}</td>'
+                  f'<td>{bc(r.get("used") or r.get("used_for"))}{(" " + bc(r["review_status"])) if r.get("review_status") else ""}</td><td>{bc(r.get("origin") or r.get("credit"))}</td>'
                   f'<td class="links">{tools}</td><td class="links">{src_links(r.get("sources"))}</td></tr>')
     return f'''<div class="bar" data-filterbar="mt"><input type="search" data-key="q" id="m-q" data-ph-en="filter text" data-ph-ja="文字で絞り込み" aria-label="filter"><span class="count"></span></div>
-<div class="wrap"><table class="wide"><thead><tr><th>{bi("Method", "手法")}</th><th>{bi("Certificate and check", "証明書と検査")}</th>
+<div class="wrap"><table class="wide methods-table"><thead><tr><th>{bi("Method", "手法")}</th><th>{bi("Certificate and check", "証明書と検査")}</th>
 <th>{bi("Used for", "使った対象")}</th><th>{bi("Origin and credit", "出典")}</th><th>{bi("Code", "コード")}</th><th>{bi("Source", "記述の元")}</th></tr></thead>
 <tbody id="mt">{"".join(tr)}</tbody></table></div>'''
 
@@ -66,11 +72,7 @@ def themes():
         wo = ''.join(f'<li>{bc(x)}</li>' for x in t.get('working_on', []))
         links = ''.join(f'<a href="{e(l["url"])}">{e(l["label"])}</a>' for l in t.get('links', []))
         extra = ''
-        tg = t.get('targets')
-        if tg:
-            head = ''.join(f'<th>{bd(c)}</th>' for c in tg['columns'])
-            body = ''.join('<tr>' + ''.join(f'<td class="num">{e(v)}</td>' for v in row) + '</tr>' for row in tg['rows'])
-            extra = f'<p class="note">{bc(tg["label"])}</p><div class="wrap"><table style="width:auto"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'
+        # Target tables are withheld pending publication approval.
         tr.append(f'<tr class="r" data-state="{t["state"]}" data-n="0"><td class="num"><a href="{e(t["url"])}">#{t["issue"]}</a></td>'
                   f'<td><b>{bc(t["title"])}</b></td><td class="nw"><span class="st{" ex" if t["state"] != "open" else ""}">{st}</span></td>'
                   f'<td>{bc(t.get("goal"))}</td><td class="num dim">{e(t.get("updated", ""))}</td></tr>'
@@ -103,7 +105,7 @@ def verify():
     n17 = ''.join(f'<li>{bc(x)}</li>' for x in d.get('n17', []))
     return f'''<h2>{bi("Checking one certificate", "証明書 1 件の検算")}</h2>
 <p class="note">{bi("The check command, its folder and the asset names of each certificate are in its row on the Results page and in INDEX.json.", "各証明書の検算のコマンド・実行場所・資産の名前は、結果のページの行と INDEX.json にある。")}</p>
-<div class="wrap"><table><thead><tr><th>#</th><th>{bi("Step", "手順")}</th><th>{bi("Command", "コマンド")}</th><th>{bi("Source", "記述の元")}</th></tr></thead><tbody>{steps}</tbody></table></div>
+<div class="wrap"><table class="wide"><thead><tr><th>#</th><th>{bi("Step", "手順")}</th><th>{bi("Command", "コマンド")}</th><th>{bi("Source", "記述の元")}</th></tr></thead><tbody>{steps}</tbody></table></div>
 <h2>{bi("Checkers, tools and Lean projects", "検査器・道具・Lean のプロジェクト")}</h2>
 <div class="wrap"><table class="wide"><thead><tr><th>{bi("Folder", "フォルダ")}</th><th>{bi("What it does", "内容")}</th><th>{bi("Runtime", "実行環境")}</th><th>{bi("Source", "記述の元")}</th></tr></thead><tbody>{tools}</tbody></table></div>
 <h2>{bi("Requirements", "必要なもの")}</h2>
@@ -118,14 +120,14 @@ def about():
     if not d:
         return missing('about.json')
     a = d['author']
-    cr = ''.join(f'<tr><td class="nw"><b>{e(c["who"])}</b></td><td>{bc(c.get("for"))}</td><td class="links">{src_links(c.get("source"))}</td></tr>' for c in d['credits'])
+    cr = ''.join(f'<tr><td><b>{e(c["who"])}</b></td><td>{bc(c.get("for"))}</td><td class="links">{src_links(c.get("source"))}</td></tr>' for c in d['credits'])
     rel = ''.join(f'<tr><td class="nw"><a href="{e(r["url"])}">{e(r["name"])}</a></td><td>{bc(r)}</td></tr>' for r in d['related'])
     mv = ''.join(f'<tr><td class="nw"><code>{e(m["old"])}</code></td><td><code>{e(m["new"])}</code></td></tr>' for m in d['moved']['table'])
-    mvnote = {k: v for k, v in d['moved'].items() if k in ('en', 'ja')}
+    mvnote = d['moved'].get('note', {})
     return f'''<h2>{bi("Author", "著者")}</h2>
 <p><a href="https://github.com/{e(a["github"])}">{e(a["github"])}</a> ({e(a["name"])})</p>
 <h2>{bi("Credits", "クレジット")}</h2>
-<div class="wrap"><table class="wide"><thead><tr><th>{bi("Who", "誰")}</th><th>{bi("For", "内容")}</th><th>{bi("Source", "記述の元")}</th></tr></thead><tbody>{cr}</tbody></table></div>
+<div class="wrap"><table class="wide credits-table"><thead><tr><th>{bi("Who", "誰")}</th><th>{bi("For", "内容")}</th><th>{bi("Source", "記述の元")}</th></tr></thead><tbody>{cr}</tbody></table></div>
 <h2>{bi("Related repositories and pages", "関連するリポジトリとページ")}</h2>
 <div class="wrap"><table><thead><tr><th>{bi("Name", "名前")}</th><th>{bi("Relation", "関係")}</th></tr></thead><tbody>{rel}</tbody></table></div>
 <h2>{bi("Moved repositories", "移したリポジトリ")}</h2>

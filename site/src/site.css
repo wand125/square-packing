@@ -57,3 +57,22 @@ ul.tight { margin: 0; padding-left: 1.2em; } ul.tight li { margin: 0; }
 [data-l] { display: none; }
 html[lang="en"] [data-l="en"], html[lang="ja"] [data-l="ja"] { display: revert; }
 @media (max-width: 640px) { header.top .sw { margin-left: 0; } }
+
+tr.r:focus-visible, th.sort:focus-visible { outline: 2px solid var(--acc); outline-offset: -2px; }
+th.sort[aria-sort="ascending"]::after { content: " ↑"; }
+th.sort[aria-sort="descending"]::after { content: " ↓"; }
+
+table.methods-table { table-layout: fixed; min-width: 1100px; }
+.methods-table th:nth-child(1) { width: 14%; }
+.methods-table th:nth-child(2) { width: 27%; }
+.methods-table th:nth-child(3) { width: 12%; }
+.methods-table th:nth-child(4) { width: 27%; }
+.methods-table th:nth-child(5), .methods-table th:nth-child(6) { width: 10%; }
+.methods-table td.links a { white-space: normal; overflow-wrap: anywhere; }
+
+table.credits-table { table-layout: fixed; }
+.credits-table th:nth-child(1) { width: 22%; }
+.credits-table th:nth-child(2) { width: 55%; }
+.credits-table th:nth-child(3) { width: 23%; }
+.credits-table td { overflow-wrap: anywhere; }
+.credits-table td.links a { white-space: normal; }
