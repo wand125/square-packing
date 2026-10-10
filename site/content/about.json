@@ -1,0 +1,192 @@
+{
+ "author": {
+  "name": "Hiroaki Hosono",
+  "github": "wand125"
+ },
+ "credits": [
+  {
+   "who": "Evan Daniel (evand/square-packing)",
+   "for": {
+    "en": "Code and formats are credited in the folders that use them. The Lean definitions of packings and the containment checker ptOk (s12/lean, MIT) are his; Valid7 and the mixed cover are from his repository; a lazy zmx2 patch is made against his verifier.",
+    "ja": "このリポジトリを使うフォルダで、コードと形式が出典として明記されている。パッキングの Lean 定義と包含検査器 `ptOk` (s12/lean、MIT) は彼のもの。Valid7 と混合被覆は彼のリポジトリに由来し、lazy zmx2 パッチは彼の検査器に対するパッチである。"
+   },
+   "source": "README.md#L81-L82; lean/n11-optimality/README.md#L14-L17, L250-L255; checks/valid7/README.md#L3-L10; tools/THIRD_PARTY_NOTICES.md#L33-L38"
+  },
+  {
+   "who": "tokoharu",
+   "for": {
+    "en": "The rectangle-density method, certificate format, LP solver and verifier (tokoharu/square-packing-density-bounds, MIT); verify.cpp is vendored in the rectangle-density certificates.",
+    "ja": "矩形密度法、証明書の形式、LP ソルバー、検査器 (tokoharu/square-packing-density-bounds、MIT)。`verify.cpp` は矩形密度証明書に同梱されている。"
+   },
+   "source": "tools/README.md#L8-L12, L139-L141; LICENSE.md#L7-L8; tools/THIRD_PARTY_NOTICES.md#L3-L7"
+  },
+  {
+   "who": "Joshua Levy (jlevy/squares)",
+   "for": {
+    "en": "sqverify_fast (code MIT, documentation CC BY 4.0) in fine_net_verifier and fine_net_witnesses; the standing n = 17 verifiers that n17_bb_verifier and n17_kernel_verifier reimplement; the n = 17 test cover and small certificate; exact closed forms for s(11).",
+    "ja": "fine_net_verifier と fine_net_witnesses に含まれる sqverify_fast (コード MIT、文書 CC BY 4.0)。n17_bb_verifier と n17_kernel_verifier が再実装した既存の n = 17 検査器。n = 17 のテスト用被覆と小さな証明書。s(11) の厳密な閉形式。"
+   },
+   "source": "tools/README.md#L141-L146; tools/THIRD_PARTY_NOTICES.md#L64-L76; lean/n11-optimality/README.md#L252-L253"
+  },
+  {
+   "who": "Queuing Theory #1 Fan (Queuingtheorydotcom/11SquaresOptimal)",
+   "for": {
+    "en": "The mathematical proof, the certificates and the field-00 structure of the optimality proof for 11 squares, which lean/n11-optimality formalizes.",
+    "ja": "11 個の正方形の最適性証明の数学的証明、証明書、field-00 の構造。`lean/n11-optimality` がこれを形式化している。"
+   },
+   "source": "lean/n11-optimality/README.md#L3-L12, L250-L252"
+  },
+  {
+   "who": "Walter Trump",
+   "for": {
+    "en": "The 1979 packing of 11 unit squares.",
+    "ja": "11 個の単位正方形の 1979 年の詰め込み。"
+   },
+   "source": "lean/n11-optimality/README.md#L251"
+  },
+  {
+   "who": "Kleddamag",
+   "for": {
+    "en": "The n = 11 certificate (s(11) > 31/8) and its format, read from his repository (11-squares-certified-bound); general_pose_tree rechecked its 12,028 per-row core scans. The global counting argument is his.",
+    "ja": "n = 11 の証明書 (s(11) > 31/8) とその形式。彼のリポジトリ (`11-squares-certified-bound`) から読み込む。`general_pose_tree` は 12,028 行の core 走査を再検査した。全体の計数論法は彼のもの。"
+   },
+   "source": "tools/README.md#L122-L126; tools/general_pose_tree/README.md#L22-L28, L41-L42"
+  },
+  {
+   "who": "Trevor Green",
+   "for": {
+    "en": "Bounds for several n reported by private communication to Erich Friedman, in Friedman's survey Packing Unit Squares in Squares (Electronic Journal of Combinatorics, DS7, last revision 14 August 2009). The underlying argument has not been published.",
+    "ja": "いくつかの n の下界。Erich Friedman への私信として、Friedman のサーベイ Packing Unit Squares in Squares (Electronic Journal of Combinatorics、DS7、最終改訂 2009 年 8 月 14 日) に報告された。根拠となる議論は未公表。"
+   },
+   "source": "problems/square-lower-bounds/README.md#L154-L158"
+  },
+  {
+   "who": "Nagamochi",
+   "for": {
+    "en": "Closed-form lower bounds, the standing figure in this repository for n = 32, 45, 53, 55, 56, 69, 70, 72.",
+    "ja": "閉形式の下界。n = 32, 45, 53, 55, 56, 69, 70, 72 についてこのリポジトリが基準とする値。"
+   },
+   "source": "problems/square-lower-bounds/README.md#L175-L177"
+  },
+  {
+   "who": "Erich Friedman (Packing Center)",
+   "for": {
+    "en": "The best known packings for squares in a triangle, 1:2 rectangle (domino), regular hexagon and right isosceles triangle are from his Packing Center. The packing for n = 4 in a right isosceles triangle was found by him in March 2005.",
+    "ja": "正三角形、1:2 長方形 (ドミノ)、正六角形、直角二等辺三角形の中の正方形について、既知の最良の詰め込みは彼の Packing Center による。直角二等辺三角形の n = 4 の詰め込みは 2005 年 3 月に彼が見つけた。"
+   },
+   "source": "problems/domino/README.md#L10-L12; problems/right-isosceles/README.md#L14-L17; problems/triangle/README.md#L19-L20; problems/hexagon/README.md#L10-L11"
+  },
+  {
+   "who": "Evert Stenlund",
+   "for": {
+    "en": "The 1:2 rectangle packing of 4 squares (found June 2010); the n = 9 entry s(9) = 2 + √2/3 (Stenlund 2010).",
+    "ja": "1:2 長方形内の 4 個の正方形の詰め込み (2010 年 6 月)。n = 9 の s(9) = 2 + √2/3 (Stenlund 2010)。"
+   },
+   "source": "problems/domino/README.md#L8-L12, L103"
+  }
+ ],
+ "related": [
+  {
+   "name": "jlevy/squares",
+   "url": "https://github.com/jlevy/squares",
+   "en": "Source of sqverify_fast and the standing n = 17 verifiers reimplemented here.",
+   "ja": "sqverify_fast と、ここで再実装した既存の n = 17 検査器の出典。"
+  },
+  {
+   "name": "evand/square-packing",
+   "url": "https://github.com/evand/square-packing",
+   "en": "Source of the Lean packing definitions, ptOk, and the Valid7 cover and statement.",
+   "ja": "Lean のパッキング定義、`ptOk`、Valid7 の被覆と主張の出典。"
+  },
+  {
+   "name": "tokoharu/square-packing-density-bounds",
+   "url": "https://github.com/tokoharu/square-packing-density-bounds",
+   "en": "Source of the rectangle-density method, LP solver and verifier.",
+   "ja": "矩形密度法、LP ソルバー、検査器の出典。"
+  },
+  {
+   "name": "Queuingtheorydotcom/11SquaresOptimal",
+   "url": "https://github.com/Queuingtheorydotcom/11SquaresOptimal",
+   "en": "The proof of optimality for 11 squares formalized in lean/n11-optimality.",
+   "ja": "`lean/n11-optimality` が形式化している 11 個の正方形の最適性証明。"
+  },
+  {
+   "name": "Erich Friedman's Packing Center: Squares in Triangles",
+   "url": "https://erich-friedman.github.io/packing/squintri/",
+   "en": "Packings and table for squares in an equilateral triangle.",
+   "ja": "正三角形内の正方形の詰め込みと表。"
+  },
+  {
+   "name": "Erich Friedman's Packing Center: Squares in Right Isosceles Triangles",
+   "url": "https://erich-friedman.github.io/packing/squintan/",
+   "en": "Packings and table for squares in a right isosceles triangle.",
+   "ja": "直角二等辺三角形内の正方形の詰め込みと表。"
+  },
+  {
+   "name": "Erich Friedman's Packing Center: Squares in Dominoes",
+   "url": "https://erich-friedman.github.io/packing/squindom/",
+   "en": "Packings and table for squares in a 1:2 rectangle.",
+   "ja": "1:2 長方形内の正方形の詰め込みと表。"
+  },
+  {
+   "name": "Erich Friedman's Packing Center: Squares in Hexagons",
+   "url": "https://erich-friedman.github.io/packing/squinhex/",
+   "en": "Packings and table for squares in a regular hexagon.",
+   "ja": "正六角形内の正方形の詰め込みと表。"
+  }
+ ],
+ "moved": {
+  "table": [
+   {
+    "old": "wand125/square-packing-bounds",
+    "new": "problems/square-lower-bounds/ (certificates in release square-lower-bounds-v1)"
+   },
+   {
+    "old": "wand125/square-packing-tools",
+    "new": "tools/"
+   },
+   {
+    "old": "wand125/n17-certificates",
+    "new": "problems/n17/b2-classes-20261005/"
+   },
+   {
+    "old": "wand125/n17-bb-verifier",
+    "new": "tools/n17_bb_verifier/ (a later version of the same verifier)"
+   },
+   {
+    "old": "wand125/squares-in-triangle",
+    "new": "problems/triangle/, lean/triangle/"
+   },
+   {
+    "old": "wand125/squares-in-domino",
+    "new": "problems/domino/"
+   },
+   {
+    "old": "wand125/squares-in-hexagon",
+    "new": "problems/hexagon/"
+   },
+   {
+    "old": "wand125/valid7-independent-check",
+    "new": "checks/valid7/"
+   },
+   {
+    "old": "wand125/n11-optimality-lean",
+    "new": "lean/n11-optimality/"
+   },
+   {
+    "old": "wand125/square-packing-density-bounds",
+    "new": "problems/square-lower-bounds/history/density-bounds/"
+   }
+  ],
+  "note": {
+   "en": "Each old repository keeps its full history and releases and has a `MOVED.json` mapping every old path to its new path or release asset (with SHA-256); all except n11-optimality-lean are archived (read-only). Links to old commits, files and release downloads keep working.",
+   "ja": "旧リポジトリはいずれも全履歴と Release を保持し、旧パスから新しいパスまたは Release asset (SHA-256 付き) への対応を示す `MOVED.json` を持つ。n11-optimality-lean を除きすべてアーカイブ (読み取り専用) されている。旧コミット、ファイル、Release ダウンロードへのリンクは引き続き有効である。"
+  },
+  "source": "README.md#L49-L66"
+ },
+ "licenses": {
+  "en": "This repository has no single license. Each top-level project folder keeps the license it was published under: folders from wand125's earlier repositories are MIT (the `LICENSE` file in the folder). Code by other authors keeps its own license next to it, for example `UPSTREAM-LICENSE.txt` (MIT, Evan Daniel) in `lean/n11-optimality/` and `problems/square-lower-bounds/point_n21_L5/`, the vendored `verify.cpp` (tokoharu, MIT) inside the rectangle-density certificates, and `tools/THIRD_PARTY_NOTICES.md`. If a folder has no `LICENSE`, the nearest enclosing folder's license applies.",
+  "ja": "このリポジトリに単一のライセンスはない。トップレベルの各プロジェクトフォルダは、公開されたときのライセンスを保つ。wand125 の以前のリポジトリ由来のフォルダは MIT (フォルダ内の `LICENSE`)。他の著者のコードは、その隣に自身のライセンスを置く。例: `lean/n11-optimality/` と `problems/square-lower-bounds/point_n21_L5/` の `UPSTREAM-LICENSE.txt` (MIT、Evan Daniel)、矩形密度証明書に同梱された `verify.cpp` (tokoharu、MIT)、`tools/THIRD_PARTY_NOTICES.md`。フォルダに `LICENSE` がない場合は、最も近い上位フォルダのライセンスが適用される。",
+  "source": "LICENSE.md#L3-L10; README.md#L74-L77"
+ }
+}

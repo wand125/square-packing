@@ -1,0 +1,350 @@
+{
+ "steps": [
+  {
+   "en": "Download the asset(s) from the release named in `release_tag`.",
+   "ja": "`release_tag` に示された Release から asset をダウンロードする。",
+   "source": "README.md#L43-L44"
+  },
+  {
+   "en": "Compare the SHA-256 with the value in `INDEX.json`; each release also has `SHA256SUMS`.",
+   "ja": "SHA-256 を照合する。各 Release には `SHA256SUMS` もある。",
+   "source": "README.md#L44-L45"
+  },
+  {
+   "en": "Run `unpack` from the repository root. It puts the data files back next to the documents, restoring the original layout.",
+   "ja": "リポジトリのルートで `unpack` を実行する。データファイルが文書の隣に戻り、元の配置が復元される。",
+   "cmd": "tar xzf certificates__n4.tar.gz -C problems/domino",
+   "source": "README.md#L45-L46"
+  },
+  {
+   "en": "Run `check` in `check_cwd`.",
+   "ja": "`check_cwd` で `check` を実行する。",
+   "cmd": "cd problems/domino && python checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 30 --jobs 4",
+   "source": "README.md#L46-L47"
+  },
+  {
+   "en": "Assets larger than 1.9 GiB are split into `.partNNN` files; `unpack` joins them.",
+   "ja": "1.9 GiB を超える asset は `.partNNN` に分割されている。`unpack` が結合する。",
+   "source": "README.md#L46-L47"
+  }
+ ],
+ "requirements": [
+  {
+   "tool": "tools/ (solver, ladder, transfer, performance, tests)",
+   "en": "Python 3.10+ and a C++ compiler (g++) for the verifier. requirements.txt: numpy>=1.24, scipy>=1.10, highspy>=1.7, pytest>=7.",
+   "ja": "Python 3.10+ と、検証器用の C++ コンパイラ (g++)。requirements.txt は numpy>=1.24、scipy>=1.10、highspy>=1.7、pytest>=7。",
+   "source": "tools/README.md#L39-L45; tools/requirements.txt"
+  },
+  {
+   "tool": "tools/fine_net_verifier",
+   "en": "Ubuntu 24.04: build-essential, curl, ca-certificates, python3; Rust 1.98.0 (rustup, minimal profile); build with cargo build --release --locked, then python3 fine_net_check.py.",
+   "ja": "Ubuntu 24.04: build-essential、curl、ca-certificates、python3。Rust 1.98.0 (rustup、minimal プロファイル)。`cargo build --release --locked` でビルドし、`python3 fine_net_check.py` を実行する。",
+   "source": "tools/fine_net_verifier/README.md#L33-L41"
+  },
+  {
+   "tool": "tools/fine_net_witnesses",
+   "en": "Same build as fine_net_verifier (cargo build --release --locked in sqverify_fast_witnesses); run through ../fine_net_verifier/fine_net_check.py --repair.",
+   "ja": "fine_net_verifier と同じビルド (`sqverify_fast_witnesses` で `cargo build --release --locked`)。`../fine_net_verifier/fine_net_check.py --repair` から実行する。",
+   "source": "tools/fine_net_witnesses/README.md"
+  },
+  {
+   "tool": "tools/general_pose_tree",
+   "en": "Python 3.12+; run_n11.py and the tests use only the standard library plus pytest.",
+   "ja": "Python 3.12+。`run_n11.py` とテストは標準ライブラリと pytest のみを使う。",
+   "source": "tools/general_pose_tree/README.md"
+  },
+  {
+   "tool": "tools/n17_bb_verifier",
+   "en": "Rust 1.98.0 (pinned in rust-toolchain.toml); GMP headers and library (libgmp-dev on Debian/Ubuntu, brew install gmp on macOS); cargo build --locked --release.",
+   "ja": "Rust 1.98.0 (`rust-toolchain.toml` で固定)。GMP のヘッダとライブラリ (Debian/Ubuntu は `libgmp-dev`、macOS は `brew install gmp`)。`cargo build --locked --release`。",
+   "source": "tools/n17_bb_verifier/README.md#L61-L66"
+  },
+  {
+   "tool": "tools/n17_kernel_verifier",
+   "en": "cargo build --release --locked; a C toolchain and m4 for GMP (build-essential and m4 on Ubuntu).",
+   "ja": "`cargo build --release --locked`。GMP 用に C ツールチェーンと m4 (Ubuntu は `build-essential` と `m4`)。",
+   "source": "tools/n17_kernel_verifier/README.md"
+  },
+  {
+   "tool": "checks/valid7",
+   "en": "Python 3 with a virtual environment and requirements.txt (python-flint); verify.sh takes about 10 minutes and 6 GB of memory; the full certificate run is about 626 core-hours.",
+   "ja": "Python 3 の仮想環境と `requirements.txt` (python-flint)。`verify.sh` は約 10 分、6 GB のメモリ。証明書の全体実行は約 626 コア時間。",
+   "source": "checks/valid7/README.md#L63-L80"
+  },
+  {
+   "tool": "lean/n11-optimality",
+   "en": "git, curl, Python >= 3.8 (standard library only), elan; toolchain leanprover/lean4:v4.33.1 is selected by the upstream project; build with N11_JOBS=2 sh build.sh <dir>.",
+   "ja": "git、curl、Python >= 3.8 (標準ライブラリのみ)、elan。ツールチェーン `leanprover/lean4:v4.33.1` は上流プロジェクトが選ぶ。`N11_JOBS=2 sh build.sh <dir>` でビルドする。",
+   "source": "lean/n11-optimality/README.md#L194-L199"
+  },
+  {
+   "tool": "lean/triangle",
+   "en": "Lean 4.33.1 and Mathlib v4.33.1 (lean-toolchain, lake-manifest.json); lake exe cache get; python3 scripts/fetch_data.py (standard library only); at most 4 Lean processes at about 9 GB each; about 22 GB of disk (Mathlib included).",
+   "ja": "Lean 4.33.1 と Mathlib v4.33.1 (`lean-toolchain`、`lake-manifest.json`)。`lake exe cache get`。`python3 scripts/fetch_data.py` (標準ライブラリのみ)。Lean プロセスは最大 4 本、各約 9 GB。ディスクは Mathlib を含め約 22 GB。",
+   "source": "lean/triangle/README.md#L83-L101"
+  },
+  {
+   "tool": "problems/domino, problems/triangle, problems/right-isosceles: checker/",
+   "en": "Python 3.10+, standard library (pytest for the tests).",
+   "ja": "Python 3.10+、標準ライブラリ (テストは pytest)。",
+   "source": "problems/right-isosceles/README.md#L73-L84"
+  },
+  {
+   "tool": "problems/domino, problems/triangle, problems/right-isosceles: checker2/",
+   "en": "Python with gmpy2 and sympy (sudo apt install python3-gmpy2 python3-sympy python3-pytest).",
+   "ja": "Python と gmpy2、sympy (`sudo apt install python3-gmpy2 python3-sympy python3-pytest`)。",
+   "source": "problems/right-isosceles/README.md#L73-L87"
+  },
+  {
+   "tool": "problems/hexagon: stage1_checker, stage1_checker2, stage2_checker, stage2_checker2",
+   "en": "stage1_checker: Python 3.10+ only; stage1_checker2: gmpy2; stage2_checker: numpy, numba; stage2_checker2: Rust 1.85, no crates (cargo build --release); the local lemma checks need sympy, numpy, scipy.",
+   "ja": "stage1_checker: Python 3.10+ のみ。stage1_checker2: gmpy2。stage2_checker: numpy、numba。stage2_checker2: Rust 1.85、外部 crate なし (`cargo build --release`)。local lemma の検査は sympy、numpy、scipy。",
+   "source": "problems/hexagon/README.md#L73-L77"
+  }
+ ],
+ "tools": [
+  {
+   "path": "tools/fine_net_verifier",
+   "name": {
+    "en": "fine_net_verifier",
+    "ja": "fine_net_verifier"
+   },
+   "what": {
+    "en": "Independent check of fine-net density certificates s(n) >= L whose angle net is declared in the candidate, with sqverify_fast from jlevy/squares.",
+    "ja": "候補に宣言された角度ネットを持つ fine-net 密度証明書 s(n) >= L の独立検査。jlevy/squares の sqverify_fast を用いる。"
+   },
+   "runtime": "Python + Rust 1.98.0",
+   "source": "tools/fine_net_verifier/README.md"
+  },
+  {
+   "path": "tools/fine_net_witnesses",
+   "name": {
+    "en": "fine_net_witnesses",
+    "ja": "fine_net_witnesses"
+   },
+   "what": {
+    "en": "A build of the fine-net verifier that reports up to K separated counterexample candidates per direction. A search aid for repairing a candidate; certificates are verified with fine_net_verifier only.",
+    "ja": "fine-net 検査器のビルドで、各方向について互いに離れた反例候補を最大 K 個報告する。候補の修復用の探索補助であり、証明書の検査は `fine_net_verifier` のみで行う。"
+   },
+   "runtime": "Rust (+ Python driver)",
+   "source": "tools/fine_net_witnesses/README.md"
+  },
+  {
+   "path": "tools/general_pose_tree",
+   "name": {
+    "en": "general_pose_tree",
+    "ja": "general_pose_tree"
+   },
+   "what": {
+    "en": "Exact, pure-Python checks for charge certificates of square-packing lower bounds, for any n, rational container side L, and measures of weighted points plus k-of-m threshold features.",
+    "ja": "正方形詰め込みの下界の電荷証明書に対する、厳密な純 Python の検査。任意の n、有理数の容器の辺 L、重み付き点と k-of-m 閾値特徴からなる測度を扱う。"
+   },
+   "runtime": "Python 3.12+",
+   "source": "tools/general_pose_tree/README.md"
+  },
+  {
+   "path": "tools/ladder",
+   "name": {
+    "en": "ladder",
+    "ja": "ladder"
+   },
+   "what": {
+    "en": "One rung of a ladder: rung.py (next rung / transfer) and edge_rung.py (budget recovery).",
+    "ja": "ラダーの 1 段。`rung.py` (次の段 / transfer) と `edge_rung.py` (予算の回復)。"
+   },
+   "runtime": "Python 3.10+",
+   "source": "tools/README.md#L22-L26"
+  },
+  {
+   "path": "tools/n17_bb_verifier",
+   "name": {
+    "en": "n17_bb_verifier (n17bb-verify)",
+    "ja": "n17_bb_verifier (n17bb-verify)"
+   },
+   "what": {
+    "en": "Exact Rust verifier for the n = 17 sub-pattern branch-and-bound certificates of jlevy/squares (schemas v1 and v3). A second implementation of the same checks as the standing verifier.",
+    "ja": "jlevy/squares の n = 17 副パターン分枝限定証明書 (スキーマ v1・v3) の厳密な Rust 検査器。既存の検査器と同じ検査の第 2 実装である。"
+   },
+   "runtime": "Rust 1.98.0 + GMP",
+   "source": "tools/n17_bb_verifier/README.md"
+  },
+  {
+   "path": "tools/n17_kernel_verifier",
+   "name": {
+    "en": "n17_kernel_verifier",
+    "ja": "n17_kernel_verifier"
+   },
+   "what": {
+    "en": "Independent Rust verifier of saved n = 17 kernel certificates, a second implementation of verify_n17_kernel_certificate.py of jlevy/squares; it writes the same receipt.",
+    "ja": "保存された n = 17 kernel 証明書の独立した Rust 検査器。jlevy/squares の `verify_n17_kernel_certificate.py` の第 2 実装で、同じ receipt を書き出す。"
+   },
+   "runtime": "Rust + GMP",
+   "source": "tools/n17_kernel_verifier/README.md"
+  },
+  {
+   "path": "tools/performance",
+   "name": {
+    "en": "performance",
+    "ja": "performance"
+   },
+   "what": {
+    "en": "Speed-ups for the LP rungs: working-row LP with basis reuse (runtime/), batch-16 and angle-parallel counterexample screens (screen_policy/), a cached-axis verifier (search time only), and a lazy zmx2 patch on Evan Daniel's point verifier.",
+    "ja": "LP の各段の高速化。基底を再利用する working-row LP (`runtime/`)、batch-16 と角度並列の反例スクリーン (`screen_policy/`)、キャッシュ軸付き検査器 (探索時のみ)、Evan Daniel の点検査器への lazy zmx2 パッチ。"
+   },
+   "runtime": "Python",
+   "source": "tools/README.md#L95-L116"
+  },
+  {
+   "path": "tools/solver",
+   "name": {
+    "en": "solver",
+    "ja": "solver"
+   },
+   "what": {
+    "en": "tokoharu's LP solver as run here, plus our modules; certify.py compiles and runs solver/verify.cpp, byte-identical to tokoharu's. Only the verifier's acceptance is a proof.",
+    "ja": "tokoharu の LP ソルバーと当方のモジュール。`certify.py` は tokoharu のものとバイト単位で同一の `solver/verify.cpp` をコンパイルして実行する。証明となるのは検査器の受理のみ。"
+   },
+   "runtime": "Python + C++ (g++)",
+   "source": "tools/README.md#L23, L128-L133"
+  },
+  {
+   "path": "tools/tests",
+   "name": {
+    "en": "tests",
+    "ja": "tests"
+   },
+   "what": {
+    "en": "Smoke and end-to-end tests: certifies n = 3 at L = 1.5, transfers it to n = 4 at L = 1.6, and runs a budget-recovery rung at L = 1.55.",
+    "ja": "スモークテストとエンドツーエンドのテスト。n = 3 (L = 1.5) を証明し、n = 4 (L = 1.6) へ transfer し、L = 1.55 で予算回復の段を実行する。"
+   },
+   "runtime": "Python (pytest)",
+   "source": "tools/README.md#L34, L43-L48"
+  },
+  {
+   "path": "tools/transfer",
+   "name": {
+    "en": "transfer",
+    "ja": "transfer"
+   },
+   "what": {
+    "en": "Writes rung configs for moving a certificate to a larger n or the next L (make_transfer.py, make_edge.py); l_cap.py prints L_cap(n), a search ceiling; next_step.py suggests the next L.",
+    "ja": "証明書をより大きい n や次の L へ移す段の設定を書き出す (`make_transfer.py`、`make_edge.py`)。`l_cap.py` は探索の上限 L_cap(n) を、`next_step.py` は次の L を示す。"
+   },
+   "runtime": "Python",
+   "source": "tools/README.md#L56-L93"
+  },
+  {
+   "path": "lean/n11-optimality",
+   "name": {
+    "en": "n11-optimality",
+    "ja": "n11-optimality"
+   },
+   "what": {
+    "en": "Work in progress on a Lean 4 formalization of the computer-assisted proof, by Queuing Theory #1 Fan, that Walter Trump's 1979 packing of 11 unit squares is optimal (s(11) = T).",
+    "ja": "Queuing Theory #1 Fan による計算機支援証明、すなわち Walter Trump の 1979 年の 11 個の単位正方形の詰め込みが最適であること (s(11) = T) の Lean 4 形式化。作業中。"
+   },
+   "runtime": "Lean 4 (v4.33.1)",
+   "source": "lean/n11-optimality/README.md"
+  },
+  {
+   "path": "lean/triangle",
+   "name": {
+    "en": "triangle",
+    "ja": "triangle"
+   },
+   "what": {
+    "en": "Kernel-checked Lean 4 proofs of s△(n) for n = 2, 3, 4, 7, 11, 16, 22, 29 in an equilateral triangle, and a lower bound for n = 37. Only the standard axioms; no sorry, no native_decide.",
+    "ja": "正三角形内の n = 2, 3, 4, 7, 11, 16, 22, 29 に対する s△(n) の kernel 検査済み Lean 4 証明と、n = 37 の下界。標準公理のみで、sorry も native_decide もない。"
+   },
+   "runtime": "Lean 4.33.1 + Mathlib",
+   "source": "lean/triangle/README.md"
+  },
+  {
+   "path": "checks/valid7",
+   "name": {
+    "en": "valid7",
+    "ja": "valid7"
+   },
+   "what": {
+    "en": "A second, independently written exact check of Valid7 (evand/square-packing): every closed unit square in [0, 7]² has mass >= 1 under the mixed cover. Valid7 implies s(k² − 3) = k for every k >= 6.",
+    "ja": "Valid7 (evand/square-packing) の独立に書かれた第 2 の厳密検査。[0, 7]² 内の任意の閉単位正方形が混合被覆の測度 1 以上を持つことを検査する。Valid7 から任意の k >= 6 について s(k² − 3) = k が従う。"
+   },
+   "runtime": "Python 3 + python-flint",
+   "source": "checks/valid7/README.md"
+  }
+ ],
+ "releases": [
+  {
+   "tag": "data/valid7-lean-certs-v1",
+   "name": "Valid7 Lean certificates (s(k^2 - 3) = k for k >= 6)",
+   "date": "2026-10-09"
+  },
+  {
+   "tag": "data/n17-kernel-batch2-v1",
+   "name": "n17 kernel certificates, batch 2 (1 sub-pattern)",
+   "date": "2026-10-09"
+  },
+  {
+   "tag": "data/n17-kernel-batch1-v1",
+   "name": "n17 kernel certificates, batch 1 (11 sub-patterns)",
+   "date": "2026-10-09"
+  },
+  {
+   "tag": "data/n17-m4000256-v1",
+   "name": "n17 sub-pattern certificate: m4000256",
+   "date": "2026-10-09"
+  },
+  {
+   "tag": "triangle-v1",
+   "name": "triangle-v1",
+   "date": "2026-10-07"
+  },
+  {
+   "tag": "square-lower-bounds-v1",
+   "name": "square-lower-bounds-v1",
+   "date": "2026-10-07"
+  },
+  {
+   "tag": "square-lower-bounds-history-v1",
+   "name": "square-lower-bounds-history-v1",
+   "date": "2026-10-07"
+  },
+  {
+   "tag": "hexagon-v1",
+   "name": "hexagon-v1",
+   "date": "2026-10-07"
+  },
+  {
+   "tag": "domino-v1",
+   "name": "domino-v1",
+   "date": "2026-10-07"
+  }
+ ],
+ "n17": [
+  {
+   "en": "The n = 17 certificate data are not in a release.",
+   "ja": "n = 17 の証明書データは Release にない。",
+   "source": "README.md#L68"
+  },
+  {
+   "en": "`problems/n17/manifest.json` records, for each class, the claim, node count, SHA-256, verifier receipts and the tools that made it.",
+   "ja": "`problems/n17/manifest.json` に、各クラスの主張、ノード数、SHA-256、検査器の receipt、作成に用いたツールが記録されている。",
+   "source": "README.md#L68-L70"
+  },
+  {
+   "en": "Certificate data are available on request.",
+   "ja": "証明書データは請求に応じて提供される。",
+   "source": "README.md#L70"
+  },
+  {
+   "en": "They can be regenerated deterministically with the recorded tools and inputs and checked against the SHA-256 listed there.",
+   "ja": "記録されたツールと入力から決定的に再生成でき、そこに記された SHA-256 と照合できる。",
+   "source": "README.md#L70-L71"
+  },
+  {
+   "en": "The two classes already published (C1, C2) stay in the original release of wand125/n17-certificates.",
+   "ja": "公開済みの 2 クラス (C1、C2) は wand125/n17-certificates の元の Release に残る。",
+   "source": "README.md#L71-L72"
+  }
+ ]
+}

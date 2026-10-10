@@ -1,0 +1,450 @@
+{
+ "themes": [
+  {
+   "issue": 1,
+   "url": "https://github.com/wand125/square-packing/issues/1",
+   "state": "open",
+   "updated": "2026-10-08",
+   "title": {
+    "en": "A closed-form lower bound on s(N) for all N, above Nagamochi's formula",
+    "ja": "全 N に対する s(N) の閉じた式の下界（Nagamochi の式を上回る）"
+   },
+   "goal": {
+    "en": "A computer-assisted proof of a closed-form lower bound on s(N), the side of the smallest square containing N unit squares, valid for every N ≥ 49 and at least Nagamochi's formula everywhere (equal only at N = (k+1)² − 1 and (k+1)² − 2, where that formula meets the true value).",
+    "ja": "N 個の単位正方形を含む最小の正方形の一辺 s(N) について、すべての N ≥ 49 で成り立ち、Nagamochi の式を常に下回らない閉じた式の下界の、計算機援用による証明。等号は N = (k+1)² − 1, (k+1)² − 2 のみ（そこで Nagamochi の式は真値に一致する）。"
+   },
+   "method": {
+    "en": "The bound is written through the fractional part δ ∈ (0, 1), whose range is split into 34 intervals. For each interval a weight family on the container is built, and an exact four-dimensional box verifier (with edge and concavity lemmas, a Python record check per interval, and a full Rust replay of all leaves before publication) proves that every placement of a unit square carries enough weight.",
+    "ja": "下界を小数部分 δ ∈ (0, 1) で表し、δ の範囲を 34 の区間に分ける。各区間で容器上の重み族を構成し、厳密な 4 次元の箱の検証器（辺と凹性の補題、区間ごとの Python による記録検査、公開前の全葉の Rust による完全再生）により、単位正方形のどの配置も十分な重みを持つことを証明する。"
+   },
+   "done": [
+    {
+     "en": "Verification tools and the family construction.",
+     "ja": "検証ツールと族の構成。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "The remaining intervals.",
+     "ja": "残りの区間。"
+    },
+    {
+     "en": "A full replay of all records on a clean machine, and the public specification, before publication.",
+     "ja": "公開前の、クリーンな環境での全記録の完全再生と、公開用の仕様。"
+    }
+   ],
+   "links": []
+  },
+  {
+   "issue": 2,
+   "url": "https://github.com/wand125/square-packing/issues/2",
+   "state": "open",
+   "updated": "2026-10-08",
+   "title": {
+    "en": "Lower bounds for s(n), n ≤ 324, with a finer angle net",
+    "ja": "より細かい角度の網による s(n)（n ≤ 324）の下界"
+   },
+   "goal": {
+    "en": "Raise lower bounds on s(n) past the values earlier mixed certificates could reach, using a finer net of angles (step 0.0025 in L, smallest n first), for n up to 324.",
+    "ja": "より細かい角度の網（L の刻み 0.0025、小さい n から）を用いて、n ≤ 324 について、従来の混合証明書で届いた値を超える s(n) の下界を得る。"
+   },
+   "method": {
+    "en": "Mixed (rectangle and point) weight certificates, generated over a finer angle net and checked by an independent verifier (sqverify_fast, from a fresh build) before publication. For each n the smallest failing step is also recorded (done so far for n = 18, 19, 26).",
+    "ja": "混合（長方形と点）の重み証明書を、より細かい角度の網上で生成し、公開前に独立の検証器（sqverify_fast、新規ビルド）で検査する。各 n について失敗する最小の刻みも記録する（これまでに n = 18, 19, 26 で実施）。"
+   },
+   "done": [
+    {
+     "en": "Published in problems/square-lower-bounds/ (release square-lower-bounds-v1), among others: s(18) ≥ 4.705, s(19) ≥ 4.8275 and s(26) ≥ 5.555 (the next step fails for these three), s(27) ≥ 5.6525, s(28) ≥ 5.74, s(29) ≥ 5.815, s(30) ≥ 5.8835, s(31) ≥ 5.97.",
+     "ja": "problems/square-lower-bounds/（リリース square-lower-bounds-v1）に公開済み（ほか）: s(18) ≥ 4.705、s(19) ≥ 4.8275、s(26) ≥ 5.555（この 3 つは次の刻みで失敗）、s(27) ≥ 5.6525、s(28) ≥ 5.74、s(29) ≥ 5.815、s(30) ≥ 5.8835、s(31) ≥ 5.97。"
+    },
+    {
+     "en": "Limits reached (as of 2026-10-08): for n = 18, 19 and 26 the next 0.0025 step fails our mass test, so this method stops at the published values. This does not rule out other methods.",
+     "ja": "到達した限界（2026-10-08 時点）: n = 18, 19, 26 では次の 0.0025 の刻みが質量検査に失敗するため、この手法は公開済みの値で止まる。他の手法を排除するものではない。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "n = 20 and n = 27–31 at the next step, and n = 37–44 and 50 at the current threshold.",
+     "ja": "n = 20 と n = 27〜31 は次の刻み、n = 37〜44 と 50 は現在の閾値。"
+    }
+   ],
+   "links": [
+    {
+     "label": "Release square-lower-bounds-v1",
+     "url": "https://github.com/wand125/square-packing/releases/tag/square-lower-bounds-v1"
+    }
+   ],
+   "targets": {
+    "label": {
+     "en": "Expected reach of this method (as of 2026-10-08). Targets come from a floating-point mass test, not from certificates; some may not be reached, and a value counts only once its certificate is published.",
+     "ja": "この手法の到達見込み（2026-10-08 時点）。目標は浮動小数点の質量検査によるもので、証明書によるものではない。届かないものもあり、証明書が公開されて初めてその値を数える。"
+    },
+    "columns": [
+     "n",
+     "published",
+     "target"
+    ],
+    "rows": [
+     [
+      20,
+      4.905,
+      4.915
+     ],
+     [
+      27,
+      5.6525,
+      5.655
+     ],
+     [
+      28,
+      5.74,
+      5.745
+     ],
+     [
+      29,
+      5.815,
+      5.82
+     ],
+     [
+      30,
+      5.8835,
+      5.895
+     ],
+     [
+      31,
+      5.97,
+      5.9775
+     ],
+     [
+      37,
+      6.44,
+      6.5
+     ],
+     [
+      38,
+      6.545,
+      6.5825
+     ],
+     [
+      39,
+      6.65,
+      6.665
+     ],
+     [
+      40,
+      6.7,
+      6.7375
+     ],
+     [
+      41,
+      6.775,
+      6.805
+     ],
+     [
+      42,
+      6.8475,
+      6.875
+     ],
+     [
+      43,
+      6.9075,
+      6.945
+     ],
+     [
+      44,
+      6.9725,
+      6.9975
+     ],
+     [
+      50,
+      7.4,
+      7.455
+     ],
+     [
+      51,
+      7.47,
+      7.53
+     ],
+     [
+      52,
+      7.55,
+      7.595
+     ],
+     [
+      53,
+      7.6275,
+      7.6575
+     ]
+    ]
+   }
+  },
+  {
+   "issue": 3,
+   "url": "https://github.com/wand125/square-packing/issues/3",
+   "state": "open",
+   "updated": "2026-10-07",
+   "title": {
+    "en": "Contributing to the n = 17 optimality proof (jlevy/squares #405)",
+    "ja": "n = 17 の最適性証明への貢献（jlevy/squares #405）"
+   },
+   "goal": {
+    "en": "Contribute to the upstream proof that the known packing is optimal for 17 squares, tracked in jlevy/squares#405.",
+    "ja": "17 個の正方形について既知の詰め込みが最適であることの上流での証明（jlevy/squares#405）に貢献する。"
+   },
+   "method": {
+    "en": "Branch-and-bound exclusion certificates for sub-patterns of the occupancy census, generated deterministically and verified independently; faster independent verifiers.",
+    "ja": "占有の全数調査の部分パターンに対する分枝限定の除外証明書を、決定的に生成して独立に検証する。より高速な独立検証器。"
+   },
+   "done": [
+    {
+     "en": "An independent Rust verifier for kernel certificates (jlevy/squares#410), with receipts equal to the standing verifier's on seven certificates.",
+     "ja": "核証明書の独立な Rust 検証器（jlevy/squares#410）。7 つの証明書で既存の検証器と同じ受領記録。"
+    },
+    {
+     "en": "An independent branch-and-bound certificate verifier (tools/n17_bb_verifier/).",
+     "ja": "独立な分枝限定の証明書検証器（tools/n17_bb_verifier/）。"
+    },
+    {
+     "en": "A native branch-and-bound core (jlevy/squares#350, merged), the branching rules B2 and B2d (#367), certificates for flags C1 and C2 (#358), and a verifier speed comparison (#400).",
+     "ja": "ネイティブの分枝限定の中核（jlevy/squares#350、マージ済み）、分岐規則 B2 と B2d（#367）、旗 C1・C2 の証明書（#358）、検証器の速度比較（#400）。"
+    },
+    {
+     "en": "An angle-tightening extension of the certificate format (v3), with two independent verifiers.",
+     "ja": "証明書形式の角度を絞る拡張（v3）と、2 つの独立な検証器。"
+    },
+    {
+     "en": "Exclusions and certificates: status per sub-pattern in jlevy/squares#413.",
+     "ja": "除外と証明書: 部分パターンごとの状況は jlevy/squares#413。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "The certificates of the remaining sub-patterns listed in jlevy/squares#413.",
+     "ja": "jlevy/squares#413 に挙がっている残りの部分パターンの証明書。"
+    }
+   ],
+   "links": [
+    {
+     "label": "jlevy/squares#405",
+     "url": "https://github.com/jlevy/squares/issues/405"
+    },
+    {
+     "label": "jlevy/squares#410",
+     "url": "https://github.com/jlevy/squares/issues/410"
+    },
+    {
+     "label": "jlevy/squares#350",
+     "url": "https://github.com/jlevy/squares/issues/350"
+    },
+    {
+     "label": "jlevy/squares#367",
+     "url": "https://github.com/jlevy/squares/issues/367"
+    },
+    {
+     "label": "jlevy/squares#358",
+     "url": "https://github.com/jlevy/squares/issues/358"
+    },
+    {
+     "label": "jlevy/squares#400",
+     "url": "https://github.com/jlevy/squares/issues/400"
+    },
+    {
+     "label": "jlevy/squares#413",
+     "url": "https://github.com/jlevy/squares/issues/413"
+    }
+   ]
+  },
+  {
+   "issue": 4,
+   "url": "https://github.com/wand125/square-packing/issues/4",
+   "state": "closed",
+   "updated": "2026-10-08",
+   "title": {
+    "en": "Optimality of 6 unit squares in an equilateral triangle",
+    "ja": "正三角形内の単位正方形 6 個の最適性"
+   },
+   "goal": {
+    "en": "Prove that the smallest equilateral triangle containing 6 non-overlapping unit squares has side 2 + 4/√3.",
+    "ja": "重なりのない 6 個の単位正方形を含む最小の正三角形の一辺が 2 + 4/√3 であることを証明する。"
+   },
+   "method": {
+    "en": "A stage-1 weight certificate with exclusion boxes localises one square near the pinwheel; stages 2–3 are conditional certificates (already-located squares enter as exempt obstacle points); the last three squares are closed by a local lemma on squares {0,1,3}, proved by hand and checked with interval arithmetic. Earlier results for this container are in problems/triangle/.",
+    "ja": "段階 1 の重み証明書と除外の箱により、1 つの正方形を風車の近くに局所化する。段階 2・3 は条件付きの証明書（局所化済みの正方形は免除された障害点として入る）。最後の 3 つの正方形は、正方形 {0,1,3} に関する局所補題で閉じる。補題は手で証明し、区間演算で検査する。この容器の従来の結果は problems/triangle/ にある。"
+   },
+   "done": [
+    {
+     "en": "All computations needed for the optimality proof are verified by two independent checkers: stage 1, the local lemma, all three stage-3 parts and both stage-2 parts with the first checker; the six certificates, the 1,810 obstacle points, lemma (M) with its premises, and the links between stages with a second checker written only from the specification (negative controls fail as expected).",
+     "ja": "最適性の証明に必要なすべての計算を 2 つの独立な検査器で検証済み。第 1 の検査器: 段階 1、局所補題、段階 3 の 3 部分すべて、段階 2 の 2 部分すべて。仕様のみから書いた第 2 の検査器: 6 つの証明書、1,810 個の障害点、補題 (M) とその前提、段階間のつながり（負の対照は想定どおり失敗する）。"
+    },
+    {
+     "en": "Published (2026-10-08): problems/triangle/certificates/n6/ (proof: PROOF.md), certificate data certificates__n6.tar.gz in the release triangle-v1, and the second checker in problems/triangle/checker2/n6/.",
+     "ja": "公開済み（2026-10-08）: problems/triangle/certificates/n6/（証明: PROOF.md）、リリース triangle-v1 の証明書データ certificates__n6.tar.gz、problems/triangle/checker2/n6/ の第 2 の検査器。"
+    }
+   ],
+   "working_on": [],
+   "links": [
+    {
+     "label": "Release triangle-v1",
+     "url": "https://github.com/wand125/square-packing/releases/tag/triangle-v1"
+    }
+   ]
+  },
+  {
+   "issue": 5,
+   "url": "https://github.com/wand125/square-packing/issues/5",
+   "state": "open",
+   "updated": "2026-10-07",
+   "title": {
+    "en": "Optimality of 9 unit squares in a 1×2 rectangle",
+    "ja": "1×2 長方形内の単位正方形 9 個の最適性"
+   },
+   "goal": {
+    "en": "Prove that the best known packing of 9 unit squares in a rectangle of aspect ratio 2:1, of side 2 + √2/3 (Stenlund 2010), is optimal (as done for n = 4 in problems/domino/).",
+    "ja": "縦横比 2:1 の長方形における単位正方形 9 個の既知最良の詰め込み（一辺 2 + √2/3、Stenlund 2010）が最適であることを証明する（n = 4 については problems/domino/ で実施済み）。"
+   },
+   "method": {
+    "en": "A lower-bound certificate checked by two independent checkers, followed by a capture argument over the strip patterns and a local theorem near the optimum.",
+    "ja": "2 つの独立な検査器で検査する下界の証明書。続いて、帯のパターンに対する捕捉の議論と、最適解の近傍の局所定理。"
+   },
+   "done": [
+    {
+     "en": "A lower bound below the target, verified by two independent checkers (to be published with the next stage).",
+     "ja": "目標を下回る下界。2 つの独立な検査器で検証済み（次の段階とともに公開予定）。"
+    },
+    {
+     "en": "The local theorem near the optimum, checked by two independent methods.",
+     "ja": "最適解の近傍の局所定理。2 つの独立な方法で検査済み。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "The strip patterns of the capture stage: a soundness bug was found in the first checker (boxes crossing two strips were checked only against the lower requirement), so the earlier strip-pattern results are withdrawn and are being re-checked with the corrected checker and with a second, independent checker.",
+     "ja": "捕捉段階の帯のパターン。第 1 の検査器に健全性のバグ（2 つの帯にまたがる箱が低い方の要件に対してのみ検査されていた）が見つかったため、従来の帯のパターンの結果は取り下げ、修正した検査器と第 2 の独立な検査器で再検査している。"
+    },
+    {
+     "en": "The main (4,4,1) pattern (case split over chord gaps).",
+     "ja": "主要な (4,4,1) パターン（弦の間隔による場合分け）。"
+    }
+   ],
+   "links": []
+  },
+  {
+   "issue": 6,
+   "url": "https://github.com/wand125/square-packing/issues/6",
+   "state": "open",
+   "updated": "2026-10-07",
+   "title": {
+    "en": "s(76) = 9",
+    "ja": "s(76) = 9"
+   },
+   "goal": {
+    "en": "Prove s(76) = 9, i.e. 76 unit squares do not fit in a square of side less than 9.",
+    "ja": "s(76) = 9、すなわち 76 個の単位正方形が一辺 9 未満の正方形に入らないことを証明する。"
+   },
+   "method": {
+    "en": "Lift the s(59) = 8 mixed cover (problems/square-lower-bounds/certificates/k2m5_n59_L8) by inserting a central cross-shaped band of width 1, solve an LP for the extra band mass, and add the poses that zmx2 cannot certify as new LP rows until no root is left uncertified; then re-check the final cover with the exact checkers (zmx2 --d4/--full, zm_mixed).",
+    "ja": "s(59) = 8 の混合被覆（problems/square-lower-bounds/certificates/k2m5_n59_L8）に、幅 1 の十字形の中央の帯を挿入して持ち上げる。帯の追加質量を LP で解き、zmx2 が証明できない姿勢を新しい LP の行として、証明されない根がなくなるまで加える。その後、最終的な被覆を厳密な検査器（zmx2 --d4/--full、zm_mixed）で再検査する。"
+   },
+   "done": [
+    {
+     "en": "The lift is set up; s(76) ≥ 8.965 is published (mixed_n76_L8965).",
+     "ja": "持ち上げの設定は完了。s(76) ≥ 8.965 を公開済み（mixed_n76_L8965）。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "Reducing the uncertified roots to zero (LP rounds with warm starts), including a branch that also re-optimises the base mass near the band.",
+     "ja": "証明されない根をゼロにすること（ウォームスタート付きの LP の反復）。帯の近くで基礎の質量も再最適化する枝を含む。"
+    }
+   ],
+   "links": []
+  },
+  {
+   "issue": 7,
+   "url": "https://github.com/wand125/square-packing/issues/7",
+   "state": "open",
+   "updated": "2026-10-07",
+   "title": {
+    "en": "s(95) = 10",
+    "ja": "s(95) = 10"
+   },
+   "goal": {
+    "en": "Prove s(95) = 10.",
+    "ja": "s(95) = 10 を証明する。"
+   },
+   "method": {
+    "en": "Lift the s(59) = 8 mixed cover directly, in one step, by inserting a central cross-shaped band of width 2, solve an LP for the extra band mass, and add the poses that zmx2 cannot certify as new LP rows until no root is left uncertified; then re-check the final cover with the exact checkers (zmx2 --d4/--full, zm_mixed).",
+    "ja": "s(59) = 8 の混合被覆に、幅 2 の十字形の中央の帯を挿入して一段で直接持ち上げる。帯の追加質量を LP で解き、zmx2 が証明できない姿勢を新しい LP の行として、証明されない根がなくなるまで加える。その後、最終的な被覆を厳密な検査器（zmx2 --d4/--full、zm_mixed）で再検査する。"
+   },
+   "done": [
+    {
+     "en": "The lift is set up; s(95) ≥ 9.965 is published (mixed_n95_L9965).",
+     "ja": "持ち上げの設定は完了。s(95) ≥ 9.965 を公開済み（mixed_n95_L9965）。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "Reducing the uncertified roots to zero (LP rounds with warm starts).",
+     "ja": "証明されない根をゼロにすること（ウォームスタート付きの LP の反復）。"
+    }
+   ],
+   "links": []
+  },
+  {
+   "issue": 8,
+   "url": "https://github.com/wand125/square-packing/issues/8",
+   "state": "closed",
+   "updated": "2026-10-09",
+   "title": {
+    "en": "A Lean kernel proof of s(k² − 3) = k for all k ≥ 6 (Valid7 included)",
+    "ja": "全 k ≥ 6 に対する s(k² − 3) = k の Lean カーネルによる証明（Valid7 を含む）"
+   },
+   "goal": {
+    "en": "Check in Lean, with kernel-only evaluation (no native_decide), that s(k² − 3) = k for all k ≥ 6, including the finite statement Valid7.",
+    "ja": "有限命題 Valid7 を含め、すべての k ≥ 6 について s(k² − 3) = k を、カーネルのみの評価（native_decide なし）で Lean 上で検査する。"
+   },
+   "method": {
+    "en": "Build our own certificate (a mixed segment-and-area measure over 9,800 roots) and check it with a Lean checker in the kernel.",
+    "ja": "独自の証明書（9,800 個の根にわたる線分と面積の混合測度）を作り、Lean の検査器でカーネル内で検査する。"
+   },
+   "done": [
+    {
+     "en": "The mixed-measure checker; stage A (certificates for all 9,800 roots); a vertex test that does not enumerate segment combinations.",
+     "ja": "混合測度の検査器、段階 A（9,800 個の根すべての証明書）、線分の組合せを列挙しない頂点検査。"
+    },
+    {
+     "en": "Stage B: all 9,800 roots pass the Lean kernel, 0 failures.",
+     "ja": "段階 B: 9,800 個の根すべてが Lean カーネルを通過、失敗 0。"
+    },
+    {
+     "en": "Assembly: valid7 : Bentz.Valid7, validTilt7 : Bentz.ValidTilt7 and bentz : ∀ k : ℕ, 6 ≤ k → minSide (k ^ 2 - 3) = k pass the kernel. #print axioms shows only propext, Classical.choice and Quot.sound; no sorry, no native_decide.",
+     "ja": "組み上げ: valid7 : Bentz.Valid7、validTilt7 : Bentz.ValidTilt7、bentz : ∀ k : ℕ, 6 ≤ k → minSide (k ^ 2 - 3) = k がカーネルを通過。#print axioms は propext、Classical.choice、Quot.sound のみ。sorry なし、native_decide なし。"
+    },
+    {
+     "en": "Certificates: release data/valid7-lean-certs-v1.",
+     "ja": "証明書: リリース data/valid7-lean-certs-v1。"
+    },
+    {
+     "en": "Pull request upstream: evand/square-packing#6.",
+     "ja": "上流へのプルリクエスト: evand/square-packing#6。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "Following up on the pull request.",
+     "ja": "プルリクエストへの対応。"
+    }
+   ],
+   "links": [
+    {
+     "label": "Release data/valid7-lean-certs-v1",
+     "url": "https://github.com/wand125/square-packing/releases/tag/data/valid7-lean-certs-v1"
+    },
+    {
+     "label": "evand/square-packing#6",
+     "url": "https://github.com/evand/square-packing/pull/6"
+    }
+   ]
+  }
+ ]
+}
