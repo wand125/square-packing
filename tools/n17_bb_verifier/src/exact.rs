@@ -83,6 +83,7 @@ pub(crate) fn half_pi_multiple(k: i32) -> Span {
         [p[1].clone() * k / 2, p[0].clone() * k / 2]
     }
 }
+const TRIG_CACHE_LIMIT: usize = 1 << 16;
 thread_local! { static TRIG: RefCell<BTreeMap<Q, [Q; 4]>> = const { RefCell::new(BTreeMap::new()) }; }
 pub(crate) fn cos_sin(t: &Q) -> [Q; 4] {
     TRIG.with(|cache| {
@@ -90,7 +91,13 @@ pub(crate) fn cos_sin(t: &Q) -> [Q; 4] {
             return value.clone();
         }
         let result = cos_sin_bits(t, 160);
-        cache.borrow_mut().insert(t.clone(), result.clone());
+        let mut cache = cache.borrow_mut();
+        // Bounded per thread: a long certificate keeps meeting new angles, and an
+        // unbounded table grows with the tree (about 0.5 KB per node on m475217).
+        if cache.len() >= TRIG_CACHE_LIMIT {
+            cache.clear();
+        }
+        cache.insert(t.clone(), result.clone());
         result
     })
 }
