@@ -1527,6 +1527,16 @@ s(28) >= 2297/400 = 5.7425
 
 This supersedes `mixed_n28_L574` above. This exceeds our earlier certificate mixed_n28_L574 (5.74) and Green's reported bound `5.3919…` (a reference value). The certificate is a rational rectangle measure of mass 2799999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n28_L57425/ASSET.json`).
 
+## n = 30: 5.8925, a mixed certificate on a finer angle net
+
+[`certificates/mixed_n30_L58925`](certificates/mixed_n30_L58925/README.md) proves
+
+```
+s(30) >= 2357/400 = 5.8925
+```
+
+This supersedes `mixed_n30_L58835` above. This exceeds our earlier certificate mixed_n30_L58835 (5.8835) and Nagamochi's closed form `5.5826…` (a reference value). The certificate is a rational rectangle measure of mass 2999999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n30_L58925/ASSET.json`).
+
 ## Closed-square endpoint certificate for n = 21
 
 The separate [point-only endpoint bundle](point_n21_L5/README.md) proves
