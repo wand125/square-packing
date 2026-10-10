@@ -68,7 +68,7 @@ def themes():
         extra = ''
         tg = t.get('targets')
         if tg:
-            head = ''.join(f'<th>{e(c)}</th>' for c in tg['columns'])
+            head = ''.join(f'<th>{bd(c)}</th>' for c in tg['columns'])
             body = ''.join('<tr>' + ''.join(f'<td class="num">{e(v)}</td>' for v in row) + '</tr>' for row in tg['rows'])
             extra = f'<p class="note">{bc(tg["label"])}</p><div class="wrap"><table style="width:auto"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>'
         tr.append(f'<tr class="r" data-state="{t["state"]}" data-n="0"><td class="num"><a href="{e(t["url"])}">#{t["issue"]}</a></td>'
