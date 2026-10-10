@@ -19,63 +19,83 @@ s(72) >= 861/100 = 8.61
 and, as a cross-check on the generator, a tenth certificate for `s(40) >= 13/2`
 that also follows from the `n = 39` bound by monotonicity.
 
-It also contains certificates of a different kind, rectangle-density
-certificates in tokoharu's format built here with his solver, proving
+It also contains certificates of other kinds (rectangle-density certificates
+in tokoharu's format built here with his solver, mixed rectangle-measure
+certificates and point certificates). For every `n` with a certificate here,
+the best bound of any kind is
 
 <!-- auto:claims:begin -->
 ```
-s(18) >= 939/200    = 4.695
-s(19) >= 1927/400   = 4.8175
-s(20) >= 49/10      = 4.9
-s(26) >= 2213/400   = 5.5325
-s(27) >= 1127/200   = 5.635
-s(28) >= 2289/400   = 5.7225
-s(29) >= 2319/400   = 5.7975
-s(30) >= 47/8       = 5.875
-s(31) >= 2381/400   = 5.9525
-s(37) >= 257/40     = 6.425
-s(38) >= 1309/200   = 6.545
-s(39) >= 1327/200   = 6.635
-s(40) >= 67/10      = 6.7
-s(41) >= 169/25     = 6.76
-s(42) >= 2731/400   = 6.8275
-s(43) >= 551/80     = 6.8875
-s(44) >= 2777/400   = 6.9425
-s(51) >= 2977/400   = 7.4425
-s(52) >= 1507/200   = 7.535
-s(53) >= 3043/400   = 7.6075
-s(54) >= 3069/400   = 7.6725
-s(55) >= 617/80     = 7.7125
-s(56) >= 3113/400   = 7.7825
-s(57) >= 1567/200   = 7.835
-s(58) >= 789/100    = 7.89
-s(59) >= 127/16     = 7.9375
-s(66) >= 1677/200   = 8.385
-s(67) >= 1691/200   = 8.455
-s(68) >= 851/100    = 8.51
-s(69) >= 1717/200   = 8.585
-s(70) >= 3451/400   = 8.6275
-s(71) >= 1737/200   = 8.685
-s(72) >= 437/50     = 8.74
-s(73) >= 439/50     = 8.78
-s(74) >= 3539/400   = 8.8475
-s(75) >= 89/10      = 8.9
-s(76) >= 357/40     = 8.925
-s(77) >= 447/50     = 8.94
-s(86) >= 1873/200   = 9.365
-s(87) >= 941/100    = 9.41
-s(88) >= 3791/400   = 9.4775
-s(89) >= 1913/200   = 9.565
-s(90) >= 3831/400   = 9.5775
-s(91) >= 3859/400   = 9.6475
-s(93) >= 1947/200   = 9.735
-s(94) >= 1961/200   = 9.805
-s(95) >= 49259/5000 = 9.8518
+s(11) >= 381/100   = 3.81
+s(18) >= 941/200   = 4.705
+s(19) >= 1931/400  = 4.8275
+s(20) >= 393/80    = 4.9125
+s(21) >= 5
+s(26) >= 1111/200  = 5.555
+s(27) >= 1131/200  = 5.655
+s(28) >= 2297/400  = 5.7425
+s(29) >= 291/50    = 5.82
+s(30) >= 2357/400  = 5.8925
+s(31) >= 597/100   = 5.97
+s(32) >= 119/20    = 5.95
+s(37) >= 161/25    = 6.44
+s(38) >= 1309/200  = 6.545
+s(39) >= 133/20    = 6.65
+s(40) >= 67/10     = 6.7
+s(41) >= 271/40    = 6.775
+s(42) >= 2739/400  = 6.8475
+s(43) >= 2763/400  = 6.9075
+s(44) >= 2789/400  = 6.9725
+s(45) >= 7
+s(50) >= 37/5      = 7.4
+s(51) >= 747/100   = 7.47
+s(52) >= 151/20    = 7.55
+s(53) >= 3051/400  = 7.6275
+s(54) >= 1537/200  = 7.685
+s(55) >= 966/125   = 7.728
+s(56) >= 3121/400  = 7.8025
+s(57) >= 3149/400  = 7.8725
+s(58) >= 1587/200  = 7.935
+s(59) >= 8
+s(60) >= 397/50    = 7.94
+s(61) >= 8
+s(65) >= 167/20    = 8.35
+s(66) >= 843/100   = 8.43
+s(67) >= 212/25    = 8.48
+s(68) >= 851/100   = 8.51
+s(69) >= 431/50    = 8.62
+s(70) >= 3463/400  = 8.6575
+s(71) >= 8721/1000 = 8.721
+s(72) >= 219/25    = 8.76
+s(73) >= 8813/1000 = 8.813
+s(74) >= 3547/400  = 8.8675
+s(75) >= 447/50    = 8.94
+s(76) >= 1793/200  = 8.965
+s(77) >= 9
+s(78) >= 1793/200  = 8.965
+s(82) >= 233/25    = 9.32
+s(83) >= 937/100   = 9.37
+s(84) >= 9411/1000 = 9.411
+s(85) >= 473/50    = 9.46
+s(86) >= 9503/1000 = 9.503
+s(87) >= 479/50    = 9.58
+s(88) >= 481/50    = 9.62
+s(89) >= 193/20    = 9.65
+s(90) >= 973/100   = 9.73
+s(91) >= 781/80    = 9.7625
+s(92) >= 977/100   = 9.77
+s(93) >= 247/25    = 9.88
+s(94) >= 199/20    = 9.95
+s(95) >= 1993/200  = 9.965
+s(96) >= 997/100   = 9.97
+s(101) >= 257/25    = 10.28
+s(122) >= 563/50    = 11.26
 ```
 <!-- auto:claims:end -->
 
-The `n = 29` certificate supersedes the point certificate above and, by
-monotonicity, also gives `s(30), s(31) >= 5.7775`. See
+These are the bounds of the certificates themselves. A certificate also covers
+every larger `n` up to its total mass, which the lines above do not list; older
+and lower certificates stay in the repository. See
 [s(29): a ladder of rectangle-density certificates](#s29-a-ladder-of-rectangle-density-certificates-built-here),
 [n = 32 and n = 45](#n--32-and-n--45-rectangle-density-certificates-from-our-own-parents)
 and [n = 18 to 28](#n--18-to-28-rectangle-density-certificates-past-the-register).
@@ -83,71 +103,86 @@ A further rectangle certificate for `n = 26` reaches a value that
 others already hold. They are included as independent certificates of those
 values; see [Matching certificates](#matching-certificates).
 
-### Standing rectangle certificates
+### Best certificate per n
 
-The highest published rectangle certificate for each `n`. The table is
-regenerated on every publication, so it is always current. The sections
-further down explain how the certificates were built and list earlier rungs.
-"previous record" is the best bound held without our rectangle certificates.
-It includes our own point certificates. A certificate also covers every
-larger `n` above its total mass.
+The highest bound among our published certificates for each `n`, whatever the
+kind, with the best value others have published as a proved result or a preprint
+(`vs previous`: `record` if the bound is above it, `match` if it equals or is
+below it). Nagamochi's closed form and Green's reported bound are reference
+values only, since their published proofs are incomplete: Nagamochi's is
+`sqrt(n - 2r + 1) + 1` with `r = floor(sqrt(n))` for `n` not a square, and
+Green's is `2*sqrt(2) - 1 + (k(k-1)^2 + (k-1)*sqrt(2k))/(k^2+1)` with `k = r`
+(`k = r - 1` for a square `n`), for `k >= 4`. The table is regenerated on every
+publication. The sections further down explain how the certificates were built
+and list earlier rungs.
 
 <!-- auto:standing:begin -->
-| `n` | bound | exact | total mass | directory | previous record | kind | verifier nodes |
+| `n` | bound | exact | kind | directory | previous published record by others | vs previous | reference values |
 |---|---|---|---|---|---|---|---|
-| 18 | **4.695** | 939/200 | 17.990000 | `rect_n18_L4695` | 4.679000 (jlevy/squares) | record | 25,076,758 |
-| 19 | **4.8175** | 1927/400 | 18.990000 | `rect_n19_L48175` | 4.800000 (jlevy/squares) | record | 32,216,311 |
-| 20 | **4.9** | 49/10 | 19.990000 | `rect_n20_L49` | 4.850000 (jlevy/squares) | record | 20,862,964 |
-| 21 | **4.9875** | 399/80 | 20.999000 | `rect_n21_L49875` | 5.000000 (evand) | match | 45,191,252 |
-| 26 | **5.5325** | 2213/400 | 25.990000 | `rect_n26_L55325` | 5.508000 (tokoharu) | record | 19,832,060 |
-| 27 | **5.635** | 1127/200 | 26.990000 | `rect_n27_L5635` | 5.508000 (tokoharu) | record | 22,428,190 |
-| 28 | **5.7225** | 2289/400 | 27.990000 | `rect_n28_L57225` | 5.511709 (Green) | record | 24,221,209 |
-| 29 | **5.7975** | 2319/400 | 28.990000 | `rect_n29_L57975` | 5.710000 (tokoharu) | record | 20,667,842 |
-| 30 | **5.875** | 47/8 | 29.990000 | `rect_n30_L5875` | 5.710000 (tokoharu) | record | 25,234,338 |
-| 31 | **5.9525** | 2381/400 | 30.990000 | `rect_n31_L59525` | 5.710000 (tokoharu) | record | 19,219,226 |
-| 32 | **5.95** | 119/20 | 31.990000 | `rect_n32_L595` | 6.000000 (evand) | match | 5,808,912 |
-| 37 | **6.425** | 257/40 | 36.990000 | `rect_n37_L6425` | 6.350603 (Green) | record | 28,286,611 |
-| 38 | **6.545** | 1309/200 | 37.990000 | `rect_n38_L6545` | 6.350603 (Green) | record | 24,946,254 |
-| 39 | **6.635** | 1327/200 | 38.990000 | `rect_n39_L6635` | 6.500000 (this work) | record | 25,772,759 |
-| 40 | **6.7** | 67/10 | 39.990000 | `rect_n40_L67` | 6.500000 (this work) | record | 21,501,387 |
-| 41 | **6.76** | 169/25 | 40.990000 | `rect_n41_L676` | 6.500000 (this work) | record | 25,438,093 |
-| 42 | **6.8275** | 2731/400 | 41.990000 | `rect_n42_L68275` | 6.567764 (Nagamochi) | record | 28,399,704 |
-| 43 | **6.8875** | 551/80 | 42.990000 | `rect_n43_L68875` | 6.656854 (Nagamochi) | record | 36,873,467 |
-| 44 | **6.9425** | 2777/400 | 43.990000 | `rect_n44_L69425` | 6.744563 (Nagamochi) | record | 36,809,903 |
-| 45 | **6.955** | 1391/200 | 44.990000 | `rect_n45_L6955` | 7.000000 (evand) | match | 15,360,958 |
-| 51 | **7.4425** | 2977/400 | 50.990000 | `rect_n51_L74425` | 7.317426 (Green) | record | 22,911,774 |
-| 52 | **7.535** | 1507/200 | 51.990000 | `rect_n52_L7535` | 7.380000 (this work) | record | 24,539,623 |
-| 53 | **7.6075** | 3043/400 | 52.990000 | `rect_n53_L76075` | 7.380000 (this work) | record | 31,105,567 |
-| 54 | **7.6725** | 3069/400 | 53.990000 | `rect_n54_L76725` | 7.403124 (Nagamochi) | record | 28,051,952 |
-| 55 | **7.7125** | 617/80 | 54.990000 | `rect_n55_L77125` | 7.540000 (this work) | record | 31,849,467 |
-| 56 | **7.7825** | 3113/400 | 55.990000 | `rect_n56_L77825` | 7.620000 (this work) | record | 32,540,810 |
-| 57 | **7.835** | 1567/200 | 56.990000 | `rect_n57_L7835` | 7.633250 (Nagamochi) | record | 28,668,321 |
-| 58 | **7.89** | 789/100 | 57.990000 | `rect_n58_L789` | 7.708204 (Nagamochi) | record | 31,706,414 |
-| 59 | **7.9375** | 127/16 | 58.990000 | `rect_n59_L79375` | 7.782330 (Nagamochi) | record | 38,103,520 |
-| 60 | **7.94** | 397/50 | 59.990000 | `rect_n60_L794` | 8.000000 (evand) | match | 32,869,712 |
-| 61 | **7.96** | 199/25 | 60.990000 | `rect_n61_L796` | 8.000000 (evand) | match | 20,526,671 |
-| 66 | **8.385** | 1677/200 | 65.990000 | `rect_n66_L8385` | 8.289966 (Green) | record | 27,095,146 |
-| 67 | **8.455** | 1691/200 | 66.990000 | `rect_n67_L8455` | 8.289966 (Green) | record | 25,217,361 |
-| 68 | **8.51** | 851/100 | 67.990000 | `rect_n68_L851` | 8.410000 (this work) | record | 32,919,625 |
-| 69 | **8.585** | 1717/200 | 68.990000 | `rect_n69_L8585` | 8.410000 (this work) | record | 30,214,587 |
-| 70 | **8.6275** | 3451/400 | 69.990000 | `rect_n70_L86275` | 8.550000 (this work) | record | 38,607,528 |
-| 71 | **8.685** | 1737/200 | 70.990000 | `rect_n71_L8685` | 8.550000 (this work) | record | 26,773,005 |
-| 72 | **8.74** | 437/50 | 71.990000 | `rect_n72_L874` | 8.610000 (this work) | record | 28,630,683 |
-| 73 | **8.78** | 439/50 | 72.990000 | `rect_n73_L878` | 8.615773 (Nagamochi) | record | 27,329,821 |
-| 74 | **8.8475** | 3539/400 | 73.990000 | `rect_n74_L88475` | 8.681146 (Nagamochi) | record | 36,661,111 |
-| 75 | **8.9** | 89/10 | 74.990000 | `rect_n75_L89` | 8.745967 (Nagamochi) | record | 29,959,986 |
-| 76 | **8.925** | 357/40 | 75.990000 | `rect_n76_L8925` | 8.810250 (Nagamochi) | record | 32,186,322 |
-| 77 | **8.94** | 447/50 | 76.990000 | `rect_n77_L894` | 8.874008 (Nagamochi) | record | 35,716,875 |
-| 78 | **8.965** | 1793/200 | 77.990000 | `rect_n78_L8965` | 9.000000 (evand) | match | 36,841,320 |
-| 86 | **9.365** | 1873/200 | 85.990000 | `rect_n86_L9365` | 9.306624 (Nagamochi) | record | 32,172,329 |
-| 87 | **9.41** | 941/100 | 86.990000 | `rect_n87_L941` | 9.366600 (Nagamochi) | record | 36,458,927 |
-| 88 | **9.4775** | 3791/400 | 87.990000 | `rect_n88_L94775` | 9.426150 (Nagamochi) | record | 30,817,677 |
-| 89 | **9.565** | 1913/200 | 88.990000 | `rect_n89_L9565` | 9.485281 (Nagamochi) | record | 32,887,546 |
-| 90 | **9.5775** | 3831/400 | 89.990000 | `rect_n90_L95775` | 9.544004 (Nagamochi) | record | 38,413,584 |
-| 91 | **9.6475** | 3859/400 | 90.990000 | `rect_n91_L96475` | 9.602325 (Nagamochi) | record | 35,649,266 |
-| 93 | **9.735** | 1947/200 | 92.990000 | `rect_n93_L9735` | 9.717798 (Nagamochi) | record | 45,473,527 |
-| 94 | **9.805** | 1961/200 | 93.990000 | `rect_n94_L9805` | 9.774964 (Nagamochi) | record | 34,535,827 |
-| 95 | **9.8518** | 49259/5000 | 94.990000 | `rect_n95_L98518` | 9.831761 (Nagamochi) | record | 34,416,768 |
+| 11 | **3.81** | 381/100 | point | [`cert_n11_L381`](history/density-bounds/certificates/cert_n11_L381) | 3.877084 (Queuingtheorydotcom, 2026) | match | Nagamochi 3.4495… |
+| 18 | **4.705** | 941/200 | mixed | [`mixed_n18_L4705`](certificates/mixed_n18_L4705) | 4.679000 (jlevy, 2026) | record | Nagamochi 4.3166…; Green 4.4452… |
+| 19 | **4.8275** | 1931/400 | mixed | [`mixed_n19_L48275`](certificates/mixed_n19_L48275) | 4.800000 (jlevy, 2026) | record | Nagamochi 4.4641…; Green 4.4452… |
+| 20 | **4.9125** | 393/80 | mixed | [`mixed_n20_L49125`](certificates/mixed_n20_L49125) | 4.850000 (jlevy, 2026) | record | Nagamochi 4.6056…; Green 4.4452… |
+| 21 | **5** | 5 | point | [`point_n21_L5`](point_n21_L5) | 5.000000 (evand, 2026) | match | Nagamochi 4.7417…; Green 4.4452… |
+| 26 | **5.555** | 1111/200 | mixed | [`mixed_n26_L5555`](certificates/mixed_n26_L5555) | 5.508000 (tokoharu, 2026) | record | Nagamochi 5.1231…; Green 5.3919… |
+| 27 | **5.655** | 1131/200 | mixed | [`mixed_n27_L5655`](certificates/mixed_n27_L5655) | 5.508000 (tokoharu, 2026) | record | Nagamochi 5.2426…; Green 5.3919… |
+| 28 | **5.7425** | 2297/400 | mixed | [`mixed_n28_L57425`](certificates/mixed_n28_L57425) | 5.508000 (tokoharu, 2026) | record | Nagamochi 5.3589…; Green 5.3919… |
+| 29 | **5.82** | 291/50 | mixed | [`mixed_n29_L582`](certificates/mixed_n29_L582) | 5.710000 (tokoharu, 2026) | record | Nagamochi 5.4721…; Green 5.3919… |
+| 30 | **5.8925** | 2357/400 | mixed | [`mixed_n30_L58925`](certificates/mixed_n30_L58925) | 5.710000 (tokoharu, 2026) | record | Nagamochi 5.5826…; Green 5.3919… |
+| 31 | **5.97** | 597/100 | mixed | [`mixed_n31_L597`](certificates/mixed_n31_L597) | 5.710000 (tokoharu, 2026) | record | Nagamochi 5.6904…; Green 5.3919… |
+| 32 | **5.95** | 119/20 | rectangle | [`rect_n32_L595`](certificates/rect_n32_L595) | 6.000000 (evand, 2026) | match | Nagamochi 5.7958…; Green 5.3919… |
+| 37 | **6.44** | 161/25 | mixed | [`mixed_n37_L644`](certificates/mixed_n37_L644) | 6.090170 (Karakus, 2026) | record | Nagamochi 6.0990…; Green 6.3506… |
+| 38 | **6.545** | 1309/200 | rectangle | [`rect_n38_L6545`](certificates/rect_n38_L6545) | 6.178908 (Karakus, 2026) | record | Nagamochi 6.1962…; Green 6.3506… |
+| 39 | **6.65** | 133/20 | mixed | [`mixed_n39_L665`](certificates/mixed_n39_L665) | 6.266281 (Karakus, 2026) | record | Nagamochi 6.2915…; Green 6.3506… |
+| 40 | **6.7** | 67/10 | rectangle | [`rect_n40_L67`](certificates/rect_n40_L67) | 6.352350 (Karakus, 2026) | record | Nagamochi 6.3852…; Green 6.3506… |
+| 41 | **6.775** | 271/40 | mixed | [`mixed_n41_L6775`](certificates/mixed_n41_L6775) | 6.437171 (Karakus, 2026) | record | Nagamochi 6.4772…; Green 6.3506… |
+| 42 | **6.8475** | 2739/400 | mixed | [`mixed_n42_L68475`](certificates/mixed_n42_L68475) | 6.520797 (Karakus, 2026) | record | Nagamochi 6.5678…; Green 6.3506… |
+| 43 | **6.9075** | 2763/400 | mixed | [`mixed_n43_L69075`](certificates/mixed_n43_L69075) | 6.603278 (Karakus, 2026) | record | Nagamochi 6.6569…; Green 6.3506… |
+| 44 | **6.9725** | 2789/400 | mixed | [`mixed_n44_L69725`](certificates/mixed_n44_L69725) | 6.684658 (Karakus, 2026) | record | Nagamochi 6.7446…; Green 6.3506… |
+| 45 | **7** | 7 | point | [`point_n45_L7`](point_n45_L7) | 7.000000 (evand, 2026) | match | Nagamochi 6.8310…; Green 6.3506… |
+| 50 | **7.4** | 37/5 | mixed | [`mixed_n50_L740`](certificates/mixed_n50_L740) | 7.076473 (Karakus, 2026) | record | Nagamochi 7.0828…; Green 7.3174… |
+| 51 | **7.47** | 747/100 | mixed | [`mixed_n51_L747`](certificates/mixed_n51_L747) | 7.152067 (Karakus, 2026) | record | Nagamochi 7.1644…; Green 7.3174… |
+| 52 | **7.55** | 151/20 | mixed | [`mixed_n52_L755`](certificates/mixed_n52_L755) | 7.226812 (Karakus, 2026) | record | Nagamochi 7.2450…; Green 7.3174… |
+| 53 | **7.6275** | 3051/400 | mixed | [`mixed_n53_L76275`](certificates/mixed_n53_L76275) | 7.300735 (Karakus, 2026) | record | Nagamochi 7.3246…; Green 7.3174… |
+| 54 | **7.685** | 1537/200 | mixed | [`mixed_n54_L7685`](certificates/mixed_n54_L7685) | 7.373864 (Karakus, 2026) | record | Nagamochi 7.4031…; Green 7.3174… |
+| 55 | **7.728** | 966/125 | mixed | [`mixed_n55_L7728`](certificates/mixed_n55_L7728) | 7.446222 (Karakus, 2026) | record | Nagamochi 7.4807…; Green 7.3174… |
+| 56 | **7.8025** | 3121/400 | mixed | [`mixed_n56_L78025`](certificates/mixed_n56_L78025) | 7.517834 (Karakus, 2026) | record | Nagamochi 7.5574…; Green 7.3174… |
+| 57 | **7.8725** | 3149/400 | mixed | [`mixed_n57_L78725`](certificates/mixed_n57_L78725) | 7.588723 (Karakus, 2026) | record | Nagamochi 7.6332…; Green 7.3174… |
+| 58 | **7.935** | 1587/200 | mixed | [`mixed_n58_L7935`](certificates/mixed_n58_L7935) | 7.658911 (Karakus, 2026) | record | Nagamochi 7.7082…; Green 7.3174… |
+| 59 | **8** | 8 | mixed | [`k2m5_n59_L8`](certificates/k2m5_n59_L8) | 7.728416 (Karakus, 2026) | record | Nagamochi 7.7823…; Green 7.3174… |
+| 60 | **7.94** | 397/50 | rectangle | [`rect_n60_L794`](certificates/rect_n60_L794) | 8.000000 (evand, 2026) | match | Nagamochi 7.8557…; Green 7.3174… |
+| 61 | **8** | 8 | point | [`point_n61_L8`](point_n61_L8) | 8.000000 (evand, 2026) | match | Nagamochi 7.9282…; Green 7.3174… |
+| 65 | **8.35** | 167/20 | mixed | [`mixed_n65_L835`](certificates/mixed_n65_L835) | 8.066373 (Karakus, 2026) | record | Nagamochi 8.0711…; Green 8.2900… |
+| 66 | **8.43** | 843/100 | mixed | [`mixed_n66_L843`](certificates/mixed_n66_L843) | 8.132169 (Karakus, 2026) | record | Nagamochi 8.1414…; Green 8.2900… |
+| 67 | **8.48** | 212/25 | mixed | [`mixed_n67_L848`](certificates/mixed_n67_L848) | 8.197402 (Karakus, 2026) | record | Nagamochi 8.2111…; Green 8.2900… |
+| 68 | **8.51** | 851/100 | rectangle | [`rect_n68_L851`](certificates/rect_n68_L851) | 8.262087 (Karakus, 2026) | record | Nagamochi 8.2801…; Green 8.2900… |
+| 69 | **8.62** | 431/50 | mixed | [`mixed_n69_L862`](certificates/mixed_n69_L862) | 8.326238 (Karakus, 2026) | record | Nagamochi 8.3485…; Green 8.2900… |
+| 70 | **8.6575** | 3463/400 | mixed | [`mixed_n70_L86575`](certificates/mixed_n70_L86575) | 8.389867 (Karakus, 2026) | record | Nagamochi 8.4162…; Green 8.2900… |
+| 71 | **8.721** | 8721/1000 | mixed | [`mixed_n71_L8721`](certificates/mixed_n71_L8721) | 8.452987 (Karakus, 2026) | record | Nagamochi 8.4833…; Green 8.2900… |
+| 72 | **8.76** | 219/25 | mixed | [`mixed_n72_L876`](certificates/mixed_n72_L876) | 8.515610 (Karakus, 2026) | record | Nagamochi 8.5498…; Green 8.2900… |
+| 73 | **8.813** | 8813/1000 | mixed | [`mixed_n73_L8813`](certificates/mixed_n73_L8813) | 8.577747 (Karakus, 2026) | record | Nagamochi 8.6158…; Green 8.2900… |
+| 74 | **8.8675** | 3547/400 | mixed | [`mixed_n74_L88675`](certificates/mixed_n74_L88675) | 8.639410 (Karakus, 2026) | record | Nagamochi 8.6811…; Green 8.2900… |
+| 75 | **8.94** | 447/50 | mixed | [`mixed_n75_L894`](certificates/mixed_n75_L894) | 8.700610 (Karakus, 2026) | record | Nagamochi 8.7460…; Green 8.2900… |
+| 76 | **8.965** | 1793/200 | mixed | [`mixed_n76_L8965`](certificates/mixed_n76_L8965) | 8.761356 (Karakus, 2026) | record | Nagamochi 8.8102…; Green 8.2900… |
+| 77 | **9** | 9 | mixed | [`k2m4_n77_L9`](certificates/k2m4_n77_L9) | 9.000000 (evand, 2026) | match | Nagamochi 8.8740…; Green 8.2900… |
+| 78 | **8.965** | 1793/200 | rectangle | [`rect_n78_L8965`](certificates/rect_n78_L8965) | 9.000000 (evand, 2026) | match | Nagamochi 8.9373…; Green 8.2900… |
+| 82 | **9.32** | 233/25 | mixed | [`mixed_n82_L932`](certificates/mixed_n82_L932) | 9.058621 (Karakus, 2026) | record | Nagamochi 9.0623…; Green 9.2667… |
+| 83 | **9.37** | 937/100 | mixed | [`mixed_n83_L937`](certificates/mixed_n83_L937) | 9.116844 (Karakus, 2026) | record | Nagamochi 9.1240…; Green 9.2667… |
+| 84 | **9.411** | 9411/1000 | mixed | [`mixed_n84_L9411`](certificates/mixed_n84_L9411) | 9.174676 (Karakus, 2026) | record | Nagamochi 9.1854…; Green 9.2667… |
+| 85 | **9.46** | 473/50 | mixed | [`mixed_n85_L946`](certificates/mixed_n85_L946) | 9.232125 (Karakus, 2026) | record | Nagamochi 9.2462…; Green 9.2667… |
+| 86 | **9.503** | 9503/1000 | mixed | [`mixed_n86_L9503`](certificates/mixed_n86_L9503) | 9.289198 (Karakus, 2026) | record | Nagamochi 9.3066…; Green 9.2667… |
+| 87 | **9.58** | 479/50 | mixed | [`mixed_n87_L958`](certificates/mixed_n87_L958) | 9.345903 (Karakus, 2026) | record | Nagamochi 9.3666…; Green 9.2667… |
+| 88 | **9.62** | 481/50 | mixed | [`mixed_n88_L962`](certificates/mixed_n88_L962) | 9.402247 (Karakus, 2026) | record | Nagamochi 9.4261…; Green 9.2667… |
+| 89 | **9.65** | 193/20 | mixed | [`mixed_n89_L965`](certificates/mixed_n89_L965) | 9.458236 (Karakus, 2026) | record | Nagamochi 9.4853…; Green 9.2667… |
+| 90 | **9.73** | 973/100 | mixed | [`mixed_n90_L973`](certificates/mixed_n90_L973) | 9.513878 (Karakus, 2026) | record | Nagamochi 9.5440…; Green 9.2667… |
+| 91 | **9.7625** | 781/80 | mixed | [`mixed_n91_L97625`](certificates/mixed_n91_L97625) | 9.569179 (Karakus, 2026) | record | Nagamochi 9.6023…; Green 9.2667… |
+| 92 | **9.77** | 977/100 | mixed | [`mixed_n92_L977`](certificates/mixed_n92_L977) | 9.624144 (Karakus, 2026) | record | Nagamochi 9.6603…; Green 9.2667… |
+| 93 | **9.88** | 247/25 | mixed | [`mixed_n93_L988`](certificates/mixed_n93_L988) | 9.678780 (Karakus, 2026) | record | Nagamochi 9.7178…; Green 9.2667… |
+| 94 | **9.95** | 199/20 | mixed | [`mixed_n94_L995`](certificates/mixed_n94_L995) | 9.733093 (Karakus, 2026) | record | Nagamochi 9.7750…; Green 9.2667… |
+| 95 | **9.965** | 1993/200 | mixed | [`mixed_n95_L9965`](certificates/mixed_n95_L9965) | 9.787088 (Karakus, 2026) | record | Nagamochi 9.8318…; Green 9.2667… |
+| 96 | **9.97** | 997/100 | mixed | [`mixed_n96_L997`](certificates/mixed_n96_L997) | 10.000000 (evand, 2026) | match | Nagamochi 9.8882…; Green 9.2667… |
+| 101 | **10.28** | 257/25 | mixed | [`mixed_n101_L1028`](certificates/mixed_n101_L1028) | — | record | Nagamochi 10.0554…; Green 10.2467… |
+| 122 | **11.26** | 563/50 | mixed | [`mixed_n122_L1126`](certificates/mixed_n122_L1126) | — | record | Nagamochi 11.0499…; Green 11.2293… |
 <!-- auto:standing:end -->
 
 The previous figures for these cases come from a private communication from
