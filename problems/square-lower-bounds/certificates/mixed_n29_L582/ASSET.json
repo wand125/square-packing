@@ -1,0 +1,34 @@
+{
+ "schema": "asset/v1",
+ "id": "square-lower-bounds-v1:certificates/mixed_n29_L582",
+ "claim": "No packing of 29 closed unit squares fits in the closed square of side 291/50 (= 5.82).",
+ "release_tag": "square-lower-bounds-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/square-lower-bounds-v1",
+ "assets": [
+  {
+   "asset": "certificates__mixed_n29_L582.tar.gz",
+   "size": 651878,
+   "sha256": "6203a9b4cc1a388100531a145c54db232ba8ad1f4674e6da4b41f8b1a59c3274"
+  }
+ ],
+ "unpack": "tar xzf certificates__mixed_n29_L582.tar.gz -C problems/square-lower-bounds",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "tar xzf check2/src/sqverify-proof-net-fe12e036c.tar.gz\n(cd sqverify_fast && cargo build --release --locked)\nbash check2/src/fine_net_check.sh sqverify_fast/target/release/sqverify-fast candidate.json out/",
+ "check_cwd": "problems/square-lower-bounds/certificates/mixed_n29_L582",
+ "check_note": "build steps from the README prose (check2/src/REPRODUCE.md)",
+ "check_extended": null,
+ "documents": [
+  "problems/square-lower-bounds/certificates/mixed_n29_L582/README.md",
+  "problems/square-lower-bounds/certificates/mixed_n29_L582/check2/src/INDEPENDENCE.md",
+  "problems/square-lower-bounds/certificates/mixed_n29_L582/check2/src/REPRODUCE.md",
+  "problems/square-lower-bounds/certificates/mixed_n29_L582/check2/src/SOUNDNESS.md",
+  "problems/square-lower-bounds/certificates/mixed_n29_L582/check2/src/SPEC.md",
+  "problems/square-lower-bounds/certificates/mixed_n29_L582/provenance/search-notes.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing",
+  "commit": null,
+  "path": "problems/square-lower-bounds/certificates/mixed_n29_L582",
+  "published_after": "dd6a7cc55a8d239a4462ee0d1991f7dc010df53c"
+ }
+}
