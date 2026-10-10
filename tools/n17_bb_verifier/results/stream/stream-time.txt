@@ -1,0 +1,19 @@
+stream stats: peak_live=27 seen_ids=83 seen_capacity=112 seen_bytes_estimate=1168 nodes=83
+        0.10 real         0.06 user         0.00 sys
+             4915200  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 467  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+                 216  involuntary context switches
+           553352675  instructions retired
+           147997250  cycles elapsed
+             3621200  peak memory footprint

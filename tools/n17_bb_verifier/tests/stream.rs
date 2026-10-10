@@ -319,6 +319,14 @@ fn parent_metadata_survives_chunk_boundaries_and_sparse_ids() {
         cert.save(true);
         let receipt = compare(&cert.directory, fixture.starts_with("v3"), false, 2);
         assert_eq!(receipt["status"], "PASS");
+        // The root has been retired in an earlier chunk: a later extra child
+        // must fall back, even though the classic available set keeps open IDs.
+        let mut extra = cert.nodes.last().expect("last node").clone();
+        extra["id"] = json!(0);
+        extra["parent"] = cert.nodes[0]["id"].clone();
+        cert.nodes.push(extra);
+        cert.save(true);
+        compare(&cert.directory, fixture.starts_with("v3"), true, 2);
     }
 }
 

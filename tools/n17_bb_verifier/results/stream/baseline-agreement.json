@@ -1,0 +1,122 @@
+[
+  {
+    "fixture": "mutated-bound",
+    "status": "FAIL",
+    "nodes": 83,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "mutated-cut",
+    "status": "FAIL",
+    "nodes": 83,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "mutated-drop-leaf",
+    "status": "FAIL",
+    "nodes": 82,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "mutated-multiplier",
+    "status": "FAIL",
+    "nodes": 83,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "mutated-narrow-final",
+    "status": "FAIL",
+    "nodes": 83,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "mutated-split",
+    "status": "FAIL",
+    "nodes": 83,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "small-certificate",
+    "status": "PASS",
+    "nodes": 83,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-angle",
+    "status": "PASS",
+    "nodes": 1,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-child-window",
+    "status": "FAIL",
+    "nodes": 2,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-drop-partner",
+    "status": "FAIL",
+    "nodes": 1,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-in-v1",
+    "status": "FAIL",
+    "nodes": null,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-missing-trig",
+    "status": "FAIL",
+    "nodes": 1,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-not-empty",
+    "status": "FAIL",
+    "nodes": 1,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-repeat",
+    "status": "FAIL",
+    "nodes": 1,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-small-final",
+    "status": "FAIL",
+    "nodes": 1,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-summary",
+    "status": "FAIL",
+    "nodes": 1,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-target",
+    "status": "FAIL",
+    "nodes": 2,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-tighten",
+    "status": "PASS",
+    "nodes": 2,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-wall",
+    "status": "FAIL",
+    "nodes": 1,
+    "pre_change_agreement": true
+  },
+  {
+    "fixture": "v3-wrong-pair",
+    "status": "FAIL",
+    "nodes": 1,
+    "pre_change_agreement": true
+  }
+]
