@@ -26,7 +26,6 @@ the best bound of any kind is
 
 <!-- auto:claims:begin -->
 ```
-s(11) >= 381/100   = 3.81
 s(18) >= 941/200   = 4.705
 s(19) >= 1931/400  = 4.8275
 s(20) >= 393/80    = 4.9125
@@ -119,7 +118,6 @@ and list earlier rungs.
 <!-- auto:standing:begin -->
 | `n` | bound | exact | kind | directory | previous published record by others | vs previous | reference values |
 |---|---|---|---|---|---|---|---|
-| 11 | **3.81** | 381/100 | point | [`cert_n11_L381`](history/density-bounds/certificates/cert_n11_L381) | 3.877084 (Queuingtheorydotcom, 2026) | below | Nagamochi 3.4495… |
 | 18 | **4.705** | 941/200 | mixed | [`mixed_n18_L4705`](certificates/mixed_n18_L4705) | 4.679000 (jlevy, 2026) | record | Nagamochi 4.3166…; Green 4.4452… |
 | 19 | **4.8275** | 1931/400 | mixed | [`mixed_n19_L48275`](certificates/mixed_n19_L48275) | 4.800000 (jlevy, 2026) | record | Nagamochi 4.4641…; Green 4.4452… |
 | 20 | **4.9125** | 393/80 | mixed | [`mixed_n20_L49125`](certificates/mixed_n20_L49125) | 4.850000 (jlevy, 2026) | record | Nagamochi 4.6056…; Green 4.4452… |
