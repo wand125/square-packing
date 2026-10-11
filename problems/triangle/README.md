@@ -1,4 +1,4 @@
-# Unit squares in an equilateral triangle: optimal packings for n = 2, 3, 4, 6, 7, 11, 16, 22, 29 and a lower bound for n = 37
+# Unit squares in an equilateral triangle: optimal packings for n = 2, 3, 4, 6, 7, 11, 16, 22, 29 and 37
 
 Let s△(n) be the side of the smallest equilateral triangle that contains n non-overlapping unit
 squares (any positions, any angles).
@@ -14,7 +14,7 @@ squares (any positions, any angles).
 | 16 | 6 + 2/√3 | 7.1547 | rows 6 + 4 + 3 + 2 + 1 | lattice, 15 points |
 | 22 | 7 + 2/√3 | 8.1547 | rows 7 + 5 + 4 + 3 + 2 + 1 | lattice, 21 points |
 | 29 | 8 + 2/√3 | 9.1547 | rows 8 + 6 + 5 + 4 + 3 + 2 + 1 | lattice, 28 points |
-| 37 | ≥ 9 + 2/√3 | ≥ 10.1547 | (lower bound only) | lattice, 36 points |
+| 37 | 9 + 2/√3 | 10.1547 | tight bottom row of 9, and 28 squares above in the shape of Friedman's n = 28 packing (our coordinates, `certificates/n37/upper/`) | lattice, 36 points |
 
 The packings are the best known ones in Erich Friedman's Packing Center, "Squares in Triangles"
 (https://erich-friedman.github.io/packing/squintri/). The certificates show that they are optimal. For n = 7, …, 29 the packing is rows of
@@ -32,10 +32,12 @@ The results are computer-assisted and checked by two independent checkers; all e
   - general web searches.
 
   We did not find a lower bound for this container. If you know of one, please open an issue.
-- For n = 37 we prove only the lower bound s△(37) ≥ 9 + 2/√3 ≈ 10.15470. Friedman's table (as of
-  2026-10-01) lists 10.15299 for n = 37. From the picture on that page we estimate the side of that
-  packing to be at least 9 + 2/√3, and take the listed value to be a typo; if its side is 9 + 2/√3, this
-  bound shows that it is optimal. See `certificates/n37/PROOF.md`; we do not have its coordinates.
+- For n = 37 we prove s△(37) = 9 + 2/√3 ≈ 10.15470: our own packing with exact coordinates
+  (`certificates/n37/upper/`, two exact checkers) gives the upper bound, and the lattice certificate the lower
+  bound. We do not claim the packing as new: Friedman's table lists a packing of 37 squares by Gianluca
+  Costantino (May 2026), and the part above the bottom row uses the shape of Friedman's n = 28 packing (1997).
+  The table (as of 2026-10-01) lists side 10.15299, below our lower bound; we take it to be a typo. See
+  `certificates/n37/PROOF.md`.
 
 ## The method
 

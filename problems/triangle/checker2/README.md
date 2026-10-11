@@ -177,8 +177,9 @@ symmetry and no chord-pair lemma, and checks every angle directly.
 
 Each total weight is `n − 1 < n`.
 
-For m = 9 the result is a lower bound only: s△(37) ≥ 9 + 2/√3 ≈ 10.15470. The rows packing
-holds 36 squares at this side.
+For m = 9 the certificate gives the lower bound s△(37) ≥ 9 + 2/√3 ≈ 10.15470. The rows packing
+holds only 36 squares at this side; the upper bound comes from a different packing, in
+`../certificates/n37/upper/`.
 
 ### A floating-point cross-check for m = 9
 

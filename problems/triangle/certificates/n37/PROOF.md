@@ -1,11 +1,20 @@
 # 37 unit squares in an equilateral triangle
 
-**Theorem (computer-assisted, lower bound only).** No 37 non-overlapping unit squares fit in an
-equilateral triangle of side less than v = 9 + 2/√3 ≈ 10.15470; that is, s△(37) ≥ 9 + 2/√3.
+**Theorem (computer-assisted).** The smallest equilateral triangle containing 37 non-overlapping unit squares
+has side v = 9 + 2/√3 ≈ 10.15470; that is, s△(37) = 9 + 2/√3.
 
-No upper bound is claimed here. In the triangle of side v, axis-parallel rows standing on the base
-hold 9 + 7 + 6 + 5 + 4 + 3 + 2 = 36 squares. The eighth row does not fit, because at height 7 the width is
-9 − 14/√3 ≈ 0.917 < 1. So this construction gives 36, not 37.
+- **Upper bound.** 37 squares fit in the triangle of side v: [`upper/`](upper/) gives a packing with exact
+  coordinates in Q(√3), checked by two independent exact checkers. A tight bottom row of nine axis-parallel
+  squares leaves an equilateral triangle of side 9 above height 1. It holds 28 squares in the shape of
+  Friedman's n = 28 packing (side 3 + 10/√3 < 9): rows of 7, 6, 3 and 2 squares and two blocks of 3 + 2 squares,
+  one aligned with each slanted side. We do not claim this construction as new: Friedman's table lists a
+  packing of 37 squares by Gianluca Costantino (May 2026), and the upper part uses the shape of Friedman's
+  n = 28 packing (1997).
+- **Lower bound.** No 37 non-overlapping unit squares fit in a smaller equilateral triangle. The rest of this
+  document proves this.
+
+Axis-parallel rows alone do not reach 37: in the triangle of side v they hold 9 + 7 + 6 + 5 + 4 + 3 + 2 = 36
+squares, and the eighth row does not fit, because at height 7 the width is 9 − 14/√3 ≈ 0.917 < 1.
 
 ## Certificate
 
@@ -43,15 +52,16 @@ capture weight ≥ 37 > 36, a contradiction. ∎
   there, with margin 0.0025. The same margin appears for n = 4. With depth limit 40 the checker
   verifies the lemma.
 - **Friedman's table.** At the time of writing (2026-10-01), Erich Friedman's "Squares in Triangles"
-  page lists n = 37 with side 10.15299 (Gianluca Costantino, May 2026).
+  page lists n = 37 with side 10.15299 (Gianluca Costantino, May 2026). This is smaller than the lower bound
+  above, so we take the listed value to be a typo.
   - The picture on that page appears to show a bottom row of nine axis-parallel squares standing on
     the base. Nine such squares need width 9 at height 1, that is, side at least 9 + 2/√3 ≈ 10.15470.
-  - From the picture we therefore estimate the side of that packing to be at least 9 + 2/√3 ≈ 10.15470,
-    not 10.15299, and take the listed value to be a typo. We do not have the coordinates of that packing.
-  - If that packing has side 9 + 2/√3, the theorem above shows that it is optimal.
+  - We do not have the coordinates of that packing. Our own packing in [`upper/`](upper/) has side exactly
+    9 + 2/√3.
 
 ## Status
 
-- Verified by `../../checker/`. See the repository README for the second, independent checker.
+- Lower bound verified by `../../checker/`. See the repository README for the second, independent checker.
+- Upper bound: the packing in `upper/` is checked by `upper/check_sat.py` and `upper/check_clip.py`, two independent exact checkers. Both reject five negative controls.
 - The lower bound is also proved in Lean 4 and checked by the kernel: [`lean/triangle/`](../../../../lean/triangle/) at the repository root.
 - Not peer reviewed.
