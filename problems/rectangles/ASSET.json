@@ -21,5 +21,10 @@
   "problems/rectangles/README.md",
   "problems/rectangles/FORMAT.md"
  ],
- "source": null
+ "source": {
+  "repository": "wand125/square-packing",
+  "commit": null,
+  "path": "problems/rectangles",
+  "published_after": "27ed16885a3ac64c2a22c992f5375574ccf3ff16"
+ }
 }
