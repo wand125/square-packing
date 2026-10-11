@@ -40,11 +40,16 @@ export function draw(ctx: CanvasRenderingContext2D, options: Options): any {
     // the position of the piece in the run, counted from the square: step i / m
     var order = options.K.pieces.slice().reverse(), si = order.indexOf(p) + 1;
     ctx.fillText('step ' + si + '/' + order.length + (p.name ? '  (' + p.name + ')' : '') + (fr.st.kind === 'step' && p === fr.st.p ? (options.ja() ? '  a 一定' : '  a fixed') : ''), nx, 56 * d);
+    // what the frame shows, in one line (drawn, so that a recording carries it too)
+    var cap = options.ja() ? '幅 a ごとに、' + options.K.k + ' 個が入る最小の高さ b とその詰め方' : 'For each width a, the smallest height b for ' + options.K.k + ' squares, and the packing';
+    ctx.font = (11.5 * d) + 'px ' + sans; var cw = ctx.measureText(cap).width;
+    if (cw > (W - 24) * d) ctx.font = (11.5 * d * (W - 24) * d / cw) + 'px ' + sans;   // shrink to fit a narrow frame
+    ctx.fillText(cap, 12 * d, 80 * d);
     ctx.textBaseline = 'alphabetic';
     var ftxt = p.formula || (p.note ? p.note[options.ja() ? 'ja' : 'en'] : ''); ctx.font = (10.5 * d) + 'px ' + mono;
     // the formula, right-aligned; a parametric one as two lines, a = … and b = …
     ctx.textAlign = 'right';
-    var parts = String(ftxt).split(/,\s*(?=[ab]\s*=)/), fy = 96;
+    var parts = String(ftxt).split(/,\s*(?=[ab]\s*=)/), fy = 106;
     parts.forEach(function (ln) { fy = wrap(ctx, options, ln, (W - 14) * d, fy * d, (W - 28) * d, 13 * d, 1e9) / d; });   // in full, even if it runs behind the box
     ctx.textAlign = 'left';
     // the box (a across, b up)
