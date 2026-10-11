@@ -1,0 +1,114 @@
+{
+ "format": "packing-certificate/1",
+ "problem": "squares in a 1 x 2 rectangle, n = 4",
+ "n": 4,
+ "field": {
+  "generator": "t",
+  "minpoly": [
+   "1",
+   "-1",
+   "-5",
+   "1"
+  ],
+  "interval": [
+   "0",
+   "1"
+  ]
+ },
+ "defs": {
+  "c": "(1-t**2)/(1+t**2)",
+  "s": "2*t/(1+t**2)",
+  "v": "2*(s+c)*(1+s)/((s+c)**2+s**2)",
+  "bx": "2*c"
+ },
+ "container": {
+  "kind": "rectangle",
+  "width": "2*v",
+  "height": "v",
+  "vertices": [
+   [
+    "0",
+    "0"
+   ],
+   [
+    "2*v",
+    "0"
+   ],
+   [
+    "2*v",
+    "v"
+   ],
+   [
+    "0",
+    "v"
+   ]
+  ]
+ },
+ "side_claim": {
+  "of": "height",
+  "minpoly": [
+   "-4",
+   "-32",
+   "8",
+   "5"
+  ],
+  "largest_real_root": true,
+  "below": "193/100"
+ },
+ "packing": "t = tan(beta/2) is the root of t^3 - 5t^2 - t + 1 in (0, 1), c = cos beta, s = sin beta; A = [0,1] x [v-1,v], B = [2v-1,2v] x [0,1], L has vertices b, b+(s,c), b+(s-c,s+c), b+(-c,s) with b = (2c,0), U = L reflected through the centre (v, v/2)",
+ "source": "Erich Friedman, Packing Center, \"Squares in Dominoes\" (Evert Stenlund, 2010)",
+ "squares": [
+  {
+   "axis": [
+    "0",
+    "v-1"
+   ]
+  },
+  {
+   "axis": [
+    "2*v-1",
+    "0"
+   ]
+  },
+  {
+   "vertices": [
+    [
+     "bx",
+     "0"
+    ],
+    [
+     "bx+s",
+     "c"
+    ],
+    [
+     "bx+s-c",
+     "s+c"
+    ],
+    [
+     "bx-c",
+     "s"
+    ]
+   ]
+  },
+  {
+   "vertices": [
+    [
+     "2*v-(bx)",
+     "v-(0)"
+    ],
+    [
+     "2*v-(bx+s)",
+     "v-(c)"
+    ],
+    [
+     "2*v-(bx+s-c)",
+     "v-(s+c)"
+    ],
+    [
+     "2*v-(bx-c)",
+     "v-(s)"
+    ]
+   ]
+  }
+ ]
+}

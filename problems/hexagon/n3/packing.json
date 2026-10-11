@@ -1,0 +1,115 @@
+{
+ "format": "packing-certificate/1",
+ "problem": "squares in a regular hexagon, n = 3",
+ "n": 3,
+ "field": {
+  "generator": "sqrt3",
+  "minpoly": [
+   "-3",
+   "0",
+   "1"
+  ],
+  "interval": [
+   "1",
+   "2"
+  ]
+ },
+ "defs": {
+  "v": "(1+sqrt3)/2",
+  "h": "v*sqrt3/2"
+ },
+ "container": {
+  "kind": "regular_hexagon",
+  "side": "v",
+  "vertices": [
+   [
+    "-v/2",
+    "-h"
+   ],
+   [
+    "v/2",
+    "-h"
+   ],
+   [
+    "v",
+    "0"
+   ],
+   [
+    "v/2",
+    "h"
+   ],
+   [
+    "-v/2",
+    "h"
+   ],
+   [
+    "-v",
+    "0"
+   ]
+  ]
+ },
+ "packing": "pinwheel: B = [-v/2, -v/2+1] x [-h, -h+1] on the bottom side with its lower-left corner at a vertex, and its rotations by 2pi/3 and 4pi/3; hexagon centred at 0 with a flat bottom, h = apothem",
+ "source": "Erich Friedman, Packing Center, \"Squares in Hexagons\" (Morandi)",
+ "squares": [
+  {
+   "vertices": [
+    [
+     "-v/2",
+     "-h"
+    ],
+    [
+     "-v/2+1",
+     "-h"
+    ],
+    [
+     "-v/2+1",
+     "-h+1"
+    ],
+    [
+     "-v/2",
+     "-h+1"
+    ]
+   ]
+  },
+  {
+   "vertices": [
+    [
+     "(-1/2)*(-v/2) - (sqrt3/2)*(-h)",
+     "(sqrt3/2)*(-v/2) + (-1/2)*(-h)"
+    ],
+    [
+     "(-1/2)*(-v/2+1) - (sqrt3/2)*(-h)",
+     "(sqrt3/2)*(-v/2+1) + (-1/2)*(-h)"
+    ],
+    [
+     "(-1/2)*(-v/2+1) - (sqrt3/2)*(-h+1)",
+     "(sqrt3/2)*(-v/2+1) + (-1/2)*(-h+1)"
+    ],
+    [
+     "(-1/2)*(-v/2) - (sqrt3/2)*(-h+1)",
+     "(sqrt3/2)*(-v/2) + (-1/2)*(-h+1)"
+    ]
+   ]
+  },
+  {
+   "vertices": [
+    [
+     "(-1/2)*((-1/2)*(-v/2) - (sqrt3/2)*(-h)) - (sqrt3/2)*((sqrt3/2)*(-v/2) + (-1/2)*(-h))",
+     "(sqrt3/2)*((-1/2)*(-v/2) - (sqrt3/2)*(-h)) + (-1/2)*((sqrt3/2)*(-v/2) + (-1/2)*(-h))"
+    ],
+    [
+     "(-1/2)*((-1/2)*(-v/2+1) - (sqrt3/2)*(-h)) - (sqrt3/2)*((sqrt3/2)*(-v/2+1) + (-1/2)*(-h))",
+     "(sqrt3/2)*((-1/2)*(-v/2+1) - (sqrt3/2)*(-h)) + (-1/2)*((sqrt3/2)*(-v/2+1) + (-1/2)*(-h))"
+    ],
+    [
+     "(-1/2)*((-1/2)*(-v/2+1) - (sqrt3/2)*(-h+1)) - (sqrt3/2)*((sqrt3/2)*(-v/2+1) + (-1/2)*(-h+1))",
+     "(sqrt3/2)*((-1/2)*(-v/2+1) - (sqrt3/2)*(-h+1)) + (-1/2)*((sqrt3/2)*(-v/2+1) + (-1/2)*(-h+1))"
+    ],
+    [
+     "(-1/2)*((-1/2)*(-v/2) - (sqrt3/2)*(-h+1)) - (sqrt3/2)*((sqrt3/2)*(-v/2) + (-1/2)*(-h+1))",
+     "(sqrt3/2)*((-1/2)*(-v/2) - (sqrt3/2)*(-h+1)) + (-1/2)*((sqrt3/2)*(-v/2) + (-1/2)*(-h+1))"
+    ]
+   ]
+  }
+ ]
+}

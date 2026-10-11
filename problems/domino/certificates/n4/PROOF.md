@@ -25,7 +25,14 @@ For a general angle, the same contacts give a one-parameter family of packings, 
 
 Its derivative vanishes exactly at tan(β/2) ∈ {0, ±1} or at a root of t³ − 5t² − t + 1, and
 v4 = s(β*) is the minimum. The minimal polynomial 5x³ + 8x² − 32x − 4 of v4 is the resultant of
-x − s(t) and t³ − 5t² − t + 1. The packing is the one shown on Friedman's page.
+x − s(t) and t³ − 5t² − t + 1.
+
+Upper bound: our packing certificate `packing.json` (these four squares, exact coordinates in
+Q(t)), checked exactly by the two checkers in
+[`tools/packing_check/`](../../../../tools/packing_check/): every square lies in the closed v4 × 2v4
+rectangle, no two interiors overlap, and the short side is the largest real root of
+5x³ + 8x² − 32x − 4. The packing is the one listed in Erich Friedman's Packing Center ("Squares in
+Dominoes", found by Evert Stenlund in June 2010); we claim no originality for it.
 
 ## Lower bound: the weighted point set
 

@@ -4,8 +4,12 @@ Let `s(n)` be the least side of a square that holds `n` non-overlapping unit squ
 arbitrary orientations. This directory contains a measure certificate for
 
 ```
-s(77) >= 9,   hence   s(77) = 9   (the 9x9 grid packs 81 >= 77 squares).
+s(77) >= 9,   hence   s(77) = 9.
 ```
+
+Upper bound: our packing certificates `packing_n77.json` and `packing_n78.json` (the first 77
+and 78 cells of the 9 × 9 grid, exact coordinates), checked exactly by the two checkers in
+[`tools/packing_check/`](../../../../tools/packing_check/). The grid is the trivial packing; we claim no originality for it.
 
 By monotonicity this also gives `s(78) = 9`; that value was already known from Evan Daniel's
 `k^2 - 3` series. The new statement is `s(77) = 9`, the case `k = 9` of the `k^2 - 4` series

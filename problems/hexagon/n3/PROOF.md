@@ -31,7 +31,14 @@ Facts about this configuration:
 - The top-right corner of R^iB lies on the top edge of R^{i+1}B.
 - The contact point of B is ((√3 − 3)/4, (1 − √3)/4), at distance (√3 − 1)/2 from the centre.
 - The squares have disjoint interiors and lie in H_v.
-- All of this is exact in Q(√3) (`local_lemma/ll_exact.py`).
+
+Upper bound: our packing certificate `packing.json` (these three squares, exact coordinates in
+Q(√3)), checked exactly by the two checkers in
+[`tools/packing_check/`](../../../tools/packing_check/): every square lies in the closed hexagon
+H_v and no two interiors overlap. The packing is the one listed in Erich Friedman's Packing Center
+("Squares in Hexagons"); we claim no originality for it.
+(`local_lemma/ll_exact.py` checks only the identity of the local lemma in §4, not containment or
+disjointness.)
 
 ## 2. Reduction to closed disjoint squares in H_v
 

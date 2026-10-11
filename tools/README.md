@@ -28,6 +28,7 @@ performance/   runtime/        working-row LP with basis reuse, per-phase timing
                verifiers/      cached-axis variant of the verifier (search time only)
                point_verifier_lazy/  faster zmx2 for point certificates (patch on evand's verifier)
 general_pose_tree/  exact branch-and-bound checks for point / threshold-charge certificates (standard library only)
+packing_check/      exact checks of packing certificates (upper bounds): two independent checkers, see its README
 fine_net_verifier/  independent check of fine-net density certificates: jlevy/squares' sqverify_fast reading a declared angle net
 fine_net_witnesses/ repair aid only (not a verifier): the same code returning many separated low-coverage poses per angle
 n17_bb_verifier/    exact Rust verifier for jlevy/squares' n = 17 sub-pattern branch-and-bound certificates (schemas v1 and v3)

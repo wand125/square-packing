@@ -7,9 +7,13 @@ fit in a v × 2v rectangle.
 |---|---|---|---|---|
 | 4 | largest real root of 5x³ + 8x² − 32x − 4 | 1.9302833067 | Stenlund (2010): two axis-parallel squares in opposite corners, two tilted squares (β ≈ 40.52°) in the middle | 7 points of weight 1/2 (total 7/2) |
 
-The packing is the best known one in Erich Friedman's Packing Center, "Squares in Dominoes"
-(https://erich-friedman.github.io/packing/squindom/). Friedman lists it as "s = 1.930+, found by
-Evert Stenlund in June 2010". The certificate shows that it is optimal.
+Upper bound: our packing certificate `certificates/n4/packing.json` (exact coordinates in the cubic
+field Q(t), t = tan(β/2)), checked exactly by the two checkers in
+[`tools/packing_check/`](../../tools/packing_check/); they also check that the short side is the
+largest real root of 5x³ + 8x² − 32x − 4. The packing is the one listed in Erich Friedman's Packing
+Center, "Squares in Dominoes" (https://erich-friedman.github.io/packing/squindom/), as "s = 1.930+,
+found by Evert Stenlund in June 2010"; we claim no originality for it. The lower-bound certificate
+shows that it is optimal.
 
 The result is computer-assisted. It has been checked by two independent checkers. It has not been
 peer reviewed.
@@ -79,6 +83,10 @@ cd checker && python -m pytest -q tests                      # needs pytest; abo
 
 # checker 2 (needs gmpy2 and sympy)
 cd checker2 && python sweep_k.py ../certificates/n4/n4_cert.json --n 4 --jobs 4   # ~5 min
+
+# the packing (upper bound), from this directory; the second checker needs sympy
+python ../../tools/packing_check/check_packing.py  certificates/n4/packing.json
+python ../../tools/packing_check/check_packing2.py certificates/n4/packing.json
 ```
 
 Each checker-1 run prints a JSON summary with `"status": "verified"`. The summary also contains

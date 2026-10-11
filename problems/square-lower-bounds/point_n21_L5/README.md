@@ -20,8 +20,12 @@ contact: enlarge a hypothetical packing from side `L < 5` to side 5, then take
 the concentric closed unit squares strictly inside the enlarged squares. They
 are pairwise disjoint, so their captured point masses cannot sum to more than
 the total measure. This contradicts the displayed strict gap. The 5-by-5 unit
-grid supplies the matching upper bound. The same grid and monotonicity give
-`s(n)=5` for `22 <= n <= 25` as corollaries.
+grid supplies the matching upper bound; it is part of the Lean proof below.
+Monotonicity gives `s(n) >= 5` for `22 <= n <= 25`, and our packing
+certificates `packing_n22.json` ... `packing_n25.json` (the first `n` cells of the
+5-by-5 grid, exact coordinates) give `s(n) <= 5`. They are checked exactly by
+the two checkers in [`tools/packing_check/`](../../../tools/packing_check/), so
+`s(n)=5` for `22 <= n <= 25`. The grid is the trivial packing; we claim no originality for it.
 
 Evan Daniel already published a mixed point-and-segment proof of `s(21)=5`.
 This work does not claim priority for that value. Our supports are derived from

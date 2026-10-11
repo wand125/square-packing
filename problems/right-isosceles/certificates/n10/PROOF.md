@@ -3,7 +3,11 @@
 **Theorem (computer-assisted).** The smallest right isosceles triangle containing ten
 non-overlapping unit squares has legs of length 5.
 
-Upper bound: the axis-parallel staircase with rows 4, 3, 2, 1 in T_5.
+Upper bound: our packing certificate `packing.json`, checked exactly by `check_packing.py` and,
+independently, by `check_packing2.py` in [`tools/packing_check/`](../../../../tools/packing_check/).
+The packing is the one listed in Erich Friedman's Packing Center ("Squares in Right Isosceles
+Triangles"); we claim no originality for it. It is the axis-parallel staircase with rows 4, 3, 2, 1
+in T_5.
 
 ## Certificate
 

@@ -3,7 +3,10 @@
 **Theorem (computer-assisted).** The smallest right isosceles triangle containing two
 non-overlapping unit squares has legs of length 2√2 ≈ 2.8284.
 
-Upper bound (Friedman, listed as trivial): with the hypotenuse (length 4) as the base, two squares
+Upper bound: our packing certificate `packing.json`, checked exactly by `check_packing.py` and,
+independently, by `check_packing2.py` in [`tools/packing_check/`](../../../../tools/packing_check/).
+The packing is the one listed in Erich Friedman's Packing Center ("Squares in Right Isosceles
+Triangles"); we claim no originality for it. With the hypotenuse (length 4) as the base, two squares
 stand on it side by side; their top outer corners lie on the legs.
 
 ## Certificate

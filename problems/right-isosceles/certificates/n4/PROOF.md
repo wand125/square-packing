@@ -3,9 +3,12 @@
 **Theorem (computer-assisted).** The smallest right isosceles triangle containing four
 non-overlapping unit squares has legs of length 5/√2 ≈ 3.5355.
 
-Upper bound (Friedman, "Squares in Right Isosceles Triangles"): the 45° staircase. With the
-hypotenuse as the base (length 5, height 5/2), three squares stand on it side by side and one
-square stands on the middle one.
+Upper bound: our packing certificate `packing.json`, checked exactly by `check_packing.py` and,
+independently, by `check_packing2.py` in [`tools/packing_check/`](../../../../tools/packing_check/).
+The packing is the one listed in Erich Friedman's Packing Center ("Squares in Right Isosceles
+Triangles"); we claim no originality for it. It is the 45° staircase. With the hypotenuse as the
+base (length 5, height 5/2), three squares stand on it side by side and one square stands on the
+middle one.
 
 ## Certificate
 

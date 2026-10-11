@@ -11,10 +11,12 @@ unit squares (any positions, any angles).
 | 6 | 4 | 4 | axis-parallel staircase, rows 3 + 2 + 1 | 7 points (total 5) and Lemma P |
 | 10 | 5 | 5 | axis-parallel staircase, rows 4 + 3 + 2 + 1 | 15 points (total 19/2) and Lemma P |
 
-The packings are the best known ones in Erich Friedman's Packing Center, "Squares in Right Isosceles
-Triangles" (https://erich-friedman.github.io/packing/squintan/): n = 2, 3, 6 and 10 are listed there as
-"Trivial", and the packing for n = 4 was found by Erich Friedman in March 2005. The certificates show that
-these packings are optimal. The results are computer-assisted and checked by two independent checkers.
+Upper bounds: our packing certificates `certificates/nX/packing.json` (exact coordinates), checked
+exactly by the two checkers in [`tools/packing_check/`](../../tools/packing_check/). The packings are
+the ones listed in Erich Friedman's Packing Center, "Squares in Right Isosceles Triangles"
+(https://erich-friedman.github.io/packing/squintan/), where n = 2, 3, 6 and 10 are listed as "Trivial"
+and the packing for n = 4 was found by Erich Friedman in March 2005; we claim no originality for them.
+The lower-bound certificates show that these packings are optimal. The results are computer-assisted and checked by two independent checkers.
 They have not been peer reviewed.
 
 ## Novelty
@@ -85,6 +87,10 @@ cd checker && python3 -m pytest -q tests          # needs pytest; a few seconds
 
 # checker 2 (needs gmpy2 and sympy)
 python3 checker2/sweep_q2.py certificates/n10/n10_cert.json --n 10 --jobs 8
+
+# the packings (upper bounds); the second checker needs sympy
+python3 ../../tools/packing_check/check_packing.py  certificates/n4/packing.json
+python3 ../../tools/packing_check/check_packing2.py certificates/n4/packing.json
 ```
 
 Each run prints a JSON summary with `"status": "verified"`. The summary also contains the certificate's

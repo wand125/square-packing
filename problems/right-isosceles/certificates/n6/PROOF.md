@@ -4,7 +4,11 @@
 non-overlapping unit squares has legs of length 4. (Five squares need the same size, s(5) = s(6) = 4;
 this certificate proves only s(6) ≥ 4.)
 
-Upper bound: the axis-parallel staircase with rows 3, 2, 1 in T_4 = conv{(0,0), (4,0), (0,4)}.
+Upper bound: our packing certificate `packing.json`, checked exactly by `check_packing.py` and,
+independently, by `check_packing2.py` in [`tools/packing_check/`](../../../../tools/packing_check/).
+The packing is the one listed in Erich Friedman's Packing Center ("Squares in Right Isosceles
+Triangles"); we claim no originality for it. It is the axis-parallel staircase with rows 3, 2, 1 in
+T_4 = conv{(0,0), (4,0), (0,4)}.
 
 ## Certificate
 

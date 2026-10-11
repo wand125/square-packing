@@ -7,8 +7,11 @@ Let s(n) be the smallest side v of a regular hexagon that contains n non-overlap
 |---|---|---|---|---|
 | 3 | (1 + √3)/2 | 1.3660254 | the pinwheel (Morandi): three squares, each with a corner at every other vertex of the hexagon, each touching the next | two-stage computer-assisted proof (below) |
 
-The packing is the one listed in Erich Friedman's Packing Center, "Squares in Hexagons"
-(https://erich-friedman.github.io/packing/squinhex/). The proof here shows that it is optimal.
+Upper bound: our packing certificate `n3/packing.json` (exact coordinates in Q(√3)), checked exactly
+by the two checkers in [`tools/packing_check/`](../../tools/packing_check/). The packing is the one
+listed in Erich Friedman's Packing Center, "Squares in Hexagons"
+(https://erich-friedman.github.io/packing/squinhex/); we claim no originality for it. The proof here
+shows that it is optimal.
 
 **Status.** The result is a computer-assisted proof. Each of its two computational stages has been
 checked by two independent implementations. It has not been peer reviewed, and it has not been
@@ -69,6 +72,7 @@ The second implementation of each stage was written without reading the first on
 
 | what | command (from the directory named) | needs | time |
 |---|---|---|---|
+| packing (upper bound) | `python3 tools/packing_check/check_packing.py problems/hexagon/n3/packing.json`, and the same with `check_packing2.py`, from the repository root | Python 3.10+; sympy for the second | under a second |
 | checksums | `sha256sum -c SHA256SUMS` (or `shasum -a 256 -c`) from the root | | seconds |
 | local lemma | `python ll_exact.py`, `python ll_radius.py` in `n3/local_lemma/` (recorded outputs: `*.out`) | sympy, numpy, scipy | seconds for the exact checks; the float search in `ll_radius.py` about 20 min |
 | stage 1, impl. 1 | `python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4` in `stage1_checker/` | Python 3.10+ only | about 7 min with 4 processes |

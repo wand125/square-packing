@@ -3,9 +3,12 @@
 **Theorem (computer-assisted).** The smallest right isosceles triangle containing three
 non-overlapping unit squares has legs of length 3.
 
-Upper bound (Friedman, "Squares in Right Isosceles Triangles", listed as trivial): the staircase
-[0,1]², [1,2]×[0,1], [0,1]×[1,2] in T_3 = conv{(0,0), (3,0), (0,3)}. The top right corners of the
-second and third squares, (2,1) and (1,2), lie on the hypotenuse x + y = 3.
+Upper bound: our packing certificate `packing.json`, checked exactly by `check_packing.py` and,
+independently, by `check_packing2.py` in [`tools/packing_check/`](../../../../tools/packing_check/).
+The packing is the one listed in Erich Friedman's Packing Center ("Squares in Right Isosceles
+Triangles"); we claim no originality for it. It is the staircase [0,1]², [1,2]×[0,1], [0,1]×[1,2] in
+T_3 = conv{(0,0), (3,0), (0,3)}. The top right corners of the second and third squares, (2,1) and
+(1,2), lie on the hypotenuse x + y = 3.
 
 ## Certificate
 

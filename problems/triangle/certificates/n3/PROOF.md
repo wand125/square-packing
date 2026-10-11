@@ -3,9 +3,13 @@
 **Theorem (computer-assisted).** The smallest equilateral triangle containing three non-overlapping
 unit squares has side v = 3/2 + √3 ≈ 3.2321.
 
-Upper bound (Friedman, 1997): the "pinwheel". Each square has one side on a side of the triangle
-and is placed rotationally symmetrically. Each square touches the next one at a single point: a
-vertex of one square lies on an edge of the next. Exact check: `../../tools/n3_pinwheel.py`.
+Upper bound: proved in Lean 4 and checked by the kernel, from explicit coordinates in Q(√3)
+([`lean/triangle/`](../../../../lean/triangle/), "Upper bound"). The packing is the "pinwheel"
+listed in Erich Friedman's Packing Center ("Squares in Triangles", 1997); we claim no originality
+for it. Each square has one side on a side of the triangle and is placed rotationally
+symmetrically. Each square touches the next one at a single point: a vertex of one square lies on
+an edge of the next. (`../../tools/n3_pinwheel.py` is only a floating-point sanity check of this
+configuration, not part of the proof.)
 
 ## Certificate
 

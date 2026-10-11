@@ -17,7 +17,11 @@ Suppose 61 non-overlapping unit squares fit in a square of side `L < 8`. Enlarge
 the container to side 8 and shrink each square concentrically by the same
 factor inside its enlarged copy; this gives 61 pairwise disjoint closed unit
 squares in `[0,8]^2`. Together they would capture mass at least 61, more than the
-total. The 8-by-8 grid packs 64 squares, so `s(61) = 8`.
+total. Upper bound: our packing certificate
+`packing_n61.json` (the first 61 cells of the 8-by-8 grid, exact coordinates), checked
+exactly by the two checkers in [`tools/packing_check/`](../../../tools/packing_check/). So
+`s(61) = 8`.
+The grid is the trivial packing; we claim no originality for it.
 
 Evan Daniel already published `s(60) = 8` with a mixed point-and-segment
 measure, and `s(61) = 8` follows from it. This work does not claim priority for

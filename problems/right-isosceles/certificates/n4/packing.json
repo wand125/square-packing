@@ -1,0 +1,123 @@
+{
+ "format": "packing-certificate/1",
+ "problem": "squares in a right isosceles triangle, n = 4",
+ "n": 4,
+ "field": {
+  "generator": "sqrt2",
+  "minpoly": [
+   "-2",
+   "0",
+   "1"
+  ],
+  "interval": [
+   "1",
+   "2"
+  ]
+ },
+ "defs": {
+  "L": "5*sqrt2/2",
+  "h": "sqrt2/2"
+ },
+ "container": {
+  "kind": "right_isosceles_triangle",
+  "side": "L",
+  "vertices": [
+   [
+    "0",
+    "0"
+   ],
+   [
+    "L",
+    "0"
+   ],
+   [
+    "0",
+    "L"
+   ]
+  ]
+ },
+ "packing": "the hypotenuse (length 5) as base, three squares side by side on it and one on the middle one",
+ "source": "Erich Friedman, Packing Center, \"Squares in Right Isosceles Triangles\"",
+ "squares": [
+  {
+   "vertices": [
+    [
+     "L/2 + (-3/2)*h - (0)*h",
+     "L/2 - (-3/2)*h - (0)*h"
+    ],
+    [
+     "L/2 + (-3/2)*h - (1)*h",
+     "L/2 - (-3/2)*h - (1)*h"
+    ],
+    [
+     "L/2 + (-3/2+1)*h - (1)*h",
+     "L/2 - (-3/2+1)*h - (1)*h"
+    ],
+    [
+     "L/2 + (-3/2+1)*h - (0)*h",
+     "L/2 - (-3/2+1)*h - (0)*h"
+    ]
+   ]
+  },
+  {
+   "vertices": [
+    [
+     "L/2 + (-1/2)*h - (0)*h",
+     "L/2 - (-1/2)*h - (0)*h"
+    ],
+    [
+     "L/2 + (-1/2)*h - (1)*h",
+     "L/2 - (-1/2)*h - (1)*h"
+    ],
+    [
+     "L/2 + (-1/2+1)*h - (1)*h",
+     "L/2 - (-1/2+1)*h - (1)*h"
+    ],
+    [
+     "L/2 + (-1/2+1)*h - (0)*h",
+     "L/2 - (-1/2+1)*h - (0)*h"
+    ]
+   ]
+  },
+  {
+   "vertices": [
+    [
+     "L/2 + (1/2)*h - (0)*h",
+     "L/2 - (1/2)*h - (0)*h"
+    ],
+    [
+     "L/2 + (1/2)*h - (1)*h",
+     "L/2 - (1/2)*h - (1)*h"
+    ],
+    [
+     "L/2 + (1/2+1)*h - (1)*h",
+     "L/2 - (1/2+1)*h - (1)*h"
+    ],
+    [
+     "L/2 + (1/2+1)*h - (0)*h",
+     "L/2 - (1/2+1)*h - (0)*h"
+    ]
+   ]
+  },
+  {
+   "vertices": [
+    [
+     "L/2 + (-1/2)*h - (1)*h",
+     "L/2 - (-1/2)*h - (1)*h"
+    ],
+    [
+     "L/2 + (-1/2)*h - (2)*h",
+     "L/2 - (-1/2)*h - (2)*h"
+    ],
+    [
+     "L/2 + (-1/2+1)*h - (2)*h",
+     "L/2 - (-1/2+1)*h - (2)*h"
+    ],
+    [
+     "L/2 + (-1/2+1)*h - (1)*h",
+     "L/2 - (-1/2+1)*h - (1)*h"
+    ]
+   ]
+  }
+ ]
+}
