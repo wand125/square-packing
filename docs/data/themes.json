@@ -6,8 +6,8 @@
    "state": "open",
    "updated": "2026-10-08",
    "title": {
-    "en": "A closed-form lower bound on s(N) for all N, above Nagamochi's formula",
-    "ja": "全 N に対する s(N) の閉じた式の下界（Nagamochi の式を上回る）"
+    "en": "The best general lower-bound formula for s(N)",
+    "ja": "s(N) の最良の一般の下界の式"
    },
    "goal": {
     "en": "A computer-assisted proof of a closed-form lower bound on s(N), the side of the smallest square containing N unit squares, valid for every N ≥ 49 and at least Nagamochi's formula everywhere (equal only at N = (k+1)² − 1 and (k+1)² − 2, where that formula meets the true value).",
@@ -41,8 +41,8 @@
    "state": "open",
    "updated": "2026-10-08",
    "title": {
-    "en": "Lower bounds for s(n), n ≤ 324, with a finer angle net",
-    "ja": "より細かい角度の網による s(n)（n ≤ 324）の下界"
+    "en": "Improving lower bounds for s(n), n ≤ 324",
+    "ja": "s(n)（n ≤ 324）の下界の更新"
    },
    "goal": {
     "en": "Raise lower bounds on s(n) past the values earlier mixed certificates could reach, using a finer net of angles (step 0.0025 in L, smallest n first), for n up to 324.",
@@ -81,8 +81,8 @@
    "state": "open",
    "updated": "2026-10-07",
    "title": {
-    "en": "Contributing to the n = 17 optimality proof (jlevy/squares #405)",
-    "ja": "n = 17 の最適性証明への貢献（jlevy/squares #405）"
+    "en": "Contributing to the n = 17 optimality proof in jlevy/squares",
+    "ja": "jlevy/squares での n = 17 の最適性証明への貢献"
    },
    "goal": {
     "en": "Contribute to the upstream proof that the known packing is optimal for 17 squares, tracked in jlevy/squares#405.",
@@ -149,6 +149,11 @@
      "label": "jlevy/squares#413",
      "url": "https://github.com/jlevy/squares/issues/413"
     }
+   ],
+   "releases": [
+    "data/n17-m4000256-v1",
+    "data/n17-kernel-batch1-v1",
+    "data/n17-kernel-batch2-v1"
    ]
   },
   {
@@ -342,6 +347,419 @@
      "url": "https://github.com/evand/square-packing/pull/6"
     }
    ]
+  },
+  {
+   "issue": 9,
+   "url": "https://github.com/wand125/square-packing/issues/9",
+   "state": "open",
+   "updated": "2026-10-11",
+   "title": {
+    "en": "Unit squares in a rectangle — certified constructions along the edges F_k",
+    "ja": "長方形の中の単位正方形 — 端 F_k に沿った証明書付きの構成"
+   },
+   "goal": {
+    "en": "For a box of height a and width b, F_k is the set of boxes that hold k unit squares (following Friedman, Math Magic, June 2010). Give the edge of F_k with certified packings along it, piece by piece with formulas, and later prove lower bounds below those edges.",
+    "ja": "高さ a・幅 b の箱について、F_k を k 個の単位正方形が入る箱の集合とする（Friedman, Math Magic 2010 年 6 月に従う）。F_k の端を、片ごとの式と、それに沿った証明書付きの配置で与え、のちにその端の下側の下界を証明する。"
+   },
+   "method": {
+    "en": "For each k, a sequence of pieces from a = 1 to the diagonal a = b. Each piece has a formula in a and b and one or more exact packing certificates, checked by two independent checkers.",
+    "ja": "各 k について、a = 1 から対角線 a = b までの片の列。各片は a と b の式と 1 つ以上の厳密な配置の証明書を持ち、独立な 2 つの検査器で検査する。"
+   },
+   "done": [
+    {
+     "en": "k = 2..15: constructions along the edges published in problems/rectangles/, certificates in the release rectangles-v1.",
+     "ja": "k = 2〜15: 端に沿った構成を problems/rectangles/ で公開、証明書はリリース rectangles-v1。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "Lower bounds below the edges.",
+     "ja": "端の下側の下界。"
+    },
+    {
+     "en": "k ≥ 16.",
+     "ja": "k ≥ 16。"
+    }
+   ],
+   "links": [
+    {
+     "label": "problems/rectangles/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/rectangles"
+    },
+    {
+     "label": "Release rectangles-v1",
+     "url": "https://github.com/wand125/square-packing/releases/tag/rectangles-v1"
+    }
+   ]
+  },
+  {
+   "issue": 10,
+   "state": "open",
+   "title": {
+    "en": "ValidTilt9 in the Lean kernel — s(k² − 4) = k for all k ≥ 8 without assumptions",
+    "ja": "ValidTilt9 の Lean カーネル化 — 仮定なしの s(k² − 4) = k（すべての k ≥ 8）"
+   },
+   "goal": {
+    "en": "Evan Daniel's k2m4 bundle reduces s(k² − 4) = k for every k ≥ 8 to one finite statement, ValidTilt9; the reduction is already checked in the Lean kernel there. Check ValidTilt9 itself in the Lean kernel, so that s(k² − 4) = k for k ≥ 8 becomes a Lean theorem with no remaining assumption.",
+    "ja": "Evan Daniel の k2m4 の束は、すべての k ≥ 8 の s(k² − 4) = k を 1 つの有限命題 ValidTilt9 に帰着し、その帰着は Lean カーネルで検査済み。ValidTilt9 そのものを Lean カーネルで検査し、k ≥ 8 の s(k² − 4) = k を仮定の残らない Lean の定理にする。"
+   },
+   "method": {
+    "en": "Generate Lean from the certificate root by root with the box-tree checker used for Valid7, run every root through the kernel, then glue the roots into validTilt9.",
+    "ja": "Valid7 で使った箱の木の検査器で、証明書から根ごとに Lean を生成し、すべての根をカーネルに通してから、根を validTilt9 に組み上げる。"
+   },
+   "done": [
+    {
+     "en": "The Valid7 components extended to the 9 case; test roots pass from leaves to root.",
+     "ja": "Valid7 の部品を 9 の場合に拡張。試験の根は葉から根まで通過。"
+    },
+    {
+     "en": "s(59) = 8 in the Lean kernel on the same machinery (certificates/k2m5_n59_L8/lean/); it depends only on propext, Classical.choice and Quot.sound.",
+     "ja": "同じ仕組みで s(59) = 8 を Lean カーネルで検査（certificates/k2m5_n59_L8/lean/）。依存は propext、Classical.choice、Quot.sound のみ。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "The kernel run over all roots of ValidTilt9, then gluing them into validTilt9 and the axiom check.",
+     "ja": "ValidTilt9 のすべての根のカーネル検査、続いて validTilt9 への組み上げと公理の確認。"
+    }
+   ],
+   "links": [
+    {
+     "label": "evand/square-packing",
+     "url": "https://github.com/evand/square-packing"
+    },
+    {
+     "label": "k2m5_n59_L8/lean",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/square-lower-bounds/certificates/k2m5_n59_L8/lean"
+    }
+   ],
+   "url": "https://github.com/wand125/square-packing/issues/10",
+   "updated": "2026-10-11"
+  },
+  {
+   "issue": 11,
+   "state": "open",
+   "title": {
+    "en": "Optimality of 9 unit squares in an equilateral triangle",
+    "ja": "正三角形内の単位正方形 9 個の最適性"
+   },
+   "goal": {
+    "en": "Prove that the smallest equilateral triangle containing 9 unit squares has side 3 + 4/√3, the packing found by Erich Friedman (1997). This continues #4 (n = 6).",
+    "ja": "9 個の単位正方形を含む最小の正三角形の一辺が 3 + 4/√3（Erich Friedman 1997 の詰め方）であることを証明する。#4（n = 6）の続き。"
+   },
+   "method": {
+    "en": "The method of #4 extended to n = 9: a point certificate with exclusion boxes, a localization tree of 14 certificates, and a local lemma for four squares at the leaves, checked with interval arithmetic.",
+    "ja": "#4 の方法を n = 9 に拡張：除外箱付きの点の証明書、14 個の証明書からなる局所化の木、葉での 4 個の正方形の局所補題（区間演算で検査）。"
+   },
+   "done": [
+    {
+     "en": "Stage 1: the root certificate of the localization tree, verified by the first checker.",
+     "ja": "段 1：局所化の木の根の証明書を第 1 の検査器で検証。"
+    },
+    {
+     "en": "The local lemma for the quadruple {0, 1, 2, 4}, checked with interval arithmetic together with its hypotheses on the leaf boxes.",
+     "ja": "4 個組 {0, 1, 2, 4} の局所補題を、葉の箱での仮定とともに区間演算で検査。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "Stages 2 to 4 of the tree, then an independent second checker.",
+     "ja": "木の段 2〜4、続いて独立な第 2 の検査器。"
+    }
+   ],
+   "links": [
+    {
+     "label": "#4",
+     "url": "https://github.com/wand125/square-packing/issues/4"
+    },
+    {
+     "label": "problems/triangle/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/triangle"
+    }
+   ],
+   "url": "https://github.com/wand125/square-packing/issues/11",
+   "updated": "2026-10-11"
+  },
+  {
+   "issue": 12,
+   "state": "open",
+   "title": {
+    "en": "Unit squares in a rectangle — optimality of the regions S_n",
+    "ja": "長方形の中の単位正方形 — 領域 S_n の最適性"
+   },
+   "goal": {
+    "en": "S_n is the set of boxes (x, y) that hold at most n unit squares. Prove that the boundaries of S_n for n = 1..9 listed by Erich Friedman (Math Magic, June 2010) are optimal, piece by piece, with machine-checkable certificates. This is the lower-bound side of #9.",
+    "ja": "S_n は単位正方形が高々 n 個しか入らない箱 (x, y) の集合。Erich Friedman（Math Magic 2010 年 6 月）が挙げた n = 1〜9 の S_n の境界が最適であることを、片ごとに機械で検査できる証明書で証明する。#9 の下界側。"
+   },
+   "method": {
+    "en": "Weighted point sets for points of the boundary, families of them along slanted lines, and for curved pieces an exact four-step argument (local step, capture step on arcs, a combinatorial step, and a branch and bound where the curve meets another piece). All checks use exact rational or interval arithmetic.",
+    "ja": "境界の点には重み付きの点集合、斜めの直線にはその族、曲がった片には厳密な 4 段の議論（局所の段、弧ごとの捕捉の段、組合せの段、他の片と出会う所の分枝限定）。検査はすべて厳密な有理数か区間演算。"
+   },
+   "done": [
+    {
+     "en": "S_1 and S_2: every boundary piece, including the slanted curve x + 2y = 4 + 2√2.",
+     "ja": "S_1 と S_2：斜めの曲線 x + 2y = 4 + 2√2 を含むすべての境界の片。"
+    },
+    {
+     "en": "S_3: the two straight pieces and the curved boundary, shown exactly.",
+     "ja": "S_3：2 本の直線の片と曲がった境界を厳密に。"
+    },
+    {
+     "en": "S_4: the lines x + y = 4 + √2 and x = 3.",
+     "ja": "S_4：直線 x + y = 4 + √2 と x = 3。"
+    },
+    {
+     "en": "For each of these, the independent second check is pending.",
+     "ja": "いずれも独立な第 2 の検査は未了。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "The rest of S_4, then S_5 to S_9, and an independent second check of every certificate.",
+     "ja": "S_4 の残り、続いて S_5〜S_9、すべての証明書の独立な第 2 の検査。"
+    }
+   ],
+   "links": [
+    {
+     "label": "#9",
+     "url": "https://github.com/wand125/square-packing/issues/9"
+    },
+    {
+     "label": "Friedman, Math Magic, June 2010",
+     "url": "https://erich-friedman.github.io/mathmagic/0610.html"
+    }
+   ],
+   "url": "https://github.com/wand125/square-packing/issues/12",
+   "updated": "2026-10-11"
+  },
+  {
+   "issue": 13,
+   "state": "open",
+   "title": {
+    "en": "Unit squares in a right isosceles triangle — optimality of known packings",
+    "ja": "直角二等辺三角形の中の単位正方形 — 既知の詰め方の最適性"
+   },
+   "goal": {
+    "en": "s(n) is the leg of the smallest right isosceles triangle that holds n unit squares. Prove that the best known packings in Erich Friedman's Packing Center (squintan) are optimal, one n at a time.",
+    "ja": "s(n) は n 個の単位正方形が入る最小の直角二等辺三角形の脚の長さ。Erich Friedman の Packing Center（squintan）の既知最良の詰め方が最適であることを、n ごとに証明する。"
+   },
+   "method": {
+    "en": "Each lower bound is a weighted point set in the triangle, checked exactly in Q(√2) by two independent checkers; where one point set is not enough, a localization tree with a certificate per part.",
+    "ja": "各下界は三角形内の重み付きの点集合で、独立な 2 つの検査器が Q(√2) で厳密に検査する。1 つの点集合で足りないときは局所化の木に分け、部分ごとに証明書を作る。"
+   },
+   "done": [
+    {
+     "en": "n = 2, 3, 4, 6, 10: s(n) = 2√2, 3, 5/√2, 4, 5, proved and checked by both checkers (problems/right-isosceles/).",
+     "ja": "n = 2, 3, 4, 6, 10：s(n) = 2√2, 3, 5/√2, 4, 5 を証明し、両方の検査器で検査（problems/right-isosceles/）。"
+    },
+    {
+     "en": "n = 9 (s = 7/√2): stage 1 of the localization tree, verified by the first checker.",
+     "ja": "n = 9（s = 7/√2）：局所化の木の段 1 を第 1 の検査器で検証。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "n = 9: the remaining stages; n = 15; the second checker for n = 9 and n = 15.",
+     "ja": "n = 9 の残りの段、n = 15、n = 9 と n = 15 の第 2 の検査器。"
+    }
+   ],
+   "links": [
+    {
+     "label": "problems/right-isosceles/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/right-isosceles"
+    },
+    {
+     "label": "Friedman, squintan",
+     "url": "https://erich-friedman.github.io/packing/squintan/"
+    }
+   ],
+   "url": "https://github.com/wand125/square-packing/issues/13",
+   "updated": "2026-10-11"
+  },
+  {
+   "issue": 14,
+   "state": "closed",
+   "title": {
+    "en": "Independent exact checks of Valid7 and ValidTilt9 (s(k² − 3) = k and s(k² − 4) = k)",
+    "ja": "Valid7 と ValidTilt9 の独立な厳密検査（s(k² − 3) = k と s(k² − 4) = k）"
+   },
+   "goal": {
+    "en": "Evan Daniel's results s(k² − 3) = k (k ≥ 6) and s(k² − 4) = k (k ≥ 8) each rest on one finite statement about a mixed cover, Valid7 and ValidTilt9. Check both a second time with an independently written exact checker.",
+    "ja": "Evan Daniel の結果 s(k² − 3) = k（k ≥ 6）と s(k² − 4) = k（k ≥ 8）は、それぞれ混合被覆についての有限命題 Valid7 と ValidTilt9 に基づく。両方を、独立に書いた厳密な検査器でもう一度検査する。"
+   },
+   "method": {
+    "en": "A checker written from the cover format and the statements only, with no symmetry reduction and its own exact primitives (rational arithmetic, polynomials in tan(θ/2) with Sturm root isolation); no floating-point number enters any decision.",
+    "ja": "被覆の形式と命題だけから書いた検査器。対称性による削減なし、独自の厳密な基本演算（有理数、tan(θ/2) の多項式と Sturm の根の分離）。判定に浮動小数点は入らない。"
+   },
+   "done": [
+    {
+     "en": "Valid7 holds: all 156,800 root boxes certified (release records-v1).",
+     "ja": "Valid7 は成り立つ：156,800 個の根の箱すべてを証明（Release records-v1）。"
+    },
+    {
+     "en": "ValidTilt9 holds: all 28,350 roots verified (release records-tilt9-v1), reported in evand/square-packing#4.",
+     "ja": "ValidTilt9 は成り立つ：28,350 個の根すべてを検証（Release records-tilt9-v1）、evand/square-packing#4 で報告。"
+    },
+    {
+     "en": "The checker is now in checks/valid7/ of this repository; the original repository is archived and its releases remain.",
+     "ja": "検査器はこのリポジトリの checks/valid7/ に移した。元のリポジトリはアーカイブ済みで、Release は残っている。"
+    },
+    {
+     "en": "The Lean kernel versions continue in #8 (Valid7, complete) and #10 (ValidTilt9).",
+     "ja": "Lean カーネル版は #8（Valid7、完了）と #10（ValidTilt9）。"
+    }
+   ],
+   "working_on": [],
+   "links": [
+    {
+     "label": "checks/valid7/",
+     "url": "https://github.com/wand125/square-packing/tree/main/checks/valid7"
+    },
+    {
+     "label": "Release records-v1",
+     "url": "https://github.com/wand125/valid7-independent-check/releases/tag/records-v1"
+    },
+    {
+     "label": "Release records-tilt9-v1",
+     "url": "https://github.com/wand125/valid7-independent-check/releases/tag/records-tilt9-v1"
+    },
+    {
+     "label": "evand/square-packing#4",
+     "url": "https://github.com/evand/square-packing/issues/4"
+    }
+   ],
+   "url": "https://github.com/wand125/square-packing/issues/14",
+   "updated": "2026-10-11"
+  },
+  {
+   "issue": 15,
+   "state": "closed",
+   "title": {
+    "en": "Optimality of 3 unit squares in a regular hexagon",
+    "ja": "正六角形内の単位正方形 3 個の最適性"
+   },
+   "goal": {
+    "en": "Prove that the smallest regular hexagon containing 3 unit squares has side (1 + √3)/2, the pinwheel packing in Erich Friedman's Packing Center.",
+    "ja": "3 個の単位正方形を含む最小の正六角形の一辺が (1 + √3)/2（Erich Friedman の Packing Center の風車形の詰め方）であることを証明する。"
+   },
+   "method": {
+    "en": "The pinwheel is not rigid to first order, so a point certificate alone cannot close it: a point certificate localizes the squares near the pinwheel, and a local lemma handles the second-order contact.",
+    "ja": "風車形は 1 次では剛でないため、点の証明書だけでは閉じない。点の証明書で正方形を風車形の近くに絞り、局所補題で 2 次の接触を扱う。"
+   },
+   "done": [
+    {
+     "en": "s(3) = (1 + √3)/2: both stages checked by two independent implementations (problems/hexagon/, release hexagon-v1).",
+     "ja": "s(3) = (1 + √3)/2：両方の段を独立な 2 つの実装で検査（problems/hexagon/、Release hexagon-v1）。"
+    }
+   ],
+   "working_on": [],
+   "links": [
+    {
+     "label": "problems/hexagon/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/hexagon"
+    }
+   ],
+   "releases": [
+    "hexagon-v1"
+   ],
+   "url": "https://github.com/wand125/square-packing/issues/15",
+   "updated": "2026-10-11"
+  },
+  {
+   "issue": 16,
+   "state": "closed",
+   "title": {
+    "en": "Optimality of 4 unit squares in a 1×2 rectangle",
+    "ja": "1×2 長方形内の単位正方形 4 個の最適性"
+   },
+   "goal": {
+    "en": "Prove that the smallest v such that 4 unit squares fit in a v × 2v rectangle is the largest real root of 5x³ + 8x² − 32x − 4 (≈ 1.93028), the packing found by Evert Stenlund (2010).",
+    "ja": "4 個の単位正方形が v × 2v の長方形に入る最小の v が 5x³ + 8x² − 32x − 4 の最大の実根（≈ 1.93028、Evert Stenlund 2010 の詰め方）であることを証明する。"
+   },
+   "method": {
+    "en": "A weighted point set at the claimed value: 7 points of weight 1/2, every unit square inside captures weight at least 1, total less than 4.",
+    "ja": "主張の値での重み付きの点集合：重み 1/2 の点 7 個。中のどの単位正方形も重み 1 以上を拾い、総和は 4 未満。"
+   },
+   "done": [
+    {
+     "en": "s(4) ≈ 1.93028 is optimal, checked by two independent checkers (problems/domino/, release domino-v1).",
+     "ja": "s(4) ≈ 1.93028 は最適。独立な 2 つの検査器で検査（problems/domino/、Release domino-v1）。"
+    },
+    {
+     "en": "The case n = 9 continues in #5.",
+     "ja": "n = 9 は #5 で続く。"
+    }
+   ],
+   "working_on": [],
+   "links": [
+    {
+     "label": "problems/domino/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/domino"
+    },
+    {
+     "label": "#5",
+     "url": "https://github.com/wand125/square-packing/issues/5"
+    }
+   ],
+   "releases": [
+    "domino-v1"
+   ],
+   "url": "https://github.com/wand125/square-packing/issues/16",
+   "updated": "2026-10-11"
+  },
+  {
+   "issue": 17,
+   "state": "closed",
+   "title": {
+    "en": "Unit squares in an equilateral triangle — n = 2, 3, 4, the series n = 7 to 29, and a lower bound for n = 37",
+    "ja": "正三角形の中の単位正方形 — n = 2, 3, 4、系列 n = 7〜29、n = 37 の下界"
+   },
+   "goal": {
+    "en": "Prove that the best known packings in Erich Friedman's Packing Center (Squares in Triangles) are optimal, for the small cases and for a series that one construction covers.",
+    "ja": "Erich Friedman の Packing Center（Squares in Triangles）の既知最良の詰め方が最適であることを、小さい場合と、1 つの構成で覆える系列について証明する。"
+   },
+   "method": {
+    "en": "Each lower bound is a weighted point set in the triangle of the claimed side; for the series n = T_(m−1) + 1, side m + 2/√3, a patch of the unit triangular lattice with all weights 1.",
+    "ja": "各下界は主張の一辺の三角形内の重み付きの点集合。系列 n = T_(m−1) + 1（一辺 m + 2/√3）では、重みがすべて 1 の単位三角格子の一部。"
+   },
+   "done": [
+    {
+     "en": "n = 2, 3, 4: s△(n) = 2 + 2/√3, 3/2 + √3, 3 + 2/√3.",
+     "ja": "n = 2, 3, 4：s△(n) = 2 + 2/√3, 3/2 + √3, 3 + 2/√3。"
+    },
+    {
+     "en": "n = 7, 11, 16, 22, 29: s△(n) = m + 2/√3 for m = 4 to 8.",
+     "ja": "n = 7, 11, 16, 22, 29：m = 4〜8 について s△(n) = m + 2/√3。"
+    },
+    {
+     "en": "n = 37: the lower bound s△(37) ≥ 9 + 2/√3.",
+     "ja": "n = 37：下界 s△(37) ≥ 9 + 2/√3。"
+    },
+    {
+     "en": "All checked by two independent checkers and in Lean 4 (problems/triangle/, release triangle-v1). n = 6 is #4; n = 9 continues in #11.",
+     "ja": "すべて独立な 2 つの検査器と Lean 4 で検査（problems/triangle/、Release triangle-v1）。n = 6 は #4、n = 9 は #11 で続く。"
+    }
+   ],
+   "working_on": [],
+   "links": [
+    {
+     "label": "problems/triangle/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/triangle"
+    },
+    {
+     "label": "#4",
+     "url": "https://github.com/wand125/square-packing/issues/4"
+    },
+    {
+     "label": "#11",
+     "url": "https://github.com/wand125/square-packing/issues/11"
+    }
+   ],
+   "releases": [
+    "triangle-v1"
+   ],
+   "url": "https://github.com/wand125/square-packing/issues/17",
+   "updated": "2026-10-11"
   }
  ]
 }

@@ -11,9 +11,39 @@
   window.SP = { L: L, labels: labels };
   document.addEventListener('DOMContentLoaded', function () {
     var b = document.getElementById('lang'), t = document.getElementById('theme');
-    b.onclick = function () { H.lang = L() === 'ja' ? 'en' : 'ja'; try { localStorage.setItem('sp-lang', H.lang); } catch (e) {} labels(); };
+    if (b) b.onclick = function () { H.lang = L() === 'ja' ? 'en' : 'ja'; try { localStorage.setItem('sp-lang', H.lang); } catch (e) {} labels(); };
     t.onclick = function () { H.dataset.theme = H.dataset.theme === 'light' ? 'dark' : 'light';
       try { localStorage.setItem('sp-theme', H.dataset.theme); } catch (e) {} labels(); };
+    // links to other sites open in a new tab, marked by an icon on their left
+    function ext(a) {
+      if (!/^https?:/.test(a.getAttribute('href') || '') || a.host === location.host) return;
+      a.target = '_blank'; a.rel = 'noopener';
+      if (!a.classList.contains('gh')) a.classList.add('ext');
+    }
+    document.querySelectorAll('a[href]').forEach(ext);
+    // links that the page scripts add or retarget later
+    new MutationObserver(function (ms) {
+      ms.forEach(function (m) {
+        if (m.type === 'attributes') { if (m.target.tagName === 'A') ext(m.target); return; }
+        m.addedNodes.forEach(function (n) { if (n.nodeType !== 1) return; if (n.tagName === 'A') ext(n); n.querySelectorAll && n.querySelectorAll('a[href]').forEach(ext); });
+      });
+    }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] });
+    // preview only: build-stamp.txt exists there; when it changes, the page offers a reload (the release has no stamp)
+    (function () {
+      var first = null;
+      function check() {
+        fetch('build-stamp.txt', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw 0; return r.text(); }).then(function (v) {
+          if (first === null) first = v;
+          else if (v !== first && !document.getElementById('rebuilt')) {
+            var b = document.createElement('button'); b.id = 'rebuilt'; b.type = 'button';
+            b.textContent = L() === 'ja' ? 'サイトが更新された — 読み込み直す' : 'The site was rebuilt — reload';
+            b.onclick = function () { location.reload(); }; document.body.appendChild(b);
+          }
+          setTimeout(check, 15000);
+        }).catch(function () {});
+      }
+      check();
+    })();
     document.querySelectorAll('[data-filterbar]').forEach(function (bar) {
       var tb = document.getElementById(bar.getAttribute('data-filterbar'));
       var cnt = bar.querySelector('.count'), ctl = Array.from(bar.querySelectorAll('[data-key]'));

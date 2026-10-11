@@ -178,14 +178,14 @@ def build():
     opts_m = ''.join(f'<option value="{k}" data-en="{e(v[0])}" data-ja="{e(v[1])}">{e(v[0])}</option>' for k, v in METH.items())
     opts_k = ''.join(f'<option value="{k}" data-en="{e(v[0])}" data-ja="{e(v[1])}">{e(v[0])}</option>' for k, v in KIND.items())
     nbest = sum(r['best'] for r in rows)
-    body = f'''<p class="note">{bi(f"{len(rows)} certificates and proofs from INDEX.json and the problem folders of wand125/square-packing; {nbest} are selected by the strongest recorded bound for each container and n (including the published n = 17 sub-patterns). Click a row for the claim, the check command and the release assets.",
-                f"wand125/square-packing の INDEX.json と問題のフォルダから、証明書と証明 {len(rows)} 件。容器と n ごとの記録内の最強の下界（公開済み n = 17 の部分型を含む）として {nbest} 件を選択。行を押すと主張・検算のコマンド・Release の資産が出る。")}</p>
+    body = f'''<p class="note">{bi(f"{len(rows)} certificates and proofs from INDEX.json and the problem folders of wand125/square-packing; {nbest} are selected by the best recorded bound for each container and n (including the published n = 17 sub-patterns). Click a row for the claim, the check command and the release assets.",
+                f"wand125/square-packing の INDEX.json と問題のフォルダから、証明書と証明 {len(rows)} 件。容器と n ごとの記録内の最良の下界（公開済み n = 17 の部分型を含む）として {nbest} 件を選択。行を押すと主張・検算のコマンド・Release の資産が出る。")}</p>
 <div class="bar" data-filterbar="res">
   <label>{bi("Container", "容器")} <select data-key="cont" id="f-cont"><option value="" data-en="all" data-ja="すべて">all</option>{opts_c}</select></label>
   <label>{bi("Method", "手法")} <select data-key="meth" id="f-meth"><option value="" data-en="all" data-ja="すべて">all</option>{opts_m}</select></label>
   <label>{bi("Kind", "種類")} <select data-key="kind" id="f-kind"><option value="" data-en="all" data-ja="すべて">all</option>{opts_k}</select></label>
   <label>n <input type="number" data-key="nmin" id="f-nmin" min="1" aria-label="n min"> – <input type="number" data-key="nmax" id="f-nmax" min="1" aria-label="n max"></label>
-  <label><input type="checkbox" data-key="best" id="f-best" checked> {bi("strongest per n only", "n ごとの最強のみ")}</label>
+  <label><input type="checkbox" data-key="best" id="f-best" checked> {bi("best per n only", "n ごとの最良のみ")}</label>
   <input type="search" data-key="q" id="f-q" data-ph-en="filter text" data-ph-ja="文字で絞り込み" aria-label="filter">
   <span class="count"></span>
 </div>
