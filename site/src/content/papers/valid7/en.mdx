@@ -1,0 +1,114 @@
+
+## Abstract
+
+In [evand/square-packing](https://github.com/evand/square-packing), Evan Daniel proves $s(k^2-3) = k$ for every $k \ge 6$ and $s(k^2-4) = k$ for every $k \ge 8$. Each proof reduces to one finite statement about a mixed cover (segments carrying mass plus Lebesgue measure on a square): **Valid7** and **ValidTilt9**. That repository checks each statement with its own program. We wrote a second exact checker for the same statements, from the cover format specification and the statements only, without reading the first checker or its lemma documents. It uses no symmetry reduction, treats the angle 0 by a closure argument, and decides everything in exact rational arithmetic, with polynomials in $u = \tan(\theta/2)$ and Sturm-sequence root isolation. Valid7 holds: all 156,800 root boxes were certified, with 0 uncertified and 0 counterexamples. ValidTilt9 holds: all 28,350 roots were certified, with 0 uncertified and 0 counterexamples. Every leaf is recorded, and the records are published and re-checked by a separate program.
+
+## 1. The statements checked
+
+The statements, the covers and the reductions are Evan Daniel’s ([evand/square-packing](https://github.com/evand/square-packing)); we only check the statements. A pose is $Q(c, \theta) = c + R_\theta[-\tfrac12, \tfrac12]^2$, a closed unit square with centre $c$ rotated by $\theta$.
+
+**Valid7.** Let $\mu_7$ be the mixed cover `L4_k02_box7.txt` of the square $[0,7]^2$ (from `s12/certificates/k2m3/`): 800 axis-parallel segments, each of length $1/5$, carrying uniform mass on 60 lines of the $1/5$ grid, and Lebesgue measure on $[9/5, 26/5]^2$. Its total mass is
+
+$$
+\frac{5701378693611}{125000000000} \approx 45.611 < 46.
+$$
+
+Valid7 says: every closed unit square $Q \subseteq [0,7]^2$, at every position and every angle, has $\mu_7(Q) \ge 1$. By the reduction proved in Lean in evand/square-packing (`bentz_of_valid7`), Valid7 implies $s(k^2-3) = k$ for every $k \ge 6$.
+
+**ValidTilt9.** The cover is `K4_k008_box9.txt` (from `s12/certificates/k2m4/`): 2,076 segments on the $1/5$ grid and Lebesgue measure on $[14/5, 31/5]^2$, total mass $3835229774429/50000000000$. ValidTilt9 says: every closed unit square inside $[0,9]^2$ with centre in $[0, 9/2]^2$ and angle $\theta = 2\arctan u$, where
+
+$$
+0 < u, \qquad u^2 + 2u \le 1 \qquad (0 < \theta \le 45^\circ),
+$$
+
+has mass $\ge 1$. It is the finite statement on which the proof of $s(k^2-4) = k$ for all $k \ge 8$ in evand/square-packing rests. We took the statement from the definitions `ValidTilt`, `sq` and `coord` in that repository’s Lean files; their rotation convention $c + R_\theta[-\tfrac12,\tfrac12]^2$ is the same as ours.
+
+## 2. Independence
+
+The checker was written from the cover format specification (`s21/FORMAT.md` of evand/square-packing) and the statements only. The first checker and its lemma documents were not read. The [read log](https://github.com/wand125/square-packing/blob/main/checks/valid7/READ_LOG.md) lists exactly what was read:
+
+- **Valid7** (upstream commit `d9f79bc`): the k2m3 `README.md` (claim, proof paragraph, leaf-kind names; lemma names only, no proofs), `FORMAT.md`, lines 1–60 of `verify.sh` (shell orchestration only), and the cover itself. Not read: the checker programs, the lemma documents, the run record and its output.
+- **ValidTilt9** (upstream commit `0c24309`): lines 1–80 of the k2m4 `README.md` (lemma names only), only the definitions `ValidTilt9` / `ValidTilt` and their doc comments in the Lean files, the definitions `coord`, `sq`, `sqInt`, and the cover. Not read: the checker programs and lemma documents, the k2m4 run records and outputs, the rest of the Lean files.
+
+Our own earlier work consulted was the README of an exact angular sweep for point covers (wand125/squares-in-triangle). During the work, another checker for covers of the same kind (a different container) was being written separately; only specifications and the usage of this checker were exchanged with it, and none of its code or methods were read here.
+
+The checker is also different by design: no D4 reduction (all centres and more than a full period of angles are checked), the angle 0 by a closure argument instead of an enumeration, and different exact primitives.
+
+## 3. The checker’s design
+
+Poses are $Q(c, \theta) = c + R_\theta[-\tfrac12,\tfrac12]^2$ with $u = \tan(\theta/2) \in [-\tfrac12, \tfrac12]$ for Valid7. This is more than the period $\pi/2$ of the square, so that the zero-margin angle $\theta = 0$ is interior. With
+
+$$
+\cos\theta = \frac{1-u^2}{1+u^2}, \qquad \sin\theta = \frac{2u}{1+u^2},
+$$
+
+everything is rational at rational $u$. Details and proofs are in [DESIGN.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/DESIGN.md), the lemmas in the module docstrings.
+
+**Angle 0 by closure.** For $\theta \notin (\pi/2)\mathbb Z$ no segment is parallel to an edge of $Q$, so the mass is continuous in the pose; it is upper semicontinuous everywhere. Every admissible pose at $\theta = 0$ is a limit of admissible poses with $\theta > 0$. So $\mu \ge 1$ for all $\theta \ne 0$ gives it at $\theta = 0$.
+
+**Fixed angle.** At fixed $\theta$ the mass is piecewise quadratic in the centre on an arrangement of lines (Lemma F1). By Brunn–Minkowski $\sqrt{\operatorname{area}(Q \cap S)}$ is concave, so no face has an interior minimum (Lemma F2): the minimum over a centre box is at a vertex of the arrangement or at the 1-D critical point of an edge.
+
+**Tier A, box core bound.** All squares of a pose box (centre box $\times$ $u$-interval) contain a rational polygon (an inner bound of the angular core, eroded by the centre box), so $\mu(Q) \ge \mu(\text{core})$, computed exactly. For the Lebesgue square $S$ also
+
+$$
+\operatorname{area}(Q \cap S) \ge 1 - \operatorname{area}(O \setminus S)
+$$
+
+with $O$ a rational outer hull, so that squares inside $S$ (mass exactly 1) cost nothing. Boxes are bisected adaptively.
+
+**Tier B, exact in $u$.** Used near the zero-margin families (squares touching a wall, squares with edges on the heavy integer lines), whose mass grows like $1 + c|u|$ with $c \approx 0.40$–$0.48$. Every vertex candidate is the intersection of two lines whose coefficients are rational functions of $u$. For each pair, the set of $u$ where the vertex lies in the admissible centre box is cut out exactly, with the real roots isolated by Sturm sequences. On each piece the mass at the vertex is obtained as a rational function $N/D$ of $u$ by symbolic execution: every branch is decided at a sample point and recorded as a guard polynomial that must not vanish on the piece. Then $(N - D)\,D \ge 0$ is proved exactly. Edge critical points are handled line by line in the same way. Values equal to 1 (tight) are allowed.
+
+**Exact primitives.** Exact rational arithmetic throughout (`fractions.Fraction`); polynomials in $u$ with python-flint, and our own Sturm-sequence root isolation. No floating-point number enters any decision.
+
+**Records.** Every leaf is recorded. `check_record.py` re-checks, independently of the driver’s control flow, that the roots are exactly a product grid of the region (each root once, across all record files), that the leaves of every root form a bisection partition of it, that the EMPTY leaves contain no admissible centre (exactly), and that no Tier B leaf contains $u = 0$. Optionally it re-runs Tier A and Tier B on random leaves.
+
+**Tests.** Three mutant covers, each lowering one tight configuration by a relative $10^{-4}$ (the wall family, the Lebesgue square, the corner family at $[1,2]^2$), are each refused; Tier B reports a concrete pose with its exact mass below 1.
+
+## 4. Results
+
+|  | Valid7 (2026-10-02) | ValidTilt9 (2026-10-06) |
+|---|---|---|
+| region checked | centres $[0,7]^2$ $\times$ $u \in [-\tfrac12, \tfrac12]$ | centres $[0, 9/2]^2$ (pitch $1/10$) $\times$ $u \in [0, 7/16]$ (14 bins; $7/16 > \sqrt2 - 1$) |
+| symmetry used | none | none |
+| roots | 156,800, all certified | 28,350, all certified |
+| uncertified / counterexamples | 0 / 0 | 0 / 0 |
+| leaves | 9,640,060 | 9,537,343 (CORE 6,565,165 / TIERB2 2,940,689 / EMPTY 31,489) |
+| compute | about 626 core-hours | about 766 core-hours |
+| records | release [records-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-v1) | release [records-tilt9-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-tilt9-v1) |
+
+For ValidTilt9, `check_record.py --claim tilt` on the three records gives `RECORD OK`: the roots are exactly the product grid of that region, each once, and 2,000 CORE and 300 TIERB2 leaves were re-certified.
+
+**History of the runs.** During the Valid7 run the code changed once (the hand-off rule between the tiers and the failure reporting only; no proof step changed). A defect found before the run, in the algebraic-number class, was fixed and all earlier records were discarded. Before publication only the record header lines were edited (path names only). The file hashes and which roots ran under which version are in [versions/VERSIONS.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/versions/VERSIONS.md). For ValidTilt9 the driver gained two options that change nothing with their defaults; the run’s versions and history are in the `MERGE.md` of release records-tilt9-v1.
+
+## 5. Conclusion
+
+An independently written exact checker confirms both finite statements: Valid7 holds and ValidTilt9 holds. Together with Evan Daniel’s reductions in evand/square-packing, this is a second, independent check of the finite parts of the proofs of
+
+$$
+s(k^2-3) = k \ (k \ge 6), \qquad s(k^2-4) = k \ (k \ge 8).
+$$
+
+## Status and limitations
+
+- A computer-assisted check of two finite statements; the results $s(k^2-3) = k$ and $s(k^2-4) = k$ and their reductions are Evan Daniel’s.
+- `check_record.py` re-checks the coverage and partition structure of the records and the EMPTY leaves exactly, but it re-runs the certificates of CORE and TIERB2 leaves only on random samples.
+- The original repository [wand125/valid7-independent-check](https://github.com/wand125/valid7-independent-check) is archived; the code is now in [checks/valid7](https://github.com/wand125/square-packing/tree/main/checks/valid7). Lean versions are separate themes: [#8](https://github.com/wand125/square-packing/issues/8) (Valid7) and [#10](https://github.com/wand125/square-packing/issues/10) (ValidTilt9).
+
+## Reproducibility
+
+| What | Command | Time |
+|---|---|---|
+| set up | `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt` |  |
+| Valid7 records | `./verify.sh` (downloads the records of records-v1, checks their sha256, runs `check_record.py` and the mutant tests) | about 10 min, 6 GB of memory |
+| ValidTilt9 records | `./verify_tilt9.sh` (downloads the three records, checks their sha256, runs `check_record.py --claim tilt`) | about 6 GB of memory |
+| Valid7 full run | `.venv/bin/python src/run_all.py cover/L4_k02_box7.txt --nproc 32 --record runs/full.jsonl`, then `.venv/bin/python src/check_record.py cover/L4_k02_box7.txt runs/full.jsonl` | about 626 core-hours (20 h on 32 cores) |
+| ValidTilt9 full run | `.venv/bin/python src/run_all.py cover/K4_k008_box9.txt --centers 0 9/2 0 9/2 --u 0 7/16 --ubins 14 --amin 1/1280 --bmid-u 7/16 --bmid-w 1/20 --nproc 32 --record runs/tilt9.jsonl`, then `.venv/bin/python src/check_record.py cover/K4_k008_box9.txt runs/tilt9.jsonl --claim tilt` | about 766 core-hours |
+
+Add `--resume` after an interruption. A run can be split by centre $x$ with `--centers x0 x1 0 7` (multiples of $1/10$) and separate records, all passed together to `check_record.py`. Other entry points: `src/cover.py <cover>` (format, exact total, D4 invariance, reported only) and `src/tier_b2.py <cover> x0 x1 y0 y1 u0 u1` (Tier B on one box).
+
+## References
+
+1. E. Daniel, [evand/square-packing](https://github.com/evand/square-packing): the statements Valid7 (`s12/certificates/k2m3/`) and ValidTilt9 (`s12/certificates/k2m4/`), the covers, the cover format `s21/FORMAT.md`, and the reductions to $s(k^2-3) = k$ and $s(k^2-4) = k$.
+2. [checks/valid7/README.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/README.md), [DESIGN.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/DESIGN.md), [READ_LOG.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/READ_LOG.md), [versions/VERSIONS.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/versions/VERSIONS.md).
+3. Records: [records-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-v1) and [records-tilt9-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-tilt9-v1) in [wand125/valid7-independent-check](https://github.com/wand125/valid7-independent-check).
+4. [Issue #14](https://github.com/wand125/square-packing/issues/14); Lean follow-ups [#8](https://github.com/wand125/square-packing/issues/8) and [#10](https://github.com/wand125/square-packing/issues/10).

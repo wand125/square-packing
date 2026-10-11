@@ -1,0 +1,131 @@
+import CertificateFigure from '../../../components/viz/CertificateFigure.tsx';
+
+## Abstract
+
+Let $s(n)$ be the leg length of the smallest right isosceles triangle that contains $n$ non-overlapping unit squares, at any positions and angles. We prove $s(2) = 2\sqrt2$, $s(3) = 3$, $s(4) = 5/\sqrt2$, $s(6) = 4$ and $s(10) = 5$. The upper bounds are our packing certificates with exact coordinates, checked by two independent exact checkers; the packings are the ones listed in Erich Friedman's Packing Center, and we claim no originality for them. The lower-bound certificates show that these packings are optimal. Each lower bound is a finite weighted point set such that every unit square in the triangle captures weight at least 1, while the total weight is less than $n$. All arithmetic is exact, in $\mathbb Q(\sqrt2)$, and every lower-bound certificate is verified by two independent checkers. The results are computer-assisted and have not been peer reviewed.
+
+## 1. The problem and the packings (upper bounds)
+
+Let $T_v = \operatorname{conv}\{(0,0), (v,0), (0,v)\}$, the right angle at the origin and the legs on the axes. The upper bounds are the following packings.
+
+| $n$ | $s(n)$ | ≈ | packing | certificate |
+|---|---|---|---|---|
+| 2 | $2\sqrt2$ | 2.8284 | with the hypotenuse (length 4) as the base, two squares stand on it side by side; their top outer corners lie on the legs | [n2/packing.json](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n2/packing.json) |
+| 3 | $3$ | 3 | axis-parallel staircase, rows 2 + 1: $[0,1]^2$, $[1,2]\times[0,1]$, $[0,1]\times[1,2]$; the corners $(2,1)$ and $(1,2)$ lie on $x + y = 3$ | [n3/packing.json](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n3/packing.json) |
+| 4 | $5/\sqrt2$ | 3.5355 | with the hypotenuse as the base (length 5, height 5/2), three squares stand on it side by side and one square stands on the middle one | [n4/packing.json](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n4/packing.json) |
+| 6 | $4$ | 4 | axis-parallel staircase, rows 3 + 2 + 1 | [n6/packing.json](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n6/packing.json) |
+| 10 | $5$ | 5 | axis-parallel staircase, rows 4 + 3 + 2 + 1 | [n10/packing.json](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n10/packing.json) |
+
+Each upper bound is our packing certificate `certificates/nX/packing.json`: the container and the $n$ squares with exact coordinates (in $\mathbb Q(\sqrt2)$ for $n = 2, 4$, rational otherwise). Two programs that share no code decide in exact arithmetic that the container has the claimed shape and size, that every square is a closed unit square contained in the closed container, and that no two squares have overlapping interiors (contact along edges or at corners is allowed). The coordinates are algebraic and the contacts are exact equalities, so floating point cannot decide them. The checks do not rely on any external table.
+
+The packings are the ones listed in Erich Friedman's Packing Center, "Squares in Right Isosceles Triangles", where $n = 2, 3, 6$ and $10$ are listed as "Trivial" and the packing for $n = 4$ was found by Erich Friedman in March 2005; we claim no originality for them. The table gives the packings but no proofs or lower bounds; "Trivial" there means that the packing is obvious, not that its optimality is proved.
+
+<CertificateFigure cont="right-isosceles" ns="4,6,10,2,3" lang="en" client:visible />
+
+*Choose a packing and drag or rotate the test square. Dashed segments join certificate pairs at distance 1. The Lemma P count uses the smaller weight of each qualifying pair, without counting either endpoint again; the actual captured point weight is shown separately.*
+
+## 2. The method: weighted point sets
+
+Each lower bound is a finite set of points $p_i \in T_v$ with rational weights $w_i \ge 0$, where $v$ is the claimed value. The checkers prove two things:
+
+1. **Capture.** Every closed unit square $Q \subseteq T_v$, at any position and any angle, satisfies $$ \sum_{p_i \in Q} w_i \ge 1. $$ A point on the boundary of $Q$ counts. This is checked at the container itself, with margin zero.
+2. **Budget.** The total weight is $\sum_i w_i < n$.
+
+**Centre scaling.** Then $n$ squares do not fit in a triangle with legs $L < v$. Suppose they did, with disjoint interiors, in $T_L = G + \lambda(T_v - G)$ with $\lambda = L/v$ and $G$ any point of $T_v$. Translate each square by $(1/\lambda - 1)(c_i - G)$, where $c_i$ is its centre. For a point $k$ of the centred square,
+
+$$
+\frac{c_i - G}{\lambda} + k = \lambda\cdot\frac{c_i + k - G}{\lambda} + (1-\lambda)\cdot\frac{c_i - G}{\lambda},
+$$
+
+and both fractions lie in $T_v - G$ because $c_i + k$ and $c_i$ lie in $T_L$; since $T_v$ is convex, the translated squares lie in $T_v$. They are pairwise disjoint closed squares: a separating direction $w$ with $w\cdot(c_j - c_i) \ge h_i + h_j > 0$ ($h$ the support values) gets $w\cdot(c_j - c_i)$ multiplied by $1/\lambda > 1$. Each of them captures weight $\ge 1$, so the total would be $\ge n$, contradicting the budget. With the packing of leg $v$ this gives $s(n) = v$.
+
+**Exact arithmetic in $\mathbb Q(\sqrt2)$.** Lengths and coordinates are numbers $a + b\sqrt2$ with rational $a, b$; the sign of such a number is decided by comparing $a^2$ with $2b^2$, so it is never rounded. A square is in $T_L$ iff its four vertices satisfy $y \ge 0$, $x \ge 0$ and $x + y \le L$. Angles are parametrised by $u = \tan(\theta/2)$. The reflection $(x, y) \mapsto (y, x)$ is the only nontrivial symmetry of $T_L$; it maps a square of angle $\theta$ to one of angle $\pi/2 - \theta$, so for a reflection-invariant certificate $\theta \in [0, \pi/4]$, i.e. $u \in [0, \sqrt2 - 1]$, suffices, and $\sqrt2 - 1 = \tan(\pi/8)$ is exact in $\mathbb Q(\sqrt2)$.
+
+**Pairs at distance 1 (Lemma P, used for $n = 4, 6, 10$).** For two points $p, q$ at distance exactly 1, a square whose chord along the line $pq$ crosses two opposite edges and meets the segment $[p, q]$ contains $p$ or $q$. This handles poses where the captured point switches from $p$ to $q$ across a surface that is not parallel to the axes, for example a square standing on the middle of the hypotenuse for $n = 4$. The pair counts $\min(w_p, w_q)$, and no point is counted twice. Lemma P is used only by the first checker; the second checker counts the points exactly in every cell and does not need it.
+
+## 3. The certificates
+
+| $n$ | $v$ | points | total weight | pairs at distance 1 |
+|---|---|---|---|---|
+| 2 | $2\sqrt2$ | 1 | $1 < 2$ | none |
+| 3 | $3$ | 4 | $2 < 3$ | none |
+| 4 | $5/\sqrt2$ | 3 | $3 < 4$ | 1 |
+| 6 | $4$ | 7 | $5 < 6$ | 4 |
+| 10 | $5$ | 15 | $19/2 < 10$ | 8 |
+
+All five point sets are invariant under $(x, y) \mapsto (y, x)$.
+
+- $n = 2$: the single point $(5\sqrt2/8, 5\sqrt2/8)$ of weight 1, on the axis of symmetry at height $3/4$ above the hypotenuse. Every closed unit square in $T_{2\sqrt2}$ contains it.
+- $n = 3$: the four points $(3/4, 1)$, $(1, 3/4)$, $(3/4, 5/4)$, $(5/4, 3/4)$ of weight $1/2$; every closed unit square in $T_3$ contains at least two of them.
+- $n = 4$: three points of weight 1: $(\sqrt2/2, \sqrt2/2)$, the centre of the top square of the packing, and $(5\sqrt2/8, 9\sqrt2/8)$, $(9\sqrt2/8, 5\sqrt2/8)$, at height $3/4$ above the hypotenuse on the two walls between the bottom squares. The last two are at distance exactly 1 and form a pair. Without the pair the first checker cannot finish: near the hypotenuse midpoint at $\theta \approx 45^\circ$ the square switches between the two points along the diagonal $x = y$, which is not a face of the axis-parallel boxes.
+- $n = 6$: $(1/2, 3/2)$, $(3/2, 1/2)$, $(3/4, 1)$, $(1, 3/4)$ of weight $1/2$; $(3/4, 2)$, $(2, 3/4)$, $(3/2, 3/2)$ of weight 1. Four pairs: $(1/2,3/2)$–$(3/2,3/2)$, $(3/2,1/2)$–$(3/2,3/2)$, $(3/4,1)$–$(3/4,2)$, $(1,3/4)$–$(2,3/4)$. Without them the first checker leaves 5,677 uncertified boxes at depth 22, all near centre $(1, 1.3)$ at small angles.
+- $n = 10$: $(3/4, 1)$, $(1, 3/4)$ of weight $1/2$; $(3/4, 2)$, $(2, 3/4)$, $(3/4, 3)$, $(3, 3/4)$ of weight 1; $(1, 3/2)$, $(3/2, 1)$, $(5/4, 5/2)$, $(5/2, 5/4)$, $(3/2, 3/2)$, $(3/2, 5/2)$, $(5/2, 3/2)$, $(7/4, 2)$, $(2, 7/4)$ of weight $1/2$. Eight pairs (all pairs at distance exactly 1). The first checker's root grid is taken over $[0, 6]^2$ so that the lines $x = 3/2$ and $y = 3/2$ are box faces: at centre $(3/2, 3/2)$, $\theta = 0$ the square $[1,2]^2$ has four points on its boundary, and the captured one changes across these lines. With the default bounding box two boxes there stay uncertified at depth 22.
+
+## 4. Conclusion
+
+For each $n \in \{2, 3, 4, 6, 10\}$, the certificate captures weight $\ge 1$ in every closed unit square in $T_v$ and has total weight $< n$; by centre scaling (§2) $s(n) \ge v$, and the packing of §1 gives $s(n) \le v$. Hence
+
+$$
+s(2) = 2\sqrt2, \quad s(3) = 3, \quad s(4) = \frac{5}{\sqrt2}, \quad s(6) = 4, \quad s(10) = 5. \qquad \blacksquare
+$$
+
+## 5. Verification
+
+Each lower-bound certificate is verified by two checkers that use different methods.
+
+- **Checker 1** subdivides pose space (centre box $\times$ angle bin, with $u = \tan(\theta/2)$) with Bernstein bounds, uses the reflection symmetry and Lemma P, and supports contacts with margin zero. It is the project's checker for the equilateral triangle with the container, the number field ($\mathbb Q(\sqrt2)$ instead of $\mathbb Q(\sqrt3)$) and the symmetry changed; the changes are listed in [checker/SPEC.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/checker/SPEC.md), and the soundness argument is in the equilateral checker's README. Standard library only.
+- **Checker 2** is an exact angular sweep. Every angle $u \in [0, 1]$ is checked directly: the critical angles are the real roots of the pair and triple determinants of the line arrangement, each open gap between them gets one rational sample, and at each sample the capture weight is counted exactly on every open sector at every vertex inside the admissible region. Closure is by upper semicontinuity; it needs a disc of centres inside every admissible region, i.e. the inradius $L(2-\sqrt2)/2 > \sqrt2/2$, that is $L > 1 + \sqrt2$, and this is checked exactly. It uses no box subdivision, no Bernstein bounds, no symmetry and no Lemma P. It was written from the equilateral-triangle specification, the certificates and their proof notes only; the first checker's code was not opened. It uses gmpy2 (exact rationals) and sympy (real-root isolation). Centre scaling is in the proof notes and is not re-checked by code.
+
+| $n$ | Checker 1 | Checker 2 |
+|---|---|---|
+| 2 | 16 nodes, 0 uncertified, max depth 0, 0.1 s | 61 critical roots, min capture 1, 2 s |
+| 3 | 62 nodes, 0 uncertified, max depth 4, 0.2 s | 331 critical roots, min capture 1, 7 s |
+| 4 | 304 nodes, 0 uncertified, max depth 12, 1.0 s | 241 critical roots, min capture 1, 6 s |
+| 6 | 1,122 nodes, 0 uncertified, max depth 13, 2.8 s | 671 critical roots, min capture 1, 26 s |
+| 10 | 2,868 nodes, 0 uncertified, max depth 15, 6.8 s | 1,863 critical roots, min capture 1, 262 s |
+
+**Controls (not part of the proofs).** With leg $v + 1/100$ the same certificates do not verify: checker 1 leaves 44, 64, 38, 53 and 43 uncertified boxes at depth 22 for $n = 2, 3, 4, 6, 10$, and checker 2 fails on all five. Checker 2 also rejects certificates with the first weight multiplied by $99/100$ and with the last point dropped, each failure with an explicit pose at a rational angle whose capture is counted exactly. Some point moves leave a certificate valid ($n = 3$ moved by $1/50$; $n = 6$, first point moved by $1/50$ or $1/5$); these points have slack. An exact random probe of 20,000 rational poses found minimum capture 1 for $n = 3, 4, 6, 10$.
+
+**The packings.** Each `packing.json` is checked by two programs that share no code, both working in a real number field $\mathbb Q(g)$ given by the minimal polynomial of $g$ and a rational interval that isolates it (verified by the checkers).
+
+|  | `check_packing.py` | `check_packing2.py` |
+|---|---|---|
+| containment | the 4 vertices of each square lie in the convex container | area(square $\cap$ container) = 1 |
+| disjointness | separating axis: an edge of one square weakly separates the two | area(square $\cap$ square) = 0 |
+| container | edge lengths and turning angles | all vertex-to-vertex distances |
+| unit square | edges of length 1, each the previous turned by 90° | sides 1 and diagonals $\sqrt2$ |
+| arithmetic | own polynomial arithmetic over `Fraction`; signs by interval arithmetic, generator isolated by a Sturm sequence | sympy polynomials over $\mathbb Q$; signs by mpmath interval arithmetic, generator isolated by sympy's real root isolation |
+| dependencies | Python standard library | sympy (includes mpmath) |
+
+Intersections in the second program are computed by clipping one convex polygon by the other (Sutherland–Hodgman) with exact intersection points. The test `test_packing_check.py` runs both programs on every packing of the repository (all must be VALID) and on 14 broken variants (all must be INVALID), for example squares moved by $10^{-12}$, a duplicate square or a square that is not a square.
+
+## 6. Status and limitations
+
+- A computer-assisted proof. It has not been peer reviewed.
+- We are not aware of a previous proof of optimality for any $n \ge 2$ in this container; if you know of one, please open an issue.
+- Other $n$ are not covered here.
+
+## Reproducibility
+
+Requirements: Python 3.10+. Checker 1 uses only the standard library. Checker 2 needs gmpy2 and sympy, and the test suite needs pytest (`pip install gmpy2 sympy pytest`). Commands run from `problems/right-isosceles`.
+
+| What | Command |
+|---|---|
+| checker 1, $n = 2$ | `python3 checker/check.py certificates/n2/n2_cert.json --n 2` |
+| checker 1, $n = 3$ | `python3 checker/check.py certificates/n3/n3_cert.json --n 3` |
+| checker 1, $n = 4$ | `python3 checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 22 --jobs 8` |
+| checker 1, $n = 6$ | `python3 checker/check.py certificates/n6/n6_cert.json --n 6 --max-depth 22 --jobs 8` |
+| checker 1, $n = 10$ | `python3 checker/check.py certificates/n10/n10_cert.json --n 10 --max-depth 22 --bbox 6 --jobs 8` |
+| checker 1 tests | `cd checker && python3 -m pytest -q tests` |
+| checker 2 | `python3 checker2/sweep_q2.py certificates/n10/n10_cert.json --n 10 --jobs 8` |
+| packing, method 1 | `python3 ../../tools/packing_check/check_packing.py certificates/n4/packing.json` |
+| packing, method 2 (needs sympy) | `python3 ../../tools/packing_check/check_packing2.py certificates/n4/packing.json` |
+
+The packing commands are shown for $n = 4$; the other files are `certificates/nX/packing.json`. Each packing check prints one line ending in `VALID` (exit code 0) or `INVALID` with the reasons. Each run of checkers 1 and 2 prints a JSON summary with `"status": "verified"`, the certificate's sha256, the exact total weight and whether it is $< n$. The recorded runs are `certificates/n*/check_record.json` (checker 1) and `checker2/runs/n*.json` (checker 2). On one machine checker 1 takes under 10 s for each certificate, and checker 2 between 2 s ($n = 2$) and about 4.5 minutes ($n = 10$).
+
+## References
+
+1. E. Friedman, [Squares in Right Isosceles Triangles](https://erich-friedman.github.io/packing/squintan/), Erich's Packing Center (the source of the configurations).
+2. [problems/right-isosceles/README.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/README.md); the proof notes [n2](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n2/PROOF.md), [n3](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n3/PROOF.md), [n4](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n4/PROOF.md), [n6](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n6/PROOF.md), [n10](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n10/PROOF.md).
+3. The checkers: [checker/README.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/checker/README.md), [checker/SPEC.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/checker/SPEC.md), [checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/checker2/README.md).
+4. The packing certificates and their checkers: [tools/packing_check/README.md](https://github.com/wand125/square-packing/blob/main/tools/packing_check/README.md).

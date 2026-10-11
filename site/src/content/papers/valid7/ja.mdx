@@ -1,0 +1,114 @@
+
+## 要旨
+
+[evand/square-packing](https://github.com/evand/square-packing) で Evan Daniel は、すべての $k \ge 6$ で $s(k^2-3) = k$、すべての $k \ge 8$ で $s(k^2-4) = k$ を証明している。 どちらの証明も、混合測度の被覆（質量をもつ線分と、正方形の上のルベーグ測度）についての有限の命題 1 つ、**Valid7** と **ValidTilt9** に帰着される。 同リポジトリはそれぞれの命題を自前のプログラムで検査している。我々は同じ命題を検査する 2 つ目の厳密な検査器を、被覆の形式の仕様書と命題だけから書いた。1 つ目の検査器とその補題の文書は読んでいない。 対称性による削減は使わず、角度 0 は閉包の議論で扱い、判定はすべて厳密な有理数の計算（$u = \tan(\theta/2)$ の多項式と Sturm 列による根の分離）で行う。 Valid7 は成り立つ。根の箱 156,800 個すべてを証明し、未証明 0、反例 0。ValidTilt9 も成り立つ。根 28,350 個すべてを証明し、未証明 0、反例 0。 葉はすべて記録し、記録は公開して別のプログラムで再検査している。
+
+## 1. 検査する命題
+
+命題・被覆・帰着は Evan Daniel によるもの（[evand/square-packing](https://github.com/evand/square-packing)）で、我々は命題を検査するだけである。 姿勢 $Q(c, \theta) = c + R_\theta[-\tfrac12, \tfrac12]^2$ は、中心 $c$ で角度 $\theta$ だけ回した閉じた単位正方形を表す。
+
+**Valid7.** $\mu_7$ を正方形 $[0,7]^2$ の混合測度の被覆 `L4_k02_box7.txt`（`s12/certificates/k2m3/` から）とする。長さ $1/5$ の軸に平行な線分 800 本が $1/5$ の格子の 60 本の線の上に一様な質量をもち、さらに $[9/5, 26/5]^2$ の上にルベーグ測度がある。質量の合計は
+
+$$
+\frac{5701378693611}{125000000000} \approx 45.611 < 46.
+$$
+
+Valid7 の主張：$[0,7]^2$ に含まれる閉じた単位正方形 $Q$ は、どの位置・どの角度でも $\mu_7(Q) \ge 1$。 evand/square-packing で Lean により証明された帰着（`bentz_of_valid7`）により、Valid7 からすべての $k \ge 6$ で $s(k^2-3) = k$ が従う。
+
+**ValidTilt9.** 被覆は `K4_k008_box9.txt`（`s12/certificates/k2m4/` から）。$1/5$ の格子の上の線分 2,076 本と $[14/5, 31/5]^2$ の上のルベーグ測度からなり、質量の合計は $3835229774429/50000000000$。 ValidTilt9 の主張：$[0,9]^2$ に含まれ、中心が $[0, 9/2]^2$ にあり、角度が $\theta = 2\arctan u$、
+
+$$
+0 < u, \qquad u^2 + 2u \le 1 \qquad (0 < \theta \le 45^\circ)
+$$
+
+である閉じた単位正方形は、質量 $\ge 1$ をもつ。evand/square-packing の、すべての $k \ge 8$ での $s(k^2-4) = k$ の証明はこの有限の命題に基づく。 命題は同リポジトリの Lean ファイルの定義 `ValidTilt`、`sq`、`coord` から取った。回転の約束 $c + R_\theta[-\tfrac12,\tfrac12]^2$ は我々のものと同じである。
+
+## 2. 独立性
+
+検査器は、被覆の形式の仕様書（evand/square-packing の `s21/FORMAT.md`）と命題だけから書いた。1 つ目の検査器とその補題の文書は読んでいない。読んだものは[読んだものの記録](https://github.com/wand125/square-packing/blob/main/checks/valid7/READ_LOG.md)にすべて挙げてある。
+
+- **Valid7**（上流のコミット `d9f79bc`）：k2m3 の `README.md`（主張、証明の段落、葉の種類の名前。補題は名前だけで証明は読まない）、`FORMAT.md`、`verify.sh` の 1〜60 行（シェルの段取りのみ）、被覆そのもの。読んでいないもの：検査プログラム、補題の文書、実行の記録とその出力。
+- **ValidTilt9**（上流のコミット `0c24309`）：k2m4 の `README.md` の 1〜80 行（補題は名前だけ）、Lean ファイルのうち定義 `ValidTilt9` / `ValidTilt` とその説明コメントだけ、定義 `coord`、`sq`、`sqInt`、被覆。読んでいないもの：検査プログラムと補題の文書、k2m4 の実行の記録と出力、Lean ファイルの残り。
+
+参照した自分たちの先行作業は、点の被覆についての角度の厳密な掃引の README（wand125/squares-in-triangle）である。作業中、同じ種類の被覆（別の容器）の検査器が別に書かれていたが、やりとりしたのは仕様と本検査器の使い方だけで、そのコードや手法はここでは読んでいない。
+
+検査器は設計の上でも異なる。D4 による削減をせず（すべての中心と 1 周期を超える角度を検査）、角度 0 は列挙ではなく閉包の議論で扱い、厳密な演算の基本部品も別のものを使う。
+
+## 3. 検査器の設計
+
+姿勢は $Q(c, \theta) = c + R_\theta[-\tfrac12,\tfrac12]^2$、Valid7 では $u = \tan(\theta/2) \in [-\tfrac12, \tfrac12]$ とする。これは正方形の周期 $\pi/2$ より広く、余裕 0 の角度 $\theta = 0$ が内部に来る。
+
+$$
+\cos\theta = \frac{1-u^2}{1+u^2}, \qquad \sin\theta = \frac{2u}{1+u^2}
+$$
+
+なので、有理数の $u$ ではすべて有理数になる。詳細と証明は [DESIGN.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/DESIGN.md)、補題は各モジュールの説明文にある。
+
+**閉包による角度 0.** $\theta \notin (\pi/2)\mathbb Z$ ではどの線分も $Q$ の辺と平行でないので、質量は姿勢について連続であり、どこでも上半連続である。$\theta = 0$ の許される姿勢は、$\theta > 0$ の許される姿勢の極限である。よって $\theta \ne 0$ のすべてで $\mu \ge 1$ なら、$\theta = 0$ でも成り立つ。
+
+**角度を固定した場合.** $\theta$ を固定すると、質量は中心について、直線の配置の上で区分的に 2 次式である（補題 F1）。Brunn–Minkowski により $\sqrt{\operatorname{area}(Q \cap S)}$ は凹なので、面の内部に最小はない（補題 F2）。中心の箱の上の最小は、配置の頂点か、辺の 1 次元の臨界点でとられる。
+
+**Tier A：箱の芯による下界.** 姿勢の箱（中心の箱 $\times$ $u$ の区間）のどの正方形も、ある有理多角形（角度方向の芯の内側の近似を中心の箱で削ったもの）を含むので、$\mu(Q) \ge \mu(\text{芯})$ を厳密に計算する。ルベーグの正方形 $S$ については、$O$ を有理数の外側の包として
+
+$$
+\operatorname{area}(Q \cap S) \ge 1 - \operatorname{area}(O \setminus S)
+$$
+
+も使い、$S$ の中の正方形（質量はちょうど 1）で失敗しないようにする。箱は適応的に二分する。
+
+**Tier B：$u$ について厳密.** 余裕 0 の族（壁に接する正方形、辺が重い整数の線に乗る正方形）の近くで使う。その質量は $1 + c|u|$（$c \approx 0.40$〜$0.48$）のように増える。頂点の候補はどれも、係数が $u$ の有理関数である 2 本の直線の交点である。各組について、頂点が許される中心の箱に入る $u$ の集合を、Sturm 列で実根を分離して厳密に切り出す。各区間で、頂点での質量を記号実行により $u$ の有理関数 $N/D$ として得る。分岐はすべて標本点で決め、その区間で 0 にならない番人の多項式として記録する。そのうえで $(N - D)\,D \ge 0$ を厳密に証明する。辺の臨界点も同じ方法で直線ごとに扱う。値がちょうど 1（タイト）でもよい。
+
+**厳密な基本部品.** 全体を厳密な有理数（`fractions.Fraction`）で計算する。$u$ の多項式には python-flint を使い、根の分離は自前の Sturm 列による。判定に浮動小数点数は一切入らない。
+
+**記録.** 葉はすべて記録する。`check_record.py` は駆動部の制御の流れとは独立に、根が領域の直積格子にちょうど一致すること（すべての記録ファイルを通して各根 1 回）、各根の葉がその二分による分割になっていること、EMPTY の葉が許される中心を含まないこと（厳密）、Tier B の葉が $u = 0$ を含まないことを再検査する。任意で、無作為に選んだ葉について Tier A と Tier B をやり直す。
+
+**試験.** タイトな配置を 1 つずつ相対 $10^{-4}$ だけ下げた 3 つの変異被覆（壁の族、ルベーグの正方形、$[1,2]^2$ の角の族）はどれも拒否され、Tier B は質量が厳密に 1 未満になる具体的な姿勢を示す。
+
+## 4. 結果
+
+|  | Valid7（2026-10-02） | ValidTilt9（2026-10-06） |
+|---|---|---|
+| 検査した範囲 | 中心 $[0,7]^2$ $\times$ $u \in [-\tfrac12, \tfrac12]$ | 中心 $[0, 9/2]^2$（刻み $1/10$）$\times$ $u \in [0, 7/16]$（14 区間。$7/16 > \sqrt2 - 1$） |
+| 使った対称性 | なし | なし |
+| 根 | 156,800、すべて証明 | 28,350、すべて証明 |
+| 未証明 / 反例 | 0 / 0 | 0 / 0 |
+| 葉 | 9,640,060 | 9,537,343（CORE 6,565,165 / TIERB2 2,940,689 / EMPTY 31,489） |
+| 計算量 | 約 626 コア時間 | 約 766 コア時間 |
+| 記録 | Release [records-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-v1) | Release [records-tilt9-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-tilt9-v1) |
+
+ValidTilt9 では、3 つの記録に対する `check_record.py --claim tilt` が `RECORD OK` を返した。根はその範囲の直積格子にちょうど一致し（各 1 回）、CORE の葉 2,000 個と TIERB2 の葉 300 個を再証明した。
+
+**実行の経緯.** Valid7 の実行中にコードを 1 回変更した（段の間の受け渡しの規則と失敗の報告だけで、証明の手順は変えていない）。実行前に見つかった代数的数のクラスの欠陥は修正し、それ以前の記録はすべて破棄した。公開前に編集したのは記録の先頭行（パス名）だけである。ファイルのハッシュと、どの根をどの版で実行したかは [versions/VERSIONS.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/versions/VERSIONS.md) にある。ValidTilt9 では駆動部に 2 つの選択肢を加えたが、既定値では動作は変わらない。この実行の版と経緯は Release records-tilt9-v1 の `MERGE.md` にある。
+
+## 5. 結論
+
+独立に書いた厳密な検査器で、2 つの有限の命題がどちらも確かめられた。Valid7 も ValidTilt9 も成り立つ。 evand/square-packing の Evan Daniel による帰着と合わせて、これは次の証明の有限の部分についての 2 つ目の独立な検査である。
+
+$$
+s(k^2-3) = k \ (k \ge 6), \qquad s(k^2-4) = k \ (k \ge 8).
+$$
+
+## 状態と限界
+
+- 2 つの有限の命題のコンピュータによる検査である。結果 $s(k^2-3) = k$、$s(k^2-4) = k$ とその帰着は Evan Daniel によるもの。
+- `check_record.py` は記録の被覆と分割の構造、および EMPTY の葉を厳密に再検査するが、CORE と TIERB2 の葉の証明のやり直しは無作為の標本だけである。
+- 元のリポジトリ [wand125/valid7-independent-check](https://github.com/wand125/valid7-independent-check) はアーカイブ済みで、コードは現在 [checks/valid7](https://github.com/wand125/square-packing/tree/main/checks/valid7) にある。Lean 版は別のテーマ：[#8](https://github.com/wand125/square-packing/issues/8)（Valid7）、[#10](https://github.com/wand125/square-packing/issues/10)（ValidTilt9）。
+
+## 再現方法
+
+| 内容 | コマンド | 時間 |
+|---|---|---|
+| 準備 | `python3 -m venv .venv && .venv/bin/pip install -r requirements.txt` |  |
+| Valid7 の記録 | `./verify.sh`（records-v1 の記録を取得し、sha256 を確かめ、`check_record.py` と変異の試験を実行） | 約 10 分、メモリ 6 GB |
+| ValidTilt9 の記録 | `./verify_tilt9.sh`（3 つの記録を取得し、sha256 を確かめ、`check_record.py --claim tilt` を実行） | メモリ約 6 GB |
+| Valid7 の全実行 | `.venv/bin/python src/run_all.py cover/L4_k02_box7.txt --nproc 32 --record runs/full.jsonl` のあと `.venv/bin/python src/check_record.py cover/L4_k02_box7.txt runs/full.jsonl` | 約 626 コア時間（32 コアで 20 時間） |
+| ValidTilt9 の全実行 | `.venv/bin/python src/run_all.py cover/K4_k008_box9.txt --centers 0 9/2 0 9/2 --u 0 7/16 --ubins 14 --amin 1/1280 --bmid-u 7/16 --bmid-w 1/20 --nproc 32 --record runs/tilt9.jsonl` のあと `.venv/bin/python src/check_record.py cover/K4_k008_box9.txt runs/tilt9.jsonl --claim tilt` | 約 766 コア時間 |
+
+中断したら `--resume` を付けて再開する。`--centers x0 x1 0 7`（$1/10$ の倍数）で中心の $x$ ごとに分けて実行し、別々の記録をまとめて `check_record.py` に渡せる。その他の入口：`src/cover.py <cover>`（形式、厳密な合計、D4 不変性を表示するだけ）、`src/tier_b2.py <cover> x0 x1 y0 y1 u0 u1`（箱 1 つに Tier B）。
+
+## 参考文献
+
+1. E. Daniel, [evand/square-packing](https://github.com/evand/square-packing)：命題 Valid7（`s12/certificates/k2m3/`）と ValidTilt9（`s12/certificates/k2m4/`）、被覆、被覆の形式 `s21/FORMAT.md`、$s(k^2-3) = k$ と $s(k^2-4) = k$ への帰着。
+2. [checks/valid7/README.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/README.md)、[DESIGN.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/DESIGN.md)、[READ_LOG.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/READ_LOG.md)、[versions/VERSIONS.md](https://github.com/wand125/square-packing/blob/main/checks/valid7/versions/VERSIONS.md)。
+3. 記録：[wand125/valid7-independent-check](https://github.com/wand125/valid7-independent-check) の [records-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-v1) と [records-tilt9-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-tilt9-v1)。
+4. [Issue #14](https://github.com/wand125/square-packing/issues/14)。Lean の後続 [#8](https://github.com/wand125/square-packing/issues/8) と [#10](https://github.com/wand125/square-packing/issues/10)。

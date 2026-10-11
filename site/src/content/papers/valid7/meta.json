@@ -1,0 +1,45 @@
+{
+ "kicker": [
+  "Independent verification · 2026-10-02 and 2026-10-06",
+  "独立な検証 · 2026-10-02 と 2026-10-06"
+ ],
+ "title": [
+  "Independent exact checks of Valid7 and ValidTilt9",
+  "Valid7 と ValidTilt9 の独立な厳密検査"
+ ],
+ "lead": [
+  "Evan Daniel’s proofs of \\(s(k^2-3) = k\\) (\\(k \\ge 6\\)) and \\(s(k^2-4) = k\\) (\\(k \\ge 8\\)) each rest on one finite statement about a mixed cover. We checked both statements again with an independently written exact checker. Both hold.",
+  "Evan Daniel による \\(s(k^2-3) = k\\)（\\(k \\ge 6\\)）と \\(s(k^2-4) = k\\)（\\(k \\ge 8\\)）の証明は、それぞれ混合測度の被覆についての有限の命題 1 つに帰着される。独立に書いた厳密な検査器で、この 2 つの命題を改めて検査した。どちらも成り立つ。"
+ ],
+ "result": [
+  "Valid7: 156,800 / 156,800 root boxes certified · ValidTilt9: 28,350 / 28,350 roots certified · 0 counterexamples",
+  "Valid7：根の箱 156,800 / 156,800 を証明 · ValidTilt9：根 28,350 / 28,350 を証明 · 反例 0"
+ ],
+ "links": [
+  [
+   "Code",
+   "コード",
+   "https://github.com/wand125/square-packing/tree/main/checks/valid7"
+  ],
+  [
+   "Release records-v1",
+   "Release records-v1",
+   "https://github.com/wand125/valid7-independent-check/releases/tag/records-v1"
+  ],
+  [
+   "Release records-tilt9-v1",
+   "Release records-tilt9-v1",
+   "https://github.com/wand125/valid7-independent-check/releases/tag/records-tilt9-v1"
+  ],
+  [
+   "Issue #14",
+   "Issue #14",
+   "https://github.com/wand125/square-packing/issues/14"
+  ],
+  [
+   "evand/square-packing",
+   "evand/square-packing",
+   "https://github.com/evand/square-packing"
+  ]
+ ]
+}

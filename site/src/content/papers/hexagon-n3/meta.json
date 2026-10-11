@@ -1,0 +1,40 @@
+{
+ "kicker": [
+  "Computer-assisted proof · 2026-10-04",
+  "コンピュータ支援の証明 · 2026-10-04"
+ ],
+ "title": [
+  "Three unit squares in a regular hexagon: \\(s(3) = \\tfrac{1+\\sqrt3}{2}\\)",
+  "正六角形に入る 3 個の単位正方形：\\(s(3) = \\tfrac{1+\\sqrt3}{2}\\)"
+ ],
+ "lead": [
+  "The pinwheel packing is optimal. A two-stage certificate and a local lemma, each stage checked by two independent implementations.",
+  "風車形の詰め方が最適である。2 段の証明書と局所補題による証明で、各段を独立な 2 つの実装で検査した。"
+ ],
+ "result": [
+  "\\(s(3) = \\dfrac{1+\\sqrt3}{2} \\approx 1.3660254\\)",
+  "\\(s(3) = \\dfrac{1+\\sqrt3}{2} \\approx 1.3660254\\)"
+ ],
+ "links": [
+  [
+   "Interactive figure",
+   "対話型の図",
+   "containers.html#hexagon-3"
+  ],
+  [
+   "Code & proof",
+   "コードと証明",
+   "https://github.com/wand125/square-packing/tree/main/problems/hexagon"
+  ],
+  [
+   "Release hexagon-v1",
+   "Release hexagon-v1",
+   "https://github.com/wand125/square-packing/releases/tag/hexagon-v1"
+  ],
+  [
+   "Issue #15",
+   "Issue #15",
+   "https://github.com/wand125/square-packing/issues/15"
+  ]
+ ]
+}

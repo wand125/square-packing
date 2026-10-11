@@ -1,0 +1,35 @@
+{
+ "kicker": [
+  "Computer-assisted proof · issue #13",
+  "コンピュータ支援の証明 · Issue #13"
+ ],
+ "title": [
+  "Unit squares in a right isosceles triangle: optimal packings for \\(n = 2, 3, 4, 6, 10\\)",
+  "直角二等辺三角形に入る単位正方形：\\(n = 2, 3, 4, 6, 10\\) の最適な詰め方"
+ ],
+ "lead": [
+  "The best known packings for these five n are optimal. Each lower bound is a weighted point set, checked in exact arithmetic in Q(√2) by two independent checkers.",
+  "この 5 つの n について、知られている最良の詰め方が最適である。各下界は重み付きの点集合で、Q(√2) の厳密な計算により独立な 2 つの検査器で検査した。"
+ ],
+ "result": [
+  "\\(s(2) = 2\\sqrt2,\\ \\ s(3) = 3,\\ \\ s(4) = \\tfrac{5}{\\sqrt2},\\ \\ s(6) = 4,\\ \\ s(10) = 5\\)",
+  "\\(s(2) = 2\\sqrt2,\\ \\ s(3) = 3,\\ \\ s(4) = \\tfrac{5}{\\sqrt2},\\ \\ s(6) = 4,\\ \\ s(10) = 5\\)"
+ ],
+ "links": [
+  [
+   "Interactive figure",
+   "対話型の図",
+   "containers.html#right-isosceles-6"
+  ],
+  [
+   "Code & proofs",
+   "コードと証明",
+   "https://github.com/wand125/square-packing/tree/main/problems/right-isosceles"
+  ],
+  [
+   "Issue #13",
+   "Issue #13",
+   "https://github.com/wand125/square-packing/issues/13"
+  ]
+ ]
+}

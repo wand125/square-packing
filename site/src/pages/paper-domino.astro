@@ -1,0 +1,10 @@
+---
+import Paper from '../layouts/Paper.astro';
+import * as En from '../content/papers/domino/en.mdx';
+import * as Ja from '../content/papers/domino/ja.mdx';
+import meta from '../content/papers/domino/meta.json';
+import { tex } from '../lib/tex';
+const m = { ...meta, titleHtml: meta.title.map(tex), resultHtml: '<span data-l="en">' + tex(meta.result[0]) + '</span><span data-l="ja">' + tex(meta.result[1]) + '</span>' };
+---
+<Paper file="paper-domino.html" title="Four Unit Squares in a 1×2 Rectangle" meta={m}
+  En={En.default} Ja={Ja.default} headingsEn={En.getHeadings()} headingsJa={Ja.getHeadings()} />

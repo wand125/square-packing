@@ -1,0 +1,119 @@
+import HexagonFlex from '../../../components/viz/HexagonFlex.tsx';
+import CertificateFigure from '../../../components/viz/CertificateFigure.tsx';
+
+## Abstract
+
+Let $s(n)$ be the smallest side of a regular hexagon that contains $n$ non-overlapping unit squares, at any positions and angles. We prove $s(3) = (1+\sqrt3)/2$. The upper bound is our packing certificate for the pinwheel, checked exactly by two checkers; the packing is the one listed in Erich Friedman's Packing Center, and we claim no originality for it. The pinwheel is not rigid to first order, so a single weighted point set cannot prove it. The proof has a stage-1 point certificate with 742 excused boxes, a local lemma near the pinwheel, and a stage-2 branch and bound over each excused box. Each stage was checked by two independent implementations. The proof has not been peer reviewed and is not formalised in Lean.
+
+## 1. The pinwheel (upper bound)
+
+Let $H_v$ be the hexagon of side $v$ with centre $0$ and a flat bottom, $h = v\sqrt3/2$ its apothem, $V = (-v/2, -h)$ its lower-left vertex and $R$ the rotation by $2\pi/3$. The pinwheel is
+
+$$
+B = [-\tfrac v2, -\tfrac v2 + 1] \times [-h, -h+1], \qquad RB, \qquad R^2B.
+$$
+
+$B$ lies on the bottom side with its lower-left corner at $V$, and the top-right corner of $R^iB$ lies on the top edge of $R^{i+1}B$.
+
+**Upper-bound certificate.** [n3/packing.json](https://github.com/wand125/square-packing/blob/main/problems/hexagon/n3/packing.json) gives these three squares with exact coordinates in $\mathbb Q(\sqrt3)$. The two checkers in [tools/packing_check/](https://github.com/wand125/square-packing/tree/main/tools/packing_check) decide in exact arithmetic that every square lies in the closed hexagon $H_v$ and that no two interiors overlap: one by the vertices and separating axes, the other by exact clipping areas. The packing is the one listed in Friedman's Packing Center (Morandi); we claim no originality for it.
+
+<CertificateFigure cont="hexagon" ns="3" client:visible />
+
+*The pinwheel in $H_v$ and the 630 points of the stage-1 certificate, area proportional to weight (the 742 excused boxes are not drawn).*
+
+## 2. Reduction to closed squares
+
+Suppose three unit squares with disjoint interiors fit in $H_L$ with $L < v$. Push their centres away from the centre of the hexagon by the factor $k = v/L$. If $Q \subseteq H_L$ has centre $c$, every point of $Q + (k-1)c$ is $k\,(q/k + (1-1/k)c)$, and the point in brackets is a convex combination of points of $H_L$; so $Q + (k-1)c \subseteq kH_L = H_v$. The squares become pairwise disjoint *closed* unit squares in $H_v$. So it suffices to show that $H_v$ contains no three pairwise disjoint closed unit squares.
+
+## 3. Stage 1: one square lies in the flex tube
+
+The certificate has 630 weighted points of total weight
+
+$$
+\sum w = \frac{749319}{250000} < 3
+$$
+
+and 742 *excused boxes* in the pose space (centre, $u = \tan(\theta/2)$), in the reduced range $u \in [0, 1/7]$. Closed under $D_6$, they cover a tube of radius 0.03 around the *flex curve*: the square $B$ rotated about $V$ by angles in $[-0.03, 0.52]$, with its $D_6$ images.
+
+**Claim.** Every closed unit square in $H_v$ whose reduced pose is not excused captures weight $\ge 1$.
+
+Three disjoint squares capture less than 3 in total, so one of them captures less than 1; capture is $D_6$-invariant, so after a symmetry square 1 has its pose in some excused box $E_k$. A control shows the boxes are needed: an admissible pose inside an excused box captures only $495031/500000 < 1$.
+
+<HexagonFlex lang="en" client:visible />
+
+*The three squares follow the flex together, with fixed vertex corners. The slider covers the stage-1 flex interval; D₆ selects a symmetry image. The signed contact distances are computed from the vertices and edge lines. Near zero, k/t² approaches −1.183013 per contact.*
+
+## 4. The local lemma near the pinwheel
+
+In frame $i$ (rotate by $R^{-i}$), square $i$ is $V + p_i + R(\varphi_i)[0,1]^2$, with corner displacement $p_i$ and tilt $\varphi_i$; the pinwheel is $p_i = 0,\ \varphi_i = 0$.
+
+**Lemma.** If $|\varphi_i| \le 0.08$ and $|p_i| \le 0.05$ for $i = 0, 1, 2$, the three closed squares cannot lie in $H_v$ and be pairwise disjoint. The same holds for every $D_6$ image of the pinwheel.
+
+Containment puts each $p_i$ in the $120^\circ$ wedge at the vertex. The contacts satisfy the exact identity (checked in sympy)
+
+$$
+k_i = F(\varphi_i, \varphi_{i+1}) + \big(R(\varphi_{i+1})\,n\big)\cdot p_i - \big(R(\varphi_{i+1})\,e_y\big)\cdot p_{i+1},
+$$
+
+and, while the contact corners stay inside the other edge lines,
+
+$$
+\text{(i)}\ \ k_i \le F_i + \Phi\,(|p_i| + |p_{i+1}|), \qquad \text{(ii)}\ \ \textstyle\sum k \le \sum F - \big(\tfrac{\sqrt3}{2} - 2\Phi\big) \sum |p|.
+$$
+
+If the tilts are equal (the flex), $\sum F \le 0$; otherwise some $F_j$ is negative at first order. Either way some contact $k_i \le 0$, which disjointness forbids. The radius conditions are checked in exact rational arithmetic.
+
+## 5. Stage 2: branch and bound for each excused box
+
+For each excused box $E_k$, a branch and bound proves that no three pairwise disjoint closed unit squares in $H_v$ have square 1's pose in $E_k$; squares 2 and 3 range over all poses. A node is a triple of pose boxes. It is discarded when
+
+- **outside:** some square sticks out of $H_v$ for every pose in its box;
+- **overlap:** two squares intersect for every pair of poses;
+- **lemma:** inequality (i) or (ii) shows some contact $k_i \le 0$, or all three boxes lie in the neighbourhood of the lemma.
+
+Otherwise the largest box is halved. Every operation uses intervals rounded outward; $\sqrt3$ and $\pi$ are enclosed by adjacent doubles, and the excused boxes are read from the exact rationals of the certificate. All 742 boxes are proved with 0 leaves left.
+
+## 6. Conclusion
+
+By §3 any three pairwise disjoint closed unit squares in $H_v$ have one square in some excused box $E_k$; by §5 that is impossible for every $k$. Hence $H_v$ contains no such triple, and by §2 $s(3) \ge v$. With the pinwheel (§1),
+
+$$
+s(3) = v = \frac{1+\sqrt3}{2}. \qquad \blacksquare
+$$
+
+## 7. Verification
+
+The second implementation of each stage was written without reading the first one's code.
+
+| Stage | Implementation 1 | Implementation 2 |
+|---|---|---|
+| 1 | exact $\mathbb Q(\sqrt3)$ subdivision with Bernstein bounds; 5,768 nodes | exact angular line-arrangement sweep, from the specification only; 58,894 boxes |
+| 2 | Python + numba interval branch and bound; 742/742 proved, $5.75\cdot10^9$ nodes | Rust interval branch and bound, from the specification and the lemma only; 742/742 proved, $4.37\cdot10^9$ nodes |
+
+**Controls.** Without the local lemma, the box containing the pinwheel square is not proved, and the leaves left lie close to the pinwheel. At side $1.01\,v$ the scaled pinwheel is a genuine packing, and neither implementation's outside or overlap test discards it. A fuzz test of implementation 1's pruning tests found 0 violations in 20,000 random nodes.
+
+## 8. Status and limitations
+
+- A computer-assisted proof. It has not been peer reviewed and it has not been formalised in Lean.
+- We are not aware of a previous proof that $s(3) = (1+\sqrt3)/2$; if you know of one, please open an issue.
+- Other $n$ are not done.
+
+## Reproducibility
+
+| What | Command (from the directory named) | Time |
+|---|---|---|
+| packing (upper bound) | `python3 tools/packing_check/check_packing.py problems/hexagon/n3/packing.json`, and the same with `check_packing2.py` (repository root) | under a second |
+| checksums | `sha256sum -c SHA256SUMS` (root) | seconds |
+| local lemma | `python ll_exact.py`, `python ll_radius.py` (`n3/local_lemma/`) | seconds; the float search about 20 min |
+| stage 1, impl. 1 | `python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4` | about 7 min |
+| stage 1, impl. 2 | `python hexcheck.py ../n3/stage1_cert.json --jobs 14 --grid 8` | about 2 h 50 min |
+| stage 2, impl. 1 | `python bb_rig_batch.py --workers 16 --boxes 0-741` | about 54 core-hours |
+| stage 2, impl. 2 | `cargo build --release`, then `hexs2 --cert ../n3/stage1_cert.json --threads 16 --max-depth 80` | about 6 core-hours |
+
+A single stage-2 box is a quick test: `python bb_rig.py --box 2` (about 1.5 min) or `hexs2 --k 2 --max-depth 80` (about 30 s).
+
+## References
+
+1. E. Friedman, [Squares in Hexagons](https://erich-friedman.github.io/packing/squinhex/), Erich's Packing Center (the pinwheel packing, by Morandi).
+2. [n3/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/hexagon/n3/PROOF.md), [LOCAL_LEMMA_SHORT.md](https://github.com/wand125/square-packing/blob/main/problems/hexagon/n3/local_lemma/LOCAL_LEMMA_SHORT.md), [problems/hexagon/README.md](https://github.com/wand125/square-packing/blob/main/problems/hexagon/README.md).
+3. The specifications for the independent implementations: [SPEC_stage1.md](https://github.com/wand125/square-packing/blob/main/problems/hexagon/n3/SPEC_stage1.md), [SPEC_stage2.md](https://github.com/wand125/square-packing/blob/main/problems/hexagon/n3/SPEC_stage2.md).

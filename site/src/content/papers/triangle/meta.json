@@ -1,0 +1,50 @@
+{
+ "kicker": [
+  "Computer-assisted proofs",
+  "コンピュータ支援の証明"
+ ],
+ "title": [
+  "Unit squares in an equilateral triangle: optimal packings for \\(n = 2, 3, 4, 6, 7, 11, 16, 22, 29\\) and \\(37\\)",
+  "正三角形に入る単位正方形：\\(n = 2, 3, 4, 6, 7, 11, 16, 22, 29, 37\\) の最適な詰め方"
+ ],
+ "lead": [
+  "Exact packings give the upper bounds, and the lower bounds show that they are optimal. Each lower bound is a weighted point set checked at the container itself, checked by two independent checkers; all except n = 6 are also checked in Lean 4.",
+  "厳密な詰め方が上界を与え、下界がそれらの最適性を示す。下界はどれも容器そのもので検査する重み付きの点集合で、独立な 2 つの検査器で検査した。n = 6 以外は Lean 4 でも検査した。"
+ ],
+ "result": [
+  "\\(s_\\triangle(2) = 2 + \\tfrac{2}{\\sqrt3}\\), \\(s_\\triangle(3) = \\tfrac32 + \\sqrt3\\), \\(s_\\triangle(4) = 3 + \\tfrac{2}{\\sqrt3}\\), \\(s_\\triangle(6) = 2 + \\tfrac{4}{\\sqrt3}\\), \\(s_\\triangle(T_{m-1}+1) = m + \\tfrac{2}{\\sqrt3}\\) for \\(m = 4, \\dots, 8\\), \\(s_\\triangle(37) = 9 + \\tfrac{2}{\\sqrt3}\\)",
+  "\\(s_\\triangle(2) = 2 + \\tfrac{2}{\\sqrt3}\\)、\\(s_\\triangle(3) = \\tfrac32 + \\sqrt3\\)、\\(s_\\triangle(4) = 3 + \\tfrac{2}{\\sqrt3}\\)、\\(s_\\triangle(6) = 2 + \\tfrac{4}{\\sqrt3}\\)、\\(m = 4, \\dots, 8\\) について \\(s_\\triangle(T_{m-1}+1) = m + \\tfrac{2}{\\sqrt3}\\)、\\(s_\\triangle(37) = 9 + \\tfrac{2}{\\sqrt3}\\)"
+ ],
+ "links": [
+  [
+   "Interactive figure (n = 3)",
+   "対話型の図（n = 3）",
+   "containers.html#triangle-3"
+  ],
+  [
+   "Interactive figure (n = 6)",
+   "対話型の図（n = 6）",
+   "containers.html#triangle-6"
+  ],
+  [
+   "Code & proofs",
+   "コードと証明",
+   "https://github.com/wand125/square-packing/tree/main/problems/triangle"
+  ],
+  [
+   "Release triangle-v1",
+   "Release triangle-v1",
+   "https://github.com/wand125/square-packing/releases/tag/triangle-v1"
+  ],
+  [
+   "Issue #17",
+   "Issue #17",
+   "https://github.com/wand125/square-packing/issues/17"
+  ],
+  [
+   "Issue #4",
+   "Issue #4",
+   "https://github.com/wand125/square-packing/issues/4"
+  ]
+ ]
+}

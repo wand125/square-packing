@@ -1,0 +1,159 @@
+import DominoFamily from '../../../components/viz/DominoFamily.tsx';
+import CertificateFigure from '../../../components/viz/CertificateFigure.tsx';
+
+## 要旨
+
+$s(n)$ を、$n$ 個の重ならない単位正方形（位置・角度は自由）が入る $v \times 2v$ の長方形の最小の $v$ とする。 $s(4) = v_4$ を証明する。$v_4$ は $5x^3 + 8x^2 - 32x - 4$ の最大の実根（$v_4 \approx 1.9302833067$）である。 上界は当方の詰め方の証明書である。4 個の正方形の座標を 3 次の体で厳密に与え、独立な 2 つの詰め方の検査器で厳密に検査した。検査器は、短い辺が $5x^3 + 8x^2 - 32x - 4$ の最大の実根であることも確かめる。配置は Erich Friedman の Packing Center に載っているもの（Evert Stenlund が 2010 年 6 月に発見）で、その独自性は主張しない。 下界は重み $1/2$ の 7 点（合計 $7/2$）の集合で、長方形の中のどの閉じた単位正方形も重み $\ge 1$ を拾う。 これを体 $\mathbb Q(v_4)$ で余裕 0 のまま、独立な 2 つの検査器で厳密に検査した。コンピュータ支援の結果であり、査読は受けていない。
+
+## 1. 詰め方（上界）
+
+$R_v = [0, 2v] \times [0, v]$ とする。$\beta \approx 40.518^\circ$ を、$t = \tan(\beta/2)$ が $t^3 - 5t^2 - t + 1 = 0$ の $(0, 1)$ にある根となる角とし、$c = \cos\beta$、$s = \sin\beta$ と書く。$v = v_4$ のとき、$R_v$ の中の 4 個の正方形は
+
+- $A = [0, 1] \times [v-1, v]$ と $B = [2v-1, 2v] \times [0, 1]$（軸に平行、向かい合う角に置く）;
+- $L$：頂点が $b,\ b + (-c, s),\ b + (s, c),\ b + (s - c, s + c)$ の正方形（$b = (2c, 0)$）;
+- $U$：$L$ の中心 $(v, v/2)$ についての点対称の像。
+
+$L$ は $b$ で底辺に接する。$A$ の角 $(1, v-1)$ は $L$ の左上の辺の上にある。$L$ の右上の辺は中心を通る直線の上にあり、そこで $U$ の対応する辺と接する。 一般の角度で同じ接触を保つと 1 パラメータの詰め方の族ができ、短い辺は
+
+$$
+s(\beta) = \frac{2(\sin\beta + \cos\beta)(1 + \sin\beta)}{(\sin\beta + \cos\beta)^2 + \sin^2\beta}.
+$$
+
+その導関数は $\tan(\beta/2) \in \{0, \pm 1\}$ または $t^3 - 5t^2 - t + 1$ の根でちょうど 0 になり、$v_4 = s(\beta^*)$ が最小値である。$v_4$ の最小多項式 $5x^3 + 8x^2 - 32x - 4$ は、$x - s(t)$ と $t^3 - 5t^2 - t + 1$ の終結式である。
+
+**詰め方の証明書.** 上界は当方の詰め方の証明書 `certificates/n4/packing.json` で与える。この 4 個の正方形の座標を $\mathbb Q(t)$ で厳密に書いたものである。`tools/packing_check/` の 2 つの検査器（§6）で、どの正方形も閉じた $v_4 \times 2v_4$ の長方形に入ること、どの 2 個も内部が重ならないこと、短い辺が $5x^3 + 8x^2 - 32x - 4$ の最大の実根であることを厳密に検査した。この詰め方は Erich Friedman の Packing Center（"Squares in Dominoes"、Evert Stenlund が 2010 年 6 月に発見）に載っているもので、その独自性は主張しない。
+
+<DominoFamily lang="ja" client:visible />
+
+*§1の接触条件を保つ4個の正方形の族。βを動かして s(β) と最小値を比較し、β∗で多項式の根が定める最適角に戻る。AとBは対角の隅にあり、LとUは点対称。*
+
+<CertificateFigure cont="domino" ns="4" client:visible />
+
+*$R_{v_4}$ の中の詰め方と、証明書の 7 点（面積は重みに比例）。*
+
+## 2. 重み付きの点集合
+
+証明書は $K = \mathbb Q(v_4)$ の中にある。重み $1/2$ の点 7 個からなり、合計は $7/2$：
+
+| 点 | 重み | 役割 |
+|---|---|---|
+| $(1, v-1),\ (2v-1, v-1),\ (1, 1),\ (2v-1, 1)$ | 各 $1/2$ | 軸に平行な正方形の角（とその鏡像） |
+| $(v, v/2)$ | $1/2$ | 中心。$L$ と $U$ の接触線の上 |
+| $(v, v/2 \pm 2286/10000)$ | 各 $1/2$ | 縦の軸の上 |
+
+また 4 つの*楔*（各角の点と中心の組）も載せている（§4）。検査器は次の 2 つを示す。
+
+1. **捕捉.** $R_{v_4}$ に含まれるどの閉じた単位正方形 $Q$（位置・角度は自由）も、重みの合計 $\ge 1$ の点を含む。$Q$ の境界上の点も数える。これは容器そのもので、余裕 0 のまま検査する。
+2. **予算.** 重みの合計は $7/2 < 4$。
+
+**厳密な数.** $v_4$ は 3 次の無理数である。この 3 次式は $\mathbb Q$ 上既約で実根を 3 つもつので、$v_4$ は実数の根号では表せない。どちらの検査器も $K$ の元 $a + b v_4 + c v_4^2$ で厳密に計算し、符号は $v_4$ の有理数の分離区間を細かくして決める。
+
+## 3. 証明書から下界へ
+
+内部の交わらない 4 個の正方形 $Q_i$ が $L < v_4$ の $R_L$ に入るとする。$\lambda = v_4/L > 1$、$m = (L, L/2)$、$m' = (v_4, v_4/2)$ とおく。各正方形を回さずに動かし、中心を $c_i$ から $c_i' = m' + \lambda(c_i - m)$ へ移す。
+
+- **容器に入ること.** 角度 $\theta$ の単位正方形の半幅は $h_x, h_y \le v_4/2$。それが $R_L$ に入るのは $|c_x - L| \le L - h_x$ かつ $|c_y - L/2| \le L/2 - h_y$ のときで、そのとき $$ |c'_x - v_4| = \lambda |c_x - L| \le \lambda(L - h_x) = v_4 - \lambda h_x \le v_4 - h_x. $$ $y$ も同じなので、動かした正方形は $R_{v_4}$ に入る。
+- **交わらないこと.** 2 個について $D = (Q_i - c_i) + (c_j - Q_j)$ とおく。$D$ は内部に $0$ をもつ凸集合で、$\operatorname{int} Q_i \cap \operatorname{int} Q_j = \emptyset$ は $c_j - c_i \notin \operatorname{int} D$ を意味する。もし $\lambda(c_j - c_i) \in D$ なら、$c_j - c_i = \tfrac1\lambda \cdot \lambda(c_j - c_i) + (1 - \tfrac1\lambda)\cdot 0$ が $\operatorname{int} D$ に入って矛盾する。よって動かした閉じた正方形は互いに交わらない。
+
+動かした正方形はそれぞれ重み $\ge 1$ を拾い、共有する点はないので、重みの合計は $\ge 4$ となり $7/2 < 4$ に反する。
+
+## 4. 余裕 0 と楔の補題
+
+この詰め方では、どの正方形も必要なだけちょうど拾い、共有される点は同時に 2 個の正方形の上にある。
+
+- $A$ は $(1, v-1)$ と $(1, 1)$ を拾う。どちらも境界上;
+- $L$ は $(1, v-1)$（辺の上）、中心（辺の上）、$(v, v/2 - 2286/10000)$（内部）を拾う;
+- $U$ と $B$ は点対称の像。
+
+つまり角の点と中心が重なりを受け持つ。4 個 $\times$ 重み 1 $= 4$ だが、合計は $7/2$ しかない。
+
+この詰め方は 1 次では剛でない。$L$ と $U$ は一緒に回ることができ、重なりは $t^2$ の程度しか生じない。極値の姿勢の近くでは、正方形が拾うのは角の点か中心かで、どちらを拾うかが入れ替わる。箱の細分だけではこれを証明できない。
+
+**楔の補題（検査器 1）.** 楔 $(p, q)$ と姿勢の箱について、箱のどの姿勢も $p$ か $q$ を含む。正方形の辺の組み合わせは、点が箱の上でその辺の厳密に外側に出ないこと、または 2 つの辺の制約と容器の 1 本の直線との Farkas 結合によって、それぞれ除かれる。角の点と中心、それらに向く $L$ の隣り合う 2 辺、底辺を使うと、この結合はちょうど $v \le s(\beta)$ になり、等号は $\beta^*$ で成り立つ。臨界角
+
+$$
+u^* = \frac{-21 - 11 v_4 + 15 v_4^2}{37} \approx 0.369102
+$$
+
+は $t^3 - 5t^2 - t + 1$ の $(0, 1)$ にある根である。検査器 1 にはこれを区間の端点として渡し、恒等式 $u^{*3} - 5u^{*2} - u^* + 1 = 0$ と $s(u^*) = v_4$ を $K$ で厳密に検査した。
+
+検査器 2 はこの補題を使わない。接触は厳密な角度の掃引の臨界角として扱う（§6）。
+
+## 5. 結論
+
+§2 と §3 より、$L < v_4$ のどの $R_L$ にも 4 個の正方形は入らないので $s(4) \ge v_4$。詰め方（§1）と合わせて
+
+$$
+s(4) = v_4 \approx 1.93028330671426938847, \qquad 5v_4^3 + 8v_4^2 - 32v_4 - 4 = 0. \qquad \blacksquare
+$$
+
+## 6. 検証
+
+**上界.** 詰め方の証明書は、コードを共有しない 2 つのプログラムで検査する。どちらも厳密な計算で、容器が主張どおりの形と大きさであること、どの正方形も閉じた容器に含まれる閉じた単位正方形であること、どの 2 個も内部が重ならないこと（辺や角での接触は許す）を判定する。どちらも、生成元の最小多項式と有理数の分離区間で与えた実数の体で計算する。
+
+|  | `check_packing.py`（方法 1） | `check_packing2.py`（方法 2） |
+|---|---|---|
+| 容器に入ること | 各正方形の 4 頂点が凸の容器に入る | 面積(正方形 $\cap$ 容器) $= 1$ |
+| 重ならないこと | 分離軸：一方の正方形の辺が 2 個を弱く分ける | 面積(正方形 $\cap$ 正方形) $= 0$。Sutherland–Hodgman の厳密な切り取りで計算 |
+| 短い辺 | $193/100$ より上での Sturm の数え上げ | sympy の実根の分離 |
+| 計算 | `Fraction` 上の独自の多項式計算。標準ライブラリのみ | $\mathbb Q$ 上の sympy の多項式、mpmath の区間 |
+
+テストでは、棄却されるべき 14 個の壊した変種に両方のプログラムをかける。その中には、この詰め方の角度をわずかに変えて傾けたものも含まれる。
+
+**下界.** どちらの検査器も $L = v_4$ ちょうどで点の証明書を検証し、$L = v_4 + 10^{-6}$ の対照を棄却する。
+
+| 検査器 | 手法 |
+|---|---|
+| 1（`checker/`） | 姿勢の空間（中心の箱 $\times$ 角度の区間、$u = \tan(\theta/2)$）を細分する。捕捉は許される多角形の頂点で、$K$ 上の厳密な Bernstein の評価で検査する。長方形の $D_2$ 対称と楔の補題を使う。標準ライブラリのみ。未証明の葉が 0 のときだけ "verified" とする。 |
+| 2（`checker2/`） | 直線配置の厳密な角度の掃引を、すべての $u \in [0, 1]$ で行う。対称・楔・箱の細分は使わない。臨界角の多項式はノルムで有理数係数の多項式に移す。$u^*$ での入れ替わる接触は臨界角の 1 つで、閉包の議論（拾う重みは上半連続）で扱う。体の実装は `checker/README.md` の仕様だけから書き、検査器 1 のコードは読んでいない。3,000 個の乱択した元で 80 桁の sympy の値と照合し、不一致は 0。 |
+
+検査器 2 の実行結果（$v_4$ 未満の証明書は定理には不要で、そこに至る道筋を示す）：
+
+| 証明書 | $L$ | 点 | 合計 | 拾う重みの最小 | 臨界角 | 判定 |
+|---|---|---|---|---|---|---|
+| `below/n4_L957_500` | 1.914 | 3 | 3 | 1 | 153 | verified |
+| `below/n4_L77_40` | 1.925 | 12 | 77/20 | 11/10 | 1,167 | verified |
+| `below/n4_L1927_1000` | 1.927 | 12 | 77/20 | 11/10 | 1,171 | verified |
+| `below/n4_L9651_5000` | 1.9302 | 7 | 7/2 | 1 | 427 | verified |
+| `n4_cert` | $v_4$ | 7 | 7/2 | 1 | 1,723 | verified |
+| 対照 $v_4 + 10^{-6}$（失敗すべきもの） | $v_4 + 10^{-6}$ | 7 | 7/2 | 1/2 | 1,735 | failed（具体的な姿勢つき） |
+
+3 点の下界は $v = (1 + 2\sqrt2)/2 \approx 1.91421$ までちょうど成り立つ。それを超えると、底辺に立つ $45^\circ$ の正方形が 3 点のうち 2 点の間に入る。
+
+**対照実験.** 棄却されるべき証明書 3 つ。3 つとも想定どおり失敗した。
+
+- 同じ 7 点を $L = v_4 + 10^{-3}$ で：検査器 1 が棄却。
+- 同じ 7 点を $L = v_4 + 10^{-6}$ で：検査器 1 が棄却。検査器 2 も、厳密に確かめた姿勢 $u = 121/329$（$u^* \approx 0.3691$ のすぐ隣）で拾う重みが $1/2$ であることを示して棄却。これらの辺の長さでは余裕のある 4 個の詰め方があるので、合計 $< 4$ の証明書は成り立ちえない。
+- $L = v_4$ の証明書から楔を除いたもの：検査器 1 が棄却。極値の姿勢の近くの箱は、どの深さでも未証明のまま残る。これは数学的な失敗ではなく、検査器 1 の証明を極値の姿勢で閉じているのが楔の補題であることを示す。検査器 2 は楔を使わず、元の証明書を検証する。
+
+## 7. 状態と限界
+
+- コンピュータ支援の証明で、独立な 2 つの検査器で検査した。査読は受けておらず、Lean による形式化もしていない。
+- Friedman のページ（2026-10-01 時点）では、"Trivial" 以外の項目は詰め方だけで、証明や下界はない。$s(4) = 1.930+$ の先行する証明は把握していない。ご存じの方は Issue で知らせてほしい。
+- 検査器 1 は、角度の区間の内部にある余裕 0 の接触を証明できない。その切れ目は `--u-breaks` で与える必要がある。
+- 他の $n$ はまだ扱っていない。次の自明でない項目は $n = 9$、$s(9) = 2 + \sqrt2/3$（Stenlund 2010）。
+
+## 再現方法
+
+`problems/domino` で実行する。データファイルは Release の `certificates__n4.tar.gz` から戻す（リポジトリのルートで `tar xzf certificates__n4.tar.gz -C problems/domino`）。
+
+| 内容 | コマンド | 時間 |
+|---|---|---|
+| 検査器 1、$v_4$（Python 3.10+、標準ライブラリ） | `python checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 30 --jobs 4 --u-breaks "K[-21/37;-11/37;15/37]"` | 約 5 秒。"verified"、合計 7/2 |
+| 検査器 1、$L = 9651/5000$ | `python checker/check.py certificates/n4/below/n4_L9651_5000.json --n 4 --max-depth 44 --jobs 4` |  |
+| 証明書をバイト単位で再生成 | `python tools/make_cert.py \| cmp - certificates/n4/n4_cert.json` |  |
+| チェックサム | `(cd certificates && sha256sum -c SHA256SUMS)`（または `shasum -a 256 -c`） |  |
+| 検査器 1 のテスト（pytest が必要） | `cd checker && python -m pytest -q tests` | 約 1 分 |
+| 検査器 2、$v_4$（gmpy2 と sympy が必要） | `cd checker2 && python sweep_k.py ../certificates/n4/n4_cert.json --n 4 --jobs 4` | 約 5 分 |
+| 詰め方（上界）、方法 1 | `python ../../tools/packing_check/check_packing.py certificates/n4/packing.json` | `VALID` で終わる 1 行を出力 |
+| 詰め方、方法 2（sympy が必要） | `python ../../tools/packing_check/check_packing2.py certificates/n4/packing.json` | `VALID` で終わる 1 行を出力 |
+| 対照 $v_4 + 10^{-6}$（失敗すべきもの） | `python checker/check.py controls/control_v4_plus_1e-6.json --n 4 --max-depth 30 --jobs 4 --u-breaks "K[-21/37;-11/37;15/37]"` |  |
+
+詰め方の検査器は、失敗すると理由をつけて `INVALID` を出力する（終了コード 1）。`--json` で JSON の報告を出力する。検査器 1 は実行ごとに JSON の要約を出力し、`"status": "verified"`、証明書の sha256、厳密な重みの合計と $< n$ かどうかを含む。記録した実行は `certificates/n4/check_record.json`、`certificates/n4/below/*.check_record.json`、`checker2/results/` にある。
+
+## 参考文献
+
+1. E. Friedman, [Squares in Dominoes](https://erich-friedman.github.io/packing/squindom/), Erich's Packing Center（配置の出典。Evert Stenlund が 2010 年 6 月に発見）。
+2. [certificates/n4/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/domino/certificates/n4/PROOF.md)、[problems/domino/README.md](https://github.com/wand125/square-packing/blob/main/problems/domino/README.md)。
+3. 検査器と対照：[checker/README.md](https://github.com/wand125/square-packing/blob/main/problems/domino/checker/README.md)、[checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/domino/checker2/README.md)、[controls/README.md](https://github.com/wand125/square-packing/blob/main/problems/domino/controls/README.md)。
+4. 詰め方の証明書と検査器：[certificates/n4/packing.json](https://github.com/wand125/square-packing/blob/main/problems/domino/certificates/n4/packing.json)、[tools/packing_check/README.md](https://github.com/wand125/square-packing/blob/main/tools/packing_check/README.md)。

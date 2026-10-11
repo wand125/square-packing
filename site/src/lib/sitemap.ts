@@ -17,11 +17,11 @@ export const PAGES: Page[] = [
   { file: 'verify.html', en: 'Verify', ja: 'Verify', title: 'Checking the Certificates', group: 'out' },
   { file: 'about.html', en: 'Credits', ja: 'クレジット', title: 'Square Packing Credits', group: '' },
   { file: 'rect-player.html', en: 'Player', ja: '再生', title: 'Rectangles Player', group: '' },
-  { file: 'paper-triangle.html', en: 'Equilateral triangle', ja: '正三角形', title: 'Unit Squares in an Equilateral Triangle', group: '', preview: true },
-  { file: 'paper-domino.html', en: '1×2 rectangle, n = 4', ja: '1×2 長方形 n = 4', title: 'Four Unit Squares in a 1×2 Rectangle', group: '', preview: true },
-  { file: 'paper-right-isosceles.html', en: 'Right isosceles triangle', ja: '直角二等辺三角形', title: 'Unit Squares in a Right Isosceles Triangle', group: '', preview: true },
-  { file: 'paper-valid7.html', en: 'Valid7 and ValidTilt9', ja: 'Valid7 と ValidTilt9', title: 'Independent Checks of Valid7 and ValidTilt9', group: '', preview: true },
-  { file: 'paper-hexagon-n3.html', en: 'Hexagon, n = 3', ja: '正六角形 n = 3', title: 'Three Unit Squares in a Regular Hexagon', group: '', preview: true },
+  { file: 'paper-triangle.html', en: 'Equilateral triangle', ja: '正三角形', title: 'Unit Squares in an Equilateral Triangle', group: '' },
+  { file: 'paper-domino.html', en: '1×2 rectangle, n = 4', ja: '1×2 長方形 n = 4', title: 'Four Unit Squares in a 1×2 Rectangle', group: '' },
+  { file: 'paper-right-isosceles.html', en: 'Right isosceles triangle', ja: '直角二等辺三角形', title: 'Unit Squares in a Right Isosceles Triangle', group: '' },
+  { file: 'paper-valid7.html', en: 'Valid7 and ValidTilt9', ja: 'Valid7 と ValidTilt9', title: 'Independent Checks of Valid7 and ValidTilt9', group: '' },
+  { file: 'paper-hexagon-n3.html', en: 'Hexagon, n = 3', ja: '正六角形 n = 3', title: 'Three Unit Squares in a Regular Hexagon', group: '' },
 ];
 
 export const PREVIEW = process.env.SP_PREVIEW === '1';

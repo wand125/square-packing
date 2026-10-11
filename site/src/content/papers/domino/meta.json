@@ -1,0 +1,40 @@
+{
+ "kicker": [
+  "Computer-assisted proof",
+  "コンピュータ支援の証明"
+ ],
+ "title": [
+  "Four unit squares in a 1:2 rectangle: \\(s(4) \\approx 1.9302833\\)",
+  "1:2 の長方形に入る 4 個の単位正方形：\\(s(4) \\approx 1.9302833\\)"
+ ],
+ "lead": [
+  "The packing listed in Friedman's Packing Center (Stenlund, 2010) is optimal. Both bounds are exact certificates: a packing certificate for the upper bound and 7 weighted points for the lower bound, each checked by two independent checkers.",
+  "Friedman の Packing Center に載っている詰め方（Stenlund、2010 年）が最適である。上界・下界とも厳密な証明書で与える。上界は詰め方の証明書、下界は重み付きの 7 点で、それぞれ独立な 2 つの検査器で検査した。"
+ ],
+ "result": [
+  "\\(s(4) = v_4 \\approx 1.9302833067\\), the largest real root of \\(5x^3 + 8x^2 - 32x - 4\\)",
+  "\\(s(4) = v_4 \\approx 1.9302833067\\)（\\(5x^3 + 8x^2 - 32x - 4\\) の最大の実根）"
+ ],
+ "links": [
+  [
+   "Interactive figure",
+   "対話型の図",
+   "containers.html#domino-4"
+  ],
+  [
+   "Code & proof",
+   "コードと証明",
+   "https://github.com/wand125/square-packing/tree/main/problems/domino"
+  ],
+  [
+   "Release domino-v1",
+   "Release domino-v1",
+   "https://github.com/wand125/square-packing/releases/tag/domino-v1"
+  ],
+  [
+   "Issue #16",
+   "Issue #16",
+   "https://github.com/wand125/square-packing/issues/16"
+  ]
+ ]
+}

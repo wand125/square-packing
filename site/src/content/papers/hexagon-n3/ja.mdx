@@ -1,0 +1,119 @@
+import HexagonFlex from '../../../components/viz/HexagonFlex.tsx';
+import CertificateFigure from '../../../components/viz/CertificateFigure.tsx';
+
+## 要旨
+
+$s(n)$ を、$n$ 個の重ならない単位正方形（位置・角度は自由）を含む最小の正六角形の一辺とする。 $s(3) = (1+\sqrt3)/2$ を証明する。上界は風車形の配置の証明書で、2 つの検査器で厳密に検査した。この配置は Erich Friedman の Packing Center に載っているもので、独自性は主張しない。 風車形は 1 次では剛でないので、重み付きの点集合 1 つでは証明できない。 証明は、除外する箱 742 個をもつ第 1 段の点の証明書、風車の近くの局所補題、各箱についての第 2 段の分枝限定からなる。 各段を独立な 2 つの実装で検査した。査読は受けておらず、Lean による形式化もしていない。
+
+## 1. 風車形（上界）
+
+$H_v$ を一辺 $v$、中心 $0$、底辺が水平な正六角形、$h = v\sqrt3/2$ をその内接円半径、$V = (-v/2, -h)$ を左下の頂点、$R$ を $2\pi/3$ の回転とする。風車形は
+
+$$
+B = [-\tfrac v2, -\tfrac v2 + 1] \times [-h, -h+1], \qquad RB, \qquad R^2B.
+$$
+
+$B$ は底辺の上にあり左下の角が $V$、$R^iB$ の右上の角は $R^{i+1}B$ の上の辺の上にある。
+
+**上界の証明書.** [n3/packing.json](https://github.com/wand125/square-packing/blob/main/problems/hexagon/n3/packing.json) は、この 3 個の正方形を $\mathbb Q(\sqrt3)$ の厳密な座標で与える。[tools/packing_check/](https://github.com/wand125/square-packing/tree/main/tools/packing_check) の 2 つの検査器が、どの正方形も閉じた六角形 $H_v$ に入り、どの 2 個も内部が重ならないことを厳密な演算で判定する。一方は頂点と分離軸、もう一方は厳密な切り抜きの面積による。この配置は Friedman の Packing Center に載っているもの（Morandi）で、独自性は主張しない。
+
+<CertificateFigure cont="hexagon" ns="3" client:visible />
+
+*$H_v$ の中の風車形と、第 1 段の証明書の点 630 個（面積は重みに比例。除外する箱 742 個は描いていない）。*
+
+## 2. 閉じた正方形への帰着
+
+内部の交わらない 3 個の単位正方形が $L < v$ の $H_L$ に入るとする。中心を六角形の中心から $k = v/L$ 倍だけ外へずらす。 $Q \subseteq H_L$ の中心を $c$ とすると、$Q + (k-1)c$ の点は $k\,(q/k + (1-1/k)c)$ と書け、括弧の中は $H_L$ の点の凸結合なので $Q + (k-1)c \subseteq kH_L = H_v$。 正方形は $H_v$ の中の互いに交わらない*閉じた*単位正方形になる。よって、$H_v$ が互いに交わらない閉じた単位正方形を 3 個含まないことを示せばよい。
+
+## 3. 第 1 段：1 個は揺れの管の中にある
+
+証明書は、重みの合計が
+
+$$
+\sum w = \frac{749319}{250000} < 3
+$$
+
+の 630 個の点と、姿勢の空間（中心、$u = \tan(\theta/2)$）の簡約した範囲 $u \in [0, 1/7]$ にある*除外する箱* 742 個からなる。$D_6$ で閉じると、*揺れの曲線*（$B$ を $V$ のまわりに $[-0.03, 0.52]$ の角度だけ回したものと、その $D_6$ の像）のまわりの半径 0.03 の管を覆う。
+
+**主張.** 簡約した姿勢が除外されない $H_v$ の中の閉じた単位正方形は、重み $\ge 1$ を拾う。
+
+交わらない 3 個が拾う重みの合計は 3 未満なので、1 個は 1 未満しか拾わない。拾う重みは $D_6$ で不変なので、対称で移せば正方形 1 の姿勢はある除外する箱 $E_k$ の中にある。対照実験：除外する箱の中の許される姿勢は $495031/500000 < 1$ しか拾わないので、箱は必要である。
+
+<HexagonFlex lang="ja" client:visible />
+
+*3個の正方形を、頂点の角を固定して同じ角度だけ動かす。スライダーは第1段の揺れの区間を、D₆はその対称像を選ぶ。接触の符号付き距離は頂点と辺の直線から計算する。0の近くで、接触ごとの k/t² は −1.183013 に近づく。*
+
+## 4. 風車の近くの局所補題
+
+枠 $i$（$R^{-i}$ で回す）で、正方形 $i$ は $V + p_i + R(\varphi_i)[0,1]^2$（角のずれ $p_i$、傾き $\varphi_i$）。風車形は $p_i = 0,\ \varphi_i = 0$。
+
+**補題.** $i = 0, 1, 2$ について $|\varphi_i| \le 0.08$ かつ $|p_i| \le 0.05$ なら、3 個の閉じた正方形が $H_v$ に入り互いに交わらないことはない。風車形の $D_6$ の像についても同じ。
+
+容器に入ることから、各 $p_i$ は頂点での $120^\circ$ の楔の中にある。接触は厳密な恒等式（sympy で検査）
+
+$$
+k_i = F(\varphi_i, \varphi_{i+1}) + \big(R(\varphi_{i+1})\,n\big)\cdot p_i - \big(R(\varphi_{i+1})\,e_y\big)\cdot p_{i+1}
+$$
+
+をみたし、接触する角が他の辺の線の内側にある間は
+
+$$
+\text{(i)}\ \ k_i \le F_i + \Phi\,(|p_i| + |p_{i+1}|), \qquad \text{(ii)}\ \ \textstyle\sum k \le \sum F - \big(\tfrac{\sqrt3}{2} - 2\Phi\big) \sum |p|.
+$$
+
+傾きが等しければ（揺れ）$\sum F \le 0$、そうでなければある $F_j$ が 1 次で負になる。どちらでもある接触 $k_i \le 0$ となり、交わらないことに反する。半径の条件は厳密な有理数の計算で検査した。
+
+## 5. 第 2 段：除外する箱ごとの分枝限定
+
+除外する箱 $E_k$ ごとに、正方形 1 の姿勢が $E_k$ にあるような、$H_v$ の中の互いに交わらない閉じた単位正方形 3 個がないことを分枝限定で示す。正方形 2 と 3 はすべての姿勢をとる。節点は姿勢の箱の 3 つ組で、次のとき捨てる。
+
+- **はみ出し:** ある正方形が箱のどの姿勢でも $H_v$ からはみ出す。
+- **重なり:** 2 個の正方形がどの姿勢の組でも交わる。
+- **補題:** 不等式 (i) か (ii) からある接触 $k_i \le 0$ が出る、または 3 つの箱がすべて補題の近傍に入る。
+
+それ以外は最も大きい箱を半分に割る。演算はすべて外向きに丸めた区間で行い、$\sqrt3$ と $\pi$ は隣り合う倍精度数で挟み、除外する箱は証明書の厳密な有理数から読む。742 個の箱すべてを、残る葉 0 で証明した。
+
+## 6. 結論
+
+§3 より、$H_v$ の中の互いに交わらない閉じた単位正方形 3 個のうち 1 個はある除外する箱 $E_k$ にある。§5 より、それはどの $k$ でも起きない。よって $H_v$ はそのような 3 個を含まず、§2 より $s(3) \ge v$。風車形（§1）と合わせて
+
+$$
+s(3) = v = \frac{1+\sqrt3}{2}. \qquad \blacksquare
+$$
+
+## 7. 検証
+
+各段の 2 つ目の実装は、1 つ目のコードを読まずに書いた。
+
+| 段 | 実装 1 | 実装 2 |
+|---|---|---|
+| 1 | Bernstein の評価による $\mathbb Q(\sqrt3)$ での厳密な細分。節点 5,768 | 角度の直線配置の厳密な掃引。仕様書だけから作成。箱 58,894 |
+| 2 | Python + numba の区間分枝限定。742/742 を証明、節点 $5.75\cdot10^9$ | Rust の区間分枝限定。仕様書と補題だけから作成。742/742 を証明、節点 $4.37\cdot10^9$ |
+
+**対照実験.** 局所補題を使わないと、風車の正方形を含む箱は証明できず、残る葉は風車の近くにある。一辺 $1.01\,v$ では拡大した風車形が本当の詰め方になり、どちらの実装のはみ出し・重なりの判定もそれを捨てない。実装 1 の枝刈りの判定の乱択試験では、20,000 個の節点で違反 0。
+
+## 8. 状態と限界
+
+- コンピュータ支援の証明である。査読は受けておらず、Lean による形式化もしていない。
+- $s(3) = (1+\sqrt3)/2$ の先行する証明は把握していない。ご存じの方は Issue で知らせてほしい。
+- 他の $n$ はまだ扱っていない。
+
+## 再現方法
+
+| 内容 | コマンド（各フォルダで） | 時間 |
+|---|---|---|
+| 配置（上界） | `python3 tools/packing_check/check_packing.py problems/hexagon/n3/packing.json`、`check_packing2.py` でも同じ（リポジトリのルートで） | 1 秒未満 |
+| チェックサム | `sha256sum -c SHA256SUMS`（ルート） | 数秒 |
+| 局所補題 | `python ll_exact.py`、`python ll_radius.py`（`n3/local_lemma/`） | 数秒。浮動小数点の探索は約 20 分 |
+| 第 1 段・実装 1 | `python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4` | 約 7 分 |
+| 第 1 段・実装 2 | `python hexcheck.py ../n3/stage1_cert.json --jobs 14 --grid 8` | 約 2 時間 50 分 |
+| 第 2 段・実装 1 | `python bb_rig_batch.py --workers 16 --boxes 0-741` | 約 54 コア時間 |
+| 第 2 段・実装 2 | `cargo build --release` のあと `hexs2 --cert ../n3/stage1_cert.json --threads 16 --max-depth 80` | 約 6 コア時間 |
+
+第 2 段の箱 1 個なら短時間で試せる：`python bb_rig.py --box 2`（約 1.5 分）、`hexs2 --k 2 --max-depth 80`（約 30 秒）。
+
+## 参考文献
+
+1. E. Friedman, [Squares in Hexagons](https://erich-friedman.github.io/packing/squinhex/), Erich's Packing Center（風車形の詰め方、Morandi による）。
+2. [n3/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/hexagon/n3/PROOF.md)、[LOCAL_LEMMA_SHORT.md](https://github.com/wand125/square-packing/blob/main/problems/hexagon/n3/local_lemma/LOCAL_LEMMA_SHORT.md)、[problems/hexagon/README.md](https://github.com/wand125/square-packing/blob/main/problems/hexagon/README.md)。
+3. 独立な実装のための仕様書：[SPEC_stage1.md](https://github.com/wand125/square-packing/blob/main/problems/hexagon/n3/SPEC_stage1.md)、[SPEC_stage2.md](https://github.com/wand125/square-packing/blob/main/problems/hexagon/n3/SPEC_stage2.md)。

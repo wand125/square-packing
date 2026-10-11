@@ -1,0 +1,10 @@
+---
+import Paper from '../layouts/Paper.astro';
+import * as En from '../content/papers/hexagon-n3/en.mdx';
+import * as Ja from '../content/papers/hexagon-n3/ja.mdx';
+import meta from '../content/papers/hexagon-n3/meta.json';
+import { tex } from '../lib/tex';
+const m = { ...meta, titleHtml: meta.title.map(tex), resultHtml: '<span data-l="en">' + tex(meta.result[0]) + '</span><span data-l="ja">' + tex(meta.result[1]) + '</span>' };
+---
+<Paper file="paper-hexagon-n3.html" title="Three Unit Squares in a Regular Hexagon" meta={m}
+  En={En.default} Ja={Ja.default} headingsEn={En.getHeadings()} headingsJa={Ja.getHeadings()} />

@@ -271,13 +271,13 @@ table[data-pop] tr.pop-row td.pop-more, table[data-pop] tr.pop-row td .cell-labe
 .pp-main li { margin: 4px 0; }
 .pp-main .katex { font-size: 1.02em !important; line-height: 1.2; }
 .pp-main .katex-display { margin: 12px 0; }
-.pp-main .katex-display > .katex { font-size: 1em !important; }
+.pp-main .katex-display > .katex { font-size: 0.92em !important; }   /* long displays scroll sideways; a little smaller so fewer need to */
 .pp-main code { font-size: 12px; overflow-wrap: anywhere; word-break: break-all; }
 .pp-main h2 { font-size: 17px !important; margin: 30px 0 10px !important; }
 .pp-main table { font-size: 12.5px; line-height: 1.55; }
 .pp-head h1 { font-size: 21px !important; line-height: 1.4 !important; }
 .pp-lead { font-size: 14px; line-height: 1.7; }
-.pp-links { flex-wrap: nowrap !important; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.pp-links { flex-wrap: wrap !important; }
 .pp-links .btn { flex: 0 0 auto; min-height: 36px; padding: 4px 10px; font-size: 13px; }
 .pp-result { display: block !important; font-size: 15px !important; }
 .pp-toc { display: none !important; }
