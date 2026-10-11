@@ -78,4 +78,4 @@ Python with sympy and mpmath. Recorded run: Python 3.10.18, sympy 1.14.0, mpmath
   - `../../checker/` (exact Bernstein bounds over Q(√3));
   - `../../checker2/` (a different method; see its README, including the Independence section).
 - Not peer reviewed.
-- Not yet formalised in Lean.
+- Also proved in Lean 4 and checked by the kernel: [`lean/triangle/`](../../../../lean/triangle/) at the repository root.

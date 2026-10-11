@@ -52,4 +52,4 @@ Together they would capture weight ≥ 3 > 7/3, a contradiction. ∎
   - `../../checker/` (exact Bernstein bounds over Q(√3));
   - `../../checker2/` (a different method; see its README, including the Independence section).
 - Not peer reviewed.
-- Not yet formalised in Lean.
+- Also proved in Lean 4 and checked by the kernel: [`lean/triangle/`](../../../../lean/triangle/) at the repository root.

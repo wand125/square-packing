@@ -43,16 +43,15 @@ capture weight ≥ 37 > 36, a contradiction. ∎
   there, with margin 0.0025. The same margin appears for n = 4. With depth limit 40 the checker
   verifies the lemma.
 - **Friedman's table.** At the time of writing (2026-10-01), Erich Friedman's "Squares in Triangles"
-  page lists n = 37 with side 10.15299 (Gianluca Costantino, May 2026). This is smaller than
-  9 + 2/√3 ≈ 10.15470, so it is incompatible with the theorem above.
+  page lists n = 37 with side 10.15299 (Gianluca Costantino, May 2026).
   - The picture on that page appears to show a bottom row of nine axis-parallel squares standing on
-    the base.
-  - Nine such squares need width 9 at height 1, that is, side at least 9 + 2/√3. At side 10.15299
-    the width at height 1 is ≈ 8.998.
-  - The picture is low resolution, and we do not have the coordinates of that packing. We therefore
-    only note that the listed value is probably in error. We do not claim this as a fact.
+    the base. Nine such squares need width 9 at height 1, that is, side at least 9 + 2/√3 ≈ 10.15470.
+  - From the picture we therefore estimate the side of that packing to be at least 9 + 2/√3 ≈ 10.15470,
+    not 10.15299, and take the listed value to be a typo. We do not have the coordinates of that packing.
+  - If that packing has side 9 + 2/√3, the theorem above shows that it is optimal.
 
 ## Status
 
 - Verified by `../../checker/`. See the repository README for the second, independent checker.
+- The lower bound is also proved in Lean 4 and checked by the kernel: [`lean/triangle/`](../../../../lean/triangle/) at the repository root.
 - Not peer reviewed.

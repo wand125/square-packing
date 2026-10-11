@@ -33,8 +33,9 @@ The results are computer-assisted and checked by two independent checkers; all e
 
   We did not find a lower bound for this container. If you know of one, please open an issue.
 - For n = 37 we prove only the lower bound s△(37) ≥ 9 + 2/√3 ≈ 10.15470. Friedman's table (as of
-  2026-10-01) lists a packing of side 10.15299 for n = 37, which is incompatible with this bound.
-  See the remarks in `certificates/n37/PROOF.md`; we do not have the coordinates of that packing.
+  2026-10-01) lists 10.15299 for n = 37. From the picture on that page we estimate the side of that
+  packing to be at least 9 + 2/√3, and take the listed value to be a typo; if its side is 9 + 2/√3, this
+  bound shows that it is optimal. See `certificates/n37/PROOF.md`; we do not have its coordinates.
 
 ## The method
 
@@ -119,7 +120,7 @@ It also has the script that checks the n = 3 pinwheel packing.
 
 ## Lean
 
-`lean/` contains Lean 4 proofs of
+[`lean/triangle/`](../../lean/triangle/) at the repository root contains Lean 4 proofs of
 - `minSideTri n` for n = 2, 3, 4: `2 + 2/√3`, `3/2 + √3`, `3 + 2/√3`;
 - `minSideTri n` for n = 7, 11, 16, 22, 29: `m + 2/√3` for m = 4, …, 8;
 - the n = 37 lower bound `∀ s, PacksTri 37 s → 9 + 2/√3 ≤ s`.
@@ -129,7 +130,7 @@ All are checked by the kernel with only the standard axioms (`propext`,
 checker, proved sound in Lean once: each leaf of a box tree carries a Farkas-type certificate
 (nonnegative polynomial multipliers over Q(√3)) that the kernel checks. It covers all angles
 directly and uses neither the D3 symmetry nor Lemma P. The trusted base and the build are
-described in `lean/README.md`.
+described in `lean/triangle/README.md`.
 
 ## Not done yet
 
