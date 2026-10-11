@@ -1,6 +1,6 @@
 # s(84) >= 9411/1000 = 9.411
 
-A density certificate proving that 84 unit squares do not fit in a square of side `L = 9411/1000 = 9.411`. This exceeds our earlier certificate `mixed_n84_L94075` (9.4075) and Green's reported bound `9.2667…` (a reference value).
+A density certificate proving that 84 unit squares do not fit in a square of side `L = 9411/1000 = 9.411`. This exceeds our earlier certificate `mixed_n84_L94075` (9.4075). For reference, Nagamochi's closed form gives `9.1854…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete.
 
 This supersedes [`mixed_n84_L94075`](../mixed_n84_L94075/README.md) for `n = 84`.
 

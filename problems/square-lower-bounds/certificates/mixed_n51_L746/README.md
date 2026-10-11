@@ -1,6 +1,6 @@
 # s(51) >= 373/50 = 7.46
 
-A density certificate proving that 51 unit squares do not fit in a square of side `L = 373/50 = 7.46`. This exceeds our rectangle certificate `rect_n51_L74425` (7.4425) and Green's reported bound for k = 7, `7.3174…` (a reference value).
+A density certificate proving that 51 unit squares do not fit in a square of side `L = 373/50 = 7.46`. This exceeds our rectangle certificate `rect_n51_L74425` (7.4425). For reference, Nagamochi's closed form gives `7.1644…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete.
 
 The measure is 446 rectangles with uniform density and no point masses. The total mass is
 `5099999/100000 = 50.99999 < 51`. The setting is that of the rectangle certificates in this repository: core side

@@ -1,6 +1,6 @@
 # s(51) >= 747/100 = 7.47
 
-A density certificate proving that 51 unit squares do not fit in a square of side `L = 747/100 = 7.47`. This exceeds our earlier certificate `mixed_n51_L746` (7.46) and Green's reported bound `7.3174…` (a reference value).
+A density certificate proving that 51 unit squares do not fit in a square of side `L = 747/100 = 7.47`. This exceeds our earlier certificate `mixed_n51_L746` (7.46). For reference, Nagamochi's closed form gives `7.1644…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete.
 
 This supersedes [`mixed_n51_L746`](../mixed_n51_L746/README.md) for `n = 51`.
 

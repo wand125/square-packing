@@ -1,0 +1,30 @@
+{
+ "schema": "asset/v1",
+ "id": "rectangles-v1:certificates",
+ "claim": "For each piece of the edges F_k (k = 2..15) listed in data/edges, the certificates pack k non-overlapping unit squares in the stated a × b box. Constructions only; no optimality claim.",
+ "release_tag": "rectangles-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/rectangles-v1",
+ "assets": [
+  {
+   "asset": "certificates.tar.gz",
+   "size": 40002,
+   "sha256": "76e6c2ace12f97f8be83329204bb2d27f5c4a8075ce86bc3cd5ff957e6833c7a"
+  }
+ ],
+ "unpack": "tar xzf certificates.tar.gz -C problems/rectangles",
+ "unpack_note": "run from the repository root; restores certificates/ and SHA256SUMS next to the documents",
+ "check": "sha256sum -c SHA256SUMS\npython checker/check_all.py",
+ "check_cwd": "problems/rectangles",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [
+  "problems/rectangles/README.md",
+  "problems/rectangles/FORMAT.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing",
+  "commit": null,
+  "path": "problems/rectangles",
+  "published_after": "27ed16885a3ac64c2a22c992f5375574ccf3ff16"
+ }
+}

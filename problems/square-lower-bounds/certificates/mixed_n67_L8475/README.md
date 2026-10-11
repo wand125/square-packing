@@ -1,6 +1,6 @@
 # s(67) >= 339/40 = 8.475
 
-A density certificate proving that 67 unit squares do not fit in a square of side `L = 339/40 = 8.475`. This exceeds our rectangle certificate `rect_n67_L8455` (8.455) and Green's reported bound `8.2900…` (a reference value).
+A density certificate proving that 67 unit squares do not fit in a square of side `L = 339/40 = 8.475`. This exceeds our rectangle certificate `rect_n67_L8455` (8.455). For reference, Nagamochi's closed form gives `8.2111…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete.
 
 The measure is 485 rectangles with uniform density and no point masses. The total mass is
 `6699999/100000 = 66.99999 < 67`. The setting is that of the rectangle certificates in this repository: core side
