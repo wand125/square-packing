@@ -1,0 +1,10 @@
+---
+// Kept available as in home.py; the current reference home does not display this map.
+import {resultsMap, CONT} from '../../lib/results';
+import T from '../ui/T.astro';
+import {url} from '../../lib/sitemap';
+const {nmax, containers} = resultsMap();
+const cw = 6, ch = 16, width = (nmax+1)*cw, height = containers.length*(ch+4);
+---
+<div class="rmap"><div class="rm-l" style="padding-top:16px">{containers.map(c => <div style="height:16px"><T en={CONT[c.cont][0]} ja={CONT[c.cont][1]}/></div>)}</div><div class="rm-f"><div class="rm-n">{Array.from({length:Math.floor(nmax/10)},(_,i) => (i+1)*10).map(n => <span style={`left:${((n*cw+cw/2)/width*100).toFixed(2)}%`}>{n}</span>)}</div><svg viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none" style={`height:${height}px`}>{containers.map((c,j) => <><rect x={cw} y={j*(ch+4)} width={width-cw} height={ch} class="rm-bg"/>{c.cells.map(r => <a href={url('results.html')+'?cont='+c.cont}><rect x={r.n*cw} y={j*(ch+4)} width={cw-1} height={ch} class={r.exact ? 'rm-ex' : 'rm-lb'}><title>{r.short}</title></rect></a>)}</>)}</svg></div></div>
+<p class="rm-keys"><span class="rm-key"><i class="rm-ex"/><T en="optimal value proved" ja="最適値を証明"/></span><span class="rm-key"><i class="rm-lb"/><T en="lower bound with a certificate" ja="証明書付きの下界"/></span><span class="rm-key"><i class="rm-bg"/><T en="no result" ja="結果なし"/></span><span class="dim">n = 1 … {nmax}</span></p>

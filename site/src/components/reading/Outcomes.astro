@@ -1,0 +1,12 @@
+---
+import Section from '../ui/Section.astro';
+import DataTable from '../ui/DataTable.astro';
+import {readEditorial} from '../../lib/data';
+import {a, bi, bd, esc, row, cell, paperLink} from '../../lib/reading';
+import {url} from '../../lib/sitemap';
+import {pageDescriptions} from '../../lib/page-list';
+const themes = [...readEditorial('themes.json').themes].sort((a,b) => Number(a.state === 'open') - Number(b.state === 'open'));
+const themeRows = themes.map(t => row([cell(a(t.url, '#' + t.issue),'num'), cell(`<span class="st${t.state === 'open' ? '' : ' ex'}">${t.state === 'open' ? bi('open','進行中') : bi('closed','完了')}</span>`,'nw'), cell(paperLink(t.issue, bd(t.title))),cell(esc(t.updated || ''),'num dim')])).join('');
+const pageRows = pageDescriptions.filter(p => p.group === 'out').map(p => row([cell(a(url(p.file),bi(p.en,p.ja)),'nw'),cell(bi(p.descEn,p.descJa))])).join('');
+---
+<div class="home"><Section en="Themes (tracking issues)"><DataTable headers={['Issue',bi('State','状態'),bi('Theme','テーマ'),bi('Updated','更新')]} rows={themeRows} headless/></Section><Section en="Pages"><DataTable headers={['', '']} rows={pageRows} headless/></Section></div>

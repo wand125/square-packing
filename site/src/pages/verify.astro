@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import Lede from '../components/ui/Lede.astro';
+import Section from '../components/ui/Section.astro';
+import DataTable from '../components/ui/DataTable.astro';
+import {readEditorial} from '../lib/data';
+import {bi,bc,a,esc,BLOB,row,cell,sourceLinks} from '../lib/reading';
+import {GH} from '../lib/sitemap';
+const d = readEditorial('verify.json');
+const steps = d.steps.map((s,i) => row([cell(String(i+1),'num'),cell(bc(s)),cell(s.cmd ? `<pre>${esc(s.cmd)}</pre>` : ''),cell(sourceLinks(s.source),'links')])).join('');
+const tools = d.tools.map(t => row([cell(a(BLOB+t.path,`<code>${esc(t.path)}</code>`),'nw'),cell(bc(t.what)),cell(esc(t.runtime || ''),'nw dim'),cell(sourceLinks(t.source),'links')])).join('');
+const req = d.requirements.map(r => row([cell(`<code>${esc(r.tool)}</code>`),cell(bc(r)),cell(sourceLinks(r.source),'links')])).join('');
+const rel = d.releases.map(r => row([cell(a(`${GH}/releases/tag/${r.tag}`,`<code>${esc(r.tag)}</code>`),'nw'),cell(esc(r.name || '')),cell(esc(r.date || ''),'num dim')])).join('');
+---
+<Base file="verify.html" title="Checking the Certificates">
+<Section en="Checking one certificate" ja="証明書 1 件の検算">
+<Lede en="Find each certificate’s check command, folder and asset names in Results or INDEX.json." ja="各証明書の検算コマンド・実行場所・資産名は、結果のページと INDEX.json にある。"><p class="note" set:html={bi('The check command, its folder and the asset names of each certificate are in its row on the Results page and in INDEX.json.','各証明書の検算のコマンド・実行場所・資産の名前は、結果のページの行と INDEX.json にある。')}/></Lede>
+<DataTable headers={['#',bi('Step','手順'),bi('Command','コマンド'),bi('Source','記述の元')]} rows={steps} class="wide"/>
+</Section>
+<Section en="Checkers, tools and Lean projects" ja="検査器・道具・Lean のプロジェクト"><DataTable headers={[bi('Folder','フォルダ'),bi('What it does','内容'),bi('Runtime','実行環境'),bi('Source','記述の元')]} rows={tools} class="wide"/></Section>
+<Section en="Requirements" ja="必要なもの"><DataTable headers={[bi('Folder','フォルダ'),bi('Requirement','内容'),bi('Source','記述の元')]} rows={req} class="wide"/></Section>
+<Section en="Releases" ja="Release"><DataTable headers={[bi('Tag','タグ'),bi('Name','名前'),bi('Date','日付')]} rows={rel}/></Section>
+<Section en="n = 17"><ul class="tight">{(d.n17 || []).map(x => <li set:html={bc(x)}/>)}</ul></Section>
+</Base>

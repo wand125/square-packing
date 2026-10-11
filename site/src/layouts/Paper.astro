@@ -1,0 +1,29 @@
+---
+// A paper page: header block (kicker, title, lead, links, result), contents, then the text in both languages.
+// The English and Japanese texts are separate MDX files; their headings make the contents.
+import Base from './Base.astro';
+import T from '../components/ui/T.astro';
+import '../styles/paper.css';
+const { file, title, meta, En, Ja, headingsEn, headingsJa } = Astro.props;
+const hj = headingsJa.filter((x) => x.depth === 2);
+const toc = headingsEn.filter((h) => h.depth === 2).map((h, i) => ({ en: h, ja: hj[i] || h }));
+---
+<Base file={file} title={title} katex>
+<div class="paper">
+  <details class="pp-toc" open><summary class="dim"><T en="Contents" ja="目次" /></summary>
+    <ol>{toc.map((t) => <li><a data-l="en" href={'#' + t.en.slug}>{t.en.text}</a><a data-l="ja" href={'#' + t.ja.slug}>{t.ja.text}</a></li>)}</ol></details>
+  <article class="pp-main">
+    <header class="pp-head">
+      <div class="pp-kicker dim"><span data-l="en" set:html={meta.kicker[0]} /><span data-l="ja" set:html={meta.kicker[1]} /></div>
+      <h1><span data-l="en" set:html={meta.titleHtml[0]} /><span data-l="ja" set:html={meta.titleHtml[1]} /></h1>
+      <p class="pp-lead"><span data-l="en">{meta.lead[0]}</span><span data-l="ja">{meta.lead[1]}</span></p>
+      <div class="pp-meta dim">wand125</div>
+      <div class="pp-links">{meta.links.map((l) => <a class="btn" href={l[2]}><T en={l[0]} ja={l[1]} /></a>)}</div>
+      <div class="pp-result" set:html={meta.resultHtml} />
+    </header>
+    <div data-l="en"><En /></div>
+    <div data-l="ja"><Ja /></div>
+  </article>
+</div>
+<script is:inline>if (window.matchMedia('(max-width: 900px)').matches) document.querySelector('.pp-toc').open = false;</script>
+</Base>

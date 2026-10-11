@@ -1,0 +1,5 @@
+---
+interface Props { exact?: boolean }
+const {exact = false} = Astro.props;
+---
+<span class:list={['st', {ex: exact}]}><slot /></span>

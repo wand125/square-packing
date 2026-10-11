@@ -1,0 +1,12 @@
+.explain .cv-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+.explain .cv-fig, .explain .cv-side { min-width: 0; }
+.explain canvas { display: block; max-width: 100%; }
+.explain .cv-r { display: flex; align-items: center; gap: 12px; }
+.explain input[type=range] { flex: 1; min-width: 0; min-height: 44px; }
+.explain button { min-height: 44px; }
+.explain .links-inline { overflow-wrap: anywhere; }
+@media (max-width: 900px), (pointer: coarse) {
+ .explain .cv-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+ .explain dl.kv { grid-template-columns: minmax(0, 1fr); }
+ .explain dl.kv dd { margin-bottom: 8px; }
+}

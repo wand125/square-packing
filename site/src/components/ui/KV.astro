@@ -1,0 +1,5 @@
+---
+interface Props { items?: {key: string; value: string}[] }
+const {items} = Astro.props;
+---
+<dl class="kv">{items ? items.map(item => <><dt set:html={item.key} /><dd set:html={item.value} /></>) : <slot />}</dl>

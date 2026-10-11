@@ -1,0 +1,17 @@
+---
+import {esc} from '../../lib/reading';
+interface Props { headers: string[]; rows: string; id?: string; class?: string; sorts?: string[]; headless?: boolean }
+const {headers, rows, id, class: cls = '', sorts = [], headless = false} = Astro.props;
+// Labels are emitted at build time, so the phone cards work even without JavaScript.
+const labelled = rows.replace(/<tr\b([^>]*)>([\s\S]*?)<\/tr>/g, (_, attrs, body) => {
+ let i = 0;
+ return `<tr${attrs}>${body.replace(/<td\b([^>]*)>/g, (_: string, attrs: string) => {
+ const label = headers[i++] || '';
+ return `<td${attrs}>${!attrs.includes('colspan') ? `<span class="cell-label" aria-hidden="true">${label}</span>` : ''}`;
+ })}</tr>`;
+});
+---
+<div class="wrap"><table class:list={['data-table', cls]}>
+{!headless && <thead><tr>{headers.map((h, i) => <th class={sorts[i] ? 'sort' : undefined} data-sort={sorts[i] || undefined} set:html={h} />)}</tr></thead>}
+<tbody id={id} set:html={labelled} />
+</table></div>

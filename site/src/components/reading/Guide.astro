@@ -1,0 +1,16 @@
+---
+import Card from '../ui/Card.astro';
+import Section from '../ui/Section.astro';
+import T from '../ui/T.astro';
+import {readFigure} from '../../lib/data';
+import {pageDescriptions} from '../../lib/page-list';
+import {certificateFigure, rectanglesFigure, containersFigure, thumb} from '../../lib/figures';
+import {url, PAGES, PREVIEW} from '../../lib/sitemap';
+const papers = PAGES.filter(p => p.file.startsWith('paper-') && (PREVIEW || !p.preview));
+const figures: Record<string, () => string> = {'certificate.html': certificateFigure, 'rect-regions.html': rectanglesFigure, 'containers.html': containersFigure};
+---
+<div class="home">
+<Section en="Pages"><div class="gcards">{pageDescriptions.filter(p => p.group === 'exp').map(p => <Card href={url(p.file)}><span class="gc-t"><T en={p.en} ja={p.ja}/></span><span class="gc-f" set:html={figures[p.file]?.() || ''}/><span class="gc-d"><T en={p.descEn} ja={p.descJa}/></span></Card>)}</div></Section>
+{papers.length > 0 && <Section en="Papers" ja="論文"><div class="gcards">{papers.map(p => <Card href={url(p.file)}><span class="gc-t"><T en={p.en} ja={p.ja}/></span><span class="gc-d"><T en={p.title} ja={p.ja}/></span></Card>)}</div></Section>}
+<Section en="Optimal packings in other containers" ja="正方形以外の容器の最適な詰め方"><div class="thumbs">{readFigure('containers.json').filter(it => it.packing?.length).map(it => <a class="th" href={url('containers.html') + `#${it.cont}-${it.n}`}><Fragment set:html={thumb(it)}/><span class="num">{it.claim}</span></a>)}</div></Section>
+</div>

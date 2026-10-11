@@ -1,0 +1,42 @@
+---
+import T from './ui/T.astro';
+---
+<p class="note"><T en={"Three steps of the square-container certificates, each drawn from a published certificate. The certificates themselves can be explored on the Certificate page."} ja={"正方形の容器の証明書の 3 つの段階を、公開済みの証明書から描く。証明書そのものは「証明書の中身」のページで見られる。"} />
+ <a href="certificate.html"><T en={"Certificate"} ja={"証明書の中身"} /></a> · <a href="containers.html"><T en={"Other containers"} ja={"正方形以外の容器"} /></a> · <a href="methods.html"><T en={"Methods"} ja={"手法"} /></a></p>
+
+<h2><T en={"1. Finitely many directions: the core square"} ja={"1. 有限個の角度：芯の正方形"} /></h2>
+<div class="cv" id="ex-net"><div class="cv-grid">
+<div class="cv-fig"><canvas aria-label="net lemma"></canvas></div>
+<div class="cv-side">
+<p><T en={"A unit square can have any angle, but the covering condition is checked only at the net directions θ_r = 2 arctan t_r, t_r = 83r/40000 (r = 0 … 200), with a core of side B = 9977/10000 instead of the unit square. For a unit square at angle α, the core with the same centre turned to the nearer net endpoint θ_r differs in angle by d with tan d ≤ D = 83/40000, and reaches at most (B/2)(cos d + sin d) ≤ (B/2)(1 + D) < 1/2 from the centre along the unit square's own axes. So the core lies inside the unit square."} ja={"単位正方形の角度は自由だが、被覆の条件は網の角度 θ_r = 2 arctan t_r、t_r = 83r/40000（r = 0 … 200）だけで、単位正方形の代わりに辺 B = 9977/10000 の芯で検査する。角度 α の単位正方形に対し、同じ中心で近い方の網の端 θ_r に向けた芯は、角度の差 d が tan d ≤ D = 83/40000 で、単位正方形の軸に沿って中心から高々 (B/2)(cos d + sin d) ≤ (B/2)(1 + D) < 1/2 しか届かない。よって芯は単位正方形の内側にある。"} /></p>
+<label class="cv-r">α <input type="range" min="0" max="45" step="0.001" value="17.3"></label>
+<dl class="kv"><dt>r</dt><dd class="num" data-o="r"></dd><dt>θ_r</dt><dd class="num" data-o="th"></dd><dt>d = α − θ_r</dt><dd class="num" data-o="d"></dd>
+<dt><T en={"Reach of the core"} ja={"芯の届く距離"} /></dt><dd class="num" data-o="reach"></dd></dl>
+<p class="note"><T en={"Left: the unit square (grey) and the core (green). Right: the unit square's corner in its own frame, magnified."} ja={"左：単位正方形（灰）と芯（緑）。右：単位正方形の角を、その正方形の向きで拡大したもの。"} /></p>
+<p class="links-inline"><a href="https://github.com/wand125/square-packing/blob/main/problems/square-lower-bounds/docs/lower-bounds.md#L60-L106">lower-bounds.md §2</a> · <a href="https://github.com/wand125/square-packing/blob/main/problems/square-lower-bounds/docs/lower-bounds.md#L108-L128">§3</a></p>
+</div></div></div>
+
+<h2><T en={"2. Checking one direction: branch and bound on centres"} ja={"2. 1 つの角度の検査：中心の分枝限定"} /></h2>
+<div class="cv" id="ex-bb"><div class="cv-grid">
+<div class="cv-fig"><canvas aria-label="branch and bound"></canvas></div>
+<div class="cv-side">
+<p><T en={"At a fixed direction the centre of the core ranges over a two-dimensional region. For a box of centres, an atom is covered by every centre in the box exactly when four linear inequalities hold, so they are checked at the box's corners. If the atoms covered throughout the box weigh at least 1, the box is discharged; otherwise it is split along its longer side. A box that reaches side 10⁻⁷ is a failure."} ja={"角度を固定すると、芯の中心は 2 次元の範囲を動く。中心の箱について、ある点が箱のどの中心でも覆われるのは 4 つの線形の不等式が成り立つときに限るので、箱の角で調べる。箱全体で覆われる点の重みが 1 以上なら箱は片づき、そうでなければ長い辺で 2 つに分ける。辺が 10⁻⁷ に達した箱は失敗。"} /></p>
+<p class="note"><T en={"Here in the browser on cert_n29_L557 (s(29) ≥ 557/100, 748 atoms), in floating point, over the centres where a unit square at angle θ_r fits. Darker green: deeper boxes. The published sweep uses exact margins and all 201 directions."} ja={"ここではブラウザで cert_n29_L557（s(29) ≥ 557/100、748 点）について、角度 θ_r の単位正方形が入る中心の範囲を浮動小数点で調べる。濃い緑ほど深い箱。公開した検査は厳密な余裕つきで 201 の角度すべてを調べている。"} /></p>
+<label class="cv-r">r <input type="range" min="0" max="200" step="1" value="120"></label>
+<p><button type="button"><T en={"Run this direction"} ja={"この角度で実行"} /></button></p>
+<dl class="kv"><dt><T en={"Direction"} ja={"角度"} /></dt><dd class="num" data-o="r"></dd><dt><T en={"Boxes examined"} ja={"調べた箱"} /></dt><dd class="num" data-o="seen"></dd>
+<dt><T en={"Discharged"} ja={"片づいた箱"} /></dt><dd class="num" data-o="done"></dd><dt><T en={"Failures"} ja={"失敗"} /></dt><dd class="num" data-o="fail"></dd>
+<dt><T en={"Deepest split (smallest box)"} ja={"最も深い分割（最小の箱）"} /></dt><dd class="num" data-o="depth"></dd><dt><T en={"State"} ja={"状態"} /></dt><dd data-o="state"></dd></dl>
+<p class="links-inline"><a href="https://github.com/wand125/square-packing/blob/main/problems/square-lower-bounds/docs/lower-bounds.md#L130-L158">lower-bounds.md §4</a></p>
+</div></div></div>
+
+<h2><T en={"3. The k² − c lift: s(77) = 9 from s(60) = 8"} ja={"3. k² − c の持ち上げ：s(60) = 8 から s(77) = 9"} /></h2>
+<div class="cv" id="ex-lift"><div class="cv-grid">
+<div class="cv-fig"><canvas aria-label="s(77) cover"></canvas>
+<label><input type="checkbox" checked> <T en={"inserted band"} ja={"挿入した帯"} /></label></div>
+<div class="cv-side">
+<p><T en={"Evan Daniel's mixed cover for s(60) = 8 lives on [0, 8]². Cut at 4 in both coordinates: coordinates below 4 stay, those above move by +1. Each of the four corner blocks of [0, 9]² then carries a translate of the old measure, so a unit square that does not meet the cross-shaped band ([4, 5] × [0, 9]) ∪ ([0, 9] × [4, 5]) inherits its capture."} ja={"Evan Daniel の s(60) = 8 の混合の被覆は [0, 8]² 上にある。両方の座標を 4 で切り、4 未満はそのまま、4 より大きい座標は +1 動かす。すると [0, 9]² の 4 つの角のブロックはそれぞれ元の測度の平行移動になり、十字の帯 ([4, 5] × [0, 9]) ∪ ([0, 9] × [4, 5]) に触れない単位正方形は元の捕捉をそのまま受け継ぐ。"} /></p>
+<p><T en={"Unit squares that meet the band need extra mass: a D4-symmetric measure of about 16.43 (about 8.08 in points and 8.34 in segments on integer lattice lines). The result has 28,273 points and 6,420 segments with total mass 76.99998… < 77, and Evan Daniel's checkers accept it."} ja={"帯に触れる単位正方形には質量を足す：D4 対称な測度で約 16.43（点で約 8.08、整数の格子線上の線分で約 8.34）。できた被覆は点 28,273 個と線分 6,420 本、総質量 76.99998… < 77 で、Evan Daniel の検査器が受理する。"} /></p>
+<p class="note"><T en={"Dots: points (area proportional to mass). Lines: segments. Shaded: the inserted band."} ja={"点：点の質量（面積が質量に比例）。線：線分。網かけ：挿入した帯。"} /></p>
+<p class="links-inline"><a href="https://github.com/wand125/square-packing/blob/main/problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md#L41-L60">k2m4_n77_L9/README.md</a> · <a href="https://github.com/wand125/square-packing/blob/main/problems/square-lower-bounds/README.md#L507-L537">square-lower-bounds/README.md</a></p>
+</div></div></div>

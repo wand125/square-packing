@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import Lede from '../components/ui/Lede.astro';
+import DataTable from '../components/ui/DataTable.astro';
+import {readEditorial, type Theme} from '../lib/data';
+import {results, resultOrder, CONT, METH} from '../lib/results';
+import {a, bi, esc, cell, term} from '../lib/reading';
+import {GH,url} from '../lib/sitemap';
+const all = results(), themes: Record<string, Theme[]> = {};
+for (const t of readEditorial('themes.json').themes) for (const tag of new Set([...JSON.stringify(t).matchAll(/releases\/tag\/([\w/.\-]+)/g)].map(m => m[1]).concat(t.releases || []))) (themes[tag] ||= []).push(t);
+const rows = readEditorial('verify.json').releases.map(rel => {
+ const tag = rel.tag, items = all.filter(r => r.rel === tag || r.rel_url?.endsWith('/'+tag)).sort(resultOrder);
+ const conts = Object.keys(CONT).filter(c => items.some(r => r.cont === c)), meth: Record<string,number> = {};
+ for (const r of items) meth[r.meth] = (meth[r.meth] || 0)+1;
+ const summ = Object.entries(meth).sort((a,b) => b[1]-a[1]).map(([m,k]) => bi(...METH[m])+' '+k).join(', ') || '–';
+ const lst = items.map(r => `<li><span class="num">${esc(r.short)}</span> <span class="dim">${bi(...CONT[r.cont])}</span>${r.best ? '' : ` <span class="dim">(${bi('superseded','更新済み')})</span>`}</li>`).join('');
+ return `<tr class="r" data-n="0">${cell(a(`${GH}/releases/tag/${tag}`,`<code>${esc(tag)}</code>`),'nw')}${cell(esc(rel.name || ''))}${cell(esc(rel.date || ''),'num dim')}${cell((themes[tag] || []).map(t => a(t.url,'#'+t.issue)).join(' ') || '–','nw')}${cell(conts.map(c => bi(...CONT[c])).join(', ') || '–','nw')}${cell(String(items.length || '–'),'num')}${cell(String(items.filter(r => r.best).length || '–'),'num')}</tr><tr class="x" hidden><td colspan="7"><dl class="kv">${items.length ? term(bi('Methods','手法'),summ)+term(bi('Results','結果'),a(url('results.html')+`?q=${tag}&best=0`,bi('open in the Results table','結果の表で開く'))+`<ul class="tight rel-list">${lst}</ul>`) : term(bi('Contents','内容'),esc(rel.name || ''))}</dl></td></tr>`;
+}).join('');
+---
+<Base file="releases.html" title="Square Packing Releases">
+<Lede en="Published releases, newest first. Click a row for its results." ja="公開済みの Release（新しい順）。行を押すと含まれる結果が出る。"><p class="note" set:html={bi('The published releases of wand125/square-packing, newest first. Click a row for the results it carries; the counts come from INDEX.json and the n = 17 manifest.','wand125/square-packing の公開済みの Release（新しい順）。行を押すと含まれる結果が出る。件数は INDEX.json と n = 17 の manifest から。')}/></Lede>
+<div class="bar" data-filterbar="rl"><input type="search" data-key="q" id="r-q" data-ph-en="filter text" data-ph-ja="文字で絞り込み" aria-label="filter"/><span class="count" aria-live="polite"/></div>
+<DataTable headers={[bi('Tag','タグ'),bi('Name','名前'),bi('Date','日付'),bi('Theme','テーマ'),bi('Containers','容器'),bi('Certificates and proofs','証明書と証明'),bi('Best for their n','n ごとの最良')]} rows={rows} id="rl" class="wide"/>
+<script>import '../scripts/reading';</script>
+</Base>

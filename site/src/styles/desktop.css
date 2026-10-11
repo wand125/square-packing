@@ -1,0 +1,29 @@
+/* Desktop design (wider than a phone). */
+.topbar { padding: 6px 16px; border-bottom: 1px solid var(--line); background: var(--bg); }
+.topbar .row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; padding: 1px 0; }
+.topbar .site { font-weight: 600; color: var(--fg); }
+.topbar .tools { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.topbar .label { width: 82px; font-size: 11px; color: var(--fg2); text-transform: uppercase; letter-spacing: .06em; }
+.topbar nav a.cur { color: var(--acc); }
+.tabbar { display: none; }
+main { padding: 8px 16px 32px; }
+
+/* Dense reading tables, matching the Python site. */
+.lede-s { display: none; }
+.lede-l { display: block; }
+table.wide { min-width: 900px; }
+table.methods-table { table-layout: fixed; min-width: 1100px; }
+.methods-table th:nth-child(1) { width: 14%; }
+.methods-table th:nth-child(2) { width: 27%; }
+.methods-table th:nth-child(3) { width: 12%; }
+.methods-table th:nth-child(4) { width: 27%; }
+.methods-table th:nth-child(5), .methods-table th:nth-child(6) { width: 10%; }
+.methods-table td.links a { white-space: normal; overflow-wrap: anywhere; }
+
+table.credits-table { table-layout: fixed; }
+.credits-table th:nth-child(1) { width: 22%; }
+.credits-table th:nth-child(2) { width: 55%; }
+.credits-table th:nth-child(3) { width: 23%; }
+.credits-table td { overflow-wrap: anywhere; }
+.credits-table td.links a { white-space: normal; }
+ul.rel-list { max-height: 22em; overflow: auto; margin-top: 4px; columns: 2 22em; }

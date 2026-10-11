@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import Lede from '../components/ui/Lede.astro';
+import DataTable from '../components/ui/DataTable.astro';
+import Section from '../components/ui/Section.astro';
+import {readEditorial} from '../lib/data';
+import {bi, bc, a, esc, cell, term} from '../lib/reading';
+import {GH} from '../lib/sitemap';
+const themes = readEditorial('themes.json').themes;
+const headers = ['Issue',bi('State','状態'),bi('Theme','テーマ'),bi('Goal','目指すもの'),bi('Updated','更新')];
+const rows = (state: string) => themes.filter(t => t.state === state).map(t => {
+ const done = (t.done || []).map(x => `<li>${bc(x)}</li>`).join(''), wo = (t.working_on || []).map(x => `<li>${bc(x)}</li>`).join('');
+ const links = (t.links || []).map(l => a(l.url,esc(l.label))).join(''), rels = (t.releases || []).map(r => a(`${GH}/releases/tag/${r}`,`<code>${esc(r)}</code>`)).join('');
+ return `<tr class="r" data-state="${state}" data-n="0">${cell(a(t.url,'#'+t.issue),'num')}${cell(`<span class="st${state === 'closed' ? ' ex' : ''}">${state === 'open' ? bi('open','進行中') : bi('closed','完了')}</span>`,'nw')}${cell(`<b>${bc(t.title)}</b>`)}${cell(bc(t.goal))}${cell(esc(t.updated || ''),'num dim')}</tr><tr class="x" hidden><td colspan="5"><dl class="kv">${term(bi('Method','方法'),bc(t.method))}${done ? term(bi('Done','済んだ段階'),`<ul class="tight">${done}</ul>`) : ''}${wo ? term(bi('Working on','取り組み中'),`<ul class="tight">${wo}</ul>`) : ''}${links ? term(bi('Links','リンク'),`<span class="links">${links}</span>`) : ''}${rels ? term('Release',`<span class="links">${rels}</span>`) : ''}</dl></td></tr>`;
+}).join('');
+---
+<Base file="themes.html" title="Square Packing Themes">
+<Lede en="The tracking issues of wand125/square-packing. Click a row for details." ja="wand125/square-packing の追跡用 Issue。行を押すと詳細が出る。"><p class="note" set:html={bi('The tracking issues of wand125/square-packing (label theme). Click a row for the method, completed stages and links.','wand125/square-packing の追跡用 Issue（ラベル theme）。行を押すと方法・済んだ段階・リンクが出る。')}/></Lede>
+<Section en="Completed" ja="完了"><DataTable headers={headers} rows={rows('closed')} class="wide"/></Section>
+<Section en="Working on" ja="取り組み中"><DataTable headers={headers} rows={rows('open')} class="wide"/></Section>
+<script>import '../scripts/reading';</script>
+</Base>

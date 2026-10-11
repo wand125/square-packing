@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import Lede from '../components/ui/Lede.astro';
+import DataTable from '../components/ui/DataTable.astro';
+import T from '../components/ui/T.astro';
+import {results, resultOrder, CONT, METH, KIND} from '../lib/results';
+import {readEditorial, type ResultNote} from '../lib/data';
+import {bi, bd, esc, a, BLOB, cell, term} from '../lib/reading';
+import {GH} from '../lib/sitemap';
+const all = results().sort(resultOrder), nbest = all.filter(r => r.best).length;
+const notes: Record<string, ResultNote> = {};
+for (const m of readEditorial('methods.json').rows) for (const [id,note] of Object.entries(m.result_notes || {})) notes[id] = {...note, review_status: m.review_status};
+const rows = all.map(r => {
+ const relurl = r.rel_url || (r.rel ? `${GH}/releases/tag/${r.rel}` : '');
+ const rel = relurl ? a(relurl,esc(r.rel || 'release')) : bi('in git','git 内');
+ const docs = r.docs.slice(0,2).map(d => a(BLOB+d,esc(d.split('/').length < 4 ? d.split('/').at(-1) : d.split('/').slice(-2).join('/')))).join('');
+ const note = notes[r.id];
+ const summary = `<span class="result-desktop">${bi(...CONT[r.cont])}</span><span class="result-phone"><span class="result-line"><span class="result-bound">${esc(r.short)}</span> · <span class="result-container">${bi(...CONT[r.cont])}</span> · <span class="st">${bi(...KIND[r.kind])}</span></span><span class="result-line secondary">${bi(...METH[r.meth])} · ${esc(r.rel || (r.rel_url ? 'release' : 'git'))}</span></span>`;
+ const consequence = note ? term(bi('Consequence in the source','原典での帰結'),bd(note.consequence)+' '+bd(note.review_status)+' '+a(BLOB+note.source,'README · '+bi('statement and status','主張と検証状況'))) : '';
+ return `<tr class="r${r.best ? '' : ' old'}" data-cont="${r.cont}" data-meth="${r.meth}" data-best="${r.best ? '1' : ''}" data-kind="${r.kind}" data-n="${r.n}" data-v="${r.v.toFixed(6)}">${cell(summary,'nw')}${cell(String(r.n),'num')}${cell(esc(r.short),'num')}${cell(`<span class="st ${r.kind === 'exact' ? 'ex' : ''}">${bi(...KIND[r.kind])}</span>`,'nw')}${cell(bi(...METH[r.meth]),'nw dim')}${cell(rel,'links')}${cell(docs,'links')}</tr><tr class="x" hidden><td colspan="7"><dl class="kv">${term(note ? bi('Certificate claim','証明書の主張') : bi('Claim','主張'),bi(r.claim_en,r.claim_ja))}${consequence}${term(bi('Data','データ'),rel)}${term(bi('Documents','文書'),docs)}${r.assets.length ? term(bi('Assets','資産'),`<code>${esc(r.assets.join(' '))}</code>`) : ''}${r.check ? term(bi('Check','検算'),`<pre>${esc(r.check)}</pre>`) : ''}${r.cwd ? term(bi('Run in','実行場所'),`<code>${esc(r.cwd)}</code>`) : ''}${term('id',`<code>${esc(r.id)}</code>`)}</dl></td></tr>`;
+}).join('\n');
+const options = [{key: 'cont', en: 'Container', ja: '容器', values: CONT},{key: 'meth', en: 'Method', ja: '手法', values: METH},{key: 'kind', en: 'Kind', ja: '種類', values: KIND}];
+---
+<Base file="results.html" title="Square Packing Results">
+<Lede en={`${all.length} certificates and proofs; ${nbest} selected by the best recorded bound for each container and n. Click a row for details.`} ja={`証明書と証明 ${all.length} 件。容器と n ごとの記録内の最良として ${nbest} 件を選択。行を押すと詳細が出る。`}><p class="note" set:html={bi(`${all.length} certificates and proofs from INDEX.json and the problem folders of wand125/square-packing; ${nbest} are selected by the best recorded bound for each container and n (including the published n = 17 sub-patterns). Click a row for the claim, the check command and the release assets.`,`wand125/square-packing の INDEX.json と問題のフォルダから、証明書と証明 ${all.length} 件。容器と n ごとの記録内の最良の下界（公開済み n = 17 の部分型を含む）として ${nbest} 件を選択。行を押すと主張・検算のコマンド・Release の資産が出る。`)}/></Lede>
+<div class="bar" data-filterbar="res">
+{options.map(o => <label><T en={o.en} ja={o.ja}/> <select data-key={o.key} id={'f-'+o.key}><option value="" data-en="all" data-ja="すべて">all</option>{Object.entries(o.values).map(([key,[en,ja]]) => <option value={key} data-en={en} data-ja={ja}>{en}</option>)}</select></label>)}
+<label>n <input type="number" data-key="nmin" id="f-nmin" min="1" aria-label="n min"/> – <input type="number" data-key="nmax" id="f-nmax" min="1" aria-label="n max"/></label>
+<label><input type="checkbox" data-key="best" id="f-best" checked/> <T en="best per n only" ja="n ごとの最良のみ"/></label>
+<input type="search" data-key="q" id="f-q" data-ph-en="filter text" data-ph-ja="文字で絞り込み" aria-label="filter"/><span class="count" aria-live="polite"/>
+</div>
+<DataTable headers={[bi('Container','容器'),'n',bi('Result','結果'),bi('Kind','種類'),bi('Method','手法'),bi('Data','データ'),bi('Documents','文書')]} sorts={['cont','n','v','','meth']} rows={rows} id="res" class="wide"/>
+<script>import '../scripts/reading';</script>
+</Base>

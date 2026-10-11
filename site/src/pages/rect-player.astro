@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/ui/T.astro';
+import Lede from '../components/ui/Lede.astro';
+import {PREVIEW} from '../lib/sitemap';
+import '../styles/interactive.css';
+---
+<Base file="rect-player.html" title="Rectangles Player">
+<div data-interactive="rect-player" data-preview={PREVIEW ? '1' : '0'}>
+
+<div class="cv" id="rp">
+<p><a class="btn" data-o="back" href="rect-regions.html">← <T en={"Rectangles"} ja={"長方形の容器"} /></a></p>
+<div class="bar rr-sel"><button type="button" data-k="all"><T en={"All"} ja={"すべて"} /></button><button type="button" data-k="2">2</button><button type="button" data-k="3">3</button><button type="button" data-k="4">4</button><button type="button" data-k="5">5</button><button type="button" data-k="6">6</button><button type="button" data-k="7">7</button><button type="button" data-k="8">8</button><button type="button" data-k="9">9</button><button type="button" data-k="10">10</button><button type="button" data-k="11">11</button><button type="button" data-k="12">12</button><button type="button" data-k="13">13</button><button type="button" data-k="14">14</button><button type="button" data-k="15">15</button>{PREVIEW && <><span class="pv-l">preview</span><button type="button" data-k="16" class="pv">16</button><button type="button" data-k="17" class="pv">17</button><button type="button" data-k="18" class="pv">18</button><button type="button" data-k="19" class="pv">19</button><button type="button" data-k="20" class="pv">20</button></>}</div>
+<div class="rp-col">
+<canvas aria-label="player"></canvas>
+<div class="rp-side">
+<div class="bar"><button type="button" data-o="home" title="back to the start" aria-label="back to the start">⏮</button><button type="button" data-o="play">▶</button><button type="button" data-o="restart">↻ <T en={"from the start"} ja={"最初から再生"} /></button>
+<input type="range" data-o="scrub" min="0" max="1000" value="0" aria-label="time">
+<span class="num dim" data-o="len"></span>
+<label data-o="musl" class="off"><input type="checkbox" data-o="mus" checked="" disabled=""> <T en={"music"} ja={"音楽"} /></label>
+<button type="button" data-o="rec">● <T en={"record"} ja={"録画"} /></button></div>
+<Lede en={"The box shrinks along the edge from the square to the strip, and the squares follow."} ja={"箱が正方形から帯まで端に沿って縮み、正方形がそれについていく。"}><p class="note"><T en={"The box runs from the square (a = b) down the edge where k squares begin to fit, to the strip of width 1; b is drawn upright. The squares follow the sampled packings of each piece (illustrations, not certificates); colour shows the tilt, blue axis-parallel to red-violet at 45°. Where the arrangement changes a lot, the box winds up (squeezed and shaking) and the squares pop over. Below the box: the edge with the current point (click to jump) and the timeline (click to seek). Record saves the whole frame as a video. Music (where a score exists, played at 1×) is written to the timeline of each k: phrases follow the pieces, the wind-ups and pops are scored."} ja={"箱は正方形（a = b）から、k 個が入り始める端に沿って幅 1 の帯まで進む。b を縦にとる。正方形は各片の配置の標本に沿って動き（作図であって証明書ではない）、色は傾き（軸に平行で青、45° で赤紫）。並びが大きく変わる所では、箱が縮んで震える溜めのあと、正方形が弾けて入れ替わる。箱の下：今の点つきの端（押すとそこへ）とタイムライン（押すとその時刻へ）。録画は枠全体を動画として保存する。音楽（曲がある k で、1× のとき）は各 k の時刻表に合わせて作曲したもので、片ごとのフレーズ、溜めと弾けに合わせてある。"} /></p></Lede>
+</div></div></div>
+
+
+</div>
+<script>import {mount} from '../views/rect-player'; mount();</script>
+</Base>

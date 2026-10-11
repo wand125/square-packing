@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/ui/T.astro';
+import Lede from '../components/ui/Lede.astro';
+import {PREVIEW} from '../lib/sitemap';
+import '../styles/interactive.css';
+---
+<Base file="rect-regions.html" title="Squares in Rectangles">
+<div data-interactive="rect-regions" data-preview={PREVIEW ? '1' : '0'}>
+
+<Lede en={"How many unit squares fit in an a × b rectangle: for each k, the edge where k squares begin to fit, piece by piece, with certified packings."} ja={"a × b の長方形に単位正方形はいくつ入るか。k ごとに、k 個が入り始める端を、片ごとに証明書付きの配置で示す。"}><p class="note full"><T en={"s(a, b) is the largest number of unit squares (any position and angle) that fit in an a × b rectangle, a ≤ b. The edge for k separates the rectangles that hold k squares from those that do not (shaded). For k ≤ 10 the edge is from Friedman's table (Math Magic, June 2010), which gives no proofs; the \"Proof below\" column is our own check. For k ≥ 11 the edge is our construction: each piece comes with a packing of k squares; nothing is claimed below the edge."} ja={"s(a, b) は、a × b の長方形（a ≤ b）に入る単位正方形の最大個数（位置・角度は自由）。k 個の端は、k 個入る長方形と、入らない長方形（網かけ）の境目。k ≤ 10 の端は Friedman の表（Math Magic、2010 年 6 月）によるもので、表に証明はない。「下側の証明」の欄は当方の検証。k ≥ 11 の端は当方の構成で、各片の長方形に k 個入る配置を示す。端より下で入らないことは主張しない。"} /> {' '}<a href="https://erich-friedman.github.io/mathmagic/0610.html">Friedman, Math Magic, June 2010</a></p></Lede>
+<div class="bar rr-sel"><button type="button" data-sel="all"><T en={"All"} ja={"すべて"} /></button><button type="button" data-sel="2">2</button><button type="button" data-sel="3">3</button><button type="button" data-sel="4">4</button><button type="button" data-sel="5">5</button><button type="button" data-sel="6">6</button><button type="button" data-sel="7">7</button><button type="button" data-sel="8">8</button><button type="button" data-sel="9">9</button><button type="button" data-sel="10">10</button><button type="button" data-sel="11">11</button><button type="button" data-sel="12">12</button><button type="button" data-sel="13">13</button><button type="button" data-sel="14">14</button><button type="button" data-sel="15">15</button>{PREVIEW && <><span class="pv-l">preview</span><button type="button" data-sel="16" class="pv">16</button><button type="button" data-sel="17" class="pv">17</button><button type="button" data-sel="18" class="pv">18</button><button type="button" data-sel="19" class="pv">19</button><button type="button" data-sel="20" class="pv">20</button></>}</div>
+<div class="cv" id="rr">
+<h2><span data-o="rh"></span></h2>
+<div class="cv-grid">
+<div class="cv-fig"><canvas class="reg" aria-label="edge"></canvas>
+<div class="bar rr-ctl" data-o="ctl"><button type="button" data-c="first" title="first piece (left end)" aria-label="first piece"><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M4 4 V16 M17 10 H8 M12 5.5 L7.5 10 L12 14.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button type="button" data-c="prev" title="previous piece" aria-label="previous piece"><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M17 10 H3.5 M8 5.5 L3.5 10 L8 14.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button type="button" data-c="next" title="next piece" aria-label="next piece"><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M3 10 H16.5 M12 5.5 L16.5 10 L12 14.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button type="button" data-c="last" title="last piece (right end)" aria-label="last piece"><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M16 4 V16 M3 10 H12 M8 5.5 L12.5 10 L8 14.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button type="button" data-c="play" title="move the point along the edge" aria-label="move the point along the edge"><svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="M5 3.5 L16.5 10 L5 16.5 Z"></path></svg></button></div>
+</div>
+<div class="cv-side">
+<p class="num dim" data-o="leg" hidden=""></p>
+<div data-o="zoom" hidden=""><canvas class="zm" aria-label="magnified"></canvas>
+<p class="num dim" data-o="zt"><T en={"Move the pointer over the plot, right of the diagonal a = b, to magnify that part here."} ja={"グラフの対角線 a = b より右をポインタでなぞると、その部分をここに拡大する。"} /></p></div>
+<div data-o="pside" class="pcard">
+<div class="pc-h"><b class="num" data-o="key"></b><a class="btn" data-o="playp" href="rect-player.html">▶ <T en={"Player"} ja={"プレイヤー"} /></a></div>
+<div class="pc-f num" data-o="f"></div>
+<div class="ffw" data-o="ffw" hidden=""></div>
+<div class="pc-r num" data-o="range"></div>
+<dl class="pc-s"><div><dt><T en={"Source"} ja={"出どころ"} /></dt><dd data-o="src"></dd></div><div><dt><T en={"Basis"} ja={"根拠"} /></dt><dd data-o="basis"></dd></div><div><dt><T en={"Proof below"} ja={"下側の証明"} /></dt><dd data-o="st"></dd></div></dl>
+<div class="pc-p"><canvas class="pk" aria-label="packing"></canvas>
+<div class="pc-pi"><div class="dim pc-l"><T en={"Certified packings"} ja={"証明書の配置"} /></div><div class="bar rr-w" data-o="wbar"></div>
+<div class="num"><span class="dim">(b, a)</span> <span data-o="ab">–</span></div>
+<p class="num dim" data-o="pk"></p></div></div>
+</div></div></div>
+<div data-o="ptab">
+<h3><T en={"Pieces"} ja={"片"} /></h3>
+<div class="wrap"><table class="wide"><thead><tr><th><T en={"Piece"} ja={"片"} /></th><th><T en={"Range of a"} ja={"a の範囲"} /></th><th><T en={"Proof below"} ja={"下側の証明"} /></th><th><T en={"Edge"} ja={"端の式"} /></th><th><T en={"Basis"} ja={"根拠"} /></th></tr></thead>
+<tbody id="rr-rows"></tbody></table></div>
+<p class="note full"><T en={"Each certified packing is a rational placement checked by two checkers (verify_fast and verify.py --exact). For k ≤ 10 it is taken at the middle of Friedman's piece with one side fixed and the other minimized."} ja={"証明書の配置は有理数の配置で、2 つの検査器（verify_fast と verify.py --exact）で検査した。k ≤ 10 では Friedman の片の中ほどで一方の辺を固定し、他方を最小化したもの。"} /></p>
+</div><p></p>
+</div>
+
+
+</div>
+<script>import {mount} from '../views/rect-regions'; mount();</script>
+</Base>

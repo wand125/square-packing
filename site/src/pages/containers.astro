@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/ui/T.astro';
+import Lede from '../components/ui/Lede.astro';
+import {PREVIEW} from '../lib/sitemap';
+import '../styles/interactive.css';
+---
+<Base file="containers.html" title="Non-Square Containers">
+<div data-interactive="containers" data-preview={PREVIEW ? '1' : '0'}>
+
+<div class="cv" id="ct" data-blob="https://github.com/wand125/square-packing/blob/main/" data-names="{&quot;triangle&quot;: &quot;<span data-l=\&quot;en\&quot;>Equilateral triangle (side)</span><span data-l=\&quot;ja\&quot;>正三角形（辺）</span>&quot;, &quot;right-isosceles&quot;: &quot;<span data-l=\&quot;en\&quot;>Right isosceles triangle (leg)</span><span data-l=\&quot;ja\&quot;>直角二等辺三角形（脚）</span>&quot;, &quot;hexagon&quot;: &quot;<span data-l=\&quot;en\&quot;>Regular hexagon (side)</span><span data-l=\&quot;ja\&quot;>正六角形（辺）</span>&quot;, &quot;domino&quot;: &quot;<span data-l=\&quot;en\&quot;>1×2 rectangle (short side)</span><span data-l=\&quot;ja\&quot;>1×2 の長方形（短い辺）</span>&quot;}">
+<div class="ct-pick"></div>
+<div class="cv-grid">
+<div class="cv-fig"><canvas aria-label="container"></canvas>
+<div class="bar">
+<label><input type="checkbox" data-show="pack" checked=""> <T en={"packing"} ja={"詰め方"} /></label>
+<label><input type="checkbox" data-show="pts" checked=""> <T en={"certificate points"} ja={"証明書の点"} /></label>
+<label><input type="checkbox" data-show="sq" checked=""> <T en={"test square"} ja={"試す正方形"} /></label>
+</div>
+</div>
+<div class="cv-side">
+<dl class="kv"><dt><T en={"Result"} ja={"結果"} /></dt><dd data-f="claim"></dd><dt><T en={"Side"} ja={"辺"} /></dt><dd data-f="L" class="num"></dd><dt><T en={"Certificate points"} ja={"証明書の点"} /></dt><dd data-f="pts"></dd><dt><T en={"Total weight"} ja={"総重み"} /></dt><dd data-f="w" class="num"></dd><dt><T en={"Symmetry"} ja={"対称"} /></dt><dd data-f="sym"></dd><dt><T en={"Certificate file"} ja={"証明書のファイル"} /></dt><dd data-f="cert"></dd><dt><T en={"Packing"} ja={"詰め方"} /></dt><dd data-f="pack"></dd><dt><T en={"Documents"} ja={"文書"} /></dt><dd data-f="docs"></dd></dl>
+<label><input type="checkbox" id="ct-keep" checked=""> <T en={"keep the test square inside the container while dragging"} ja={"ドラッグ中も試す正方形を容器の中に留める"} /></label>
+<label class="cv-r"><T en={"Angle"} ja={"角度"} /> <input type="range" id="ct-a" min="0" max="90" value="0" step="0.1" list="ct-ticks"><datalist id="ct-ticks"><option value="0"></option><option value="15"></option><option value="30"></option><option value="45"></option><option value="60"></option><option value="75"></option><option value="90"></option></datalist></label>
+<dl class="kv">
+<dt><T en={"Centre"} ja={"中心"} /></dt><dd class="num" data-o="c"></dd>
+<dt><T en={"Angle"} ja={"角度"} /></dt><dd class="num" data-o="a"></dd>
+<dt><T en={"Weight inside"} ja={"含む重み"} /></dt><dd class="num" data-o="m"></dd>
+<dt><T en={"Position"} ja={"位置"} /></dt><dd data-o="fit"></dd>
+</dl>
+
+<p class="note" data-when="stage" data-cont="triangle"><T en={"Here the certificate also has exclusion boxes: boxes of poses (centre range × angle range) that it leaves to later stages. Near the packing the weight can be below 1."} ja={"この証明書には除外箱（exclusion boxes）がある。後の段に回す姿勢（中心の範囲 × 角度の範囲）の箱。詰め方の近くでは重みが 1 未満になることがある。"} /></p>
+<p class="note" data-when="stage" data-cont="hexagon"><T en={"Here the certificate also has excused boxes: boxes of poses (centre range × angle range) that it leaves to the second stage. Near the pinwheel the weight can be below 1."} ja={"この証明書には免除箱（excused boxes）がある。第 2 段に回す姿勢（中心の範囲 × 角度の範囲）の箱。風車の近くでは重みが 1 未満になることがある。"} /></p>
+</div></div>
+<h2><T en={"How the lower bounds are proved"} ja={"下界の示し方"} /></h2>
+<ul class="tight">
+<li data-cont="triangle"><T en={"s(n) is the smallest side of an equilateral triangle that holds n non-overlapping unit squares (any position, any angle)."} ja={"s(n) は、重ならない単位正方形 n 個（位置・角度は自由）が入る正三角形の最小の辺。"} /></li>
+<li data-cont="right-isosceles"><T en={"s(n) is the smallest leg of a right isosceles triangle that holds n non-overlapping unit squares (any position, any angle)."} ja={"s(n) は、重ならない単位正方形 n 個（位置・角度は自由）が入る直角二等辺三角形の最小の脚。"} /></li>
+<li data-cont="hexagon"><T en={"s(n) is the smallest side of a regular hexagon that holds n non-overlapping unit squares (any position, any angle)."} ja={"s(n) は、重ならない単位正方形 n 個（位置・角度は自由）が入る正六角形の最小の辺。"} /></li>
+<li data-cont="domino"><T en={"s(n) is the smallest short side v of a rectangle [0, 2v] × [0, v] that holds n non-overlapping unit squares (any position, any angle)."} ja={"s(n) は、重ならない単位正方形 n 個（位置・角度は自由）が入る長方形 [0, 2v] × [0, v] の最小の短い辺 v。"} /></li>
+<li><T en={"A certificate lists points with rational weights and total weight below n. The checker proves exactly that every closed unit square inside the container, at any position and angle, contains points of total weight at least 1. n disjoint squares would then contain weight at least n."} ja={"証明書は有理数の重みの点を並べ、総重みは n 未満。検査器は、容器の中の閉じた単位正方形がどの位置・角度でも重み 1 以上の点を含むことを厳密に示す。互いに重ならない n 個の正方形は合わせて n 以上を含むことになる。"} /></li>
+<li data-when="pairs"><T en={"Lemma P: take two points at distance exactly 1. If the line through them crosses a square between two opposite edges, and that crossing meets the segment between the points, the square contains one of the two points (the crossing has length at least 1)."} ja={"補題 P：距離がちょうど 1 の 2 点をとる。2 点を通る直線が正方形を向かい合う 2 辺の間で横切り、その横切る部分が 2 点を結ぶ線分と交わるなら、正方形は 2 点のどちらかを含む（横切る部分の長さは 1 以上）。"} /></li>
+<li data-when="stage" data-cont="triangle"><T en={"One certificate is not enough for n = 6: the first certificate leaves out boxes of poses near the packing, and a tree of further certificates with obstacle points and a lemma on three squares closes them."} ja={"n = 6 は証明書 1 つでは足りない。最初の証明書が詰め方の近くの姿勢の箱を除き、障害点つきの後の証明書の木と 3 個の正方形についての補題で閉じる。"} /></li>
+<li data-when="stage" data-cont="hexagon"><T en={"One certificate is not enough: stage 1 leaves out 742 boxes of poses near the pinwheel, and stage 2 closes each box by interval branch and bound and the local lemma near the pinwheel."} ja={"証明書 1 つでは足りない。第 1 段が風車の近くの姿勢の箱 742 個を除き、第 2 段がそれぞれの箱を区間の分枝限定と風車の近くの局所補題で閉じる。"} /></li>
+</ul>
+<p class="links-inline"><a href="https://github.com/wand125/square-packing/blob/main/problems/triangle/checker/SPEC.md" data-cont="triangle">triangle/checker/SPEC.md</a><a href="https://github.com/wand125/square-packing/blob/main/problems/triangle/SERIES.md" data-cont="triangle">triangle/SERIES.md</a><a href="https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n6/PROOF.md" data-cont="triangle" data-n="6">triangle n6/PROOF.md</a><a href="https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/README.md" data-cont="right-isosceles">right-isosceles/README.md</a><a href="https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/checker/SPEC.md" data-cont="right-isosceles">right-isosceles/checker/SPEC.md</a><a href="https://github.com/wand125/square-packing/blob/main/problems/hexagon/n3/PROOF.md" data-cont="hexagon">hexagon n3/PROOF.md</a><a href="https://github.com/wand125/square-packing/blob/main/problems/domino/certificates/n4/PROOF.md" data-cont="domino">domino n4/PROOF.md</a></p>
+</div>
+
+
+</div>
+<script>import {mount} from '../views/containers'; mount();</script>
+</Base>

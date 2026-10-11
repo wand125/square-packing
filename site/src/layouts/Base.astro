@@ -1,0 +1,65 @@
+---
+// The frame of every page: the top bar (two nav rows on the desktop design), the phone tab bar, language and theme.
+import { PAGES, PREVIEW, url, GH } from '../lib/sitemap';
+import { PHONE, DESKTOP } from '../lib/media';
+import T from '../components/ui/T.astro';
+import tokensCss from '../styles/tokens.css?url';
+import baseCss from '../styles/base.css?url';
+import desktopCss from '../styles/desktop.css?url';
+import mobileCss from '../styles/mobile.css?url';
+const { file, title, katex = false } = Astro.props;
+const shown = PAGES.filter((p) => PREVIEW || !p.preview);
+const row = (g) => shown.filter((p) => p.group === g);
+const tabs = [
+  { file: 'index.html', en: 'Home', ja: 'ホーム', icon: 'M3 11 12 4l9 7v9h-6v-6H9v6H3z' },
+  { file: 'guide.html', en: 'Visualize', ja: '図で見る', icon: 'M3 3h8v8H3zM13 13h8v8h-8zM4 21l7-7' },
+  { file: 'rect-player.html', en: 'Play', ja: '再生', icon: 'M7 4.5v15l12-7.5z', fill: true },
+  { file: 'outcomes.html', en: 'Outcomes', ja: '成果', icon: 'M5 6h14M5 12h14M5 18h9' },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{title}</title>
+<meta name="description" content="Lower bounds and optimality proofs for packing unit squares, with certificates, checkers and Lean proofs.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href={tokensCss}>
+<link rel="stylesheet" href={baseCss}>
+<link rel="stylesheet" href={desktopCss} media={DESKTOP}>
+<link rel="stylesheet" href={mobileCss} media={PHONE}>
+{katex && <link rel="stylesheet" href={url('katex/katex.min.css')}>}
+<script is:inline>
+(function(){var H=document.documentElement;try{var t=localStorage.getItem("sp-theme");if(t)H.dataset.theme=t;var l=localStorage.getItem("sp-lang");if(l)H.lang=l;}catch(e){}})();
+</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="row"><a class="site" href={url('index.html')}>wand125/square-packing</a>
+    <span class="tools">
+      <a class="gh" href={GH} target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+      <a class="credits" href={url('about.html')}><T en="Credits" ja="クレジット" /></a>
+      <button id="lang" type="button">日本語</button><button id="theme" type="button" class="icon-btn" aria-label="Light / dark"></button>
+    </span></div>
+  <nav class="row nav"><a class="label" href={url('guide.html')}><T en="Visualize" ja="ビジュアライズ" /></a>
+    {row('viz').map((p) => <a href={url(p.file)} class={p.file === file ? 'cur' : ''}><T en={p.en} ja={p.ja} /></a>)}</nav>
+  <nav class="row nav"><a class="label" href={url('outcomes.html')}><T en="Outcomes" ja="成果" /></a>
+    {row('out').map((p) => <a href={url(p.file)} class={p.file === file ? 'cur' : ''}><T en={p.en} ja={p.ja} /></a>)}</nav>
+</header>
+<main><slot /></main>
+<nav class="tabbar" aria-label="sections">
+  {tabs.map((t) => <a href={url(t.file)} class={t.file === file ? 'cur' : ''}>
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d={t.icon} fill={t.fill ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" /></svg>
+    <T en={t.en} ja={t.ja} /></a>)}
+</nav>
+<script is:inline>
+(function(){var H=document.documentElement,L=document.getElementById('lang'),M=document.getElementById('theme');
+function lab(){L.textContent=H.lang==='ja'?'English':'日本語';var dark=H.dataset.theme!=='light';M.innerHTML=dark?'<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>':'<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';M.title=dark?(H.lang==='ja'?'ライト':'Light'):(H.lang==='ja'?'ダーク':'Dark');M.setAttribute('aria-label',M.title);}
+L.onclick=function(){H.lang=H.lang==='ja'?'en':'ja';try{localStorage.setItem('sp-lang',H.lang)}catch(e){}lab();document.dispatchEvent(new Event('langchange'));};
+M.onclick=function(){H.dataset.theme=H.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('sp-theme',H.dataset.theme)}catch(e){}lab();};lab();})();
+</script>
+<script>import '../scripts/links';</script>
+</body>
+</html>

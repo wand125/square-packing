@@ -1,0 +1,9 @@
+---
+import T from './T.astro';
+interface Props { en: string; ja: string }
+const { en, ja } = Astro.props;
+---
+<div class="lede"><p class="lede-s"><T en={en} ja={ja} /> <button type="button" class="more" aria-expanded="false"><T en="more" ja="もっと読む" /></button></p><div class="lede-l"><slot /></div></div>
+<script>
+ document.querySelectorAll<HTMLButtonElement>('.lede .more').forEach(button => button.addEventListener('click', () => { button.closest('.lede')?.classList.add('open'); button.setAttribute('aria-expanded', 'true'); }));
+</script>

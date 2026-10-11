@@ -1,0 +1,6 @@
+---
+// A text in both languages; the page's lang shows one. Without ja, the English is used for both.
+const { en, ja, tag = 'span' } = Astro.props;
+const Tag = tag;
+---
+{(!ja || ja === en) ? <Tag>{en}</Tag> : <><Tag data-l="en">{en}</Tag><Tag data-l="ja">{ja}</Tag></>}

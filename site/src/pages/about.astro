@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import Lede from '../components/ui/Lede.astro';
+import Section from '../components/ui/Section.astro';
+import DataTable from '../components/ui/DataTable.astro';
+import {readEditorial} from '../lib/data';
+import {bi,bc,a,esc,row,cell,sourceLinks} from '../lib/reading';
+const d = readEditorial('about.json');
+const credits = d.credits.map(c => row([cell(`<b>${esc(c.who)}</b>`),cell(bc(c.for)),cell(sourceLinks(c.source),'links')])).join('');
+const related = d.related.map(r => row([cell(a(r.url,esc(r.name)),'nw'),cell(bc(r))])).join('');
+const moved = d.moved.table.map(m => row([cell(`<code>${esc(m.old)}</code>`,'nw'),cell(`<code>${esc(m.new)}</code>`)])).join('');
+---
+<Base file="about.html" title="Square Packing Credits">
+<Section en="Author" ja="著者"><p><a href={'https://github.com/'+d.author.github}>{d.author.github}</a> ({d.author.name})</p></Section>
+<Section en="Credits" ja="クレジット"><DataTable headers={[bi('Who','誰'),bi('For','内容'),bi('Source','記述の元')]} rows={credits} class="wide credits-table"/></Section>
+<Section en="Related repositories and pages" ja="関連するリポジトリとページ"><DataTable headers={[bi('Name','名前'),bi('Relation','関係')]} rows={related}/></Section>
+<Section en="Moved repositories" ja="移したリポジトリ">
+<Lede en="The old repositories keep their history and releases, and old links keep working." ja="旧リポジトリは履歴と Release を保持し、旧リンクは引き続き有効である。"><p class="note" set:html={bc(d.moved.note)}/></Lede>
+<DataTable headers={[bi('Old repository','元のリポジトリ'),bi('New place','移した先')]} rows={moved}/></Section>
+<Section en="Licenses" ja="ライセンス"><p set:html={bc(d.licenses)}/></Section>
+</Base>

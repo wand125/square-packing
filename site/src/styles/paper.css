@@ -1,0 +1,60 @@
+/* Paper pages. Desktop: contents on the left, text at a reading width. Phone: one column, contents folded. */
+.paper { display: grid; grid-template-columns: 190px minmax(0, 76ch); gap: 28px; align-items: start; }
+.pp-toc { position: sticky; top: 12px; font-size: 12px; }
+.pp-toc summary { cursor: pointer; list-style: none; } .pp-toc summary::-webkit-details-marker { display: none; }
+.pp-toc ol { margin: 6px 0 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.pp-toc a { color: var(--fg2); } .pp-toc a:hover { color: var(--link); }
+.pp-main { font-size: 14px; line-height: 1.65; min-width: 0; }
+.pp-head { border-bottom: 1px solid var(--line); padding-bottom: 12px; margin-bottom: 8px; }
+.pp-kicker { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+.pp-head h1 { font-size: 20px; line-height: 1.35; margin: 6px 0 4px; text-wrap: balance; }
+.pp-lead { color: var(--fg2); margin: 0 0 6px; }
+.pp-meta { font-size: 12px; margin-bottom: 8px; }
+.pp-links { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.pp-result { display: inline-block; max-width: 100%; overflow-x: auto; border: 1px solid var(--acc); border-radius: 3px; padding: 6px 14px; font-size: 16px; }
+.pp-main h2 { font-size: 15px; margin: 22px 0 6px; padding-bottom: 3px; border-bottom: 1px solid var(--line); scroll-margin-top: 64px; }
+.pp-main table { border-collapse: collapse; font-size: 12px; display: block; overflow-x: auto; }
+.pp-main th, .pp-main td { border-bottom: 1px solid var(--line); padding: 4px 8px; text-align: left; vertical-align: top; }
+.pp-main .katex-display { overflow-x: auto; overflow-y: hidden; padding: 2px 0; }
+.pp-main .katex { max-width: 100%; }
+/* interactive figures */
+.vz-fig { margin: 12px 0; }
+.vz-svg { width: 100%; max-width: 440px; display: block; touch-action: none; cursor: crosshair; }
+.vz-cont { fill: var(--bg2); stroke: var(--fg2); stroke-width: .012; }
+.vz-sq { fill: color-mix(in srgb, var(--link) 22%, transparent); stroke: var(--link); stroke-width: .012; }
+.vz-pt { fill: var(--acc); fill-opacity: .85; }
+.vz-test { fill: color-mix(in srgb, var(--fg) 10%, transparent); stroke: var(--fg); stroke-width: .015; }
+.vz-test.ok { fill: color-mix(in srgb, var(--ok) 25%, transparent); stroke: var(--ok); }
+.vz-ctl { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; font-size: 12px; margin-top: 4px; }
+@media (max-width: 900px) {
+  .paper { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .pp-toc { position: static; border: 1px solid var(--line); border-radius: 3px; padding: 8px 12px; }
+  .pp-toc summary::after { content: " ▾"; }
+  .pp-main { font-size: 15px; }
+  .vz-svg { max-width: none; }
+}
+.vz-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+.vz-chips button.on { color: var(--acc); border-color: var(--acc); }
+/* Paper highlights: native controls support keyboard, pointer and touch. */
+.vz-highlight { border: 1px solid var(--line); border-radius: 6px; padding: 12px; background: var(--bg2); }
+.vz-highlight .vz-svg { margin-inline: auto; cursor: default; touch-action: pan-y; }
+.vz-label { fill: var(--fg); font-size: .13px; }
+.vz-tone-1 { fill: color-mix(in srgb, var(--acc) 22%, transparent); stroke: var(--acc); }
+.vz-tone-2 { fill: color-mix(in srgb, var(--ok) 20%, transparent); stroke: var(--ok); }
+.vz-muted { opacity: .16; }
+.vz-readout { display: block; font-variant-numeric: tabular-nums; margin-top: 8px; overflow-wrap: anywhere; }
+.vz-note { font-size: 12px; margin: 6px 0 0; }
+.vz-ctl label { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; max-width: 100%; }
+.vz-fig input[type="range"] { width: 170px; max-width: 100%; min-width: 0; accent-color: var(--link); }
+.vz-fig input[type="checkbox"] { accent-color: var(--acc); }
+.vz-fig button, .vz-fig select { min-height: 44px; }
+.vz-fig input[type="range"], .vz-ctl label { min-height: 44px; }
+.vz-fig button[aria-pressed="true"] { border-color: var(--acc); }
+.vz-plot { width: 100%; max-width: 440px; display: block; margin: 8px auto 0; }
+.vz-plot text { font-size: 12px; fill: var(--fg2); }
+.vz-axis { fill: none; stroke: var(--fg2); }
+.vz-curve { fill: none; stroke: var(--link); stroke-width: 2; }
+.vz-min { fill: var(--ok); }
+.vz-current { fill: var(--acc); }
+.vz-pair { stroke: var(--fg2); stroke-width: .018; stroke-dasharray: .045 .035; }
+.vz-pair.active { stroke: var(--ok); stroke-width: .025; }

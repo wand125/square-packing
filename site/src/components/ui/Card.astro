@@ -1,0 +1,6 @@
+---
+interface Props { href?: string; class?: string }
+const {href, class: cls = ''} = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+<Tag href={href} class:list={['gcard', cls]}><slot /></Tag>

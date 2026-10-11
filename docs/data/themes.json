@@ -711,16 +711,16 @@
    "issue": 17,
    "state": "closed",
    "title": {
-    "en": "Unit squares in an equilateral triangle — n = 2, 3, 4, the series n = 7 to 29, and a lower bound for n = 37",
-    "ja": "正三角形の中の単位正方形 — n = 2, 3, 4、系列 n = 7〜29、n = 37 の下界"
+    "en": "Unit squares in an equilateral triangle — optimality for n = 2, 3, 4, 7, 11, 16, 22, 29 and 37",
+    "ja": "正三角形の中の単位正方形 — n = 2, 3, 4, 7, 11, 16, 22, 29, 37 の最適性"
    },
    "goal": {
     "en": "Prove that the best known packings in Erich Friedman's Packing Center (Squares in Triangles) are optimal, for the small cases and for a series that one construction covers.",
     "ja": "Erich Friedman の Packing Center（Squares in Triangles）の既知最良の詰め方が最適であることを、小さい場合と、1 つの構成で覆える系列について証明する。"
    },
    "method": {
-    "en": "Each lower bound is a weighted point set in the triangle of the claimed side; for the series n = T_(m−1) + 1, side m + 2/√3, a patch of the unit triangular lattice with all weights 1.",
-    "ja": "各下界は主張の一辺の三角形内の重み付きの点集合。系列 n = T_(m−1) + 1（一辺 m + 2/√3）では、重みがすべて 1 の単位三角格子の一部。"
+    "en": "Each lower bound is a weighted point set in the triangle of the claimed side; for the series n = T_(m−1) + 1, side m + 2/√3, a patch of the unit triangular lattice with all weights 1. Each upper bound is our own certificate of a packing.",
+    "ja": "各下界は主張の一辺の三角形内の重み付きの点集合。系列 n = T_(m−1) + 1（一辺 m + 2/√3）では、重みがすべて 1 の単位三角格子の一部。各上界は当方の配置の証明書。"
    },
    "done": [
     {
@@ -732,12 +732,16 @@
      "ja": "n = 7, 11, 16, 22, 29：m = 4〜8 について s△(n) = m + 2/√3。"
     },
     {
-     "en": "n = 37: the lower bound s△(37) ≥ 9 + 2/√3.",
-     "ja": "n = 37：下界 s△(37) ≥ 9 + 2/√3。"
+     "en": "n = 37: s△(37) = 9 + 2/√3. The lattice certificate gives the lower bound; the upper bound is a packing with exact coordinates (certificates/n37/upper/): a tight bottom row of 9 and 28 squares above in the shape of Friedman's n = 28 packing (1997). The packing is not claimed as new: Friedman's table lists a packing of 37 squares by Gianluca Costantino (May 2026).",
+     "ja": "n = 37：s△(37) = 9 + 2/√3。下界は格子の証明書。上界は厳密な座標の配置（certificates/n37/upper/）で、底のきつい 9 個の列と、その上に Friedman の n = 28 の配置（1997）の形の 28 個。配置は新しいとは主張しない（Friedman の表に Gianluca Costantino による 37 個の配置がある、2026 年 5 月）。"
     },
     {
-     "en": "All checked by two independent checkers and in Lean 4 (problems/triangle/, release triangle-v1). n = 6 is #4; n = 9 continues in #11.",
-     "ja": "すべて独立な 2 つの検査器と Lean 4 で検査（problems/triangle/、Release triangle-v1）。n = 6 は #4、n = 9 は #11 で続く。"
+     "en": "Upper bounds: for n = 2, 3, 4 and the series the packings are proved in Lean 4; for n = 37 (and n = 6, #4) they are packing certificates in Q(√3), checked exactly by the two checkers in tools/packing_check/.",
+     "ja": "上界：n = 2, 3, 4 と系列は Lean 4 で配置を証明。n = 37（と #4 の n = 6）は Q(√3) の配置の証明書で、tools/packing_check/ の 2 つの検査器で厳密に検査。"
+    },
+    {
+     "en": "The lower bounds are checked by two independent checkers and also in Lean 4. None of this has been peer reviewed (problems/triangle/, release triangle-v1). n = 6 is #4; n = 9 continues in #11.",
+     "ja": "下界は独立な 2 つの検査器と Lean 4 で検査。いずれも査読は受けていない（problems/triangle/、Release triangle-v1）。n = 6 は #4、n = 9 は #11 で続く。"
     }
    ],
    "working_on": [],

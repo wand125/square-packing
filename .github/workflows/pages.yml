@@ -1,11 +1,12 @@
 name: pages
 
-# Builds site/ from INDEX.json, the problem folders and docs/data/, and deploys it to GitHub Pages.
+# Builds the site (site/, Astro) from INDEX.json, the problem folders, docs/data/ and site/public/data/,
+# and deploys it to GitHub Pages.
 
 on:
   push:
     branches: [main]
-    paths: ['site/**', 'docs/data/**', 'INDEX.json', 'problems/right-isosceles/README.md', 'problems/n17/manifest.json', '.github/workflows/pages.yml']
+    paths: ['site/**', 'docs/data/**', 'INDEX.json', 'problems/**/README.md', 'problems/n17/manifest.json', '.github/workflows/pages.yml']
   workflow_dispatch:
 
 permissions:
@@ -22,14 +23,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: '3.12'
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Install
+        working-directory: site
+        run: npm ci
       - name: Build the site
-        run: python3 site/build.py _site
+        working-directory: site
+        env:
+          SP_REPO: ..
+          SP_DOCS: ../docs/data
+        run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: site/dist
 
   deploy:
     needs: build

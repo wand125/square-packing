@@ -1,0 +1,153 @@
+/* Phone design: a slim top bar, a bottom tab bar, content in one column. */
+.topbar { padding: 8px 14px; padding-top: calc(8px + env(safe-area-inset-top, 0px)); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; background: var(--bg); }
+.topbar .row.nav { display: none; }
+.topbar .row { display: flex; align-items: center; gap: 10px; }
+.topbar .site { font-weight: 600; color: var(--fg); font-size: 14px; }
+.topbar .tools { margin-left: auto; display: flex; gap: 8px; }
+.topbar .tools .gh, .topbar .tools .credits { display: none; }
+.tabbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: var(--bg); border-top: 1px solid var(--line);
+          padding: 4px 4px calc(4px + env(safe-area-inset-bottom, 0px)); justify-content: space-around; }
+.tabbar a { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; min-height: 48px; font-size: 10px; color: var(--fg2); }
+.tabbar a.cur { color: var(--acc); } .tabbar a:hover { text-decoration: none; }
+main { padding: 10px 14px calc(76px + env(safe-area-inset-bottom, 0px)); font-size: 14px; }
+button, .btn { min-height: 40px; padding: 6px 12px; }
+
+/* Reading pages: one column, labelled table cards and a single scrolling filter strip. */
+.lede-s { display: block; }
+.lede .lede-l { display: none; }
+.lede.open .lede-l { display: block; }
+.lede.open .more { display: none; }
+.lede .more { min-height: 40px; padding: 6px 8px; }
+.gcards { grid-template-columns: minmax(0, 1fr); }
+.home, section { min-width: 0; }
+.bar { flex-wrap: nowrap; overflow-x: auto; padding: 4px 0 8px; gap: 8px; }
+.bar > * { flex: 0 0 auto; }
+.bar label { min-height: 40px; border: 1px solid var(--line); border-radius: 20px; padding: 0 10px; white-space: nowrap; }
+select, input { min-height: 40px; font-size: 14px; }
+input[type="checkbox"] { width: 22px; min-height: 40px; margin: 0; }
+.bar input[type="search"] { border-radius: 20px; padding: 6px 12px; width: 13em; }
+.wrap { overflow: visible; }
+.data-table, .data-table tbody { display: block; width: 100%; min-width: 0; }
+/* Sort headers remain available to touch and keyboard users. */
+.data-table thead { display: block; }
+.data-table thead tr { display: flex; overflow-x: auto; gap: 6px; border: 0; padding: 0; margin-bottom: 8px; }
+.data-table thead th { display: none; }
+.data-table thead th.sort { display: flex; align-items: center; flex: 0 0 auto; min-height: 40px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 20px; }
+.data-table tbody tr { display: block; border: 1px solid var(--line); border-radius: 6px; margin-bottom: 12px; padding: 8px 12px; background: var(--bg2); }
+.data-table tbody tr.open { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.data-table tbody tr.x { border-top: 0; border-top-left-radius: 0; border-top-right-radius: 0; }
+.data-table td { display: block; width: auto; border: 0; padding: 5px 0; min-width: 0; white-space: normal; overflow-wrap: anywhere; }
+.data-table td .cell-label { display: block; font: 11px/1.4 var(--sans); color: var(--fg2); margin-bottom: 2px; }
+.data-table td .cell-label:empty { display: none; }
+.data-table td.links a, .data-table td a { white-space: normal; overflow-wrap: anywhere; }
+.data-table td a { display: inline-flex; align-items: center; min-height: 40px; max-width: 100%; }
+.data-table td.links a { display: flex; }
+.data-table td.num, .thumbs .num { white-space: normal; overflow-wrap: anywhere; }
+tr.x dl, dl.kv { display: block; }
+tr.x dt, dl.kv dt { margin-top: 8px; font-size: 12px; }
+tr.x dd, dl.kv dd { margin: 0; }
+pre { max-width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; }
+.thumbs { display: grid; grid-template-columns: minmax(0, 1fr); }
+.thumbs a.th { padding: 12px; }
+.rel-list { max-height: none; columns: auto; }
+.rmap { grid-template-columns: minmax(0, 1fr); }
+.rmap .rm-l { display: none; }
+.topbar .site { display: inline-flex; align-items: center; min-height: 40px; }
+main a:not(.gcard):not(.th) { display: inline-flex; align-items: center; min-height: 40px; }
+
+/* Shared phone foundations; each dedicated view arranges its own controls below. */
+.phone-view { min-width: 0; }
+.phone-view .cv3, .phone-view .cv-grid { display: grid; grid-template-columns: minmax(0, 1fr) !important; min-height: 0 !important; }
+.phone-view .cv-list { position: static; }
+.phone-view .cv-items { height: auto; max-height: 30vh; }
+.phone-view .cv-fig, .phone-view .cv-side, .phone-view .rp-side { min-width: 0; width: 100%; }
+.phone-view canvas { display: block; max-width: 100%; touch-action: none; }
+.phone-view .bar { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; }
+.phone-view .bar > * { flex-shrink: 0; }
+.phone-view .ct-lab { min-width: 0; }
+.phone-view .ct-pick .bar { flex-wrap: nowrap; }
+.phone-view button, .phone-view select, .phone-view input, .phone-view a.btn { min-height: 40px; }
+.phone-view .rr-ctl button { height: 40px; min-width: 40px; }
+.phone-view .cv-side label { display: flex; align-items: center; gap: 8px; min-height: 40px; }
+.phone-view .cv-r select { min-width: 0; max-width: 100%; }
+.phone-view .cv-r { flex-wrap: wrap; }
+.phone-view .wrap { overflow-x: auto; }
+.phone-view .num { white-space: normal; overflow-wrap: anywhere; }
+.phone-view .pcard { width: 100%; min-width: 0; }
+.phone-view .pc-p { flex-direction: column; }
+.phone-view .pc-pi { flex: auto; width: 100%; }
+.phone-view .rp-col { align-items: center; }
+.phone-view .rp-col canvas { height: auto !important; }
+
+/* Dedicated phone views. */
+.phone-section { border-top: 1px solid var(--line); margin-top: 14px; }
+.phone-section summary { min-height: 44px; padding: 10px 0; cursor: pointer; }
+.phone-view .cv-items { flex-direction: row; height: auto; max-height: none; overflow-x: auto; padding: 4px; }
+.phone-view .cv-items button { flex: 0 0 auto; grid-template-columns: auto 14px; min-width: 44px; min-height: 44px; border-radius: 22px; }
+.phone-view .cv-items button > span:nth-child(2), .phone-view .cv-head { display: none; }
+.phone-view .cv-fig canvas.m { width: 100%; aspect-ratio: 1; }
+.phone-view .ct-pick .bar:not(.phone-container-active) { display: none; }
+.phone-view .ct-lab { display: none; }
+.phone-containers { border-radius: 22px; background: var(--bg2); }
+.phone-containers button { border-radius: 22px; white-space: nowrap; }
+.phone-view .rr-sel { position: sticky; top: calc(57px + env(safe-area-inset-top, 0px)); z-index: 3; background: var(--bg); }
+.phone-view #rr .cv-fig { overflow-x: auto; }
+.phone-view #rr canvas.reg { max-width: none; }
+.phone-view #rr .pcard { border: 0; padding: 0; }
+.phone-view #rr .pcard > canvas.pk { width: 100%; margin-bottom: 8px; }
+.phone-view #rr .rr-ctl { position: fixed; z-index: 10; bottom: calc(66px + env(safe-area-inset-bottom, 0px)); left: 50%; transform: translateX(-50%); background: var(--bg2); padding: 6px; border: 1px solid var(--line); border-radius: 28px; box-shadow: 0 3px 14px #0004; }
+.phone-view #rr { padding-bottom: calc(140px + env(safe-area-inset-bottom, 0px)); }
+.phone-view #rr .pcard { padding-bottom: calc(130px + env(safe-area-inset-bottom, 0px)); }
+.phone-view #rr .rr-ctl button { border-radius: 50%; min-width: 44px; height: 44px; }
+.phone-view #rr [data-o="zoom"] { display: none; }
+.phone-view #rr [data-o="ptab"] table, .phone-view #rr tbody { display: block; width: 100%; }
+.phone-view #rr [data-o="ptab"] thead { display: none; }
+.phone-view #rr tr[data-key] { display: grid; grid-template-columns: 54px minmax(0,1fr); padding: 8px; margin: 6px 0; background: var(--bg2); border-radius: 8px; min-height: 44px; cursor: pointer; }
+.phone-view #rr tr[data-key] td { border: 0; padding: 3px; white-space: normal; min-width: 0; overflow-wrap: anywhere; }
+.phone-view #rr tr[data-key] td:nth-child(3), .phone-view #rr tr[data-key] td:nth-child(5) { display: none; }
+.phone-view #rr tr[data-key] td:nth-child(4) { grid-column: 1 / -1; }
+.phone-view #rr td.fw { min-width: 0; }
+
+body:has(.phone-view[data-interactive="rect-player"]) { overflow: hidden; }
+.phone-view[data-interactive="rect-player"] { position: fixed; top: var(--player-top,57px); left: env(safe-area-inset-left,0px); right: env(safe-area-inset-right,0px); height: var(--player-height); overflow: hidden; }
+.phone-view #rp { height: 100%; }
+.phone-view #rp > p, .phone-view #rp .rp-side { display: none; }
+.phone-view #rp .rp-col { position: relative; width: 100%; height: 100%; gap: 0; }
+.phone-view #rp .rp-col canvas { width: 100%; height: 100% !important; border: 0; border-radius: 0; }
+.phone-k { position: absolute; top: 112px; left: 10px; border-radius: 50%; width: 44px; height: 44px; background: var(--bg2); }
+.phone-k-sheet { color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 18px 18px 0 0; margin: auto 0 0; width: 100%; max-width: none; max-height: 70dvh; padding: 16px 16px calc(16px + env(safe-area-inset-bottom,0px)); }
+.phone-k-sheet::backdrop { background: #0008; }
+.phone-view .phone-k-sheet .rr-sel { position: static; display: flex; flex-wrap: wrap; overflow: visible; }
+.phone-k-sheet [data-k="all"] { display: none; }
+.phone-rail { position: absolute; right: 8px; top: 27%; display: flex; flex-direction: column; gap: 12px; align-items: center; width: 66px; }
+.phone-view .phone-rail button, .phone-view .phone-rail a.btn { display: flex; flex-direction: column; justify-content: center; align-items: center; min-width: 44px; min-height: 44px; width: 64px; padding: 8px 2px; border-radius: 24px; background: var(--bg2); font-size: 11px; text-align: center; line-height: 1.3; }
+.phone-rail small { font-size: 10px; }
+.phone-music[aria-pressed="false"] { opacity: .55; }
+.phone-view #rp [data-o="scrub"] { position: absolute; bottom: 0; left: 0; width: 100%; margin: 0; min-height: 40px; height: 40px; background: transparent; accent-color: var(--acc); cursor: ew-resize; }
+.phone-play-overlay { position: absolute; pointer-events: none; top: 45%; left: 45%; font-size: 42px; opacity: 0; transition: opacity .12s; text-shadow: 0 2px 10px var(--bg); }
+.phone-play-overlay.show { opacity: 1; }
+
+/* A two-line summary; every full claim and document remains in the disclosure. */
+#res tr.r { padding: 8px 10px; margin-bottom: 6px; min-height: 60px; }
+#res tr.r td { display: none; }
+#res tr.r td:first-child { display: block; padding: 0; }
+#res tr.r td .cell-label, #res .result-desktop { display: none; }
+#res .result-phone { display: block; }
+#res .result-line { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; font-size: 11px; line-height: 24px; }
+#res .result-line .st { padding: 1px 3px; font-size: 10px; }
+#res .result-line.secondary { color: var(--fg2); }
+#res .result-line a { display: inline; min-height: 0; }
+#res .result-line:not(.secondary) { display: flex; align-items: center; gap: 3px; }
+#res .result-bound { flex: 1 1 auto; overflow: hidden; text-overflow: ellipsis; }
+#res .result-container { flex: 0 1 auto; max-width: 28%; overflow: hidden; text-overflow: ellipsis; }
+#res .result-line .st { flex: 0 0 auto; }
+.topbar, main { padding-left: max(14px, env(safe-area-inset-left,0px)); padding-right: max(14px, env(safe-area-inset-right,0px)); }
+.tabbar { padding-left: max(4px, env(safe-area-inset-left,0px)); padding-right: max(4px, env(safe-area-inset-right,0px)); }
+/* Other containers on phones: selector and n chips in one row */
+.phone-ct-row { display: flex; align-items: center; gap: 8px; margin: 6px 0; min-width: 0; }
+.phone-ct-select { flex: 0 0 auto; max-width: 46%; min-height: 40px; font: inherit; color: var(--fg); background: var(--bg2); border: 1px solid var(--line); border-radius: 3px; padding: 4px 8px; }
+.phone-ct-row .ct-pick { flex: 1 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.phone-ct-row .ct-pick::-webkit-scrollbar { display: none; }
+.phone-view .cv-fig > .bar { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-bottom: 6px; }
+.phone-view .cv-fig > label { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.phone-view .cv-fig > label.cv-r input[type=range] { flex: 1; }

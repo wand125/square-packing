@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import DataTable from '../components/ui/DataTable.astro';
+import {readEditorial} from '../lib/data';
+import {bi,bd,bc,a,esc,BLOB,cell,sourceLinks} from '../lib/reading';
+const rows = readEditorial('methods.json').rows.map(r => `<tr class="r" data-n="0">${cell(`<b>${bd(r.name)}</b>`)}${cell(bc(r.what || r.consists || r.description))}${cell(bc(r.used || r.used_for)+(r.review_status ? ' '+bc(r.review_status) : ''))}${cell(bc(r.origin || r.credit))}${cell((r.tools || []).map(t => {const p = t.replace(/\/+$/,''); return a(BLOB+p,esc(p.split('/').at(-1)));}).join(''),'links')}${cell(sourceLinks(r.sources),'links')}</tr>`).join('');
+---
+<Base file="methods.html" title="Square Packing Methods">
+<div class="bar" data-filterbar="mt"><input type="search" data-key="q" id="m-q" data-ph-en="filter text" data-ph-ja="文字で絞り込み" aria-label="filter"/><span class="count" aria-live="polite"/></div>
+<DataTable headers={[bi('Method','手法'),bi('Certificate and check','証明書と検査'),bi('Used for','使った対象'),bi('Origin and credit','出典'),bi('Code','コード'),bi('Source','記述の元')]} rows={rows} id="mt" class="wide methods-table"/>
+<script>import '../scripts/reading';</script>
+</Base>

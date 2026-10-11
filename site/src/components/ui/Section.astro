@@ -1,0 +1,6 @@
+---
+import T from './T.astro';
+interface Props { en: string; ja?: string }
+const {en, ja} = Astro.props;
+---
+<section><h2><T en={en} ja={ja} /></h2><slot /></section>
