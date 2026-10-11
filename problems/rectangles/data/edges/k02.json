@@ -1,0 +1,50 @@
+{
+ "schema": "rectangle-edge/v1",
+ "k": 2,
+ "edge": "F_2 = {(a, b) : a ≤ b, 2 unit squares fit in an a × b box}; pieces from a = 1 to the diagonal a = b",
+ "claim": "constructions only: each listed certificate packs k unit squares in its box; no optimality claim",
+ "pieces": [
+  {
+   "key": "1.1",
+   "a0": 1.0,
+   "a1": 2.0,
+   "a_text": "1 ≤ a ≤ 2",
+   "formula": "b = 2",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "grid",
+   "features": {
+    "kind": "grid",
+    "angles": 0,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 1.1 of S_1 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "1.1"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k02/1.1-1.json",
+     "a": "150000001/100000000",
+     "b": "50000011/25000000",
+     "a_float": 1.50000001,
+     "b_float": 2.00000044
+    }
+   ],
+   "pts": [
+    [
+     1.0,
+     2.0
+    ],
+    [
+     2.0,
+     2.0
+    ]
+   ]
+  }
+ ]
+}

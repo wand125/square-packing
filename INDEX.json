@@ -1,7 +1,7 @@
 {
  "schema": "index/v1",
  "repository": "wand125/square-packing",
- "generated": "2026-10-10",
+ "generated": "2026-10-11",
  "problems": {
   "domino": [
    {
@@ -36,6 +36,23 @@
      "problems/hexagon/n3/SPEC_stage2.md",
      "problems/hexagon/n3/local_lemma/LOCAL_LEMMA.md",
      "problems/hexagon/n3/local_lemma/LOCAL_LEMMA_SHORT.md"
+    ]
+   }
+  ],
+  "rectangles": [
+   {
+    "id": "rectangles-v1:certificates",
+    "claim": "For each piece of the edges F_k (k = 2..15) listed in data/edges, the certificates pack k non-overlapping unit squares in the stated a × b box. Constructions only; no optimality claim.",
+    "release_tag": "rectangles-v1",
+    "assets": [
+     "certificates.tar.gz"
+    ],
+    "path": "problems/rectangles/ASSET.json",
+    "check": "sha256sum -c SHA256SUMS\npython checker/check_all.py",
+    "check_cwd": "problems/rectangles",
+    "documents": [
+     "problems/rectangles/README.md",
+     "problems/rectangles/FORMAT.md"
     ]
    }
   ],

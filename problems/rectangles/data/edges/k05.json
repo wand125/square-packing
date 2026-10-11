@@ -1,0 +1,218 @@
+{
+ "schema": "rectangle-edge/v1",
+ "k": 5,
+ "edge": "F_5 = {(a, b) : a ≤ b, 5 unit squares fit in an a × b box}; pieces from a = 1 to the diagonal a = b",
+ "claim": "constructions only: each listed certificate packs k unit squares in its box; no optimality claim",
+ "pieces": [
+  {
+   "key": "4.1",
+   "a0": 1.0,
+   "a1": 1.8713203435596426,
+   "a_text": "1 ≤ a ≤ 1.871320344",
+   "formula": "b = 5",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "grid",
+   "features": {
+    "kind": "grid",
+    "angles": 0,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 4.1 of S_4 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "4.1"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k05/4.1-1.json",
+     "a": "143566001/100000000",
+     "b": "125000011/25000000",
+     "a_float": 1.43566001,
+     "b_float": 5.00000044
+    }
+   ],
+   "pts": [
+    [
+     1.0,
+     5.0
+    ],
+    [
+     1.8713203436,
+     5.0
+    ]
+   ]
+  },
+  {
+   "key": "4.2",
+   "a0": 1.8713203435596426,
+   "a1": 2.0,
+   "a_text": "1.871320344 ≤ a ≤ 2",
+   "formula": "b = 4 + 6√2 − 4a",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": null,
+   "features": {
+    "kind": "friedman",
+    "angles": null,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 4.2 of S_4 (Math Magic, June 2010; mostly Morandi)",
+   "friedman": [
+    "4.2"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k05/4.2-1.json",
+     "a": "193566001/100000000",
+     "b": "948528363/200000000",
+     "a_float": 1.93566001,
+     "b_float": 4.742641815
+    }
+   ],
+   "pts": [
+    [
+     1.8713203436,
+     5.0
+    ],
+    [
+     2.0,
+     4.4852813742
+    ]
+   ]
+  },
+  {
+   "key": "4.3",
+   "a0": 2.0,
+   "a1": 2.0,
+   "a_text": "2 ≤ a ≤ 2",
+   "formula": "a = 2",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "step (constant a)",
+   "features": {
+    "kind": "step",
+    "angles": 0,
+    "form": null,
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 4.3 of S_4 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "4.3"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k05/4.3-1.json",
+     "a": "2000001/1000000",
+     "b": "46783/12500",
+     "a_float": 2.000001,
+     "b_float": 3.74264
+    }
+   ],
+   "pts": [
+    [
+     2.0,
+     4.4852813742
+    ],
+    [
+     2.0,
+     3.0
+    ]
+   ]
+  },
+  {
+   "key": "4.4",
+   "a0": 2.0,
+   "a1": 2.414213562373095,
+   "a_text": "2 ≤ a ≤ 2.414213562",
+   "formula": "b = 3",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "grid",
+   "features": {
+    "kind": "grid",
+    "angles": 0,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 4.4 of S_4 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "4.4"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k05/4.4-1.json",
+     "a": "220710601/100000000",
+     "b": "75000011/25000000",
+     "a_float": 2.20710601,
+     "b_float": 3.00000044
+    }
+   ],
+   "pts": [
+    [
+     2.0,
+     3.0
+    ],
+    [
+     2.4142135624,
+     3.0
+    ]
+   ]
+  },
+  {
+   "key": "4.5",
+   "a0": 2.414213562373095,
+   "a1": 2.7071067811865475,
+   "a_text": "2.414213562 ≤ a ≤ 2.707106781",
+   "formula": "b = 4 + √2 − a",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": null,
+   "features": {
+    "kind": "friedman",
+    "angles": null,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 4.5 of S_4 (Math Magic, June 2010; mostly Morandi)",
+   "friedman": [
+    "4.5"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k05/4.5-1.json",
+     "a": "128033/50000",
+     "b": "1426777/500000",
+     "a_float": 2.56066,
+     "b_float": 2.853554
+    }
+   ],
+   "pts": [
+    [
+     2.4142135624,
+     3.0
+    ],
+    [
+     2.7071067812,
+     2.7071067812
+    ]
+   ]
+  }
+ ]
+}

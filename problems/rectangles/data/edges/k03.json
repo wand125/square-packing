@@ -1,0 +1,134 @@
+{
+ "schema": "rectangle-edge/v1",
+ "k": 3,
+ "edge": "F_3 = {(a, b) : a ≤ b, 3 unit squares fit in an a × b box}; pieces from a = 1 to the diagonal a = b",
+ "claim": "constructions only: each listed certificate packs k unit squares in its box; no optimality claim",
+ "pieces": [
+  {
+   "key": "2.1",
+   "a0": 1.0,
+   "a1": 1.914213562373095,
+   "a_text": "1 ≤ a ≤ 1.914213562",
+   "formula": "b = 3",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "grid",
+   "features": {
+    "kind": "grid",
+    "angles": 0,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 2.1 of S_2 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "2.1"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k03/2.1-1.json",
+     "a": "145710601/100000000",
+     "b": "75000011/25000000",
+     "a_float": 1.45710601,
+     "b_float": 3.00000044
+    }
+   ],
+   "pts": [
+    [
+     1.0,
+     3.0
+    ],
+    [
+     1.9142135624,
+     3.0
+    ]
+   ]
+  },
+  {
+   "key": "2.2",
+   "a0": 1.914213562373095,
+   "a1": 2.0,
+   "a_text": "1.914213562 ≤ a ≤ 2",
+   "formula": "b = 4 + 2√2 − 2a",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": null,
+   "features": {
+    "kind": "friedman",
+    "angles": null,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 2.2 of S_2 (Math Magic, June 2010; mostly Morandi)",
+   "friedman": [
+    "2.2"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k03/2.2-1.json",
+     "a": "978553/500000",
+     "b": "364277/125000",
+     "a_float": 1.957106,
+     "b_float": 2.914216
+    }
+   ],
+   "pts": [
+    [
+     1.9142135624,
+     3.0
+    ],
+    [
+     2.0,
+     2.8284271247
+    ]
+   ]
+  },
+  {
+   "key": "2.3",
+   "a0": 2.0,
+   "a1": 2.0,
+   "a_text": "2 ≤ a ≤ 2",
+   "formula": "a = 2",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "step (constant a)",
+   "features": {
+    "kind": "step",
+    "angles": 0,
+    "form": null,
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 2.3 of S_2 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "2.3"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k03/2.3-1.json",
+     "a": "2000001/1000000",
+     "b": "2414213/1000000",
+     "a_float": 2.000001,
+     "b_float": 2.414213
+    }
+   ],
+   "pts": [
+    [
+     2.0,
+     2.8284271247
+    ],
+    [
+     2.0,
+     2.0
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,260 @@
+{
+ "schema": "rectangle-edge/v1",
+ "k": 7,
+ "edge": "F_7 = {(a, b) : a ≤ b, 7 unit squares fit in an a × b box}; pieces from a = 1 to the diagonal a = b",
+ "claim": "constructions only: each listed certificate packs k unit squares in its box; no optimality claim",
+ "pieces": [
+  {
+   "key": "6.1",
+   "a0": 1.0,
+   "a1": 1.8570226039551587,
+   "a_text": "1 ≤ a ≤ 1.857022604",
+   "formula": "b = 7",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "grid",
+   "features": {
+    "kind": "grid",
+    "angles": 0,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 6.1 of S_6 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "6.1"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k07/6.1-1.json",
+     "a": "142851101/100000000",
+     "b": "175000011/25000000",
+     "a_float": 1.42851101,
+     "b_float": 7.00000044
+    }
+   ],
+   "pts": [
+    [
+     1.0,
+     7.0
+    ],
+    [
+     1.857022604,
+     7.0
+    ]
+   ]
+  },
+  {
+   "key": "6.2",
+   "a0": 1.8570226039551587,
+   "a1": 2.0,
+   "a_text": "1.857022604 ≤ a ≤ 2",
+   "formula": "b = 4 + 10√2 − 6a",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": null,
+   "features": {
+    "kind": "friedman",
+    "angles": null,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 6.2 of S_6 (Math Magic, June 2010; mostly Morandi)",
+   "friedman": [
+    "6.2"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k07/6.2-1.json",
+     "a": "77649779652641099/40264109900000000",
+     "b": "1642767501/250000000",
+     "a_float": 1.92851102,
+     "b_float": 6.571070004
+    }
+   ],
+   "pts": [
+    [
+     1.857022604,
+     7.0
+    ],
+    [
+     2.0,
+     6.1421356237
+    ]
+   ]
+  },
+  {
+   "key": "6.3",
+   "a0": 2.0,
+   "a1": 2.0,
+   "a_text": "2 ≤ a ≤ 2",
+   "formula": "a = 2",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "step (constant a)",
+   "features": {
+    "kind": "step",
+    "angles": 0,
+    "form": null,
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 6.3 of S_6 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "6.3"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k07/6.3-1.json",
+     "a": "2000001/1000000",
+     "b": "5071067/1000000",
+     "a_float": 2.000001,
+     "b_float": 5.071067
+    }
+   ],
+   "pts": [
+    [
+     2.0,
+     6.1421356237
+    ],
+    [
+     2.0,
+     4.0
+    ]
+   ]
+  },
+  {
+   "key": "6.4",
+   "a0": 2.0,
+   "a1": 2.414213562373095,
+   "a_text": "2 ≤ a ≤ 2.414213562",
+   "formula": "b = 4",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "grid",
+   "features": {
+    "kind": "grid",
+    "angles": 0,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 6.4 of S_6 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "6.4"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k07/6.4-1.json",
+     "a": "220710601/100000000",
+     "b": "100000011/25000000",
+     "a_float": 2.20710601,
+     "b_float": 4.00000044
+    }
+   ],
+   "pts": [
+    [
+     2.0,
+     4.0
+    ],
+    [
+     2.4142135624,
+     4.0
+    ]
+   ]
+  },
+  {
+   "key": "6.5",
+   "a0": 2.414213562373095,
+   "a1": 3.0,
+   "a_text": "2.414213562 ≤ a ≤ 3",
+   "formula": "b = 5 + √2 − a",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": null,
+   "features": {
+    "kind": "friedman",
+    "angles": null,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 6.5 of S_6 (Math Magic, June 2010; mostly Morandi)",
+   "friedman": [
+    "6.5"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k07/6.5-1.json",
+     "a": "1353553/500000",
+     "b": "926777/250000",
+     "a_float": 2.707106,
+     "b_float": 3.707108
+    }
+   ],
+   "pts": [
+    [
+     2.4142135624,
+     4.0
+    ],
+    [
+     3.0,
+     3.4142135624
+    ]
+   ]
+  },
+  {
+   "key": "6.6",
+   "a0": 3.0,
+   "a1": 3.0,
+   "a_text": "3 ≤ a ≤ 3",
+   "formula": "a = 3",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "step (constant a)",
+   "features": {
+    "kind": "step",
+    "angles": 0,
+    "form": null,
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 6.6 of S_6 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "6.6"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k07/6.6-1.json",
+     "a": "3000001/1000000",
+     "b": "1603553/500000",
+     "a_float": 3.000001,
+     "b_float": 3.207106
+    }
+   ],
+   "pts": [
+    [
+     3.0,
+     3.4142135624
+    ],
+    [
+     3.0,
+     3.0
+    ]
+   ]
+  }
+ ]
+}

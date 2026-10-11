@@ -1,0 +1,302 @@
+{
+ "schema": "rectangle-edge/v1",
+ "k": 9,
+ "edge": "F_9 = {(a, b) : a ≤ b, 9 unit squares fit in an a × b box}; pieces from a = 1 to the diagonal a = b",
+ "claim": "constructions only: each listed certificate packs k unit squares in its box; no optimality claim",
+ "pieces": [
+  {
+   "key": "8.1",
+   "a0": 1.0,
+   "a1": 1.8498737341529163,
+   "a_text": "1 ≤ a ≤ 1.849873734",
+   "formula": "b = 9",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "grid",
+   "features": {
+    "kind": "grid",
+    "angles": 0,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 8.1 of S_8 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "8.1"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k09/8.1-1.json",
+     "a": "142493601/100000000",
+     "b": "225000011/25000000",
+     "a_float": 1.42493601,
+     "b_float": 9.00000044
+    }
+   ],
+   "pts": [
+    [
+     1.0,
+     9.0
+    ],
+    [
+     1.8498737342,
+     9.0
+    ]
+   ]
+  },
+  {
+   "key": "8.2",
+   "a0": 1.8498737341529163,
+   "a1": 2.0,
+   "a_text": "1.849873734 ≤ a ≤ 2",
+   "formula": "b = 4 + 14√2 − 8a",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": null,
+   "features": {
+    "kind": "friedman",
+    "angles": null,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 8.2 of S_8 (Math Magic, June 2010; mostly Morandi)",
+   "friedman": [
+    "8.2"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k09/8.2-1.json",
+     "a": "72646931977399203/37739920300000000",
+     "b": "4199751117/500000000",
+     "a_float": 1.9249360199999999,
+     "b_float": 8.399502234
+    }
+   ],
+   "pts": [
+    [
+     1.8498737342,
+     9.0
+    ],
+    [
+     2.0,
+     7.7989898732
+    ]
+   ]
+  },
+  {
+   "key": "8.3",
+   "a0": 2.0,
+   "a1": 2.0,
+   "a_text": "2 ≤ a ≤ 2",
+   "formula": "a = 2",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "step (constant a)",
+   "features": {
+    "kind": "step",
+    "angles": 0,
+    "form": null,
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 8.3 of S_8 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "8.3"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k09/8.3-1.json",
+     "a": "2000001/1000000",
+     "b": "3199747/500000",
+     "a_float": 2.000001,
+     "b_float": 6.399494
+    }
+   ],
+   "pts": [
+    [
+     2.0,
+     7.7989898732
+    ],
+    [
+     2.0,
+     5.0
+    ]
+   ]
+  },
+  {
+   "key": "8.4",
+   "a0": 2.0,
+   "a1": 2.414213562373095,
+   "a_text": "2 ≤ a ≤ 2.414213562",
+   "formula": "b = 5",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "grid",
+   "features": {
+    "kind": "grid",
+    "angles": 0,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 8.4 of S_8 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "8.4"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k09/8.4-1.json",
+     "a": "220710601/100000000",
+     "b": "125000011/25000000",
+     "a_float": 2.20710601,
+     "b_float": 5.00000044
+    }
+   ],
+   "pts": [
+    [
+     2.0,
+     5.0
+    ],
+    [
+     2.4142135624,
+     5.0
+    ]
+   ]
+  },
+  {
+   "key": "8.5",
+   "a0": 2.414213562373095,
+   "a1": 2.8284271247461907,
+   "a_text": "2.414213562 ≤ a ≤ 2.828427125",
+   "formula": "b = 6 + √2 − a",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": null,
+   "features": {
+    "kind": "friedman",
+    "angles": null,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 8.5 of S_8 (Math Magic, June 2010; mostly Morandi)",
+   "friedman": [
+    "8.5"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k09/8.5-1.json",
+     "a": "65533/25000",
+     "b": "2396447/500000",
+     "a_float": 2.62132,
+     "b_float": 4.792894
+    }
+   ],
+   "pts": [
+    [
+     2.4142135624,
+     5.0
+    ],
+    [
+     2.8284271247,
+     4.5857864376
+    ]
+   ]
+  },
+  {
+   "key": "8.6",
+   "a0": 2.8284271247461907,
+   "a1": 3.0,
+   "a_text": "2.828427125 ≤ a ≤ 3",
+   "formula": "b = 6 + 3√2 − 2a",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": null,
+   "features": {
+    "kind": "friedman",
+    "angles": null,
+    "form": "line",
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 8.6 of S_8 (Math Magic, June 2010; mostly Morandi)",
+   "friedman": [
+    "8.6"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k09/8.6-1.json",
+     "a": "27606718494731299/9473129900000000",
+     "b": "1103553777/250000000",
+     "a_float": 2.91421302,
+     "b_float": 4.414215108
+    }
+   ],
+   "pts": [
+    [
+     2.8284271247,
+     4.5857864376
+    ],
+    [
+     3.0,
+     4.2426406871
+    ]
+   ]
+  },
+  {
+   "key": "8.7",
+   "a0": 3.0,
+   "a1": 3.0,
+   "a_text": "3 ≤ a ≤ 3",
+   "formula": "a = 3",
+   "formula_full": null,
+   "param": null,
+   "name": null,
+   "note": "step (constant a)",
+   "features": {
+    "kind": "step",
+    "angles": 0,
+    "form": null,
+    "vars": null,
+    "base": null
+   },
+   "source": "friedman",
+   "basis": "Friedman's boundary piece 8.7 of S_8 (Math Magic, June 2010; mostly Morandi); a grid packing",
+   "friedman": [
+    "8.7"
+   ],
+   "witnesses": [
+    {
+     "file": "certificates/k09/8.7-1.json",
+     "a": "3000001/1000000",
+     "b": "90533/25000",
+     "a_float": 3.000001,
+     "b_float": 3.62132
+    }
+   ],
+   "pts": [
+    [
+     3.0,
+     4.2426406871
+    ],
+    [
+     3.0,
+     3.0
+    ]
+   ]
+  }
+ ]
+}
