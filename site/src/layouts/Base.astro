@@ -10,10 +10,10 @@ import mobileCss from '../styles/mobile.css?url';
 const { file, title, katex = false } = Astro.props;
 const shown = PAGES.filter((p) => PREVIEW || !p.preview);
 const row = (g) => shown.filter((p) => p.group === g);
-const tabs = [
-  { file: 'index.html', en: 'Home', ja: 'ホーム', icon: 'M3 11 12 4l9 7v9h-6v-6H9v6H3z' },
+const tabs = [   // the phone tab bar: the parts of Home, one per tab
+  { file: 'index.html', en: 'Top', ja: 'トップ', icon: 'M3 11 12 4l9 7v9h-6v-6H9v6H3z' },
   { file: 'guide.html', en: 'Visualize', ja: '図で見る', icon: 'M3 3h8v8H3zM13 13h8v8h-8zM4 21l7-7' },
-  { file: 'rect-player.html', en: 'Play', ja: '再生', icon: 'M7 4.5v15l12-7.5z', fill: true },
+  { file: 'themes.html', en: 'Theme', ja: 'テーマ', icon: 'M6 21V4h11l-2 4 2 4H6' },
   { file: 'outcomes.html', en: 'Outcomes', ja: '成果', icon: 'M5 6h14M5 12h14M5 18h9' },
 ];
 ---
@@ -32,7 +32,7 @@ const tabs = [
 <link rel="stylesheet" href={mobileCss} media={PHONE}>
 {katex && <link rel="stylesheet" href={url('katex/katex.min.css')}>}
 <script is:inline>
-(function(){var H=document.documentElement;try{var t=localStorage.getItem("sp-theme");if(t)H.dataset.theme=t;var l=localStorage.getItem("sp-lang");if(l)H.lang=l;}catch(e){}})();
+(function(){var H=document.documentElement;if(/[?&]embed\b/.test(location.search))H.classList.add("embed");try{var t=localStorage.getItem("sp-theme");if(t)H.dataset.theme=t;var l=localStorage.getItem("sp-lang");if(l)H.lang=l;}catch(e){}})();
 </script>
 </head>
 <body>
@@ -61,5 +61,6 @@ L.onclick=function(){H.lang=H.lang==='ja'?'en':'ja';try{localStorage.setItem('sp
 M.onclick=function(){H.dataset.theme=H.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('sp-theme',H.dataset.theme)}catch(e){}lab();};lab();})();
 </script>
 <script>import '../scripts/links';</script>
+<script>import '../scripts/row-popup';</script>
 </body>
 </html>

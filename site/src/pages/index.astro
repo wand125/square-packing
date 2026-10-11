@@ -7,10 +7,13 @@ import T from '../components/ui/T.astro';
 import {GH, url} from '../lib/sitemap';
 ---
 <Base file="index.html" title="wand125 Square Packing">
-<Lede en="Research themes and results on packing unit squares, mainly by wand125. The proofs are published on GitHub." ja="主に wand125 による、単位正方形の詰め込みの研究テーマと成果。証明は GitHub で公開している。">
+<Lede open en="Research themes and results on packing unit squares, mainly by wand125. The proofs are published on GitHub." ja="主に wand125 による、単位正方形の詰め込みの研究テーマと成果。証明は GitHub で公開している。">
 <div class="intro"><p><span data-l="en">Research themes and results on packing unit squares, mainly by wand125. Most of them are proofs of optimal values and lower bounds, in squares and in other containers (triangles, a regular hexagon, rectangles); the proofs are published on <a href={GH}>GitHub</a>.</span><span data-l="ja">主に wand125 による、単位正方形の詰め込みの研究テーマと成果をまとめたページ。主に最適値と下界の証明で、容器は正方形のほか三角形・正六角形・長方形。証明は <a href={GH}>GitHub</a> で公開している。</span></p>
-<p><T en="For the best known packings, and for solved and open problems, see also:" ja="既知最良の詰め方や、解決済み・未解決の取り組みは、以下も参考になる。"/></p><ul class="tight"><li><a href="https://jlevy.github.io/squares/">The Squares Project</a> (jlevy)</li><li><a href="https://evand.github.io/square-packing/">Square Packing Atlas</a> (evand)</li><li><a href="https://erich-friedman.github.io/packing/">Packing Center</a> (Erich Friedman)</li></ul></div>
+<p><T en="For the best known packings, and for solved and open problems, see also:" ja="既知最良の詰め方や、解決済み・未解決の取り組みは、以下も参考になる。"/></p><div class="ref-items"><a class="ref-item" href="https://jlevy.github.io/squares/"><img src={url('icons/squares-project.svg')} alt="" width="40" height="40" loading="lazy"/><span><b>The Squares Project</b><span class="dim">jlevy</span></span></a><a class="ref-item" href="https://evand.github.io/square-packing/"><img src={url('icons/square-packing-atlas.png')} alt="" width="40" height="40" loading="lazy"/><span><b>Square Packing Atlas</b><span class="dim">evand</span></span></a><a class="ref-item" href="https://erich-friedman.github.io/packing/"><img src={url('icons/packing-center.png')} alt="" width="40" height="40" loading="lazy"/><span><b>Packing Center</b><span class="dim">Erich Friedman</span></span></a></div></div>
 </Lede>
+<p class="home-phone-links"><a href={url('about.html')}><T en="Credits" ja="クレジット"/></a> · <a href={GH}>GitHub</a></p>
+<div class="home-more">
 <h2 class="top-h"><a href={url('guide.html')}><T en="Visualize" ja="ビジュアライズ"/></a></h2><Guide/>
 <h2 class="top-h"><a href={url('outcomes.html')}><T en="Outcomes" ja="成果"/></a></h2><Outcomes/>
+</div>
 </Base>

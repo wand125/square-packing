@@ -20,6 +20,6 @@ const rows = readEditorial('verify.json').releases.map(rel => {
 <Base file="releases.html" title="Square Packing Releases">
 <Lede en="Published releases, newest first. Click a row for its results." ja="公開済みの Release（新しい順）。行を押すと含まれる結果が出る。"><p class="note" set:html={bi('The published releases of wand125/square-packing, newest first. Click a row for the results it carries; the counts come from INDEX.json and the n = 17 manifest.','wand125/square-packing の公開済みの Release（新しい順）。行を押すと含まれる結果が出る。件数は INDEX.json と n = 17 の manifest から。')}/></Lede>
 <div class="bar" data-filterbar="rl"><input type="search" data-key="q" id="r-q" data-ph-en="filter text" data-ph-ja="文字で絞り込み" aria-label="filter"/><span class="count" aria-live="polite"/></div>
-<DataTable headers={[bi('Tag','タグ'),bi('Name','名前'),bi('Date','日付'),bi('Theme','テーマ'),bi('Containers','容器'),bi('Certificates and proofs','証明書と証明'),bi('Best for their n','n ごとの最良')]} rows={rows} id="rl" class="wide"/>
+<DataTable headers={[bi('Tag','タグ'),bi('Name','名前'),bi('Date','日付'),bi('Theme','テーマ'),bi('Containers','容器'),bi('Certificates and proofs','証明書と証明'),bi('Best for their n','n ごとの最良')]} rows={rows} id="rl" class="wide releases-table"/>
 <script>import '../scripts/reading';</script>
 </Base>

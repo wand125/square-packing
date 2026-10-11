@@ -49,11 +49,16 @@ export function mountShared(host: HTMLElement) {
   // FIT (<= 1) shrinks the figures so that the pieces table starts within the top two thirds of the window
   var FIT = 1;
   function figW() { if (host.classList.contains('phone-view')) return root.querySelector('.cv-fig').clientWidth; return Math.max(200, Math.round(Math.min(root.querySelector('.cv-fig').clientWidth || 600, 680) * (host.classList.contains('phone-view') ? 1 : FIT))); }
-  function sideW() { if (host.classList.contains('phone-view')) return Math.max(160,root.querySelector('.pcard').clientWidth); return Math.max(160, Math.round(Math.min(Math.max(220, (root.querySelector('.pcard').clientWidth || 640) * 0.5), 460) * FIT)); }
+  function sideW() { if (host.classList.contains('phone-view')) return Math.max(160, (root.querySelector('.rr-phone-pack') || root).clientWidth); return Math.max(160, Math.round(Math.min(Math.max(220, (root.querySelector('.pcard').clientWidth || 640) * 0.5), 460) * FIT)); }
   function zoomW() { return Math.min(root.querySelector('.cv-side').clientWidth || 320, 480); }
   function css(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
   function ja() { return document.documentElement.lang === 'ja'; }
-  function dpr(c, w, h) { var d = window.devicePixelRatio || 1; c.style.width = w + 'px'; c.style.height = h + 'px'; c.width = Math.round(w * d); c.height = Math.round(h * d); return d; }
+  // size a canvas for the screen; while playing this runs every frame, so the pixel buffer is reallocated only when its
+  // size changes (phones run short of canvas memory otherwise), else just cleared
+  function dpr(c, w, h) { var d = window.devicePixelRatio || 1, W = Math.round(w * d), H = Math.round(h * d);
+    if (c.width !== W || c.height !== H) { c.style.width = w + 'px'; c.style.height = h + 'px'; c.width = W; c.height = H; }
+    else { var x = c.getContext('2d'); x.setTransform(1, 0, 0, 1, 0, 0); x.globalAlpha = 1; x.setLineDash([]); x.clearRect(0, 0, W, H); }
+    return d; }
   function esc(t) { return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
   // a parametric piece "a = A(p), b = B(p)" is shown on two lines
   function fml(t) { return esc(t).replace(/,\s*(?=[ab]\s*=)/, '<br>'); }
@@ -125,9 +130,27 @@ export function mountShared(host: HTMLElement) {
   }
   // the sampled packing of the piece at a (c8's "family"), linear between the two nearest samples
   function familyAt(p: any, a: any): any { return rect_edges.familyAt(p, a); }
+  // a small drawing of a packing, put before the piece key in the table rows
+  function packIcon(f) { if (!f) return ''; var W = 54, H = 30, S = Math.min((W - 2) / f.box[0], (H - 2) / f.box[1]), h = f.box[1] * S;
+    var P = function (x, y) { return (1 + x * S).toFixed(1) + ',' + (1 + h - y * S).toFixed(1); };
+    return '<svg class="pk-ico" viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" aria-hidden="true"><rect x="1" y="1" width="' + (f.box[0] * S).toFixed(1) + '" height="' + h.toFixed(1) + '" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.7"/>'
+      + f.squares.map(function (q) { var c = Math.cos(q[2]) / 2, si = Math.sin(q[2]) / 2;
+        return '<polygon points="' + [[-1, -1], [1, -1], [1, 1], [-1, 1]].map(function (v) { return P(q[0] + v[0] * c - v[1] * si, q[1] + v[0] * si + v[1] * c); }).join(' ') + '"/>'; }).join('') + '</svg>'; }
+  // a packing that stands for the piece in a list: its first certificate, the family midway, or for a step the
+  // neighbouring piece's packing at the step's a
+  function repPack(KK: any, p: any): any {
+    if (p.witnesses[0]) return p.witnesses[0];
+    if (p.family) return familyAt(p, (+p.a0 + +p.a1) / 2);
+    var i = KK.pieces.indexOf(p), r = null;
+    [KK.pieces[i + 1], KK.pieces[i - 1]].some(function (q) { if (!q) return false;
+      r = q.witnesses.filter(function (w) { return Math.abs(w.a - p.a0) < 1e-6; })[0] || familyAt(q, p.a0); return !!r; });
+    return r;
+  }
+  // Safari allows about 100 history changes per 30 s and throws after that: change the hash only when it differs
+  function setHash(h) { if (location.hash === h) return; try { history.replaceState(null, '', h); } catch (e) {} }
   var showCert = true;   // the packing panel shows the certificate (after a certificate button) or the family at the slider
   function showPiece(p, k) {
-    if (!CELL) history.replaceState(null, '', '#' + k + '-' + p.key);
+    if (!CELL) setHash('#' + k + '-' + p.key);
     o.playp.href = 'rect-player.html#' + k + '-' + p.key; o.playp.hidden = false;
     o.key.textContent = p.key + (p.name ? '  (' + p.name + ')' : '');
     o.f.innerHTML = p.formula ? fml(p.formula) + (p.param ? '<br><span class="dim">' + esc(p.param[ja() ? 'ja' : 'en'] || '') + '</span>' : '')
@@ -216,16 +239,17 @@ export function mountShared(host: HTMLElement) {
     R.ks.forEach(function (KK) {
       KK.pieces.forEach(function (p) {
         if (!throughCell(p, CELL[0], CELL[1])) return;
-        rows.push('<tr class="r" data-k="' + KK.k + '" data-key="' + p.key + '"><td class="num"><span style="color:' + kcol(KK.k) + '">■</span> ' + p.key + (p.name ? ' (' + esc(p.name) + ')' : '') + '</td><td class="num">' + esc(p.a_text) + '</td><td class="nw">'
+        rows.push('<tr class="r" data-k="' + KK.k + '" data-key="' + p.key + '"><td class="num pk-key">' + packIcon(repPack(KK, p)) + '<span style="color:' + kcol(KK.k) + '">■</span> ' + p.key + (p.name ? ' (' + esc(p.name) + ')' : '') + '</td><td class="num">' + esc(p.a_text) + '</td><td class="nw">'
           + (p.status.map(function (st) { return '<span class="st' + (st.kind === 'proved' ? ' ex' : '') + '">' + KIND[st.kind][ja() ? 1 : 0] + '</span>'; }).join(' ') || '–') + '</td><td class="num fw">'
           + (p.formula ? fml(p.formula) : '<span class="dim">' + esc(p.note ? p.note[ja() ? 'ja' : 'en'] : '–') + '</span>' + full(p, 'row')) + '</td><td>' + esc(p.basis[ja() ? 'ja' : 'en']) + '</td></tr>');
       });
     });
     tb.innerHTML = rows.join('') || '<tr><td colspan="5" class="dim">' + (ja() ? 'このマスを通る端はない' : 'no edge passes through this cell') + '</td></tr>';
     // a row opens its k with that piece selected, and shows the piece on the plot
-    tb.querySelectorAll('tr[data-k]').forEach(function (tr) {
+    tb.querySelectorAll('tr[data-k]').forEach(function (tr: any) {
       var KK = R.ks.filter(function (x) { return x.k === +tr.dataset.k; })[0];
       bindFull(tr, KK.pieces.filter(function (x) { return x.key === tr.dataset.key; })[0]);
+     
       tr.addEventListener('click', function (e) {
         if (e.target.closest('a.fft')) return; CSEL = { k: +tr.dataset.k, key: tr.dataset.key }; sel.w = 0; at = null; showCert = true; info(); draw(); });
     });
@@ -233,9 +257,9 @@ export function mountShared(host: HTMLElement) {
   function table() {
     tb.innerHTML = '';
     K.pieces.forEach(function (p) {
-      var tr = document.createElement('tr'); tr.className = 'r'; tr.dataset.key = p.key;
+      var tr: any = document.createElement('tr'); tr.className = 'r'; tr.dataset.key = p.key;
       var st = p.status.map(function (s) { return '<span class="st' + (s.kind === 'proved' ? ' ex' : '') + '">' + KIND[s.kind][ja() ? 1 : 0] + '</span>'; }).join(' ');
-      tr.innerHTML = '<td class="num">' + p.key + '</td><td class="num">' + esc(p.a_text) + '</td><td class="nw">' + (st || '–') + '</td><td class="num fw">' + (p.formula ? fml(p.formula) : '<span class="dim">' + esc(p.note ? p.note[ja() ? 'ja' : 'en'] : '–') + '</span>' + full(p, 'row')) + '</td><td>' + esc(p.basis[ja() ? 'ja' : 'en']) + '</td>';
+      tr.innerHTML = '<td class="num pk-key">' + packIcon(repPack(K, p)) + '<span>' + p.key + '</span></td><td class="num">' + esc(p.a_text) + '</td><td class="nw">' + (st || '–') + '</td><td class="num fw">' + (p.formula ? fml(p.formula) : '<span class="dim">' + esc(p.note ? p.note[ja() ? 'ja' : 'en'] : '–') + '</span>' + full(p, 'row')) + '</td><td>' + esc(p.basis[ja() ? 'ja' : 'en']) + '</td>';
       tr.addEventListener('click', function (e) { if (e.target.closest('a.fft')) return; sel.key = p.key; sel.w = 0; at = null; showCert = true; info(); draw(); });
       bindFull(tr, p);
       tb.appendChild(tr);
@@ -263,7 +287,10 @@ export function mountShared(host: HTMLElement) {
       return;
     }
     K = R.ks.filter(function (x) { return x.k === k; })[0];
-    sel.key = K.pieces[0].key; sel.w = 0;
+    // start at the left end of the edge: the square container (a = b), on the last piece
+    var last = K.pieces[K.pieces.length - 1], e = last.pts && last.pts[last.pts.length - 1];
+    sel.key = last.key; sel.w = Math.max(0, last.witnesses.length - 1);
+    if (e) { at = [e[1], e[0]]; showCert = !last.family; } else { at = null; showCert = true; }
     o.rh.innerHTML = ja() ? k + ' 個が入り始める端' + (k <= 10 ? '（Friedman の表）' : '（当方の構成' + (K.status ? '、' + K.status.ja : '') + '）') + (k >= 16 ? '（preview）' : '')
                           : 'Where ' + k + ' squares begin to fit' + (k <= 10 ? " (Friedman's table)" : ' (our construction' + (K.status ? '; ' + K.status.en : '') + ')') + (k >= 16 ? ' (preview)' : '');
     table(); info(); draw();
@@ -289,6 +316,7 @@ export function mountShared(host: HTMLElement) {
   }
   async function settle() {
     if (!R) return;
+    var resume = !!run && typeof cur === 'number' && (!K || cur !== K.k);   // a new k while playing: keep playing, from its start
     const version = ++selection;
     const requested = cur;
     if (typeof requested === 'number' && !R.ks.find(x => x.k === requested)?.loaded) {
@@ -300,6 +328,7 @@ export function mountShared(host: HTMLElement) {
     var g = root.querySelector('.cv-grid'), keep = [cur, sel.key, sel.w], m = 0, tallest = null;
     var keepAt = at;
     g.style.minHeight = ''; FIT = 1; choose(keep[0]);
+    var start = [sel.key, sel.w, at, showCert];   // where choose() starts a new k (the left end of the edge)
     var height = function (key) { if (key) { sel.key = key; sel.w = 0; at = null; } info(); draw(); return g.offsetHeight; };
     if (typeof keep[0] === 'number') K.pieces.forEach(function (p) { var hh = height(p.key); if (hh > m) { m = hh; tallest = p.key; } });
     else m = height(null);
@@ -308,10 +337,11 @@ export function mountShared(host: HTMLElement) {
     for (var it = 0; !host.classList.contains('phone-view') && it < 4 && m > avail && FIT > 0.5; it++) { FIT = Math.max(0.5, FIT * avail / m); m = height(tallest); }
     // on a narrow screen the columns stack, so a fixed height would only leave a gap
     g.style.minHeight = window.innerWidth > 760 ? m + 'px' : '';
-    // back to the piece shown before, if it belongs to this k; otherwise the first piece
-    if (typeof keep[0] === 'number') { var kp = piece(keep[1]); sel.key = kp ? kp.key : K.pieces[0].key; sel.w = kp ? keep[2] : 0; at = kp ? keepAt : null; }
+    // back to the piece shown before, if it belongs to this k; otherwise the start of the new k
+    if (typeof keep[0] === 'number') { var kp = piece(keep[1]); if (kp) { sel.key = kp.key; sel.w = keep[2]; at = keepAt; } else { sel.key = start[0]; sel.w = start[1]; at = start[2]; showCert = start[3]; } }
     info(); draw();
     if (typeof cur !== 'number') void progressive();
+    else if (resume && version === selection) startRun(pathOf(), 0);
   }
   cv.addEventListener('click', function (ev) {
     if (!geo) return;
@@ -353,9 +383,18 @@ export function mountShared(host: HTMLElement) {
     sel.key = p.key; sel.w = 0; at = q ? [q[1], q[0]] : null; showCert = !q || !p.family; info(); draw();
   }
   var MOVE_ICON = null, PAUSE_ICON = '<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><rect x="5" y="4" width="3.5" height="12"/><rect x="11.5" y="4" width="3.5" height="12"/></svg>';
+  function startRun(P, s0) { var b = o.ctl.querySelector('[data-c="play"]'); if (!MOVE_ICON) MOVE_ICON = b.innerHTML; run = { path: P, s: s0, last: 0 }; b.innerHTML = PAUSE_ICON; requestAnimationFrame(frame); }
   function stopRun() { var b = o.ctl.querySelector('[data-c="play"]'); if (!MOVE_ICON) MOVE_ICON = b.innerHTML; if (run) { run = null; b.innerHTML = MOVE_ICON; } }
+  // one frame of the playback; an error in a frame must not leave the button on pause with nothing moving
   function frame(now) {
     if (!run) return;
+    try { step(now); } catch (err) {
+      console.error(err);
+      if (host.dataset.preview === '1') o.pk.textContent = 'playback error: ' + (err && (err as any).message || err);
+    }
+    if (run) requestAnimationFrame(frame);
+  }
+  function step(now) {
     var P = run.path, dt = run.last ? (now - run.last) / 1000 : 0; run.last = now;
     run.s += dt * Math.max(0.8, P[P.length - 1].s / 25);   // the whole edge in about 25 s, at least 0.8 units a second
     if (run.s >= P[P.length - 1].s) { var e = P[P.length - 1]; sel.key = e.p.key; at = [e.b, e.a]; showCert = !e.p.family; info(); draw(); stopRun(); return; }
@@ -363,7 +402,6 @@ export function mountShared(host: HTMLElement) {
     var u = P[i], v = P[i + 1], f = v.s > u.s ? (run.s - u.s) / (v.s - u.s) : 0, pc = v.p === u.p ? u.p : (f < 0.5 ? u.p : v.p);
     if (pc.key !== sel.key) { sel.key = pc.key; sel.w = 0; }
     at = [u.b + f * (v.b - u.b), u.a + f * (v.a - u.a)]; showCert = !pc.family; info(); draw();
-    requestAnimationFrame(frame);
   }
   o.ctl.querySelectorAll('[data-c]').forEach(function (b) {
     b.addEventListener('click', function () {
@@ -375,7 +413,7 @@ export function mountShared(host: HTMLElement) {
         var P = pathOf(), s0 = 0, bd = 1e18;
         if (at) P.forEach(function (q) { var d = Math.hypot(q.b - at[0], q.a - at[1]); if (d < bd) { bd = d; s0 = q.s; } });
         if (s0 >= P[P.length - 1].s - 1e-9) s0 = 0;
-        if (!MOVE_ICON) MOVE_ICON = b.innerHTML; run = { path: P, s: s0, last: 0 }; b.innerHTML = PAUSE_ICON; requestAnimationFrame(frame);
+        startRun(P, s0);
       }
     });
   });
@@ -387,10 +425,14 @@ export function mountShared(host: HTMLElement) {
   document.addEventListener('langchange', function () { if (R) settle(); });
   new MutationObserver(function () { if (K) { info(); draw(); } }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   var rt = null;
-  window.addEventListener('resize', function () { if (R) { clearTimeout(rt); rt = setTimeout(settle, 150); } });
+  // lay out again only when the width changes: on phones the height changes whenever the browser bars slide in or
+  // out (the packing panel changes size while playing), and laying out again would stop the playback
+  var lastW = window.innerWidth;
+  window.addEventListener('resize', function () { if (!R || run || window.innerWidth === lastW) return;   // not while playing (phones change the width when the page grows)
+    lastW = window.innerWidth; clearTimeout(rt); rt = setTimeout(settle, 150); });
   async function restoreHash() { if (!R) return;
     var h = parseInt(location.hash.slice(1), 10), hs = location.hash.slice(1), hp = /^(\d+)-([\d.]+)$/.exec(hs);   // #k-piece: open k with that piece selected
-    cur = hs === 'all' || /^cell-\d+-\d+$/.test(hs) ? hs : R.ks.some(function (x) { return x.k === h; }) ? h : 5; await settle();
+    cur = hs === 'all' || /^cell-\d+-\d+$/.test(hs) ? hs : R.ks.some(function (x) { return x.k === h; }) ? h : 11; await settle();   // default k = 11
     if (cur !== h && hp) return;
     if (hp && typeof cur === 'number' && K && K.pieces.some(function (x) { return x.key === hp[2]; })) { sel.key = hp[2]; sel.w = 0; at = null; info(); draw(); }
   }

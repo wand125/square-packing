@@ -27,3 +27,14 @@ table.credits-table { table-layout: fixed; }
 .credits-table td { overflow-wrap: anywhere; }
 .credits-table td.links a { white-space: normal; }
 ul.rel-list { max-height: 22em; overflow: auto; margin-top: 4px; columns: 2 22em; }
+.home-phone-links { display: none; }
+.desk-hide { display: none !important; }
+.cert-n-btn { display: none; }
+.rr-info-btn { display: none; }
+
+/* certificate: keep inside and the scan button in one row */
+.cert-keep-row { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; margin: 8px 0; }
+.cert-keep-row > p { margin: 0; }
+/* rectangles: the packing icon beside the piece key */
+td.pk-key { white-space: nowrap; }
+td.pk-key .pk-ico { vertical-align: middle; margin-right: 8px; }

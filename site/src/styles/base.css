@@ -104,3 +104,24 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 .result-phone { display: none; }
 .icon-btn { display: inline-flex; align-items: center; justify-content: center; padding: 3px 7px; color: var(--fg2); }
 .icon-btn:hover { color: var(--fg); }
+/* reference sites on the top page: one item each, with the site's icon (or a representative square image) */
+.ref-items { display: flex; flex-direction: column; gap: 6px; margin: 6px 0; max-width: 460px; }
+.ref-item { display: flex; align-items: center; gap: 12px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 4px; color: var(--fg); }
+.ref-item:hover { border-color: var(--acc); text-decoration: none; }
+.ref-item img { width: 40px; height: 40px; border-radius: 4px; object-fit: cover; background: #fff; flex: 0 0 40px; }
+.ref-item > span { display: flex; flex-direction: column; line-height: 1.3; } .ref-item .dim { font-size: 12px; }
+a.ref-item.ext::before { content: none; }
+.paper-list { list-style: none; margin: 4px 0; padding: 0; max-width: 640px; }
+.paper-list li a { display: flex; flex-direction: column; padding: 7px 10px; border-bottom: 1px solid var(--line); color: var(--fg); }
+.paper-list li a:hover { text-decoration: none; background: var(--bg2); }
+.paper-list li a .dim { font-size: 12px; }
+.paper-list li a { align-items: flex-start; text-align: left; }
+.gf-play-c { fill: color-mix(in srgb, var(--bg) 70%, transparent); stroke: var(--acc); stroke-width: 1.5; } .gf-play { fill: var(--acc); }
+.ref-item .ref-ico { flex: 0 0 40px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+.ref-item .ref-ico svg { width: 40px; height: 40px; }
+.ref-item .ref-ico svg .th-c { fill: var(--bg2); stroke: var(--fg2); stroke-width: 1.5; }
+.ref-item .ref-ico svg .th-sq { fill: color-mix(in srgb, var(--link) 30%, transparent); stroke: var(--link); stroke-width: 1; }
+.ref-item > span:last-child { min-width: 0; }
+.issue-pop { display: none; } .issue-pop[open] { display: block; }
+/* a page shown inside a popup (?embed=1): no site bars */
+html.embed .topbar, html.embed .tabbar { display: none !important; }

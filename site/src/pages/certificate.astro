@@ -19,7 +19,8 @@ import '../styles/interactive.css';
 <div class="cv-side">
 <label class="cv-r"><T en={"Certificate"} ja={"証明書"} /> <select id="cv-ver" aria-label="certificate"></select></label>
 <dl class="kv"><dt><T en={"Claim"} ja={"主張"} /></dt><dd class="num" data-info="claim"></dd><dt>n</dt><dd class="num" data-info="n"></dd><dt><T en={"Side L"} ja={"辺 L"} /></dt><dd class="num" data-info="L"></dd><dt><T en={"Core side B"} ja={"芯の辺 B"} /></dt><dd class="num" data-info="B"></dd><dt><T en={"Net"} ja={"角度の網"} /></dt><dd class="num" data-info="net"></dd><dt><T en={"Total mass"} ja={"総質量"} /></dt><dd class="num" data-info="total_mass"></dd><dt><T en={"Items"} ja={"要素の数"} /></dt><dd class="num" data-info="items"></dd><dt><T en={"Data"} ja={"データ"} /></dt><dd><a data-rel="" href="#"></a><div class="dim" data-note="" hidden=""></div></dd><dt><T en={"Documents"} ja={"文書"} /></dt><dd class="links" data-docs="" data-blob="https://github.com/wand125/square-packing/blob/main/"></dd></dl>
-<label><input type="checkbox" id="cv-keep" checked=""> <T en={"keep the unit square inside the container while dragging"} ja={"ドラッグ中も単位正方形を容器の中に留める"} /></label>
+<div class="cert-keep-row"><label><input type="checkbox" id="cv-keep" checked=""> <T en={"keep the unit square inside the container while dragging"} ja={"ドラッグ中も単位正方形を容器の中に留める"} /></label><p><button type="button" id="cv-scan"><T en={"Scan this direction (64 × 64 centres)"} ja={"この角度を走査（中心 64 × 64）"} /></button></p></div>
+<dl class="kv"><dt><T en={"Smallest captured mass"} ja={"拾う質量の最小"} /></dt><dd class="num" data-o="scan">–</dd></dl>
 <label class="cv-r"><T en={"Direction"} ja={"角度"} /> <input type="range" id="cv-r" min="0" max="200" value="0" step="1"></label>
 <dl class="kv">
 <dt data-net="1">r</dt><dd data-net="1" class="num" data-o="t"></dd>
@@ -30,9 +31,7 @@ import '../styles/interactive.css';
 <div data-kind="rect"><p class="note"><T en={"Verifier's lower bound on the captured mass at each direction (verified_angles.jsonl in the Release asset). Click to choose r."} ja={"各角度で検証器が出した、拾う質量の下界（Release の資産の verified_angles.jsonl）。押すと r を選べる。"} /></p>
 <canvas class="strip" aria-label="per-direction lower bound"></canvas>
 <dl class="kv"><dt><T en={"Verifier's bound at r"} ja={"r での検証器の下界"} /></dt><dd class="num" data-o="lb"></dd></dl></div>
-<p><button type="button" id="cv-scan"><T en={"Scan this direction (64 × 64 centres)"} ja={"この角度を走査（中心 64 × 64）"} /></button></p>
-<dl class="kv"><dt><T en={"Smallest captured mass"} ja={"拾う質量の最小"} /></dt><dd class="num" data-o="scan">–</dd></dl>
-<p class="note"><T en={"Computed in the browser in floating point from values rounded to 9 digits. The exact data and the checker are in the Release asset."} ja={"ブラウザで、9 桁に丸めた値から浮動小数点で計算している。厳密なデータと検査器は Release の資産にある。"} /></p>
+<p class="note" data-scan-note=""><T en={"Computed in the browser in floating point from values rounded to 9 digits. The exact data and the checker are in the Release asset."} ja={"ブラウザで、9 桁に丸めた値から浮動小数点で計算している。厳密なデータと検査器は Release の資産にある。"} /></p>
 </div></div>
 <h2><T en={"What the certificate states"} ja={"証明書が示すこと"} /></h2>
 <dl class="kv cv-states" data-states="" data-blob="https://github.com/wand125/square-packing/blob/main/" data-lb="https://github.com/wand125/square-packing/blob/main/problems/square-lower-bounds/docs/lower-bounds.md#L60-L106" data-spec="https://github.com/wand125/square-packing/blob/main/problems/square-lower-bounds/certificates/mixed_n41_L6775/check2/src/SPEC.md"></dl>

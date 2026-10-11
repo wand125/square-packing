@@ -16,7 +16,8 @@ export function mountShared(host: HTMLElement) {
     get tl() {return tl;},
     report: (p: any) => { o.scrub.value = Math.round(1000 * t / T);
     o.back.href = 'rect-regions.html#' + K.k + '-' + p.key;
-    history.replaceState(null, '', allMode ? '#all' : '#' + K.k + '-' + p.key); },
+    // only when it changes: Safari throws after about 100 history changes in 30 s (this runs every frame)
+    var h = allMode ? '#all' : '#' + K.k + '-' + p.key; if (location.hash !== h) { try { history.replaceState(null, '', h); } catch (e) {} } },
     get K() { return K; },
     get T() { return T; },
     get css() { return css; },
@@ -194,8 +195,9 @@ export function mountShared(host: HTMLElement) {
   o.mus.addEventListener('change', function () { if (!music()) stopMusic(); else if (playing) startMusic(); });
   root.querySelectorAll('[data-k]').forEach(function (b) {
     b.addEventListener('click', function () {
-      if (b.dataset.k === 'all') { allMode = true; choose(2, true); b.setAttribute('aria-pressed', 'true'); history.replaceState(null, '', '#all'); return; }
-      choose(+b.dataset.k);
+      // a new k while playing keeps playing, from the start of that k
+      if (b.dataset.k === 'all') { allMode = true; choose(2, true, playing); b.setAttribute('aria-pressed', 'true'); history.replaceState(null, '', '#all'); return; }
+      choose(+b.dataset.k, false, playing);
     });
   });
   document.addEventListener('langchange', function () { root.querySelectorAll('option[data-en]').forEach(function (op) { op.textContent = op.getAttribute('data-' + document.documentElement.lang); }); draw(); });
@@ -204,7 +206,7 @@ export function mountShared(host: HTMLElement) {
   host.addEventListener('playerresize', draw);
   async function restoreHash() {if (!R) return;
     // opened from Rectangles: #k, or #k-piece to start at that piece (e.g. #14-14.13)
-    var m = /^#(\d+)(?:-([\d.]+))?$/.exec(location.hash), k = m && R.ks.some(function (x) { return x.k === +m[1]; }) ? +m[1] : 5;
+    var m = /^#(\d+)(?:-([\d.]+))?$/.exec(location.hash), k = m && R.ks.some(function (x) { return x.k === +m[1]; }) ? +m[1] : 11;   // default k = 11
     if(location.hash === '#all') { allMode = true; await choose(2, true); return; }
     if (!await choose(k)) return;
     if (m && m[2]) {   // start where the piece itself begins (its run or step, after any wind-up and pop)

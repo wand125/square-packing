@@ -25,5 +25,19 @@ const toc = headingsEn.filter((h) => h.depth === 2).map((h, i) => ({ en: h, ja: 
     <div data-l="ja"><Ja /></div>
   </article>
 </div>
-<script is:inline>if (window.matchMedia('(max-width: 900px)').matches) document.querySelector('.pp-toc').open = false;</script>
+<button type="button" class="pp-toc-btn desk-hide" aria-label="contents"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+<dialog class="issue-pop pp-toc-pop" aria-label="contents"><ol>{toc.map((t) => <li><a data-l="en" href={'#' + t.en.slug}>{t.en.text}</a><a data-l="ja" href={'#' + t.ja.slug}>{t.ja.text}</a></li>)}</ol></dialog>
+<script is:inline>
+(function () {
+ var pop = document.querySelector('.pp-toc-pop'), btn = document.querySelector('.pp-toc-btn');
+ btn.addEventListener('click', function () { pop.showModal(); });
+ pop.addEventListener('click', function (e) { if (e.target === pop || e.target.closest('a')) pop.close(); });
+ // phones: hide the bars while reading downwards, show them when scrolling up or near the top
+ var last = window.scrollY;
+ window.addEventListener('scroll', function () {
+  if (!window.matchMedia('(max-width: 600px), (pointer: coarse) and (max-width: 900px)').matches) return;
+  var y = window.scrollY; document.body.classList.toggle('reading', y > last && y > 120); last = y;
+ }, { passive: true });
+})();
+</script>
 </Base>

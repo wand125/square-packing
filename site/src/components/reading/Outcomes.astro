@@ -7,6 +7,15 @@ import {url} from '../../lib/sitemap';
 import {pageDescriptions} from '../../lib/page-list';
 const themes = [...readEditorial('themes.json').themes].sort((a,b) => Number(a.state === 'open') - Number(b.state === 'open'));
 const themeRows = themes.map(t => row([cell(a(t.url, '#' + t.issue),'num'), cell(`<span class="st${t.state === 'open' ? '' : ' ex'}">${t.state === 'open' ? bi('open','進行中') : bi('closed','完了')}</span>`,'nw'), cell(paperLink(t.issue, bd(t.title))),cell(esc(t.updated || ''),'num dim')])).join('');
-const pageRows = pageDescriptions.filter(p => p.group === 'out').map(p => row([cell(a(url(p.file),bi(p.en,p.ja)),'nw'),cell(bi(p.descEn,p.descJa))])).join('');
+// small icons for the page items on phones
+const sv = (d: string) => `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="${d}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const ICONS: Record<string, string> = {
+ 'results.html': sv('M4 5h16M4 10h16M4 15h16M4 20h10M9 5v15'),
+ 'releases.html': sv('M3 9l9-5 9 5v10l-9 5-9-5zM3 9l9 5 9-5M12 14v10'),
+ 'methods.html': sv('M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1'),
+ 'verify.html': sv('M4 12.5l5 5L20 6.5'),
+ 'about.html': sv('M8 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 11a3 3 0 1 0 0-6M16 14c3.3 0 6 2.7 6 6'),
+};
+const pageRows = pageDescriptions.filter(p => p.group === 'out').map(p => (p.file === 'themes.html' ? (r: string) => r.replace('<tr>', '<tr class="phone-hide">') : (r: string) => r)(row([cell(a(url(p.file),bi(p.en,p.ja)),'nw'),cell(bi(p.descEn,p.descJa))]))).join('');
 ---
-<div class="home"><Section en="Themes (tracking issues)"><DataTable headers={['Issue',bi('State','状態'),bi('Theme','テーマ'),bi('Updated','更新')]} rows={themeRows} headless/></Section><Section en="Pages"><DataTable headers={['', '']} rows={pageRows} headless/></Section></div>
+<div class="home"><div class="phone-hide"><Section en="Themes (tracking issues)"><DataTable headers={['Issue',bi('State','状態'),bi('Theme','テーマ'),bi('Updated','更新')]} rows={themeRows} headless/></Section></div><Section en="Pages"><div class="phone-hide"><DataTable headers={['', '']} rows={pageRows} headless/></div><div class="page-items desk-hide">{pageDescriptions.filter(p => p.group === 'out' && p.file !== 'themes.html').map(p => <a class="page-item" href={url(p.file)}><span class="page-ico" set:html={ICONS[p.file] || ''}/><span class="page-txt"><b set:html={bi(p.en,p.ja)}/><span class="dim" set:html={bi(p.descEn,p.descJa)}/></span></a>)}</div></Section></div>

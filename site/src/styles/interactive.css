@@ -93,3 +93,9 @@ p.note.full { max-width: none; }
 .rr-ctl svg { fill: currentColor; display: block; width: 22px; height: 22px; }
 .rr-ctl button[data-c="play"] { margin-left: 10px; }
 /* paper pages: contents on the left, the text at a reading width */
+/* other containers: the angle and the weight inside, above the test square */
+.ct-sq-tag { position: absolute; z-index: 2; pointer-events: none; display: flex; gap: 8px; padding: 2px 7px; border-radius: 10px; background: color-mix(in srgb, var(--bg) 85%, transparent); border: 1px solid var(--line); font: 11px/1.4 var(--mono); color: var(--fg); white-space: nowrap; }
+/* rectangles: the packing of each piece before its key */
+.pk-ico { color: var(--fg); }
+.pk-ico polygon { fill: var(--link); fill-opacity: 0.3; stroke: var(--link); stroke-width: 0.6; }
+tr.on .pk-ico polygon { fill: var(--acc); stroke: var(--acc); }

@@ -7,6 +7,6 @@ const rows = readEditorial('methods.json').rows.map(r => `<tr class="r" data-n="
 ---
 <Base file="methods.html" title="Square Packing Methods">
 <div class="bar" data-filterbar="mt"><input type="search" data-key="q" id="m-q" data-ph-en="filter text" data-ph-ja="文字で絞り込み" aria-label="filter"/><span class="count" aria-live="polite"/></div>
-<DataTable headers={[bi('Method','手法'),bi('Certificate and check','証明書と検査'),bi('Used for','使った対象'),bi('Origin and credit','出典'),bi('Code','コード'),bi('Source','記述の元')]} rows={rows} id="mt" class="wide methods-table"/>
+<DataTable headers={[bi('Method','手法'),bi('Certificate and check','証明書と検査'),bi('Used for','使った対象'),bi('Origin and credit','出典'),bi('Code','コード'),bi('Source','記述の元')]} rows={rows} id="mt" class="wide methods-table" pop="1"/>
 <script>import '../scripts/reading';</script>
 </Base>

@@ -4,6 +4,7 @@ const entries: [string,string,string,string,string,'exp'|'out'][] = [
  ['certificate.html','Certificate','証明書の中身','Published square-container certificates drawn on [0, L]², with the mass a square captures.','公開した正方形の容器の証明書を [0, L]² に描き、正方形が拾う質量を出す。','exp'],
  ['containers.html','Other containers','正方形以外の容器','Triangles, the hexagon and the 1×2 rectangle: packings and certificate points.','三角形・六角形・1×2 の長方形：詰め方と証明書の点。','exp'],
  ['rect-regions.html','Rectangles','長方形の容器','For each k, the edge of the rectangles that hold k unit squares, piece by piece, with certified packings.','k ごとに、単位正方形が k 個入る長方形の端を、片ごとに証明書付きの配置とともに示す。','exp'],
+ ['rect-player.html','Player','再生','The box shrinks along the edge from the square to the strip, and the squares follow; one short film per k.','箱が正方形から帯まで端に沿って縮み、正方形がそれについていく。k ごとの短い映像。','exp'],
  ['explain.html','How it works (preview)','仕組み (preview)','The core square and the angle net, the branch and bound over centres, the k² − c lift.','芯の正方形と角度の網、中心の分枝限定、k² − c の持ち上げ。','exp'],
  ['themes.html','Themes','Themes','The tracking issues: goal, method, completed stages.','追跡用 Issue：目指すもの・方法・済んだ段階。','out'],
  ['results.html','Results','Results','Every certificate and proof: claim, method, check command and release asset.','すべての証明書と証明：主張・手法・検算のコマンド・Release の資産。','out'],

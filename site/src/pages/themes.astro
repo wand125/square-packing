@@ -5,7 +5,15 @@ import DataTable from '../components/ui/DataTable.astro';
 import Section from '../components/ui/Section.astro';
 import {readEditorial} from '../lib/data';
 import {bi, bc, a, esc, cell, term} from '../lib/reading';
-import {GH} from '../lib/sitemap';
+import {GH, PAGES, PREVIEW, url} from '../lib/sitemap';
+import Card from '../components/ui/Card.astro';
+import {paperIcon} from '../lib/figures';
+import {tex} from '../lib/tex';
+// each paper is listed with its own title (from its meta.json)
+const metas = import.meta.glob<{title: string[]}>('../content/papers/*/meta.json', {eager: true, import: 'default'});
+const paperTitle = (file: string) => { const m = metas[`../content/papers/${file.slice(6, -5)}/meta.json`]; return m ? m.title.map(tex) : null; };
+import T from '../components/ui/T.astro';
+const papers = PAGES.filter(p => p.file.startsWith('paper-') && (PREVIEW || !p.preview));
 const themes = readEditorial('themes.json').themes;
 const headers = ['Issue',bi('State','状態'),bi('Theme','テーマ'),bi('Goal','目指すもの'),bi('Updated','更新')];
 const rows = (state: string) => themes.filter(t => t.state === state).map(t => {
@@ -14,9 +22,26 @@ const rows = (state: string) => themes.filter(t => t.state === state).map(t => {
  return `<tr class="r" data-state="${state}" data-n="0">${cell(a(t.url,'#'+t.issue),'num')}${cell(`<span class="st${state === 'closed' ? ' ex' : ''}">${state === 'open' ? bi('open','進行中') : bi('closed','完了')}</span>`,'nw')}${cell(`<b>${bc(t.title)}</b>`)}${cell(bc(t.goal))}${cell(esc(t.updated || ''),'num dim')}</tr><tr class="x" hidden><td colspan="5"><dl class="kv">${term(bi('Method','方法'),bc(t.method))}${done ? term(bi('Done','済んだ段階'),`<ul class="tight">${done}</ul>`) : ''}${wo ? term(bi('Working on','取り組み中'),`<ul class="tight">${wo}</ul>`) : ''}${links ? term(bi('Links','リンク'),`<span class="links">${links}</span>`) : ''}${rels ? term('Release',`<span class="links">${rels}</span>`) : ''}</dl></td></tr>`;
 }).join('');
 ---
-<Base file="themes.html" title="Square Packing Themes">
-<Lede en="The tracking issues of wand125/square-packing. Click a row for details." ja="wand125/square-packing の追跡用 Issue。行を押すと詳細が出る。"><p class="note" set:html={bi('The tracking issues of wand125/square-packing (label theme). Click a row for the method, completed stages and links.','wand125/square-packing の追跡用 Issue（ラベル theme）。行を押すと方法・済んだ段階・リンクが出る。')}/></Lede>
-<Section en="Completed" ja="完了"><DataTable headers={headers} rows={rows('closed')} class="wide"/></Section>
-<Section en="Working on" ja="取り組み中"><DataTable headers={headers} rows={rows('open')} class="wide"/></Section>
+<Base file="themes.html" title="Square Packing Themes" katex>
+<div class="phone-hide"><Lede en="The tracking issues of wand125/square-packing. Click a row for details." ja="wand125/square-packing の追跡用 Issue。行を押すと詳細が出る。"><p class="note" set:html={bi('The tracking issues of wand125/square-packing (label theme). Click a row for the method, completed stages and links.','wand125/square-packing の追跡用 Issue（ラベル theme）。行を押すと方法・済んだ段階・リンクが出る。')}/></Lede></div>
+{papers.length > 0 && <Section en="Papers" ja="論文"><div class="ref-items">{papers.map(p => <a class="ref-item" href={url(p.file)}><span class="ref-ico" set:html={paperIcon(p.file)}/><span>{paperTitle(p.file) ? <b><span data-l="en" set:html={paperTitle(p.file)![0]}/><span data-l="ja" set:html={paperTitle(p.file)![1]}/></b> : <b><T en={p.en} ja={p.ja}/></b>}</span></a>)}</div></Section>}
+<Section en="Completed" ja="完了"><DataTable headers={headers} rows={rows('closed')} class="wide themes-table"/></Section>
+<Section en="Working on" ja="取り組み中"><DataTable headers={headers} rows={rows('open')} class="wide themes-table"/></Section>
 <script>import '../scripts/reading';</script>
+<dialog class="issue-pop" aria-label="issue"><button type="button" class="issue-pop-x" aria-label="close">✕</button><div class="issue-pop-body"></div></dialog>
+<script>
+ // phones: an issue opens in a popup (not inline); wider screens keep the expanding rows
+ import {PHONE} from '../lib/media';
+ const pop = document.querySelector<HTMLDialogElement>('.issue-pop')!, body = pop.querySelector('.issue-pop-body')!;
+ pop.querySelector('.issue-pop-x')!.addEventListener('click', () => pop.close());
+ pop.addEventListener('click', e => { if (e.target === pop) pop.close(); });
+ document.querySelectorAll<HTMLTableElement>('.themes-table').forEach(table => table.addEventListener('click', e => {
+  if (!matchMedia(PHONE).matches) return;
+  const tr = (e.target as Element).closest<HTMLTableRowElement>('tr.r'); if (!tr || (e.target as Element).closest('a')) return;
+  e.stopPropagation();
+  const td = tr.querySelectorAll('td'), x = tr.nextElementSibling as HTMLElement | null, clean = (el: Element) => { const c = el.cloneNode(true) as Element; c.querySelectorAll('.cell-label').forEach(l => l.remove()); return c.innerHTML; };
+  body.innerHTML = `<div class="issue-pop-head">${clean(td[1])}<span class="num dim">${clean(td[0])} · ${clean(td[4])}</span></div><h3>${clean(td[2])}</h3><p>${clean(td[3])}</p>${x && x.classList.contains('x') ? x.querySelector('td')!.innerHTML : ''}`;
+  pop.showModal();
+ }, true));
+</script>
 </Base>

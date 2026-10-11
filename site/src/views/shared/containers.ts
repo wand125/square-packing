@@ -11,7 +11,9 @@ export function mountShared(host: HTMLElement) {
     report: ({cm, ok}: any) => { out.c.textContent = '(' + st.x.toFixed(4) + ', ' + st.y.toFixed(4) + ')';
       out.a.textContent = (st.a * 180 / Math.PI).toFixed(2) + '°';
       out.m.textContent = cm[0].toFixed(6) + '  (' + cm[1] + (L() === 'ja' ? ' 点' : ' pts') + (cm[2] ? (L() === 'ja' ? '、補題 P で ' : ', Lemma P ') + cm[2] : '') + ')';
-      out.fit.textContent = ok ? (L() === 'ja' ? '容器の中' : 'inside the container') : (L() === 'ja' ? '容器からはみ出す' : 'not inside the container'); },
+      out.fit.textContent = ok ? (L() === 'ja' ? '容器の中' : 'inside the container') : (L() === 'ja' ? '容器からはみ出す' : 'not inside the container');
+      // where the test square is on the canvas (CSS pixels: its centre x and its top), for views that label it
+      tagSquare(cm); },
     get D() { return D; },
     get X() { return X; },
     get Y() { return Y; },
@@ -31,12 +33,17 @@ export function mountShared(host: HTMLElement) {
   var EPS = 1e-9;
   var ALL = [], D = null, st = { x: 0, y: 0, a: 0 }, show = { pack: true, pts: true, sq: true };
   var px, S, ox, oy, pad = 10;
-  function css(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  // colours are read once per theme (reading them on every draw makes the browser recompute styles)
+  var cssCache: Record<string, string> = {};
+  function css(n) { return n in cssCache ? cssCache[n] : (cssCache[n] = getComputedStyle(document.documentElement).getPropertyValue(n).trim()); }
+  // dragging and sliders draw at most once per screen refresh
+  var drawPending = 0;
+  function drawSoon() { if (!drawPending) drawPending = requestAnimationFrame(function () { drawPending = 0; draw(); }); }
   function L() { return document.documentElement.lang; }
 
   function bbox(P: any): any { return containers_geometry.bbox(P); }
   function size() {
-    var w = (host.classList.contains('phone-view') ? root.querySelector('.cv-fig').clientWidth : Math.min(root.querySelector('.cv-fig').clientWidth, 620)), b = bbox(D.poly), dpr = window.devicePixelRatio || 1;
+    var w = (host.classList.contains('phone-view') ? root.querySelector('.cv-fig').clientWidth : Math.min(root.querySelector('.cv-fig').clientWidth, 620)), b = bbox(D.poly), dpr = Math.min(window.devicePixelRatio || 1, host.classList.contains('phone-view') ? 2 : 4);   // phones: at most 2× (canvas memory)
     var sc = (w - 2 * pad) / Math.max(b[2] - b[0], b[3] - b[1]), hgt = (b[3] - b[1]) * sc + 2 * pad;
     cvs.style.width = w + 'px'; cvs.style.height = hgt + 'px'; cvs.width = Math.round(w * dpr); cvs.height = Math.round(hgt * dpr);
     px = dpr; S = sc; ox = pad + ((w - 2 * pad) - (b[2] - b[0]) * sc) / 2 - b[0] * sc; oy = pad + b[3] * sc;
@@ -51,6 +58,16 @@ export function mountShared(host: HTMLElement) {
   function captured(): any { return containers_geometry.captured(D, st); }
 
   function draw(): any { return containers_draw.draw(ctx, containers_drawOptions); }
+  // the angle and the weight inside, on the figure just above the test square
+  var tag = document.createElement('div'); tag.className = 'ct-sq-tag'; tag.setAttribute('aria-hidden', 'true'); tag.hidden = true;
+  function tagSquare(cm) {
+    var fig = cvs.parentElement; if (tag.parentElement !== fig) { fig.style.position = 'relative'; fig.appendChild(tag); }
+    tag.hidden = !show.sq;
+    tag.innerHTML = '<span>' + (st.a * 180 / Math.PI).toFixed(2) + '°</span><span>' + (L() === 'ja' ? '重み ' : 'weight ') + cm[0].toFixed(4) + '</span>';
+    var top = Math.min.apply(null, corners(st.x, st.y, st.a).map(function (q) { return Y(q[1]); })) / px, w = tag.offsetWidth;
+    var x = Math.max(4, Math.min(cvs.clientWidth - w - 4, X(st.x) / px - w / 2));
+    tag.style.left = cvs.offsetLeft + x + 'px'; tag.style.top = cvs.offsetTop + Math.max(2, top - tag.offsetHeight - 6) + 'px';
+  }
 
   function bi(o) { return o ? (L() === 'ja' ? o.ja : o.en) : ''; }
   function select(i) {
@@ -87,7 +104,7 @@ export function mountShared(host: HTMLElement) {
   function pick(ev) {
     var b = cvs.getBoundingClientRect(), x = ((ev.clientX - b.left) - ox) / S, y = (oy - (ev.clientY - b.top)) / S;
     if (keep.checked) { var q = project(x, y); if (!q) return; x = q[0]; y = q[1]; }
-    st.x = x; st.y = y; draw();
+    st.x = x; st.y = y; drawSoon();
   }
   var drag = false;
   cvs.addEventListener('pointerdown', function (ev) { drag = true; cvs.setPointerCapture(ev.pointerId); pick(ev); });
@@ -99,13 +116,15 @@ export function mountShared(host: HTMLElement) {
     if (Math.abs(deg - sn) <= 1.5) { deg = sn; aIn.value = sn; }
     var a0 = st.a; st.a = deg * Math.PI / 180;
     if (keep.checked) { var q = project(st.x, st.y); if (q) { st.x = q[0]; st.y = q[1]; } else st.a = a0; }
-    draw();
+    drawSoon();
   });
   keep.addEventListener('change', function () { if (keep.checked) { var q = project(st.x, st.y); if (q) { st.x = q[0]; st.y = q[1]; draw(); } } });
-  root.querySelectorAll('[data-show]').forEach(function (c) { c.addEventListener('change', function () { show[c.dataset.show] = c.checked; draw(); }); });
+  root.querySelectorAll('[data-show]').forEach(function (c) { c.addEventListener('change', function () { show[c.dataset.show] = c.checked; tag.hidden = !show.sq; draw(); }); });
   document.addEventListener('langchange', function () { if (D) { info(); draw(); } });
-  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-  window.addEventListener('resize', function () { if (D) { size(); draw(); } });
+  new MutationObserver(function () { cssCache = {}; draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  // only when the width changes: on phones the height changes whenever the browser bars slide in or out
+  var lastW = window.innerWidth;
+  window.addEventListener('resize', function () { if (!D || window.innerWidth === lastW) return; lastW = window.innerWidth; size(); draw(); });
   window.addEventListener('hashchange', () => { if (!ALL) return; const i = ALL.findIndex(it => it.cont + '-' + it.n === location.hash.slice(1)); if (i >= 0) select(i); });
   fetch('data/containers.json').then(function (r) { return r.json(); }).then(function (d) {
     ALL = d;

@@ -160,7 +160,8 @@ export function draw(ctx: CanvasRenderingContext2D, options: Options): any {
 
 export function squares(pctx: CanvasRenderingContext2D, options: Options, k: any, w: any, box: any): any {
     var bw = Math.max(k.box[0], box ? box[0] : 0), bh = Math.max(k.box[1], box ? box[1] : 0);
-    var S = Math.min((w - 12) / bw, 150 / bh), h = bh * S + 12, px = options.dpr(options.pc, w, h);
+    // the phone view allows a taller packing (SP_PACK_MAXH)
+    var S = Math.min((w - 12) / bw, ((globalThis as any).SP_PACK_MAXH || 150) / bh), h = bh * S + 12, px = options.dpr(options.pc, w, Math.ceil(h / 16) * 16);   // height in steps of 16 px: fewer reallocations while playing
     var X = function (x) { return (6 + x * S) * px; }, Y = function (y) { return (h - 6 - y * S) * px; };
     pctx.clearRect(0, 0, options.pc.width, options.pc.height);
     pctx.fillStyle = options.css('--bg2'); pctx.fillRect(X(0), Y(k.box[1]), k.box[0] * S * px, k.box[1] * S * px);

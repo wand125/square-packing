@@ -40,7 +40,12 @@ export function mountShared(host: HTMLElement) {
   var D = null, st = { r: 0, cx: 0, cy: 0, scan: null, scanR: -1 }, cache = {};
 
   function frac(s: any): any { return cert_geometry.frac(s); }
-  function css(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+  // colours are read once per theme (reading them on every draw makes the browser recompute styles)
+  var cssCache: Record<string, string> = {};
+  function css(n) { return n in cssCache ? cssCache[n] : (cssCache[n] = getComputedStyle(document.documentElement).getPropertyValue(n).trim()); }
+  // dragging and sliders draw at most once per screen refresh
+  var drawPending = 0;
+  function drawSoon() { if (!drawPending) drawPending = requestAnimationFrame(function () { drawPending = 0; draw(); }); }
   // net certificates: theta_r = 2 atan(r * step); certificates for every angle: r in hundredths of a degree
   function ang(r: any): any { return cert_geometry.ang(D, r); }
   function half(th: any): any { return cert_geometry.half(th); }   // half-width of a unit square at angle th
@@ -55,7 +60,7 @@ export function mountShared(host: HTMLElement) {
   var px, S, pad = 8;
   function size() {
     var w = (host.classList.contains('phone-view') ? root.querySelector('.cv-fig').clientWidth : Math.min(root.querySelector('.cv-fig').clientWidth, 620));
-    var dpr = window.devicePixelRatio || 1;
+    var dpr = Math.min(window.devicePixelRatio || 1, host.classList.contains('phone-view') ? 2 : 4);   // phones: at most 2× (canvas memory)
     cvs.style.width = cvs.style.height = w + 'px'; cvs.width = cvs.height = Math.round(w * dpr);
     px = dpr; S = (w - 2 * pad) / D.L;
     var sw = Math.min(root.querySelector('.cv-side').clientWidth || 300, 360);
@@ -175,7 +180,7 @@ export function mountShared(host: HTMLElement) {
     var b = cvs.getBoundingClientRect(), th = ang(st.r), h = half(th);
     var x = ((ev.clientX - b.left) - pad) / S, y = D.L - ((ev.clientY - b.top) - pad) / S;
     var lo = keep.checked ? h : 0;   // keep the unit square inside the container (default) or let the centre go anywhere in K
-    st.cx = Math.max(lo, Math.min(D.L - lo, x)); st.cy = Math.max(lo, Math.min(D.L - lo, y)); draw();
+    st.cx = Math.max(lo, Math.min(D.L - lo, x)); st.cy = Math.max(lo, Math.min(D.L - lo, y)); drawSoon();
   }
   var drag = false;
   cvs.addEventListener('pointerdown', function (ev) { drag = true; cvs.setPointerCapture(ev.pointerId); pick(ev); });
@@ -184,7 +189,7 @@ export function mountShared(host: HTMLElement) {
   rIn.addEventListener('input', function () {
     st.r = +rIn.value; var h = half(ang(st.r));
     if (keep.checked) { st.cx = Math.max(h, Math.min(D.L - h, st.cx)); st.cy = Math.max(h, Math.min(D.L - h, st.cy)); }
-    draw();
+    drawSoon();
   });
   strip.addEventListener('click', function (ev) {
     var b = strip.getBoundingClientRect(); rIn.value = Math.floor((ev.clientX - b.left) / b.width * (D.last + 1));
@@ -194,8 +199,10 @@ export function mountShared(host: HTMLElement) {
   keep.addEventListener('change', function () { if (keep.checked) rIn.dispatchEvent(new Event('input')); });
   root.querySelectorAll('.cv-items [data-cert]').forEach(function (b) { b.addEventListener('click', function () { load(b.dataset.cert); }); });
   verSel.addEventListener('change', function () { load(verSel.value); });
-  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-  window.addEventListener('resize', function () { if (D) { size(); draw(); } });
+  new MutationObserver(function () { cssCache = {}; draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  // only when the width changes: on phones the height changes whenever the browser bars slide in or out
+  var lastW = window.innerWidth;
+  window.addEventListener('resize', function () { if (!D || window.innerWidth === lastW) return; lastW = window.innerWidth; size(); draw(); });
   // the list on the left: filter by kind, keep the chosen certificate in view
   document.addEventListener('langchange', function () { if (D) states(D); });
   var h = location.hash.slice(1), known = Object.keys(VERS).some(function (n) { return VERS[n].some(function (v) { return v[0] === 'certs/' + h; }); });

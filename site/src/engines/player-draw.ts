@@ -23,7 +23,10 @@ export interface Options {
 export function draw(ctx: CanvasRenderingContext2D, options: Options): any {
     if (!options.K) return;
     var H = options.frameHeight || (options.frameWidth ? options.frameWidth * 16 / 9 : Math.min(options.viewportHeight * 0.8, 760)), W = options.frameWidth || Math.round(H * 9 / 16), d = options.pixelRatio || 1;
-    options.cv.style.width = W + 'px'; options.cv.style.height = H + 'px'; options.cv.width = Math.round(W * d); options.cv.height = Math.round(H * d);
+    // every frame: reallocate the pixel buffer only when its size changes (phones run short of canvas memory otherwise)
+    var PW = Math.round(W * d), PH = Math.round(H * d);
+    if (options.cv.width !== PW || options.cv.height !== PH) { options.cv.style.width = W + 'px'; options.cv.style.height = H + 'px'; options.cv.width = PW; options.cv.height = PH; }
+    else { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.setLineDash([]); ctx.shadowBlur = 0; ctx.textAlign = 'start'; ctx.textBaseline = 'alphabetic'; }
     var fr = at(options.tl, options.t), top = fr.layers[0][0], box = fr.box || top.box, p = shown(options.tl, fr.st), fg = options.css('--fg'), fg2 = options.css('--fg2'), mono = options.css('--mono'), sans = options.css('--sans');
     ctx.fillStyle = options.css('--bg'); ctx.fillRect(0, 0, options.cv.width, options.cv.height);
     // header
