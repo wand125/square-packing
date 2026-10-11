@@ -12,7 +12,7 @@
      "certificates__n4.tar.gz"
     ],
     "path": "problems/domino/certificates/n4/ASSET.json",
-    "check": "python checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 30 --jobs 4 --u-breaks \"K[-21/37;-11/37;15/37]\"\npython checker/check.py certificates/n4/below/n4_L9651_5000.json --n 4 --max-depth 44 --jobs 4\npython tools/make_cert.py | cmp - certificates/n4/n4_cert.json\ncd checker2 && python sweep_k.py ../certificates/n4/n4_cert.json --n 4 --jobs 4",
+    "check": "python3 ../../tools/packing_check/check_packing.py certificates/n4/packing.json    # upper bound: the packing, exact (standard library)\npython3 ../../tools/packing_check/check_packing2.py certificates/n4/packing.json   # upper bound: second exact check (sympy)\npython checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 30 --jobs 4 --u-breaks \"K[-21/37;-11/37;15/37]\"\npython checker/check.py certificates/n4/below/n4_L9651_5000.json --n 4 --max-depth 44 --jobs 4\npython tools/make_cert.py | cmp - certificates/n4/n4_cert.json\ncd checker2 && python sweep_k.py ../certificates/n4/n4_cert.json --n 4 --jobs 4",
     "check_cwd": "problems/domino",
     "documents": [
      "problems/domino/certificates/n4/PROOF.md"
@@ -28,7 +28,7 @@
      "n3.tar.gz"
     ],
     "path": "problems/hexagon/n3/ASSET.json",
-    "check": "(cd n3/local_lemma && python ll_exact.py && python ll_radius.py)\n(cd stage1_checker && python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4)\n(cd stage1_checker2 && python hexcheck.py ../n3/stage1_cert.json --jobs 14 --grid 8)\n(cd stage2_checker && python bb_rig_batch.py --workers 16 --boxes 0-741)\n(cd stage2_checker2 && cargo build --release && ./target/release/hexs2 --cert ../n3/stage1_cert.json --threads 16 --max-depth 80)",
+    "check": "python3 ../../tools/packing_check/check_packing.py n3/packing.json    # upper bound: the packing, exact (standard library)\npython3 ../../tools/packing_check/check_packing2.py n3/packing.json   # upper bound: second exact check (sympy)\n(cd n3/local_lemma && python ll_exact.py && python ll_radius.py)\n(cd stage1_checker && python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4)\n(cd stage1_checker2 && python hexcheck.py ../n3/stage1_cert.json --jobs 14 --grid 8)\n(cd stage2_checker && python bb_rig_batch.py --workers 16 --boxes 0-741)\n(cd stage2_checker2 && cargo build --release && ./target/release/hexs2 --cert ../n3/stage1_cert.json --threads 16 --max-depth 80)",
     "check_cwd": "problems/hexagon",
     "documents": [
      "problems/hexagon/n3/PROOF.md",
@@ -65,7 +65,7 @@
      "certificates__k2m4_n77_L9.tar.gz"
     ],
     "path": "problems/square-lower-bounds/certificates/k2m4_n77_L9/ASSET.json",
-    "check": "bash verify.sh verify-work 16            # hashes, exact total, D4, zmx2 --d4 (about 20 min)",
+    "check": "python3 ../../../../tools/packing_check/check_packing.py packing_n77.json    # upper bound: the packing, exact (standard library)\npython3 ../../../../tools/packing_check/check_packing2.py packing_n77.json   # upper bound: second exact check (sympy)\npython3 ../../../../tools/packing_check/check_packing.py packing_n78.json    # upper bound: the packing, exact (standard library)\npython3 ../../../../tools/packing_check/check_packing2.py packing_n78.json   # upper bound: second exact check (sympy)\nbash verify.sh verify-work 16            # hashes, exact total, D4, zmx2 --d4 (about 20 min)",
     "check_cwd": "problems/square-lower-bounds/certificates/k2m4_n77_L9",
     "documents": [
      "problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md"
@@ -5568,7 +5568,7 @@
      "point_n21_L5.tar.gz"
     ],
     "path": "problems/square-lower-bounds/point_n21_L5/ASSET.json",
-    "check": "python3 -m venv .venv\n. .venv/bin/activate\npython -m pip install -r requirements-tested.txt\npython inspect_certificate.py\npython unpack_bundle.py\npython verify_portable.py --workers 2 --out /tmp/n21-proof-replay",
+    "check": "python3 ../../../tools/packing_check/check_packing.py packing_n22.json    # upper bound: the packing, exact (standard library)\npython3 ../../../tools/packing_check/check_packing2.py packing_n22.json   # upper bound: second exact check (sympy)\npython3 ../../../tools/packing_check/check_packing.py packing_n23.json    # upper bound: the packing, exact (standard library)\npython3 ../../../tools/packing_check/check_packing2.py packing_n23.json   # upper bound: second exact check (sympy)\npython3 ../../../tools/packing_check/check_packing.py packing_n24.json    # upper bound: the packing, exact (standard library)\npython3 ../../../tools/packing_check/check_packing2.py packing_n24.json   # upper bound: second exact check (sympy)\npython3 ../../../tools/packing_check/check_packing.py packing_n25.json    # upper bound: the packing, exact (standard library)\npython3 ../../../tools/packing_check/check_packing2.py packing_n25.json   # upper bound: second exact check (sympy)\npython3 -m venv .venv\n. .venv/bin/activate\npython -m pip install -r requirements-tested.txt\npython inspect_certificate.py\npython unpack_bundle.py\npython verify_portable.py --workers 2 --out /tmp/n21-proof-replay",
     "check_cwd": "problems/square-lower-bounds/point_n21_L5",
     "documents": [
      "problems/square-lower-bounds/point_n21_L5/FORMAT.md",
@@ -5588,7 +5588,7 @@
      "point_n45_L7.tar.gz"
     ],
     "path": "problems/square-lower-bounds/point_n45_L7/ASSET.json",
-    "check": "python3 check_cover.py                 # exact: hash, format, D4 invariance, total < 45\nbash verify.sh /tmp/n45-verify 8       # new directory; 8 threads",
+    "check": "python3 ../../../tools/packing_check/check_packing.py packing_n45.json    # upper bound: the packing, exact (standard library)\npython3 ../../../tools/packing_check/check_packing2.py packing_n45.json   # upper bound: second exact check (sympy)\npython3 check_cover.py                 # exact: hash, format, D4 invariance, total < 45\nbash verify.sh /tmp/n45-verify 8       # new directory; 8 threads",
     "check_cwd": "problems/square-lower-bounds/point_n45_L7",
     "documents": [
      "problems/square-lower-bounds/point_n45_L7/README.md"
@@ -5602,7 +5602,7 @@
      "point_n61_L8.tar.gz"
     ],
     "path": "problems/square-lower-bounds/point_n61_L8/ASSET.json",
-    "check": "python3 check_cover.py                 # exact: hash, format, D4 invariance, total < 61\nsh verify.sh /tmp/n61-verify 8         # new directory; 8 threads",
+    "check": "python3 ../../../tools/packing_check/check_packing.py packing_n61.json    # upper bound: the packing, exact (standard library)\npython3 ../../../tools/packing_check/check_packing2.py packing_n61.json   # upper bound: second exact check (sympy)\npython3 check_cover.py                 # exact: hash, format, D4 invariance, total < 61\nsh verify.sh /tmp/n61-verify 8         # new directory; 8 threads",
     "check_cwd": "problems/square-lower-bounds/point_n61_L8",
     "documents": [
      "problems/square-lower-bounds/point_n61_L8/README.md"

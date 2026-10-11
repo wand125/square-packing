@@ -4,3 +4,4 @@ highspy>=1.7
 numba>=0.58
 matplotlib>=3.7
 pytest>=7
+sympy>=1.12

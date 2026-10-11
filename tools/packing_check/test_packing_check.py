@@ -2,7 +2,7 @@
 """Negative and positive controls for both packing checkers.
 
 Every packing in make_packings.py must be VALID for both checkers; every mutation below must be
-INVALID for both. Run from anywhere: python3 tools/packing_check/test_packing_check.py
+INVALID for both. Run from anywhere: python3 tools/packing_check/test_packing_check.py, or pytest from tools/.
 """
 
 import copy
@@ -108,6 +108,10 @@ def main():
         print(("ok    " if ok else "FAIL  ") + f"{r}  {name}")
     print("all controls passed" if not fails else f"{fails} controls FAILED")
     return 1 if fails else 0
+
+
+def test_controls():
+    assert main() == 0
 
 
 if __name__ == "__main__":

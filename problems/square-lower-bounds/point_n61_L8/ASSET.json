@@ -13,7 +13,7 @@
  ],
  "unpack": "tar xzf point_n61_L8.tar.gz -C problems/square-lower-bounds",
  "unpack_note": "run from the repository root; restores the data files in place next to the documents",
- "check": "python3 check_cover.py                 # exact: hash, format, D4 invariance, total < 61\nsh verify.sh /tmp/n61-verify 8         # new directory; 8 threads",
+ "check": "python3 ../../../tools/packing_check/check_packing.py packing_n61.json    # upper bound: the packing, exact (standard library)\npython3 ../../../tools/packing_check/check_packing2.py packing_n61.json   # upper bound: second exact check (sympy)\npython3 check_cover.py                 # exact: hash, format, D4 invariance, total < 61\nsh verify.sh /tmp/n61-verify 8         # new directory; 8 threads",
  "check_cwd": "problems/square-lower-bounds/point_n61_L8",
  "check_note": null,
  "check_extended": null,

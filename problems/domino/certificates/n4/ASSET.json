@@ -13,7 +13,7 @@
  ],
  "unpack": "tar xzf certificates__n4.tar.gz -C problems/domino",
  "unpack_note": "run from the repository root; restores the data files in place next to the documents",
- "check": "python checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 30 --jobs 4 --u-breaks \"K[-21/37;-11/37;15/37]\"\npython checker/check.py certificates/n4/below/n4_L9651_5000.json --n 4 --max-depth 44 --jobs 4\npython tools/make_cert.py | cmp - certificates/n4/n4_cert.json\ncd checker2 && python sweep_k.py ../certificates/n4/n4_cert.json --n 4 --jobs 4",
+ "check": "python3 ../../tools/packing_check/check_packing.py certificates/n4/packing.json    # upper bound: the packing, exact (standard library)\npython3 ../../tools/packing_check/check_packing2.py certificates/n4/packing.json   # upper bound: second exact check (sympy)\npython checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 30 --jobs 4 --u-breaks \"K[-21/37;-11/37;15/37]\"\npython checker/check.py certificates/n4/below/n4_L9651_5000.json --n 4 --max-depth 44 --jobs 4\npython tools/make_cert.py | cmp - certificates/n4/n4_cert.json\ncd checker2 && python sweep_k.py ../certificates/n4/n4_cert.json --n 4 --jobs 4",
  "check_cwd": "problems/domino",
  "check_note": null,
  "check_extended": null,

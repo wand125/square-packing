@@ -1,9 +1,9 @@
 name: tools
 on:
   push:
-    paths: ["tools/**", "problems/square-lower-bounds/point_n21_L5/verifier-source/**", ".github/workflows/tools.yml"]
+    paths: ["tools/**", "problems/square-lower-bounds/point_n21_L5/verifier-source/**", "problems/**/packing*.json", ".github/workflows/tools.yml"]
   pull_request:
-    paths: ["tools/**", ".github/workflows/tools.yml"]
+    paths: ["tools/**", "problems/**/packing*.json", ".github/workflows/tools.yml"]
   workflow_dispatch:
 jobs:
   test:
@@ -25,6 +25,8 @@ jobs:
         env:
           SP_BOUNDS_REPO: ${{ github.workspace }}/problems/square-lower-bounds
         run: python -m pytest -q
+      - name: Packing certificates match make_packings.py (both checkers run in Tests)
+        run: python packing_check/make_packings.py --check
       - name: End-to-end ladder (n = 3 -> 4, budget recovery)
         env:
           SP_SLOW_TESTS: "1"

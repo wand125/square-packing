@@ -13,7 +13,7 @@
  ],
  "unpack": "tar xzf point_n21_L5.tar.gz -C problems/square-lower-bounds",
  "unpack_note": "run from the repository root; restores the data files in place next to the documents",
- "check": "python3 -m venv .venv\n. .venv/bin/activate\npython -m pip install -r requirements-tested.txt\npython inspect_certificate.py\npython unpack_bundle.py\npython verify_portable.py --workers 2 --out /tmp/n21-proof-replay",
+ "check": "python3 ../../../tools/packing_check/check_packing.py packing_n22.json    # upper bound: the packing, exact (standard library)\npython3 ../../../tools/packing_check/check_packing2.py packing_n22.json   # upper bound: second exact check (sympy)\npython3 ../../../tools/packing_check/check_packing.py packing_n23.json    # upper bound: the packing, exact (standard library)\npython3 ../../../tools/packing_check/check_packing2.py packing_n23.json   # upper bound: second exact check (sympy)\npython3 ../../../tools/packing_check/check_packing.py packing_n24.json    # upper bound: the packing, exact (standard library)\npython3 ../../../tools/packing_check/check_packing2.py packing_n24.json   # upper bound: second exact check (sympy)\npython3 ../../../tools/packing_check/check_packing.py packing_n25.json    # upper bound: the packing, exact (standard library)\npython3 ../../../tools/packing_check/check_packing2.py packing_n25.json   # upper bound: second exact check (sympy)\npython3 -m venv .venv\n. .venv/bin/activate\npython -m pip install -r requirements-tested.txt\npython inspect_certificate.py\npython unpack_bundle.py\npython verify_portable.py --workers 2 --out /tmp/n21-proof-replay",
  "check_cwd": "problems/square-lower-bounds/point_n21_L5",
  "check_note": null,
  "check_extended": null,

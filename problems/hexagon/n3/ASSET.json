@@ -13,7 +13,7 @@
  ],
  "unpack": "tar xzf n3.tar.gz -C problems/hexagon",
  "unpack_note": "run from the repository root; restores the data files in place next to the documents",
- "check": "(cd n3/local_lemma && python ll_exact.py && python ll_radius.py)\n(cd stage1_checker && python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4)\n(cd stage1_checker2 && python hexcheck.py ../n3/stage1_cert.json --jobs 14 --grid 8)\n(cd stage2_checker && python bb_rig_batch.py --workers 16 --boxes 0-741)\n(cd stage2_checker2 && cargo build --release && ./target/release/hexs2 --cert ../n3/stage1_cert.json --threads 16 --max-depth 80)",
+ "check": "python3 ../../tools/packing_check/check_packing.py n3/packing.json    # upper bound: the packing, exact (standard library)\npython3 ../../tools/packing_check/check_packing2.py n3/packing.json   # upper bound: second exact check (sympy)\n(cd n3/local_lemma && python ll_exact.py && python ll_radius.py)\n(cd stage1_checker && python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4)\n(cd stage1_checker2 && python hexcheck.py ../n3/stage1_cert.json --jobs 14 --grid 8)\n(cd stage2_checker && python bb_rig_batch.py --workers 16 --boxes 0-741)\n(cd stage2_checker2 && cargo build --release && ./target/release/hexs2 --cert ../n3/stage1_cert.json --threads 16 --max-depth 80)",
  "check_cwd": "problems/hexagon",
  "check_note": "README table 'How to check' (local lemma, stage 1 and 2, two implementations each)",
  "check_extended": null,
