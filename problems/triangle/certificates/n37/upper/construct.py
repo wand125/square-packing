@@ -51,7 +51,11 @@ def squares():
 if __name__ == "__main__":
     sq = squares(); assert len(sq) == 37
     tri = [pt(0, 0), pt(V, 0), pt(V*F(1, 2), V*Q3(0, F(1, 2)))]
-    json.dump({"n": 37, "side": V.j(), "format": "each number is [p, q] meaning p + q*sqrt(3)",
-               "triangle": [[c.j() for c in v] for v in tri],
+    verts = [[c.j() for c in v] for v in tri]
+    json.dump({"format": "packing-certificate/1", "problem": "squares in an equilateral triangle, n = 37", "n": 37,
+               "field": {"generator": "sqrt3", "minpoly": ["-3", "0", "1"], "interval": ["1", "2"]},
+               "number_format": "each number is [p, q] meaning p + q*sqrt(3)",
+               "container": {"kind": "equilateral_triangle", "side": V.j(), "vertices": verts},
+               "side": V.j(), "triangle": verts,
                "squares": [[[c.j() for c in v] for v in s] for s in sq]}, open(sys.argv[1], "w"), indent=1)
     print("wrote", sys.argv[1])

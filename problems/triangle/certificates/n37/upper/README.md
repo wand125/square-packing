@@ -31,9 +31,11 @@ Two checkers, written independently, both with exact arithmetic in Q(√3):
 - `check_clip.py` (its own Q(√3) number class, no sympy): each polygon has sides 1 and area 1; clipping it by
   the triangle leaves area 1; and for every pair, the Sutherland–Hodgman intersection has area 0.
 
-Both print VALID for `n37_packing.json`.
+Both print VALID for `n37_packing.json`. The file is also in the shared format `packing-certificate/1` and passes
+the repository's common checker: `python3 tools/packing_check/check_packing.py problems/triangle/certificates/n37/upper/n37_packing.json`
+(run from the repository root).
 
-Negative controls (both checkers reject each of them):
+Negative controls (`make_negatives.py` writes them; both checkers, and the common checker, reject each of them):
 
 | file | change | result |
 |---|---|---|
@@ -47,6 +49,7 @@ Negative controls (both checkers reject each of them):
 
 ```
 python construct.py n37_packing.json     # regenerates the file byte for byte
+python make_negatives.py                 # regenerates the negative controls
 python check_sat.py n37_packing.json     # needs sympy
 python check_clip.py n37_packing.json    # standard library only
 ```
