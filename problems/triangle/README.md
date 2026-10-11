@@ -16,11 +16,19 @@ squares (any positions, any angles).
 | 29 | 8 + 2/√3 | 9.1547 | rows 8 + 6 + 5 + 4 + 3 + 2 + 1 | lattice, 28 points |
 | 37 | 9 + 2/√3 | 10.1547 | tight bottom row of 9, and 28 squares above in the shape of Friedman's n = 28 packing (our coordinates, `certificates/n37/upper/`) | lattice, 36 points |
 
-The packings are the best known ones in Erich Friedman's Packing Center, "Squares in Triangles"
-(https://erich-friedman.github.io/packing/squintri/). The certificates show that they are optimal. For n = 7, …, 29 the packing is rows of
-axis-parallel squares standing on the base, and the certificate is a patch of the unit triangular lattice (all weights 1, with Lemma P);
-the series and why it stops being sharp at n = 37 are described in `SERIES.md`.
-The results are computer-assisted and checked by two independent checkers; all except n = 6 are also checked in Lean 4. They have not been peer reviewed.
+Upper bounds: our own certificates. For n = 2, 3, 4 and the series n = 7, …, 29 the packings are proved in
+Lean 4 and checked by the kernel ([`lean/triangle/`](../../lean/triangle/), see "Lean" below). For n = 6 and
+n = 37 they are packing certificates with exact coordinates in Q(√3), `certificates/n6/upper/packing.json` and
+`certificates/n37/upper/n37_packing.json`, checked exactly by the two checkers in
+[`tools/packing_check/`](../../tools/packing_check/). The packings are the ones listed in Erich Friedman's
+Packing Center, "Squares in Triangles" (https://erich-friedman.github.io/packing/squintri/); for n = 37 the table
+lists a packing by Gianluca Costantino (May 2026), and ours combines a tight bottom row with the shape of
+Friedman's n = 28 packing (1997). We claim no originality for the packings. The lower-bound certificates show that
+they are optimal. For n = 7, …, 29 the packing is rows of axis-parallel squares standing on the base, and the
+certificate is a patch of the unit triangular lattice (all weights 1, with Lemma P); the series and why the rows
+stop being enough at n = 37 are described in `SERIES.md`.
+The results are computer-assisted and checked by two independent checkers. The lower bounds for every n except 6
+and the upper bounds for n = 2, 3, 4, 7, …, 29 are also checked in Lean 4. They have not been peer reviewed.
 
 ## Novelty
 

@@ -3,9 +3,14 @@
 **Theorem (computer-assisted).** The smallest equilateral triangle containing six non-overlapping unit
 squares has side v = 2 + 4/√3 ≈ 4.3094.
 
-The packing (Friedman's table) is a pinwheel of three pairs of side-by-side squares, one pair on each side,
-with C3 symmetry; its exact coordinates are in `n6_packing.json`. The lower bound needs more than one point
-certificate: it is a localization tree of six certificates closed by a local lemma for three squares.
+Upper bound: our packing certificate [`upper/packing.json`](upper/) (exact coordinates in Q(√3)), checked exactly
+by the two checkers in [`tools/packing_check/`](../../../../tools/packing_check/); both reject four negative
+controls. The packing is a pinwheel of three pairs of side-by-side squares, one pair on each side, with C3
+symmetry. It is the one listed in Erich Friedman's table "Squares in Triangles" (Friedman, 1997); we claim no
+originality for it.
+
+Lower bound: more than one point certificate is needed. It is a localization tree of six certificates closed by
+a local lemma for three squares.
 
 Verification:
 
@@ -23,7 +28,7 @@ Paths below are relative to this folder. The data files come from the release as
 ## Statement
 
 v = 2 + 4/√3, and T_L is the equilateral triangle of side L. No 6 unit squares with pairwise disjoint interiors
-fit in T_L for L < v. The packing `n6_packing.json` reaches v.
+fit in T_L for L < v. The packing `upper/packing.json` reaches v.
 
 ## Reduction
 
