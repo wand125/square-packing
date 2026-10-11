@@ -18,7 +18,8 @@
  "check_note": "README placeholder workdir -> verify-work (a new directory); longer runs in check_extended",
  "check_extended": "sh verify.sh verify-work 8 --full      # also zmx2 --full\nsh verify.sh verify-work 8 --zm        # also both zm_mixed runs (about 127 CPU-hours)",
  "documents": [
-  "problems/square-lower-bounds/certificates/k2m5_n59_L8/README.md"
+  "problems/square-lower-bounds/certificates/k2m5_n59_L8/README.md",
+  "problems/square-lower-bounds/certificates/k2m5_n59_L8/lean/README.md"
  ],
  "source": {
   "repository": "wand125/square-packing-bounds",

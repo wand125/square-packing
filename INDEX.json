@@ -82,7 +82,8 @@
     "check": "sh verify.sh verify-work 8             # hashes, exact total, D4, zmx2 --d4",
     "check_cwd": "problems/square-lower-bounds/certificates/k2m5_n59_L8",
     "documents": [
-     "problems/square-lower-bounds/certificates/k2m5_n59_L8/README.md"
+     "problems/square-lower-bounds/certificates/k2m5_n59_L8/README.md",
+     "problems/square-lower-bounds/certificates/k2m5_n59_L8/lean/README.md"
     ]
    },
    {

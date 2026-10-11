@@ -12,7 +12,7 @@ is due to Evan Daniel; with this certificate the value of `s(59)` is settled as 
 The previous best lower bound for `s(59)` was `793/100 = 7.93`.
 
 **Status.** The certificate passes three sweeps by two independently written checkers, listed below.
-It has not been reviewed by anyone outside this project and has not been formalised in Lean.
+It has not been reviewed by anyone outside this project. The lower bound is also checked in the Lean kernel (see lean/).
 
 ## The argument
 
