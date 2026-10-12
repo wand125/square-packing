@@ -14,7 +14,7 @@ The change (`patches/continuous.diff`, a unified diff from
 | `src/slab.rs` | new: the continuous-angle branch and bound (lemmas C1 to C6 of `CONTINUOUS.md`) |
 | `src/slab_tests.rs` | new: property tests against the exact rational oracle |
 | `src/lib.rs` | one line: `pub mod slab;` |
-| `src/main.rs` | new command-line options `--continuous`, `--core`, `--tau`, `--eps`, `--last-t`, `--axis-core`, `--cuts`, `--roots`, and the function that runs the mode |
+| `src/main.rs` | new command-line options `--continuous`, `--core`, `--tau`, `--eps`, `--last-t`, `--axis-core`, `--cuts`, `--roots`, `--resume`, and the function that runs the mode |
 | `CONTINUOUS.md` | new: the claim, the lemmas, the tests and the limits |
 | every other file | unchanged from `tools/fine_net_verifier/sqverify_fast/` (upstream code and documentation) |
 
@@ -53,9 +53,10 @@ n = 40 bound over all angles this way (commit `71c97d0`, s(40) > 1340000/199529)
 
 | version | source_sha256 (printed in every summary) | change |
 |---|---|---|
-| v3 | `1266a8b90f9a355d74772e211a7b9a52d0236b0d33cc4113d2f897d8a1044f33` | this directory |
+| v3 | `1266a8b90f9a355d74772e211a7b9a52d0236b0d33cc4113d2f897d8a1044f33` | first published version |
+| v4 | `619b3c00bd918b329b4141c24ee30b027af7f88b86bcf2886e3c18855a61c7f5` | `--resume`: take over verified root ranges of an earlier run (matched by `run_key`); root lines are written as each range ends and carry `run_key`. The search and every verdict are unchanged from v3 |
 
-v3 is the first published version. The same mode was used before publication as v2
+v3 was the first published version. The same mode was used before publication as v2
 (`a8668d70…`). v3 differs from v2 only in the following, and the n = 40 results were
 re-run with v3:
 

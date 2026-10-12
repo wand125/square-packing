@@ -1,6 +1,6 @@
 # Continuous-angle mode
 
-Version v3 (see `../PROVENANCE.md` for the version table and the `source_sha256`).
+Version v4 (see `../PROVENANCE.md` for the version table and the `source_sha256`).
 
 `sqverify-fast --continuous` checks a rectangle-density certificate at every orientation
 instead of on a net of directions.
@@ -124,10 +124,19 @@ stops the root with a refusal and records an exact capture at the stopping pose.
   - the x-derivative enclosure against an exact difference quotient;
   - the whole box bound.
 - `classification_near_the_edge`: small rectangles within 3% of the square's edges.
+- `resume_takes_over_only_matching_verified_roots`: a resumed run takes over exactly the
+  verified root lines with the same key and range, and refuses when the threshold changes.
 
 Mutations that each test catches: the area scaled by 1.0005; a section term scaled by 1.001;
 the gradient halved; dx shrunk; the inside test loosened by 0.5% or 1%; the outside test
 loosened by 2%.
+
+## Resuming
+
+`--resume` changes no search and no verdict. It only takes over verified root ranges whose
+`run_key` (input, build, and every parameter that affects a root) matches, so that each
+root range of a `VERIFIED` summary has been searched completely once by this build with
+these parameters. See README.md.
 
 ## Limits
 

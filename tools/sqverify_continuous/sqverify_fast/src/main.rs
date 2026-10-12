@@ -46,6 +46,7 @@ struct Continuous {
     axis_core: Option<String>,
     cuts: Option<String>,
     roots: Option<String>,
+    resume: Option<PathBuf>,
 }
 
 fn parse_args() -> Result<Options, String> {
@@ -122,6 +123,7 @@ fn parse_args() -> Result<Options, String> {
             "--axis-core" => cont(&mut options).axis_core = Some(value()?),
             "--cuts" => cont(&mut options).cuts = Some(value()?),
             "--roots" => cont(&mut options).roots = Some(value()?),
+            "--resume" => cont(&mut options).resume = Some(PathBuf::from(value()?)),
             "--help" | "-h" => return Err("usage: see the crate documentation".into()),
             other => return Err(format!("unknown argument {other}")),
         }
@@ -181,6 +183,27 @@ fn run_continuous(
             v
         }
     };
+    // --resume: every line that parses as JSON; the module decides which to use.
+    let (resume, resume_sha256) = match &c.resume {
+        Some(path) => {
+            use sha2::{Digest, Sha256};
+            let bytes =
+                std::fs::read(path).map_err(|e| format!("cannot read {}: {e}", path.display()))?;
+            let digest = Sha256::digest(&bytes)
+                .iter()
+                .fold(String::new(), |mut text, byte| {
+                    use std::fmt::Write;
+                    let _ = write!(text, "{byte:02x}");
+                    text
+                });
+            let lines = String::from_utf8_lossy(&bytes)
+                .lines()
+                .filter_map(|line| serde_json::from_str(line).ok())
+                .collect();
+            (lines, Some(digest))
+        }
+        None => (Vec::new(), None),
+    };
     let params = sqverify_fast::slab::Params {
         core,
         threshold,
@@ -199,6 +222,8 @@ fn run_continuous(
             }
             None => None,
         },
+        resume,
+        resume_sha256,
     };
     let mut out = |line: &serde_json::Value| println!("{line}");
     sqverify_fast::slab::run(cert, &params, threads, &mut out)

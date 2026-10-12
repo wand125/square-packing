@@ -8,7 +8,7 @@ orientation and every centre**, not over a net of directions.
 - The new code is `sqverify_fast/src/slab.rs`.
 - The proof obligations are lemmas C1 to C6 in
   [`sqverify_fast/CONTINUOUS.md`](sqverify_fast/CONTINUOUS.md).
-- Version **v3**, `source_sha256` `1266a8b90f9a355d74772e211a7b9a52d0236b0d33cc4113d2f897d8a1044f33`.
+- Version **v4**, `source_sha256` `619b3c00bd918b329b4141c24ee30b027af7f88b86bcf2886e3c18855a61c7f5` (v4 adds `--resume`; see `PROVENANCE.md`).
 
 ## What it proves
 
@@ -103,7 +103,8 @@ row's weight is spread uniformly over the eight D4 images of its rectangle.
 cd sqverify_fast && cargo build --release --locked && cd ..
 sqverify_fast/target/release/sqverify-fast --candidate CAND.json --n N \
     --continuous --core P/Q --tau P/Q [--threads K] [--max-nodes N] \
-    [--eps P/Q] [--last-t P/Q] [--axis-core P/Q] [--cuts t1,t2,...] [--roots a-b]
+    [--eps P/Q] [--last-t P/Q] [--axis-core P/Q] [--cuts t1,t2,...] [--roots a-b] \
+    [--resume PREVIOUS.jsonl]
 ```
 
 | option | meaning | default |
@@ -116,16 +117,22 @@ sqverify_fast/target/release/sqverify-fast --candidate CAND.json --n N \
 | `--cuts` | interior ends of the root ranges of t | 10⁻⁵, 10⁻⁴, 10⁻³, then steps of 1/200 |
 | `--max-nodes` | node budget per root range | 50,000,000 |
 | `--roots a-b` | run only these root ranges (diagnostic; never `VERIFIED`) | all |
+| `--resume` | take over the verified root ranges of an earlier run's output (below) | none |
 
 The output is one JSON object per line:
 
 - `premises`: the exact premises, including the counting margin nτ − M, X = L/B and the
   axis containment margin;
 - `axis-patch`: the near-axis check;
-- one `root` line per root range;
+- one `root` line per root range, written as soon as that range ends;
 - `sqverify-fast-continuous-summary/v1`, the summary. Its `status` is `VERIFIED` only when
   every root range and the axis patch are verified. Its `build` field names the
   `source_sha256` of the build.
+
+Every `premises`, `root` and summary line carries `run_key`. This is a SHA-256 over:
+- the input's SHA-256, `n` and `L`;
+- the build's `source_sha256`;
+- `--core`, `--tau`, `--eps`, `--last-t`, the axis side A, the root cuts and `--max-nodes`.
 
 The exit status is 0 for `VERIFIED`, 1 for `REFUSED` and 2 for an admission or premise
 error.
@@ -135,6 +142,28 @@ in that box (`exact_capture`, `exact_below_threshold`, `exact_pose` = (x, y, t))
 `exact_below_threshold` is `true`, check that the pose is legal (|x − L/2|, |y − L/2| ≤
 L/2 − (B/2)W(t)); the claim is then refuted there. When it is `false`, the search ran out of budget
 or resolution first, which is not a refutation.
+
+## Resuming an interrupted run
+
+`--resume PREVIOUS.jsonl` reads an earlier run's standard output (complete or cut off). It
+takes over a `root` line only when all of these hold:
+- the verdict is `verified`;
+- its `run_key` equals this run's;
+- its `index` and `t` range match a root range of this run.
+
+Malformed lines (a line cut off by the interruption, for example) and every other line are
+ignored. The axis patch is always recomputed (it takes about a second).
+
+Every taken-over line is copied to the new output with `inherited_from` set to the SHA-256
+of the file it came from. The new output is therefore a complete record on its own, and a
+run can be resumed from it again.
+
+The summary reports `inherited_roots`, `resumed_from` and `missing_roots`. Its status is
+`VERIFIED` only when every root range, taken over or searched now, and the axis patch are
+verified.
+
+Trusting a taken-over line means trusting the earlier run's output. That earlier output is
+the same receipt a complete run would have printed.
 
 ## Controls
 

@@ -4,6 +4,7 @@ use super::*;
 use crate::certificate::{Domain, ExactRect, float_rect};
 use crate::oracle::{intersection_area, square};
 use num_traits::Signed;
+use serde_json::{Value, json};
 
 fn lcg(state: &mut u64) -> f64 {
     *state = state
@@ -281,4 +282,87 @@ fn classification_near_the_edge() {
         }
     }
     assert!(inside > 1000 && outside > 1000, "{inside} {outside}");
+}
+
+/// One rectangle covering K with density 1: every square of side B captures
+/// exactly B^2, so the run verifies at tau slightly below it, quickly.
+fn uniform_run(tau: BigRational, resume: Vec<Value>, sha: Option<&str>) -> (bool, Vec<Value>) {
+    let side = q(3, 1);
+    let core = q(9, 10);
+    let rect = ExactRect {
+        x1: q(0, 1),
+        y1: q(0, 1),
+        x2: side.clone(),
+        y2: side.clone(),
+        density: q(1, 1),
+    };
+    let mut cert = cert_of(vec![rect], side, core.clone());
+    cert.n = 12;
+    cert.mass = q(9, 1);
+    let p = Params {
+        core,
+        threshold: tau,
+        eps: q(1, 1000),
+        last_t: q(83, 200),
+        axis_core: q(898, 1000),
+        cuts: vec![q(1, 10), q(1, 5), q(3, 10)],
+        max_nodes: 2_000_000,
+        only: None,
+        resume,
+        resume_sha256: sha.map(String::from),
+    };
+    let mut lines = Vec::new();
+    let mut out = |v: &Value| lines.push(v.clone());
+    let ok = run(&cert, &p, 2, &mut out).unwrap();
+    (ok, lines)
+}
+
+#[test]
+fn resume_takes_over_only_matching_verified_roots() {
+    let tau = q(80, 100);
+    let (ok, first) = uniform_run(tau.clone(), Vec::new(), None);
+    assert!(ok);
+    let summary = |lines: &[Value]| lines.last().unwrap().clone();
+    assert_eq!(summary(&first)["inherited_roots"], 0);
+    let roots: Vec<Value> = first
+        .iter()
+        .filter(|l| l["kind"] == "root")
+        .cloned()
+        .collect();
+    assert_eq!(roots.len(), 4);
+
+    // Everything matches: all four roots are taken over, verdict unchanged.
+    let (ok, again) = uniform_run(tau.clone(), first.clone(), Some("a"));
+    assert!(ok);
+    assert_eq!(summary(&again)["inherited_roots"], 4);
+    assert_eq!(summary(&again)["status"], "VERIFIED");
+
+    // An interrupted run: two roots only, one with a wrong key, one with a
+    // wrong range, one marked refused. Only the intact verified one is kept.
+    let mut partial = vec![first[0].clone(), first[1].clone()];
+    partial.push(roots[0].clone());
+    let mut bad_key = roots[1].clone();
+    bad_key["run_key"] = json!("0");
+    let mut bad_range = roots[2].clone();
+    bad_range["t"] = json!(["1/10", "1/4"]);
+    let mut refused = roots[3].clone();
+    refused["verdict"] = json!("refused");
+    partial.extend([bad_key, bad_range, refused]);
+    let (ok, resumed) = uniform_run(tau.clone(), partial, Some("b"));
+    assert!(ok);
+    assert_eq!(summary(&resumed)["inherited_roots"], 1);
+    let taken: Vec<&Value> = resumed
+        .iter()
+        .filter(|l| l.get("inherited_from").is_some())
+        .collect();
+    assert_eq!(taken.len(), 1);
+    assert_eq!(taken[0]["index"], roots[0]["index"]);
+    assert_eq!(taken[0]["inherited_from"], "b");
+
+    // A different threshold changes the key: nothing is taken over, and an
+    // impossible threshold is refused even with verified lines on offer.
+    let (ok, other) = uniform_run(q(81, 100), first.clone(), Some("c"));
+    assert!(!ok);
+    assert_eq!(summary(&other)["inherited_roots"], 0);
+    assert_eq!(summary(&other)["status"], "REFUSED");
 }

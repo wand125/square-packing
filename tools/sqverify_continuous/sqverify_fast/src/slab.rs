@@ -65,6 +65,10 @@ pub struct Params {
     pub max_nodes: u64,
     /// Run only the roots with these indices (a diagnostic; never VERIFIED).
     pub only: Option<(usize, usize)>,
+    /// Lines of an earlier run's output to resume from (see [`run`]).
+    pub resume: Vec<Value>,
+    /// SHA-256 of the file those lines came from.
+    pub resume_sha256: Option<String>,
 }
 
 fn q(p: i64, d: i64) -> BigRational {
@@ -667,7 +671,67 @@ fn run_root(
     Ok(res)
 }
 
+/// The key that a resumed root line must carry: a SHA-256 over everything
+/// that determines a root's search and verdict.
+fn run_key(cert: &Certificate, p: &Params) -> String {
+    use sha2::{Digest, Sha256};
+    let key = json!({
+        "input_sha256": cert.input_sha256,
+        "n": cert.n,
+        "L": cert.side.to_string(),
+        "source_sha256": crate::build_identity()["source_sha256"],
+        "core": p.core.to_string(),
+        "threshold": p.threshold.to_string(),
+        "eps": p.eps.to_string(),
+        "last_t": p.last_t.to_string(),
+        "axis_core": p.axis_core.to_string(),
+        "cuts": p.cuts.iter().map(ToString::to_string).collect::<Vec<_>>(),
+        "max_nodes": p.max_nodes,
+    });
+    let digest = Sha256::digest(key.to_string().as_bytes());
+    digest.iter().fold(String::new(), |mut text, byte| {
+        use std::fmt::Write;
+        let _ = write!(text, "{byte:02x}");
+        text
+    })
+}
+
+/// Root lines of an earlier run that may be taken over: verified, with this
+/// run's key, and the same index and `t` range. Anything else is ignored.
+fn inherited(
+    p: &Params,
+    key: &str,
+    roots: &[(BigRational, BigRational)],
+) -> std::collections::BTreeMap<usize, Value> {
+    let mut out = std::collections::BTreeMap::new();
+    for line in &p.resume {
+        if line["kind"] != "root" || line["verdict"] != "verified" || line["run_key"] != key {
+            continue;
+        }
+        let Some(k) = line["index"].as_u64().and_then(|k| usize::try_from(k).ok()) else {
+            continue;
+        };
+        let Some((lo, hi)) = roots.get(k) else {
+            continue;
+        };
+        if line["t"] != json!([lo.to_string(), hi.to_string()]) {
+            continue;
+        }
+        let mut copy = line.clone();
+        copy["inherited_from"] = json!(p.resume_sha256);
+        out.insert(k, copy);
+    }
+    out
+}
+
 /// The full run: premises, the axis patch, then every root box on `threads`.
+///
+/// Each root's line is passed to `out` (and written to standard error) as
+/// soon as the root ends. Every root line carries `run_key` (see [`run_key`]).
+/// With `p.resume`, a verified root line of an earlier run with the same key,
+/// index and `t` range is taken over instead of searching that root again;
+/// it is copied to the output with `inherited_from`, so the new output is a
+/// complete record on its own. The axis patch is always recomputed.
 ///
 /// # Errors
 ///
@@ -676,10 +740,11 @@ pub fn run(
     cert: &Certificate,
     p: &Params,
     threads: usize,
-    out: &mut dyn FnMut(&Value),
+    out: &mut (dyn FnMut(&Value) + Send),
 ) -> Result<bool, String> {
     let prem = premises(cert, p)?;
-    out(&json!({"kind": "premises", "premises": prem}));
+    let key = run_key(cert, p);
+    out(&json!({"kind": "premises", "premises": prem, "run_key": key}));
     let two = q(2, 1);
     // Lemma C6: the axis patch for t in [0, eps].
     let mut axis_cert = cert.clone();
@@ -701,6 +766,7 @@ pub fn run(
         .windows(2)
         .map(|w| (w[0].clone(), w[1].clone()))
         .collect();
+    let taken = inherited(p, &key, &roots);
     let ctx = Ctx {
         cert,
         half_l: enclose(&(&cert.side / &two))?,
@@ -708,17 +774,32 @@ pub fn run(
         thr,
         max_nodes: p.max_nodes,
     };
+    // Root lines go out as each root ends (and to standard error as progress).
+    let sink = Mutex::new(&mut *out);
+    let emit = |line: &Value| {
+        eprintln!("{line}");
+        if let Ok(mut o) = sink.lock() {
+            (*o)(line);
+        }
+    };
     let next = AtomicUsize::new(0);
-    let results = Mutex::new(Vec::new());
     let failure = Mutex::new(None);
     let lines = Mutex::new(Vec::new());
+    for (&k, line) in &taken {
+        if p.only.is_none_or(|(a, b)| k >= a && k <= b) {
+            emit(line);
+            if let Ok(mut l) = lines.lock() {
+                l.push((k, line.clone()));
+            }
+        }
+    }
     std::thread::scope(|scope| {
         for _ in 0..threads.max(1).min(roots.len()) {
             scope.spawn(|| {
                 loop {
                     let k = next.fetch_add(1, Ordering::Relaxed);
                     let Some((lo, hi)) = roots.get(k) else { break };
-                    if p.only.is_some_and(|(a, b)| k < a || k > b) {
+                    if p.only.is_some_and(|(a, b)| k < a || k > b) || taken.contains_key(&k) {
                         continue;
                     }
                     match run_root(&ctx, &p.core, &p.threshold, lo, hi) {
@@ -729,14 +810,11 @@ pub fn run(
                                 "nodes": r.nodes, "leaves": r.leaves, "angle_splits": r.angle_splits,
                                 "max_depth": r.max_depth,
                                 "min_certified_lower_bound": if r.min_lower.is_finite() { json!(r.min_lower) } else { Value::Null },
-                                "witness": r.witness, "seconds": r.seconds,
+                                "witness": r.witness, "seconds": r.seconds, "run_key": key,
                             });
-                            eprintln!("{line}");
+                            emit(&line);
                             if let Ok(mut l) = lines.lock() {
                                 l.push((k, line));
-                            }
-                            if let Ok(mut all) = results.lock() {
-                                all.push(r);
                             }
                         }
                         Err(m) => {
@@ -753,30 +831,42 @@ pub fn run(
     if let Some(m) = failure.into_inner().map_err(|_| "worker panicked")? {
         return Err(m);
     }
+    drop(sink);
     let mut lines = lines.into_inner().map_err(|_| "worker panicked")?;
     lines.sort_by_key(|(k, _)| *k);
-    for (_, l) in &lines {
-        out(l);
-    }
-    let results = results.into_inner().map_err(|_| "worker panicked")?;
-    let roots_ok =
-        p.only.is_none() && results.len() == roots.len() && results.iter().all(|r| r.verified);
+    let verified = |l: &Value| l["verdict"] == "verified";
+    let roots_ok = p.only.is_none()
+        && lines.len() == roots.len()
+        && lines
+            .iter()
+            .enumerate()
+            .all(|(i, (k, l))| *k == i && verified(l));
     let ok = roots_ok && axis.verified;
+    let sum = |field: &str| {
+        lines
+            .iter()
+            .filter_map(|(_, l)| l[field].as_u64())
+            .sum::<u64>()
+    };
     out(&json!({
         "kind": "sqverify-fast-continuous-summary/v1",
         "status": if ok { "VERIFIED" } else { "REFUSED" },
         "claim": if ok { format!("s({}) > {}", cert.n, &cert.side / &p.core) } else { String::new() },
         "roots": roots.len(),
-        "refused_roots": lines.iter().filter(|(_, l)| l["verdict"] != "verified").map(|(k, _)| *k).collect::<Vec<_>>(),
+        "refused_roots": lines.iter().filter(|(_, l)| !verified(l)).map(|(k, _)| *k).collect::<Vec<_>>(),
+        "missing_roots": (0..roots.len()).filter(|i| !lines.iter().any(|(k, _)| k == i)).collect::<Vec<_>>(),
+        "inherited_roots": lines.iter().filter(|(_, l)| l.get("inherited_from").is_some()).count(),
+        "resumed_from": p.resume_sha256,
         "axis_verified": axis.verified,
-        "nodes": results.iter().map(|r| r.nodes).sum::<u64>(),
-        "leaves": results.iter().map(|r| r.leaves).sum::<u64>(),
-        "angle_splits": results.iter().map(|r| r.angle_splits).sum::<u64>(),
-        "min_certified_lower_bound": results.iter().map(|r| r.min_lower).fold(f64::INFINITY, f64::min),
+        "nodes": sum("nodes"),
+        "leaves": sum("leaves"),
+        "angle_splits": sum("angle_splits"),
+        "min_certified_lower_bound": lines.iter().filter_map(|(_, l)| l["min_certified_lower_bound"].as_f64()).fold(f64::INFINITY, f64::min),
         "wall_seconds": started.elapsed().as_secs_f64(),
         "threads": threads,
         "build": crate::build_identity(),
         "premises": prem,
+        "run_key": key,
     }));
     Ok(ok)
 }
