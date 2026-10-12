@@ -5918,6 +5918,10 @@
    "readme": false
   },
   {
+   "path": "tools/sqverify_continuous",
+   "readme": true
+  },
+  {
    "path": "tools/tests",
    "readme": false
   },

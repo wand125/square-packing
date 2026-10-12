@@ -31,6 +31,7 @@ general_pose_tree/  exact branch-and-bound checks for point / threshold-charge c
 packing_check/      exact checks of packing certificates (upper bounds): two independent checkers, see its README
 fine_net_verifier/  independent check of fine-net density certificates: jlevy/squares' sqverify_fast reading a declared angle net
 fine_net_witnesses/ repair aid only (not a verifier): the same code returning many separated low-coverage poses per angle
+sqverify_continuous/ the same verifier with a continuous-angle mode: every angle and centre, giving s(n) > L/B (see its README)
 n17_bb_verifier/    exact Rust verifier for jlevy/squares' n = 17 sub-pattern branch-and-bound certificates (schemas v1 and v3)
 tests/         smoke and end-to-end tests
 ```
@@ -139,7 +140,7 @@ Developed by wand125 with OpenAI Codex (rectangle ladder, working LP, performanc
 Anthropic Claude (orchestration and job tooling), on top of tokoharu's
 square-packing-density-bounds (MIT). The rectangle-density method, the LP solver and the
 verifier are tokoharu's; `solver/PROVENANCE.md` lists file by file what is his, what we
-modified, and what we added. `fine_net_verifier/` and `fine_net_witnesses/` contain Joshua Levy's
+modified, and what we added. `fine_net_verifier/`, `fine_net_witnesses/` and `sqverify_continuous/` contain Joshua Levy's
 `sqverify_fast` from jlevy/squares (code MIT, documentation CC BY 4.0) with the changes listed in
 their PROVENANCE.md; see THIRD_PARTY_NOTICES.md. `n17_bb_verifier/` is our own second implementation of
 the checks of the squares project's standing n = 17 branch-and-bound verifier, written from its

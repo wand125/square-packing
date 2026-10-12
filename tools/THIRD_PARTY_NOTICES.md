@@ -62,7 +62,8 @@ SOFTWARE.
 
 ## jlevy/squares
 
-`fine_net_verifier/sqverify_fast/` and `fine_net_witnesses/sqverify_fast_witnesses/` contain
+`fine_net_verifier/sqverify_fast/`, `fine_net_witnesses/sqverify_fast_witnesses/` and
+`sqverify_continuous/sqverify_fast/` contain
 `packing/sqverify_fast` of <https://github.com/jlevy/squares> (base commit
 `dee22b882499a295b05424ca5a25121195259ebf`), modified as listed in each directory's
 PROVENANCE.md. Its code is under the MIT License below. Its documentation in those
