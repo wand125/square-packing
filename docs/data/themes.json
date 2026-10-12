@@ -4,7 +4,7 @@
    "issue": 1,
    "url": "https://github.com/wand125/square-packing/issues/1",
    "state": "open",
-   "updated": "2026-10-08",
+   "updated": "2026-10-11",
    "title": {
     "en": "The best general lower-bound formula for s(N)",
     "ja": "s(N) の最良の一般の下界の式"
@@ -21,13 +21,13 @@
     {
      "en": "Verification tools and the family construction.",
      "ja": "検証ツールと族の構成。"
+    },
+    {
+     "en": "All 34 intervals pass the main check and the record check (2026-10-10).",
+     "ja": "34 区間すべてが本検査と記録の検査に通過（2026-10-10）。"
     }
    ],
    "working_on": [
-    {
-     "en": "The remaining intervals.",
-     "ja": "残りの区間。"
-    },
     {
      "en": "A full replay of all records on a clean machine, and the public specification, before publication.",
      "ja": "公開前の、クリーンな環境での全記録の完全再生と、公開用の仕様。"
@@ -39,7 +39,7 @@
    "issue": 2,
    "url": "https://github.com/wand125/square-packing/issues/2",
    "state": "open",
-   "updated": "2026-10-08",
+   "updated": "2026-10-11",
    "title": {
     "en": "Improving lower bounds for s(n), n ≤ 324",
     "ja": "s(n)（n ≤ 324）の下界の更新"
@@ -58,8 +58,8 @@
      "ja": "problems/square-lower-bounds/（リリース square-lower-bounds-v1）に公開済み（ほか）: s(18) ≥ 4.705、s(19) ≥ 4.8275、s(26) ≥ 5.555（この 3 つは次の刻みで失敗）、s(27) ≥ 5.6525、s(28) ≥ 5.74、s(29) ≥ 5.815、s(30) ≥ 5.8835、s(31) ≥ 5.97。"
     },
     {
-     "en": "Limits reached (as of 2026-10-08): for n = 18, 19 and 26 the next 0.0025 step fails our mass test, so this method stops at the published values. This does not rule out other methods.",
-     "ja": "到達した限界（2026-10-08 時点）: n = 18, 19, 26 では次の 0.0025 の刻みが質量検査に失敗するため、この手法は公開済みの値で止まる。他の手法を排除するものではない。"
+     "en": "For n = 18, 19 and 26 the next step of 0.0025 fails, so this method stops at the published values (other methods are not ruled out).",
+     "ja": "n = 18, 19, 26 は次の 0.0025 の刻みで失敗するため、この方法では公開済みの値が限界（他の方法を否定するものではない）。"
     }
    ],
    "working_on": [
@@ -79,7 +79,7 @@
    "issue": 3,
    "url": "https://github.com/wand125/square-packing/issues/3",
    "state": "open",
-   "updated": "2026-10-07",
+   "updated": "2026-10-11",
    "title": {
     "en": "Contributing to the n = 17 optimality proof in jlevy/squares",
     "ja": "jlevy/squares での n = 17 の最適性証明への貢献"
@@ -220,12 +220,12 @@
    ],
    "working_on": [
     {
-     "en": "The strip patterns of the capture stage: a soundness bug was found in the first checker (boxes crossing two strips were checked only against the lower requirement), so the earlier strip-pattern results are withdrawn and are being re-checked with the corrected checker and with a second, independent checker.",
-     "ja": "捕捉段階の帯のパターン。第 1 の検査器に健全性のバグ（2 つの帯にまたがる箱が低い方の要件に対してのみ検査されていた）が見つかったため、従来の帯のパターンの結果は取り下げ、修正した検査器と第 2 の独立な検査器で再検査している。"
+     "en": "The strip patterns of the capture stage: the earlier results are withdrawn after a bug was fixed in the first checker, and are being checked again with the corrected checker and a second, independent one.",
+     "ja": "捕捉段階の帯のパターン：第 1 の検査器のバグを直したため従来の結果を取り下げ、修正した検査器と独立な第 2 の検査器で検査し直している。"
     },
     {
-     "en": "The main (4,4,1) pattern (case split over chord gaps).",
-     "ja": "主要な (4,4,1) パターン（弦の間隔による場合分け）。"
+     "en": "The main (4,4,1) pattern.",
+     "ja": "主要な (4,4,1) パターン。"
     }
    ],
    "links": []
@@ -255,8 +255,8 @@
    ],
    "working_on": [
     {
-     "en": "Reducing the uncertified roots to zero (LP rounds with warm starts), including a branch that also re-optimises the base mass near the band.",
-     "ja": "証明されない根をゼロにすること（ウォームスタート付きの LP の反復）。帯の近くで基礎の質量も再最適化する枝を含む。"
+     "en": "The remaining cases of the lift: every root must be certified.",
+     "ja": "持ち上げの残りの場合：すべての根を証明する。"
     }
    ],
    "links": []
@@ -286,8 +286,8 @@
    ],
    "working_on": [
     {
-     "en": "Reducing the uncertified roots to zero (LP rounds with warm starts).",
-     "ja": "証明されない根をゼロにすること（ウォームスタート付きの LP の反復）。"
+     "en": "The remaining cases of the lift: every root must be certified.",
+     "ja": "持ち上げの残りの場合：すべての根を証明する。"
     }
    ],
    "links": []
@@ -331,12 +331,7 @@
      "ja": "上流へのプルリクエスト: evand/square-packing#6。"
     }
    ],
-   "working_on": [
-    {
-     "en": "Following up on the pull request.",
-     "ja": "プルリクエストへの対応。"
-    }
-   ],
+   "working_on": [],
    "links": [
     {
      "label": "Release data/valid7-lean-certs-v1",
@@ -419,8 +414,8 @@
    ],
    "working_on": [
     {
-     "en": "The kernel run over all roots of ValidTilt9, then gluing them into validTilt9 and the axiom check.",
-     "ja": "ValidTilt9 のすべての根のカーネル検査、続いて validTilt9 への組み上げと公理の確認。"
+     "en": "The kernel run over all roots of ValidTilt9, then joining them into validTilt9 and checking the axioms of validTilt9, valid9 and bentz4.",
+     "ja": "ValidTilt9 のすべての根のカーネル検査、続いて validTilt9 への組み上げと、validTilt9・valid9・bentz4 の公理の確認。"
     }
    ],
    "links": [
@@ -463,8 +458,12 @@
    ],
    "working_on": [
     {
-     "en": "Stages 2 to 4 of the tree, then an independent second checker.",
-     "ja": "木の段 2〜4、続いて独立な第 2 の検査器。"
+     "en": "The three stage-2 certificates, then stages 3 and 4.",
+     "ja": "段 2 の 3 つの証明書、続いて段 3 と段 4。"
+    },
+    {
+     "en": "Then a second, independent checker, as for n = 6.",
+     "ja": "その後、n = 6 と同じく独立な第 2 の検査器。"
     }
    ],
    "links": [
@@ -515,8 +514,12 @@
    ],
    "working_on": [
     {
-     "en": "The rest of S_4, then S_5 to S_9, and an independent second check of every certificate.",
-     "ja": "S_4 の残り、続いて S_5〜S_9、すべての証明書の独立な第 2 の検査。"
+     "en": "S_4: the slanted line x + 4y = 4 + 6√2, then its corners y = 2 and x = 5.",
+     "ja": "S_4：斜めの直線 x + 4y = 4 + 6√2、続いてその角 y = 2 と x = 5。"
+    },
+    {
+     "en": "Then S_5 to S_9, and an independent second check of every certificate.",
+     "ja": "続いて S_5〜S_9、すべての証明書の独立な第 2 の検査。"
     }
    ],
    "links": [
@@ -559,8 +562,16 @@
    ],
    "working_on": [
     {
-     "en": "n = 9: the remaining stages; n = 15; the second checker for n = 9 and n = 15.",
-     "ja": "n = 9 の残りの段、n = 15、n = 9 と n = 15 の第 2 の検査器。"
+     "en": "n = 9: the remaining stages of the localization tree.",
+     "ja": "n = 9：局所化の木の残りの段。"
+    },
+    {
+     "en": "n = 15.",
+     "ja": "n = 15。"
+    },
+    {
+     "en": "The second checker for n = 9 and n = 15.",
+     "ja": "n = 9 と n = 15 の第 2 の検査器。"
     }
    ],
    "links": [
