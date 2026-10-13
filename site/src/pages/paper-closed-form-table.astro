@@ -60,8 +60,27 @@ function cell(r: Record<string, string>, k: string, kind: string) {
  if (kind === 'd') { const x = +v; return `<td class="num ${x > 1e-9 ? 'cft-pos' : x < -1e-9 ? 'cft-neg' : ''}">${x > 0 ? '+' : ''}${v}</td>`; }
  const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
  const link = k === 'known_lb_source' ? r.known_lb_url : k === 'known_lb_note' ? r.known_lb_note_url : '';
- if (link) return `<td><a href="${esc(link)}">${esc(v)}</a></td>`;
- return `<td class="${kind === 't' ? '' : 'num'}">${esc(v)}</td>`;
+ // source and note are shown short; the full text (as in the CSV) is the tooltip
+ const t = k === 'known_lb_source' || k === 'known_ub_source' ? shortSrc(v) : k === 'known_lb_note' ? shortNote(v) : k === 'known_lb_status' ? v.replace(/ \(not peer reviewed\)$/, '') : v;
+ const tip = t !== v ? ` title="${esc(v).replace(/"/g, '&quot;')}"` : '';
+ if (link) return `<td><a href="${esc(link)}"${tip}>${esc(t)}</a></td>`;
+ if (tip) return `<td${tip}>${esc(t)}</td>`;
+ // of a(N) and the known lower bound, the smaller one is green (nothing when they are equal)
+ const d = +(r.a_minus_known_lb || 0), low = r.a_N && r.known_lb && ((k === 'a_N' && d < -1e-9) || (k === 'known_lb' && d > 1e-9));
+ return `<td class="${kind === 't' ? '' : 'num'}${low ? ' cft-low' : ''}">${esc(v)}</td>`;
+}
+function shortSrc(v: string) {
+ const from = (v.match(/ \(from N = \d+\)$/) || [''])[0], b = v.slice(0, v.length - from.length);
+ const m = b.match(/^wand125 \([^)]*certificates\/([^)]+)\)$/);
+ const t = m ? 'wand125 ' + m[1] : b.replace(/ \((arXiv:[^)]*|GitHub user[^)]*)\)$/, '').replace(/^Evan Daniel/, 'E. Daniel');
+ return t + (from ? (ja() ? '（N = ' + from.match(/\d+/)![0] + ' から）' : ' (from ' + from.match(/\d+/)![0] + ')') : '');
+}
+function shortNote(v: string) {
+ const n77 = /k2m4_n77_L9/.test(v);
+ if (/records-tilt9-v1/.test(v)) return (ja() ? 'ValidTilt9 を再検査（records-tilt9-v1）、Lean 化は進行中' : 'ValidTilt9 re-checked (records-tilt9-v1); Lean in progress') + (n77 ? (ja() ? '、当方の k2m4_n77_L9 も' : '; also our k2m4_n77_L9') : '');
+ if (/records-v1/.test(v)) return ja() ? '当方で再検査（records-v1）' : 're-checked by wand125 (records-v1)';
+ if (/^release /.test(v)) return v.slice(8);
+ return v;
 }
 // colour modes: a pale band on each row, from the colour tokens (light and dark themes)
 const MODES: Record<string, string> = {lb: 'a_minus_known_lb', kar: 'a_minus_karakus', nag: 'a_minus_nagamochi'};
@@ -152,6 +171,7 @@ new MutationObserver(render).observe(document.documentElement, {attributes: true
 .cft-table td { padding: 3px 8px; white-space: nowrap; border-bottom: 1px solid var(--line); }
 .cft-pos { color: var(--cft-pos); }
 .cft-neg { color: var(--cft-neg); }
+.cft-low { color: var(--ok); }
 /* muted palette from the tokens: dull blue-green and red-brown for the sign, six low-saturation colours for sources */
 .cft { --cft-pos: color-mix(in srgb, color-mix(in srgb, var(--ok) 50%, var(--link)) 65%, var(--fg2));
   --cft-neg: color-mix(in srgb, color-mix(in srgb, var(--bad) 60%, var(--acc)) 65%, var(--fg2));
