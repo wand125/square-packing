@@ -1,0 +1,37 @@
+{
+ "kicker": [
+  "Computer-assisted proof",
+  "コンピュータ支援の証明"
+ ],
+ "title": [
+  "A closed-form lower bound for \\(s(N)\\), all \\(N \\ge 49\\)",
+  "\\(s(N)\\) の閉じた式の下界（すべての \\(N \\ge 49\\)）"
+ ],
+ "lead": [
+  "One square root on each of 34 intervals of the fractional part. Compared with Nagamochi's formula capped at \\(k + 1\\): equal at \\(N = (k+1)^2 - 1\\) and \\((k+1)^2 - 2\\), strictly above at every other non-square \\(N\\). Every one of 187,183,108 leaves was recomputed by a full replay with the Rust checker.",
+  "小数部分の 34 個の区間のそれぞれで平方根 1 つ。\\(k + 1\\) で頭打ちにした Nagamochi の式と比べて、\\(N = (k+1)^2 - 1\\) と \\((k+1)^2 - 2\\) で等しく、ほかの平方数でないすべての \\(N\\) で真に上回る。187,183,108 個の葉すべてを Rust の検査器による全数の再生で計算し直した。"
+ ],
+ "result": [
+  "\\(s(N) \\ge k + \\delta\\) when \\((k+\\delta)^2 - 4(\\alpha_i\\delta + \\beta_i) < N\\), \\(\\delta \\in I_i \\subseteq (0, 1]\\), \\(N \\ge 49\\)",
+  "\\(\\delta \\in I_i \\subseteq (0, 1]\\)、\\((k+\\delta)^2 - 4(\\alpha_i\\delta + \\beta_i) < N\\) ならば \\(s(N) \\ge k + \\delta\\)（\\(N \\ge 49\\)）"
+ ],
+ "author": "Hiroaki Hosono (wand125)",
+ "links": [
+  [
+   "Code & proof",
+   "コードと証明",
+   "https://github.com/wand125/square-packing/tree/main/problems/closed-form"
+  ],
+  [
+   "Release closed-form-v1",
+   "Release closed-form-v1",
+   "https://github.com/wand125/square-packing/releases/tag/closed-form-v1"
+  ],
+  [
+   "Issue #1",
+   "Issue #1",
+   "https://github.com/wand125/square-packing/issues/1"
+  ]
+ ],
+ "wide": true
+}

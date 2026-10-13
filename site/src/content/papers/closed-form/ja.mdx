@@ -1,0 +1,190 @@
+import ClosedFormTable from '../../../components/viz/ClosedFormTable.tsx';
+import cfData from '../../../../public/data/papers/closed-form.json';
+import ClosedFormBound from '../../../components/viz/ClosedFormBound.tsx';
+
+## 要旨
+
+$s(N)$ を、内部が重ならない単位正方形 $N$ 個（位置・角度は自由）が入る最小の正方形の一辺とする。すべての平方数でない $N \ge 49$ で成り立ち、小数部分の 34 個の区間のそれぞれで平方根 1 つで書ける $s(N)$ の下界を証明する。一辺を $a = k + \delta$（$k = \lfloor\sqrt N\rfloor$、$0 < \delta \le 1$）と書く。各区間 $I_i$ で、証明書が厳密な有理数 $\alpha_i, \beta_i$ による節約 $S_i(\delta) = \alpha_i\delta + \beta_i$ を示し、$(k+\delta)^2 - 4S_i(\delta) < N$ ならば $s(N) \ge k + \delta$ となる。Nagamochi の式 $F(N) = 1 + \sqrt{N - 2k + 1}$ を $k + 1$ で頭打ちにして比べると（自明に $s(N) \le k + 1$ なので）、この下界は $N = (k+1)^2 - 1$ と $(k+1)^2 - 2$ で等しく、それ以外のすべての平方数でない $N \ge 49$ で真に大きい。証明は、容器の中のどの単位正方形にも質量 1 以上を与える測度である。この不等式を、姿勢の有限の格子の上で厳密な葉の検査によって確かめた：136 個の記録に 187,183,108 個の葉があり、そのすべてを Rust の検査器による全数の再生で、厳密な有理数演算で計算し直した。
+
+## 1. 下界
+
+**定理.** $N \ge 49$ を平方数でない整数、$k = \lfloor\sqrt N\rfloor$ とする。$\delta \in (0, 1]$ が $I_i$ に属し
+
+$$
+(k+\delta)^2 - 4(\alpha_i\delta + \beta_i) < N
+$$
+
+ならば $s(N) \ge k + \delta$。したがって
+
+$$
+s(N) \ge a(N) = \max_i \, \min\!\left(2\alpha_i + \sqrt{4\alpha_i^2 + N + 4\beta_i - 4\alpha_i k},\; k + d_1^{(i)}\right).
+$$
+
+最大は、根 $2\alpha_i + \sqrt{\cdots}$ が $k + d_0^{(i)}$ を超える区間 $I_i = [d_0^{(i)}, d_1^{(i)}]$ についてとる。
+
+34 個の区間は $(0, 1]$ を分割する。端点と厳密な $\alpha_i, \beta_i$ は [`intervals.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/intervals.json) と [`INTERVALS.md`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/INTERVALS.md) にある。$\alpha_i \le 1.7496$ かつ $k \ge 7$ なので、$T_i(\delta) = (k+\delta)^2 - 4(\alpha_i\delta + \beta_i)$ は $\delta$ について狭義に増加する。よって $I_i$ で条件 $T_i(\delta) < N$ は、根 $a_i(N) = 2\alpha_i + \sqrt{4\alpha_i^2 + N + 4\beta_i - 4\alpha_i k}$（$k + \delta$ の値として）より下でちょうど成り立つ。区間の境目で節約が跳ぶことがあるので、区間について最大をとる。各区間で下界は平方根 1 つで書ける。
+
+**比較.** 同じ枠組みで、Nagamochi の式 $F(N) = 1 + \sqrt{N - 2k + 1}$ は節約 $\delta/2$ に、Karakuş の式 $\tfrac12 + \sqrt{N - k + \tfrac14}$（[arXiv:2609.37410](https://arxiv.org/abs/2609.37410) の Corollary 6.2）は節約 $\delta/4$ に対応する。認証された節約は $(0, 1]$ 全体で $\delta/2$ を上回る（$\delta \ge 1/50$ では $0.0226$ より大きく、それより下では $1.229\,\delta$ より大きく上回る）。したがって、平方数でないすべての $N \ge 49$ について、$F(N)$ を $k + 1$ で頭打ちにすると（自明に $s(N) \le k + 1$ なので）：
+
+- $N = (k+1)^2 - 1$ と $N = (k+1)^2 - 2$ では $a(N) = F(N) = k + 1$；
+- それ以外のすべての $N$ で $a(N) > F(N)$。
+
+ここで $S^*(\delta)$ は、$\delta$ を含む区間の $S_i(\delta)$ の最大。実際、$F(N) < k + 1$ ならば $F(N) = k + \delta_F$ で $(k + \delta_F)^2 - 2\delta_F = N$、$0 < \delta_F < 1$。認証された直線はどれも、その区間の閉包の上で $\delta/2$ を上回る（$\delta \ge 1/50$ のどの端点でも、開いた左端も含めて $0.0226$ より大きく、$I_1$ では $(\alpha_1 - \tfrac12)\delta$ だけ）。$d_0^{(i)} \le \delta_F < d_1^{(i)}$ となる区間 $I_i$ をとる（$\delta_F$ が右端なら次の区間をとる）。$\delta_F$ に近い $\delta \in I_i$ では $(k + \delta)^2 - 4S_i(\delta) < (k + \delta)^2 - 2\delta$ で、右辺は連続で $\delta_F$ で $N$ に等しく、差 $4S_i(\delta) - 2\delta$ は $\delta_F$ の近くで 0 から離れている（$S_i$ はアフィンで、$\delta_F = d_0^{(i)}$ が開いた端点のときも極限として $S_i(\delta_F) > \delta_F/2$）。よってある $\delta > \delta_F$ で $(k + \delta)^2 - 4S^*(\delta) < N$ となり、$a(N) > F(N)$。$\delta_F$ での $S^*$ の値そのものは使わない。これは $S^*$ が右で下がる $\delta_F = 2/5$ と $4/5$ で効く。$F(N) \ge k + 1$、すなわち $N \ge (k+1)^2 - 2$ ならば $(k+1)^2 - 4S^*(1) < (k+1)^2 - 2 \le N$ なので $a(N) = k + 1$。
+
+同様に $a(N)$ は、$N = (k+1)^2 - 1$（どちらも $k + 1$）を除いて Karakuş の値より真に大きい。$F(N)$ の基になる鍵の補題の証明の穴は、公に議論されている（chelokot、[jlevy/squares#295](https://github.com/jlevy/squares/issues/295)）。Karakuş（[arXiv:2609.37410](https://arxiv.org/abs/2609.37410)）は、Nagamochi の論文の Lemma 1 の得点の主張に反例を作り、Nagamochi の長方形の下界の公表された証明が不完全であることを示した。論文は、この反例が下界そのものを否定するものではないと述べている。そのうえで帯の測度によるより弱い長方形の下界を証明し、そこから平方数でないすべての $N \ge 8$ で $s(N) \ge \tfrac12 + \sqrt{N - k + \tfrac14}$ と $s(k^2-1) = k$ を導いている。Nagamochi の下界の全体と $s(k^2-2) = k$ は示していない。この証明は、Nagamochi の補題も Karakuş の下界も使わない。
+
+**注（漸近）.** 無駄の言葉で言うと、定理は、一辺 $x = k + \delta$（$k \ge 7$、$0 < \delta \le 1$）の正方形に入る単位正方形が $x^2 - 4S^*(\delta)$ 個より少ないことを言う。つまり無駄は有界な量 $4S^*(\delta)$（最大でおよそ $3.41$）を超える。Roth と Vaughan は、無駄が一辺の平方根の速さで増えることを証明した。これは十分大きな $x$ ではこちらより強い。どこから先で強くなるかの境目は求めない。
+
+比べるには $a^2 - N$ を見る方が見通しがよい。$a(N)$ が根で決まる $N$ では、$\delta = a(N) - k$ として厳密に $a(N)^2 - N = 4S^*(\delta)$。同様に $F(N)^2 - N = 2(F(N) - k)$、Karakuş の式 $K$ では $K(N)^2 - N = K(N) - k$。$x \in (0, 1)$ を固定し、$N = k^2 + \operatorname{round}(2kx)$ として $k \to \infty$ とする。すると 3 つの $\delta$ はどれも $x$ に近づき（この下界のものは上から）、
+
+$$
+\sqrt N\,(a(N) - \sqrt N) \to 2S^*(x+), \qquad \sqrt N\,(F(N) - \sqrt N) \to x, \qquad \sqrt N\,(K(N) - \sqrt N) \to x/2
+$$
+
+となる。よって $(a(N) - \sqrt N)/(F(N) - \sqrt N) \to 2S^*(x+)/x$、Karakuş に対する比は $4S^*(x+)/x$ に近づく。$x \in (0, 1)$ にわたって、前者の極限は $1.631$（$x = 4/5$ のすぐ上。そこで $S^*$ は $0.771$ から $0.652$ に下がる）から $2\alpha_1 = 3.4588$ までの値をとり、最初の区間の直線が原点を通るので $(0, 1/50]$ 全体でこの値に等しい。Karakuş に対しては $3.262$ から $6.917$ まで。たとえば $x = 3/10$、$k = 10^7$ で計算した値は $0.958709$、$0.300000$、比 $3.195696$ で、$2S^*(3/10) = 0.958709$、$2S^*(3/10)/(3/10) = 3.195695$ と一致する。
+
+**既知の下界との比較.** $N \le 3600$ で、公開された証明書・論文で示された下界をすべて既知とし（$s$ が非減少であることも使う）、平方数でない $N$ について比べると、この下界は 3,239 個で既知の最良の下界を上回り、159 個で等しく、100 個で下回る。既知の下界には、査読を経ていない結果（preprint と公開された証明書。当方のものと Evan Daniel の $s(k^2-4) = k$ を含む）も含めている。$s(k^2-4) = k$ は Evan Daniel の $k \ge 5$ についての preprint の結果である（[evand/square-packing](https://github.com/evand/square-packing)。[jlevy/squares#316](https://github.com/jlevy/squares/issues/316)）。帰着の部分（すべての $k$、$D_4$ 対称性、$\theta = 0$ の面）はそこで Lean のカーネルで検査されており、$k \ge 8$ では有限命題 ValidTilt9 に基づく。ValidTilt9 は、当方が別に書いた厳密な検査器で独立に再検査した（計算機援用。Release [records-tilt9-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-tilt9-v1)。[Valid7 の論文](paper-valid7.html)を参照）。ValidTilt9 の Lean での形式化は進行中である。この下界が $s(N)$ を決めるのは $N = (k+1)^2 - 1$、$(k+1)^2 - 2$、$(k+1)^2 - 3$ だけで、そこでは $k + 1$ に等しい。すべての $N$ と、既知の下界それぞれの状態と出典は、[表](paper-closed-form-table.html)と[ブロックごとの図](paper-closed-form-plots.html)にある。
+
+**各ブロックの上端.** $S^*(1) > 3/4$（区間 $I_{34}$ が $S^*(1) \approx 0.853$ を与える）なので、この下界から $N = (k+1)^2 - 1$、$(k+1)^2 - 2$、$(k+1)^2 - 3$（$k \ge 7$）で $s(N) = k + 1$ が出る。これらの値は新しくない。$s(n^2-1) = s(n^2-2) = n$ は Nagamochi（2005）が述べたもので、そこでの鍵の補題の証明には公に議論されている穴がある（[jlevy/squares#295](https://github.com/jlevy/squares/issues/295)）。この下界は、その補題を使わずに $n \ge 8$ でこれらの値を与える。$s(n^2-1) = n$ については、Karakuş（[arXiv:2609.37410](https://arxiv.org/abs/2609.37410)）もその補題を使わない証明を与えている。$n \ge 6$ の $s(n^2-3) = n$ は Evan Daniel が証明した（[evand/square-packing](https://github.com/evand/square-packing) の Valid7 の証明書。独立な検査は [checks/valid7](https://github.com/wand125/square-packing/tree/main/checks/valid7)、[Valid7 の論文](paper-valid7.html) も参照）。ここでは同じ一般の下界から出てくる。
+
+<ClosedFormBound lang="ja" data={{intervals: cfData.intervals.map(({i, d0, d1, open_left, fd0, fd1, fa, fb}) => ({i, d0, d1, open_left, fd0, fd1, fa, fb}))}} client:visible />
+
+*34 本の認証された直線 $S_i(\delta)$（実線）と $\delta/2$、$\delta/4$（破線）。$N$ を入れると、$a(N)$、それを与える区間（強調）とその直線上の点、$k + 1$ で頭打ちにした Nagamochi と Karakuş の値が出る。ここでの値は厳密なデータから浮動小数点で計算した図示用のもの。*
+
+## 2. 閉じた式の全体
+
+平方数でない $N \ge 49$ について $k = \lfloor\sqrt N\rfloor$ とする。このとき
+
+$$
+s(N) \ge a(N) = \max_{i\,:\; a_i(N) > k + d_0^{(i)}} \min\!\left(k + d_1^{(i)},\; a_i(N)\right), \qquad a_i(N) = 2\alpha_i + \sqrt{N + c_i - 4\alpha_i k}, \quad c_i = 4\alpha_i^2 + 4\beta_i .
+$$
+
+- **対象の区間.** 根 $a_i(N)$ が $k + d_0^{(i)}$ を超える区間だけをとる。それより下では、$I_i$ のどの $\delta$ でも条件 $(k+\delta)^2 - 4S_i(\delta) < N$ は成り立たない。
+- **区間の端.** どの区間も右端は閉じている。左端が開いているのは $I_1 = (0, 1/50]$、$I_8 = (2/5, 81/200]$、$I_{34} = (99/100, 1]$ の 3 つで、ほかは閉じている。隣り合う区間は端点を共有するので、$(0, 1]$ のどの $\delta$ も少なくとも 1 つの区間に入る。開いた左端は上限が同じなので特別扱いは要らない。$\delta = 0$ は除く（平方数の $N$ は面積の下界で済む）。
+- **切れ目.** 切れ目には $\delta = j/5$ がすべて入っている。そこで $W = 2 + \delta$ が $1/5$ の格子をまたぎ、族の構造が変わるからである（[SPEC.md](https://github.com/wand125/square-packing/blob/main/problems/closed-form/SPEC.md) §7.3）。ほかの切れ目は、族が検査に通らなかった区間を分けてできた。たとえば $[21/50, 1/2]$ は長さ $1/200$ の 16 区間に分かれている。この 16 区間で認証された節約は $0.4777$ から $0.4830$ の間にとどまり、細かく分けても $S$ はほとんど上がらない。さらに細かくしたときの上限は主張しない。
+- **表の「極限」.** 下の表の「極限」は開いた左端（$I_1$ の $\delta = 0$、$I_8$ の $2/5$、$I_{34}$ の $99/100$）の印で、その端は区間に含まれないので、そこでの余裕は右からの極限の値である。その点そのものは隣の区間が受け持つ（$\delta = 0$ は主張に含めない）。
+- **最大をとる理由.** 区間の境目で認証された直線が跳ぶことがある。たとえば $\delta = 2/5$ では、$I_7 = [19/50, 2/5]$ が閉じた右端で $S \approx 0.6242$ を認証し、$I_8 = (2/5, 81/200]$ は $S \approx 0.5684$ から始まる。下界は、対象の区間のうち最良のものになる。
+- **Nagamochi の節約に対する余裕.** 各区間で余裕 $S_i(\delta) - \delta/2$ はアフィンなので、最小は端でとる。表の最後の列に両端の値を載せた。$\delta \ge 1/50$ での最小は $0.02264$ で、$I_1$ では余裕は $(\alpha_1 - \tfrac12)\delta$。
+
+表は [`intervals.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/intervals.json) から道具で作った。$\alpha_i$ は厳密な値。$\beta_i$ と $c_i$ は数百桁の厳密な有理数で、「厳密な値」を開くと出る。34 本の直線は §1 の図に描いてある。
+
+<ClosedFormTable data={cfData} lang="ja" />
+
+## 3. 測度から下界へ
+
+**原理.** $[0, a]^2$ 上の有限な非負の測度 $\mu$ が、すべての閉じた単位正方形 $Q \subseteq [0, a]^2$ で $\mu(Q) \ge 1$ を満たし、$\mu([0, a]^2) < N$ ならば、$s(N) \ge a$。
+
+実際、一辺 $b < a$ の容器に $N$ 個の正方形が入るとする。詰め方を $a/b$ 倍に広げ、広げた各正方形の中心に同じ向きの単位正方形を置く。この $N$ 個の閉じた単位正方形は互いに交わらず $[0, a]^2$ に入るので、質量の合計は $N$ 以上となり矛盾する。広げることで正方形が離れるので、元の詰め方で共有される辺の上の線分の質量を二重に数えることはない。
+
+**質量の合計.** 次節の測度の質量の合計は
+
+$$
+\mu_{k,\delta}([0, a]^2) = a^2 - 4S(\delta)
+$$
+
+で、節約 $S(\delta)$ は各区間でアフィンかつ $k$ によらない。証明書は $I_i$ 上で $S(\delta) \ge S_i(\delta)$ を示し、$a = k + \delta$ として原理から定理が出る。
+
+## 4. 測度
+
+中央はルベーグ測度、辺の近くは線の測度である。各壁に沿って、長さ 1 あたり質量 $9/5$ の線分が幅 $9/5$ の帯の面積の代わりになるので、壁では節約は出ない。角の近くでは単位正方形は両方の壁の線を横切らねばならず、そこの線は置き換える面積より $S(\delta)$ だけ少ない質量で足りる。4 つの角から、質量の合計 $a^2 - 4S(\delta)$ が出る。
+
+<img class="pp-img" src="data/papers/closed-form-layout-k7.svg" alt="k = 7、δ = 2/5 の測度" width="600" height="600" loading="lazy" />
+
+*$I_7$ の族を $k = 7$、$\delta = 2/5$（一辺 $37/5$）で組み立てた測度：1,196 本の線分（橙。線密度が高いほど太く濃い）と、ルベーグ測度を置く内部の正方形 $[9/5, 28/5]^2$（青）。質量の合計はちょうど $a^2 - 4S$ で、$S \approx 0.6242$。*
+
+容器の一辺は $a = k + \delta$。測度は 3 つの部分からなり、4 回の回転対称（$0^\circ, 90^\circ, 180^\circ, 270^\circ$ の回転。鏡映の対称は使わない）に並べる：
+
+- **内部.** $[9/5,\, a - 9/5]^2$ 上の密度 1 のルベーグ測度。
+- **壁.** 各辺に沿った、$1/5$ の格子上の軸に平行な線分の周期的な並び。周期 1、1 周期あたり質量 $9/5$ で、$k - 4$ 周期と終端の線からなる。下の壁が小数部分 $\delta$ を担い、左の壁は整数の周期がそろう。
+- **角.** 各角の長方形 $[0, 2+\delta] \times [0, 2]$ の線分：固定のもの、$\delta$ とともに平行移動するもの、$\delta$ とともに長さが伸びるもの。
+
+$\delta$ の各区間について、厳密な有理数の質量を持つ有限の線分の*族*が、すべての $k \ge 7$ の角と壁の部分を一度に表す。壁の質量は 1 周期あたりちょうど $9/5$ なので、質量の合計は $a^2 - 4S(\delta)$ で、$S$ は $k$ によらない。
+
+**有限個の局所の検査への帰着.** 単位正方形の幅は $\sqrt2 < 2$ 以下。回転により、正方形の中心は容器の左下の 4 分の 1 にあるとしてよく、そこでは全体の測度が族から作った局所の模型に一致する。角から離れた所では壁に沿った整数の平行移動が質量を保つので、中心を 1 周期の中に移せる。残る中心は一辺およそ $3.8$ の決まった窓（右側は $\delta$ だけずれる）にあり、これを 4 つの領域 *left*、*straddle*、*top*、*right* で覆う。$k \ge 7$ は 3 か所で使う：局所の検査が容器全体を覆うのは $a > 2W + 2r$、すなわち $k > 4 + \delta + \sqrt2$ のときだけである（$k = 6$ では $\delta > 0.586$ で破れる）。構造の検査は $k = 7, 8, 9$ の容器を組み立てて行い、大きな $k$ は整数のずらしでそれに帰着する。大域の測度への帰着は壁の周期が 3 つ以上（$k - 4 \ge 3$）あることを使う。この構成は、このままでは $k < 7$ に広げられない。 $N \le 48$ については何も主張しない。
+
+## 5. 姿勢と根の格子
+
+姿勢は $Q(z, u) = z + R_\theta[-\tfrac12, \tfrac12]^2$、$u = \tan(\theta/2)$ とし、$\cos\theta$ と $\sin\theta$ を $u$ の有理関数にする。角度は正方形の周期 $\pi/2$ より広く覆う。各領域を、中心の $x$、中心の $y$、$u$、$\delta$ の*根の箱*の格子に分ける。検査器が求めるのは、領域の根が 4 つの分割の直積とちょうど一致することだけである。公開した記録では、$x$ と $y$ を下端から $1/10$ ずつ切り（必要なら最後だけ短い）、$u$ を $j = -13, \dots, 14$ の $j/32$ で切り（$u = 0$ は切れ目で、内部にはならない）、$\delta$ は帯をまたぐ領域で $\lceil (d_1 - d_0)/(1/50) \rceil$ 等分する（ほかの 3 領域では 1 つ）。各根の箱をさらに*葉*に分け、各葉を決まった厳密な検査のどれか 1 つで受理する。
+
+余裕が 0 になりうる角度 $u = 0$ は上半連続性で閉じる：閉じた正方形の質量は姿勢について上半連続である。許される $u = 0$ の姿勢は、必要なら中心を連続に動かして、許される $u \ne 0$ の姿勢の極限として得られるので、近くで質量 1 以上なら $u = 0$ でも 1 以上。箱の境では近くの姿勢が隣の箱にあることがあるので、領域全体の敷き詰めの検査と合わせてこの論法を使う。
+
+## 6. 葉の検査
+
+すべての検査は、有理数、有理係数の多項式、厳密な実代数的数を使う。各検査は、葉の箱のすべての姿勢で $\mu(Q) \ge 1$ を示す：
+
+- **EMPTY** — 箱の中に許される姿勢がない。
+- **CORE** — 箱のすべての正方形に含まれる多角形が質量 1 以上を持つ。
+- **B3D** — 線分の質量は姿勢について区分的にアフィン。箱の上の最小値を、厳密な多項式の非負性で下から抑える。
+- **EDGE**、**EX**、**EY** — 容器の 1 辺または 2 辺に触れる正方形の補題（後の 2 つは派生した族の上で）。
+- **B3U**、**B3T**、**CORE1**、**B4U** — 切り口に沿った凹性による下界、箱の角で共通する線分の部分、配置の辺の臨界値による多角形の質量。
+
+仕様 [`SPEC.md`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/SPEC.md) に、すべての検査を、厳密な受理の規則と注意の要る場合とともに書いてある。
+
+## 7. 記録と検査器
+
+*記録*は、ある区間のある領域について、すべての根の箱と、その葉と、各葉の検査の名前を並べたもの。検査器 `replay4d`（Rust）は族と記録を読み、次を行う：
+
+1. 根が領域の格子とちょうど一致し、葉が各根を敷き詰めることを確かめる（二分の木を組み直す）；
+2. すべての葉を、名前の付いた検査で、厳密な有理数演算でいちから計算し直す。
+
+記録のうち使うのは、箱と検査の名前だけ。名前の付いた検査に通らない葉は棄却し、別の検査は試さない。
+
+論証のうち 2 つは `replay4d` が行わない。(1) 各族の構造：重みが非負であること（`replay4d` は重み 0 以下の行を棄却せずに黙って捨てる）、壁の 1 周期の質量が $9/5$ であること、区間の両端で族の節約が認証された直線以上であること、$k = 7$、8、9 で組み立てた測度が検査した窓の中で局所の模型と一致すること、4 つの領域が窓を覆うこと（SPEC.md §2.3 と §7.1 の手順 1・2・5）。これらは [`structure/validate_family.py`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/structure/validate_family.py)（厳密な計算、Python の標準ライブラリだけ）で検査し、[`structure/structure_all.py`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/structure/structure_all.py) で 68 個の族すべてに掛けた。後者は、認証された各直線が両端で計算し直した節約を結ぶ直線とちょうど一致すること、領域の範囲が求められるとおりであることも確かめる。結果は [`receipts/structure.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/receipts/structure.json) にある。(2) 独立性：`replay4d` の中核 `seam4d_core` は、探索の道具が葉の評価に使うのと同じコードである。したがって再生は、記録をそのコードに照らして確かめるもので、独立な実装に照らすものではない。
+
+## 8. 検査したこと
+
+| | |
+|---|---|
+| 区間 | 34（$(0, 1]$ を覆う） |
+| 記録 | 136（区間ごとに 4 領域） |
+| 葉 | 187,183,108 |
+| 構造 | 68 個の族すべてを検査：`ALL STRUCTURE OK` |
+| 再生 | すべての葉を `replay4d` で 1 回ずつ計算し直し、すべて受理：`ALL REPLAY OK` |
+
+再生は、新しく入れた Ubuntu 24.04.5 と rustc 1.86.0 の環境で行い、合計でおよそ 4,300 CPU 時間かかった。大きな記録はその実行のために格子の線に沿って分けた。各片はまた部分の箱のちょうどの格子で、片は領域を敷き詰め、合わせると元の記録の行をすべて含む。受領記録には、片ごとの範囲、根の数（1 行が 1 根）、各行の SHA-256 の $2^{256}$ を法とする和を載せた。この和は片を合わせると元の記録になることの整合の確認で、証明ではない。公開した記録は、分ける前の元のファイルである。
+
+再生に使ったのは `checker/` と同じ Rust のコードである。公開にあたってコメントを英語に訳し、ワークスペースを `seam4d_core` と `replay4d` の 2 つのクレートに絞った（最上位の `Cargo.toml` はこの 2 つだけを挙げ、`Cargo.lock` から外したクレートのパッケージが消えた。残るパッケージの版は同じ）。コメント以外では `.rs` ファイルは同一。`replay4d` が出すソースのハッシュは、マニフェスト、`Cargo.lock`、`b3d_sort.rs` を除く `.rs` ファイルを対象にするので、値が違う：再生に使ったものは `306ad4b5…`、公開したソースは `92002e0e…`。公開した検査器は同じテスト（28 個）に通り、そのビルドで公開した資産から区間 1 と 34 の記録 8 個すべてを再生して `REPLAY OK` になった（3,138,681 葉）：[`receipts/published_checker.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/receipts/published_checker.json)。全体の再生は [`receipts/replay.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/receipts/replay.json) にある。
+
+公開にあたって、どの検査器も読まない 2 つのキー（自由記述の `note` と探索の目標の `target`）を族のファイルから除いた。それ以外は再生した族と同じである（[`receipts/families.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/receipts/families.json) に新旧の SHA-256 がある）。区間 1 と 34 の上の再生は公開した族で行った。
+
+## 9. 状況と限界
+
+- 証明は計算機援用で、査読は受けていない。
+- 開発中に使った Python の記録検査器は公開しない：探索の道具とコードを共有しているので、それらから独立でない。独立な検査器はまだ書かれていない。書いてもらえるなら歓迎する。
+- $N \le 48$ については何も主張しない。平方数 $N = k^2$ では面積の下界で $s(N) = k$。
+- 長方形などほかの容器はここでは扱わない。
+
+## 付録：N ≤ 3600 の表
+
+[表](paper-closed-form-table.html)には、$N \le 3600$ のすべてについて、下界 $a(N)$ とそれを与える区間、既知の最良の下界と上界（出典と年）、Karakuş の式、参考として Nagamochi の式、それらの差を載せた。絞り込みと並べ替えができ、CSV でも取り出せる。`intervals.json` と、表に名前を挙げた公開データから道具（`site/tools/closed_form_table.py`、図は `closed_form_plots.py`）で作った。同じ値を $k = 7, \dots, 17$ のブロックごとに比べた[図](paper-closed-form-plots.html)もある。
+
+## 再現の手順
+
+検査器を作る（Ubuntu。GMP をソースから作るので `m4` が要る）：
+
+```
+sudo apt-get install -y build-essential m4 curl ca-certificates
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain 1.86.0
+cd problems/closed-form/checker
+cargo +1.86.0 test --locked --release -p seam4d_core -p replay4d
+cargo +1.86.0 build --locked --release -p replay4d
+```
+
+データを取ってきて確かめ、再生する（`problems/closed-form` で）：
+
+```
+mkdir assets && cd assets && gh release download closed-form-v1 && sha256sum -c SHA256SUMS && cd ..
+python3 checker/replay_all.py --assets assets --threads 16 --jobs 4
+```
+
+`replay_all.py` はすべてのハッシュを確かめ、136 個の記録すべてに `replay4d` を走らせ、根と葉の数を `intervals.json` と比べ、最後に `ALL REPLAY OK` を出す。`--only 1,34` で区間を選んで再生できる。Release `closed-form-v1` は区間ごとに 1 つの資産（2 つの族と 4 つの記録、`SHA256SUMS` 付き）を持ち、合計でおよそ 0.8 GB、展開するとおよそ 18 GB。
+
+## 参考文献
+
+- H. Nagamochi, Packing unit squares in a rectangle, *Electron. J. Combin.* 12(1) (2005), #R37, [doi:10.37236/1934](https://doi.org/10.37236/1934).
+- H. Karakuş, A counterexample to Nagamochi's scoring lemma and a new rectangle packing bound, arXiv:2609.37410v1 [math.CO] (2026), [arxiv.org/abs/2609.37410](https://arxiv.org/abs/2609.37410).
+- K. F. Roth and R. C. Vaughan, Inefficiency in packing squares with unit squares, *J. Combin. Theory Ser. A* 24 (1978), 170–186.
+- Nagamochi の証明の穴についての公の議論：[jlevy/squares#295](https://github.com/jlevy/squares/issues/295)。
+- Evan Daniel, $k \ge 6$ の $s(k^2-3) = k$（Valid7）：[evand/square-packing](https://github.com/evand/square-packing)。
+- Evan Daniel, $k \ge 5$ の $s(k^2-4) = k$（preprint。帰着は Lean で検査済み、$k \ge 8$ では ValidTilt9 に基づく）：[jlevy/squares#316](https://github.com/jlevy/squares/issues/316)。当方が別に書いた厳密な検査器による ValidTilt9 の独立な再検査：[records-tilt9-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-tilt9-v1)。
+- コード・仕様・受領記録：[problems/closed-form](https://github.com/wand125/square-packing/tree/main/problems/closed-form)。データ：Release [closed-form-v1](https://github.com/wand125/square-packing/releases/tag/closed-form-v1)。

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" width="640" height="300" font-family="system-ui, sans-serif" font-size="11">
+<line x1="46" y1="266.0" x2="628" y2="266.0" stroke="#8a8f98" stroke-opacity="0.6"/>
+<text x="40" y="270.0" text-anchor="end" fill="#8a8f98">0</text>
+<line x1="46" y1="202.5" x2="628" y2="202.5" stroke="#8a8f98" stroke-opacity="0.18"/>
+<text x="40" y="206.5" text-anchor="end" fill="#8a8f98">0.25</text>
+<line x1="46" y1="139.0" x2="628" y2="139.0" stroke="#8a8f98" stroke-opacity="0.18"/>
+<text x="40" y="143.0" text-anchor="end" fill="#8a8f98">0.5</text>
+<line x1="46" y1="75.5" x2="628" y2="75.5" stroke="#8a8f98" stroke-opacity="0.18"/>
+<text x="40" y="79.5" text-anchor="end" fill="#8a8f98">0.75</text>
+<line x1="46" y1="12.0" x2="628" y2="12.0" stroke="#8a8f98" stroke-opacity="0.6"/>
+<text x="40" y="16.0" text-anchor="end" fill="#8a8f98">1</text>
+<line x1="46.0" y1="266" x2="46.0" y2="270" stroke="#8a8f98"/><text x="46.0" y="282" text-anchor="middle" fill="#8a8f98">121</text>
+<line x1="147.2" y1="266" x2="147.2" y2="270" stroke="#8a8f98"/><text x="147.2" y="282" text-anchor="middle" fill="#8a8f98">125</text>
+<line x1="273.7" y1="266" x2="273.7" y2="270" stroke="#8a8f98"/><text x="273.7" y="282" text-anchor="middle" fill="#8a8f98">130</text>
+<line x1="400.3" y1="266" x2="400.3" y2="270" stroke="#8a8f98"/><text x="400.3" y="282" text-anchor="middle" fill="#8a8f98">135</text>
+<line x1="526.8" y1="266" x2="526.8" y2="270" stroke="#8a8f98"/><text x="526.8" y="282" text-anchor="middle" fill="#8a8f98">140</text>
+<line x1="628.0" y1="266" x2="628.0" y2="270" stroke="#8a8f98"/><text x="628.0" y="282" text-anchor="middle" fill="#8a8f98">144</text>
+<text x="628" y="297" text-anchor="end" fill="#8a8f98">N</text>
+<text x="12" y="16" fill="#8a8f98" transform="rotate(-90 12 16)" text-anchor="end">s − 11</text>
+<rect x="43.5" y="263.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="68.3" y="127.0" width="6" height="6" fill="#d0566d"/>
+<rect x="93.6" y="112.8" width="6" height="6" fill="#d0566d"/>
+<rect x="118.9" y="96.2" width="6" height="6" fill="#d0566d"/>
+<rect x="144.2" y="83.4" width="6" height="6" fill="#d0566d"/>
+<rect x="169.5" y="74.4" width="6" height="6" fill="#d0566d"/>
+<rect x="194.8" y="57.0" width="6" height="6" fill="#d0566d"/>
+<rect x="220.1" y="53.4" width="6" height="6" fill="#d0566d"/>
+<rect x="245.4" y="41.5" width="6" height="6" fill="#d0566d"/>
+<rect x="270.7" y="33.3" width="6" height="6" fill="#d0566d"/>
+<rect x="296.0" y="21.8" width="6" height="6" fill="#d0566d"/>
+<rect x="321.3" y="12.6" width="6" height="6" fill="#d0566d"/>
+<rect x="347.2" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="372.5" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="397.8" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="423.1" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="448.4" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="473.7" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="499.0" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="524.3" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="549.6" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="574.9" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="600.2" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<rect x="625.5" y="9.5" width="5" height="5" fill="none" stroke="#d0566d" stroke-width="1"/>
+<polyline points="46.0,266.0 71.3,254.5 96.6,243.0 121.9,231.6 147.2,220.2 172.5,208.9 197.8,197.6 223.1,186.3 248.4,175.1 273.7,164.0 299.0,152.8 324.3,141.8 349.7,130.7 375.0,119.7 400.3,108.8 425.6,97.9 450.9,87.0 476.2,76.2 501.5,65.4 526.8,54.6 552.1,43.9 577.4,33.2 602.7,22.6 628.0,12.0" fill="none" stroke="#8a8f98" stroke-width="1.0" stroke-linejoin="round"/>
+<polyline points="71.3,253.3 96.6,240.7 121.9,228.2 147.2,215.7 172.5,203.3 197.8,190.9 223.1,178.6 248.4,166.4 273.7,154.2 299.0,142.0 324.3,129.9 349.7,117.9 375.0,105.9 400.3,94.0 425.6,82.2 450.9,70.3 476.2,58.6 501.5,46.9 526.8,35.2 552.1,23.6 577.4,12.0 602.7,12.0" fill="none" stroke="#9a8fb0" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="5 4"/>
+<polyline points="71.3,253.9 96.6,241.9 121.9,230.0 147.2,218.1 172.5,206.2 197.8,194.4 223.1,182.6 248.4,170.9 273.7,159.3 299.0,147.7 324.3,136.1 349.7,124.6 375.0,113.1 400.3,101.7 425.6,90.4 450.9,79.0 476.2,67.7 501.5,56.5 526.8,45.3 552.1,34.2 577.4,23.1 602.7,12.0" fill="none" stroke="#3fa7a0" stroke-width="1.8" stroke-linejoin="round"/>
+<circle cx="71.3" cy="200.0" r="2.6" fill="#4f86d9"/>
+<circle cx="96.6" cy="200.0" r="2.6" fill="#4f86d9"/>
+<circle cx="121.9" cy="200.0" r="2.6" fill="#4f86d9"/>
+<circle cx="147.2" cy="200.0" r="2.6" fill="#4f86d9"/>
+<circle cx="172.5" cy="200.0" r="2.6" fill="#4f86d9"/>
+<circle cx="197.8" cy="194.4" r="2.6" fill="#4f86d9"/>
+<circle cx="223.1" cy="182.6" r="2.6" fill="#4f86d9"/>
+<circle cx="248.4" cy="170.9" r="2.6" fill="#4f86d9"/>
+<circle cx="273.7" cy="159.3" r="2.6" fill="#4f86d9"/>
+<circle cx="299.0" cy="147.7" r="2.6" fill="#4f86d9"/>
+<circle cx="324.3" cy="136.1" r="2.6" fill="#4f86d9"/>
+<circle cx="349.7" cy="124.6" r="2.6" fill="#4f86d9"/>
+<circle cx="375.0" cy="113.1" r="2.6" fill="#4f86d9"/>
+<circle cx="400.3" cy="101.7" r="2.6" fill="#4f86d9"/>
+<circle cx="425.6" cy="90.4" r="2.6" fill="#4f86d9"/>
+<circle cx="450.9" cy="79.0" r="2.6" fill="#4f86d9"/>
+<circle cx="476.2" cy="67.7" r="2.6" fill="#4f86d9"/>
+<circle cx="501.5" cy="56.5" r="2.6" fill="#4f86d9"/>
+<circle cx="526.8" cy="12.0" r="2.6" fill="#4f86d9"/>
+<circle cx="552.1" cy="12.0" r="2.6" fill="#4f86d9"/>
+<circle cx="577.4" cy="12.0" r="2.6" fill="#4f86d9"/>
+<circle cx="602.7" cy="12.0" r="2.6" fill="#4f86d9"/>
+<polyline points="71.3,249.9 96.6,234.1 121.9,218.3 147.2,201.3 172.5,186.4 197.8,171.6 223.1,161.8 248.4,153.7 273.7,142.7 299.0,127.4 324.3,113.6 349.7,103.9 375.0,90.9 400.3,77.7 425.6,64.8 450.9,58.0 476.2,45.1 501.5,32.3 526.8,19.5 552.1,12.0 577.4,12.0 602.7,12.0" fill="none" stroke="#e0912f" stroke-width="2.6" stroke-linejoin="round"/>
+</svg>

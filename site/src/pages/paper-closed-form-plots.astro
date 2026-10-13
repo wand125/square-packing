@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import T from '../components/ui/T.astro';
+import caps from '../../public/data/papers/closed-form-plots/captions.json';
+import {url} from '../lib/sitemap';
+const img = (k: number) => url(`data/papers/closed-form-plots/block-k${String(k).padStart(2, '0')}.svg`);
+const list = (a: number[]) => a.join(', ');
+---
+<Base file="paper-closed-form-plots.html" title="Closed-Form Bound Plots">
+<div class="cfp">
+<p><a class="btn" href="paper-closed-form.html">← <T en="A closed-form lower bound for s(N)" ja="s(N) の閉じた式の下界" /></a> <a class="btn" href="paper-closed-form-table.html"><T en="Table for N ≤ 3600" ja="N ≤ 3600 の表" /></a></p>
+<h1><T en="Comparison by block, k = 7 to 17" ja="ブロックごとの比較（k = 7〜17）" /></h1>
+<p class="note"><T en="One plot per block k² ≤ N ≤ (k+1)². The vertical axis is s − k, so every block runs from 0 at N = k² to 1 at N = (k+1)². The values are those of the table (same data and rounding); the thin grey curve is the area bound √N." ja="ブロック k² ≤ N ≤ (k+1)² ごとに 1 枚。縦軸は s − k で、どのブロックも N = k² の 0 から N = (k+1)² の 1 まで。値は表と同じ（同じデータと丸め）。細い灰色の曲線は面積の下界 √N。" /></p>
+<ul class="cfp-legend">
+{caps.legend.map((s: any) => <li>
+ {s.mark === 'square' ? <svg width="34" height="12" aria-hidden="true"><rect x="4" y="3" width="6" height="6" fill={s.colour}/><rect x="20" y="3.5" width="5" height="5" fill="none" stroke={s.colour}/></svg>
+  : s.mark === 'dot' ? <svg width="34" height="12" aria-hidden="true"><circle cx="17" cy="6" r="3" fill={s.colour}/></svg>
+  : <svg width="34" height="12" aria-hidden="true"><line x1="2" y1="6" x2="32" y2="6" stroke={s.colour} stroke-width="2.4" stroke-dasharray={s.dash || undefined}/></svg>}
+ <T en={s.en} ja={s.ja} /></li>)}
+</ul>
+<div class="cfp-grid">
+{caps.blocks.map((b: any) => <figure class="cfp-fig">
+ <img src={img(b.k)} alt={`k = ${b.k}`} loading="lazy" width="640" height="300"/>
+ <figcaption>
+  <span data-l="en"><b>k = {b.k}</b>, {b.n0} ≤ N ≤ {b.n1}. Of the {b.nonsquare} non-square N, a(N) is above the best known lower bound at {b.above_known_lb} and above Karakuş's formula at {b.above_karakus}; it equals Nagamochi's formula at N = {list(b.equal_nagamochi)}. Upper bounds below ⌈√N⌉: {b.ub_records} N.</span>
+  <span data-l="ja"><b>k = {b.k}</b>、{b.n0} ≤ N ≤ {b.n1}。平方数でない {b.nonsquare} 個の N のうち、a(N) が既知の最良の下界を上回るのは {b.above_known_lb} 個、Karakuş の式を上回るのは {b.above_karakus} 個。N = {list(b.equal_nagamochi)} で Nagamochi の式と等しい。⌈√N⌉ より小さい上界のある N は {b.ub_records} 個。</span>
+ </figcaption>
+</figure>)}
+</div>
+</div>
+<style>
+.cfp h1 { font-size: 20px; margin: 8px 0; }
+.cfp-legend { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; position: sticky; top: 0; background: var(--bg); padding-block: 6px; z-index: 2; }
+.cfp-legend li { display: flex; align-items: center; gap: 6px; }
+.cfp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr)); gap: 18px; }
+.cfp-fig { margin: 0; border: 1px solid var(--line); border-radius: 6px; padding: 8px; background: var(--bg2); }
+.cfp-fig img { width: 100%; height: auto; display: block; }
+.cfp-fig figcaption { font-size: 12.5px; margin-top: 6px; color: var(--fg2); }
+</style>
+</Base>

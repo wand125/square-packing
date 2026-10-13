@@ -1,9 +1,9 @@
 /* Colour and type tokens: dark by default, light on request (data-theme). */
 :root, :root[data-theme="dark"] { color-scheme: dark;
   --bg: #111417; --bg2: #181c20; --bg3: #1e2328; --line: #2a3036; --fg: #d9dee3; --fg2: #8d979f;
-  --acc: #e0a84a; --link: #7fb6e6; --tag: #232a30; --ok: #7cc48a; --dim: #5c656c;
+  --acc: #e0a84a; --link: #7fb6e6; --tag: #232a30; --ok: #7cc48a; --bad: #e07a7a; --dim: #5c656c;
   --sans: "IBM Plex Sans", "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
 :root[data-theme="light"] { color-scheme: light;
   --bg: #fbfbfa; --bg2: #f1f2f0; --bg3: #e9ebe8; --line: #d8dbd7; --fg: #1d2125; --fg2: #5e676e;
-  --acc: #9a5b00; --link: #1f5f99; --tag: #e6e8e4; --ok: #2f7a3d; --dim: #9aa2a8; }
+  --acc: #9a5b00; --link: #1f5f99; --tag: #e6e8e4; --ok: #2f7a3d; --bad: #b3372f; --dim: #9aa2a8; }

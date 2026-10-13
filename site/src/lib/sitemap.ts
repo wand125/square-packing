@@ -21,6 +21,9 @@ export const PAGES: Page[] = [
   { file: 'paper-domino.html', en: '1×2 rectangle, n = 4', ja: '1×2 長方形 n = 4', title: 'Four Unit Squares in a 1×2 Rectangle', group: '' },
   { file: 'paper-right-isosceles.html', en: 'Right isosceles triangle', ja: '直角二等辺三角形', title: 'Unit Squares in a Right Isosceles Triangle', group: '' },
   { file: 'paper-valid7.html', en: 'Valid7 and ValidTilt9', ja: 'Valid7 と ValidTilt9', title: 'Independent Checks of Valid7 and ValidTilt9', group: '' },
+  { file: 'paper-closed-form-plots.html', en: 'Plots by block, k = 7 to 17', ja: 'ブロックごとの比較図', title: 'Closed-Form Bound Plots', group: '' },
+  { file: 'paper-closed-form-table.html', en: 'Lower bounds for N ≤ 3600', ja: 'N ≤ 3600 の下界の表', title: 'Closed-Form Bound Table', group: '' },
+  { file: 'paper-closed-form.html', en: 'Closed-form bound for s(N)', ja: 's(N) の閉じた式の下界', title: 'A Closed-Form Lower Bound for s(N)', group: '' },
   { file: 'paper-hexagon-n3.html', en: 'Hexagon, n = 3', ja: '正六角形 n = 3', title: 'Three Unit Squares in a Regular Hexagon', group: '' },
 ];
 

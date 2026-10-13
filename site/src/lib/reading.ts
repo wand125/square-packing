@@ -16,7 +16,7 @@ export function sourceLinks(s?: Source): string {
     return a(BLOB + path, esc(bits.length >= 3 ? bits.slice(-2).join('/') : bits.join('/')));
   }).join('');
 }
-export const PAPER_BY_ISSUE: Record<number, string> = {15: 'paper-hexagon-n3.html', 16: 'paper-domino.html', 17: 'paper-triangle.html', 4: 'paper-triangle.html', 13: 'paper-right-isosceles.html', 14: 'paper-valid7.html'};
+export const PAPER_BY_ISSUE: Record<number, string> = {1: 'paper-closed-form.html', 15: 'paper-hexagon-n3.html', 16: 'paper-domino.html', 17: 'paper-triangle.html', 4: 'paper-triangle.html', 13: 'paper-right-isosceles.html', 14: 'paper-valid7.html'};
 export function paperLink(issue: number, title: string) { const file = PAPER_BY_ISSUE[issue]; return file && PAGES.some(p => p.file === file && (PREVIEW || !p.preview)) ? a(url(file), title) : title; }
 export const cell = (html: string, cls = '') => `<td${cls ? ` class="${cls}"` : ''}>${html}</td>`;
 export const row = (cells: string[]) => `<tr>${cells.join('')}</tr>`;

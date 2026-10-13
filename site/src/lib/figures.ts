@@ -30,6 +30,8 @@ export function containersFigure() { return '<div class="gf-row">' + readFigure(
 // a small square icon for each paper: its container with the optimal packing; for Valid7, the k × k grid with 3 squares missing
 const PAPER_ICON: Record<string, [string, number]> = {'paper-hexagon-n3.html': ['hexagon', 3], 'paper-domino.html': ['domino', 4], 'paper-triangle.html': ['triangle', 6], 'paper-right-isosceles.html': ['right-isosceles', 10]};
 export function paperIcon(file: string) {
+ // the closed-form bound: a square container with its four walls and corners of segments
+ if (file === 'paper-closed-form.html') return `<svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><rect x="3" y="3" width="58" height="58" class="th-c"/><rect x="13" y="13" width="38" height="38" class="th-sq"/>${[7, 9, 11].map(v => `<path d="M${v} 3V61M${64 - v} 3V61M3 ${v}H61M3 ${64 - v}H61" stroke="currentColor" stroke-width="0.6" opacity="0.55"/>`).join('')}</svg>`;
  const c = PAPER_ICON[file];
  if (c) { const it = readFigure('containers.json').find(x => x.cont === c[0] && +x.n === c[1]); if (it) return thumb(it, 64); }
  const k = 7, s = 58 / k;

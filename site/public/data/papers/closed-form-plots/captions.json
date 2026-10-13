@@ -1,0 +1,196 @@
+{
+ "legend": [
+  {
+   "key": "known_ub",
+   "colour": "#d0566d",
+   "en": "best known upper bound (hollow: trivial ⌈√N⌉)",
+   "ja": "既知の最良の上界（白抜き：自明な ⌈√N⌉）",
+   "mark": "square"
+  },
+  {
+   "key": "sqrt",
+   "colour": "#8a8f98",
+   "dash": "",
+   "en": "√N (area bound)",
+   "ja": "√N（面積の下界）",
+   "mark": "line"
+  },
+  {
+   "key": "ref_nagamochi",
+   "colour": "#9a8fb0",
+   "dash": "5 4",
+   "en": "Nagamochi's formula (reference)",
+   "ja": "Nagamochi の式（参考）",
+   "mark": "line"
+  },
+  {
+   "key": "karakus",
+   "colour": "#3fa7a0",
+   "dash": "",
+   "en": "Karakuş's formula",
+   "ja": "Karakuş の式",
+   "mark": "line"
+  },
+  {
+   "key": "known_lb",
+   "colour": "#4f86d9",
+   "dash": "",
+   "en": "best known lower bound",
+   "ja": "既知の最良の下界",
+   "mark": "dot"
+  },
+  {
+   "key": "a_N",
+   "colour": "#e0912f",
+   "dash": "",
+   "en": "our bound a(N)",
+   "ja": "この下界 a(N)",
+   "mark": "line"
+  }
+ ],
+ "blocks": [
+  {
+   "k": 7,
+   "n0": 49,
+   "n1": 64,
+   "nonsquare": 14,
+   "above_known_lb": 0,
+   "above_karakus": 13,
+   "equal_nagamochi": [
+    62,
+    63
+   ],
+   "ub_records": 6
+  },
+  {
+   "k": 8,
+   "n0": 64,
+   "n1": 81,
+   "nonsquare": 16,
+   "above_known_lb": 0,
+   "above_karakus": 15,
+   "equal_nagamochi": [
+    79,
+    80
+   ],
+   "ub_records": 7
+  },
+  {
+   "k": 9,
+   "n0": 81,
+   "n1": 100,
+   "nonsquare": 18,
+   "above_known_lb": 0,
+   "above_karakus": 17,
+   "equal_nagamochi": [
+    98,
+    99
+   ],
+   "ub_records": 8
+  },
+  {
+   "k": 10,
+   "n0": 100,
+   "n1": 121,
+   "nonsquare": 20,
+   "above_known_lb": 13,
+   "above_karakus": 19,
+   "equal_nagamochi": [
+    119,
+    120
+   ],
+   "ub_records": 10
+  },
+  {
+   "k": 11,
+   "n0": 121,
+   "n1": 144,
+   "nonsquare": 22,
+   "above_known_lb": 14,
+   "above_karakus": 21,
+   "equal_nagamochi": [
+    142,
+    143
+   ],
+   "ub_records": 11
+  },
+  {
+   "k": 12,
+   "n0": 144,
+   "n1": 169,
+   "nonsquare": 24,
+   "above_known_lb": 16,
+   "above_karakus": 23,
+   "equal_nagamochi": [
+    167,
+    168
+   ],
+   "ub_records": 12
+  },
+  {
+   "k": 13,
+   "n0": 169,
+   "n1": 196,
+   "nonsquare": 26,
+   "above_known_lb": 22,
+   "above_karakus": 25,
+   "equal_nagamochi": [
+    194,
+    195
+   ],
+   "ub_records": 13
+  },
+  {
+   "k": 14,
+   "n0": 196,
+   "n1": 225,
+   "nonsquare": 28,
+   "above_known_lb": 24,
+   "above_karakus": 27,
+   "equal_nagamochi": [
+    223,
+    224
+   ],
+   "ub_records": 15
+  },
+  {
+   "k": 15,
+   "n0": 225,
+   "n1": 256,
+   "nonsquare": 30,
+   "above_known_lb": 26,
+   "above_karakus": 29,
+   "equal_nagamochi": [
+    254,
+    255
+   ],
+   "ub_records": 16
+  },
+  {
+   "k": 16,
+   "n0": 256,
+   "n1": 289,
+   "nonsquare": 32,
+   "above_known_lb": 28,
+   "above_karakus": 31,
+   "equal_nagamochi": [
+    287,
+    288
+   ],
+   "ub_records": 17
+  },
+  {
+   "k": 17,
+   "n0": 289,
+   "n1": 324,
+   "nonsquare": 34,
+   "above_known_lb": 30,
+   "above_karakus": 33,
+   "equal_nagamochi": [
+    322,
+    323
+   ],
+   "ub_records": 19
+  }
+ ]
+}

@@ -1,0 +1,190 @@
+import ClosedFormTable from '../../../components/viz/ClosedFormTable.tsx';
+import cfData from '../../../../public/data/papers/closed-form.json';
+import ClosedFormBound from '../../../components/viz/ClosedFormBound.tsx';
+
+## Abstract
+
+Let $s(N)$ be the side of the smallest square that holds $N$ unit squares with disjoint interiors, at any positions and angles. We prove a lower bound for $s(N)$ that holds for every non-square $N \ge 49$ and is given by one square root on each of 34 intervals of the fractional part. Write the side as $a = k + \delta$ with $k = \lfloor\sqrt N\rfloor$ and $0 < \delta \le 1$. On each interval $I_i$ a certificate proves the saving $S_i(\delta) = \alpha_i\delta + \beta_i$ with exact rationals $\alpha_i, \beta_i$, and then $s(N) \ge k + \delta$ whenever $(k+\delta)^2 - 4S_i(\delta) < N$. Compared with Nagamochi's formula $F(N) = 1 + \sqrt{N - 2k + 1}$ capped at $k + 1$ (since trivially $s(N) \le k + 1$), the bound is equal at $N = (k+1)^2 - 1$ and $(k+1)^2 - 2$ and strictly larger at every other non-square $N \ge 49$. The proof is a measure on the container with mass at least 1 on every unit square inside it. That inequality is checked on a finite grid of poses by exact leaf tests: 187,183,108 leaves in 136 records, every one recomputed by a full replay with the Rust checker in exact rational arithmetic.
+
+## 1. The bound
+
+**Theorem.** Let $N \ge 49$ be a non-square integer and $k = \lfloor\sqrt N\rfloor$. If $\delta \in (0, 1]$ lies in $I_i$ and
+
+$$
+(k+\delta)^2 - 4(\alpha_i\delta + \beta_i) < N,
+$$
+
+then $s(N) \ge k + \delta$. Hence
+
+$$
+s(N) \ge a(N) = \max_i \, \min\!\left(2\alpha_i + \sqrt{4\alpha_i^2 + N + 4\beta_i - 4\alpha_i k},\; k + d_1^{(i)}\right),
+$$
+
+the maximum taken over the intervals $I_i = [d_0^{(i)}, d_1^{(i)}]$ whose root $2\alpha_i + \sqrt{\cdots}$ exceeds $k + d_0^{(i)}$.
+
+The 34 intervals split $(0, 1]$; their endpoints and the exact $\alpha_i, \beta_i$ are in [`intervals.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/intervals.json) and [`INTERVALS.md`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/INTERVALS.md). Since $\alpha_i \le 1.7496$ and $k \ge 7$, each $T_i(\delta) = (k+\delta)^2 - 4(\alpha_i\delta + \beta_i)$ is strictly increasing in $\delta$, so on $I_i$ the condition $T_i(\delta) < N$ holds exactly below the root $a_i(N) = 2\alpha_i + \sqrt{4\alpha_i^2 + N + 4\beta_i - 4\alpha_i k}$ (as a value of $k + \delta$). The maximum over intervals is needed because the saving may jump at an interval border. In each interval the bound is a single square root.
+
+**Comparison.** In the same framework, Nagamochi's formula $F(N) = 1 + \sqrt{N - 2k + 1}$ corresponds to the saving $\delta/2$, and Karakuş's formula $\tfrac12 + \sqrt{N - k + \tfrac14}$ ([arXiv:2609.37410](https://arxiv.org/abs/2609.37410), Corollary 6.2) to the saving $\delta/4$. The certified saving exceeds $\delta/2$ on all of $(0, 1]$ (by more than $0.0226$ for $\delta \ge 1/50$, and by more than $1.229\,\delta$ below). Therefore, for every non-square $N \ge 49$, with $F(N)$ capped at $k + 1$ (since trivially $s(N) \le k + 1$):
+
+- $a(N) = F(N) = k + 1$ for $N = (k+1)^2 - 1$ and $N = (k+1)^2 - 2$;
+- $a(N) > F(N)$ for every other $N$.
+
+Here $S^*(\delta)$ is the largest $S_i(\delta)$ over the intervals containing $\delta$. Indeed, if $F(N) < k + 1$, then $F(N) = k + \delta_F$ with $(k + \delta_F)^2 - 2\delta_F = N$ and $0 < \delta_F < 1$. Every certified line exceeds $\delta/2$ on the closure of its interval (by more than $0.0226$ at every endpoint with $\delta \ge 1/50$, including open left endpoints, and by $(\alpha_1 - \tfrac12)\delta$ on $I_1$). Let $I_i$ be an interval with $d_0^{(i)} \le \delta_F < d_1^{(i)}$ (if $\delta_F$ is a right endpoint, take the next interval). For $\delta \in I_i$ close to $\delta_F$ we have $(k + \delta)^2 - 4S_i(\delta) < (k + \delta)^2 - 2\delta$, and the right-hand side is continuous and equals $N$ at $\delta_F$, while the gap $4S_i(\delta) - 2\delta$ stays bounded away from 0 near $\delta_F$ ($S_i$ is affine and $S_i(\delta_F) > \delta_F/2$ holds also when $\delta_F = d_0^{(i)}$ is an open endpoint, as a limit). Hence $(k + \delta)^2 - 4S^*(\delta) < N$ for some $\delta > \delta_F$, and $a(N) > F(N)$. This does not use the value of $S^*$ at $\delta_F$ itself, which matters at $\delta_F = 2/5$ and $4/5$, where $S^*$ drops to the right. If $F(N) \ge k + 1$, that is $N \ge (k+1)^2 - 2$, then $(k+1)^2 - 4S^*(1) < (k+1)^2 - 2 \le N$, so $a(N) = k + 1$.
+
+Likewise $a(N)$ is strictly larger than Karakuş's value except at $N = (k+1)^2 - 1$, where both are $k + 1$. A gap in the proof of the key lemma behind $F(N)$ has been publicly discussed (chelokot; [jlevy/squares#295](https://github.com/jlevy/squares/issues/295)). Karakuş ([arXiv:2609.37410](https://arxiv.org/abs/2609.37410)) constructs counterexamples to the scoring assertion in Lemma 1 of Nagamochi's paper, which show that the published proof of Nagamochi's rectangle bound is incomplete; the paper states that they do not disprove the bound itself. It then proves a weaker rectangle bound with a strip measure, from which it derives $s(N) \ge \tfrac12 + \sqrt{N - k + \tfrac14}$ for every non-square $N \ge 8$ and $s(k^2-1) = k$; it does not establish Nagamochi's full bound or $s(k^2-2) = k$. Our proof uses neither Nagamochi's lemma nor Karakuş's bound.
+
+**Remark (asymptotics).** In terms of waste, the theorem says that a square of side $x = k + \delta$ ($k \ge 7$, $0 < \delta \le 1$) holds fewer than $x^2 - 4S^*(\delta)$ unit squares, so the waste exceeds the bounded quantity $4S^*(\delta)$ (at most about $3.41$). Roth and Vaughan proved that the waste grows like a square root of the side, which is stronger for sufficiently large $x$; we do not attempt to locate the crossover.
+
+A cleaner way to compare is through $a^2 - N$. Wherever $a(N)$ is given by a root, $a(N)^2 - N = 4S^*(\delta)$ exactly, with $\delta = a(N) - k$; likewise $F(N)^2 - N = 2(F(N) - k)$ and $K(N)^2 - N = K(N) - k$ for Karakuş's formula $K$. Fix $x \in (0, 1)$ and let $N = k^2 + \operatorname{round}(2kx)$ with $k \to \infty$. Then all three values of $\delta$ tend to $x$ (ours from above), and
+
+$$
+\sqrt N\,(a(N) - \sqrt N) \to 2S^*(x+), \qquad \sqrt N\,(F(N) - \sqrt N) \to x, \qquad \sqrt N\,(K(N) - \sqrt N) \to x/2,
+$$
+
+so $(a(N) - \sqrt N)/(F(N) - \sqrt N) \to 2S^*(x+)/x$ and the ratio against Karakuş tends to $4S^*(x+)/x$. Over $x \in (0, 1)$ the first limit ranges from $1.631$ (just above $x = 4/5$, where $S^*$ drops from $0.771$ to $0.652$) to $2\alpha_1 = 3.4588$, which it equals on all of $(0, 1/50]$ because the first interval's line passes through the origin; against Karakuş the range is $3.262$ to $6.917$. For example, at $x = 3/10$ and $k = 10^7$ the computed values are $0.958709$, $0.300000$ and the ratio $3.195696$, matching $2S^*(3/10) = 0.958709$ and $2S^*(3/10)/(3/10) = 3.195695$.
+
+**Comparison with known bounds.** For $N \le 3600$, taking as known every lower bound shown in a published certificate or paper (and using that $s$ is nondecreasing), the bound exceeds the best known lower bound at 3,239 non-square $N$, equals it at 159 and is below it at 100. The known lower bounds include results that are not peer reviewed (preprints and published certificates, including ours and Evan Daniel's $s(k^2-4) = k$). The last is a preprint result of Evan Daniel for $k \ge 5$ ([evand/square-packing](https://github.com/evand/square-packing); [jlevy/squares#316](https://github.com/jlevy/squares/issues/316)): its reduction (all $k$, the $D_4$ symmetry and the face $\theta = 0$) is checked in the Lean kernel there, and for $k \ge 8$ it rests on the finite statement ValidTilt9. We independently re-checked ValidTilt9 with a separately written exact checker (computer-assisted; release [records-tilt9-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-tilt9-v1), see [the Valid7 paper](paper-valid7.html)); a Lean formalization of ValidTilt9 is in progress. The bound determines $s(N)$ only at $N = (k+1)^2 - 1$, $(k+1)^2 - 2$ and $(k+1)^2 - 3$, where it equals $k + 1$. The [table](paper-closed-form-table.html) and the [plots by block](paper-closed-form-plots.html) show every $N$, with the status and source of each known bound.
+
+**The top of each block.** Because $S^*(1) > 3/4$ (interval $I_{34}$ gives $S^*(1) \approx 0.853$), the bound gives $s(N) = k + 1$ for $N = (k+1)^2 - 1$, $(k+1)^2 - 2$ and $(k+1)^2 - 3$ ($k \ge 7$). These values are not new. $s(n^2-1) = s(n^2-2) = n$ were stated by Nagamochi (2005); the proof of a key lemma there has a publicly discussed gap ([jlevy/squares#295](https://github.com/jlevy/squares/issues/295)). Our bound gives these values for $n \ge 8$ without using that lemma; Karakuş ([arXiv:2609.37410](https://arxiv.org/abs/2609.37410)) gives a proof of $s(n^2-1) = n$ that also avoids it. $s(n^2-3) = n$ for $n \ge 6$ was proved by Evan Daniel (the Valid7 certificate in [evand/square-packing](https://github.com/evand/square-packing); an independent check is in [checks/valid7](https://github.com/wand125/square-packing/tree/main/checks/valid7), see also [the Valid7 paper](paper-valid7.html)). Here they come out of the same general bound.
+
+<ClosedFormBound lang="en" data={{intervals: cfData.intervals.map(({i, d0, d1, open_left, fd0, fd1, fa, fb}) => ({i, d0, d1, open_left, fd0, fd1, fa, fb}))}} client:visible />
+
+*The 34 certified lines $S_i(\delta)$ (solid) against $\delta/2$ and $\delta/4$ (dashed). Enter $N$ to see $a(N)$, the interval that gives it (highlighted) and the point on its line, with Nagamochi's and Karakuş's values capped at $k + 1$. Values here are computed in floating point from the exact data, for illustration.*
+
+## 2. The closed form in full
+
+For a non-square $N \ge 49$ let $k = \lfloor\sqrt N\rfloor$. Then
+
+$$
+s(N) \ge a(N) = \max_{i\,:\; a_i(N) > k + d_0^{(i)}} \min\!\left(k + d_1^{(i)},\; a_i(N)\right), \qquad a_i(N) = 2\alpha_i + \sqrt{N + c_i - 4\alpha_i k}, \quad c_i = 4\alpha_i^2 + 4\beta_i .
+$$
+
+- **Admissibility.** Only intervals whose root $a_i(N)$ exceeds $k + d_0^{(i)}$ take part: below that, the condition $(k+\delta)^2 - 4S_i(\delta) < N$ holds for no $\delta \in I_i$.
+- **Interval ends.** Every interval is closed on the right. Three are open on the left, $I_1 = (0, 1/50]$, $I_8 = (2/5, 81/200]$ and $I_{34} = (99/100, 1]$; the others are closed. Consecutive intervals share their endpoints, so every $\delta \in (0, 1]$ lies in at least one interval. An open left end needs no special case, because the supremum is the same. $\delta = 0$ is excluded: square $N$ are covered by the area bound.
+- **Breakpoints.** The breakpoints include every $\delta = j/5$, where $W = 2 + \delta$ crosses the $1/5$ grid and the structure of the family changes ([SPEC.md](https://github.com/wand125/square-packing/blob/main/problems/closed-form/SPEC.md) §7.3). The other breakpoints come from splitting an interval whose family did not pass the checks; for example $[21/50, 1/2]$ is split into 16 intervals of length $1/200$. On those 16 intervals the certified saving stays between $0.4777$ and $0.4830$, so the finer split does not raise $S$ noticeably. We do not claim an upper limit for what further refinement could give.
+- **"limit" in the table.** In the table below, "limit" marks an open left end ($\delta = 0$ for $I_1$, $2/5$ for $I_8$, $99/100$ for $I_{34}$): that end is not in the interval, so the margin shown there is the limit from the right; the point itself belongs to the neighbouring interval ($\delta = 0$ is not claimed).
+- **Why a maximum.** The certified line can jump at an interval border. At $\delta = 2/5$, for example, $I_7 = [19/50, 2/5]$ certifies $S \approx 0.6242$ at its closed right end, while $I_8 = (2/5, 81/200]$ starts from $S \approx 0.5684$. The bound is the best of the admissible intervals.
+- **Margin over Nagamochi's saving.** On each interval the margin $S_i(\delta) - \delta/2$ is affine, so its minimum is at an end. The last column of the table lists both ends; the smallest value for $\delta \ge 1/50$ is $0.02264$, and on $I_1$ the margin is $(\alpha_1 - \tfrac12)\delta$.
+
+The table is generated from [`intervals.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/intervals.json). $\alpha_i$ is exact; $\beta_i$ and $c_i$ are exact rationals with several hundred digits, given under *exact*. The 34 lines are drawn in the figure of §1.
+
+<ClosedFormTable data={cfData} lang="en" />
+
+## 3. From a measure to a lower bound
+
+**Principle.** If a finite nonnegative measure $\mu$ on $[0, a]^2$ satisfies $\mu(Q) \ge 1$ for every closed unit square $Q \subseteq [0, a]^2$ and $\mu([0, a]^2) < N$, then $s(N) \ge a$.
+
+Indeed, suppose $N$ squares fit in a container of side $b < a$. Scale the packing by $a/b$ and place a unit square of the same orientation at the centre of each enlarged square. These $N$ closed unit squares are pairwise disjoint and lie in $[0, a]^2$, so the total mass is at least $N$, a contradiction. The scaling separates the squares, so segment mass on a shared edge of the original packing is not counted twice.
+
+**Total mass.** The measure built below has total mass
+
+$$
+\mu_{k,\delta}([0, a]^2) = a^2 - 4S(\delta),
+$$
+
+where $S(\delta)$, the saving, is affine on each interval and does not depend on $k$. The certificate shows $S(\delta) \ge S_i(\delta)$ on $I_i$, and the theorem follows from the principle with $a = k + \delta$.
+
+## 4. The measure
+
+The measure is Lebesgue measure in the middle and line measure near the sides: along each wall, segments of total mass $9/5$ per unit length replace the area of a strip of width $9/5$, so the walls save nothing. Near a corner a unit square must cross the lines of both walls, and the lines there can carry $S(\delta)$ less mass than the area they replace; the four corners give the total mass $a^2 - 4S(\delta)$.
+
+<img class="pp-img" src="data/papers/closed-form-layout-k7.svg" alt="The measure for k = 7 and δ = 2/5" width="600" height="600" loading="lazy" />
+
+*The measure of the family of $I_7$ for $k = 7$, $\delta = 2/5$ (side $37/5$): 1,196 segments (orange; thicker and darker for a higher line density) and the interior square $[9/5, 28/5]^2$ with Lebesgue measure (blue). The total mass equals $a^2 - 4S$ exactly, with $S \approx 0.6242$.*
+
+The container side is $a = k + \delta$. The measure has three parts, arranged with fourfold rotational symmetry (rotations by $0^\circ, 90^\circ, 180^\circ, 270^\circ$; reflection symmetry is not used):
+
+- **Interior.** Lebesgue measure of density 1 on $[9/5,\, a - 9/5]^2$.
+- **Walls.** Along each side, a periodic profile of axis-parallel segments on the $1/5$ grid, of period 1 and mass $9/5$ per period, with $k - 4$ periods and a terminal line. The bottom wall carries the fractional part $\delta$; the left wall has aligned integer periods.
+- **Corners.** In each corner a rectangle $[0, 2+\delta] \times [0, 2]$ of segments: fixed ones, ones translated with $\delta$, and ones whose length grows with $\delta$.
+
+For each interval of $\delta$ a finite *family* of segments with exact rational masses describes the corner and wall pieces for every $k \ge 7$ at once. The wall mass is exactly $9/5$ per period, so the total mass is $a^2 - 4S(\delta)$ with $S$ independent of $k$.
+
+**Reduction to finitely many local checks.** A unit square has width at most $\sqrt2 < 2$. By the rotation, a square may be assumed to have its centre in the lower-left quarter of the container, where the global measure equals a local model built from the family. Away from the corner, an integer shift along a wall preserves the mass, so the centre can be moved into one period. The remaining centres lie in a fixed window of side about $3.8$ (shifted by $\delta$ on the right), which is covered by four regions: *left*, *straddle*, *top* and *right*. The restriction $k \ge 7$ is used in three places: the local checks cover the whole container only if $a > 2W + 2r$, that is $k > 4 + \delta + \sqrt2$ (this fails for $k = 6$ when $\delta > 0.586$); the structural checks build the containers for $k = 7, 8, 9$ and reduce larger $k$ to them by integer shifts; and the reduction to the global measure uses at least three wall periods ($k - 4 \ge 3$). The construction does not extend to $k < 7$ as it stands. No claim is made for $N \le 48$.
+
+## 5. Poses and the root grid
+
+A pose is $Q(z, u) = z + R_\theta[-\tfrac12, \tfrac12]^2$ with $u = \tan(\theta/2)$, so that $\cos\theta$ and $\sin\theta$ are rational functions of $u$. The angles cover more than one period $\pi/2$ of the square. Each region is split into a grid of *root boxes* in centre $x$, centre $y$, $u$ and $\delta$, the checker requires only that the roots of a region form exactly the Cartesian product of four partitions. The published records cut $x$ and $y$ at $1/10$ steps from the lower end (the last piece shorter when needed), $u$ at $j/32$ for $j = -13, \dots, 14$ (so $u = 0$ is a cut and never interior), and $\delta$, in the straddling region, into $\lceil (d_1 - d_0)/(1/50) \rceil$ equal pieces (a single piece in the other three regions). Each root box is split further into *leaves*, and each leaf is accepted by one of a fixed set of exact tests.
+
+The angle $u = 0$, where the margin can be zero, is closed by upper semicontinuity: the mass of a closed square is upper semicontinuous in its pose. Every admissible $u = 0$ pose is the limit of admissible $u \ne 0$ poses, moving the centre continuously if necessary, so mass at least 1 nearby gives mass at least 1 at $u = 0$. At box boundaries the neighbouring poses may lie in adjacent boxes, so the argument is applied together with the verified tiling of the whole domain.
+
+## 6. Leaf tests
+
+All tests use rational numbers, polynomials with rational coefficients, and exact real algebraic numbers. Each test proves $\mu(Q) \ge 1$ for every pose in its leaf box:
+
+- **EMPTY** — no admissible pose in the box.
+- **CORE** — a polygon contained in every square of the box carries mass at least 1.
+- **B3D** — the segment mass is piecewise affine in the pose; its minimum over the box is bounded through exact polynomial nonnegativity.
+- **EDGE**, **EX**, **EY** — lemmas for squares touching one or two edges of the container, the latter two on derived families.
+- **B3U**, **B3T**, **CORE1**, **B4U** — bounds from concavity along cuts, common segment pieces at the box corners, and polygon mass with critical values on arrangement edges.
+
+The specification, [`SPEC.md`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/SPEC.md), gives every test in full, with the exact acceptance rules and the cases that need care.
+
+## 7. Records and the checker
+
+A *record* lists, for one region of one interval, every root box with its leaves and the name of the test for each leaf. The checker `replay4d` (Rust) reads a family and a record and:
+
+1. checks that the roots form exactly the grid of the region and that the leaves tile each root (by reconstructing the bisection tree);
+2. recomputes every leaf from scratch with its named test, in exact rational arithmetic.
+
+Of a record it uses only the boxes and the names of the tests. A leaf that fails its named test is rejected; no other test is tried.
+
+Two parts of the argument are not done by `replay4d`. (1) The structure of each family: that its weights are nonnegative (`replay4d` silently drops rows of weight $\le 0$ instead of rejecting them), that each wall period carries mass $9/5$, that the family's saving at both ends of the interval is at least the certified line, that the measure assembled for $k = 7$, 8 and 9 agrees with the local model inside the checked windows, and that the four regions cover the windows (SPEC.md §2.3 and §7.1, steps 1, 2 and 5). These are checked by [`structure/validate_family.py`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/structure/validate_family.py) (exact, Python standard library), run on all 68 families by [`structure/structure_all.py`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/structure/structure_all.py), which also checks that each certified line is exactly the line through the recomputed savings at the two ends and that the region bounds are the required ones; the result is in [`receipts/structure.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/receipts/structure.json). (2) Independence: `seam4d_core`, the core of `replay4d`, is the same code that our search tools use to evaluate leaves, so the replay checks the records against that code, not against an independent implementation.
+
+## 8. What was checked
+
+| | |
+|---|---|
+| intervals | 34, covering $(0, 1]$ |
+| records | 136 (4 regions per interval) |
+| leaves | 187,183,108 |
+| structure | all 68 families checked: `ALL STRUCTURE OK` |
+| replay | every leaf recomputed once by `replay4d` and accepted: `ALL REPLAY OK` |
+
+The replay ran on freshly installed Ubuntu 24.04.5 machines with rustc 1.86.0 and took about 4,300 CPU-hours in total. Records above a set size were cut along grid lines into pieces for that run; each piece is again an exact grid of a sub-box, the pieces tile the region, and together they contain the lines of the original record. The receipts give, for each piece, its bounds, its number of roots (one line per root) and the sum modulo $2^{256}$ of the SHA-256 values of its lines; these sums are a consistency check that the pieces add up to the original record, not a proof. The published records are the original, uncut files.
+
+The replay used the same Rust code as `checker/`. For publication the comments were translated to English and the workspace was reduced to the two crates `seam4d_core` and `replay4d` (so the top-level `Cargo.toml` lists only these two, and `Cargo.lock` no longer lists the packages of the removed crates; the versions of the remaining packages are unchanged). Outside comments the `.rs` files are identical. The source hash printed by `replay4d` covers the manifests, `Cargo.lock` and the `.rs` files except `b3d_sort.rs`, so it differs: `306ad4b5…` for the replay, `92002e0e…` for the published sources. The published checker passes the same tests (28), and its exact build replayed all eight records of intervals 1 and 34 from the published assets with `REPLAY OK` (3,138,681 leaves): [`receipts/published_checker.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/receipts/published_checker.json). The full replay is in [`receipts/replay.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/receipts/replay.json).
+
+For publication two keys that no checker reads (`note`, a free-text comment, and `target`, a search target) were removed from the family files; otherwise the families are the ones that were replayed ([`receipts/families.json`](https://github.com/wand125/square-packing/blob/main/problems/closed-form/receipts/families.json) lists old and new SHA-256). That replay of intervals 1 and 34 used the published families.
+
+## 9. Status and limitations
+
+- The proof is computer-assisted and has not been peer reviewed.
+- The Python record checker used during development is not published: it shares code with the search tools, so it is not independent of them. An independent checker has not yet been written; one would be welcome.
+- No claim is made for $N \le 48$. For square $N = k^2$ the area bound gives $s(N) = k$.
+- Rectangular and other containers are not treated here.
+
+## Appendix: the table for N ≤ 3600
+
+[The table](paper-closed-form-table.html) lists, for every $N \le 3600$, the bound $a(N)$ with the interval that gives it, the best known lower and upper bounds with their source and year, Karakuş's formula, Nagamochi's formula for reference, and the differences. It can be filtered and sorted, and downloaded as CSV. It is generated by a script (`site/tools/closed_form_table.py`, with `closed_form_plots.py` for the plots) from `intervals.json` and the published data it names. [Plots by block](paper-closed-form-plots.html) compare the same values for $k = 7, \dots, 17$.
+
+## Reproducibility
+
+Build the checker (Ubuntu; GMP is built from source, hence `m4`):
+
+```
+sudo apt-get install -y build-essential m4 curl ca-certificates
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain 1.86.0
+cd problems/closed-form/checker
+cargo +1.86.0 test --locked --release -p seam4d_core -p replay4d
+cargo +1.86.0 build --locked --release -p replay4d
+```
+
+Download and check the data, then replay (from `problems/closed-form`):
+
+```
+mkdir assets && cd assets && gh release download closed-form-v1 && sha256sum -c SHA256SUMS && cd ..
+python3 checker/replay_all.py --assets assets --threads 16 --jobs 4
+```
+
+`replay_all.py` checks every hash, runs `replay4d` on all 136 records and compares the root and leaf counts with `intervals.json`; it prints `ALL REPLAY OK` at the end. `--only 1,34` replays selected intervals. The release `closed-form-v1` has one asset per interval (the two families and the four records, with `SHA256SUMS`), about 0.8 GB in total and about 18 GB unpacked.
+
+## References
+
+- H. Nagamochi, Packing unit squares in a rectangle, *Electron. J. Combin.* 12(1) (2005), #R37, [doi:10.37236/1934](https://doi.org/10.37236/1934).
+- H. Karakuş, A counterexample to Nagamochi's scoring lemma and a new rectangle packing bound, arXiv:2609.37410v1 [math.CO] (2026), [arxiv.org/abs/2609.37410](https://arxiv.org/abs/2609.37410).
+- K. F. Roth and R. C. Vaughan, Inefficiency in packing squares with unit squares, *J. Combin. Theory Ser. A* 24 (1978), 170–186.
+- The public discussion of the gap in Nagamochi's proof: [jlevy/squares#295](https://github.com/jlevy/squares/issues/295).
+- Evan Daniel, $s(k^2-3) = k$ for $k \ge 6$ (Valid7): [evand/square-packing](https://github.com/evand/square-packing).
+- Evan Daniel, $s(k^2-4) = k$ for $k \ge 5$ (preprint; reduction checked in Lean, resting on ValidTilt9 for $k \ge 8$): [jlevy/squares#316](https://github.com/jlevy/squares/issues/316). Our independent re-check of ValidTilt9 with a separately written exact checker: [records-tilt9-v1](https://github.com/wand125/valid7-independent-check/releases/tag/records-tilt9-v1).
+- The code, specification and receipts: [problems/closed-form](https://github.com/wand125/square-packing/tree/main/problems/closed-form); the data: release [closed-form-v1](https://github.com/wand125/square-packing/releases/tag/closed-form-v1).
