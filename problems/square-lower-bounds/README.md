@@ -39,7 +39,7 @@ s(31) >= 2391/400  = 5.9775
 s(32) >= 119/20    = 5.95
 s(37) >= 161/25    = 6.44
 s(38) >= 1309/200  = 6.545
-s(39) >= 133/20    = 6.65
+s(39) >= 533/80    = 6.6625
 s(40) >= 67/10     = 6.7
 s(41) >= 271/40    = 6.775
 s(42) >= 2739/400  = 6.8475
@@ -131,8 +131,8 @@ and list earlier rungs.
 | 32 | **5.95** | 119/20 | rectangle | [`rect_n32_L595`](certificates/rect_n32_L595) | 6.000000 (evand, 2026) | below | Nagamochi 5.7958…; Green 5.3919… |
 | 37 | **6.44** | 161/25 | mixed | [`mixed_n37_L644`](certificates/mixed_n37_L644) | 6.090170 (Karakus, 2026) | record | Nagamochi 6.0990…; Green 6.3506… |
 | 38 | **6.545** | 1309/200 | rectangle | [`rect_n38_L6545`](certificates/rect_n38_L6545) | 6.178908 (Karakus, 2026) | record | Nagamochi 6.1962…; Green 6.3506… |
-| 39 | **6.65** | 133/20 | mixed | [`mixed_n39_L665`](certificates/mixed_n39_L665) | 6.266281 (Karakus, 2026) | record | Nagamochi 6.2915…; Green 6.3506… |
-| 40 | **6.7** | 67/10 | rectangle | [`rect_n40_L67`](certificates/rect_n40_L67) | 6.352350 (Karakus, 2026) | record | Nagamochi 6.3852…; Green 6.3506… |
+| 39 | **6.6625** | 533/80 | mixed | [`mixed_n39_L66625`](certificates/mixed_n39_L66625) | 6.266281 (Karakus, 2026) | record | Nagamochi 6.2915…; Green 6.3506… |
+| 40 | **6.7** | 67/10 | rectangle | [`rect_n40_L67`](certificates/rect_n40_L67) | 6.718000 (Guzhou, 2026) | below | Nagamochi 6.3852…; Green 6.3506… |
 | 41 | **6.775** | 271/40 | mixed | [`mixed_n41_L6775`](certificates/mixed_n41_L6775) | 6.437171 (Karakus, 2026) | record | Nagamochi 6.4772…; Green 6.3506… |
 | 42 | **6.8475** | 2739/400 | mixed | [`mixed_n42_L68475`](certificates/mixed_n42_L68475) | 6.520797 (Karakus, 2026) | record | Nagamochi 6.5678…; Green 6.3506… |
 | 43 | **6.9075** | 2763/400 | mixed | [`mixed_n43_L69075`](certificates/mixed_n43_L69075) | 6.603278 (Karakus, 2026) | record | Nagamochi 6.6569…; Green 6.3506… |
@@ -179,8 +179,8 @@ and list earlier rungs.
 | 94 | **9.95** | 199/20 | mixed | [`mixed_n94_L995`](certificates/mixed_n94_L995) | 9.733093 (Karakus, 2026) | record | Nagamochi 9.7750…; Green 9.2667… |
 | 95 | **9.965** | 1993/200 | mixed | [`mixed_n95_L9965`](certificates/mixed_n95_L9965) | 9.787088 (Karakus, 2026) | record | Nagamochi 9.8318…; Green 9.2667… |
 | 96 | **9.97** | 997/100 | mixed | [`mixed_n96_L997`](certificates/mixed_n96_L997) | 10.000000 (evand, 2026) | below | Nagamochi 9.8882…; Green 9.2667… |
-| 101 | **10.28** | 257/25 | mixed | [`mixed_n101_L1028`](certificates/mixed_n101_L1028) | — | record | Nagamochi 10.0554…; Green 10.2467… |
-| 122 | **11.26** | 563/50 | mixed | [`mixed_n122_L1126`](certificates/mixed_n122_L1126) | — | record | Nagamochi 11.0499…; Green 11.2293… |
+| 101 | **10.28** | 257/25 | mixed | [`mixed_n101_L1028`](certificates/mixed_n101_L1028) | 10.052487 (Karakus, 2026) | record | Nagamochi 10.0554…; Green 10.2467… |
+| 122 | **11.26** | 563/50 | mixed | [`mixed_n122_L1126`](certificates/mixed_n122_L1126) | 11.047512 (Karakus, 2026) | record | Nagamochi 11.0499…; Green 11.2293… |
 <!-- auto:standing:end -->
 
 The previous figures for these cases come from a private communication from
@@ -1573,6 +1573,16 @@ s(31) >= 2391/400 = 5.9775
 ```
 
 This supersedes `mixed_n31_L597` above. This exceeds our earlier certificate mixed_n31_L597 (5.97). For reference, Nagamochi's closed form gives `5.6904…` and Green's reported bound gives `5.3919…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 3099999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n31_L59775/ASSET.json`).
+
+## n = 39: 6.6625, a mixed certificate on a finer angle net
+
+[`certificates/mixed_n39_L66625`](certificates/mixed_n39_L66625/README.md) proves
+
+```
+s(39) >= 533/80 = 6.6625
+```
+
+This supersedes `mixed_n39_L665` above. This exceeds our earlier certificate mixed_n39_L665 (6.65). For reference, Nagamochi's closed form gives `6.2915…` and Green's reported bound gives `6.3506…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 3899999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n39_L66625/ASSET.json`).
 
 ## Closed-square endpoint certificate for n = 21
 
