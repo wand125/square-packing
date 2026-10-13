@@ -89,6 +89,7 @@ s(95) >= 1993/200  = 9.965
 s(96) >= 997/100   = 9.97
 s(101) >= 257/25    = 10.28
 s(122) >= 563/50    = 11.26
+s(145) >= 306/25    = 12.24
 ```
 <!-- auto:claims:end -->
 
@@ -181,6 +182,7 @@ and list earlier rungs.
 | 96 | **9.97** | 997/100 | mixed | [`mixed_n96_L997`](certificates/mixed_n96_L997) | 10.000000 (evand, 2026) | below | Nagamochi 9.8882…; Green 9.2667… |
 | 101 | **10.28** | 257/25 | mixed | [`mixed_n101_L1028`](certificates/mixed_n101_L1028) | 10.052487 (Karakus, 2026) | record | Nagamochi 10.0554…; Green 10.2467… |
 | 122 | **11.26** | 563/50 | mixed | [`mixed_n122_L1126`](certificates/mixed_n122_L1126) | 11.047512 (Karakus, 2026) | record | Nagamochi 11.0499…; Green 11.2293… |
+| 145 | **12.24** | 306/25 | mixed | [`mixed_n145_L1224`](certificates/mixed_n145_L1224) | 12.043396 (Karakus, 2026) | record | Nagamochi 12.0454…; Green 12.2139… |
 <!-- auto:standing:end -->
 
 The previous figures for these cases come from a private communication from
@@ -642,6 +644,21 @@ This is above Green's reported bound for `k = 10` (Friedman DS7, Theorem 9),
 897 segments and 4 rectangles, total mass `10099999/100000`, checked at all 201 net angles with the verifier of
 `mixed_n50_L735` (`unified_linear_verify.cpp`). The full replay was run again from the published tarball before
 publication.
+
+## n = 145: a linear certificate past Green's bound
+
+[`certificates/mixed_n145_L1224`](certificates/mixed_n145_L1224/README.md) proves
+
+```
+s(145) >= 306/25 = 12.24
+```
+
+This is above Green's reported bound for `k = 12` (Friedman DS7, Theorem 9),
+`2√2 − 1 + (1452 + 22√6)/145 = 12.2138…`, by more than `0.0261`. The measure is linear: 594 point masses,
+1541 segments and 9 rectangles, total mass `14499999/100000`, checked at all 201 net angles with the verifier of
+`mixed_n101_L1028` (`unified_linear_verify.cpp`). Since the total mass is below 145, it also gives `s(N) >= 12.24` for
+every `N >= 145`. Before publication the full replay was run again from the published tarball on a fresh Ubuntu 24.04
+machine with only the README's requirements installed.
 
 ## n = 122: a linear certificate past Green's bound
 
