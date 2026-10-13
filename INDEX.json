@@ -3,6 +3,58 @@
  "repository": "wand125/square-packing",
  "generated": "2026-10-13",
  "problems": {
+  "closed-form": [
+   {
+    "id": "closed-form-v1:intervals",
+    "claim": "For every non-square integer N ≥ 49, s(N) ≥ a(N), where a(N) is the piecewise closed form of README.md / SPEC.md §1.1 built from the certified savings α_i δ + β_i on 34 intervals covering (0, 1].",
+    "release_tag": "closed-form-v1",
+    "assets": [
+     "interval_0_0.02.tar.gz",
+     "interval_0.02_0.05.tar.gz",
+     "interval_0.05_0.12.tar.gz",
+     "interval_0.12_0.16.tar.gz",
+     "interval_0.16_0.2.tar.gz",
+     "interval_0.2_0.38.tar.gz",
+     "interval_0.38_0.4.tar.gz",
+     "interval_0.4_0.405.tar.gz",
+     "interval_0.405_0.41.tar.gz",
+     "interval_0.41_0.42.tar.gz",
+     "interval_0.42_0.425.tar.gz",
+     "interval_0.425_0.43.tar.gz",
+     "interval_0.43_0.435.tar.gz",
+     "interval_0.435_0.44.tar.gz",
+     "interval_0.44_0.445.tar.gz",
+     "interval_0.445_0.45.tar.gz",
+     "interval_0.45_0.455.tar.gz",
+     "interval_0.455_0.46.tar.gz",
+     "interval_0.46_0.465.tar.gz",
+     "interval_0.465_0.47.tar.gz",
+     "interval_0.47_0.475.tar.gz",
+     "interval_0.475_0.48.tar.gz",
+     "interval_0.48_0.485.tar.gz",
+     "interval_0.485_0.49.tar.gz",
+     "interval_0.49_0.495.tar.gz",
+     "interval_0.495_0.5.tar.gz",
+     "interval_0.5_0.6.tar.gz",
+     "interval_0.6_0.625.tar.gz",
+     "interval_0.625_0.65.tar.gz",
+     "interval_0.65_0.675.tar.gz",
+     "interval_0.675_0.7.tar.gz",
+     "interval_0.7_0.8.tar.gz",
+     "interval_0.8_0.99.tar.gz",
+     "interval_0.99_1.tar.gz",
+     "SHA256SUMS"
+    ],
+    "path": "problems/closed-form/ASSET.json",
+    "check": "python3 structure/structure_all.py --assets assets\n(cd checker && cargo +1.86.0 build --locked --release -p replay4d)\npython3 checker/replay_all.py --assets assets",
+    "check_cwd": "problems/closed-form",
+    "documents": [
+     "problems/closed-form/README.md",
+     "problems/closed-form/SPEC.md",
+     "problems/closed-form/INTERVALS.md"
+    ]
+   }
+  ],
   "domino": [
    {
     "id": "domino-v1:certificates/n4",

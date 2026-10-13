@@ -19,6 +19,7 @@ command, and every checker, tool and Lean project.
 | `problems/domino/` | Unit squares in a 1:2 rectangle |
 | `problems/hexagon/` | Unit squares in a regular hexagon |
 | `problems/rectangles/` | Unit squares in a rectangle: certified constructions along the edges F_k (k = 2 to 15) |
+| `problems/closed-form/` | A closed-form lower bound a(N) on s(N) for every non-square N ≥ 49, certified on 34 intervals (release `closed-form-v1`) |
 | `checks/valid7/` | An independent exact check of Valid7 (evand/square-packing) |
 | `tools/` | Solvers, verifiers and transfer tools (each tool folder has its own CI) |
 | `lean/n11-optimality/` | Lean 4 formalization toward s(11) |
