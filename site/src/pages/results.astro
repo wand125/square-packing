@@ -7,6 +7,7 @@ import {results, resultOrder, CONT, METH, KIND} from '../lib/results';
 import {readEditorial, type ResultNote} from '../lib/data';
 import {bi, bd, esc, a, BLOB, cell, term} from '../lib/reading';
 import {GH} from '../lib/sitemap';
+import ClosedFormTable from '../components/ClosedFormTable.astro';
 const all = results().sort(resultOrder), nbest = all.filter(r => r.best).length;
 const notes: Record<string, ResultNote> = {};
 for (const m of readEditorial('methods.json').rows) for (const [id,note] of Object.entries(m.result_notes || {})) notes[id] = {...note, review_status: m.review_status};
@@ -22,6 +23,11 @@ const rows = all.map(r => {
 const options = [{key: 'cont', en: 'Container', ja: '容器', values: CONT},{key: 'meth', en: 'Method', ja: '手法', values: METH},{key: 'kind', en: 'Kind', ja: '種類', values: KIND}];
 ---
 <Base file="results.html" title="Square Packing Results">
+<div class="res-switch" role="group" aria-label="view">
+<button type="button" data-view="certs" aria-pressed="true"><T en={`Certificates and proofs (${all.length})`} ja={`証明書と証明（${all.length} 件）`}/></button>
+<button type="button" data-view="bounds" aria-pressed="false"><T en="Lower bounds for N ≤ 3600" ja="N ≤ 3600 の下界の表"/></button>
+</div>
+<div data-pane="certs">
 <Lede en={`${all.length} certificates and proofs; ${nbest} selected by the best recorded bound for each container and n. Click a row for details.`} ja={`証明書と証明 ${all.length} 件。容器と n ごとの記録内の最良として ${nbest} 件を選択。行を押すと詳細が出る。`}><p class="note" set:html={bi(`${all.length} certificates and proofs from INDEX.json and the problem folders of wand125/square-packing; ${nbest} are selected by the best recorded bound for each container and n (including the published n = 17 sub-patterns). Click a row for the claim, the check command and the release assets.`,`wand125/square-packing の INDEX.json と問題のフォルダから、証明書と証明 ${all.length} 件。容器と n ごとの記録内の最良の下界（公開済み n = 17 の部分型を含む）として ${nbest} 件を選択。行を押すと主張・検算のコマンド・Release の資産が出る。`)}/></Lede>
 <div class="bar" data-filterbar="res">
 {options.map(o => <label><T en={o.en} ja={o.ja}/> <select data-key={o.key} id={'f-'+o.key}><option value="" data-en="all" data-ja="すべて">all</option>{Object.entries(o.values).map(([key,[en,ja]]) => <option value={key} data-en={en} data-ja={ja}>{en}</option>)}</select></label>)}
@@ -30,5 +36,28 @@ const options = [{key: 'cont', en: 'Container', ja: '容器', values: CONT},{key
 <input type="search" data-key="q" id="f-q" data-ph-en="filter text" data-ph-ja="文字で絞り込み" aria-label="filter"/><span class="count" aria-live="polite"/>
 </div>
 <DataTable headers={[bi('Container','容器'),'n',bi('Result','結果'),bi('Kind','種類'),bi('Method','手法'),bi('Data','データ'),bi('Documents','文書')]} sorts={['cont','n','v','','meth']} rows={rows} id="res" class="wide"/>
+</div>
+<div data-pane="bounds" hidden>
+<p class="note"><T en="For every N from 1 to 3600: the best known lower and upper bounds with their source and year, the bound a(N) of the closed form (N ≥ 49, non-square), Karakuş's formula, and the differences. Lower bounds are rounded down and upper bounds rounded up to 9 decimals." ja="1〜3600 のすべての N について：既知の最良の下界と上界（出典と年）、閉じた式の下界 a(N)（N ≥ 49、平方数でない）、Karakuş の式、その差。下界は 9 桁で切り下げ、上界は切り上げて出す。"/> <a href="paper-closed-form.html"><T en="The closed form" ja="閉じた式"/></a> · <a href="paper-closed-form-plots.html"><T en="plots by block" ja="ブロックごとの図"/></a></p>
+<ClosedFormTable />
+</div>
 <script>import '../scripts/reading';</script>
+<script>
+// switch between the certificate list and the table of lower bounds; #bounds opens the table
+const btns = document.querySelectorAll<HTMLButtonElement>('.res-switch button');
+function show(v: string) {
+ btns.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === v)));
+ document.querySelectorAll<HTMLElement>('[data-pane]').forEach(p => { p.hidden = p.dataset.pane !== v; });
+ if (v === 'bounds') document.dispatchEvent(new Event('cft-show'));
+}
+const fromHash = () => location.hash === '#bounds' ? 'bounds' : 'certs';
+btns.forEach(b => b.addEventListener('click', () => { const v = b.dataset.view!; try { history.replaceState(null, '', v === 'bounds' ? '#bounds' : location.pathname); } catch (e) {} show(v); }));
+window.addEventListener('hashchange', () => show(fromHash()));
+show(fromHash());
+</script>
+<style>
+.res-switch { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 12px; }
+.res-switch button { font: inherit; font-size: 14px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg2); color: var(--fg2); cursor: pointer; }
+.res-switch button[aria-pressed="true"] { color: var(--acc); border-color: var(--acc); background: var(--bg); }
+</style>
 </Base>
