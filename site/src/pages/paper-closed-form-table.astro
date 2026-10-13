@@ -65,9 +65,9 @@ function cell(r: Record<string, string>, k: string, kind: string) {
  const tip = t !== v ? ` title="${esc(v).replace(/"/g, '&quot;')}"` : '';
  if (link) return `<td><a href="${esc(link)}"${tip}>${esc(t)}</a></td>`;
  if (tip) return `<td${tip}>${esc(t)}</td>`;
- // of a(N) and the known lower bound, the smaller one is green (nothing when they are equal)
- const d = +(r.a_minus_known_lb || 0), low = r.a_N && r.known_lb && ((k === 'a_N' && d < -1e-9) || (k === 'known_lb' && d > 1e-9));
- return `<td class="${kind === 't' ? '' : 'num'}${low ? ' cft-low' : ''}">${esc(v)}</td>`;
+ // of a(N) and the known lower bound, the larger (better) one is green (nothing when they are equal)
+ const d = +(r.a_minus_known_lb || 0), best = r.a_N && r.known_lb && ((k === 'a_N' && d > 1e-9) || (k === 'known_lb' && d < -1e-9));
+ return `<td class="${kind === 't' ? '' : 'num'}${best ? ' cft-best' : ''}">${esc(v)}</td>`;
 }
 function shortSrc(v: string) {
  const from = (v.match(/ \(from N = \d+\)$/) || [''])[0], b = v.slice(0, v.length - from.length);
@@ -171,7 +171,7 @@ new MutationObserver(render).observe(document.documentElement, {attributes: true
 .cft-table td { padding: 3px 8px; white-space: nowrap; border-bottom: 1px solid var(--line); }
 .cft-pos { color: var(--cft-pos); }
 .cft-neg { color: var(--cft-neg); }
-.cft-low { color: var(--ok); }
+.cft-best { color: var(--ok); }
 /* muted palette from the tokens: dull blue-green and red-brown for the sign, six low-saturation colours for sources */
 .cft { --cft-pos: color-mix(in srgb, color-mix(in srgb, var(--ok) 50%, var(--link)) 65%, var(--fg2));
   --cft-neg: color-mix(in srgb, color-mix(in srgb, var(--bad) 60%, var(--acc)) 65%, var(--fg2));
