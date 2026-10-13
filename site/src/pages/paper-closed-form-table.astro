@@ -77,8 +77,8 @@ function shortSrc(v: string) {
 }
 function shortNote(v: string) {
  const n77 = /k2m4_n77_L9/.test(v);
- if (/records-tilt9-v1/.test(v)) return (ja() ? 'ValidTilt9 を再検査（records-tilt9-v1）、Lean 化は進行中' : 'ValidTilt9 re-checked (records-tilt9-v1); Lean in progress') + (n77 ? (ja() ? '、当方の k2m4_n77_L9 も' : '; also our k2m4_n77_L9') : '');
- if (/records-v1/.test(v)) return ja() ? '当方で再検査（records-v1）' : 're-checked by wand125 (records-v1)';
+ if (/records-tilt9-v1/.test(v)) return (ja() ? 'ValidTilt9 を再検査' : 'ValidTilt9 re-checked') + (n77 ? (ja() ? '、k2m4_n77_L9' : '; k2m4_n77_L9') : '');
+ if (/records-v1/.test(v)) return ja() ? 'Valid7 を再検査' : 'Valid7 re-checked';
  if (/^release /.test(v)) return v.slice(8);
  return v;
 }
