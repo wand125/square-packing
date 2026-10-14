@@ -1,0 +1,13 @@
+arithmetic: SHA-256 3 vectors; inverse sqrt enclosure exact; 10000 trig intervals / 30000 samples
+random group 0: 100000 boxes, 100000 closed, zero false closures
+random group 1: 20000 boxes, 20000 closed, zero false closures
+random leaves by rule: [0, 120000, 0, 0, 0, 0, 0]
+individual rules on 20000 additional boxes: [0, 20000, 11710, 20000, 0, 18907, 792]; 5 samples/closure, zero false closures
+P0: 432 boxes, rule counts [0, 0, 0, 0, 0, 0, 432], 67 samples/box, zero false closures
+degenerate corner: closed at depth <=24, counts [0, 0, 1, 0, 0, 0, 0]
+degenerate face x=1 and wall x=0: closed at depth <=24, counts [0, 0, 1, 0, 0, 0, 0]
+degenerate face-diagonal opposite faces: closed at depth <=24, counts [0, 0, 0, 0, 0, 0, 1]
+degenerate axis-aligned centre: closed at depth <=24, counts [0, 1, 0, 0, 0, 0, 0]
+symmetry: 10000 poses, all 8 containment bits preserved under reflections and Euler reduction
+thread determinism: 80 rounds, boxes 11562466, digest ecfefdc3fb39bb3a5090da27e714014f0eb8eb209336bc4c545f8581eff4db10
+validation passed; seconds 100.22791025

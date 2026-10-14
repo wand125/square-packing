@@ -1,0 +1,35 @@
+{
+  "claim": "every closed unit cube in [0,s]^3, s = 2 + 1/sqrt(2), contains a point of {1, s-1}^3",
+  "system": "second checker (ZYZ Euler angles, 8 reflections), revision r3",
+  "command": "m5-check2 --server --threads 16 --seconds 1209600 --depth 72 --checkpoint-seconds 60 --output full",
+  "platform": "Linux x86_64, rustc 1.86.0, 16 threads",
+  "result": {
+    "status": "complete",
+    "closed_volume_fraction": 1,
+    "pending": 0,
+    "unresolved": 0,
+    "boxes": 784835241,
+    "leaves_by_reason": {
+      "point": 292654066,
+      "centre": 1295486,
+      "wall": 3774181,
+      "pair": 94356391,
+      "local": 337497,
+      "unresolved": 0
+    },
+    "max_depth": 45,
+    "seconds": 1051.177026162,
+    "rounds": 5778,
+    "leaf_chain": "c56bdc3b51ef3015cc1856cf00e61ac1218d40c1746200e192b5a66fb8dd2ca2"
+  },
+  "source_sha256": {
+    "src/geometry.rs": "2f457d7dede1490082a78d7af6d44df179d84c829afb38ce1c68c7a84e3e21ae",
+    "src/interval.rs": "c70441cbca03945be15d995b53a9e37307c47cac9ba4e0329f74feda660c4648",
+    "src/json.rs": "26b964b6ee37f97b6098f7c22a904f3d4753159dab5a63757252a262ec21a242",
+    "src/main.rs": "96b0cdb95fb689938f43005f08b4dc4292696ece6b17f741158a0f15b127f4dc",
+    "src/search.rs": "059a70ebf50ef932c62fc2767694ac489bce274974fb5b5c3f835cdfde8a8ceb",
+    "src/sha256.rs": "9c30094b7291f3d74deb5057bb79338cc456a32df5e2e1ca7bf253e17250a912",
+    "src/validation.rs": "b4828cafd17730b192d246bef206c7323e6a55c8aa974fe41de2fb85134ea41f"
+  },
+  "binary_sha256_linux_rustc_1_86": "d909f70251eb92ce19d208c23a3db7870f97f743efd12e976d16d782312ad5d7"
+}

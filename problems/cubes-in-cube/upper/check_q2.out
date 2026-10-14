@@ -1,0 +1,6 @@
+n8_side2 side (Fraction(2, 1), Fraction(0, 1)) cubes 8 OK (system 2: exact Q(sqrt2), intersection volume 0)
+n9_s side (Fraction(2, 1), Fraction(1, 2)) cubes 9 OK (system 2: exact Q(sqrt2), intersection volume 0)
+n10_s side (Fraction(2, 1), Fraction(1, 2)) cubes 10 OK (system 2: exact Q(sqrt2), intersection volume 0)
+  control overlap overlap volume 0.4
+control overlap rejected as expected
+control protrude rejected as expected

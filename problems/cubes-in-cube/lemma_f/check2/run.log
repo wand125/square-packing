@@ -1,0 +1,6 @@
+{"progress": true, "boxes": 110704, "leaves": 55347, "seconds": 30.0, "boxes_per_second": 3690.12, "closed_parameter_fraction": 0.18568801879882812, "estimated_total_seconds": 161.6, "pending_boxes": 11, "max_depth": 22}
+{"progress": true, "boxes": 220348, "leaves": 110170, "seconds": 60.0, "boxes_per_second": 3672.46, "closed_parameter_fraction": 0.36980152130126953, "estimated_total_seconds": 162.2, "pending_boxes": 9, "max_depth": 22}
+{"progress": true, "boxes": 329564, "leaves": 164776, "seconds": 90.0, "boxes_per_second": 3661.81, "closed_parameter_fraction": 0.55419921875, "estimated_total_seconds": 162.4, "pending_boxes": 13, "max_depth": 22}
+{"progress": true, "boxes": 435419, "leaves": 217706, "seconds": 120.0, "boxes_per_second": 3628.48, "closed_parameter_fraction": 0.7332878112792969, "estimated_total_seconds": 163.6, "pending_boxes": 8, "max_depth": 22}
+{"progress": true, "boxes": 544753, "leaves": 272373, "seconds": 150.001, "boxes_per_second": 3631.67, "closed_parameter_fraction": 0.9165916442871094, "estimated_total_seconds": 163.7, "pending_boxes": 8, "max_depth": 22}
+{"rate_boxes_per_second": 3631.05, "closed_parameter_fraction": 1.0, "complete": true}

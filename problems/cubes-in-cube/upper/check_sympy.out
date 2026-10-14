@@ -1,0 +1,4 @@
+n8_side2 side 2 cubes 8 OK (contained, interiors pairwise disjoint)
+n9_s side sqrt(2)/2 + 2 cubes 9 OK (contained, interiors pairwise disjoint)
+n10_s side sqrt(2)/2 + 2 cubes 10 OK (contained, interiors pairwise disjoint)
+control overlap rejected as expected
