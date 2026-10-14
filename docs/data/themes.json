@@ -561,8 +561,8 @@
    "issue": 13,
    "state": "open",
    "title": {
-    "en": "Unit squares in a right isosceles triangle — optimality of known packings",
-    "ja": "直角二等辺三角形の中の単位正方形 — 既知の詰め方の最適性"
+    "en": "Unit squares in a right isosceles triangle — optimality for n = 2, 3, 4, 6, 10 and 15",
+    "ja": "直角二等辺三角形の中の単位正方形 — n = 2, 3, 4, 6, 10, 15 の最適性"
    },
    "goal": {
     "en": "s(n) is the leg of the smallest right isosceles triangle that holds n unit squares. Prove that the best known packings in Erich Friedman's Packing Center (squintan) are optimal, one n at a time.",
