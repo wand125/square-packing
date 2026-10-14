@@ -580,6 +580,10 @@
     {
      "en": "n = 9 (s = 7/√2): stage 1 of the localization tree, verified by the first checker.",
      "ja": "n = 9（s = 7/√2）：局所化の木の段 1 を第 1 の検査器で検証。"
+    },
+    {
+     "en": "n = 15: s(15) = 6 (the axis-parallel staircase with rows 5 + 4 + 3 + 2 + 1), proved and checked by both checkers (certificates/n15/, release right-isosceles-n15-v1).",
+     "ja": "n = 15：s(15) = 6（軸に平行な階段、列 5 + 4 + 3 + 2 + 1）を証明し、両方の検査器で検査（certificates/n15/、Release right-isosceles-n15-v1）。"
     }
    ],
    "working_on": [
@@ -588,12 +592,12 @@
      "ja": "n = 9：局所化の木の残りの段。"
     },
     {
-     "en": "n = 15.",
-     "ja": "n = 15。"
+     "en": "The second checker for n = 9.",
+     "ja": "n = 9 の第 2 の検査器。"
     },
     {
-     "en": "The second checker for n = 9 and n = 15.",
-     "ja": "n = 9 と n = 15 の第 2 の検査器。"
+     "en": "n = 21.",
+     "ja": "n = 21。"
     }
    ],
    "links": [
@@ -607,7 +611,10 @@
     }
    ],
    "url": "https://github.com/wand125/square-packing/issues/13",
-   "updated": "2026-10-11"
+   "updated": "2026-10-14",
+   "releases": [
+    "right-isosceles-n15-v1"
+   ]
   },
   {
    "issue": 14,

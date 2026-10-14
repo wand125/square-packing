@@ -167,11 +167,12 @@ try {
       await click(sel+' button:nth-child(2)');await waitFor(`document.querySelectorAll(${JSON.stringify(sel+' .vz-muted')}).length===28`);
       await click(sel+' button:nth-child(3)');await waitFor(`document.querySelectorAll(${JSON.stringify(sel+' .vz-muted')}).length===9`);
      } else {
-      for(const [index,n,count] of [[1,4,1],[2,6,4],[3,10,8],[4,2,0],[5,3,0]]){
+      await waitFor(`+document.querySelector(${JSON.stringify(sel)}).dataset.n===4`); // the figure opens on n = 4 (start)
+      for(const [index,n,count] of [[1,2,0],[2,3,0],[3,4,1],[4,6,4],[5,10,8],[6,15,152]]){
        await click(sel+` .vz-chips button:nth-child(${index})`);await waitFor(`+document.querySelector(${JSON.stringify(sel)}).dataset.n===${n}`);
        assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(sel+' .vz-pair')}).length`),count);
       }
-      await click(sel+' .vz-chips button');await waitFor(`+document.querySelector(${JSON.stringify(sel)}).dataset.n===4`);
+      await click(sel+' .vz-chips button:nth-child(3)');await waitFor(`+document.querySelector(${JSON.stringify(sel)}).dataset.n===4`);
       await click(sel+' [data-pair-pose]');await waitFor(`+document.querySelector(${JSON.stringify(sel)}).dataset.pairCredit===1`);
       assert.equal(await evaluate(`+document.querySelector(${JSON.stringify(sel)}).dataset.captured`),2);
       assert.equal(await evaluate(`+document.querySelector(${JSON.stringify(sel)}).dataset.lemma`),1);

@@ -6,12 +6,13 @@ import {pairChord, type Point} from './paperGeometry';
 
 type Item = { cont: string; n: string; poly: number[][]; points: number[][]; pairs?: [number, number][]; packing: number[][][] | false };
 
-export default function CertificateFigure({ cont = "hexagon", ns = "3", lang = "en" }: { cont?: string; ns?: string; lang?: string }) {
+// ns: the n shown as choices, in this order; start: the n shown first (default the first of ns)
+export default function CertificateFigure({ cont = "hexagon", ns = "3", start = "", lang = "en" }: { cont?: string; ns?: string; start?: string; lang?: string }) {
   const ja = lang === 'ja';
   const [showPairs, setShowPairs] = useState(true);
   const [error, setError] = useState(false);
   const list = ns.split(',').map((x) => x.trim());
-  const [n, setN] = useState(list[0]);
+  const [n, setN] = useState(list.includes(start) ? start : list[0]);
   const [it, setIt] = useState<Item | null>(null);
   const [c, setC] = useState<[number, number] | null>(null);
   const [deg, setDeg] = useState(0);

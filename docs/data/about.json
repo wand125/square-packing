@@ -74,7 +74,7 @@
     "en": "The best known packings for squares in a triangle, 1:2 rectangle (domino), regular hexagon and right isosceles triangle are from his Packing Center. The packing for n = 4 in a right isosceles triangle was found by him in March 2005.",
     "ja": "正三角形、1:2 長方形 (ドミノ)、正六角形、直角二等辺三角形の中の正方形について、既知の最良の詰め込みは彼の Packing Center による。直角二等辺三角形の n = 4 の詰め込みは 2005 年 3 月に彼が見つけた。"
    },
-   "source": "problems/domino/README.md#L10-L12; problems/right-isosceles/README.md#L14-L17; problems/triangle/README.md#L19-L20; problems/hexagon/README.md#L10-L11"
+   "source": "problems/domino/README.md#L10-L12; problems/right-isosceles/README.md#L15-L19; problems/triangle/README.md#L19-L20; problems/hexagon/README.md#L10-L11"
   },
   {
    "who": "Evert Stenlund",

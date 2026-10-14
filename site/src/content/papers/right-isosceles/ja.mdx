@@ -2,7 +2,7 @@ import CertificateFigure from '../../../components/viz/CertificateFigure.tsx';
 
 ## 要旨
 
-$s(n)$ を、$n$ 個の重ならない単位正方形（位置・角度は自由）を含む最小の直角二等辺三角形の脚の長さとする。 $s(2) = 2\sqrt2$、$s(3) = 3$、$s(4) = 5/\sqrt2$、$s(6) = 4$、$s(10) = 5$ を証明する。 上界は厳密な座標をもつ当方の詰め方の証明書で、独立な 2 つの厳密な検査器で検査した。詰め方は Erich Friedman の Packing Center に載っているもので、その独自性は主張しない。下界の証明書は、これらの詰め方が最適であることを示す。 各下界は有限の重み付きの点集合で、三角形の中のどの単位正方形も重み 1 以上を拾い、重みの合計は $n$ 未満である。 計算はすべて $\mathbb Q(\sqrt2)$ での厳密な計算で、下界のどの証明書も独立な 2 つの検査器で検査した。結果はコンピュータ支援によるもので、査読は受けていない。
+$s(n)$ を、$n$ 個の重ならない単位正方形（位置・角度は自由）を含む最小の直角二等辺三角形の脚の長さとする。 $s(2) = 2\sqrt2$、$s(3) = 3$、$s(4) = 5/\sqrt2$、$s(6) = 4$、$s(10) = 5$、$s(15) = 6$ を証明する。 上界は厳密な座標をもつ当方の詰め方の証明書で、独立な 2 つの厳密な検査器で検査した。詰め方は Erich Friedman の Packing Center に載っているもので、その独自性は主張しない。下界の証明書は、これらの詰め方が最適であることを示す。 各下界は有限の重み付きの点集合で、三角形の中のどの単位正方形も重み 1 以上を拾い、重みの合計は $n$ 未満である。 計算はすべて $\mathbb Q(\sqrt2)$ での厳密な計算で、下界のどの証明書も、方法の異なる独立な 2 つの検査器で検査した。$n = 15$ では最適な詰め方の正方形の辺の上に証明書の点があり、証明書と 2 つの検査器はこの退化した姿勢を扱う（§3.1、§5）。結果はコンピュータ支援によるもので、査読は受けていない。
 
 ## 1. 問題と詰め方（上界）
 
@@ -15,12 +15,13 @@ $T_v = \operatorname{conv}\{(0,0), (v,0), (0,v)\}$ とする（直角は原点�
 | 4 | $5/\sqrt2$ | 3.5355 | 斜辺を底辺にして（長さ 5、高さ 5/2）、その上に 3 個を並べて立て、真ん中の 1 個の上にもう 1 個を立てる | [n4/packing.json](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n4/packing.json) |
 | 6 | $4$ | 4 | 軸に平行な階段、段は 3 + 2 + 1 | [n6/packing.json](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n6/packing.json) |
 | 10 | $5$ | 5 | 軸に平行な階段、段は 4 + 3 + 2 + 1 | [n10/packing.json](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n10/packing.json) |
+| 15 | $6$ | 6 | 軸に平行な階段、段は 5 + 4 + 3 + 2 + 1 | [n15/packing.json](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n15/packing.json) |
 
 各上界は当方の詰め方の証明書 `certificates/nX/packing.json` で、容器と $n$ 個の正方形を厳密な座標で与える（$n = 2, 4$ は $\mathbb Q(\sqrt2)$、それ以外は有理数）。コードを共有しない 2 つのプログラムが厳密な計算で、容器が主張どおりの形と大きさであること、どの正方形も閉じた容器に入る閉じた単位正方形であること、どの 2 個も内部が重ならないこと（辺や角での接触は許す）を判定する。座標は代数的数で接触は厳密な等式なので、浮動小数点では判定できない。検査は外部の表に頼らない。
 
-詰め方は Erich Friedman の Packing Center の「Squares in Right Isosceles Triangles」に載っているもので、そこでは $n = 2, 3, 6, 10$ は「Trivial」とされ、$n = 4$ の詰め方は 2005 年 3 月に Erich Friedman が見つけた。その独自性は主張しない。表には詰め方があるが、証明や下界はない。そこでの「Trivial」は詰め方が自明という意味で、最適性が証明済みという意味ではない。
+詰め方は Erich Friedman の Packing Center の「Squares in Right Isosceles Triangles」に載っているもので、そこでは $n = 2, 3, 6, 10, 15$ は「Trivial」とされ、$n = 4$ の詰め方は 2005 年 3 月に Erich Friedman が見つけた。その独自性は主張しない。表には詰め方があるが、証明や下界はない。そこでの「Trivial」は詰め方が自明という意味で、最適性が証明済みという意味ではない。
 
-<CertificateFigure cont="right-isosceles" ns="4,6,10,2,3" lang="ja" client:visible />
+<CertificateFigure cont="right-isosceles" ns="2,3,4,6,10,15" start="4" lang="ja" client:visible />
 
 *詰め方を選び、試す正方形をドラッグ・回転できる。破線は距離1の証明書の対。補題Pの計数では条件を満たす対の小さい方の重みを数え、両端は重複して数えない。実際に捕捉した点の重みは別に表示する。*
 
@@ -41,7 +42,7 @@ $$
 
 **$\mathbb Q(\sqrt2)$ での厳密な計算.** 長さと座標は有理数 $a, b$ による $a + b\sqrt2$ の形の数で、その符号は $a^2$ と $2b^2$ の比較で決まり、丸めは入らない。正方形が $T_L$ に入るのは、4 つの頂点が $y \ge 0$、$x \ge 0$、$x + y \le L$ をみたすときである。角度は $u = \tan(\theta/2)$ で表す。鏡映 $(x, y) \mapsto (y, x)$ は $T_L$ の唯一の自明でない対称で、角度 $\theta$ の正方形を角度 $\pi/2 - \theta$ の正方形に移す。よって鏡映で不変な証明書では $\theta \in [0, \pi/4]$、すなわち $u \in [0, \sqrt2 - 1]$ で足り、$\sqrt2 - 1 = \tan(\pi/8)$ は $\mathbb Q(\sqrt2)$ で厳密に表せる。
 
-**距離 1 の点の組（補題 P、$n = 4, 6, 10$ で使う）.** 距離がちょうど 1 の 2 点 $p, q$ について、直線 $pq$ に沿った弦が向かい合う 2 辺を横切り、線分 $[p, q]$ と交わる正方形は $p$ か $q$ を含む。これは、拾う点が軸に平行でない面を境に $p$ から $q$ に替わる姿勢を扱うためのもので、たとえば $n = 4$ で斜辺の中央に立つ正方形がそうである。組は $\min(w_p, w_q)$ と数え、同じ点を 2 度数えない。補題 P を使うのは第 1 の検査器だけで、第 2 の検査器はすべての区画で点を厳密に数えるので補題 P を必要としない。
+**距離 1 の点の組（補題 P、$n = 4, 6, 10, 15$ で使う）.** 距離がちょうど 1 の 2 点 $p, q$ について、直線 $pq$ に沿った弦が向かい合う 2 辺を横切り、線分 $[p, q]$ と交わる正方形は $p$ か $q$ を含む。これは、拾う点が軸に平行でない面を境に $p$ から $q$ に替わる姿勢を扱うためのもので、たとえば $n = 4$ で斜辺の中央に立つ正方形がそうである。組は $\min(w_p, w_q)$ と数え、同じ点を 2 度数えない。補題 P を使うのは第 1 の検査器だけで、第 2 の検査器はすべての区画で点を厳密に数えるので補題 P を必要としない。
 
 ## 3. 証明書
 
@@ -52,29 +53,45 @@ $$
 | 4 | $5/\sqrt2$ | 3 | $3 < 4$ | 1 |
 | 6 | $4$ | 7 | $5 < 6$ | 4 |
 | 10 | $5$ | 15 | $19/2 < 10$ | 8 |
+| 15 | $6$ | 505 | $1499/100 < 15$ | 152 |
 
-5 つの点集合はどれも $(x, y) \mapsto (y, x)$ で不変である。
+6 つの点集合はどれも $(x, y) \mapsto (y, x)$ で不変である。
 
 - $n = 2$：重み 1 の点 $(5\sqrt2/8, 5\sqrt2/8)$ が 1 個。対称軸の上、斜辺から高さ $3/4$ にある。$T_{2\sqrt2}$ の中の閉じた単位正方形はどれもこの点を含む。
 - $n = 3$：重み $1/2$ の 4 点 $(3/4, 1)$、$(1, 3/4)$、$(3/4, 5/4)$、$(5/4, 3/4)$。$T_3$ の中の閉じた単位正方形はどれもこのうち 2 点以上を含む。
 - $n = 4$：重み 1 の 3 点。詰め方の上の正方形の中心 $(\sqrt2/2, \sqrt2/2)$ と、斜辺から高さ $3/4$ で下の正方形の間の 2 つの壁の上にある $(5\sqrt2/8, 9\sqrt2/8)$、$(9\sqrt2/8, 5\sqrt2/8)$。後の 2 点の距離はちょうど 1 で、組をなす。組がないと第 1 の検査器は終わらない：斜辺の中点の近くで $\theta \approx 45^\circ$ のとき、正方形が拾う点は対角線 $x = y$ を境に 2 点の間で替わり、この線は軸に平行な箱の面ではない。
 - $n = 6$：重み $1/2$ の $(1/2, 3/2)$、$(3/2, 1/2)$、$(3/4, 1)$、$(1, 3/4)$ と、重み 1 の $(3/4, 2)$、$(2, 3/4)$、$(3/2, 3/2)$。組は 4 つ：$(1/2,3/2)$–$(3/2,3/2)$、$(3/2,1/2)$–$(3/2,3/2)$、$(3/4,1)$–$(3/4,2)$、$(1,3/4)$–$(2,3/4)$。組がないと第 1 の検査器は深さ 22 で 5,677 個の箱を証明できずに残し、それらはすべて中心 $(1, 1.3)$ の近くの小さい角度にある。
 - $n = 10$：重み $1/2$ の $(3/4, 1)$、$(1, 3/4)$、重み 1 の $(3/4, 2)$、$(2, 3/4)$、$(3/4, 3)$、$(3, 3/4)$、重み $1/2$ の $(1, 3/2)$、$(3/2, 1)$、$(5/4, 5/2)$、$(5/2, 5/4)$、$(3/2, 3/2)$、$(3/2, 5/2)$、$(5/2, 3/2)$、$(7/4, 2)$、$(2, 7/4)$。組は 8 つ（距離がちょうど 1 の組すべて）。第 1 の検査器の根の格子は $[0, 6]^2$ でとり、直線 $x = 3/2$ と $y = 3/2$ が箱の面になるようにした：中心 $(3/2, 3/2)$、$\theta = 0$ では正方形 $[1,2]^2$ の境界上に 4 点があり、拾う点はこれらの線を境に替わる。既定の範囲では、そこの 2 つの箱が深さ 22 で証明できずに残る。
+- $n = 15$：有理数の座標の 505 点、重みの合計 $1499/100$、組は 152（距離がちょうど 1 の組すべて）。この証明書には小さい $n$ にない扱いが要る。§3.1 を参照。
+
+### 3.1 $n = 15$ の場合
+
+最適な階段の詰め方は、点の証明書にとって退化している：$\theta = 0$ では詰め方の正方形の辺のちょうど上に証明書の点があり、その近くの姿勢では拾う点が動く向きによって替わる。証明書はこの種の姿勢を 3 通りに扱う。
+
+- **帯**（中心が $x = k + 1/2$ か $y = j + 1/2$ の上、$\theta = 0$）：補題 P により、2 点 $(k, s)$、$(k + 1, s)$ のどちらかが中に入る。
+- **格子の交点**（中心 $(k + 1/2, j + 1/2)$、$\theta = 0$、2 方向に同時に動く）：重みは浮動小数点の LP で求めた。各交点のまわりの 4 分の 1 の箱ごと、帯の高さごとに 1 行をとり、第 1 の検査器が箱全体で証明できるもの（内部の点、中に残る辺上の点、$\min(w_p, w_q)$ と数える組）だけを数える。その後、整数の線の上にない点を $1/200$ 以内だけ動かし、重みを合計 $14.99$ に縮め、距離 1 の組をすべて加えた。
+- **挟まれた正方形**：$\theta = 0$ の $[0, 1] \times [4, 5]$ は壁と斜辺に接する。そこでは角度の範囲の端で 3 本の制約の直線が 1 点で交わり、第 1 の検査器はそのまわりの箱を端の開いた葉で証明する（§5）。
+
+第 1 の検査器の根の格子は $[0, 8]^2$ の上の $32 \times 32$ で、整数と半整数の線が箱の面になる。第 2 の検査器はすべての姿勢で点を厳密に数えるので、これらを必要としない。
 
 ## 4. 結論
 
-各 $n \in \{2, 3, 4, 6, 10\}$ について、証明書は $T_v$ の中のどの閉じた単位正方形でも重み $\ge 1$ を拾い、重みの合計は $< n$ である。中心の拡大（§2）より $s(n) \ge v$、§1 の詰め方より $s(n) \le v$。よって
+各 $n \in \{2, 3, 4, 6, 10, 15\}$ について、証明書は $T_v$ の中のどの閉じた単位正方形でも重み $\ge 1$ を拾い、重みの合計は $< n$ である。中心の拡大（§2）より $s(n) \ge v$、§1 の詰め方より $s(n) \le v$。よって
 
 $$
-s(2) = 2\sqrt2, \quad s(3) = 3, \quad s(4) = \frac{5}{\sqrt2}, \quad s(6) = 4, \quad s(10) = 5. \qquad \blacksquare
+s(2) = 2\sqrt2, \quad s(3) = 3, \quad s(4) = \frac{5}{\sqrt2}, \quad s(6) = 4, \quad s(10) = 5, \quad s(15) = 6. \qquad \blacksquare
 $$
 
 ## 5. 検証
 
 下界の各証明書を、方法の異なる 2 つの検査器で検査した。
 
-- **検査器 1** は姿勢の空間（中心の箱 $\times$ 角度の区間、$u = \tan(\theta/2)$）を細分し、Bernstein の評価を使い、鏡映の対称と補題 P を使う。余裕 0 の接触も扱える。プロジェクトの正三角形用の検査器から、容器・数体（$\mathbb Q(\sqrt3)$ の代わりに $\mathbb Q(\sqrt2)$）・対称を替えたもので、変更点は [checker/SPEC.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/checker/SPEC.md) に、健全性の議論は正三角形用の検査器の README にある。標準ライブラリだけを使う。
-- **検査器 2** は角度の厳密な掃引である。すべての角度 $u \in [0, 1]$ を直接調べる：臨界角は直線配置の 2 本組・3 本組の行列式の実根で、その間の開区間ごとに有理数の標本を 1 つとり、各標本で許される領域の中のすべての頂点のすべての開いた扇形について拾う重みを厳密に数える。閉包は上半連続性による。そのためには許される領域ごとに中心の円板が入る必要があり、内接円半径 $L(2-\sqrt2)/2 > \sqrt2/2$、すなわち $L > 1 + \sqrt2$ を厳密に確かめる。箱の細分・Bernstein の評価・対称・補題 P は使わない。正三角形の仕様書、証明書とその証明の説明だけから書き、検査器 1 のコードは開いていない。gmpy2（厳密な有理数）と sympy（実根の分離）を使う。中心の拡大は証明の説明にあり、コードでは検査していない。
+- **検査器 1** は姿勢の空間（中心の箱 $\times$ 角度の区間、$u = \tan(\theta/2)$）を細分し、Bernstein の評価を使い、鏡映の対称と補題 P を使う。余裕 0 の接触も扱える。オプション `--slices`（$n = 15$ で使う）では、角度の範囲の端の箱も、端の切り口（端の角度で許される中心が厳密な頂点をもつ多角形になる）と端の開いた葉で証明する。プロジェクトの正三角形用の検査器から、容器・数体（$\mathbb Q(\sqrt3)$ の代わりに $\mathbb Q(\sqrt2)$）・対称を替えたもので、変更点は [checker/SPEC.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/checker/SPEC.md) に、健全性の議論は正三角形用の検査器の README にある。標準ライブラリだけを使う。
+- **検査器 2** は角度の掃引で点を厳密に数える。臨界角は直線配置の 2 本組・3 本組の行列式の実根で、その間の開区間ごとに有理数の標本を 1 つとり、各標本で許される領域の中のすべての頂点のすべての開いた扇形について拾う重みを厳密に数える。閉包は上半連続性による。そのためには許される領域ごとに中心の円板が入る必要があり、内接円半径 $L(2-\sqrt2)/2 > \sqrt2/2$、すなわち $L > 1 + \sqrt2$ を厳密に確かめる。
+  - $n = 2$〜$10$（`sweep_q2.py`）では、すべての角度 $u \in [0, 1]$ を直線配置全体で掃引する。箱の細分は使わない。
+  - $n = 15$（`local_sweep.py`）では、505 点で直線が約 2,000 本、3 本組が $1.4 \times 10^9$ 個になり、配置全体の掃引は届かない。姿勢の空間（$u$ と中心）の箱で分枝限定を行う（$u$ の 20 区間 × $[0, 6]^2$ の $16 \times 16$ の格子、根の箱 5,120 個）。厳密な区間演算で、箱は次のどれかで閉じる：許されない（箱のどの姿勢でも $Q$ のある頂点が $T_L$ のある辺の外にある）、確実（箱のどの姿勢でも $Q$ の中にある点の重みが $\ge 1$）、または中に入るか出るかが変わる点が 24 個以下のとき、箱とそこで効く直線に限った同じ掃引。どれでもなければ分割する。
+
+  Bernstein の評価・対称・補題 P は使わない。正三角形の仕様書、証明書とその証明の説明だけから書き、検査器 1 のコードは開いていない。2 つの検査器が共有するのは証明書の形式だけである。gmpy2（厳密な有理数）と sympy（実根の分離）を使う。中心の拡大は証明の説明にあり、コードでは検査していない。
 
 | $n$ | 検査器 1 | 検査器 2 |
 |---|---|---|
@@ -83,8 +100,13 @@ $$
 | 4 | 節点 304、未証明 0、最大深さ 12、1.0 秒 | 臨界根 241、最小の拾う重み 1、6 秒 |
 | 6 | 節点 1,122、未証明 0、最大深さ 13、2.8 秒 | 臨界根 671、最小の拾う重み 1、26 秒 |
 | 10 | 節点 2,868、未証明 0、最大深さ 15、6.8 秒 | 臨界根 1,863、最小の拾う重み 1、262 秒 |
+| 15 | 節点 181,112、未証明 0、最大深さ 26、6.8 時間（1 コア） | 掃引した箱 14,662 で臨界根 1,689,246、最小の拾う重み $3512157/3504100$、2.7 時間（3 プロセス） |
 
-**対照実験（証明の一部ではない）.** 脚を $v + 1/100$ にすると同じ証明書は通らない：検査器 1 は $n = 2, 3, 4, 6, 10$ で深さ 22 でそれぞれ 44、64、38、53、43 個の箱を証明できずに残し、検査器 2 は 5 つとも失敗する。検査器 2 は、最初の重みを $99/100$ 倍した証明書と最後の点を除いた証明書も退け、どの失敗にも有理数の角度での具体的な姿勢がつき、その拾う重みは厳密に数えてある。点を動かしても通る場合がある（$n = 3$ で $1/50$ 動かす、$n = 6$ で最初の点を $1/50$ か $1/5$ 動かす）。これらの点には余裕がある。有理数の姿勢 20,000 個の厳密な乱択試験では、$n = 3, 4, 6, 10$ で最小の拾う重みは 1 だった。
+**対照実験（証明の一部ではない）.**
+
+- *脚を大きくする.* 脚を $v + 1/100$ にすると $n = 2$〜$10$ の証明書は通らない：検査器 1 は $n = 2, 3, 4, 6, 10$ で深さ 22 でそれぞれ 44、64、38、53、43 個の箱を証明できずに残し、検査器 2 は 5 つとも失敗する。$n = 15$ では、脚を $601/100$ にすると閉じた正方形 $[0, 1] \times [4005/1000, 5005/1000]$ が三角形に入り、拾う重みはちょうど $529147/1752050 \approx 0.302$ で、検査器 2 は失敗する。
+- *証明書を変える.* 検査器 2 は、最初の重みを $99/100$ 倍した証明書と最後の点を除いた証明書（$n = 2$〜$10$）、すべての重みを $99/100$ 倍した $n = 15$ の証明書（拾う重み $347703543/350410000 \approx 0.9923$）を退ける。どの失敗にも有理数の角度での具体的な姿勢がつき、その拾う重みは厳密に数えてある。点を動かしても通る場合がある（$n = 3$ で $1/50$ 動かす、$n = 6$ で最初の点を $1/50$ か $1/5$ 動かす）。これらの点には余裕がある。
+- *乱択の姿勢.* 有理数の姿勢 20,000 個の厳密な乱択試験では、最小の拾う重みは $n = 3, 4, 6, 10$ で 1、$n = 15$ で $3772983/3504100 \approx 1.077$ だった。
 
 **詰め方.** 各 `packing.json` を、コードを共有しない 2 つのプログラムで検査する。どちらも、$g$ の最小多項式と $g$ を分離する有理数の区間（検査器が確かめる）で与えた実数体 $\mathbb Q(g)$ で計算する。
 
@@ -116,16 +138,18 @@ $$
 | 検査器 1、$n = 4$ | `python3 checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 22 --jobs 8` |
 | 検査器 1、$n = 6$ | `python3 checker/check.py certificates/n6/n6_cert.json --n 6 --max-depth 22 --jobs 8` |
 | 検査器 1、$n = 10$ | `python3 checker/check.py certificates/n10/n10_cert.json --n 10 --max-depth 22 --bbox 6 --jobs 8` |
+| 検査器 1、$n = 15$ | `python3 checker/check.py certificates/n15/n15_cert.json --n 15 --bbox 8 --slices --max-depth 70 --root 32 --jobs 8 --checkpoint n15.ckpt.jsonl` |
 | 検査器 1 のテスト | `cd checker && python3 -m pytest -q tests` |
-| 検査器 2 | `python3 checker2/sweep_q2.py certificates/n10/n10_cert.json --n 10 --jobs 8` |
+| 検査器 2、$n = 10$ | `python3 checker2/sweep_q2.py certificates/n10/n10_cert.json --n 10 --jobs 8` |
+| 検査器 2、$n = 15$ | `python3 checker2/local_sweep.py certificates/n15/n15_cert.json --n 15 --jobs 8 --K 24 --uslices 20 --grid 16 --log n15.log.jsonl --resume --out n15.json` |
 | 詰め方、方法 1 | `python3 ../../tools/packing_check/check_packing.py certificates/n4/packing.json` |
 | 詰め方、方法 2（sympy が必要） | `python3 ../../tools/packing_check/check_packing2.py certificates/n4/packing.json` |
 
-詰め方のコマンドは $n = 4$ の例で、他は `certificates/nX/packing.json` である。詰め方の検査は `VALID`（終了コード 0）か、理由つきの `INVALID` で終わる 1 行を出力する。検査器 1・2 の各実行は JSON の要約を出力し、`"status": "verified"`、証明書の sha256、厳密な重みの合計、それが $< n$ かどうかを含む。記録した実行は `certificates/n*/check_record.json`（検査器 1）と `checker2/runs/n*.json`（検査器 2）にある。1 台の機械で、検査器 1 は各証明書で 10 秒未満、検査器 2 は 2 秒（$n = 2$）から約 4.5 分（$n = 10$）かかる。
+詰め方のコマンドは $n = 4$ の例で、他は `certificates/nX/packing.json` である。詰め方の検査は `VALID`（終了コード 0）か、理由つきの `INVALID` で終わる 1 行を出力する。検査器 1・2 の各実行は JSON の要約を出力し、`"status": "verified"`、証明書の sha256、厳密な重みの合計、それが $< n$ かどうかを含む。記録した実行は `certificates/n*/check_record.json`（検査器 1）と `checker2/runs/n*.json`（検査器 2）にある。1 台の機械で、検査器 1 は $n = 10$ までの各証明書で 10 秒未満、$n = 15$ で約 6.8 コア時間、検査器 2 は 2 秒（$n = 2$）から約 4.5 分（$n = 10$）、$n = 15$ で約 2.7 時間かかる。$n = 15$ の 2 つの実行は途中から再開できる（`--checkpoint`、`--resume`）。
 
 ## 参考文献
 
 1. E. Friedman, [Squares in Right Isosceles Triangles](https://erich-friedman.github.io/packing/squintan/), Erich's Packing Center（詰め方の出典）。
-2. [problems/right-isosceles/README.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/README.md)。証明の説明 [n2](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n2/PROOF.md)、[n3](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n3/PROOF.md)、[n4](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n4/PROOF.md)、[n6](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n6/PROOF.md)、[n10](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n10/PROOF.md)。
+2. [problems/right-isosceles/README.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/README.md)。証明の説明 [n2](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n2/PROOF.md)、[n3](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n3/PROOF.md)、[n4](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n4/PROOF.md)、[n6](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n6/PROOF.md)、[n10](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n10/PROOF.md)、[n15](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/certificates/n15/PROOF.md)。$n = 15$ のファイルは Release [right-isosceles-n15-v1](https://github.com/wand125/square-packing/releases/tag/right-isosceles-n15-v1) にもある。
 3. 検査器：[checker/README.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/checker/README.md)、[checker/SPEC.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/checker/SPEC.md)、[checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/right-isosceles/checker2/README.md)。
 4. 詰め方の証明書とその検査器：[tools/packing_check/README.md](https://github.com/wand125/square-packing/blob/main/tools/packing_check/README.md)。

@@ -87,13 +87,13 @@
    "tool": "problems/domino, problems/triangle, problems/right-isosceles: checker/",
    "en": "Python 3.10+, standard library (pytest for the tests).",
    "ja": "Python 3.10+、標準ライブラリ (テストは pytest)。",
-   "source": "problems/right-isosceles/README.md#L73-L84"
+   "source": "problems/right-isosceles/README.md#L75-L90"
   },
   {
    "tool": "problems/domino, problems/triangle, problems/right-isosceles: checker2/",
    "en": "Python with gmpy2 and sympy (sudo apt install python3-gmpy2 python3-sympy python3-pytest).",
    "ja": "Python と gmpy2、sympy (`sudo apt install python3-gmpy2 python3-sympy python3-pytest`)。",
-   "source": "problems/right-isosceles/README.md#L73-L87"
+   "source": "problems/right-isosceles/README.md#L75-L96"
   },
   {
    "tool": "problems/hexagon: stage1_checker, stage1_checker2, stage2_checker, stage2_checker2",
@@ -274,6 +274,7 @@
   }
  ],
  "releases": [
+  {"tag": "right-isosceles-n15-v1", "name": "Right isosceles triangle: optimality certificate for n = 15", "date": "2026-10-14"},
   {
    "tag": "data/valid7-lean-certs-v1",
    "name": "Valid7 Lean certificates (s(k^2 - 3) = k for k >= 6)",
