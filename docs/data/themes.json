@@ -255,8 +255,8 @@
   {
    "issue": 6,
    "url": "https://github.com/wand125/square-packing/issues/6",
-   "state": "open",
-   "updated": "2026-10-07",
+   "state": "stopped",
+   "updated": "2026-10-14",
    "title": {
     "en": "s(76) = 9",
     "ja": "s(76) = 9"
@@ -273,15 +273,19 @@
     {
      "en": "The lift is set up; s(76) ≥ 8.965 is published (mixed_n76_L8965).",
      "ja": "持ち上げの設定は完了。s(76) ≥ 8.965 を公開済み（mixed_n76_L8965）。"
-    }
-   ],
-   "working_on": [
+    },
     {
-     "en": "The remaining cases of the lift: every root must be certified.",
-     "ja": "持ち上げの残りの場合：すべての根を証明する。"
+     "en": "Stopped (2026-10-14): Benjamin Greff has reported a certificate for s(76) = 9 (jlevy/squares#594); its corner regions are our s(59) = 8 cover after the band insertion of our s(77) construction. We have stopped our own lift. The published bound s(76) ≥ 8.965 remains available.",
+     "ja": "停止（2026-10-14）: Benjamin Greff が s(76) = 9 の証明書を報告した（jlevy/squares#594）。その四隅は、当方の s(59) = 8 の被覆に当方の s(77) の構成と同じ帯の挿入をしたもの。当方の持ち上げは止めた。公開済みの下界 s(76) ≥ 8.965 はそのまま利用できる。"
     }
    ],
-   "links": []
+   "working_on": [],
+   "links": [
+    {
+     "label": "jlevy/squares#594",
+     "url": "https://github.com/jlevy/squares/issues/594"
+    }
+   ]
   },
   {
    "issue": 7,
