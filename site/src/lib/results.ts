@@ -7,9 +7,12 @@ export const fraction = (s: string) => { const [n,d] = s.trim().split('/').map(N
 const common = (c: Certificate) => ({rel: c.release_tag, assets: c.assets, check: c.check, cwd: c.check_cwd, docs: c.documents, id: c.id});
 export function squareRows(idx: Index): Result[] {
  return idx.problems['square-lower-bounds'].map(c => {
-  const cl = c.claim, m = cl.match(/^s\((\d+)\) (>=|=) ([0-9./]+)(?: = ([0-9./]+))?$/);
+  let cl = c.claim; const m = cl.match(/^s\((\d+)\) (>=|=) ([0-9./]+)(?: = ([0-9./]+))?$/);
   let n: number, v: number, short: string, kind: string, ja: string;
-  if (m) { n = +m[1]; v = fraction(m[4] || m[3]); short = `s(${n}) ${m[2] === '>=' ? '≥' : '='} ${m[3]}` + (m[3].includes('/') ? ` = ${Number(v.toPrecision(6))}` : ''); kind = m[2] === '=' ? 'exact' : 'lb'; ja = cl; }
+  if (m) { n = +m[1]; v = fraction(m[4] || m[3]); short = `s(${n}) ${m[2] === '>=' ? '≥' : '='} ${m[3]}` + (m[3].includes('/') ? ` = ${Number(v.toPrecision(6))}` : ''); kind = m[2] === '=' ? 'exact' : 'lb'; ja = cl;
+   // s(n) ≥ k with k an integer and n ≤ k²: the k × k grid gives s(n) ≤ k, so the value is exact (s(59) = 8, s(77) = 9)
+   // the claim stays the certificate's own; the grid consequence is in the result note of methods.json
+   if (m[2] === '>=' && Number.isInteger(v) && n <= v * v) { kind = 'exact'; short = `s(${n}) = ${v}`; } }
   else { const m = cl.match(/^No packing of (\d+) closed unit squares fits in the closed square of side ([0-9/]+) \(= ([0-9.]+)\)\./); if (!m) throw new Error('Unrecognized square claim: ' + cl); n = +m[1]; v = +m[3]; kind = 'gt'; short = `s(${n}) > ${m[2]} = ${m[3]}`; ja = `${n} 個の閉じた単位正方形は、辺 ${m[2]}（= ${m[3]}）の閉じた正方形に入らない。`; }
   const key = c.id.slice(c.id.indexOf(':') + 1);
   const meth = key.includes('rect_n') || (c.release_tag === 'square-lower-bounds-history-v1' && key.includes('/cert_n')) ? 'rect' : key.includes('mixed_n') ? 'mixed' : /\/k2m\d/.test(key) ? 'lift' : 'point';
@@ -46,6 +49,5 @@ export function markBest(rows: Result[]) {
 }
 export const resultOrder = (a: Result, b: Result) => Object.keys(CONT).indexOf(a.cont) - Object.keys(CONT).indexOf(b.cont) || a.n - b.n || b.v - a.v;
 export function results() { const idx = readIndex(), rows = [...squareRows(idx), ...otherRows(idx)]; markBest(rows); return rows; }
-export const gridExact = (r: Result) => r.cont === 'square' && r.kind === 'lb' && Number.isInteger(r.v) && r.n <= r.v ** 2;
 /** The old containers × n map, including grid equalities inferred in home.py. */
-export function resultsMap(rows = results()) { const best = rows.filter(r => r.best && r.cont !== 'n17'); return {nmax: Math.max(...best.map(r => r.n)), containers: Object.keys(CONT).filter(c => best.some(r => r.cont === c)).map(cont => ({cont, cells: best.filter(r => r.cont === cont).sort((a,b) => a.n-b.n).map(r => ({...r, exact: r.kind === 'exact' || gridExact(r)}))}))}; }
+export function resultsMap(rows = results()) { const best = rows.filter(r => r.best && r.cont !== 'n17'); return {nmax: Math.max(...best.map(r => r.n)), containers: Object.keys(CONT).filter(c => best.some(r => r.cont === c)).map(cont => ({cont, cells: best.filter(r => r.cont === cont).sort((a,b) => a.n-b.n).map(r => ({...r, exact: r.kind === 'exact'}))}))}; }
