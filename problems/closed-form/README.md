@@ -128,7 +128,14 @@ against that code, not against an independent implementation.
   the published families.
 
 The Python record checker used during development is not included either: it shares code with the search tools,
-so it is not independent of them. An independent checker has not yet been written; one would be welcome.
+so it is not independent of them.
+
+- An independent checker, `indep-checker/` (`cfcheck`, Rust), was written from `SPEC.md` and the published
+  assets only and shares no code with `replay4d`, `seam4d_core` or the search tools. It checks the structure
+  of the families and every leaf of the records with exact rational arithmetic. It replayed intervals 1 and 34
+  completely (all four regions of each) and accepted every leaf with zero refusals: 91,044 roots and
+  3,138,681 leaves, the same leaf count as `replay4d` on these two intervals. The reports are in
+  `indep-checker/receipts/`. The other 32 intervals have not been checked with it.
 
 ## Files
 
@@ -138,6 +145,7 @@ so it is not independent of them. An independent checker has not yet been writte
 - `a_of_n.py`: computes a(N) from `intervals.json` (Python 3 standard library).
 - `structure/`: `validate_family.py` and `structure_all.py`, the structure check of the families.
 - `checker/`: the Rust checker (`seam4d_core` and `replay4d`) and `replay_all.py`.
+- `indep-checker/`: the independent checker `cfcheck` (its own README, tests and receipts).
 - `receipts/`: `replay.json` (the full replay), `structure.json` (the structure check), `families.json`
   (old and new family hashes) and `published_checker.json` (runs of the published build).
 - Release `closed-form-v1`: one asset per interval, `interval_<d0>_<d1>.tar.gz`, containing `family.json`,
