@@ -3,10 +3,29 @@
 import {spawn} from 'node:child_process';
 import {once} from 'node:events';
 import {rm} from 'node:fs/promises';
-import {readFileSync, mkdtempSync, rmSync} from 'node:fs';
+import {readFileSync, mkdtempSync, rmSync, readdirSync, existsSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {resolve, extname, join} from 'node:path';
 import assert from 'node:assert/strict';
+// paper versions: every paper has versions, oldest first with ascending dates and numbers 1, 2, …,
+// and the built page shows the latest one in its header
+for (const slug of readdirSync('src/content/papers')) {
+ const meta = JSON.parse(readFileSync(`src/content/papers/${slug}/meta.json`, 'utf8')), vs = meta.versions;
+ assert.ok(Array.isArray(vs) && vs.length > 0, `${slug}: versions missing`);
+ vs.forEach((v, i) => {
+  assert.equal(v.v, String(i + 1), `${slug}: version numbers must be 1, 2, …`);
+  assert.match(v.date, /^\d{4}-\d{2}-\d{2}$/, `${slug}: date`);
+  assert.match(v.commit, /^[0-9a-f]{7,40}$/, `${slug}: commit`);
+  assert.ok(v.en && v.ja, `${slug}: changes in both languages`);
+  if (i) assert.ok(v.date >= vs[i - 1].date, `${slug}: dates must be ascending`);
+ });
+ const page = `dist/paper-${slug}.html`, last = vs.at(-1);
+ if (existsSync(page)) {
+  const html = readFileSync(page, 'utf8');
+  assert.ok(html.includes(`data-version="${last.v}"`) && html.includes(`Version ${last.v} · ${last.date}`), `${slug}: header must show version ${last.v} · ${last.date}`);
+ }
+}
+console.log('PASS versions: every paper has ascending versions and shows the latest in its header.');
 const profile = mkdtempSync(join(tmpdir(),'sp-reading-'));
 const browser = spawn(process.env.CHROME_BIN || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', [
  '--headless=new','--remote-debugging-pipe','--no-first-run','--no-default-browser-check','--disable-background-networking','--disable-component-update','--disable-sync','--disable-default-apps','--disable-domain-reliability','--disable-extensions','--metrics-recording-only','--no-pings','--host-resolver-rules=MAP * ~NOTFOUND',`--user-data-dir=${profile}`,'about:blank'

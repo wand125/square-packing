@@ -46,5 +46,14 @@
    "Issue #4",
    "https://github.com/wand125/square-packing/issues/4"
   ]
+ ],
+ "versions": [
+  {
+   "v": "1",
+   "date": "2026-10-11",
+   "en": "First version: optimal packings for n = 2, 3, 4, 6, 7, 11, 16, 22, 29 and 37.",
+   "ja": "初版：n = 2, 3, 4, 6, 7, 11, 16, 22, 29, 37 の最適な詰め方。",
+   "commit": "5b29f79"
+  }
  ]
 }

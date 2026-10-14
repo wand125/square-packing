@@ -84,3 +84,7 @@
   a { color: inherit; text-decoration: none; }
 }
 .pp-main .pp-img { display: block; width: 100%; max-width: 420px; height: auto; margin: 12px auto; background: var(--bg2); border-radius: 4px; }
+
+.pp-meta a { color: inherit; }
+.pp-versions table { font-size: 13px; }
+.pp-versions td.nw { white-space: nowrap; }

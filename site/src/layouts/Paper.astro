@@ -8,6 +8,12 @@ import { tex } from '../lib/tex';
 const { file, title, meta, En, Ja, headingsEn, headingsJa } = Astro.props;
 const hj = headingsJa.filter((x) => x.depth === 2);
 const toc = headingsEn.filter((h) => h.depth === 2).map((h, i) => ({ en: h, ja: hj[i] || h }));
+// versions: oldest first in meta.json; the version is raised only when the mathematical content changes
+const GH = 'https://github.com/wand125/square-packing';
+const versions = meta.versions || [], cur = versions[versions.length - 1];
+const slug = file.replace(/^paper-|\.html$/g, '');
+const src = (c, lang) => `${GH}/blob/${c}/site/src/content/papers/${slug}/${lang}.mdx`;
+if (versions.length) toc.push({ en: { slug: 'versions', text: 'Versions' }, ja: { slug: 'versions', text: '版の履歴' } });
 ---
 <Base file={file} title={title} katex>
 <div class={meta.wide ? 'paper pp-wide' : 'paper'}>
@@ -18,12 +24,18 @@ const toc = headingsEn.filter((h) => h.depth === 2).map((h, i) => ({ en: h, ja: 
       <div class="pp-kicker dim"><span data-l="en" set:html={meta.kicker[0]} /><span data-l="ja" set:html={meta.kicker[1]} /></div>
       <h1><span data-l="en" set:html={meta.titleHtml[0]} /><span data-l="ja" set:html={meta.titleHtml[1]} /></h1>
       <p class="pp-lead"><span data-l="en" set:html={tex(meta.lead[0])} /><span data-l="ja" set:html={tex(meta.lead[1])} /></p>
-      <div class="pp-meta dim">{meta.author ?? 'wand125'}</div>
+      <div class="pp-meta dim">{meta.author ?? 'wand125'}{cur && <> · <a href="#versions" data-version={cur.v}><span data-l="en">Version {cur.v} · {cur.date}</span><span data-l="ja">第 {cur.v} 版 · {cur.date}</span></a></>}</div>
       <div class="pp-links">{meta.links.map((l) => <a class="btn" href={l[2]}><T en={l[0]} ja={l[1]} /></a>)}</div>
       <div class="pp-result" set:html={meta.resultHtml} />
     </header>
     <div data-l="en"><En /></div>
     <div data-l="ja"><Ja /></div>
+    {versions.length > 0 && <section class="pp-versions">
+      <h2 id="versions"><T en="Versions" ja="版の履歴" /></h2>
+      <p class="dim"><T en="The version is raised when the mathematical content changes; corrections of wording and layout keep it. Each version links to its source at the commit that published it." ja="数学の内容が変わったときに版を上げ、言い回しや体裁の直しでは上げない。各版から、それを公開したコミットでのソースに飛べる。" /></p>
+      <div class="wrap"><table><thead><tr><th><T en="Version" ja="版" /></th><th><T en="Date" ja="日付" /></th><th><T en="Changes" ja="変更点" /></th><th><T en="Source" ja="ソース" /></th></tr></thead>
+      <tbody>{versions.slice().reverse().map((v) => <tr><td>{v.v}</td><td class="nw">{v.date}</td><td><T en={v.en} ja={v.ja} /></td><td class="nw"><a href={src(v.commit, 'en')}>en.mdx</a> · <a href={src(v.commit, 'ja')}>ja.mdx</a> <span class="dim">({v.commit})</span>{v.release && <> · <a href={`${GH}/releases/tag/${v.release}`}>{v.release}</a></>}</td></tr>)}</tbody></table></div>
+    </section>}
   </article>
 </div>
 <button type="button" class="pp-toc-btn desk-hide" aria-label="contents"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>

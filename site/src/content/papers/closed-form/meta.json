@@ -33,5 +33,15 @@
    "https://github.com/wand125/square-packing/issues/1"
   ]
  ],
- "wide": true
+ "wide": true,
+ "versions": [
+  {
+   "v": "1",
+   "date": "2026-10-13",
+   "en": "First version, with the table for N ≤ 3600 and the plots by block.",
+   "ja": "初版。N ≤ 3600 の表とブロックごとの図つき。",
+   "commit": "7432824",
+   "release": "closed-form-v1"
+  }
+ ]
 }

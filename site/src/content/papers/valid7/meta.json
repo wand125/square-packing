@@ -41,5 +41,14 @@
    "evand/square-packing",
    "https://github.com/evand/square-packing"
   ]
+ ],
+ "versions": [
+  {
+   "v": "1",
+   "date": "2026-10-11",
+   "en": "First version: independent exact checks of Valid7 and ValidTilt9.",
+   "ja": "初版：Valid7 と ValidTilt9 の独立な厳密な検査。",
+   "commit": "5b29f79"
+  }
  ]
 }

@@ -36,5 +36,14 @@
    "Issue #16",
    "https://github.com/wand125/square-packing/issues/16"
   ]
+ ],
+ "versions": [
+  {
+   "v": "1",
+   "date": "2026-10-11",
+   "en": "First version: s(4) = v4 ≈ 1.9302833.",
+   "ja": "初版：s(4) = v4 ≈ 1.9302833。",
+   "commit": "5b29f79"
+  }
  ]
 }

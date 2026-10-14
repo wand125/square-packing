@@ -31,5 +31,21 @@
    "Issue #13",
    "https://github.com/wand125/square-packing/issues/13"
   ]
+ ],
+ "versions": [
+  {
+   "v": "1",
+   "date": "2026-10-11",
+   "en": "First version: n = 2, 3, 4, 6, 10.",
+   "ja": "初版：n = 2, 3, 4, 6, 10。",
+   "commit": "5b29f79"
+  },
+  {
+   "v": "2",
+   "date": "2026-10-14",
+   "en": "Adds n = 15: s(15) = 6, with the degenerate staircase (§3.1) and the second checker's sweep inside pose boxes (§5).",
+   "ja": "n = 15 を追加：s(15) = 6。退化した階段の扱い（§3.1）と、第 2 の検査器の姿勢の箱の中での掃引（§5）。",
+   "commit": "5100848"
+  }
  ]
 }

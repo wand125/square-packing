@@ -24,6 +24,13 @@ result ID; its source-backed consequences supplement the recorded claim without 
 it. A method's `review_status` is shared by its method summary and result notes.
 Text pairs use `en` and `ja`; source paths are relative to the repository root, or URLs.
 
+## Paper versions
+
+Each paper's `meta.json` (`site/src/content/papers/<slug>/`) lists its `versions`, oldest first:
+number, date, one line of changes in `en` and `ja`, and the `commit` on main that published it
+(optionally a `release`). Raise the version only when the mathematical content changes; corrections
+of wording, typos and layout keep it. `scripts/check-papers.mjs` checks the list and the header.
+
 ## Build
 
 Run `python3 site/build.py` from the repository root (Python 3.12 or newer). This writes
