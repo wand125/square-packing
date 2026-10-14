@@ -34,7 +34,7 @@ if (versions.length) toc.push({ en: { slug: 'versions', text: 'Versions' }, ja: 
       <h2 id="versions"><T en="Versions" ja="版の履歴" /></h2>
       <p class="dim"><T en="The version is raised when the mathematical content changes; corrections of wording and layout keep it. Each version links to its source at the commit that published it." ja="数学の内容が変わったときに版を上げ、言い回しや体裁の直しでは上げない。各版から、それを公開したコミットでのソースに飛べる。" /></p>
       <div class="wrap"><table><thead><tr><th><T en="Version" ja="版" /></th><th><T en="Date" ja="日付" /></th><th><T en="Changes" ja="変更点" /></th><th><T en="Source" ja="ソース" /></th></tr></thead>
-      <tbody>{versions.slice().reverse().map((v) => <tr><td>{v.v}</td><td class="nw">{v.date}</td><td><T en={v.en} ja={v.ja} /></td><td class="nw"><a href={src(v.commit, 'en')}>en.mdx</a> · <a href={src(v.commit, 'ja')}>ja.mdx</a> <span class="dim">({v.commit})</span>{v.release && <> · <a href={`${GH}/releases/tag/${v.release}`}>{v.release}</a></>}</td></tr>)}</tbody></table></div>
+      <tbody>{versions.slice().reverse().map((v) => <tr><td>{v.v}</td><td class="nw">{v.date}</td><td><T en={v.en} ja={v.ja} /></td><td class="nw">{v.commit ? <><a href={src(v.commit, 'en')}>en.mdx</a> · <a href={src(v.commit, 'ja')}>ja.mdx</a> <span class="dim">({v.commit})</span></> : <span class="dim">—</span>}{v.release && <> · <a href={`${GH}/releases/tag/${v.release}`}>{v.release}</a></>}</td></tr>)}</tbody></table></div>
     </section>}
   </article>
 </div>

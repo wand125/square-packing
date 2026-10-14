@@ -808,6 +808,39 @@
    ],
    "url": "https://github.com/wand125/square-packing/issues/17",
    "updated": "2026-10-11"
+  },
+  {
+   "issue": 20,
+   "state": "open",
+   "title": {
+    "en": "Unit cubes in a cube — s₃(9) = s₃(10) = 2 + 1/√2",
+    "ja": "立方体の中の単位立方体 — s₃(9) = s₃(10) = 2 + 1/√2"
+   },
+   "goal": {
+    "en": "Prove that the packings of 9 and 10 unit cubes at side 2 + 1/√2 listed in Erich Friedman's Packing Center (Cubes in Cubes) are optimal.",
+    "ja": "Erich Friedman の Packing Center（Cubes in Cubes）にある、辺 2 + 1/√2 に単位立方体 9 個と 10 個を入れる詰め方が最適であることを示す。"
+   },
+   "method": {
+    "en": "An 8-point lemma: every closed unit cube in [0, s]³, s = 2 + 1/√2, contains a point of V = {1, s − 1}³; scaling then rules out 9 cubes in a smaller cube. The lemma is proved by interval branch and bound over poses, with a point test, the centre rule from Lemma F, the wall lemma, the pair lemma and the local sign lemma as closing rules.",
+    "ja": "8 点の補題：s = 2 + 1/√2 として、[0, s]³ の中の閉じた単位立方体はどれも V = {1, s − 1}³ の点を含む。広げる議論で、それより小さい立方体に 9 個は入らない。補題は姿勢の区間の分枝限定で示し、点の判定、補題 F による中心の規則、壁の補題、対の補題、局所の符号の補題で箱を閉じる。"
+   },
+   "done": [
+    {
+     "en": "s₃(9) = s₃(10) = 2 + 1/√2. The packings are written exactly in Q(√2) and checked by two exact checkers; the 8-point lemma is checked by two independent interval branch-and-bound checkers, both complete with 0 unresolved boxes (6,539,999 and 784,835,241 boxes). Not peer reviewed (problems/cubes-in-cube/).",
+     "ja": "s₃(9) = s₃(10) = 2 + 1/√2。配置は Q(√2) で厳密に書き、2 つの厳密な検査器で検査。8 点の補題は独立な 2 つの区間の分枝限定の検査器で検査し、どちらも未解決の箱 0 で完走（箱 6,539,999 個と 784,835,241 個）。査読は受けていない（problems/cubes-in-cube/）。"
+    }
+   ],
+   "working_on": [],
+   "links": [
+    {
+     "label": "problems/cubes-in-cube/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube"
+    }
+   ],
+   "releases": [],
+   "url": "https://github.com/wand125/square-packing/issues/20",
+   "updated": "2026-10-15",
+   "paper": "paper-cubes-in-cube.html"
   }
  ]
 }

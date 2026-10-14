@@ -1,0 +1,45 @@
+{
+ "kicker": [
+  "Computer-assisted proof",
+  "コンピュータ支援の証明"
+ ],
+ "title": [
+  "Unit cubes in a cube: \\(s_3(9) = s_3(10) = 2 + 1/\\sqrt2\\)",
+  "立方体に入る単位立方体：\\(s_3(9) = s_3(10) = 2 + 1/\\sqrt2\\)"
+ ],
+ "lead": [
+  "Every closed unit cube in the cube of side \\(2 + 1/\\sqrt2\\) contains one of 8 points, so 9 unit cubes do not fit in a smaller cube. The 8-point lemma is proved by interval branch and bound with five closing rules, run by two independent checkers.",
+  "辺 \\(2 + 1/\\sqrt2\\) の立方体の中の閉じた単位立方体はどれも 8 点のどれかを含むので、それより小さい立方体に単位立方体 9 個は入らない。8 点の補題は 5 つの閉じる規則による区間の分枝限定で示し、独立な 2 つの検査器で走らせた。"
+ ],
+ "result": [
+  "\\(s_3(9) = s_3(10) = 2 + \\dfrac{1}{\\sqrt2} \\approx 2.7071068\\)",
+  "\\(s_3(9) = s_3(10) = 2 + \\dfrac{1}{\\sqrt2} \\approx 2.7071068\\)"
+ ],
+ "author": "Hiroaki Hosono (wand125)",
+ "links": [
+  [
+   "Interactive figure",
+   "対話型の図",
+   "cubes.html"
+  ],
+  [
+   "Code & proof",
+   "コードと証明",
+   "https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube"
+  ],
+  [
+   "Issue #20",
+   "Issue #20",
+   "https://github.com/wand125/square-packing/issues/20"
+  ]
+ ],
+ "versions": [
+  {
+   "v": "1",
+   "date": "2026-10-15",
+   "en": "First version: s₃(9) = s₃(10) = 2 + 1/√2.",
+   "ja": "初版：s₃(9) = s₃(10) = 2 + 1/√2。",
+   "commit": ""
+  }
+ ]
+}

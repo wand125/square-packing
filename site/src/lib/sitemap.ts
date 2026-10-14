@@ -24,6 +24,8 @@ export const PAGES: Page[] = [
   { file: 'paper-closed-form-plots.html', en: 'Plots by block, k = 7 to 17', ja: 'ブロックごとの比較図', title: 'Closed-Form Bound Plots', group: '' },
   { file: 'paper-closed-form-table.html', en: 'Lower bounds for N ≤ 3600', ja: 'N ≤ 3600 の下界の表', title: 'Closed-Form Bound Table', group: '' },
   { file: 'paper-closed-form.html', en: 'Closed-form bound for s(N)', ja: 's(N) の閉じた式の下界', title: 'A Closed-Form Lower Bound for s(N)', group: '' },
+  { file: 'paper-cubes-in-cube.html', en: 'Unit cubes in a cube', ja: '立方体の中の単位立方体', title: 'Unit Cubes in a Cube', group: '' },
+  { file: 'cubes.html', en: 'Cubes in a cube', ja: '立方体の容器', title: 'Cubes in a Cube', group: 'viz' },
   { file: 'paper-hexagon-n3.html', en: 'Hexagon, n = 3', ja: '正六角形 n = 3', title: 'Three Unit Squares in a Regular Hexagon', group: '' },
 ];
 

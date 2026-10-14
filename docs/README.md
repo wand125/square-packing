@@ -29,7 +29,8 @@ Text pairs use `en` and `ja`; source paths are relative to the repository root, 
 Each paper's `meta.json` (`site/src/content/papers/<slug>/`) lists its `versions`, oldest first:
 number, date, one line of changes in `en` and `ja`, and the `commit` on main that published it
 (optionally a `release`). Raise the version only when the mathematical content changes; corrections
-of wording, typos and layout keep it. `scripts/check-papers.mjs` checks the list and the header.
+of wording, typos and layout keep it. The newest version may have an empty `commit` until the push
+that publishes it; fill it in with that commit afterwards. `scripts/check-papers.mjs` checks the list and the header.
 
 ## Build
 

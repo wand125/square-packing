@@ -332,6 +332,36 @@
    ]
   },
   {
+   "id": "cube-8-points",
+   "name": {
+    "en": "Unit cubes: an 8-point set and interval branch and bound over poses",
+    "ja": "単位立方体：8 点の集合と姿勢の区間の分枝限定"
+   },
+   "what": {
+    "en": "With s = 2 + 1/√2 and V = {1, s − 1}³, every closed unit cube in [0, s]³ contains a point of V (boundary points count). Scaling 9 cubes from a smaller container up to side s gives 9 disjoint closed cubes, each containing a point of V, but V has only 8 points. The 8-point lemma is proved by interval branch and bound over the six parameters of a pose; each box is closed by a point test, the centre rule from Lemma F, the wall lemma, the pair lemma or the local sign lemma. Every rule is a closed inequality; no epsilon is used.",
+    "ja": "s = 2 + 1/√2、V = {1, s − 1}³ とすると、[0, s]³ の中の閉じた単位立方体はどれも V の点を含む（境界上の点も数える）。それより小さい容器の 9 個を辺 s まで広げると互いに交わらない閉じた立方体 9 個になる。それぞれが V の点を含むが、V は 8 点しかない。8 点の補題は姿勢の 6 つの変数の区間の分枝限定で示し、各箱を点の判定、補題 F による中心の規則、壁の補題、対の補題、局所の符号の補題のいずれかで閉じる。どの規則も閉じた不等式で、epsilon は使わない。"
+   },
+   "used": {
+    "en": "Cube n = 9, 10: s₃(9) = s₃(10) = 2 + 1/√2.",
+    "ja": "立方体 n = 9, 10：s₃(9) = s₃(10) = 2 + 1/√2。"
+   },
+   "origin": {
+    "en": "The point-set method for squares in squares (Friedman's survey DS7); the packings are from Erich Friedman's Packing Center (Cubes in Cubes). Lemma F, the wall lemma and the pair lemma are from our earlier work on cubes in cubes; the 8-point lemma, the local sign lemma and the two checkers are new.",
+    "ja": "正方形の中の正方形の点集合の手法（Friedman の概説 DS7）。配置は Erich Friedman の Packing Center（Cubes in Cubes）による。補題 F・壁の補題・対の補題は立方体についての当方の以前の仕事から。8 点の補題・局所の符号の補題・2 つの検査器は新しい。"
+   },
+   "tools": [
+    "problems/cubes-in-cube/checker",
+    "problems/cubes-in-cube/checker2",
+    "problems/cubes-in-cube/lemma_f",
+    "problems/cubes-in-cube/upper"
+   ],
+   "sources": [
+    "problems/cubes-in-cube/README.md#L24-L45",
+    "problems/cubes-in-cube/README.md#L68-L76",
+    "problems/cubes-in-cube/PROOF.md"
+   ]
+  },
+  {
    "id": "n17-bb",
    "name": {
     "en": "n = 17 sub-pattern branch and bound",

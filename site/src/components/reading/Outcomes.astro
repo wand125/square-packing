@@ -6,7 +6,7 @@ import {a, bi, bd, esc, row, cell, paperLink} from '../../lib/reading';
 import {url} from '../../lib/sitemap';
 import {pageDescriptions} from '../../lib/page-list';
 const themes = [...readEditorial('themes.json').themes].sort((a,b) => Number(a.state === 'open') - Number(b.state === 'open'));
-const themeRows = themes.map(t => row([cell(a(t.url, '#' + t.issue),'num'), cell(`<span class="st${t.state === 'closed' ? ' ex' : t.state === 'stopped' ? ' stp' : ''}">${t.state === 'open' ? bi('open','進行中') : t.state === 'stopped' ? bi('stopped','停止') : bi('closed','完了')}</span>`,'nw'), cell(paperLink(t.issue, bd(t.title))),cell(esc(t.updated || ''),'num dim')])).join('');
+const themeRows = themes.map(t => row([cell(t.issue ? a(t.url, '#' + t.issue) : '–','num'), cell(`<span class="st${t.state === 'closed' ? ' ex' : t.state === 'stopped' ? ' stp' : ''}">${t.state === 'open' ? bi('open','進行中') : t.state === 'stopped' ? bi('stopped','停止') : bi('closed','完了')}</span>`,'nw'), cell(paperLink(t.issue, bd(t.title), t.paper)),cell(esc(t.updated || ''),'num dim')])).join('');
 // small icons for the page items on phones
 const sv = (d: string) => `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="${d}" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const ICONS: Record<string, string> = {

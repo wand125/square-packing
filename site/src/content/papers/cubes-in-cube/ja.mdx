@@ -1,0 +1,287 @@
+import CubesInCube from '../../../components/viz/CubesInCube.tsx';
+
+## 要旨
+
+$s_3(n)$ を、内部が互いに交わらない $n$ 個の単位立方体（位置・向きは自由）を含む最小の立方体の一辺とする。 $s_3(9) = s_3(10) = 2 + 1/\sqrt2$ を証明する。上界は Erich Friedman の Packing Center のページ「Cubes in Cubes」に載っている詰め方で、角の立方体 8 個と、鉛直な軸のまわりに $45^\circ$ 回した立方体 1 個または 2 個からなる。これらを $\mathbb Q(\sqrt2)$ で厳密に書き、2 つの厳密な検査器で検査した。その独自性は主張しない。 下界は、把握している範囲では新しい。下界は 8 点の補題による：$s = 2 + 1/\sqrt2$ とすると、$[0, s]^3$ の中のどの閉じた単位立方体も $V = \{1, s-1\}^3$ の点を含む。拡大の議論により、より小さい立方体に 9 個は入らない。 8 点の補題は、姿勢の 6 個のパラメータについての区間の分枝限定で証明する。どの箱も、ここで証明する 5 つの規則（点の判定、補題 F による中心の規則、壁の補題、対の補題、局所の符号の補題）のいずれかで閉じる。 下界は達成されるので、いくつかの姿勢で余裕は 0 である。どの規則も閉じた不等式で、イプシロンは使わない。 分枝限定は独立な 2 つの検査器で実行し、どちらも未解決の箱 0 で完走した。証明はコンピュータ支援によるもので、査読は受けていない。
+
+## 記法
+
+- $s = 2 + 1/\sqrt2$ とする。よって $s - 2 = 1/\sqrt2$ であり、$V = \{1, s-1\}^3$ は 8 点の集合である。
+- *姿勢* は $R \in SO(3)$ と $c \in \mathbb R^3$ の組 $(R, c)$ である。その立方体は $Q = \{c + Rt : \lVert t\rVert_\infty \le \tfrac12\}$。$R$ の列 $a_0, a_1, a_2$ が立方体の軸である。
+- 点 $p$ の局所座標を $t_i(p) = a_i \cdot (p - c)$ とする。$p \in Q$ は $i = 0, 1, 2$ について $|t_i(p)| \le \tfrac12$ であることと同値である。
+- $h_w = \tfrac12 \sum_j |R_{wj}|$ は $R$ の行 $w$ の $\ell^1$ ノルムの半分である。$Q \subseteq [0, s]^3$ は、どの世界座標の軸 $w$ についても $h_w \le c_w \le s - h_w$ であることと同値である（支持関数）。どの行も単位ベクトルなので $\tfrac12 \le h_w \le \sqrt3/2 < s/2$。
+
+## 1. 主補題と拡大の議論
+
+**主補題（8 点の補題）.** どの閉じた単位立方体 $Q \subseteq [0, s]^3$ も $V$ の点を含む。$Q$ の境界上の点も数える。
+
+**定理.** $s_3(9) = s_3(10) = s$。
+
+*証明.* 上界：[upper/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/upper) は、$[0, s]^3$ の中の単位立方体 9 個と 10 個の厳密な詰め方を $\mathbb Q(\sqrt2)$ で与える。どちらも独立な 2 つの厳密な検査器で検査した。これらは Erich Friedman のページに載っている詰め方である（[出典](#出典)）。
+
+下界：内部が互いに交わらない 9 個の単位立方体が $L < s$ の $[0, L]^3$ に入るとする。このとき、次のようにして $[0, s]^3$ の中の互いに交わらない閉じた単位立方体 9 個が得られる。
+
+- $\lambda = L/s < 1$ とおく。
+- 各立方体を、中心を $c_i$ として $(1/\lambda - 1)\, c_i$ だけ平行移動する。新しい中心は $c_i/\lambda$ で、向きは変わらない。
+- 移した立方体は $[0, s]^3$ に入る。立方体の支持関数の値を $h_w$ とすると、元の立方体は $h_w \le c_{i,w} \le L - h_w$ をみたす。$\lambda$ で割ると
+  $$
+  h_w \le h_w/\lambda \le c_{i,w}/\lambda \le (L - h_w)/\lambda = s - h_w/\lambda \le s - h_w,
+  $$
+  となり、これは移した立方体が入る条件である。
+- 内部の交わらない 2 個の立方体には、$u\cdot(c_j - c_i) \ge \sigma_i(u) + \sigma_j(u) > 0$（$\sigma$ は支持関数の値）となる分離方向 $u$ がある。平行移動のあと左辺は $1/\lambda > 1$ 倍になるので、不等式は狭義になり、閉じた立方体は交わらない。
+
+主補題より、9 個の閉じた立方体はそれぞれ $V$ の点を含む。$|V| = 8$ なので 2 個が同じ点を含み、交わらないことに反する。よって $s_3(9) \ge s$、また $s_3(10) \ge s_3(9) \ge s$。 $\blacksquare$
+
+以下では主補題を証明する。ある点で $\lVert t\rVert_\infty \le \tfrac12$ となる姿勢はその点を含むと数え、以下の不等式はすべて閉じている。下界は達成される（一辺 $s$ に 9 個が入る）ので、狭義の余裕は得られない。余裕 0 の姿勢は以下の補題で厳密に扱う。
+
+### 詰め方
+
+[upper/configs.py](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/upper/configs.py) は 3 つの詰め方を $\mathbb Q(\sqrt2)$ で厳密に書く。
+
+| 詰め方 | 一辺 | 立方体 | 結果 |
+|---|---|---|---|
+| n8_side2 | 2 | 軸に平行な $2\times2\times2$ の格子 | $n \le 8$ で $s_3(n) \le 2$ |
+| n9_s | $s$ | 角の立方体 8 個と、中心で $z$ のまわりに $45^\circ$ 回した立方体 1 個 | $s_3(9) \le s$ |
+| n10_s | $s$ | 角の立方体 8 個と、中央の柱の $z \in [0, 1]$ と $[s-1, s]$ にある同様の回した立方体 2 個 | $s_3(10) \le s$ |
+
+回した立方体の水平な断面はひし形 $|x - s/2| + |y - s/2| \le 1/\sqrt2$ である。角の立方体とは $(1, 1)$ のような点でだけ接する。
+
+<CubesInCube lang="ja" client:visible />
+
+*一辺 $s$ での $n = 9$ と $10$ の詰め方。upper/configs.py の厳密な座標から描いた。$V$ の 8 点を表示できる。角の立方体はそれぞれ内側の頂点に $V$ の点を 1 個含み、回した立方体はそれぞれ境界上に $V$ の点をもつ。*
+
+独立な 2 つの厳密な検査が、3 つの詰め方をすべて受理する。
+
+- `check_sympy.py`（sympy での厳密な演算）：どの頂点も $[0, s]^3$ にある。15 本の軸についての分離軸定理により、内部は互いに交わらない（接触は許す）。どの $R$ も直交で行列式は 1。
+- `check_q2.py`（sympy を使わず、Python の Fraction の上に独自の体 $\mathbb Q(\sqrt2)$ を作り、厳密な符号判定をもつ）：入ることは頂点で判定する。内部が交わらないことは $A \cap B$ の体積を厳密に計算して判定する。各立方体の面を相手の閉じた半空間で切り抜き、発散定理を使う。体積はちょうど 0 でなければならない。
+
+どちらも対照の負例を棄却する：高さ方向に 0.4 だけ重なる、積み重ねた 2 個の回した立方体と、床から突き出た立方体（`check_q2.py`）。体積の計算の健全性の確認として、立方体とそれ自身では 1、半分ずらした複製では $\tfrac12$、自身の中心のまわりに $45^\circ$ 回した立方体では $2(\sqrt2 - 1)$ を得る。
+
+## 2. 補題 F（中心の補題）
+
+**補題 F.** すべての $R \in SO(3)$ とすべての列 $k$ について $F_k(R) := \sum_w |R_{wk}|\,(2 - 2h_w) \le 1$。
+
+これは $s_3(2) = 2$ の背後にある不等式である。証明（§2.2、§2.3）は、ある $|R_{wk}| \ge 1/\sqrt2$ のときは手による証明、それ以外ではコンピュータによる証明で、独立な 2 つの厳密または区間の検査器による。
+
+**系（中心の規則）.** すべての $w$ について $|p_w - c_w| \le 1 - h_w$ なら $p \in Q$。
+
+*証明.* $|t_i(p)| \le \sum_w |R_{wi}|\,|p_w - c_w| \le \sum_w |R_{wi}|(1 - h_w) = \tfrac12 F_i(R) \le \tfrac12$。 $\blacksquare$
+
+壁 $p_w = 1$ で $h_w \le c_w \le 1$ のとき、条件は $1 - c_w \le 1 - h_w$ となり、つねに成り立つ。検査器はパラメータ表示 $c_w = h_w + u_w(s - 2h_w)$、$u_w \in [0, 1]$ を使い、区間演算でもこれが厳密に保たれるようにしている。
+
+### 2.1 補題 F と s₃(2) = 2
+
+この節では $a_{ik} = |R_{ik}|$、$w_i = \sum_j |R_{ij}|$（行 $i$ の $\ell^1$ ノルム、すなわち立方体 $R[-\tfrac12, \tfrac12]^3$ の方向 $e_i$ の幅。$w_i = 2h_i$）と書き、$F_k(R) = \sum_i a_{ik}(2 - w_i)$ とする。補題 F は符号と行・列の置換について対称なので、$R \in O(3)$ について述べてよい。以下の証明は直交性だけを使う。
+
+**系（$s_3(2) = 2$）.** $a < 2$ とする。単位立方体 $C = c + R[-\tfrac12, \tfrac12]^3$ が $K_a = [-a/2, a/2]^3$ に入るなら、$K_a$ の中心 0 は $C$ の内部にある。よって、内部の交わらない 2 個の単位立方体は一辺 $a < 2$ の立方体に入らない。単調性と $2\times2\times2$ の詰め方と合わせて、$2 \le n \le 8$ で $s_3(n) = 2$。
+
+*系の証明.*
+
+- 0 が $C$ の内部にないとする。$C = \{x : \lVert R^{\mathsf T}(x - c)\rVert_\infty \le \tfrac12\}$ なので、$R$ のある列 $u_k$ について $|u_k\cdot c| \ge \tfrac12$。
+- 入ることは、すべての $i$ について $|c_i| + w_i/2 \le a/2$ を意味するので、$a - w_i \ge 0$。
+- よって $|u_k\cdot c| \le \sum_i a_{ik}|c_i| \le \sum_i a_{ik}(a - w_i)/2 < \sum_i a_{ik}(2 - w_i)/2 = F_k/2$。$a < 2$ かつ $\sum_i a_{ik} \ge 1$ なので、不等式は狭義である。
+- 補題 F より $|u_k\cdot c| < \tfrac12$ となり、矛盾する。 $\blacksquare$
+
+$2 \le n \le 8$ での $s_3(n) = 2$ の新規性は主張しない。主たる証明が補題 F を使うので載せている。
+
+### 2.2 軸の近く：ある |R_ik| ≥ 1/√2 なら F_k ≤ 1（手による証明）
+
+行と列の置換と符号の反転により、$k = 1$、$i = 1$、$R_{11} = \cos\theta \ge 1/\sqrt2$、$0 \le \theta \le \pi/4$ とする。$x = (R_{21}, R_{31})$（よって $\lVert x\rVert_2 = \sin\theta$）、$M$ を右下の $2\times2$ の区画、$u$ を列 1 とする。
+
+(a) $v_i = w_i - a_{i1}$ として $\sum_i a_{i1}w_i = 1 + \sum_i a_{i1}v_i$ なので、
+$$
+1 - F_1 = 2(1 - \cos\theta) - 2\lVert x\rVert_1 + a_{11}(|R_{12}| + |R_{13}|) + \sum_{i=2,3} |x_i|\,\lVert M_i\rVert_1.
+$$
+
+(b) 列 1 と列 $j$ は直交する：$R_{11}R_{1j} + (M^{\mathsf T}x)_j = 0$。よって $a_{11}(|R_{12}| + |R_{13}|) = \lVert M^{\mathsf T}x\rVert_1$。
+
+(c) $M$ の極分解。
+
+- 行 2 と行 3 は正規直交なので $MM^{\mathsf T} = I - xx^{\mathsf T}$。
+- 極分解は $M = PQ$ で、$P = (I - xx^{\mathsf T})^{1/2} = I - (1 - \cos\theta)\,\hat x\hat x^{\mathsf T}$、$\hat x = x/\sin\theta$。$P$ の固有値は 1 と $\cos\theta > 0$ なので $P$ は可逆で、$Q = P^{-1}M$ は直交である。
+- $Px = \cos\theta\cdot x$ なので $M^{\mathsf T}x = \cos\theta\cdot Q^{\mathsf T}x$。
+- $M$ の行 $i$ は $Q_i - (1 - \cos\theta)\,\hat x_i(\hat x^{\mathsf T}Q)$ である。$\sum_i |x_i||\hat x_i| = \sin\theta$ を使うと
+  $$
+  \sum_i |x_i|\,\lVert M_i\rVert_1 \ge \sum_i |x_i|\,\lVert Q_i\rVert_1 - (1 - \cos\theta)\,\lVert Q^{\mathsf T}x\rVert_1.
+  $$
+
+(d) 合わせると
+$$
+1 - F_1 \ge K_2 + 2(1 - \cos\theta)(1 - \lVert Q^{\mathsf T}x\rVert_1), \qquad K_2 = \lVert Q^{\mathsf T}x\rVert_1 + \sum_i |x_i|\,\lVert Q_i\rVert_1 - 2\lVert x\rVert_1.
+$$
+
+(e) $K_2 \ge 0$（平面の場合）。
+
+- $Q$ のどの行と列も $\ell^1$ ノルムは $L = |\cos\varphi| + |\sin\varphi| \in [1, \sqrt2]$。
+- $Q$ の $\ell^1$ 作用素ノルムは列の $\ell^1$ ノルムの最大値なので、$\lVert x\rVert_1 = \lVert Q(Q^{\mathsf T}x)\rVert_1 \le L\,\lVert Q^{\mathsf T}x\rVert_1$。
+- よって $K_2 \ge \lVert x\rVert_1(1/L + L - 2) = \lVert x\rVert_1(L - 1)^2/L \ge 0$。
+
+(f) $\theta \le \pi/4$ なので $\lVert Q^{\mathsf T}x\rVert_1 \le \sqrt2\,\lVert x\rVert_2 = \sqrt2\sin\theta \le 1$。
+
+したがって $1 - F_1 \ge 2(1 - \cos\theta)(1 - \sqrt2\sin\theta) \ge 0$。 $\blacksquare$
+
+等号 $F_k = 1$ は $\theta = 0$、すなわち列が座標軸のときに成り立つ。そこから離れると余裕は 2 次で増える。この余裕 0 が、軸の近くの部分を手で証明する理由である。
+
+### 2.3 軸から遠い所：すべての |R_ik| ≤ 1/√2 なら F_k < 1（コンピュータによる証明）
+
+独立な 2 つの検査器が $SO(3)$ を覆い、各箱と各列について、箱全体である $|R_{ik}|^2 > \tfrac12$ となる（§2.2 が使える）か、箱全体で $F_k < 1$ となるとき、その箱を閉じる。そうでなければ箱を分割する。
+
+| | 第 1 系（`far_bb.py`） | 第 2 系（`check2/far_check2.py`） |
+|---|---|---|
+| 回転 | 単位四元数。立方体の 4 つの面 $q_m = 1$（他の座標は $[-1, 1]$）で覆い、これらは $S^3/\pm1$ を覆う。$R = N(q)/\lvert q\rvert^2$ | $SO(3)$ 全体での ZYZ オイラー角。対称性による縮小なし |
+| 演算 | 厳密な有理数の区間演算（Python の `Fraction`） | 64 ビットの `mpmath` の区間演算。$\pi$ は区間で挟む |
+| 結果 | 箱 1,567,228 個、閉じた箱 783,616 個、最大深さ 21、ok | 箱 594,431 個、葉 297,216 個、最大深さ 22、ok |
+
+第 2 系は `far_bb.py` を読まずに書いた。浮動小数点（ランダムな回転 4×10⁷ 個）では、遠い領域での $F_k$ の最大は約 $0.8284 = 2\sqrt2 - 2$ である。これは境界 $|R_{ik}| = 1/\sqrt2$ の近くで起き、余裕は約 0.17 残る。
+
+## 3. 壁の補題
+
+**壁の補題.** $p \in V$、$p_w = 1$ とし、$c_w \ge h_w$（下の壁）と仮定する。ある軸 $i$ と符号 $\sigma$ について $\sigma R_{wi} > 0$ であり、$j \ne i$ の両方について $|R_{wj}| + |t_j(p)| \le \tfrac12$ とする。このとき $\sigma t_i(p) \le \tfrac12$。
+
+*証明.* $p - c = Rt$ の行 $w$ から $\sum_j R_{wj}t_j = 1 - c_w \le 1 - h_w$。$\rho = |R_{wi}| = \sigma R_{wi} > 0$ とおく。このとき
+$$
+\rho\cdot\sigma t_i = R_{wi}t_i \le 1 - h_w + \sum_{j\ne i} |R_{wj}||t_j| = 1 - \tfrac12\rho - \sum_{j\ne i} |R_{wj}|(\tfrac12 - |t_j|).
+$$
+仮定より $\tfrac12 - |t_j| \ge |R_{wj}|$ なので、最後の和は $\sum_{j\ne i} R_{wj}^2 = 1 - \rho^2$ 以上である。よって $\rho\cdot\sigma t_i \le \rho^2 - \tfrac12\rho$ となり、$\sigma t_i \le \rho - \tfrac12 \le \tfrac12$。 $\blacksquare$
+
+上の壁（$p_w = s - 1$、$c_w \le s - h_w$）は鏡像 $c \mapsto s - c$ で同じである。
+
+**壁での締め付け.** $p_w = 1$、$c_w \ge h_w$、$R_{wk} \ge 0$ なら
+$$
+R_{wk}(p_w - c_w) \le R_{wk}(1 - h_w) = \tfrac12 - \tfrac12(1 - R_{wk})^2 - \tfrac12 R_{wk}\sigma_{wk}, \qquad \sigma_{wk} = \sum_{j\ne k} |R_{wj}|.
+$$
+等式は $2h_w = R_{wk} + \sigma_{wk}$ から従う。この評価で $t_k(p)$ の上界の $w$ の項を置き換え、区間の依存性の問題を避ける。$R_{wk} \le 0$ の場合（下界）と上の壁は鏡像である。
+
+## 4. 対の補題
+
+$p, q \in V$ がちょうど 2 つの座標で異なるとする。$d = q - p$ は $\pm1/\sqrt2$ の成分を 2 つもつので $|d| = 1$ であり、このような対は 12 組ある。$t_i(q) = t_i(p) + a_i\cdot d$、$|a_i\cdot d| \le 1$ である。
+
+**対の補題.** ある軸 $i$ と符号 $\sigma$ について次が成り立つとする。
+
+- 両方の点が、$j \ne i$ の両方について $|t_j| \le \tfrac12$ をみたす。
+- $\sigma t_i(p) \le \tfrac12$。
+- $\sigma t_i(q) \ge -\tfrac12$。
+
+このとき $p \in Q$ または $q \in Q$。
+
+*証明.* $\sigma t_i(p) \ge -\tfrac12$ なら $p \in Q$。そうでなければ $\sigma t_i(q) \le \sigma t_i(p) + 1 < \tfrac12$ なので $q \in Q$。 $\blacksquare$
+
+## 5. 局所の符号の補題
+
+検査器は、ここまでの規則では 1 つの姿勢を閉じられない：$x$ 軸のまわりに $45^\circ$ 回し、壁 $x = 0$ に接し、中心が $(\tfrac12, s/2, s/2)$ の立方体である。$x = 1$ の 4 点は、その面 $x = 1$ の辺の中点にある。この姿勢の近くでは、どの点が含まれるかが 2 つの連続な量の符号によって替わる。よって、この姿勢のまわりの箱は、点を 1 個指定するだけでは閉じられない。次の補題は点を 2 個指定し、姿勢そのものを含む近傍全体を閉じる。
+
+記法：
+
+- $g = (1, s/2, s/2)$ は $x = 1$ の 4 点の中心である。
+- 4 点は $q_\sigma = g + a(0, \sigma_y, \sigma_z)$、$\sigma \in \{\pm1\}^2$、$a = s/2 - 1 = 1/(2\sqrt2)$ である。
+- $f = c + \tfrac12 a_0$ は遠い側の面の中心である。
+- $e = g - f$、$p = a_1\cdot e$、$r = a_2\cdot e$。
+- $\nu = (a_{0y}, a_{0z})$、$d = (s/2 - c_y, s/2 - c_z)$。
+
+**補題 L.** 次のすべてを仮定する。
+
+- $c_x \ge h_x$ かつ $a_{0x} > 0$。
+- $\lVert d\rVert_2 < \tfrac12 a_{0x} - a$。
+- $a_{1y} + a_{1z} \ge 0$ かつ $a_{2z} - a_{2y} \ge 0$。
+- $|p| \le \tfrac12$ かつ $|r| \le \tfrac12$。
+- $|r| + a|a_{2y} + a_{2z}| \le \tfrac12$ かつ $|p| + a|a_{1y} - a_{1z}| \le \tfrac12$。
+- 4 つの $\sigma$ すべてについて $t_0(q_\sigma) \ge -\tfrac12$。
+
+$\varsigma_A = -\operatorname{sgn} p$、$\varsigma_B = \operatorname{sgn} r$ とおく（$p = 0$ や $r = 0$ のときはどちらの符号でもよい）。このとき $A = q_{(\varsigma_A, \varsigma_A)}$ または $B = q_{(\varsigma_B, -\varsigma_B)}$ が $Q$ に入る。
+
+*証明.* 点 $q$ について、$q \in Q$ は $t_0(q) \ge -\tfrac12$ かつ次の 3 条件が成り立つことと同値である。
+
+- (i) $a_0\cdot(q - f) \le 0$、すなわち $t_0(q) \le \tfrac12$。
+- (ii) $|a_1\cdot(q - f)| \le \tfrac12$。
+- (iii) $|a_2\cdot(q - f)| \le \tfrac12$。
+
+最初の条件 $t_0(q) \ge -\tfrac12$ は仮定である。
+
+1. *符号による (ii) と (iii).*
+   - $a_1\cdot(A - f) = p + \varsigma_A a(a_{1y} + a_{1z})$。ここで $a|a_{1y} + a_{1z}| \le a\sqrt2 = \tfrac12$ であり、2 つの項は符号が逆なので $|a_1\cdot(A - f)| \le \max(|p|, \tfrac12) \le \tfrac12$。
+   - $|a_2\cdot(A - f)| \le |r| + a|a_{2y} + a_{2z}| \le \tfrac12$。
+   - $B$ についても同様：$a_2\cdot(B - f) = r - \varsigma_B a(a_{2z} - a_{2y})$ で 2 つの項は符号が逆であり、$|a_1\cdot(B - f)| \le |p| + a|a_{1y} - a_{1z}| \le \tfrac12$。
+2. *壁からの (i).*
+   - $a_0\cdot e = a_{0x}(1 - c_x) + \nu\cdot d - \tfrac12$。
+   - $c_x \ge h_x$ と、$\sigma_x = |a_{1x}| + |a_{2x}|$ としての恒等式 $a_{0x}(1 - h_x) = \tfrac12 - \tfrac12(1 - a_{0x})^2 - \tfrac12 a_{0x}\sigma_x$ から $a_0\cdot e \le \nu\cdot d - \tfrac12 a_{0x}\sigma_x - \tfrac12(1 - a_{0x})^2$ を得る。
+   - $R$ の行 $x$ と列 0 は単位ベクトルなので $a_{1x}^2 + a_{2x}^2 = 1 - a_{0x}^2 = \lVert\nu\rVert^2$、よって $\sigma_x \ge \lVert\nu\rVert$。
+   - $a_0\cdot(q_\sigma - f) = a_0\cdot e + a\,\nu\cdot\sigma$ なので、$q_\sigma$ についての条件 (i) は $\nu\cdot d + a\,\nu\cdot\sigma \le \tfrac12 a_{0x}\lVert\nu\rVert$ から従う。
+3. *A と B がともに (i) をみたさないことはない.*
+   - $\nu\cdot\sigma_A = \varsigma_A(\nu_y + \nu_z)$、$\nu\cdot\sigma_B = \varsigma_B(\nu_y - \nu_z)$ である。
+   - ともにみたさないなら $\nu\cdot d + a\cdot\min(|\nu_y + \nu_z|, |\nu_y - \nu_z|) > \tfrac12 a_{0x}\lVert\nu\rVert$。最小値は $\sqrt{((\nu_y + \nu_z)^2 + (\nu_y - \nu_z)^2)/2} = \lVert\nu\rVert$ 以下なので、$\nu\cdot d > (\tfrac12 a_{0x} - a)\lVert\nu\rVert$。
+   - しかし $\nu\cdot d \le \lVert\nu\rVert\lVert d\rVert < (\tfrac12 a_{0x} - a)\lVert\nu\rVert$ であり、$\nu \ne 0$ のとき矛盾する。
+   - $\nu = 0$ なら $a_{0x} = 1$ かつ $\sigma_x = 0$ なので、(i) はすべての $\sigma$ について成り立つ。 $\blacksquare$
+
+*注意.*
+
+- 証明が使うのは、$(a_0, a_1, a_2)$ が正規直交の枠で $Q = \{c + \sum t_k a_k : |t_k| \le \tfrac12\}$ であることだけである。向き付けは使わないので、補題は $R$ の列の符号付き置換のどれにも使える。
+- $V$ を固定する容器の対称（座標の置換と鏡映 $c \mapsto s - c$）による補題の像も成り立つ。
+- 姿勢そのものでは $p = r = 0$ で、$A$ は $Q$ の辺の上にあり、(i) は等号で成り立つ。$Q$ は閉じているので $A \in Q$。
+
+## 6. コンピュータによる部分
+
+主補題を、6 個のパラメータ（回転と中心）の領域の上の有限個の区間不等式に帰着する。独立な 2 つの検査器が、§2〜§5 を閉じる規則として使い、領域全体を覆う。各箱は 1 つの規則で閉じるか、分割する。どちらも中心のパラメータ表示 $c_w = h_w + u_w(s - 2h_w)$、$u \in [0, 1]^3$ を使う。これはちょうど許される中心の集合で、壁・辺・角での接触をすべて含む。
+
+| | 第 1 の検査器（[checker/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/checker)） | 第 2 の検査器（[checker2/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/checker2)） |
+|---|---|---|
+| 回転 | 射影的な四元数 $(1, x, y, z)$、$R = N(q)/(1 + x^2 + y^2 + z^2)$ | ZYZ オイラー角、$R = R_z(\alpha)R_y(\beta)R_z(\gamma)$ |
+| 対称性による縮小 | 1,152 倍：立方体の 24 個の回転と容器の 48 個の対称 | 32 倍：容器の 8 個の鏡映と、立方体の 1 本の軸のまわりの 4 分の 1 回転 |
+| 根の箱 | $[0, a]^2 \times [-a, a] \times [0, \tfrac12] \times [0, 1]^2$、$a$ は $\sqrt2 - 1$ の上界 | $[0, 2\pi] \times [0, \pi] \times [0, \pi/2] \times [0, \tfrac12]^3$、角度の端点は外向きに挟む |
+| 演算 | 区間の演算ごとに `next_down`/`next_up` で広げる。定数はすべて挟む | 独自の区間型で、各端点を 1 段外向きに丸める。独自の区間の正弦・余弦（剰余の評価つきの Taylor 多項式） |
+| 局所の符号の補題 | 規則 `local_ab` | 規則 `local`、288 通りの形すべて |
+
+第 2 の検査器は補題の主張だけから、第 1 の検査器を読まずに書いた。閉じる規則は次のとおりである。
+
+| 規則 | 箱を閉じる条件 |
+|---|---|
+| point | 箱全体で、ある $p \in V$ が $i = 0, 1, 2$ について $|t_i(p)| \le \tfrac12$ をみたす |
+| centre | 中心の規則（§2）を、まとめた形 $2 - u_w s - 2h_w(1 - u_w) \ge 0$ で（$p_w = s - 1$ では鏡像） |
+| wall | 壁の補題（§3）、両方の壁。$t$ の評価には壁での締め付けを使う |
+| pair | 距離 1 の 12 組についての対の補題（§4） |
+| local | 局所の符号の補題 L（§5）。$x = 1$ の 4 点での $t_0 \ge -\tfrac12$ を含め、仮定はすべて箱の上で評価する |
+
+閉じるどの不等式にもイプシロンや許容誤差は入らない。各検査器は、葉の列の上の連鎖した SHA-256 ダイジェストをもつ記録を書く：sha256("") から始め、各回のあと $h \leftarrow$ sha256($h$ ‖ その回の葉の記録)。どちらの探索も決定的で、ダイジェストはスレッド数にも、停止と再開にもよらない。
+
+## 7. 結果
+
+| 系 | 状態 | 箱 | 最大深さ | 規則ごとの葉 | 葉のダイジェスト（連鎖した SHA-256） |
+|---|---|---|---|---|---|
+| 第 1 | 完走、未解決 0 | 6,539,999 | 42 | point 1,791,261、pair 1,243,037、outside 202,285、wall 19,593、centre 10,553、local_ab 3,271 | `8f974e817092a7e3a5a7247e4b6679d0ca9ada2739369e7dabd5b18c86a236b9` |
+| 第 2 | 完走、未解決 0 | 784,835,241 | 45 | point 292,654,066、pair 94,356,391、wall 3,774,181、centre 1,295,486、local 337,497 | `c56bdc3b51ef3015cc1856cf00e61ac1218d40c1746200e192b5a66fb8dd2ca2` |
+
+`outside` は、第 1 の検査器の対称性による縮小の基本領域の外にある箱の印である。狭義の区間不等式によって箱全体が閉じた領域の外にあるときだけ、この印を付ける。
+
+**妥当性の確認.** 以下の試験はどれも証明の一部ではない。
+
+- 第 1 の検査器：ランダムな姿勢 100,000 個（うち壁で 20,000 個）で、閉じた各箱の根拠を浮動小数点で確かめ、誤った閉じ方 0。$45^\circ$ の壁の姿勢の近くの半径 $10^{-4}$〜$10^{-2}$ の箱 9,356 個のうち 4,962 個が `local_ab` で閉じ、その中で抽出した姿勢 248,100 個はすべて $A$ か $B$ を含む。葉の列から抽出した姿勢 863,544 個で失敗 0、最悪の超過は 0.0 で、これは $45^\circ$ の姿勢での等号である。
+- 第 2 の検査器：ランダムな姿勢 100,000 個と壁での姿勢 20,000 個で、誤った閉じ方 0。各規則を単独で、さらに 20,000 個の箱で試験。$45^\circ$ の壁の姿勢の像のまわりの箱 432 個はすべて `local` で閉じる。ランダムな箱 20,000 個（抽出した姿勢 1,487,928 個）と、$45^\circ$ の壁の姿勢のまわりの箱 6,000 個（抽出した姿勢 579,488 個）で失敗 0。決定性と再開の試験。
+
+## 再現方法
+
+| 内容 | コマンド（示したフォルダで） | 時間 |
+|---|---|---|
+| 詰め方（上界） | `python3 check_sympy.py`、`python3 check_q2.py`（`upper/`）。出力は `check_sympy.out` と `check_q2.out` に一致しなければならない | 数秒 |
+| 補題 F、遠い領域 | `python3 far_bb.py`、`python3 check2/far_check2.py`（`lemma_f/`、後者は `mpmath` が必要） | 後者は約 3 分 |
+| 第 1 の検査器 | `cargo build --release --offline` のあと `./target/release/m5-checker --threads 2 --seconds 1150 --output run`（`checker/`） | ノート PC の 2 スレッドで約 3 分 |
+| 第 2 の検査器 | `cargo build --release --offline` のあと `./target/release/m5-check2 --server --threads 16 --seconds 1209600 --depth 72 --checkpoint-seconds 60 --output full`（`checker2/`） | 約 4.7 スレッド時間。16 スレッドで 18 分 |
+
+第 1 の実行は `"status": "complete"`、`"unresolved": 0`、`"closed_volume_fraction": 1.0` と上の葉のダイジェストを、第 2 の実行は `"status": "complete"`、`"pending": 0`、`"unresolved": 0` とそのダイジェストを報告しなければならない。第 2 の検査器は 1,152 個の対称のうち 32 個で縮小するので、約 36 倍広い領域を覆う。
+
+## 状態と限界
+
+- コンピュータ支援の証明で、独立な 2 つの検査器で検査した。査読は受けておらず、Lean による形式化もしていない。
+- Friedman のページには一辺 $2 + 1/\sqrt2$ での $n = 9$ と $n = 10$ の詰め方が載っているが、最適性の証明はない。下界 $s_3(9) \ge 2 + 1/\sqrt2$ の公刊された証明は見つからなかった。ご存じの方は Issue で知らせてほしい。
+
+## 出典
+
+当方の結果は、先行する 3 層の仕事の上にある。
+
+- **古典.** 点集合の方法は、正方形に単位正方形を詰める問題の標準的な下界の手法で、Erich Friedman の概説 [[1]](#ref-1) に述べられている。一辺 $2 + 1/\sqrt2$ での 9 個と 10 個の立方体の詰め方は、Erich Friedman の Packing Center のページ「Cubes in Cubes」[[2]](#ref-2) に載っている。調べた範囲では、その最適性の証明は公刊されていない。
+- **当方の以前の補題.** $s_3(2) = 2$ と $s_3(k^3 - 1) = k$ についての当方の仕事から来ている：補題 F（§2）、壁の補題（§3）、対の補題（§4）。
+- **ここで新しいもの.** 8 点の主補題、局所の符号の補題（§5）、2 つの検査器。
+
+## 参考文献
+
+1. <span id="ref-1"></span>E. Friedman, "Packing unit squares in squares: a survey and new results", *Electronic Journal of Combinatorics*, Dynamic Survey DS7.
+2. <span id="ref-2"></span>E. Friedman, [Cubes in Cubes](https://erich-friedman.github.io/packing/cubincub/), Erich's Packing Center.
+3. [problems/cubes-in-cube/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/PROOF.md)、[README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/README.md)、[lemma_f/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/lemma_f/PROOF.md)、[checker/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/checker/README.md)、[checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/checker2/README.md)。

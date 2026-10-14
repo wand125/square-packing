@@ -88,3 +88,14 @@
 .pp-meta a { color: inherit; }
 .pp-versions table { font-size: 13px; }
 .pp-versions td.nw { white-space: nowrap; }
+/* cubes in a cube (3D) */
+.cb-svg { max-width: 520px; cursor: grab; touch-action: pan-y; }
+.cb-svg:active { cursor: grabbing; }
+.cb-f { stroke-width: .012; stroke-linejoin: round; }
+.cb-cor { fill: var(--link); stroke: var(--link); }
+.cb-rot { fill: var(--acc); stroke: var(--acc); stroke-width: .018; }
+.cb-faint { stroke-opacity: .35; }
+.cb-faint.cb-f { fill-opacity: .05 !important; }
+.cb-box { stroke: var(--fg2); stroke-width: .012; }
+.cb-back { stroke-dasharray: .05 .05; stroke-opacity: .6; }
+.cb-pt { fill: var(--ok); stroke: var(--bg); stroke-width: .015; }

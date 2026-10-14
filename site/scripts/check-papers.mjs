@@ -15,7 +15,8 @@ for (const slug of readdirSync('src/content/papers')) {
  vs.forEach((v, i) => {
   assert.equal(v.v, String(i + 1), `${slug}: version numbers must be 1, 2, …`);
   assert.match(v.date, /^\d{4}-\d{2}-\d{2}$/, `${slug}: date`);
-  assert.match(v.commit, /^[0-9a-f]{7,40}$/, `${slug}: commit`);
+  // the newest version may wait for its commit until the push that publishes it
+  if (!(i === vs.length - 1 && v.commit === '')) assert.match(v.commit, /^[0-9a-f]{7,40}$/, `${slug}: commit`);
   assert.ok(v.en && v.ja, `${slug}: changes in both languages`);
   if (i) assert.ok(v.date >= vs[i - 1].date, `${slug}: dates must be ascending`);
  });
@@ -151,7 +152,7 @@ try {
  for(const width of [1280,390]) {
   await cmd('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:width===390});
   await cmd('Emulation.setTouchEmulationEnabled',{enabled:width===390});
-  for(const [slug,figures] of [['hexagon-n3',['hexagon-flex']],['domino',['domino-family']],['triangle',['triangle-series','triangle-37']],['right-isosceles',['certificate']]]) {
+  for(const [slug,figures] of [['hexagon-n3',['hexagon-flex']],['domino',['domino-family']],['triangle',['triangle-series','triangle-37']],['right-isosceles',['certificate']],['cubes-in-cube',['cubes-in-cube']]]) {
    await navigate('paper-'+slug+'.html');
    for(const lang of ['en','ja']) {
     // Use the site's language control rather than changing display styles.
@@ -185,6 +186,18 @@ try {
       assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(sel+' [data-group="upper"]')}).length`),28);
       await click(sel+' button:nth-child(2)');await waitFor(`document.querySelectorAll(${JSON.stringify(sel+' .vz-muted')}).length===28`);
       await click(sel+' button:nth-child(3)');await waitFor(`document.querySelectorAll(${JSON.stringify(sel+' .vz-muted')}).length===9`);
+     } else if(figure==='cubes-in-cube'){
+      // 6 faces per cube, the 8 points of V; n = 10 adds one cube; hiding the corners leaves the rotated cubes
+      const faces=()=>evaluate(`document.querySelectorAll(${JSON.stringify(sel+' .cb-f')}).length`);
+      assert.equal(await faces(),54);assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(sel+' .cb-pt')}).length`),8);
+      await click(sel+' .vz-chips button:nth-child(2)');await waitFor(`+document.querySelector(${JSON.stringify(sel)}).dataset.n===10`);
+      assert.equal(await faces(),60);
+      await evaluate(`{const e=document.querySelector(${JSON.stringify(sel+' select')});e.value='hidden';e.dispatchEvent(new Event('change',{bubbles:true}));}`);
+      await waitFor(`document.querySelectorAll(${JSON.stringify(sel+' .cb-f')}).length===12`);
+      const before=await evaluate(`document.querySelector(${JSON.stringify(sel+' .cb-rot')}).getAttribute('points')`);
+      if(width!==390){await evaluate(`document.querySelector(${JSON.stringify(sel+' svg')}).scrollIntoView({block:'center'})`);await mouse(sel+' svg',[[.4,.5],[.6,.6]]);}
+      else await click(sel+' .vz-ctl button:nth-child(2)');
+      await waitFor(`document.querySelector(${JSON.stringify(sel+' .cb-rot')}).getAttribute('points')!==${JSON.stringify(before)}`);
      } else {
       await waitFor(`+document.querySelector(${JSON.stringify(sel)}).dataset.n===4`); // the figure opens on n = 4 (start)
       for(const [index,n,count] of [[1,2,0],[2,3,0],[3,4,1],[4,6,4],[5,10,8],[6,15,152]]){
