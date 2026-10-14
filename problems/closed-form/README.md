@@ -122,6 +122,16 @@ against that code, not against an independent implementation.
   92002e0e8924d96f0e5962eabb8fce6e4de67a2f350ca66d4889abee0762c193 for the published sources. The published
   checker passes the same tests (28), and its exact build replayed all eight records of intervals 1 and 34
   from the published assets with REPLAY OK (3,138,681 leaves): `receipts/published_checker.json`.
+  - `b3d_sort.rs` (included by `b3d.rs`) was not covered by either hash. Its SHA-256 is
+    23be1db0de55790110ff97c966bf34a6046c1d224a0f5bad98c6639866895928 in the sources used for the replay and in
+    the published sources, and the file has not changed since. From version 0.1.1 the source hash also covers
+    `b3d_sort.rs`; the published sources of 0.1.1 hash to f8cafeab078e1de31bacdef9c5c08ad70938f1b1b20fd3a2e1e54de9f73f1742. Nothing else in the checker changed
+    except that each result now records `B3_PLAIN_RF` (below).
+  - `B3_PLAIN_RF=1` switches the rational-function arithmetic to the step-by-step reduction of the Python
+    reference, for cross-checking; the reduced form, and so every decision, is the same. No run in the
+    receipts set it: neither the replay driver nor the commands of `published_checker.json` set the variable,
+    so all runs used the default path. From version 0.1.1 each result records its value (`env.B3_PLAIN_RF`,
+    `unset` if not set), and `replay_all.py` prints it.
 - For publication two keys that no checker reads (`note`, a free-text comment, and `target`, a search
   target) were removed from the family files; otherwise the families are the ones that were replayed
   (`receipts/families.json` lists old and new SHA-256). That replay of intervals 1 and 34 used

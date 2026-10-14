@@ -56,7 +56,7 @@ def run(binary, tag, d, reg, g, threads, res):
     if o['roots'] != g['roots'] or sum(o['kinds'].values()) != g['leaves']:
         return tag, reg, f'FAILED: counts differ from intervals.json ({o["roots"]} roots, {sum(o["kinds"].values())} leaves)'
     os.replace(out + '.tmp', out)
-    return tag, reg, f'REPLAY OK ({o["roots"]} roots, {sum(o["kinds"].values())} leaves)'
+    return tag, reg, f'REPLAY OK ({o["roots"]} roots, {sum(o["kinds"].values())} leaves, B3_PLAIN_RF={o.get("env", {}).get("B3_PLAIN_RF", "not recorded")})'
 
 
 def main():

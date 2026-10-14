@@ -71,6 +71,7 @@ fn source_hash()->String {
         ("../seam4d_core/src/lib.rs",include_bytes!("../../seam4d_core/src/lib.rs")),
         ("../seam4d_core/src/fast.rs",include_bytes!("../../seam4d_core/src/fast.rs")),
         ("../seam4d_core/src/b3d.rs",include_bytes!("../../seam4d_core/src/b3d.rs")),
+        ("../seam4d_core/src/b3d_sort.rs",include_bytes!("../../seam4d_core/src/b3d_sort.rs")),
         ("../seam4d_core/src/replay.rs",include_bytes!("../../seam4d_core/src/replay.rs"))];
     let mut bytes=vec![];
     for (name,data) in files {bytes.extend(name.as_bytes());bytes.push(0);bytes.extend((data.len() as u64).to_be_bytes());bytes.extend(*data);}
@@ -161,7 +162,8 @@ fn run()->Result<bool,String> {
     let ok=bad.is_empty();
     let summary=json!({"mode":if leaves_mode{"leaves"}else{"replay"},"ok":ok,"roots":if leaves_mode{0}else{roots.len()},"kinds":kinds,
         "bad_count":bad.len(),"bad":bad.iter().take(20).collect::<Vec<_>>(),"cpu_seconds":cpu_seconds,"wall_seconds":wall_seconds,
-        "family":{"path":paths[0],"sha256":sha256::digest(&family_bytes)},"records":hashes,"version":env!("CARGO_PKG_VERSION"),"source_sha256":source_hash(),"leaves":values});
+        "family":{"path":paths[0],"sha256":sha256::digest(&family_bytes)},"records":hashes,"version":env!("CARGO_PKG_VERSION"),"source_sha256":source_hash(),
+        "env":{"B3_PLAIN_RF":std::env::var("B3_PLAIN_RF").unwrap_or_else(|_|"unset".to_string())},"leaves":values});
     println!("roots {} leaf kinds {}",summary["roots"],summary["kinds"]);
     for e in bad.iter().take(20){println!("BAD {e}");}
     if leaves_mode {for v in summary["leaves"].as_array().unwrap(){println!("LEAF {v}");}}
