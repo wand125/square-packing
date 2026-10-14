@@ -19,7 +19,7 @@ const headers = ['Issue',bi('State','状態'),bi('Theme','テーマ'),bi('Goal',
 const rows = (state: string) => themes.filter(t => t.state === state).map(t => {
  const done = (t.done || []).map(x => `<li>${bc(x)}</li>`).join(''), wo = (t.working_on || []).map(x => `<li>${bc(x)}</li>`).join('');
  const links = (t.links || []).map(l => a(l.url,esc(l.label))).join(''), rels = (t.releases || []).map(r => a(`${GH}/releases/tag/${r}`,`<code>${esc(r)}</code>`)).join('');
- return `<tr class="r" data-state="${state}" data-n="0">${cell(a(t.url,'#'+t.issue),'num')}${cell(`<span class="st${state === 'closed' ? ' ex' : ''}">${state === 'open' ? bi('open','進行中') : bi('closed','完了')}</span>`,'nw')}${cell(`<b>${bc(t.title)}</b>`)}${cell(bc(t.goal))}${cell(esc(t.updated || ''),'num dim')}</tr><tr class="x" hidden><td colspan="5"><dl class="kv">${term(bi('Method','方法'),bc(t.method))}${done ? term(bi('Done','済んだ段階'),`<ul class="tight">${done}</ul>`) : ''}${wo ? term(bi('Working on','取り組み中'),`<ul class="tight">${wo}</ul>`) : ''}${links ? term(bi('Links','リンク'),`<span class="links">${links}</span>`) : ''}${rels ? term('Release',`<span class="links">${rels}</span>`) : ''}</dl></td></tr>`;
+ return `<tr class="r" data-state="${state}" data-n="0">${cell(a(t.url,'#'+t.issue),'num')}${cell(`<span class="st${state === 'closed' ? ' ex' : ''}">${state === 'open' ? bi('open','進行中') : state === 'stopped' ? bi('stopped','停止') : bi('closed','完了')}</span>`,'nw')}${cell(`<b>${bc(t.title)}</b>`)}${cell(bc(t.goal))}${cell(esc(t.updated || ''),'num dim')}</tr><tr class="x" hidden><td colspan="5"><dl class="kv">${term(bi('Method','方法'),bc(t.method))}${done ? term(bi('Done','済んだ段階'),`<ul class="tight">${done}</ul>`) : ''}${wo ? term(bi('Working on','取り組み中'),`<ul class="tight">${wo}</ul>`) : ''}${links ? term(bi('Links','リンク'),`<span class="links">${links}</span>`) : ''}${rels ? term('Release',`<span class="links">${rels}</span>`) : ''}</dl></td></tr>`;
 }).join('');
 ---
 <Base file="themes.html" title="Square Packing Themes" katex>
@@ -27,6 +27,7 @@ const rows = (state: string) => themes.filter(t => t.state === state).map(t => {
 {papers.length > 0 && <Section en="Papers" ja="論文"><div class="ref-items">{papers.map(p => <a class="ref-item" href={url(p.file)}><span class="ref-ico" set:html={paperIcon(p.file)}/><span>{paperTitle(p.file) ? <b><span data-l="en" set:html={paperTitle(p.file)![0]}/><span data-l="ja" set:html={paperTitle(p.file)![1]}/></b> : <b><T en={p.en} ja={p.ja}/></b>}</span></a>)}</div></Section>}
 <Section en="Completed" ja="完了"><DataTable headers={headers} rows={rows('closed')} class="wide themes-table"/></Section>
 <Section en="Working on" ja="取り組み中"><DataTable headers={headers} rows={rows('open')} class="wide themes-table"/></Section>
+{themes.some(t => t.state === 'stopped') && <Section en="Stopped" ja="停止"><DataTable headers={headers} rows={rows('stopped')} class="wide themes-table"/></Section>}
 <script>import '../scripts/reading';</script>
 <dialog class="issue-pop" aria-label="issue"><button type="button" class="issue-pop-x" aria-label="close">✕</button><div class="issue-pop-body"></div></dialog>
 <script>

@@ -6,7 +6,7 @@ export type Source = string | string[];
 export interface Certificate { id: string; claim: string; release_tag: string; assets: string[]; check: string; check_cwd: string; documents: string[] }
 export interface Index { problems: Record<string, Certificate[]> }
 export interface Published { id: string; class: string; cells: unknown[]; nodes: number; claim: string; data: {release_url: string}; checks: string[]; manifest: string }
-export interface Theme { issue: number; url: string; state: 'open' | 'closed'; title: Bi; goal?: Bi; method?: Bi; updated?: string; done?: Bi[]; working_on?: Bi[]; links?: {url: string; label: string}[]; releases?: string[] }
+export interface Theme { issue: number; url: string; state: 'open' | 'closed' | 'stopped'; title: Bi; goal?: Bi; method?: Bi; updated?: string; done?: Bi[]; working_on?: Bi[]; links?: {url: string; label: string}[]; releases?: string[] }
 export interface ResultNote { consequence: Bi; source: string; review_status?: Bi }
 export interface Method { name?: Bi; what?: Bi; consists?: Bi; description?: Bi; used?: Bi; used_for?: Bi; review_status?: Bi; origin?: Bi; credit?: Bi; tools?: string[]; sources?: Source; result_notes?: Record<string, ResultNote> }
 export interface Release { tag: string; name?: string; date?: string }

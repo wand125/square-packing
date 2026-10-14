@@ -3,15 +3,15 @@
   {
    "issue": 1,
    "url": "https://github.com/wand125/square-packing/issues/1",
-   "state": "open",
-   "updated": "2026-10-11",
+   "state": "closed",
+   "updated": "2026-10-13",
    "title": {
     "en": "The best general lower-bound formula for s(N)",
     "ja": "s(N) の最良の一般の下界の式"
    },
    "goal": {
-    "en": "A computer-assisted proof of a closed-form lower bound on s(N), the side of the smallest square containing N unit squares, valid for every N ≥ 49 and at least Nagamochi's formula everywhere (equal only at N = (k+1)² − 1 and (k+1)² − 2, where that formula meets the true value).",
-    "ja": "N 個の単位正方形を含む最小の正方形の一辺 s(N) について、すべての N ≥ 49 で成り立ち、Nagamochi の式を常に下回らない閉じた式の下界の、計算機援用による証明。等号は N = (k+1)² − 1, (k+1)² − 2 のみ（そこで Nagamochi の式は真値に一致する）。"
+    "en": "A computer-assisted proof of a closed-form lower bound on s(N), the side of the smallest square containing N unit squares, valid for every non-square N ≥ 49 and at least Nagamochi's formula everywhere (equal only at N = (k+1)² − 1 and (k+1)² − 2, where that formula meets the true value).",
+    "ja": "N 個の単位正方形を含む最小の正方形の一辺 s(N) について、平方数でないすべての N ≥ 49 で成り立ち、Nagamochi の式を常に下回らない閉じた式の下界の、計算機援用による証明。等号は N = (k+1)² − 1, (k+1)² − 2 のみ（そこで Nagamochi の式は真値に一致する）。"
    },
    "method": {
     "en": "The bound is written through the fractional part δ ∈ (0, 1), whose range is split into 34 intervals. For each interval a weight family on the container is built, and an exact four-dimensional box verifier (with edge and concavity lemmas, a Python record check per interval, and a full Rust replay of all leaves before publication) proves that every placement of a unit square carries enough weight.",
@@ -25,15 +25,38 @@
     {
      "en": "All 34 intervals pass the main check and the record check (2026-10-10).",
      "ja": "34 区間すべてが本検査と記録の検査に通過（2026-10-10）。"
-    }
-   ],
-   "working_on": [
+    },
     {
-     "en": "A full replay of all records on a clean machine, and the public specification, before publication.",
-     "ja": "公開前の、クリーンな環境での全記録の完全再生と、公開用の仕様。"
+     "en": "Published (2026-10-13): for every non-square N ≥ 49, s(N) ≥ a(N), with one square root on each of the 34 intervals. a(N) is above Nagamochi's formula except at N = (k+1)² − 1 and (k+1)² − 2, and above Karakuş's formula except at N = (k+1)² − 1. The proof uses neither Nagamochi's lemma nor Karakuş's bound.",
+     "ja": "公開（2026-10-13）: 平方数でないすべての N ≥ 49 で s(N) ≥ a(N)。34 区間それぞれで根号 1 本の式。a(N) は N = (k+1)² − 1, (k+1)² − 2 を除いて Nagamochi の式を上回り、N = (k+1)² − 1 を除いて Karakuş の式を上回る。証明は Nagamochi の補題も Karakuş の下界も使わない。"
+    },
+    {
+     "en": "For N ≤ 3600, a(N) is above the best known lower bound at 3,239 non-square N (all with N > 100), equal at 159 and below at 100.",
+     "ja": "N ≤ 3600 では、平方数でない 3,239 個の N（すべて N > 100）で a(N) が既知の最良の下界を上回る。等しいのは 159 個、下回るのは 100 個。"
+    },
+    {
+     "en": "Checks: all 136 records (187,183,108 leaves) were replayed by replay4d and accepted; the structure of all 68 families was checked in exact arithmetic.",
+     "ja": "検査: 136 個の記録（187,183,108 葉）すべてを replay4d で再生して受理。68 個の族すべての構造を厳密な算術で検査。"
     }
    ],
-   "links": []
+   "working_on": [],
+   "links": [
+    {
+     "label": "problems/closed-form",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/closed-form"
+    },
+    {
+     "label": "A closed-form lower bound for s(N)",
+     "url": "https://wand125.github.io/square-packing/paper-closed-form.html"
+    },
+    {
+     "label": "#18 (improvements)",
+     "url": "https://github.com/wand125/square-packing/issues/18"
+    }
+   ],
+   "releases": [
+    "closed-form-v1"
+   ]
   },
   {
    "issue": 2,
@@ -78,8 +101,8 @@
   {
    "issue": 3,
    "url": "https://github.com/wand125/square-packing/issues/3",
-   "state": "open",
-   "updated": "2026-10-11",
+   "state": "stopped",
+   "updated": "2026-10-13",
    "title": {
     "en": "Contributing to the n = 17 optimality proof in jlevy/squares",
     "ja": "jlevy/squares での n = 17 の最適性証明への貢献"
@@ -112,14 +135,13 @@
     {
      "en": "Exclusions and certificates: status per sub-pattern in jlevy/squares#413.",
      "ja": "除外と証明書: 部分パターンごとの状況は jlevy/squares#413。"
-    }
-   ],
-   "working_on": [
+    },
     {
-     "en": "The certificates of the remaining sub-patterns listed in jlevy/squares#413.",
-     "ja": "jlevy/squares#413 に挙がっている残りの部分パターンの証明書。"
+     "en": "Stopped (2026-10-13): a complete Lean proof of n = 17 has been announced, so we stopped generating further certificates. The released certificates and verifiers remain available.",
+     "ja": "停止（2026-10-13）: n = 17 の完全な Lean による証明が発表されたため、これ以上の証明書の生成を止めた。公開済みの証明書と検証器はそのまま利用できる。"
     }
    ],
+   "working_on": [],
    "links": [
     {
      "label": "jlevy/squares#405",
