@@ -190,6 +190,30 @@ def bern_nonneg(bc, depth: int = 12, strict: bool = False) -> bool:
     return bern_nonneg(left, depth - 1, strict) and bern_nonneg(right, depth - 1, strict)
 
 
+def bern_pos_open(bc, depth: int = 12, side: str = "lo") -> bool:
+    """Prove p > 0 on the half-open interval (a, b] (side "lo") or [a, b) (side "hi") from its Bernstein
+    coefficients; p may vanish at the open end.
+
+    If b_0 >= 0 and b_i > 0 for i >= 1, then p = sum b_i B_i > 0 on (a, b], because B_i > 0 inside the
+    interval and B_n(b) = 1 (symmetrically for side "hi").  Otherwise halve: the half at the open end keeps
+    the same test, the other half needs plain strict positivity.  True is a proof; False is "not proved".
+    """
+    if side == "lo":
+        end, rest = bc[0], bc[1:]
+    else:
+        end, rest = bc[-1], bc[:-1]
+    if end.sign() < 0:
+        return False
+    if all(c.sign() > 0 for c in rest):
+        return True
+    if depth <= 0:
+        return False
+    left, right = split_half(bc)
+    if side == "lo":
+        return bern_pos_open(left, depth - 1, "lo") and bern_nonneg(right, depth - 1, True)
+    return bern_nonneg(left, depth - 1, True) and bern_pos_open(right, depth - 1, "hi")
+
+
 def nonneg_on(p, a, b, depth: int = 12, strict: bool = False, snap: bool = False) -> bool:
     """Prove p >= 0 (strict: > 0) on [a, b] exactly.
 

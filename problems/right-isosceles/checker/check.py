@@ -4,10 +4,10 @@
 Claim proved when the status is "verified":
 
     for every closed unit square Q with Q contained in T_L (any position, any angle):
-        sum of w_i over the points p_i in Q  (+ sum of rho * |Q cap pq| over segments)  >=  1
+        sum of w_i over the points p_i in Q  (+ sum of rho * |Q cap pq| / |pq| over segments)  >=  1
 
 T_L is the right isosceles triangle with vertices (0,0), (L,0), (0,L) (legs of length L).
-Adapted from ../triangle/checker (equilateral container): only the container, the
+Adapted from tri_container/checker (equilateral container): only the container, the
 number field (Q(sqrt2) instead of Q(sqrt3)) and the symmetry (D1: the reflection
 (x, y) -> (y, x)) differ.  See README.md for the lemmas.  Every accepted inequality is decided with exact Q(sqrt2) arithmetic
 (module q2) and exact Bernstein coefficients (module poly).  Floats are used only
@@ -15,7 +15,7 @@ to decide what to try (candidate points, candidate separating constraints, where
 to split); a wrong float guess can only cost time, never soundness.
 
 Usage:
-    python3 check.py cert.json [--n N] [--root R] [--max-depth D] [--jobs J]
+    python check.py cert.json [--n N] [--root R] [--max-depth D] [--jobs J]
                               [--u-breaks "u1,u2,..."] [--u-scale 4]
 """
 from __future__ import annotations
@@ -33,7 +33,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from q2 import Q2, ZERO, ONE, SQRT2  # noqa: E402
 from poly import (  # noqa: E402
-    DEG, padd, psub, pscale, pmul, ptrim, pfloat, feval, to_bern, bsub, badd, bern_nonneg, peval,
+    DEG, padd, psub, pscale, pmul, ptrim, pfloat, feval, to_bern, bsub, badd, bern_nonneg, peval, bern_pos_open,
 )
 
 HALF = Fraction(1, 2)
@@ -52,7 +52,7 @@ def load_certificate(path_or_obj):
     """Return (raw, L, symmetry, points [(x, y, w)], pairs, features, segments).
 
     raw is the file bytes or None; segments are [((px, py), (qx, qy), rho)] with
-    |q - p| = 1 exactly and rho > 0 (segments of density 0 are dropped).
+    q != p and rho > 0, rho being the mass of the whole segment (segments of mass 0 are dropped).
     """
     raw = None
     if isinstance(path_or_obj, (str, os.PathLike)):
@@ -64,6 +64,11 @@ def load_certificate(path_or_obj):
     L = Q2.parse(str(data["L"]))
     if L.sign() <= 0:
         raise CertError("L must be positive")
+    global FRAME_H
+    frame = data.get("frame", "legs")
+    if frame not in ("legs", "hyp"):
+        raise CertError(f"unknown frame {frame!r}")
+    FRAME_H = L * Q2(0, 1) if frame == "hyp" else None
     sym = data.get("symmetry", "none")
     if sym not in ("none", "D1"):
         raise CertError(f"unknown symmetry {sym!r}")
@@ -81,8 +86,11 @@ def load_certificate(path_or_obj):
     for i, j in data.get("pairs", []):
         p, q = raw_pts[i], raw_pts[j]
         dx, dy = q[0] - p[0], q[1] - p[1]
-        if not (dx * dx + dy * dy == Q2(1)):
-            raise CertError(f"pair ({i}, {j}) is not at distance exactly 1")
+        # Lemma P needs 0 < |q - p| <= 1: the chord of the line inside Q has t-length 1/|d.e_k| >= 1/|d| >= 1,
+        # and a t-interval of length >= 1 that meets [0, 1] contains 0 or 1
+        d2 = dx * dx + dy * dy
+        if not (d2 <= Q2(1)) or d2 == Q2(0):
+            raise CertError(f"pair ({i}, {j}) is not at a distance in (0, 1]")
         if merged.get(p, 0) <= 0 or merged.get(q, 0) <= 0:
             raise CertError(f"pair ({i}, {j}) uses a point of weight 0")
         pairs.append((p, q))
@@ -109,18 +117,27 @@ def load_certificate(path_or_obj):
         if rho < 0:
             raise CertError("segment density rho must be >= 0")
         dx, dy = q[0] - p[0], q[1] - p[1]
-        if not (dx * dx + dy * dy == Q2(1)):
-            raise CertError(f"segment {p}-{q} does not have length exactly 1")
+        if dx * dx + dy * dy == Q2(0):
+            raise CertError(f"segment {p}-{q} has length 0")
         if rho > 0:
             segments.append((p, q, rho))
     return raw, L, sym, points, pairs, features, segments
 
 
+# Frame of the certificate.  None: legs on the axes, T_L = {x >= 0, y >= 0, x + y <= L}.  A value H (= L sqrt2):
+# hypotenuse frame, the same triangle moved by an isometry so that the hypotenuse is [0, H] on the x-axis,
+# T = {y >= 0, y <= x, y <= H - x}.  Set from the certificate ("frame": "hyp") in the main process and the workers.
+FRAME_H = None
+
+
 def d3_images(L: Q2, x: Q2, y: Q2):
-    """The generator of the symmetry group of T_L (the reflection (x, y) -> (y, x)) applied to (x, y).
+    """The generator of the symmetry group of T_L applied to (x, y): the reflection (x, y) -> (y, x), or
+    (x, y) -> (H - x, y) in the hypotenuse frame.
 
     The name is kept from the equilateral checker; the group here is D1 (order 2).
     """
+    if FRAME_H is not None:
+        return [(FRAME_H - x, y)]
     return [(y, x)]
 
 
@@ -188,12 +205,20 @@ class Context:
         self.KE1x, self.KE1y = pmul(self.D, self.E1x), pmul(self.D, self.E1y)
         self.KE2x, self.KE2y = pmul(self.D, self.E2x), pmul(self.D, self.E2y)
         # admissibility: n_k . c <= b_k - n_k . (R_theta sigma), times D
-        # sides y >= 0, x >= 0, x + y <= L (normals need not be unit vectors)
-        normals = [
-            (ZERO, Q2(-1), ZERO),
-            (Q2(-1), ZERO, ZERO),
-            (ONE, ONE, L),
-        ]
+        # sides y >= 0, x >= 0, x + y <= L (normals need not be unit vectors); hypotenuse frame:
+        # y >= 0, y - x <= 0, x + y <= H
+        if opts.get("frame_H") is None:
+            normals = [
+                (ZERO, Q2(-1), ZERO),
+                (Q2(-1), ZERO, ZERO),
+                (ONE, ONE, L),
+            ]
+        else:
+            normals = [
+                (ZERO, Q2(-1), ZERO),
+                (Q2(-1), ONE, ZERO),
+                (ONE, ONE, Q2.parse(opts["frame_H"])),
+            ]
         self.adm = []
         for k, (nx, ny, b) in enumerate(normals):
             for sx in (HALF, -HALF):
@@ -225,7 +250,7 @@ class Context:
         for sites, k, w in opts.get("features", []):
             idx = [index[(Q2.parse(x), Q2.parse(y))] for x, y in sites]
             self.features.append((idx, k, Fraction(w)))
-        # segment masses (README item 6b): unit segments p + t d, t in [0, 1], density rho
+        # segment masses (README item 6b): segments p + t d, t in [0, 1], mass rho spread uniformly in t
         self.segments = []
         self.seg_sign_cache: dict = {}
         for (pxs, pys), (qxs, qys), rho in opts.get("segments", []):
@@ -292,7 +317,7 @@ class Context:
 
 
 class Segment:
-    """A unit segment p + t d (t in [0, 1], |d| = 1) with density rho.
+    """A segment p + t d (t in [0, 1], d != 0) with mass rho spread uniformly in t; all lengths are in t.
 
     T = (p . (D E1), p . (D E2))  (degree <= 4), M = (d . E1, d . E2)  (degree <= 2),
     DM = (D M1, D M2) (degree <= 4).  With N_k = W_k - T_k for a vertex V = (X, Y)/D, the slab of
@@ -333,10 +358,11 @@ def parallel(li: Line, lj: Line) -> bool:
 
 
 # =========================================================================== one box
-def box_vertices(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2):
+def box_vertices(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, open_side=None):
     """Return (iv, feasible) where feasible is the list of (key, Pair) vertex candidates of
     P_theta that are not proved infeasible on the box, or (iv, None) if the box is proved EMPTY.
-    Every extreme point of P_theta, for every u in [ua, ub], is V(u) for some Pair in the list."""
+    Every extreme point of P_theta, for every u in [ua, ub], is V(u) for some Pair in the list.
+    With open_side "lo" ("hi") the claims hold for u in (ua, ub] ([ua, ub)) only (see certify_box)."""
     iv = ctx.interval(ua, ub)
     samples, fD = iv["samples"], iv["fD"]
     corners = [(Q2(x0), Q2(y0)), (Q2(x0), Q2(y1)), (Q2(x1), Q2(y0)), (Q2(x1), Q2(y1))]
@@ -402,7 +428,7 @@ def box_vertices(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2):
                     pr = ctx.pair_cache[key] = Pair(ctx, la, lb)
             else:
                 pr = Pair(ctx, la, lb)
-            if not pair_infeasible(ctx, iv, pr, all_lines, a, b):
+            if not pair_infeasible(ctx, iv, pr, all_lines, a, b, open_side):
                 pkey = (ia, ib) if ia is not None and ib is not None else None
                 feasible.append((pkey, pr))
     if not feasible:
@@ -421,9 +447,16 @@ def float_vertices(iv, feasible):
     return fverts, fE
 
 
-def certify_box(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2):
-    """Return "EMPTY", "COVER" or None (not certified).  x0..y1 are Fractions."""
-    iv, feasible = box_vertices(ctx, x0, x1, y0, y1, ua, ub)
+def certify_box(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, open_side=None):
+    """Return "EMPTY", "COVER" or None (not certified).  x0..y1 are Fractions.
+
+    With open_side "lo" ("hi") the answer is for u in (ua, ub] ([ua, ub)) only: vertex candidates that are
+    infeasible on that half-open interval are dropped, although they may be feasible at the end itself.  At an
+    end of the u-range three constraint lines can meet in one point at u = ua (a square wedged at theta = 0
+    between a side and the hypotenuse); the pair of the side and a box face is a vertex there and outside
+    P_theta for every u > ua, but no proof on the closed interval can drop it.  The end itself is then checked
+    by slice_cover (run_root)."""
+    iv, feasible = box_vertices(ctx, x0, x1, y0, y1, ua, ub, open_side)
     if feasible is None:
         return "EMPTY"
 
@@ -870,9 +903,15 @@ def captured(B_D2half, BT1, BT2, BW1, BW2) -> bool:
     return True
 
 
-def pair_infeasible(ctx, iv, pr: Pair, all_lines, a, b) -> bool:
-    """Exact proof that V_ab(u) strictly violates some third constraint for all u."""
+def pair_infeasible(ctx, iv, pr: Pair, all_lines, a, b, open_side=None) -> bool:
+    """Exact proof that V_ab(u) strictly violates some third constraint for all u (all u of the half-open
+    interval without its open_side end, where the violation may vanish)."""
     samples, fD = iv["samples"], iv["fD"]
+    if open_side is not None:
+        # the violation may vanish at the open end: screen on the other samples
+        end = float(iv["ua"]) if open_side == "lo" else float(iv["ub"])
+        keep = [k for k, s in enumerate(samples) if abs(s - end) > 1e-15 * max(1.0, abs(end))]
+        samples, fD = [samples[k] for k in keep], [fD[k] for k in keep]
     fx = [feval(pr.fX, s) for s in samples]
     fy = [feval(pr.fY, s) for s in samples]
     scored = []
@@ -887,8 +926,150 @@ def pair_infeasible(ctx, iv, pr: Pair, all_lines, a, b) -> bool:
     for _, m in scored[:3]:
         lm = all_lines[m][1]
         Q = psub(padd(pscale(pr.X, lm.nx), pscale(pr.Y, lm.ny)), lm.O)
-        if ctx.prove_nonneg(Q, iv["ua"], iv["ub"], strict=True):
+        if open_side is None:
+            if ctx.prove_nonneg(Q, iv["ua"], iv["ub"], strict=True):
+                return True
+        elif bern_pos_open(to_bern(Q, iv["ua"], iv["ub"]), POLY_DEPTH, open_side):
             return True
+    return False
+
+
+# =========================================================================== endpoint slices
+def empty_on_open(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, side: str) -> bool:
+    """Exact proof that {c in box : n_i . c D(u) <= O_i(u)} is empty for every u of (ua, ub] (side "lo") or
+    [ua, ub) (side "hi").  All normals n_i (container sides and box faces) are constant, so a Farkas
+    certificate uses constant multipliers: lambda >= 0 with sum lambda_i n_i = 0 and sum lambda_i O_i(u) < 0.
+    For three lines lambda = (n2 x n3, n3 x n1, n1 x n2) (all of one sign), for two opposite lines
+    lambda = (|n2|, |n1|) along the common direction.  Floats pick the candidates; the sign of
+    -sum lambda_i O_i is proved on the half-open interval, where it may vanish only at the open end."""
+    D = ctx.D
+    lines = [(ln.nx, ln.ny, ln.O) for ln in ctx.adm]
+    lines += [(ONE, ZERO, pscale(D, Q2(x1))), (-ONE, ZERO, pscale(D, Q2(-x0))),
+              (ZERO, ONE, pscale(D, Q2(y1))), (ZERO, -ONE, pscale(D, Q2(-y0)))]
+    fa, fb = float(ua), float(ub)
+    us = [fa + (fb - fa) * k / 6 for k in range(1, 7)] if side == "lo" else [fa + (fb - fa) * k / 6 for k in range(0, 6)]
+    fl = [(float(nx), float(ny), pfloat(O)) for nx, ny, O in lines]
+
+    def cross(a, b):
+        return a[0] * b[1] - a[1] * b[0]
+    cands = []
+    m = len(lines)
+    for i in range(m):
+        for j in range(i + 1, m):
+            ni, nj = fl[i][:2], fl[j][:2]
+            if abs(cross(ni, nj)) < 1e-12 and ni[0] * nj[0] + ni[1] * nj[1] < 0:
+                lam = {i: math.hypot(*nj), j: math.hypot(*ni)}
+                cands.append(lam)
+            for k in range(j + 1, m):
+                nk = fl[k][:2]
+                l1, l2, l3 = cross(nj, nk), cross(nk, ni), cross(ni, nj)
+                if min(l1, l2, l3) > 1e-12 or max(l1, l2, l3) < -1e-12:
+                    sg = 1 if l1 > 0 else -1
+                    cands.append({i: sg * l1, j: sg * l2, k: sg * l3})
+    scored = []
+    for lam in cands:
+        worst = max(sum(w * feval(fl[i][2], u) for i, w in lam.items()) for u in us)
+        if worst < 0:
+            scored.append((worst, lam))
+    scored.sort(key=lambda t: t[0])
+    for _, lam in scored[:6]:
+        idx = sorted(lam)
+        if len(idx) == 2:
+            i, j = idx
+            ni, nj = lines[i][:2], lines[j][:2]
+            # exact opposite normals: nj = -t ni with t > 0 rational (or in Q(sqrt2)); lambda = (t, 1)
+            if not (ni[0] * nj[1] - ni[1] * nj[0]).sign() == 0:
+                continue
+            t = (-(nj[0] / ni[0])) if ni[0].sign() != 0 else (-(nj[1] / ni[1]))
+            if t.sign() <= 0:
+                continue
+            lam_ex = {i: t, j: ONE}
+        else:
+            i, j, k = idx
+            ni, nj, nk = lines[i][:2], lines[j][:2], lines[k][:2]
+            cx = lambda a, b: a[0] * b[1] - a[1] * b[0]  # noqa: E731
+            l = [cx(nj, nk), cx(nk, ni), cx(ni, nj)]
+            if all(v.sign() < 0 for v in l):
+                l = [-v for v in l]
+            if not all(v.sign() > 0 for v in l):
+                continue
+            lam_ex = dict(zip((i, j, k), l))
+        # exact: sum lambda n = 0, then prove -sum lambda O > 0 on the half-open interval
+        sx = sum((w * lines[q][0] for q, w in lam_ex.items()), ZERO)
+        sy = sum((w * lines[q][1] for q, w in lam_ex.items()), ZERO)
+        if sx.sign() != 0 or sy.sign() != 0:
+            continue
+        P = []
+        for q, w in lam_ex.items():
+            P = padd(P, pscale(lines[q][2], -w)) if P else pscale(lines[q][2], -w)
+        if bern_pos_open(to_bern(P, ua, ub, max(DEG, len(P) - 1)), POLY_DEPTH, side):
+            return True
+    return False
+
+
+def endpoint_slice(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, u0: Q2, side: str) -> bool:
+    """Certify a box whose u-interval has u0 as its lower end (side "lo") or upper end (side "hi"), u0 being an
+    end of the whole u-range (theta = 0, pi/4 or pi/2), in two exact steps:
+
+    1. the box has no admissible pose for u in the half-open interval without u0 (`empty_on_open`: a Farkas
+       combination of two or three constraints, proved with `bern_pos_open`, the margin vanishing only at u0);
+    2. at u = u0 itself the admissible centres in the box form a polygon (exact vertices), and the points that
+       lie in the square at every vertex weigh >= 1.  For fixed theta the centres c with p in Q(c, theta) form
+       a square, a convex set, so p is in Q(c, theta) for every c of the polygon iff it is for every vertex.
+
+    This handles a square flush against a side at theta = u0, where the admissible part of a box is a
+    segment at u = u0 only, which subdivision in u never removes.  Chord pairs and segments are not used.
+    """
+    if not empty_on_open(ctx, x0, x1, y0, y1, ua, ub, side):
+        return False
+    return slice_cover(ctx, x0, x1, y0, y1, u0)
+
+
+def slice_cover(ctx: Context, x0, x1, y0, y1, u0: Q2) -> bool:
+    """Exact: at u = u0 the admissible centres in the box form a polygon (exact vertices), and the points that lie
+    in the square at every vertex weigh >= 1 (or there is no admissible centre).  Chord pairs and segments are not
+    used."""
+    D0 = peval(ctx.D, u0)
+    Dinv = D0.inverse()
+    cons = [(ln.nx, ln.ny, peval(ln.O, u0) * Dinv) for ln in ctx.adm]
+    cons += [(ONE, ZERO, Q2(x1)), (-ONE, ZERO, Q2(-x0)), (ZERO, ONE, Q2(y1)), (ZERO, -ONE, Q2(-y0))]
+    verts = []
+    for i in range(len(cons)):
+        for j in range(i + 1, len(cons)):
+            a1, b1, c1 = cons[i]
+            a2, b2, c2 = cons[j]
+            det = a1 * b2 - a2 * b1
+            if det.sign() == 0:
+                continue
+            inv = det.inverse()
+            vx = (c1 * b2 - c2 * b1) * inv
+            vy = (a1 * c2 - a2 * c1) * inv
+            if all((a * vx + b * vy) <= c for a, b, c in cons):
+                if not any(vx == wx and vy == wy for wx, wy in verts):
+                    verts.append((vx, vy))
+    if not verts:
+        return True                      # no admissible pose at u0 either
+    e1 = (peval(ctx.E1x, u0) * Dinv, peval(ctx.E1y, u0) * Dinv)
+    e2 = (peval(ctx.E2x, u0) * Dinv, peval(ctx.E2y, u0) * Dinv)
+    half = Q2(HALF)
+    total = Fraction(0)
+    for px, py, w in ctx.points:
+        if w == 0:
+            continue
+        ok = True
+        for vx, vy in verts:
+            dx, dy = px - vx, py - vy
+            for ex, ey in (e1, e2):
+                t = dx * ex + dy * ey
+                if t > half or t < -half:
+                    ok = False
+                    break
+            if not ok:
+                break
+        if ok:
+            total += w
+            if total >= 1:
+                return True
     return False
 
 
@@ -897,8 +1078,9 @@ _WORKER_CTX = None
 
 
 def _init_worker(L_s, pts_s, opts):
-    global _WORKER_CTX
+    global _WORKER_CTX, FRAME_H
     L = Q2.parse(L_s)
+    FRAME_H = None if opts.get("frame_H") is None else Q2.parse(opts["frame_H"])
     pts = [(Q2.parse(x), Q2.parse(y), Fraction(w)) for x, y, w in pts_s]
     _WORKER_CTX = Context(L, pts, opts)
     _WORKER_CTX.opts["exclusions_parsed"] = [tuple(Q2.parse(v) for v in ex) for ex in opts.get("exclusions", [])]
@@ -924,6 +1106,10 @@ def box_str(box):
     return {"x": [str(x0), str(x1)], "y": [str(y0), str(y1)], "u": [str(ua), str(ub)]}
 
 
+def _run_root_tagged(task):
+    return task, run_root(task)
+
+
 def run_root(task):
     """Adaptive subdivision of one root box (depth-first)."""
     ctx = _WORKER_CTX
@@ -931,8 +1117,10 @@ def run_root(task):
            Q2.parse(task[4]), Q2.parse(task[5]))
     max_depth = ctx.opts["max_depth"]
     u_scale = ctx.opts["u_scale"]
-    st = {"EMPTY": 0, "COVER": 0, "EXCLUDED": 0, "uncertified": 0, "nodes": 0, "max_depth": 0, "unc_list": []}
+    st = {"EMPTY": 0, "COVER": 0, "EXCLUDED": 0, "SLICE": 0, "OPEN": 0, "uncertified": 0, "nodes": 0, "max_depth": 0, "unc_list": []}
     excl = ctx.opts.get("exclusions_parsed") or []
+    u_lo = Q2.parse(ctx.opts["u_lo"]) if ctx.opts.get("u_lo") else None
+    u_hi = Q2.parse(ctx.opts["u_hi"]) if ctx.opts.get("u_hi") else None
     def inside_exclusion(bx):
         x0, x1, y0, y1, ua, ub = bx
         for ex in excl:
@@ -948,6 +1136,15 @@ def run_root(task):
             st["EXCLUDED"] += 1
             continue
         res = certify_box(ctx, *bx)
+        if res is None and u_lo is not None:
+            if (bx[4] == u_lo and endpoint_slice(ctx, *bx, u_lo, "lo")) or \
+                    (bx[5] == u_hi and endpoint_slice(ctx, *bx, u_hi, "hi")):
+                res = "SLICE"
+            elif (bx[4] == u_lo and certify_box(ctx, *bx, open_side="lo") is not None
+                  and slice_cover(ctx, *bx[:4], u_lo)) or \
+                    (bx[5] == u_hi and certify_box(ctx, *bx, open_side="hi") is not None
+                     and slice_cover(ctx, *bx[:4], u_hi)):
+                res = "OPEN"        # the half-open interval by certify_box, the end u0 by slice_cover
         if res is not None:
             st[res] += 1
         elif d >= max_depth:
@@ -992,7 +1189,8 @@ def rational_upper(v: Q2, den=64) -> Fraction:
     return r
 
 
-def check(cert, root=4, max_depth=40, jobs=1, u_breaks=(), U=None, u_scale=4, n=None, bbox=None):
+def check(cert, root=4, max_depth=40, jobs=1, u_breaks=(), U=None, u_scale=4, n=None, bbox=None, roots_from=None,
+          slices=False, checkpoint=None):
     """Run the checker.  `cert` is a path or an already-parsed dict.  Returns the summary dict."""
     t0 = time.time()
     raw, L, sym, points, pairs, features, segments = load_certificate(cert)
@@ -1005,7 +1203,7 @@ def check(cert, root=4, max_depth=40, jobs=1, u_breaks=(), U=None, u_scale=4, n=
     }
     total = sum((w for _, _, w in points), Fraction(0))
     total += sum((Fraction(len(sites) // k) * w for sites, k, w in features), Fraction(0))
-    total += sum((rho for _, _, rho in segments), Fraction(0))   # unit segments: rho * 1
+    total += sum((rho for _, _, rho in segments), Fraction(0))   # rho is the mass of the whole segment
     summary["total_weight"] = str(total)   # budget: points + sum floor(m/k) w + sum rho |pq|
     summary["features"] = len(features)
     summary["segments"] = len(segments)
@@ -1026,14 +1224,20 @@ def check(cert, root=4, max_depth=40, jobs=1, u_breaks=(), U=None, u_scale=4, n=
     summary["u_breaks"] = [str(u) for u in ubr]
     # root grid over [0, B]^2: B is rational_upper(L) or a given rational bbox >= L (exactly checked);
     # a bbox like 6 for L = 5 puts the root-box faces on lines such as x = 3/2
+    # (hypotenuse frame: [0, B] x [0, B/2] with B >= H)
+    ext = L if FRAME_H is None else FRAME_H
     if bbox is not None:
         B = Fraction(bbox)
-        if not Q2(B) >= L:
-            raise CertError(f"bbox {B} is smaller than L")
+        if not Q2(B) >= ext:
+            raise CertError(f"bbox {B} is smaller than {'L' if FRAME_H is None else 'H'}")
     else:
-        B = rational_upper(L)
+        B = rational_upper(ext)
     summary["bbox"] = str(B)
+    summary["slices"] = bool(slices)
+    summary["frame"] = "legs" if FRAME_H is None else "hyp"
     Lx = Ly = B
+    if FRAME_H is not None:
+        Ly = B / 2
     tasks = []
     for i in range(root):
         for j in range(root):
@@ -1041,7 +1245,20 @@ def check(cert, root=4, max_depth=40, jobs=1, u_breaks=(), U=None, u_scale=4, n=
                 tasks.append((str(Lx * i / root), str(Lx * (i + 1) / root),
                               str(Ly * j / root), str(Ly * (j + 1) / root),
                               str(ubr[k]), str(ubr[k + 1])))
-    opts = {"max_depth": max_depth, "u_scale": u_scale,
+    if roots_from is not None:
+        # continue a previous run: its uncertified boxes become the root boxes of this run.  The claim of this run
+        # together with the previous run (whose other leaves are certified) covers the whole pose space, provided
+        # the previous run listed all of its uncertified boxes and was for the same certificate.
+        prev = json.load(open(roots_from))
+        if prev.get("certificate_sha256") != summary["certificate_sha256"]:
+            raise CertError("roots_from is a run of a different certificate")
+        if prev["uncertified"] != len(prev["uncertified_boxes"]):
+            raise CertError("roots_from does not list all of its uncertified boxes")
+        tasks = [(b["x"][0], b["x"][1], b["y"][0], b["y"][1], b["u"][0], b["u"][1]) for b in prev["uncertified_boxes"]]
+        summary["roots_from"] = {"file": os.path.basename(roots_from), "uncertified": prev["uncertified"],
+                                 "max_depth_limit": prev.get("max_depth_limit")}
+    opts = {"max_depth": max_depth, "u_scale": u_scale, "frame_H": None if FRAME_H is None else str(FRAME_H),
+            "u_lo": str(ubr[0]) if slices else None, "u_hi": str(ubr[-1]) if slices else None,
             "pairs": [(str(p[0]), str(p[1]), str(q[0]), str(q[1])) for p, q in pairs],
             "features": [([(str(x), str(y)) for x, y in sites], k, str(w)) for sites, k, w in features],
             "segments": [((str(p[0]), str(p[1])), (str(q[0]), str(q[1])), str(rho))
@@ -1067,22 +1284,64 @@ def check(cert, root=4, max_depth=40, jobs=1, u_breaks=(), U=None, u_scale=4, n=
         summary["claim"] = (summary.get("claim", "every admissible closed unit square captures >= 1")
                             + "; poses whose square contains an obstacle point are exempt (budget excludes them)")
     init_args = (str(L), [(str(x), str(y), str(w)) for x, y, w in points], opts)
+    # checkpoint (a run that can be resumed after the machine stops): one JSON line per finished root box.  The
+    # first line fixes the run (certificate, roots, options); a file written for another run is refused.  Each root
+    # box is checked independently and deterministically, so reusing finished ones gives the same summary.
+    done = {}
+    ck = None
+    if checkpoint is not None:
+        head = {"checkpoint": 1, "certificate_sha256": summary["certificate_sha256"], "tasks": tasks,
+                "opts": opts, "points": init_args[1]}
+        head = json.loads(json.dumps(head))     # tuples become lists, as when read back
+        if os.path.exists(checkpoint) and os.path.getsize(checkpoint) > 0:
+            with open(checkpoint) as f:
+                lines = f.read().split("\n")
+            if json.loads(lines[0]) != head:
+                raise CertError("checkpoint was written for a different run")
+            for ln in lines[1:]:
+                try:
+                    rec = json.loads(ln)
+                except ValueError:
+                    continue            # a line cut off when the machine stopped
+                done[tuple(rec["task"])] = rec["result"]
+            ck = open(checkpoint, "a")
+            if lines[-1] != "":
+                ck.write("\n")
+        else:
+            ck = open(checkpoint, "w")
+            ck.write(json.dumps(head) + "\n")
+            ck.flush()
+        summary["checkpoint"] = {"file": os.path.basename(checkpoint), "reused_roots": len(done)}
+    todo = [t for t in tasks if t not in done]
+
+    def keep(t, r):
+        done[t] = r
+        if ck is not None:
+            ck.write(json.dumps({"task": list(t), "result": r}) + "\n")
+            ck.flush()
+            os.fsync(ck.fileno())
+
     if jobs > 1:
         from multiprocessing import Pool
         with Pool(jobs, initializer=_init_worker, initargs=init_args) as pool:
-            results = list(pool.imap_unordered(run_root, tasks))
+            for t, r in pool.imap_unordered(_run_root_tagged, todo):
+                keep(t, r)
     else:
         _init_worker(*init_args)
-        results = [run_root(t) for t in tasks]
-    agg = {"EMPTY": 0, "COVER": 0, "EXCLUDED": 0, "uncertified": 0, "nodes": 0, "max_depth": 0}
+        for t in todo:
+            keep(t, run_root(t))
+    if ck is not None:
+        ck.close()
+    results = [done[t] for t in tasks]
+    agg = {"EMPTY": 0, "COVER": 0, "EXCLUDED": 0, "SLICE": 0, "OPEN": 0, "uncertified": 0, "nodes": 0, "max_depth": 0}
     unc = []
     for r in results:
-        for k in ("EMPTY", "COVER", "EXCLUDED", "uncertified", "nodes"):
-            agg[k] += r[k]
+        for k in ("EMPTY", "COVER", "EXCLUDED", "SLICE", "OPEN", "uncertified", "nodes"):
+            agg[k] += r.get(k, 0)
         agg["max_depth"] = max(agg["max_depth"], r["max_depth"])
         unc.extend(r["unc_list"])
     summary.update(
-        root_boxes=len(tasks), root_grid=root, empty_leaves=agg["EMPTY"], cover_leaves=agg["COVER"], excluded_leaves=agg["EXCLUDED"],
+        root_boxes=len(tasks), root_grid=root, empty_leaves=agg["EMPTY"], cover_leaves=agg["COVER"], excluded_leaves=agg["EXCLUDED"], slice_leaves=agg["SLICE"], open_leaves=agg["OPEN"],
         uncertified=agg["uncertified"], uncertified_boxes=unc[:MAX_LISTED_UNCERTIFIED],
         nodes=agg["nodes"], max_depth=agg["max_depth"], max_depth_limit=max_depth,
         seconds=round(time.time() - t0, 3),
@@ -1099,12 +1358,17 @@ def main(argv=None):
     ap.add_argument("--max-depth", type=int, default=40)
     ap.add_argument("--jobs", type=int, default=1)
     ap.add_argument("--u-breaks", default="", help="extra u breakpoints, comma separated Q2 strings")
+    ap.add_argument("--roots-from", default=None, help="checker output of a previous run of this certificate: use its uncertified boxes as the root boxes")
+    ap.add_argument("--slices", action="store_true", help="also certify boxes at the ends of the u-range by "
+                    "emptiness on the half-open interval plus an exact check of the end slice (endpoint_slice)")
     ap.add_argument("--bbox", default=None, help="rational side of the root bounding box [0, B]^2 (B >= L)")
     ap.add_argument("--u-scale", type=float, default=4.0, help="weight of the u side when choosing the split")
+    ap.add_argument("--checkpoint", default=None, help="JSON-lines file of finished root boxes; resumes a stopped run")
     a = ap.parse_args(argv)
     breaks = [s for s in a.u_breaks.split(",") if s.strip()]
     s = check(a.cert, root=a.root, max_depth=a.max_depth, jobs=a.jobs, u_breaks=breaks,
-              u_scale=a.u_scale, n=a.n, bbox=a.bbox)
+              u_scale=a.u_scale, n=a.n, bbox=a.bbox, roots_from=a.roots_from, slices=a.slices,
+              checkpoint=a.checkpoint)
     print(json.dumps(s, indent=2))
     print(f"total weight = {s['total_weight']}", file=sys.stderr)
     if a.n is not None:

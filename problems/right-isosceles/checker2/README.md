@@ -1,4 +1,4 @@
-# Second checker: unit squares in a right isosceles triangle (n = 2, 3, 4, 6, 10)
+# Second checker: unit squares in a right isosceles triangle (n = 2, 3, 4, 6, 10, 15)
 
 An independent re-check of the point certificates behind:
 
@@ -9,6 +9,7 @@ An independent re-check of the point certificates behind:
 | 4 | 5/√2 | `certificates/n4/n4_cert.json` |
 | 6 | 4 | `certificates/n6/n6_cert.json` |
 | 10 | 5 | `certificates/n10/n10_cert.json` |
+| 15 | 6 | `certificates/n15/n15_cert.json` (checked by `local_sweep.py`, see below) |
 
 ## What is checked
 
@@ -94,3 +95,82 @@ python3 checker2/sweep_q2.py checker2/controls/n3_Lplus.json --n 3 --jobs 4 --st
 ```
 
 The recorded runs are in `runs/`.
+
+## n = 15 (`local_sweep.py`)
+
+The n = 15 certificate has 505 points. The whole-arrangement sweep of `sweep_q2.py` would have about
+2,000 lines and 1.4 × 10⁹ triples, which is out of reach. `local_sweep.py` checks the same claim
+by branch and bound over boxes in the pose space, with the same exact sweep inside each small box.
+
+### Method
+
+- Poses are (u, x, y): u = tan(θ/2) ∈ [0, 1], c = (x, y) the centre. The root boxes are 20 slices in
+  u times a 16 × 16 grid over [0, 6]², 5,120 in all.
+- On a box [u0, u1] × [x0, x1] × [y0, y1], cos θ and sin θ are monotone in u, so they have exact
+  rational bounds. With exact interval arithmetic each box closes in one of three ways, or is split:
+  - INADMISSIBLE: some vertex of Q is outside a side of T_L at every pose of the box.
+  - SURE: the points inside Q at every pose of the box weigh ≥ 1.
+  - SWEEP: at most K = 24 points change membership in the box (or the depth reaches 40). Then the box is
+    swept exactly, using only the lines that matter: the box sides, the admissibility lines that are
+    not always true, and the sides of Q crossed by those points.
+- The exact sweep is the method of `sweep_q2.py`, restricted to the box:
+  - critical u are roots of 3 × 3 determinants, isolated exactly with sympy;
+  - one rational u is taken in each open gap;
+  - at that u, the capture is counted exactly on every open sector at every vertex of the region.
+  - A triple of lines is skipped when one of its pairs provably never meets inside the closed box
+    (interval bound), or when Descartes' rule (after a Möbius map onto (u0, u1)) shows that its
+    determinant has no root there.
+- Closure is by upper semicontinuity, as for `sweep_q2.py`. Box boundaries have measure zero.
+- As in `sweep_q2.py`, the certificate's `pairs` field and its D1 symmetry are not used.
+
+Compared with the first checker, this checker:
+
+- does not use Bernstein bounds;
+- does not use the chord-pair lemma;
+- counts points exactly in each cell.
+
+The two checkers share only the certificate format.
+
+### Result (2026-10-14, one machine, 3 processes; `runs/n15.json`)
+
+| certificate | sha256 | points | total | root boxes | swept boxes | critical roots | min weight | time | verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| n = 15 | `ddf736df…` | 505 | 1499/100 | 5,120 | 14,662 | 1,689,246 | 3512157/3504100 | 2.7 h | verified |
+
+The total weight 1499/100 is below 15. The other counts are:
+
+- 25,804 SURE boxes;
+- 6,383 INADMISSIBLE boxes;
+- at most 47 lines in one box;
+- maximum depth 40.
+
+The minimum is attained at u = 7/202, near the centre (1.4732, 3.5293).
+
+### Negative controls
+
+| control | root boxes run | result |
+| --- | --- | --- |
+| `controls/n15_Lplus.json`: L = 601/100 | 11, 12, 26, 27, 28 | failed (529147/1752050 ≈ 0.302) |
+| `controls/n15_weight_all.json`: every weight × 99/100 | 56, 57, 58 | failed (347703543/350410000 ≈ 0.9923) |
+
+Each failure is a pose at a rational angle whose capture is counted exactly:
+
+- the L + 1/100 control fails at a square on the leg x = 0, around y ≈ 4.5;
+- the weight control fails at the same pose as the minimum of the real run.
+
+The root boxes are numbered as `local_sweep.py` lists them: slice k, column i, row j has index
+256 k + 16 i + j.
+
+### Run
+
+```sh
+# from problems/right-isosceles; needs gmpy2 and sympy
+python3 checker2/local_sweep.py certificates/n15/n15_cert.json --n 15 --jobs 3 --K 24 \
+    --uslices 20 --grid 16 --log n15.log.jsonl --resume --out n15.json
+python3 checker2/local_sweep.py checker2/controls/n15_Lplus.json --n 15 --jobs 2 --K 24 \
+    --uslices 20 --grid 16 --only 27,26,28,11,12 --stop-early        # must fail
+python3 checker2/local_sweep.py checker2/controls/n15_weight_all.json --n 15 --jobs 2 --K 24 \
+    --uslices 20 --grid 16 --only 57,56,58 --stop-early              # must fail
+```
+
+With `--log` and `--resume`, an interrupted run continues from the root boxes already logged.

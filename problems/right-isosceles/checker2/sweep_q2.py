@@ -336,9 +336,8 @@ def simplest_between(lo, hi):
     # continued-fraction style search
     a, b = lo - fl, hi - fl
     if a == 0:
-        n = 1
-        while Fraction(1, n) >= b:
-            n += 1
+        # the least n with 1/n < b (was a linear search, which hangs on tiny gaps)
+        n = math.floor(1 / b) + 1
         return fl + Fraction(1, n)
     return fl + 1 / simplest_between(1 / b, 1 / a)
 

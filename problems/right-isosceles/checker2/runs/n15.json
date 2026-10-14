@@ -1,0 +1,50 @@
+{
+  "certificate": "certificates/n15/n15_cert.json",
+  "sha256": "ddf736df0e6b80b0d4d3c8a844f6d95567578d11f87c29a70ccc6f7c13fc6b8d",
+  "L": "6",
+  "points": 505,
+  "total_weight": "1499/100",
+  "root_boxes": 5120,
+  "roots_run": 5120,
+  "K": 24,
+  "maxdepth": 40,
+  "counts": {
+    "inadmissible": 6383,
+    "sure": 25804,
+    "sweep": 14662,
+    "split": 41729,
+    "max_depth": 40,
+    "lines_max": 47,
+    "samples": 1703908,
+    "roots": 1689246
+  },
+  "min_sweep_capture": "3512157/3504100",
+  "min_at": [
+    [
+      "0",
+      "1/20",
+      "93/64",
+      "3/2",
+      "225/64",
+      "57/16"
+    ],
+    [
+      "7/202",
+      [
+        [
+          "23531419/15973523",
+          "56374514/15973523"
+        ],
+        [
+          "43681/40804",
+          "-2"
+        ]
+      ]
+    ]
+  ],
+  "status": "verified",
+  "seconds": 9743.9,
+  "n": 15,
+  "total_below_n": true,
+  "note": "seconds is the wall-clock time (3 processes) of the final resumed run; the first 98 root boxes were logged earlier by the same tool before a speed fix of the sample search, which does not change any value"
+}

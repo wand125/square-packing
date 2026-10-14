@@ -1,7 +1,7 @@
 """Add every pair of certificate points at exact distance 1 as a chord pair (Lemma P of the checker).
-Usage: python3 add_pairs.py in.json out.json"""
+Usage: python add_pairs.py in.json out.json"""
 import json, os, sys
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "checker"))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "checker"))
 from q2 import Q2
 c = json.load(open(sys.argv[1]))
 P = [(Q2.parse(p["x"]), Q2.parse(p["y"])) for p in c["points"]]

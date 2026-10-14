@@ -76,6 +76,27 @@ class Q2:
         d = a * a - 2 * b * b
         return sa if d > 0 else sb
 
+    def __rtruediv__(self, o):
+        return Q2(o) / self
+
+    def _cmp(self, o):
+        return (self - o).sign()
+
+    def __lt__(self, o):
+        return self._cmp(o) < 0
+
+    def __le__(self, o):
+        return self._cmp(o) <= 0
+
+    def __gt__(self, o):
+        return self._cmp(o) > 0
+
+    def __ge__(self, o):
+        return self._cmp(o) >= 0
+
+    def __bool__(self):
+        return not (self.a == 0 and self.b == 0)
+
     def is_zero(self):
         return self.a == 0 and self.b == 0
 
