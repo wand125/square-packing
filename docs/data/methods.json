@@ -156,6 +156,34 @@
    ]
   },
   {
+   "id": "continuous-pose",
+   "name": {
+    "en": "Rectangle-density certificates at every angle (continuous poses)",
+    "ja": "すべての角度での矩形密度の証明書（連続姿勢）"
+   },
+   "what": {
+    "en": "A rational rectangle measure of total mass below n on the container of side L, each rectangle's mass spread over the eight images of the container's symmetry group. The checks prove that every closed square of side B in the container, at any centre and any angle, carries mass at least 1; the angle is covered continuously in the half-angle t = tan(θ/2), not on a net, with interval arithmetic and an exact check of the near-axis region. Then n disjoint such squares would need mass n, so s(n) > L/B. Each certificate is checked by two verifiers that share no code, with a negative control (all masses × 0.985 must be refused).",
+    "ja": "辺 L の容器の上の総質量 n 未満の有理数の矩形測度で、各矩形の質量を容器の対称群による 8 つの像に分ける。容器の中の辺 B の閉じた正方形は、どの中心・どの角度でも質量 1 以上をもつことを検査で示す。角度は網ではなく半角 t = tan(θ/2) で連続に覆い、区間演算と、軸の近くの領域の厳密な検査を用いる。互いに交わらない n 個の正方形には質量 n が要るので s(n) > L/B。各証明書を、コードを共有しない 2 つの検査器で検査し、負の対照（全質量を 0.985 倍したものは拒否されること）を付ける。"
+   },
+   "used": {
+    "en": "n = 28: s(28) > 1149/200 = 5.745 (replaces the mixed certificate 5.7425).",
+    "ja": "n = 28：s(28) > 1149/200 = 5.745（混合証明書の 5.7425 に代わる）。"
+   },
+   "origin": {
+    "en": "The first verifier is sqverify_fast (Joshua Levy, jlevy/squares) with a continuous-angle mode added by us. The second reuses the continuous-pose kernel of Guzhou0806/n40-square-packing (MIT) with the changes listed in its CHANGES.md.",
+    "ja": "第 1 の検査器は sqverify_fast（Joshua Levy、jlevy/squares）に当方が連続角度のモードを加えたもの。第 2 の検査器は Guzhou0806/n40-square-packing の連続姿勢の核（MIT）を、CHANGES.md に挙げた変更を加えて用いる。"
+   },
+   "tools": [
+    "tools/sqverify_continuous",
+    "problems/square-lower-bounds/certificates/continuous_n28_L5745/check2/src"
+   ],
+   "sources": [
+    "problems/square-lower-bounds/README.md#L1624-L1632",
+    "problems/square-lower-bounds/certificates/continuous_n28_L5745/README.md",
+    "tools/sqverify_continuous/README.md#L1-L31"
+   ]
+  },
+  {
    "id": "k2mc-lift",
    "name": {
     "en": "k² − c families (cover lifting)",

@@ -1,6 +1,6 @@
 import { readIndex, readRepoText, readManifest, type Index, type Certificate } from './data';
 export const CONT: Record<string, [string, string]> = {square: ['Square', '正方形'], triangle: ['Equilateral triangle', '正三角形'], 'right-isosceles': ['Right isosceles triangle', '直角二等辺三角形'], hexagon: ['Regular hexagon', '正六角形'], domino: ['1×2 rectangle', '1×2 の長方形'], n17: ['Square, n = 17 sub-patterns', '正方形 n = 17 の部分型'], cube: ['Cube (unit cubes)', '立方体（単位立方体）']};
-export const METH: Record<string, [string, string]> = {point: ['weighted points', '点の重み'], rect: ['rectangle density', '矩形密度'], mixed: ['mixed', '混合'], lift: ['k² − c lift (points + segments)', 'k² − c の持ち上げ（点＋線分）'], 'points-lemma': ['points + local lemma', '点＋局所補題'], 'two-stage': ['two stages + local lemma', '2 段＋局所補題'], bb: ['sub-pattern branch and bound', '部分型の分枝限定'], 'cube-points': ['8 points + interval branch and bound', '8 点＋区間の分枝限定']};
+export const METH: Record<string, [string, string]> = {point: ['weighted points', '点の重み'], rect: ['rectangle density', '矩形密度'], mixed: ['mixed', '混合'], lift: ['k² − c lift (points + segments)', 'k² − c の持ち上げ（点＋線分）'], 'points-lemma': ['points + local lemma', '点＋局所補題'], 'two-stage': ['two stages + local lemma', '2 段＋局所補題'], bb: ['sub-pattern branch and bound', '部分型の分枝限定'], continuous: ['continuous poses (two checkers)', '連続姿勢（2 系統の検査器）'], 'cube-points': ['8 points + interval branch and bound', '8 点＋区間の分枝限定']};
 export const KIND: Record<string, [string, string]> = {exact: ['optimal value', '最適値'], lb: ['lower bound', '下界'], gt: ['lower bound (strict)', '下界（真に大きい）'], sub: ['sub-pattern excluded', '部分型の除外']};
 export interface Result {cont: string; n: number; v: number; kind: string; short: string; claim_en: string; claim_ja: string; meth: string; rel: string; rel_url?: string; assets: string[]; check: string; cwd: string; docs: string[]; id: string; best?: boolean}
 export const fraction = (s: string) => { const [n,d] = s.trim().split('/').map(Number); return d === undefined ? n : n / d; };
@@ -13,9 +13,9 @@ export function squareRows(idx: Index): Result[] {
    // s(n) ≥ k with k an integer and n ≤ k²: the k × k grid gives s(n) ≤ k, so the value is exact (s(59) = 8, s(77) = 9)
    // the claim stays the certificate's own; the grid consequence is in the result note of methods.json
    if (m[2] === '>=' && Number.isInteger(v) && n <= v * v) { kind = 'exact'; short = `s(${n}) = ${v}`; } }
-  else { const m = cl.match(/^No packing of (\d+) closed unit squares fits in the closed square of side ([0-9/]+) \(= ([0-9.]+)\)\./); if (!m) throw new Error('Unrecognized square claim: ' + cl); n = +m[1]; v = +m[3]; kind = 'gt'; short = `s(${n}) > ${m[2]} = ${m[3]}`; ja = `${n} 個の閉じた単位正方形は、辺 ${m[2]}（= ${m[3]}）の閉じた正方形に入らない。`; }
+  else { const m = cl.match(/^No packing of (\d+) closed unit squares (?:\(interiors disjoint\) )?fits in the closed square of side ([0-9/]+) \(= ([0-9.]+)\)[.;]/); if (!m) throw new Error('Unrecognized square claim: ' + cl); n = +m[1]; v = +m[3]; kind = 'gt'; short = `s(${n}) > ${m[2]} = ${m[3]}`; ja = `${n} 個の閉じた単位正方形${cl.includes('(interiors disjoint)') ? '（内部は互いに交わらない）' : ''}は、辺 ${m[2]}（= ${m[3]}）の閉じた正方形に入らない。`; }
   const key = c.id.slice(c.id.indexOf(':') + 1);
-  const meth = key.includes('rect_n') || (c.release_tag === 'square-lower-bounds-history-v1' && key.includes('/cert_n')) ? 'rect' : key.includes('mixed_n') ? 'mixed' : /\/k2m\d/.test(key) ? 'lift' : 'point';
+  const meth = key.includes('rect_n') || (c.release_tag === 'square-lower-bounds-history-v1' && key.includes('/cert_n')) ? 'rect' : key.includes('mixed_n') ? 'mixed' : key.includes('continuous_n') ? 'continuous' : /\/k2m\d/.test(key) ? 'lift' : 'point';
   return {cont: 'square', n, v, kind, short, claim_en: cl, claim_ja: ja, meth, ...common(c)};
  });
 }
