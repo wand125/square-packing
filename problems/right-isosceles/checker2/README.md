@@ -146,6 +146,11 @@ The total weight 1499/100 is below 15. The other counts are:
 
 The minimum is attained at u = 7/202, near the centre (1.4732, 3.5293).
 
+Tool versions: the first 98 root boxes were logged before a speed fix (2026-10-14) of `simplest_between` in
+`sweep_q2.py`, and the other 5,022 with the fixed version shipped here. The fix replaces a linear search for the
+least n with 1/n < b by n = ⌊1/b⌋ + 1. This is the same integer for every b > 0, since 1/n < b ⇔ n > 1/b, and
+the two versions agree on 40,000 random cases, so no value or verdict changes. See the `note` in `runs/n15.json`.
+
 ### Negative controls
 
 | control | root boxes run | result |
