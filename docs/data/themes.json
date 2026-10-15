@@ -290,8 +290,8 @@
   {
    "issue": 7,
    "url": "https://github.com/wand125/square-packing/issues/7",
-   "state": "open",
-   "updated": "2026-10-07",
+   "state": "stopped",
+   "updated": "2026-10-15",
    "title": {
     "en": "s(95) = 10",
     "ja": "s(95) = 10"
@@ -308,15 +308,19 @@
     {
      "en": "The lift is set up; s(95) ≥ 9.965 is published (mixed_n95_L9965).",
      "ja": "持ち上げの設定は完了。s(95) ≥ 9.965 を公開済み（mixed_n95_L9965）。"
-    }
-   ],
-   "working_on": [
+    },
     {
-     "en": "The remaining cases of the lift: every root must be certified.",
-     "ja": "持ち上げの残りの場合：すべての根を証明する。"
+     "en": "Stopped (2026-10-15): Benjamin Greff has reported a certificate for s(95) = 10 (jlevy/squares#610), the case k = 10 of the k² − 5 series after s(59) = 8 and s(76) = 9. We have stopped our own lift. The published bound s(95) ≥ 9.965 remains available.",
+     "ja": "停止（2026-10-15）: Benjamin Greff が s(95) = 10 の証明書を報告した（jlevy/squares#610）。k² − 5 の系列の k = 10 で、s(59) = 8・s(76) = 9 に続くもの。当方の持ち上げは止めた。公開済みの下界 s(95) ≥ 9.965 はそのまま利用できる。"
     }
    ],
-   "links": []
+   "working_on": [],
+   "links": [
+    {
+     "label": "jlevy/squares#610",
+     "url": "https://github.com/jlevy/squares/issues/610"
+    }
+   ]
   },
   {
    "issue": 8,
