@@ -1,14 +1,14 @@
 {
  "schema": "asset/v1",
- "id": "rectangles-v1:certificates",
- "claim": "For each piece of the edges F_k (k = 2..15) listed in data/edges, the certificates pack k non-overlapping unit squares in the stated a × b box. Constructions only; no optimality claim.",
- "release_tag": "rectangles-v1",
- "release_url": "https://github.com/wand125/square-packing/releases/tag/rectangles-v1",
+ "id": "rectangles-v2:certificates",
+ "claim": "For each piece of the edges F_k (k = 2..15) listed in data/edges, and for each box listed in data/sweeps, the certificates pack k non-overlapping unit squares in the stated a × b box. Constructions only; no optimality claim.",
+ "release_tag": "rectangles-v2",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/rectangles-v2",
  "assets": [
   {
    "asset": "certificates.tar.gz",
-   "size": 40002,
-   "sha256": "76e6c2ace12f97f8be83329204bb2d27f5c4a8075ce86bc3cd5ff957e6833c7a"
+   "size": 72309,
+   "sha256": "d8fb23e842eccc5129741bbe8db8486d8005a3a7b3586a9b81dcb6c3b873ca18"
   }
  ],
  "unpack": "tar xzf certificates.tar.gz -C problems/rectangles",
@@ -25,6 +25,6 @@
   "repository": "wand125/square-packing",
   "commit": null,
   "path": "problems/rectangles",
-  "published_after": "27ed16885a3ac64c2a22c992f5375574ccf3ff16"
+  "published_after": "b57e66712b5f722b39fcb703692006062c7d9eb7"
  }
 }

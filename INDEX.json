@@ -93,9 +93,9 @@
   ],
   "rectangles": [
    {
-    "id": "rectangles-v1:certificates",
-    "claim": "For each piece of the edges F_k (k = 2..15) listed in data/edges, the certificates pack k non-overlapping unit squares in the stated a × b box. Constructions only; no optimality claim.",
-    "release_tag": "rectangles-v1",
+    "id": "rectangles-v2:certificates",
+    "claim": "For each piece of the edges F_k (k = 2..15) listed in data/edges, and for each box listed in data/sweeps, the certificates pack k non-overlapping unit squares in the stated a × b box. Constructions only; no optimality claim.",
+    "release_tag": "rectangles-v2",
     "assets": [
      "certificates.tar.gz"
     ],

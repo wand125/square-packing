@@ -1,4 +1,4 @@
-"""Re-check every certificate listed in data/edges/k*.json with both checkers.
+"""Re-check every certificate listed in data/edges/k*.json and data/sweeps/*.json with both checkers.
 
 Run from problems/rectangles after unpacking the release asset:
     python checker/check_all.py
@@ -40,5 +40,25 @@ for edge in sorted((base / 'data' / 'edges').glob('k*.json')):
             if problems:
                 fails += 1
                 print(f'FAIL k={k} {piece["key"]} {w["file"]}: {", ".join(problems)}')
+for sweep in sorted((base / 'data' / 'sweeps').glob('*.json')) if (base / 'data' / 'sweeps').exists() else []:
+    data = json.loads(sweep.read_text())
+    k = data['k']
+    for w in data['certificates']:
+        count += 1
+        cert = json.loads((base / w['file']).read_text())
+        problems = []
+        if cert.get('schema') != 'rational-unit-square-v1':
+            problems.append('schema')
+        if cert['n'] != k or len(cert['squares']) != k:
+            problems.append('number of squares')
+        if F(cert['a']) != F(w['a']) or F(cert['b']) != F(w['b']):
+            problems.append('box differs from the listing')
+        if not verify.exact(cert).get('exact_verified'):
+            problems.append('verify.py')
+        if not verify_fast.exact(cert).get('exact_verified'):
+            problems.append('verify_fast.py')
+        if problems:
+            fails += 1
+            print(f'FAIL {sweep.name} {w["file"]}: {", ".join(problems)}')
 print(f'{count} certificates checked, {fails} failed')
 sys.exit(1 if fails else 0)

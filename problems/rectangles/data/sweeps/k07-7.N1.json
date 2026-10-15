@@ -1,0 +1,1359 @@
+{
+ "schema": "rectangle-sweep/v1",
+ "k": 7,
+ "piece": "7.N1",
+ "claim": "each certificate packs 7 unit squares in its a × b box, with 2√2 ≤ a < 3 and b < 5 + √2 − a (below piece 6.5 of S_6 in Friedman's Math Magic, June 2010)",
+ "how": "b minimised at fixed a on a grid of a (bisection to 1e-6) from the packing of piece 7.N1; each box is a sample point, not a point of the formula",
+ "certificates": [
+  {
+   "file": "certificates/k07-sweep/7.N1-s001.json",
+   "a": "576579/200000",
+   "b": "702527/200000",
+   "a_float": 2.882895,
+   "b_float": 3.512635,
+   "friedman_6_5_b": 3.5313185624,
+   "below_by": 0.0186835624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s002.json",
+   "a": "576779/200000",
+   "b": "702247/200000",
+   "a_float": 2.883895,
+   "b_float": 3.511235,
+   "friedman_6_5_b": 3.5303185624,
+   "below_by": 0.0190835624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s003.json",
+   "a": "576979/200000",
+   "b": "3509833/1000000",
+   "a_float": 2.884895,
+   "b_float": 3.509833,
+   "friedman_6_5_b": 3.5293185624,
+   "below_by": 0.0194855624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s004.json",
+   "a": "577179/200000",
+   "b": "350843/100000",
+   "a_float": 2.885895,
+   "b_float": 3.50843,
+   "friedman_6_5_b": 3.5283185624,
+   "below_by": 0.0198885624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s005.json",
+   "a": "577379/200000",
+   "b": "219189/62500",
+   "a_float": 2.886895,
+   "b_float": 3.507024,
+   "friedman_6_5_b": 3.5273185624,
+   "below_by": 0.0202945624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s006.json",
+   "a": "577579/200000",
+   "b": "701123/200000",
+   "a_float": 2.887895,
+   "b_float": 3.505615,
+   "friedman_6_5_b": 3.5263185624,
+   "below_by": 0.0207035624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s007.json",
+   "a": "577779/200000",
+   "b": "700841/200000",
+   "a_float": 2.888895,
+   "b_float": 3.504205,
+   "friedman_6_5_b": 3.5253185624,
+   "below_by": 0.0211135624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s008.json",
+   "a": "577979/200000",
+   "b": "437849/125000",
+   "a_float": 2.889895,
+   "b_float": 3.502792,
+   "friedman_6_5_b": 3.5243185624,
+   "below_by": 0.0215265624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s009.json",
+   "a": "578179/200000",
+   "b": "3501377/1000000",
+   "a_float": 2.890895,
+   "b_float": 3.501377,
+   "friedman_6_5_b": 3.5233185624,
+   "below_by": 0.0219415624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s010.json",
+   "a": "578379/200000",
+   "b": "3499961/1000000",
+   "a_float": 2.891895,
+   "b_float": 3.499961,
+   "friedman_6_5_b": 3.5223185624,
+   "below_by": 0.0223575624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s011.json",
+   "a": "578579/200000",
+   "b": "3498541/1000000",
+   "a_float": 2.892895,
+   "b_float": 3.498541,
+   "friedman_6_5_b": 3.5213185624,
+   "below_by": 0.0227775624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s012.json",
+   "a": "578779/200000",
+   "b": "21857/6250",
+   "a_float": 2.893895,
+   "b_float": 3.49712,
+   "friedman_6_5_b": 3.5203185624,
+   "below_by": 0.0231985624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s013.json",
+   "a": "578979/200000",
+   "b": "218481/62500",
+   "a_float": 2.894895,
+   "b_float": 3.495696,
+   "friedman_6_5_b": 3.5193185624,
+   "below_by": 0.0236225624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s014.json",
+   "a": "579179/200000",
+   "b": "349427/100000",
+   "a_float": 2.895895,
+   "b_float": 3.49427,
+   "friedman_6_5_b": 3.5183185624,
+   "below_by": 0.0240485624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s015.json",
+   "a": "579379/200000",
+   "b": "1746421/500000",
+   "a_float": 2.896895,
+   "b_float": 3.492842,
+   "friedman_6_5_b": 3.5173185624,
+   "below_by": 0.0244765624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s016.json",
+   "a": "579579/200000",
+   "b": "872853/250000",
+   "a_float": 2.897895,
+   "b_float": 3.491412,
+   "friedman_6_5_b": 3.5163185624,
+   "below_by": 0.0249065624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s017.json",
+   "a": "579779/200000",
+   "b": "174499/50000",
+   "a_float": 2.898895,
+   "b_float": 3.48998,
+   "friedman_6_5_b": 3.5153185624,
+   "below_by": 0.0253385624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s018.json",
+   "a": "579979/200000",
+   "b": "697709/200000",
+   "a_float": 2.899895,
+   "b_float": 3.488545,
+   "friedman_6_5_b": 3.5143185624,
+   "below_by": 0.0257735624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s019.json",
+   "a": "580179/200000",
+   "b": "871777/250000",
+   "a_float": 2.900895,
+   "b_float": 3.487108,
+   "friedman_6_5_b": 3.5133185624,
+   "below_by": 0.0262105624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s020.json",
+   "a": "580379/200000",
+   "b": "3485669/1000000",
+   "a_float": 2.901895,
+   "b_float": 3.485669,
+   "friedman_6_5_b": 3.5123185624,
+   "below_by": 0.0266495624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s021.json",
+   "a": "580579/200000",
+   "b": "3484227/1000000",
+   "a_float": 2.902895,
+   "b_float": 3.484227,
+   "friedman_6_5_b": 3.5113185624,
+   "below_by": 0.0270915624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s022.json",
+   "a": "580779/200000",
+   "b": "108837/31250",
+   "a_float": 2.903895,
+   "b_float": 3.482784,
+   "friedman_6_5_b": 3.5103185624,
+   "below_by": 0.0275345624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s023.json",
+   "a": "580979/200000",
+   "b": "1740669/500000",
+   "a_float": 2.904895,
+   "b_float": 3.481338,
+   "friedman_6_5_b": 3.5093185624,
+   "below_by": 0.0279805624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s024.json",
+   "a": "581179/200000",
+   "b": "347989/100000",
+   "a_float": 2.905895,
+   "b_float": 3.47989,
+   "friedman_6_5_b": 3.5083185624,
+   "below_by": 0.0284285624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s025.json",
+   "a": "581379/200000",
+   "b": "3478439/1000000",
+   "a_float": 2.906895,
+   "b_float": 3.478439,
+   "friedman_6_5_b": 3.5073185624,
+   "below_by": 0.0288795624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s026.json",
+   "a": "581579/200000",
+   "b": "3476987/1000000",
+   "a_float": 2.907895,
+   "b_float": 3.476987,
+   "friedman_6_5_b": 3.5063185624,
+   "below_by": 0.0293315624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s027.json",
+   "a": "581779/200000",
+   "b": "868883/250000",
+   "a_float": 2.908895,
+   "b_float": 3.475532,
+   "friedman_6_5_b": 3.5053185624,
+   "below_by": 0.0297865624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s028.json",
+   "a": "581979/200000",
+   "b": "138963/40000",
+   "a_float": 2.909895,
+   "b_float": 3.474075,
+   "friedman_6_5_b": 3.5043185624,
+   "below_by": 0.0302435624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s029.json",
+   "a": "582179/200000",
+   "b": "694523/200000",
+   "a_float": 2.910895,
+   "b_float": 3.472615,
+   "friedman_6_5_b": 3.5033185624,
+   "below_by": 0.0307035624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s030.json",
+   "a": "582579/200000",
+   "b": "3469689/1000000",
+   "a_float": 2.912895,
+   "b_float": 3.469689,
+   "friedman_6_5_b": 3.5013185624,
+   "below_by": 0.0316295624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s031.json",
+   "a": "582779/200000",
+   "b": "3468223/1000000",
+   "a_float": 2.913895,
+   "b_float": 3.468223,
+   "friedman_6_5_b": 3.5003185624,
+   "below_by": 0.0320955624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s032.json",
+   "a": "582979/200000",
+   "b": "693351/200000",
+   "a_float": 2.914895,
+   "b_float": 3.466755,
+   "friedman_6_5_b": 3.4993185624,
+   "below_by": 0.0325635624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s033.json",
+   "a": "583179/200000",
+   "b": "866321/250000",
+   "a_float": 2.915895,
+   "b_float": 3.465284,
+   "friedman_6_5_b": 3.4983185624,
+   "below_by": 0.0330345624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s034.json",
+   "a": "583379/200000",
+   "b": "3463811/1000000",
+   "a_float": 2.916895,
+   "b_float": 3.463811,
+   "friedman_6_5_b": 3.4973185624,
+   "below_by": 0.0335075624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s035.json",
+   "a": "583579/200000",
+   "b": "54099/15625",
+   "a_float": 2.917895,
+   "b_float": 3.462336,
+   "friedman_6_5_b": 3.4963185624,
+   "below_by": 0.0339825624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s036.json",
+   "a": "583779/200000",
+   "b": "1730429/500000",
+   "a_float": 2.918895,
+   "b_float": 3.460858,
+   "friedman_6_5_b": 3.4953185624,
+   "below_by": 0.0344605624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s037.json",
+   "a": "583979/200000",
+   "b": "1729689/500000",
+   "a_float": 2.919895,
+   "b_float": 3.459378,
+   "friedman_6_5_b": 3.4943185624,
+   "below_by": 0.0349405624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s038.json",
+   "a": "584179/200000",
+   "b": "432237/125000",
+   "a_float": 2.920895,
+   "b_float": 3.457896,
+   "friedman_6_5_b": 3.4933185624,
+   "below_by": 0.0354225624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s039.json",
+   "a": "584379/200000",
+   "b": "864103/250000",
+   "a_float": 2.921895,
+   "b_float": 3.456412,
+   "friedman_6_5_b": 3.4923185624,
+   "below_by": 0.0359065624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s040.json",
+   "a": "584579/200000",
+   "b": "138197/40000",
+   "a_float": 2.922895,
+   "b_float": 3.454925,
+   "friedman_6_5_b": 3.4913185624,
+   "below_by": 0.0363935624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s041.json",
+   "a": "584779/200000",
+   "b": "863359/250000",
+   "a_float": 2.923895,
+   "b_float": 3.453436,
+   "friedman_6_5_b": 3.4903185624,
+   "below_by": 0.0368825624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s042.json",
+   "a": "584979/200000",
+   "b": "690389/200000",
+   "a_float": 2.924895,
+   "b_float": 3.451945,
+   "friedman_6_5_b": 3.4893185624,
+   "below_by": 0.0373735624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s043.json",
+   "a": "585179/200000",
+   "b": "3450451/1000000",
+   "a_float": 2.925895,
+   "b_float": 3.450451,
+   "friedman_6_5_b": 3.4883185624,
+   "below_by": 0.0378675624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s044.json",
+   "a": "585379/200000",
+   "b": "862239/250000",
+   "a_float": 2.926895,
+   "b_float": 3.448956,
+   "friedman_6_5_b": 3.4873185624,
+   "below_by": 0.0383625624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s045.json",
+   "a": "585579/200000",
+   "b": "3447457/1000000",
+   "a_float": 2.927895,
+   "b_float": 3.447457,
+   "friedman_6_5_b": 3.4863185624,
+   "below_by": 0.0388615624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s046.json",
+   "a": "585779/200000",
+   "b": "3445957/1000000",
+   "a_float": 2.928895,
+   "b_float": 3.445957,
+   "friedman_6_5_b": 3.4853185624,
+   "below_by": 0.0393615624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s047.json",
+   "a": "585979/200000",
+   "b": "1722227/500000",
+   "a_float": 2.929895,
+   "b_float": 3.444454,
+   "friedman_6_5_b": 3.4843185624,
+   "below_by": 0.0398645624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s048.json",
+   "a": "586179/200000",
+   "b": "3442949/1000000",
+   "a_float": 2.930895,
+   "b_float": 3.442949,
+   "friedman_6_5_b": 3.4833185624,
+   "below_by": 0.0403695624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s049.json",
+   "a": "586379/200000",
+   "b": "1720721/500000",
+   "a_float": 2.931895,
+   "b_float": 3.441442,
+   "friedman_6_5_b": 3.4823185624,
+   "below_by": 0.0408765624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s050.json",
+   "a": "586579/200000",
+   "b": "859983/250000",
+   "a_float": 2.932895,
+   "b_float": 3.439932,
+   "friedman_6_5_b": 3.4813185624,
+   "below_by": 0.0413865624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s051.json",
+   "a": "586779/200000",
+   "b": "3438421/1000000",
+   "a_float": 2.933895,
+   "b_float": 3.438421,
+   "friedman_6_5_b": 3.4803185624,
+   "below_by": 0.0418975624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s052.json",
+   "a": "586979/200000",
+   "b": "1718453/500000",
+   "a_float": 2.934895,
+   "b_float": 3.436906,
+   "friedman_6_5_b": 3.4793185624,
+   "below_by": 0.0424125624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s053.json",
+   "a": "587179/200000",
+   "b": "343539/100000",
+   "a_float": 2.935895,
+   "b_float": 3.43539,
+   "friedman_6_5_b": 3.4783185624,
+   "below_by": 0.0429285624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s054.json",
+   "a": "587379/200000",
+   "b": "3433871/1000000",
+   "a_float": 2.936895,
+   "b_float": 3.433871,
+   "friedman_6_5_b": 3.4773185624,
+   "below_by": 0.0434475624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s055.json",
+   "a": "587579/200000",
+   "b": "68647/20000",
+   "a_float": 2.937895,
+   "b_float": 3.43235,
+   "friedman_6_5_b": 3.4763185624,
+   "below_by": 0.0439685624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s056.json",
+   "a": "587779/200000",
+   "b": "1715413/500000",
+   "a_float": 2.938895,
+   "b_float": 3.430826,
+   "friedman_6_5_b": 3.4753185624,
+   "below_by": 0.0444925624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s057.json",
+   "a": "587979/200000",
+   "b": "3429301/1000000",
+   "a_float": 2.939895,
+   "b_float": 3.429301,
+   "friedman_6_5_b": 3.4743185624,
+   "below_by": 0.0450175624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s058.json",
+   "a": "588179/200000",
+   "b": "3427773/1000000",
+   "a_float": 2.940895,
+   "b_float": 3.427773,
+   "friedman_6_5_b": 3.4733185624,
+   "below_by": 0.0455455624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s059.json",
+   "a": "588379/200000",
+   "b": "1713121/500000",
+   "a_float": 2.941895,
+   "b_float": 3.426242,
+   "friedman_6_5_b": 3.4723185624,
+   "below_by": 0.0460765624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s060.json",
+   "a": "2948507/1000000",
+   "b": "1708033/500000",
+   "a_float": 2.948507,
+   "b_float": 3.416066,
+   "friedman_6_5_b": 3.4657065624,
+   "below_by": 0.0496405624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s061.json",
+   "a": "2949507/1000000",
+   "b": "1707259/500000",
+   "a_float": 2.949507,
+   "b_float": 3.414518,
+   "friedman_6_5_b": 3.4647065624,
+   "below_by": 0.0501885624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s062.json",
+   "a": "2950507/1000000",
+   "b": "3412967/1000000",
+   "a_float": 2.950507,
+   "b_float": 3.412967,
+   "friedman_6_5_b": 3.4637065624,
+   "below_by": 0.0507395624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s063.json",
+   "a": "2951507/1000000",
+   "b": "682283/200000",
+   "a_float": 2.951507,
+   "b_float": 3.411415,
+   "friedman_6_5_b": 3.4627065624,
+   "below_by": 0.0512915624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s064.json",
+   "a": "2952507/1000000",
+   "b": "170493/50000",
+   "a_float": 2.952507,
+   "b_float": 3.40986,
+   "friedman_6_5_b": 3.4617065624,
+   "below_by": 0.0518465624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s065.json",
+   "a": "2953507/1000000",
+   "b": "3408303/1000000",
+   "a_float": 2.953507,
+   "b_float": 3.408303,
+   "friedman_6_5_b": 3.4607065624,
+   "below_by": 0.0524035624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s066.json",
+   "a": "2954507/1000000",
+   "b": "3406743/1000000",
+   "a_float": 2.954507,
+   "b_float": 3.406743,
+   "friedman_6_5_b": 3.4597065624,
+   "below_by": 0.0529635624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s067.json",
+   "a": "2955507/1000000",
+   "b": "3405181/1000000",
+   "a_float": 2.955507,
+   "b_float": 3.405181,
+   "friedman_6_5_b": 3.4587065624,
+   "below_by": 0.0535255624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s068.json",
+   "a": "2956507/1000000",
+   "b": "3403617/1000000",
+   "a_float": 2.956507,
+   "b_float": 3.403617,
+   "friedman_6_5_b": 3.4577065624,
+   "below_by": 0.0540895624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s069.json",
+   "a": "2957507/1000000",
+   "b": "3402051/1000000",
+   "a_float": 2.957507,
+   "b_float": 3.402051,
+   "friedman_6_5_b": 3.4567065624,
+   "below_by": 0.0546555624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s070.json",
+   "a": "2958507/1000000",
+   "b": "1700241/500000",
+   "a_float": 2.958507,
+   "b_float": 3.400482,
+   "friedman_6_5_b": 3.4557065624,
+   "below_by": 0.0552245624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s071.json",
+   "a": "2959507/1000000",
+   "b": "3398911/1000000",
+   "a_float": 2.959507,
+   "b_float": 3.398911,
+   "friedman_6_5_b": 3.4547065624,
+   "below_by": 0.0557955624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s072.json",
+   "a": "2959819/1000000",
+   "b": "169921/50000",
+   "a_float": 2.959819,
+   "b_float": 3.39842,
+   "friedman_6_5_b": 3.4543945624,
+   "below_by": 0.0559745624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s073.json",
+   "a": "2960507/1000000",
+   "b": "3397337/1000000",
+   "a_float": 2.960507,
+   "b_float": 3.397337,
+   "friedman_6_5_b": 3.4537065624,
+   "below_by": 0.0563695624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s074.json",
+   "a": "2960819/1000000",
+   "b": "1698423/500000",
+   "a_float": 2.960819,
+   "b_float": 3.396846,
+   "friedman_6_5_b": 3.4533945624,
+   "below_by": 0.0565485624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s075.json",
+   "a": "2961507/1000000",
+   "b": "3395761/1000000",
+   "a_float": 2.961507,
+   "b_float": 3.395761,
+   "friedman_6_5_b": 3.4527065624,
+   "below_by": 0.0569455624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s076.json",
+   "a": "2961819/1000000",
+   "b": "3395269/1000000",
+   "a_float": 2.961819,
+   "b_float": 3.395269,
+   "friedman_6_5_b": 3.4523945624,
+   "below_by": 0.0571255624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s077.json",
+   "a": "2962507/1000000",
+   "b": "3394183/1000000",
+   "a_float": 2.962507,
+   "b_float": 3.394183,
+   "friedman_6_5_b": 3.4517065624,
+   "below_by": 0.0575235624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s078.json",
+   "a": "2962819/1000000",
+   "b": "339369/100000",
+   "a_float": 2.962819,
+   "b_float": 3.39369,
+   "friedman_6_5_b": 3.4513945624,
+   "below_by": 0.0577045624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s079.json",
+   "a": "2963507/1000000",
+   "b": "3392603/1000000",
+   "a_float": 2.963507,
+   "b_float": 3.392603,
+   "friedman_6_5_b": 3.4507065624,
+   "below_by": 0.0581035624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s080.json",
+   "a": "2963819/1000000",
+   "b": "3392109/1000000",
+   "a_float": 2.963819,
+   "b_float": 3.392109,
+   "friedman_6_5_b": 3.4503945624,
+   "below_by": 0.0582855624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s081.json",
+   "a": "2964507/1000000",
+   "b": "169551/50000",
+   "a_float": 2.964507,
+   "b_float": 3.39102,
+   "friedman_6_5_b": 3.4497065624,
+   "below_by": 0.0586865624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s082.json",
+   "a": "2964819/1000000",
+   "b": "1695263/500000",
+   "a_float": 2.964819,
+   "b_float": 3.390526,
+   "friedman_6_5_b": 3.4493945624,
+   "below_by": 0.0588685624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s083.json",
+   "a": "2965507/1000000",
+   "b": "677887/200000",
+   "a_float": 2.965507,
+   "b_float": 3.389435,
+   "friedman_6_5_b": 3.4487065624,
+   "below_by": 0.0592715624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s084.json",
+   "a": "2965819/1000000",
+   "b": "169447/50000",
+   "a_float": 2.965819,
+   "b_float": 3.38894,
+   "friedman_6_5_b": 3.4483945624,
+   "below_by": 0.0594545624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s085.json",
+   "a": "2966507/1000000",
+   "b": "423481/125000",
+   "a_float": 2.966507,
+   "b_float": 3.387848,
+   "friedman_6_5_b": 3.4477065624,
+   "below_by": 0.0598585624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s086.json",
+   "a": "2966819/1000000",
+   "b": "423419/125000",
+   "a_float": 2.966819,
+   "b_float": 3.387352,
+   "friedman_6_5_b": 3.4473945624,
+   "below_by": 0.0600425624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s087.json",
+   "a": "2967507/1000000",
+   "b": "1693129/500000",
+   "a_float": 2.967507,
+   "b_float": 3.386258,
+   "friedman_6_5_b": 3.4467065624,
+   "below_by": 0.0604485624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s088.json",
+   "a": "2967819/1000000",
+   "b": "3385761/1000000",
+   "a_float": 2.967819,
+   "b_float": 3.385761,
+   "friedman_6_5_b": 3.4463945624,
+   "below_by": 0.0606335624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s089.json",
+   "a": "2968507/1000000",
+   "b": "1692333/500000",
+   "a_float": 2.968507,
+   "b_float": 3.384666,
+   "friedman_6_5_b": 3.4457065624,
+   "below_by": 0.0610405624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s090.json",
+   "a": "2968819/1000000",
+   "b": "3384169/1000000",
+   "a_float": 2.968819,
+   "b_float": 3.384169,
+   "friedman_6_5_b": 3.4453945624,
+   "below_by": 0.0612255624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s091.json",
+   "a": "2969507/1000000",
+   "b": "3383071/1000000",
+   "a_float": 2.969507,
+   "b_float": 3.383071,
+   "friedman_6_5_b": 3.4447065624,
+   "below_by": 0.0616355624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s092.json",
+   "a": "2969819/1000000",
+   "b": "3382573/1000000",
+   "a_float": 2.969819,
+   "b_float": 3.382573,
+   "friedman_6_5_b": 3.4443945624,
+   "below_by": 0.0618215624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s093.json",
+   "a": "2970507/1000000",
+   "b": "135259/40000",
+   "a_float": 2.970507,
+   "b_float": 3.381475,
+   "friedman_6_5_b": 3.4437065624,
+   "below_by": 0.0622315624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s094.json",
+   "a": "2970819/1000000",
+   "b": "211311/62500",
+   "a_float": 2.970819,
+   "b_float": 3.380976,
+   "friedman_6_5_b": 3.4433945624,
+   "below_by": 0.0624185624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s095.json",
+   "a": "2971507/1000000",
+   "b": "844969/250000",
+   "a_float": 2.971507,
+   "b_float": 3.379876,
+   "friedman_6_5_b": 3.4427065624,
+   "below_by": 0.0628305624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s096.json",
+   "a": "2971819/1000000",
+   "b": "211211/62500",
+   "a_float": 2.971819,
+   "b_float": 3.379376,
+   "friedman_6_5_b": 3.4423945624,
+   "below_by": 0.0630185624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s097.json",
+   "a": "2972507/1000000",
+   "b": "1689137/500000",
+   "a_float": 2.972507,
+   "b_float": 3.378274,
+   "friedman_6_5_b": 3.4417065624,
+   "below_by": 0.0634325624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s098.json",
+   "a": "2972819/1000000",
+   "b": "1688887/500000",
+   "a_float": 2.972819,
+   "b_float": 3.377774,
+   "friedman_6_5_b": 3.4413945624,
+   "below_by": 0.0636205624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s099.json",
+   "a": "2973507/1000000",
+   "b": "337667/100000",
+   "a_float": 2.973507,
+   "b_float": 3.37667,
+   "friedman_6_5_b": 3.4407065624,
+   "below_by": 0.0640365624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s100.json",
+   "a": "2973819/1000000",
+   "b": "337617/100000",
+   "a_float": 2.973819,
+   "b_float": 3.37617,
+   "friedman_6_5_b": 3.4403945624,
+   "below_by": 0.0642245624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s101.json",
+   "a": "2974507/1000000",
+   "b": "421883/125000",
+   "a_float": 2.974507,
+   "b_float": 3.375064,
+   "friedman_6_5_b": 3.4397065624,
+   "below_by": 0.0646425624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s102.json",
+   "a": "2974819/1000000",
+   "b": "3374563/1000000",
+   "a_float": 2.974819,
+   "b_float": 3.374563,
+   "friedman_6_5_b": 3.4393945624,
+   "below_by": 0.0648315624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s103.json",
+   "a": "2975507/1000000",
+   "b": "210841/62500",
+   "a_float": 2.975507,
+   "b_float": 3.373456,
+   "friedman_6_5_b": 3.4387065624,
+   "below_by": 0.0652505624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s104.json",
+   "a": "2975819/1000000",
+   "b": "1686477/500000",
+   "a_float": 2.975819,
+   "b_float": 3.372954,
+   "friedman_6_5_b": 3.4383945624,
+   "below_by": 0.0654405624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s105.json",
+   "a": "2976507/1000000",
+   "b": "674369/200000",
+   "a_float": 2.976507,
+   "b_float": 3.371845,
+   "friedman_6_5_b": 3.4377065624,
+   "below_by": 0.0658615624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s106.json",
+   "a": "2976819/1000000",
+   "b": "1685671/500000",
+   "a_float": 2.976819,
+   "b_float": 3.371342,
+   "friedman_6_5_b": 3.4373945624,
+   "below_by": 0.0660525624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s107.json",
+   "a": "2977507/1000000",
+   "b": "421279/125000",
+   "a_float": 2.977507,
+   "b_float": 3.370232,
+   "friedman_6_5_b": 3.4367065624,
+   "below_by": 0.0664745624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s108.json",
+   "a": "2977819/1000000",
+   "b": "3369729/1000000",
+   "a_float": 2.977819,
+   "b_float": 3.369729,
+   "friedman_6_5_b": 3.4363945624,
+   "below_by": 0.0666655624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s109.json",
+   "a": "2978819/1000000",
+   "b": "210507/62500",
+   "a_float": 2.978819,
+   "b_float": 3.368112,
+   "friedman_6_5_b": 3.4353945624,
+   "below_by": 0.0672825624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s110.json",
+   "a": "2979507/1000000",
+   "b": "3366999/1000000",
+   "a_float": 2.979507,
+   "b_float": 3.366999,
+   "friedman_6_5_b": 3.4347065624,
+   "below_by": 0.0677075624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s111.json",
+   "a": "2979819/1000000",
+   "b": "1683247/500000",
+   "a_float": 2.979819,
+   "b_float": 3.366494,
+   "friedman_6_5_b": 3.4343945624,
+   "below_by": 0.0679005624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s112.json",
+   "a": "2980507/1000000",
+   "b": "3365379/1000000",
+   "a_float": 2.980507,
+   "b_float": 3.365379,
+   "friedman_6_5_b": 3.4337065624,
+   "below_by": 0.0683275624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s113.json",
+   "a": "2980819/1000000",
+   "b": "3364873/1000000",
+   "a_float": 2.980819,
+   "b_float": 3.364873,
+   "friedman_6_5_b": 3.4333945624,
+   "below_by": 0.0685215624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s114.json",
+   "a": "2981507/1000000",
+   "b": "3363757/1000000",
+   "a_float": 2.981507,
+   "b_float": 3.363757,
+   "friedman_6_5_b": 3.4327065624,
+   "below_by": 0.0689495624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s115.json",
+   "a": "2981819/1000000",
+   "b": "13453/4000",
+   "a_float": 2.981819,
+   "b_float": 3.36325,
+   "friedman_6_5_b": 3.4323945624,
+   "below_by": 0.0691445624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s116.json",
+   "a": "2982507/1000000",
+   "b": "840533/250000",
+   "a_float": 2.982507,
+   "b_float": 3.362132,
+   "friedman_6_5_b": 3.4317065624,
+   "below_by": 0.0695745624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s117.json",
+   "a": "2982819/1000000",
+   "b": "26893/8000",
+   "a_float": 2.982819,
+   "b_float": 3.361625,
+   "friedman_6_5_b": 3.4313945624,
+   "below_by": 0.0697695624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s118.json",
+   "a": "2983507/1000000",
+   "b": "672101/200000",
+   "a_float": 2.983507,
+   "b_float": 3.360505,
+   "friedman_6_5_b": 3.4307065624,
+   "below_by": 0.0702015624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s119.json",
+   "a": "2983819/1000000",
+   "b": "3359997/1000000",
+   "a_float": 2.983819,
+   "b_float": 3.359997,
+   "friedman_6_5_b": 3.4303945624,
+   "below_by": 0.0703975624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s120.json",
+   "a": "2984507/1000000",
+   "b": "839719/250000",
+   "a_float": 2.984507,
+   "b_float": 3.358876,
+   "friedman_6_5_b": 3.4297065624,
+   "below_by": 0.0708305624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s121.json",
+   "a": "2984819/1000000",
+   "b": "3358367/1000000",
+   "a_float": 2.984819,
+   "b_float": 3.358367,
+   "friedman_6_5_b": 3.4293945624,
+   "below_by": 0.0710275624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s122.json",
+   "a": "2985507/1000000",
+   "b": "839311/250000",
+   "a_float": 2.985507,
+   "b_float": 3.357244,
+   "friedman_6_5_b": 3.4287065624,
+   "below_by": 0.0714625624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s123.json",
+   "a": "2985819/1000000",
+   "b": "1678367/500000",
+   "a_float": 2.985819,
+   "b_float": 3.356734,
+   "friedman_6_5_b": 3.4283945624,
+   "below_by": 0.0716605624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s124.json",
+   "a": "2986507/1000000",
+   "b": "335561/100000",
+   "a_float": 2.986507,
+   "b_float": 3.35561,
+   "friedman_6_5_b": 3.4277065624,
+   "below_by": 0.0720965624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s125.json",
+   "a": "2986819/1000000",
+   "b": "33551/10000",
+   "a_float": 2.986819,
+   "b_float": 3.3551,
+   "friedman_6_5_b": 3.4273945624,
+   "below_by": 0.0722945624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s126.json",
+   "a": "2987507/1000000",
+   "b": "1676987/500000",
+   "a_float": 2.987507,
+   "b_float": 3.353974,
+   "friedman_6_5_b": 3.4267065624,
+   "below_by": 0.0727325624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s127.json",
+   "a": "2987819/1000000",
+   "b": "3353463/1000000",
+   "a_float": 2.987819,
+   "b_float": 3.353463,
+   "friedman_6_5_b": 3.4263945624,
+   "below_by": 0.0729315624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s128.json",
+   "a": "2988507/1000000",
+   "b": "670467/200000",
+   "a_float": 2.988507,
+   "b_float": 3.352335,
+   "friedman_6_5_b": 3.4257065624,
+   "below_by": 0.0733715624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s129.json",
+   "a": "2988819/1000000",
+   "b": "3351823/1000000",
+   "a_float": 2.988819,
+   "b_float": 3.351823,
+   "friedman_6_5_b": 3.4253945624,
+   "below_by": 0.0735715624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s130.json",
+   "a": "2989507/1000000",
+   "b": "1675347/500000",
+   "a_float": 2.989507,
+   "b_float": 3.350694,
+   "friedman_6_5_b": 3.4247065624,
+   "below_by": 0.0740125624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s131.json",
+   "a": "2990507/1000000",
+   "b": "3349051/1000000",
+   "a_float": 2.990507,
+   "b_float": 3.349051,
+   "friedman_6_5_b": 3.4237065624,
+   "below_by": 0.0746555624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s132.json",
+   "a": "2990819/1000000",
+   "b": "3348537/1000000",
+   "a_float": 2.990819,
+   "b_float": 3.348537,
+   "friedman_6_5_b": 3.4233945624,
+   "below_by": 0.0748575624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s133.json",
+   "a": "2991507/1000000",
+   "b": "669481/200000",
+   "a_float": 2.991507,
+   "b_float": 3.347405,
+   "friedman_6_5_b": 3.4227065624,
+   "below_by": 0.0753015624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s134.json",
+   "a": "2991819/1000000",
+   "b": "3346891/1000000",
+   "a_float": 2.991819,
+   "b_float": 3.346891,
+   "friedman_6_5_b": 3.4223945624,
+   "below_by": 0.0755035624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s135.json",
+   "a": "2992507/1000000",
+   "b": "3345757/1000000",
+   "a_float": 2.992507,
+   "b_float": 3.345757,
+   "friedman_6_5_b": 3.4217065624,
+   "below_by": 0.0759495624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s136.json",
+   "a": "2992819/1000000",
+   "b": "1672621/500000",
+   "a_float": 2.992819,
+   "b_float": 3.345242,
+   "friedman_6_5_b": 3.4213945624,
+   "below_by": 0.0761525624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s137.json",
+   "a": "2993507/1000000",
+   "b": "3344107/1000000",
+   "a_float": 2.993507,
+   "b_float": 3.344107,
+   "friedman_6_5_b": 3.4207065624,
+   "below_by": 0.0765995624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s138.json",
+   "a": "2993819/1000000",
+   "b": "3343591/1000000",
+   "a_float": 2.993819,
+   "b_float": 3.343591,
+   "friedman_6_5_b": 3.4203945624,
+   "below_by": 0.0768035624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s139.json",
+   "a": "2994507/1000000",
+   "b": "1671227/500000",
+   "a_float": 2.994507,
+   "b_float": 3.342454,
+   "friedman_6_5_b": 3.4197065624,
+   "below_by": 0.0772525624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s140.json",
+   "a": "2994819/1000000",
+   "b": "1670969/500000",
+   "a_float": 2.994819,
+   "b_float": 3.341938,
+   "friedman_6_5_b": 3.4193945624,
+   "below_by": 0.0774565624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s141.json",
+   "a": "2995507/1000000",
+   "b": "3340799/1000000",
+   "a_float": 2.995507,
+   "b_float": 3.340799,
+   "friedman_6_5_b": 3.4187065624,
+   "below_by": 0.0779075624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s142.json",
+   "a": "2995819/1000000",
+   "b": "1670141/500000",
+   "a_float": 2.995819,
+   "b_float": 3.340282,
+   "friedman_6_5_b": 3.4183945624,
+   "below_by": 0.0781125624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s143.json",
+   "a": "2996507/1000000",
+   "b": "1669571/500000",
+   "a_float": 2.996507,
+   "b_float": 3.339142,
+   "friedman_6_5_b": 3.4177065624,
+   "below_by": 0.0785645624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s144.json",
+   "a": "2996819/1000000",
+   "b": "52166/15625",
+   "a_float": 2.996819,
+   "b_float": 3.338624,
+   "friedman_6_5_b": 3.4173945624,
+   "below_by": 0.0787705624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s145.json",
+   "a": "2997507/1000000",
+   "b": "1668741/500000",
+   "a_float": 2.997507,
+   "b_float": 3.337482,
+   "friedman_6_5_b": 3.4167065624,
+   "below_by": 0.0792245624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s146.json",
+   "a": "2997819/1000000",
+   "b": "834241/250000",
+   "a_float": 2.997819,
+   "b_float": 3.336964,
+   "friedman_6_5_b": 3.4163945624,
+   "below_by": 0.0794305624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s147.json",
+   "a": "2998507/1000000",
+   "b": "166791/50000",
+   "a_float": 2.998507,
+   "b_float": 3.33582,
+   "friedman_6_5_b": 3.4157065624,
+   "below_by": 0.0798865624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s148.json",
+   "a": "2998819/1000000",
+   "b": "3335301/1000000",
+   "a_float": 2.998819,
+   "b_float": 3.335301,
+   "friedman_6_5_b": 3.4153945624,
+   "below_by": 0.0800935624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s149.json",
+   "a": "2999507/1000000",
+   "b": "666831/200000",
+   "a_float": 2.999507,
+   "b_float": 3.334155,
+   "friedman_6_5_b": 3.4147065624,
+   "below_by": 0.0805515624
+  },
+  {
+   "file": "certificates/k07-sweep/7.N1-s150.json",
+   "a": "2999819/1000000",
+   "b": "833409/250000",
+   "a_float": 2.999819,
+   "b_float": 3.333636,
+   "friedman_6_5_b": 3.4143945624,
+   "below_by": 0.0807585624
+  }
+ ]
+}
