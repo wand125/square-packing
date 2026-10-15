@@ -373,7 +373,7 @@
    "issue": 9,
    "url": "https://github.com/wand125/square-packing/issues/9",
    "state": "open",
-   "updated": "2026-10-11",
+   "updated": "2026-10-15",
    "title": {
     "en": "Unit squares in a rectangle — certified constructions along the edges F_k",
     "ja": "長方形の中の単位正方形 — 端 F_k に沿った証明書付きの構成"
@@ -388,8 +388,8 @@
    },
    "done": [
     {
-     "en": "k = 2..15: constructions along the edges published in problems/rectangles/, certificates in the release rectangles-v1.",
-     "ja": "k = 2〜15: 端に沿った構成を problems/rectangles/ で公開、証明書はリリース rectangles-v1。"
+     "en": "k = 2..15: constructions along the edges published in problems/rectangles/, certificates in the release rectangles-v2 (k = 7: the new piece 7.N1; rectangles-v1 is kept).",
+     "ja": "k = 2〜15: 端に沿った構成を problems/rectangles/ で公開、証明書はリリース rectangles-v2（k = 7 の新しい片 7.N1。rectangles-v1 も残す）。"
     }
    ],
    "working_on": [
@@ -408,8 +408,8 @@
      "url": "https://github.com/wand125/square-packing/tree/main/problems/rectangles"
     },
     {
-     "label": "Release rectangles-v1",
-     "url": "https://github.com/wand125/square-packing/releases/tag/rectangles-v1"
+     "label": "Release rectangles-v2",
+     "url": "https://github.com/wand125/square-packing/releases/tag/rectangles-v2"
     }
    ]
   },

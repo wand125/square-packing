@@ -291,8 +291,9 @@ export function mountShared(host: HTMLElement) {
     var last = K.pieces[K.pieces.length - 1], e = last.pts && last.pts[last.pts.length - 1];
     sel.key = last.key; sel.w = Math.max(0, last.witnesses.length - 1);
     if (e) { at = [e[1], e[0]]; showCert = !last.family; } else { at = null; showCert = true; }
-    o.rh.innerHTML = ja() ? k + ' 個が入り始める端' + (k <= 10 ? '（Friedman の表）' : '（当方の構成' + (K.status ? '、' + K.status.ja : '') + '）') + (k >= 16 ? '（preview）' : '')
-                          : 'Where ' + k + ' squares begin to fit' + (k <= 10 ? " (Friedman's table)" : ' (our construction' + (K.status ? '; ' + K.status.en : '') + ')') + (k >= 16 ? ' (preview)' : '');
+    // K.note: a k whose table departs from Friedman's or from v1; K.table 'v2' (not released): the rebuilt table, preview only
+    o.rh.innerHTML = ja() ? k + ' 個が入り始める端' + (K.note ? '（' + esc(K.note.ja) + '）' : k <= 10 ? '（Friedman の表）' : '（当方の構成' + (K.status ? '、' + K.status.ja : '') + '）') + (K.table === 'v2' && !K.released ? '（v2、preview）' : k >= 16 ? '（preview）' : '')
+                          : 'Where ' + k + ' squares begin to fit' + (K.note ? ' (' + esc(K.note.en) + ')' : k <= 10 ? " (Friedman's table)" : ' (our construction' + (K.status ? '; ' + K.status.en : '') + ')') + (K.table === 'v2' && !K.released ? ' (v2, preview)' : k >= 16 ? ' (preview)' : '');
     table(); info(); draw();
     try { history.replaceState(null, '', '#' + k); } catch (e) {}
   }
