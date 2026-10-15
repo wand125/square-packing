@@ -32,7 +32,7 @@ s(20) >= 393/80    = 4.9125
 s(21) >= 5
 s(26) >= 1111/200  = 5.555
 s(27) >= 1131/200  = 5.655
-s(28) >= 2297/400  = 5.7425
+s(28) >= 1149/200  = 5.745
 s(29) >= 291/50    = 5.82
 s(30) >= 2357/400  = 5.8925
 s(31) >= 2391/400  = 5.9775
@@ -125,7 +125,7 @@ and list earlier rungs.
 | 21 | **5** | 5 | point | [`point_n21_L5`](point_n21_L5) | 5.000000 (evand, 2026) | match | Nagamochi 4.7417…; Green 4.4452… |
 | 26 | **5.555** | 1111/200 | mixed | [`mixed_n26_L5555`](certificates/mixed_n26_L5555) | 5.508000 (tokoharu, 2026) | record | Nagamochi 5.1231…; Green 5.3919… |
 | 27 | **5.655** | 1131/200 | mixed | [`mixed_n27_L5655`](certificates/mixed_n27_L5655) | 5.508000 (tokoharu, 2026) | record | Nagamochi 5.2426…; Green 5.3919… |
-| 28 | **5.7425** | 2297/400 | mixed | [`mixed_n28_L57425`](certificates/mixed_n28_L57425) | 5.508000 (tokoharu, 2026) | record | Nagamochi 5.3589…; Green 5.3919… |
+| 28 | **5.745** | 1149/200 | continuous | [`continuous_n28_L5745`](certificates/continuous_n28_L5745) | 5.508000 (tokoharu, 2026) | record | Nagamochi 5.3589…; Green 5.3919… |
 | 29 | **5.82** | 291/50 | mixed | [`mixed_n29_L582`](certificates/mixed_n29_L582) | 5.710000 (tokoharu, 2026) | record | Nagamochi 5.4721…; Green 5.3919… |
 | 30 | **5.8925** | 2357/400 | mixed | [`mixed_n30_L58925`](certificates/mixed_n30_L58925) | 5.710000 (tokoharu, 2026) | record | Nagamochi 5.5826…; Green 5.3919… |
 | 31 | **5.9775** | 2391/400 | mixed | [`mixed_n31_L59775`](certificates/mixed_n31_L59775) | 5.710000 (tokoharu, 2026) | record | Nagamochi 5.6904…; Green 5.3919… |
@@ -1620,6 +1620,16 @@ s(37) >= 2599/400 = 6.4975
 ```
 
 This supersedes `mixed_n37_L644` above. This exceeds our earlier certificate mixed_n37_L644 (6.44). For reference, Nagamochi's closed form gives `6.0990…` and Green's reported bound gives `6.3506…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 3699999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n37_L64975/ASSET.json`).
+
+## n = 28: 5.745, a continuous-pose certificate
+
+[`certificates/continuous_n28_L5745`](certificates/continuous_n28_L5745/README.md) proves
+
+```
+s(28) > 1149/200 = 5.745
+```
+
+This supersedes our earlier certificate `mixed_n28_L57425` (5.7425). The certificate is a rational rectangle measure of mass 2799999/100000 on the square of side 573351/100000; every square of side 499/500 at every orientation (checked continuously in the half-angle, not on a net) carries mass at least 1, which after scaling gives the claim. It is checked by two verifiers that share no code (the second reuses an MIT-licensed continuous-pose kernel); both negative controls are refused, and before publication the first system was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/continuous_n28_L5745/ASSET.json`).
 
 ## Closed-square endpoint certificate for n = 21
 
