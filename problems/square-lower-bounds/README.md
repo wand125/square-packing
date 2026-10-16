@@ -89,6 +89,7 @@ s(95) >= 1993/200   = 9.965
 s(96) >= 997/100    = 9.97
 s(101) >= 257/25     = 10.28
 s(106) >= 10503/1000 = 10.503
+s(107) >= 529/50     = 10.58
 s(122) >= 563/50     = 11.26
 s(145) >= 306/25     = 12.24
 ```
@@ -183,6 +184,7 @@ and list earlier rungs.
 | 96 | **9.97** | 997/100 | mixed | [`mixed_n96_L997`](certificates/mixed_n96_L997) | 10.000000 (evand, 2026) | below | Nagamochi 9.8882…; Green 9.2667… |
 | 101 | **10.28** | 257/25 | mixed | [`mixed_n101_L1028`](certificates/mixed_n101_L1028) | 10.052487 (Karakus, 2026) | record | Nagamochi 10.0554…; Green 10.2467… |
 | 106 | **10.503** | 10503/1000 | mixed | [`mixed_n106_L10503`](certificates/mixed_n106_L10503) | 10.310708 (Karakus, 2026) | record | Nagamochi 10.3274…; Green 10.2467… |
+| 107 | **10.58** | 529/50 | mixed | [`mixed_n107_L1058`](certificates/mixed_n107_L1058) | 10.361541 (Karakus, 2026) | record | Nagamochi 10.3808…; Green 10.2467… |
 | 122 | **11.26** | 563/50 | mixed | [`mixed_n122_L1126`](certificates/mixed_n122_L1126) | 11.047512 (Karakus, 2026) | record | Nagamochi 11.0499…; Green 11.2293… |
 | 145 | **12.24** | 306/25 | mixed | [`mixed_n145_L1224`](certificates/mixed_n145_L1224) | 12.043396 (Karakus, 2026) | record | Nagamochi 12.0454…; Green 12.2139… |
 <!-- auto:standing:end -->
@@ -1782,6 +1784,16 @@ s(106) >= 10503/1000 = 10.503
 ```
 
 This exceeds the previously published lower bound 10.3107. For reference, Nagamochi's closed form gives `10.3274…` and Green's reported bound gives `10.2467…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 10599999/100000 with core B = 9977/10000 on a declared half-angle net of 201 directions. The candidate was found by lifting a verified certificate for a smaller n through a central cross and re-solving the LP on the cross (numerical search only; not an input to the check). It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n106_L10503/ASSET.json`).
+
+## n = 107: 10.58, a lifted mixed certificate
+
+[`certificates/mixed_n107_L1058`](certificates/mixed_n107_L1058/README.md) proves
+
+```
+s(107) >= 529/50 = 10.58
+```
+
+This exceeds the previously published lower bound 10.3615. For reference, Nagamochi's closed form gives `10.3808…` and Green's reported bound gives `10.2467…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 10699999/100000 with core B = 9977/10000 on a declared half-angle net of 201 directions. The candidate was found by lifting a verified certificate for a smaller n through a central cross and re-solving the LP on the cross (numerical search only; not an input to the check). It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n107_L1058/ASSET.json`).
 
 ## Closed-square endpoint certificate for n = 21
 
