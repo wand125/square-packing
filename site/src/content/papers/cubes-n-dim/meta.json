@@ -1,0 +1,45 @@
+{
+ "kicker": [
+  "Computer-assisted proof",
+  "コンピュータ支援の証明"
+ ],
+ "title": [
+  "Two unit cubes in four dimensions: \\(s_4(2) = 2\\)",
+  "4 次元の単位立方体 2 個：\\(s_4(2) = 2\\)"
+ ],
+ "lead": [
+  "Every unit 4-cube inside \\([0, 2]^4\\) contains the centre, so two unit 4-cubes do not fit in a 4-cube of side less than 2. Near the axes this is proved by hand from Lemma F in dimension 3; away from them it is checked by interval branch and bound, by two independent checkers.",
+  "\\([0, 2]^4\\) の中の単位 4 次元立方体はどれも中心を含むので、単位 4 次元立方体 2 個は辺 2 未満の 4 次元立方体に入らない。軸の近くは 3 次元の補題 F から手で示し、軸から離れたところは区間の分枝限定で、独立な 2 つの検査器により検査した。"
+ ],
+ "result": [
+  "\\(s_4(2) = 2\\)",
+  "\\(s_4(2) = 2\\)"
+ ],
+ "author": "Hiroaki Hosono (wand125)",
+ "links": [
+  [
+   "Code & proof",
+   "コードと証明",
+   "https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim"
+  ],
+  [
+   "Release cubes-n-dim-v1",
+   "Release cubes-n-dim-v1",
+   "https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1"
+  ],
+  [
+   "Issue #21",
+   "Issue #21",
+   "https://github.com/wand125/square-packing/issues/21"
+  ]
+ ],
+ "versions": [
+  {
+   "v": "1",
+   "date": "2026-10-16",
+   "en": "First version: s₄(2) = 2.",
+   "ja": "初版：s₄(2) = 2。",
+   "commit": ""
+  }
+ ]
+}

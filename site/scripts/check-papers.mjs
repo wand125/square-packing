@@ -154,7 +154,7 @@ try {
  for(const width of [1280,390]) {
   await cmd('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:width===390});
   await cmd('Emulation.setTouchEmulationEnabled',{enabled:width===390});
-  for(const [slug,figures] of [['hexagon-n3',['hexagon-flex']],['domino',['domino-family']],['triangle',['triangle-series','triangle-37','triangle-46']],['right-isosceles',['certificate']],['cubes-in-cube',['cubes-in-cube']]]) {
+  for(const [slug,figures] of [['hexagon-n3',['hexagon-flex']],['domino',['domino-family']],['triangle',['triangle-series','triangle-37','triangle-46']],['right-isosceles',['certificate']],['cubes-in-cube',['cubes-in-cube']],['cubes-n-dim',['cube4-centre']]]) {
    await navigate('paper-'+slug+'.html');
    for(const lang of ['en','ja']) {
     // Use the site's language control rather than changing display styles.
@@ -192,6 +192,17 @@ try {
       for(const [g,k] of [['bottom',10],['upright',9],['left',15],['right',12]])assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(sel)}+' [data-group="${g}"]').length`),k);
       for(const [i,k] of [[2,10],[3,9],[4,15],[5,12]]){await click(sel+` button:nth-child(${i})`);await waitFor(`document.querySelectorAll(${JSON.stringify(sel+' .vz-muted')}).length===${46-k}`);}
       await click(sel+' button:nth-child(1)');await waitFor(`document.querySelectorAll(${JSON.stringify(sel+' .vz-muted')}).length===0`);
+     } else if(figure==='cube4-centre'){
+      // opens on the rotation that puts c² on 2/3 (F₁ ≈ 0.8449, the near side); R = I gives F₁ = 1; the third preset is far
+      const d=k=>evaluate(`document.querySelector(${JSON.stringify(sel)}).dataset.${k}`);
+      assert(Math.abs(+await d('c2')-2/3)<1e-6 && Math.abs(+await d('f1')-0.844885)<1e-5,'cube4 start');
+      await click(sel+' .vz-chips button:nth-child(1)');await waitFor(`+document.querySelector(${JSON.stringify(sel)}).dataset.f1===1`);
+      assert.equal(await d('region'),'near');
+      await click(sel+' .vz-chips button:nth-child(3)');await waitFor(`document.querySelector(${JSON.stringify(sel)}).dataset.region==='far'`);
+      assert(+await d('f1')<1,'cube4 far F1 < 1');
+      const before=await d('f1');await input(sel+' input[type="range"]',10);
+      await waitFor(`document.querySelector(${JSON.stringify(sel)}).dataset.f1!==${JSON.stringify(before)}`);
+      assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(sel+' .c4-dot')}).length`),1200);
      } else if(figure==='cubes-in-cube'){
       // 6 faces per cube, the 8 points of V; n = 10 adds one cube; hiding the corners leaves the rotated cubes
       const faces=()=>evaluate(`document.querySelectorAll(${JSON.stringify(sel+' .cb-f')}).length`);
@@ -231,7 +242,7 @@ try {
   }
  }
  assert.deepEqual(errors,[]);
- console.log('PASS papers: all five highlights, English/Japanese, mouse/touch controls, 390px overflow, no console errors; offline requests only.');
+ console.log('PASS papers: all six highlights, English/Japanese, mouse/touch controls, 390px overflow, no console errors; offline requests only.');
 } finally {
  const exited=browser.exitCode===null?once(browser,'exit'):Promise.resolve();
  await call('Browser.close').catch(()=>{});browser.kill();if(browser.exitCode===null&&!browser.signalCode)await exited;

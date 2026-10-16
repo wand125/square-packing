@@ -1,0 +1,167 @@
+import Cube4Centre from '../../../components/viz/Cube4Centre.tsx';
+
+## 要旨
+
+$s_n(k)$ を、内部が互いに交わらない単位 $n$ 次元立方体 $k$ 個（位置・向きは自由）が入る最小の $n$ 次元立方体の辺とする。$s_4(2) = 2$ を示す。つまり、単位 4 次元立方体 2 個は辺 2 未満の 4 次元立方体に入らない。上界は自明な配置である。下界は中心の補題から従う：$[0, 2]^4$ の中の単位 4 次元立方体はどれも $[0, 2]^4$ の中心を含む。座標軸の近くでは、この補題を 3 次元の補題 F を使って手で示す。軸から離れたところは、外向きに丸める区間の分枝限定で、独立な 2 つの検査器により検査する。結果は計算機援用で、査読は受けていない。
+
+## 記法
+
+$R \in O(n)$ について $a_{ik} = |R_{ik}|$、$w_i = \sum_j |R_{ij}|$（行 $i$ の $\ell^1$ ノルム。立方体 $R[-\tfrac12, \tfrac12]^n$ の $e_i$ 方向の幅）とし、
+
+$$
+F_k(R) = \sum_i a_{ik}\,(2 - w_i)
+$$
+
+とおく。$F_k$ は $|R|$ だけで決まる。したがって、行と列の並べ替えと符号の反転（列の添字 $k$ もそれに合わせて動かす）、および $R \mapsto -R$ で変わらない。
+
+**定理.** 内部が交わらない単位 4 次元立方体 2 個は、辺 $a < 2$ の 4 次元立方体に入らない。よって $s_4(2) = 2$。
+
+上界 $s_4(2) \le 2$ は自明な配置（$[0, 2]^4$ に 2 個を並べて置く）である。
+
+## 1. 補題 F₄ への帰着
+
+**補題 F₄.** すべての $R \in O(4)$ とすべての列 $k$ で $F_k(R) \le 1$。
+
+**補題 F₄ から定理が従う.** 議論は [cubes-in-cube/lemma_f/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/lemma_f/PROOF.md) の $n = 3$ のものと同じで、どの次元 $n$ でも成り立つ。
+
+- $a < 2$ とし、$C = c + R[-\tfrac12, \tfrac12]^n$ が $K_a = [-a/2, a/2]^n$ に含まれるとする。$K_a$ の中心 $0$ が $C$ の内部にあることを示す。
+- そうでないとする。$C = \{x : \lVert R^{\mathsf T}(x - c)\rVert_\infty \le \tfrac12\}$ なので、$R$ のある列 $u_k$ で $|u_k \cdot c| \ge \tfrac12$。
+- 含まれることから、すべての $i$ で $|c_i| + w_i/2 \le a/2$。よって $a - w_i \ge 0$。
+- したがって
+  $$
+  |u_k \cdot c| \le \sum_i a_{ik}|c_i| \le \sum_i a_{ik}\,\frac{a - w_i}{2} < \sum_i a_{ik}\,\frac{2 - w_i}{2} = \frac{F_k}{2}.
+  $$
+  $a < 2$ かつ $\sum_i a_{ik} \ge 1$ なので、不等号は狭義である。
+- $F_k \le 1$ と合わせて $|u_k \cdot c| < \tfrac12$ となり、矛盾する。
+
+よって $K_a$ の中の単位立方体はどれも中心を内部に含み、内部が交わらない 2 個がともに $K_a$ に入ることはない。∎
+
+（逆に「$[0, 2]^n$ の中の単位 $n$ 次元立方体はどれも中心を含む」は、すべての $R \in O(n)$ とすべての $k$ での $F_k \le 1$ と同値である。ここで使うのは上の向きだけである。）
+
+対称性により $F_1(R) \le 1$ を示せば十分で、$|R_{e1}|$ の最大が $R_{11} \ge 0$ であるとしてよい。列 1 を $u$、$c = R_{11} = \max_e |u_e| = \cos\theta$（$0 \le \theta < \pi/2$）、$x = (R_{21}, R_{31}, R_{41})$（よって $\lVert x\rVert_2 = \sin\theta$）、$R$ の右下の $3 \times 3$ ブロックを $M$ と書く。証明は $c^2 = 2/3$ で分かれる。
+
+- **近い領域** $c^2 \ge 2/3$：手による証明（§3）。3 次元の補題 F を使う。
+- **遠い領域** $c^2 \le 2/3$：独立な 2 つの計算機による検査（§4）。
+
+図は、6 つのつまみで決める $\mathbb R^4$ の回転とランダムな回転について、$c^2$ と $F_1$ を示す。$R = I$ で $F_1 = 1$。平面 $(1, 2)$ で $\arccos\sqrt{2/3}$ だけ回すと $c^2$ は $2/3$ になる。
+
+<Cube4Centre lang="ja" client:visible />
+
+## 2. 3 次元の補題 F
+
+**補題 F₃.** すべての $Q \in O(3)$ とすべての列 $k$ で $F_k(Q) \le 1$。
+
+これは [cubes-in-cube/lemma_f/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/lemma_f) の補題 F である（軸の近くは手による証明、それ以外は独立な 2 つの計算機による検査。[立方体の中の単位立方体の論文](paper-cubes-in-cube.html)の §2 も参照）。そこでは $SO(3)$ について述べているが、$F$ は $|Q|$ だけで決まり、$Q \in O(3)$ の行列式が $-1$ なら $-Q \in SO(3)$ なので、$O(3)$ でも成り立つ。
+
+## 3. 近い領域：c² ≥ 2/3 なら F₁ ≤ 1
+
+(a)〜(c) は $n = 3$ の証明（[lemma_f/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/lemma_f/PROOF.md) §1）のものと同じで、直交性だけを使うのでどの次元でも成り立つ。ここでは $n = 4$ で書く。
+
+**(a)** $v_i = w_i - a_{i1}$（行 $i$ の、最初の成分を除いた $\ell^1$ ノルム）とおく。$\sum_i a_{i1} w_i = \sum_i a_{i1}^2 + \sum_i a_{i1} v_i = 1 + \sum_i a_{i1} v_i$ なので
+
+$$
+1 - F_1 = 2 - 2\lVert u\rVert_1 + \sum_i a_{i1} v_i = 2(1 - c) - 2\lVert x\rVert_1 + c\,v_1 + \sum_{i=2}^{4} |x_i|\,\lVert M_i\rVert_1.
+$$
+
+ここで $M_i$ は $M$ の行 $i$（$R$ の行 2、3、4 で添字を付ける）。
+
+**(b)** 列 1 と列 $j \ge 2$ は直交する：$c R_{1j} + (M^{\mathsf T}x)_j = 0$。よって $c\,v_1 = \lVert M^{\mathsf T}x\rVert_1$。
+
+**(c)** $\theta = 0$ なら $x = 0$、行 1 は $e_1$（よって $v_1 = 0$）で、$1 - F_1 = 0$。そうでなければ、$R$ の行 2〜4 は正規直交なので $M M^{\mathsf T} = I - x x^{\mathsf T}$。極分解は $M = PQ$ で、
+
+$$
+P = (I - x x^{\mathsf T})^{1/2} = I - (1 - c)\,\hat x \hat x^{\mathsf T}, \qquad \hat x = x/\sin\theta.
+$$
+
+$P$ は可逆（固有値は 1、1、$c > 0$）なので $Q = P^{-1}M \in O(3)$。$Px = c\,x$ より $M^{\mathsf T}x = Q^{\mathsf T}Px = c\,Q^{\mathsf T}x$。$M$ の行 $i$ は $M_i = Q_i - (1 - c)\,\hat x_i\,(\hat x^{\mathsf T}Q)$ なので $\lVert M_i\rVert_1 \ge \lVert Q_i\rVert_1 - (1 - c)|\hat x_i|\,\lVert Q^{\mathsf T}\hat x\rVert_1$。$\sum_i |x_i||\hat x_i| = \lVert x\rVert_2$ と合わせて
+
+$$
+\sum_i |x_i|\,\lVert M_i\rVert_1 \ge \sum_i |x_i|\,\lVert Q_i\rVert_1 - (1 - c)\,\lVert Q^{\mathsf T}x\rVert_1.
+$$
+
+**(d)** $y = Q^{\mathsf T}x$、$K(Q, x) = \lVert y\rVert_1 + \sum_i |x_i|\,\lVert Q_i\rVert_1 - 2\lVert x\rVert_1$ とおく。(a)〜(c) を合わせ、$c\lVert y\rVert_1 - (1 - c)\lVert y\rVert_1 = \lVert y\rVert_1 - 2(1 - c)\lVert y\rVert_1$ を使うと
+
+$$
+1 - F_1 \ge K(Q, x) + 2(1 - c)(1 - \lVert y\rVert_1).
+$$
+
+**(e)** $\sin^2\theta = 1 - c^2 \le 1/3$ なので $\lVert y\rVert_1 \le \sqrt3\,\lVert y\rVert_2 = \sqrt3\,\lVert x\rVert_2 = \sqrt3\sin\theta \le 1$。よって第 2 項は $\ge 0$。
+
+**(f) 補題 K：$K(Q, x) \ge 0$.** $x = Qy$ と書くと $|x_i| \le \sum_j |Q_{ij}|\,|y_j|$。$Q \in O(3)$ ではどの行も $w_i(Q) = \lVert Q_i\rVert_1 \le \sqrt3 < 2$ なので、因子 $w_i(Q) - 2$ は負で、
+
+$$
+K = \lVert y\rVert_1 + \sum_i |x_i|\,(w_i(Q) - 2) \ge \sum_j |y_j|\Bigl(1 - \sum_i |Q_{ij}|\,(2 - w_i(Q))\Bigr) = \sum_j |y_j|\,(1 - F_j(Q)) \ge 0
+$$
+
+が補題 F₃ から従う。よって近い領域で $F_1 \le 1$。∎
+
+（同じ議論から次が言える：補題 F が次元 $m \le 4$ で成り立てば、次元 $m + 1$ で $\max_e R_{e1}^2 \ge 1 - 1/m$ のどの列も $F_1 \le 1$ を満たす。(f) で使う評価 $w_i \le \sqrt m \le 2$ は $m \ge 5$ では成り立たない。）
+
+**Lean.** (a)〜(f) は、任意の次元 $m$ について、次元 $m$ の補題 F を仮定として [lean/](https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim/lean) で形式化した。`near_identity` が (a)〜(d)、`polarQ_orth` が (c) の $Q$ の直交性、`l1_QTx_le_one` が (e)、`lemmaK` と `rowL1_le_two` が (f) である。この節の結論は $m = 3$ の `near_region`。[lean/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/lean/README.md) を参照。
+
+## 4. 遠い領域：c² ≤ 2/3 なら F₁ < 1（計算機援用）
+
+**主張.** $\max_e R_{e1}^2 \le 2/3$ のすべての $R \in O(4)$ で $F_1(R) < 1$。
+
+$SO(4)$ を調べれば十分である：$\det R = -1$ なら、列 4 の符号を変えると $|R|$ が同じ $SO(4)$ の行列になる。主張は、外向きに丸める区間演算の独立な 2 つの分枝限定のプログラムで検査する。近い領域と遠い領域は $c^2 = 2/3$ で重なるので、合わせて $O(4)$ 全体になる。
+
+| | 第 1 系（`checker/`） | 第 2 系（`checker2/`） |
+|---|---|---|
+| 座標 | 列 1 を $t = (u_2, u_3, u_4)/u_1$ で、列 2〜4 を $N_u S$（$S \in SO(3)$ は四元数）で表す | $R(p, q)\,x = p\,x\,\bar q$。2 つの単位四元数をそれぞれ立方体 $[-1, 1]^4$ の 4 つの面の上で表す |
+| 対称性 | 列 1 の並べ替え（384）と、二項八面体群の Voronoi セル（24）を座標として使う | 列 1 の並べ替えと行 1 を制約 C1〜C3 として課す。箱を捨てるのは、$R$ と $-R$ の両方で箱のどの点も制約を破るときだけ |
+| $F$ の上界 | 区間の前進型自動微分による平均値形式。ほかに $2\lVert u\rVert_1 - 1 - \sum a_e \lVert m_e\rVert_1$ と $G(u)$ | 区間の自動微分による平均値形式。$F$ そのものの上界だけ |
+| 近い領域の規則 | 箱が $u_1^2 \ge 2/3$ の中 | 箱が $\max_e \mathrm{lo}(\lvert R_{e1}\rvert)^2 \ge 2/3$ の中 |
+| タスク | 4,096 | 65,536 |
+| 箱 | 88,110,984 | 192,488,546 |
+| 最大の深さ | 22 | 30 |
+| 未解決 | 0 | 0 |
+
+座標・対称性による縮約・箱を閉じる規則・実行の詳細は [checker/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/checker/README.md) と [checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/checker2/README.md)（仕様は [checker2/SPEC.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/checker2/SPEC.md)）にある。第 2 系は、第 1 系を見ずに仕様だけから書いた。`verify_logs.py` は 2 つの実行のログを検査する。
+
+## 5. 注
+
+- $F_1 = 1$ となる集合は孤立していない：任意の $S \in O(n - 1)$ について $R = \operatorname{diag}(\pm1, S)$ で $F_1 = 1$。その近くでは $1 - F_1 \gtrsim \theta^2$（$\theta$ は列 1 と最も近い軸のなす角）。このため近い領域は手で扱い、計算機による検査はそこから離れたところでの狭義の不等式だけを示せばよい。
+- 数値的には、遠い領域での $F_1$ の最大は約 0.845 で、境 $c^2 = 2/3$ の近くでとる。
+
+## 6. 結果
+
+| 系 | 状態 | タスク | 箱 | 最大の深さ | 時間 |
+|---|---|---|---|---|---|
+| 第 1 系 | 完走、未解決 0 | 4,096 | 88,110,984 | 22 | 3 分 38 秒、2 スレッド、ノート PC |
+| 第 2 系 | 完走、未解決 0 | 65,536 | 192,488,546 | 30 | 23 分 48 秒、2 スレッド、ノート PC。ほかに 102 タスクの再実行 |
+
+第 2 系の全体の実行では、102 タスクがタスクごとの時間の上限 8 秒に達した。これらは上限 3,600 秒で再実行し、すべて閉じた。2 つのソースの版は、上限のオプションで受け付ける範囲だけが違う。詳細は [checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/checker2/README.md) と `checker2/receipt.json` にある。
+
+公開したソースと実行したソースの違いはコメント（内部のラベル、レビューのメモ、内部のメモへの参照）だけで、コードは変えていない。各 `receipt.json` に、公開したソースと実行したソースの SHA-256 を、数とともに記す。
+
+## 再現方法
+
+[problems/cubes-n-dim](https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim) から：
+
+| 何を | コマンド |
+|---|---|
+| 第 1 系 | `cargo build --release`、`./target/release/m2bb --selftest`、`./target/release/m2bb --jobs 2 --log full.jsonl`（`checker/` で） |
+| 第 2 系 | `cargo build --release`、`cargo test --release`、`./target/release/m2check2 --jobs 2 --log full.jsonl`（`checker2/` で） |
+| Lean（近い領域） | `lake exe cache get`、`lake build`、`lake env lean CheckAxioms.lean`（`lean/` で。Lean v4.33.1、Mathlib は `lake-manifest.json` で固定） |
+| 当方の実行のログ | Release [cubes-n-dim-v1](https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1) の asset を展開して `python3 verify_logs.py logs` |
+
+Rust 1.86 以降が必要（`f64::next_up`/`next_down`）。crate は使わない。
+
+## 状態と限界
+
+- 計算機援用の証明である。査読は受けていない。
+- Lean：近い領域の手による部分（§3）は、任意の次元について Lean 4 + Mathlib で形式化した：極分解の不等式、陽に書いた極分解の因子の直交性、補題 K。主定理 `near_region` は次元 $m$ の補題 F を明示的な仮定として受け取り、$m \le 4$ で $c^2 \ge 1 - 1/m$ のとき $F_1 \le 1$ を与える。`sorry` はなく、使う公理は Lean の標準の 3 つだけ。§1 の帰着、3 次元の補題 F、§4 の遠い領域は形式化していない。
+- 手による部分（§1〜3：帰着、4 次元での極分解の各段、補題 K）は、独立な内部のレビュアーが 1 行ずつ確かめた。同じレビュアーは、第 1 系の縮約（符号付き置換 384 個、Voronoi セル、$O(3)$ から $SO(3)$ への移行、Householder の式）と、第 2 系の仕様（実装中に行った 2 つの訂正を含む）も確かめた。
+- 外部のレビューはまだない。訂正は Issue で歓迎する。
+
+## 出典
+
+- **古典.** $n = 2$（単位正方形 2 個には辺 2 の正方形が要る）は、Erich Friedman の概説 [[1]](#ref-1) を参照。Friedman の Packing Center の「Cubes in Cubes」[[2]](#ref-2) には立方体 2 個の下界はなく、$n \ge 3$ のどの $n$ についても $s_n(2) = 2$ の証明は文献に見つからなかった。ご存じなら Issue で知らせてほしい。
+- **当方の以前の仕事.** 3 次元の補題 F と $s_3(2) = 2$ は [cubes-in-cube/lemma_f/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/lemma_f) にある。近い領域の議論 (a)〜(c) は、そこでの $n = 3$ の議論である。
+- **ここで新しいもの.** 近い領域の議論の 4 次元への持ち上げ（補題 K）、遠い領域の命題、2 つの検査器、そして $s_4(2) = 2$。
+
+## 参考文献
+
+1. <span id="ref-1"></span>E. Friedman, "Packing unit squares in squares: a survey and new results", *Electronic Journal of Combinatorics*, Dynamic Survey DS7.
+2. <span id="ref-2"></span>E. Friedman, [Cubes in Cubes](https://erich-friedman.github.io/packing/cubincub/), Erich's Packing Center.
+3. [problems/cubes-n-dim/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/PROOF.md)、[README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/README.md)。Release [cubes-n-dim-v1](https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1)。[Issue #21](https://github.com/wand125/square-packing/issues/21)。

@@ -100,3 +100,15 @@
 .cb-box { stroke: var(--fg2); stroke-width: .012; }
 .cb-back { stroke-dasharray: .05 .05; stroke-opacity: .6; }
 .cb-pt { fill: var(--ok); stroke: var(--bg); stroke-width: .015; }
+/* two unit 4-cubes: F₁ against c² (Cube4Centre) */
+.c4-svg { max-width: 560px; }
+.c4-far { fill: color-mix(in srgb, var(--acc) 10%, transparent); }
+.c4-near { fill: color-mix(in srgb, var(--ok) 12%, transparent); }
+.c4-one { stroke: var(--fg2); stroke-width: .4; stroke-dasharray: 2 2; }
+.c4-dot { fill: var(--fg2); fill-opacity: .35; }
+.c4-now { fill: var(--link); stroke: var(--bg); stroke-width: .6; }
+.c4-t { font-size: 6px; fill: var(--fg2); }
+.c4-ctl { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+.c4-ctl label { flex-wrap: nowrap; }
+.c4-ctl input[type="range"] { flex: 1; width: auto; }
+.c4-ctl .num { min-width: 4.5em; text-align: right; }

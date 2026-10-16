@@ -1,0 +1,167 @@
+import Cube4Centre from '../../../components/viz/Cube4Centre.tsx';
+
+## Abstract
+
+Let $s_n(k)$ be the side of the smallest $n$-cube that contains $k$ unit $n$-cubes with pairwise disjoint interiors, at any positions and orientations. We prove $s_4(2) = 2$: two unit 4-cubes do not fit in a 4-cube of side less than 2. The upper bound is the trivial packing. The lower bound follows from a centre lemma: every unit 4-cube inside $[0, 2]^4$ contains the centre of $[0, 2]^4$. Near the coordinate axes the lemma is proved by hand, using Lemma F in dimension 3; away from them it is checked by interval branch and bound with outward rounding, by two independent checkers. The result is computer-assisted and has not been peer reviewed.
+
+## Notation
+
+For $R \in O(n)$ write $a_{ik} = |R_{ik}|$, $w_i = \sum_j |R_{ij}|$ (the $\ell^1$ norm of row $i$, i.e. the width of the cube $R[-\tfrac12, \tfrac12]^n$ in direction $e_i$), and
+
+$$
+F_k(R) = \sum_i a_{ik}\,(2 - w_i).
+$$
+
+$F_k$ depends only on $|R|$. It is therefore invariant under permutations and sign changes of rows and of columns (with the column index $k$ moved accordingly), and under $R \mapsto -R$.
+
+**Theorem.** Two unit 4-cubes with disjoint interiors do not fit in a 4-cube of side $a < 2$. Hence $s_4(2) = 2$.
+
+The upper bound $s_4(2) \le 2$ is the trivial packing (two cubes side by side in $[0, 2]^4$).
+
+## 1. Reduction to Lemma F₄
+
+**Lemma F₄.** $F_k(R) \le 1$ for every $R \in O(4)$ and every column $k$.
+
+**Lemma F₄ implies the theorem.** The argument is the one for $n = 3$ in [cubes-in-cube/lemma_f/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/lemma_f/PROOF.md) and works in any dimension $n$.
+
+- Let $a < 2$ and let $C = c + R[-\tfrac12, \tfrac12]^n$ lie in $K_a = [-a/2, a/2]^n$. We show that the centre $0$ of $K_a$ is in the interior of $C$.
+- Suppose not. Since $C = \{x : \lVert R^{\mathsf T}(x - c)\rVert_\infty \le \tfrac12\}$, some column $u_k$ of $R$ has $|u_k \cdot c| \ge \tfrac12$.
+- Containment means $|c_i| + w_i/2 \le a/2$ for every $i$, so $a - w_i \ge 0$.
+- Hence
+  $$
+  |u_k \cdot c| \le \sum_i a_{ik}|c_i| \le \sum_i a_{ik}\,\frac{a - w_i}{2} < \sum_i a_{ik}\,\frac{2 - w_i}{2} = \frac{F_k}{2}.
+  $$
+  The inequality is strict because $a < 2$ and $\sum_i a_{ik} \ge 1$.
+- With $F_k \le 1$ this gives $|u_k \cdot c| < \tfrac12$, a contradiction.
+
+So every unit cube in $K_a$ contains the centre in its interior, and two cubes with disjoint interiors cannot both lie in $K_a$. ∎
+
+(Conversely, the statement "every unit $n$-cube in $[0, 2]^n$ contains the centre" is equivalent to $F_k \le 1$ for all $R \in O(n)$ and all $k$; only the direction above is needed.)
+
+By the symmetries, it suffices to prove $F_1(R) \le 1$, and we may assume that the largest $|R_{e1}|$ is $R_{11} \ge 0$. Write $u$ for column 1, $c = R_{11} = \max_e |u_e| = \cos\theta$ with $0 \le \theta < \pi/2$, $x = (R_{21}, R_{31}, R_{41})$ (so $\lVert x\rVert_2 = \sin\theta$), and $M$ for the lower-right $3 \times 3$ block of $R$. The proof splits at $c^2 = 2/3$:
+
+- **near region** $c^2 \ge 2/3$: a hand proof (§3), which uses Lemma F in dimension 3;
+- **far region** $c^2 \le 2/3$: two independent computer checks (§4).
+
+The figure shows $F_1$ against $c^2$ for a rotation of $\mathbb R^4$ that you set with six sliders, together with random rotations. $F_1 = 1$ at $R = I$; the rotation by $\arccos\sqrt{2/3}$ in the plane $(1, 2)$ puts $c^2$ on $2/3$.
+
+<Cube4Centre lang="en" client:visible />
+
+## 2. Lemma F in dimension 3
+
+**Lemma F₃.** $F_k(Q) \le 1$ for every $Q \in O(3)$ and every column $k$.
+
+This is Lemma F of [cubes-in-cube/lemma_f/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/lemma_f) (a hand proof near the axes and two independent computer checks elsewhere; see also [the paper on unit cubes in a cube](paper-cubes-in-cube.html), §2). It is stated there for $SO(3)$; since $F$ depends only on $|Q|$, and $-Q \in SO(3)$ when $Q \in O(3)$ has determinant $-1$, it holds on $O(3)$.
+
+## 3. Near region: if c² ≥ 2/3 then F₁ ≤ 1
+
+The steps (a)–(c) are those of the $n = 3$ proof ([lemma_f/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/lemma_f/PROOF.md) §1) and use only orthogonality, so they hold in any dimension; we write them for $n = 4$.
+
+**(a)** Let $v_i = w_i - a_{i1}$ (the $\ell^1$ norm of row $i$ without its first entry). Then $\sum_i a_{i1} w_i = \sum_i a_{i1}^2 + \sum_i a_{i1} v_i = 1 + \sum_i a_{i1} v_i$, so
+
+$$
+1 - F_1 = 2 - 2\lVert u\rVert_1 + \sum_i a_{i1} v_i = 2(1 - c) - 2\lVert x\rVert_1 + c\,v_1 + \sum_{i=2}^{4} |x_i|\,\lVert M_i\rVert_1,
+$$
+
+where $M_i$ is row $i$ of $M$ (indexed by the rows 2, 3, 4 of $R$).
+
+**(b)** Columns 1 and $j \ge 2$ are orthogonal: $c R_{1j} + (M^{\mathsf T}x)_j = 0$. Hence $c\,v_1 = \lVert M^{\mathsf T}x\rVert_1$.
+
+**(c)** If $\theta = 0$, then $x = 0$, row 1 is $e_1$ (so $v_1 = 0$), and $1 - F_1 = 0$. Otherwise, rows 2–4 of $R$ are orthonormal, so $M M^{\mathsf T} = I - x x^{\mathsf T}$. The polar decomposition is $M = PQ$ with
+
+$$
+P = (I - x x^{\mathsf T})^{1/2} = I - (1 - c)\,\hat x \hat x^{\mathsf T}, \qquad \hat x = x/\sin\theta,
+$$
+
+which is invertible (eigenvalues 1, 1 and $c > 0$), so $Q = P^{-1}M \in O(3)$. Since $Px = c\,x$, $M^{\mathsf T}x = Q^{\mathsf T}Px = c\,Q^{\mathsf T}x$. Row $i$ of $M$ is $M_i = Q_i - (1 - c)\,\hat x_i\,(\hat x^{\mathsf T}Q)$, so $\lVert M_i\rVert_1 \ge \lVert Q_i\rVert_1 - (1 - c)|\hat x_i|\,\lVert Q^{\mathsf T}\hat x\rVert_1$, and with $\sum_i |x_i||\hat x_i| = \lVert x\rVert_2$,
+
+$$
+\sum_i |x_i|\,\lVert M_i\rVert_1 \ge \sum_i |x_i|\,\lVert Q_i\rVert_1 - (1 - c)\,\lVert Q^{\mathsf T}x\rVert_1.
+$$
+
+**(d)** Put $y = Q^{\mathsf T}x$ and $K(Q, x) = \lVert y\rVert_1 + \sum_i |x_i|\,\lVert Q_i\rVert_1 - 2\lVert x\rVert_1$. Combining (a)–(c), with $c\lVert y\rVert_1 - (1 - c)\lVert y\rVert_1 = \lVert y\rVert_1 - 2(1 - c)\lVert y\rVert_1$,
+
+$$
+1 - F_1 \ge K(Q, x) + 2(1 - c)(1 - \lVert y\rVert_1).
+$$
+
+**(e)** $\lVert y\rVert_1 \le \sqrt3\,\lVert y\rVert_2 = \sqrt3\,\lVert x\rVert_2 = \sqrt3\sin\theta \le 1$, because $\sin^2\theta = 1 - c^2 \le 1/3$. So the second term is $\ge 0$.
+
+**(f) Lemma K: $K(Q, x) \ge 0$.** Write $x = Qy$, so $|x_i| \le \sum_j |Q_{ij}|\,|y_j|$. For $Q \in O(3)$ every row has $w_i(Q) = \lVert Q_i\rVert_1 \le \sqrt3 < 2$, so the factor $w_i(Q) - 2$ is negative and
+
+$$
+K = \lVert y\rVert_1 + \sum_i |x_i|\,(w_i(Q) - 2) \ge \sum_j |y_j|\Bigl(1 - \sum_i |Q_{ij}|\,(2 - w_i(Q))\Bigr) = \sum_j |y_j|\,(1 - F_j(Q)) \ge 0
+$$
+
+by Lemma F₃. Hence $F_1 \le 1$ in the near region. ∎
+
+(The same argument proves: if Lemma F holds in dimension $m \le 4$, then in dimension $m + 1$ every column with $\max_e R_{e1}^2 \ge 1 - 1/m$ satisfies $F_1 \le 1$. The bound $w_i \le \sqrt m \le 2$ used in (f) fails for $m \ge 5$.)
+
+**Lean.** Steps (a)–(f) are formalized in [lean/](https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim/lean) for any dimension $m$, with Lemma F in dimension $m$ as a hypothesis. `near_identity` is (a)–(d), `polarQ_orth` is the orthogonality of $Q$ in (c), `l1_QTx_le_one` is (e), and `lemmaK` and `rowL1_le_two` are (f). The conclusion of this section is `near_region` with $m = 3$. See [lean/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/lean/README.md).
+
+## 4. Far region: if c² ≤ 2/3 then F₁ < 1 (computer-assisted)
+
+**Claim.** For every $R \in O(4)$ with $\max_e R_{e1}^2 \le 2/3$, $F_1(R) < 1$.
+
+It suffices to check $SO(4)$: if $\det R = -1$, negating column 4 gives a matrix in $SO(4)$ with the same $|R|$. The claim is checked by two independent branch-and-bound programs in outward-rounded interval arithmetic. The near and far regions overlap on $c^2 = 2/3$, so their union is all of $O(4)$.
+
+| | first system (`checker/`) | second system (`checker2/`) |
+|---|---|---|
+| coordinates | column 1 by $t = (u_2, u_3, u_4)/u_1$; columns 2–4 as $N_u S$, $S \in SO(3)$ by a quaternion | $R(p, q)\,x = p\,x\,\bar q$, two unit quaternions, each on the 4 faces of the cube $[-1, 1]^4$ |
+| symmetry | sorted column 1 (384) and the Voronoi cell of the binary octahedral group (24) as coordinates | sorted column 1 and row 1 imposed as constraints C1–C3; a box is discarded only if every point violates them, for both $R$ and $-R$ |
+| bound on $F$ | mean-value form with interval forward-mode AD, also $2\lVert u\rVert_1 - 1 - \sum a_e \lVert m_e\rVert_1$ and $G(u)$ | mean-value form with interval AD, $F$'s own upper bound only |
+| near rule | box inside $u_1^2 \ge 2/3$ | box inside $\max_e \mathrm{lo}(\lvert R_{e1}\rvert)^2 \ge 2/3$ |
+| tasks | 4,096 | 65,536 |
+| boxes | 88,110,984 | 192,488,546 |
+| max depth | 22 | 30 |
+| unresolved | 0 | 0 |
+
+The coordinates, reductions, closing rules and the runs are described in [checker/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/checker/README.md) and [checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/checker2/README.md) (with the specification [checker2/SPEC.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/checker2/SPEC.md)). The second system was written from its specification without access to the first system. `verify_logs.py` checks the logs of both runs.
+
+## 5. Notes
+
+- The equality set of $F_1 = 1$ is not isolated: $R = \operatorname{diag}(\pm1, S)$ with any $S \in O(n - 1)$ gives $F_1 = 1$. Near it, $1 - F_1 \gtrsim \theta^2$, where $\theta$ is the angle between column 1 and the nearest axis. This is why the near region is handled by hand and the computer checks only need a strict inequality away from it.
+- Numerically, the largest value of $F_1$ in the far region is about 0.845, attained near the boundary $c^2 = 2/3$.
+
+## 6. Results
+
+| System | Status | Tasks | Boxes | Max depth | Time |
+|---|---|---|---|---|---|
+| first | complete, 0 unresolved | 4,096 | 88,110,984 | 22 | 3 min 38 s, 2 threads, laptop |
+| second | complete, 0 unresolved | 65,536 | 192,488,546 | 30 | 23 min 48 s, 2 threads, laptop, plus a retry of 102 tasks |
+
+In the second system's full run, 102 tasks reached the per-task time cap of 8 seconds. Those tasks were run again with a cap of 3,600 seconds, and every one closed. The two source versions differ only in the accepted range of the cap option. Details are in [checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/checker2/README.md) and `checker2/receipt.json`.
+
+The published sources differ from the sources as run only in comments (internal labels, reviewer notes and references to internal notes); no code changed. Each `receipt.json` gives the SHA-256 of the published source and of the source as run, together with the counts.
+
+## Reproducibility
+
+From [problems/cubes-n-dim](https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim):
+
+| What | Command |
+|---|---|
+| first system | `cargo build --release`, `./target/release/m2bb --selftest`, `./target/release/m2bb --jobs 2 --log full.jsonl` (in `checker/`) |
+| second system | `cargo build --release`, `cargo test --release`, `./target/release/m2check2 --jobs 2 --log full.jsonl` (in `checker2/`) |
+| Lean (near region) | `lake exe cache get`, `lake build`, `lake env lean CheckAxioms.lean` (in `lean/`; Lean v4.33.1, Mathlib pinned in `lake-manifest.json`) |
+| logs of our runs | release asset [cubes-n-dim-v1](https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1), then `python3 verify_logs.py logs` |
+
+Rust 1.86 or later is required (`f64::next_up`/`next_down`); no crates are used.
+
+## Status and limitations
+
+- A computer-assisted proof. It has not been peer reviewed.
+- Lean: the hand part of the near region (§3) is formalized in Lean 4 + Mathlib for any dimension: the polar-decomposition inequality, the orthogonality of the explicit polar factor, and Lemma K. The main theorem `near_region` takes Lemma F in dimension $m$ as an explicit hypothesis and gives $F_1 \le 1$ for $m \le 4$ when $c^2 \ge 1 - 1/m$. It has no `sorry`, and its only axioms are Lean's standard three. The reduction of §1, Lemma F in dimension 3 and the far region of §4 are not formalized.
+- The hand parts (§1–3: the reduction, the polar-decomposition steps in dimension 4, and Lemma K) were checked line by line by an independent internal reviewer. That reviewer also checked the reductions of the first system (the 384 signed permutations, the Voronoi cell, the passage from $O(3)$ to $SO(3)$, and the Householder formula) and the specification of the second system, including its two corrections made during implementation.
+- No external review yet. Corrections are welcome as issues.
+
+## Sources
+
+- **Classical.** For $n = 2$ (two unit squares need a square of side 2), see Erich Friedman's survey [[1]](#ref-1). Friedman's Packing Center page "Cubes in Cubes" [[2]](#ref-2) gives no lower bound for two cubes, and we found no proof of $s_n(2) = 2$ for any $n \ge 3$ in the literature. If you know of one, please open an issue.
+- **Our earlier work.** Lemma F in dimension 3 and $s_3(2) = 2$ are in [cubes-in-cube/lemma_f/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/lemma_f). The near-region argument (a)–(c) is the $n = 3$ argument from there.
+- **New here.** The lift of the near-region argument to dimension 4 (Lemma K), the far-region statement, the two checkers, and $s_4(2) = 2$.
+
+## References
+
+1. <span id="ref-1"></span>E. Friedman, "Packing unit squares in squares: a survey and new results", *Electronic Journal of Combinatorics*, Dynamic Survey DS7.
+2. <span id="ref-2"></span>E. Friedman, [Cubes in Cubes](https://erich-friedman.github.io/packing/cubincub/), Erich's Packing Center.
+3. [problems/cubes-n-dim/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/PROOF.md), [README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/README.md); release [cubes-n-dim-v1](https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1); [Issue #21](https://github.com/wand125/square-packing/issues/21).

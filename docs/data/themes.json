@@ -876,6 +876,10 @@
     {
      "en": "n = 4: s₄(2) = 2. The near region is proved by hand from Lemma F in dimension 3; the far region is checked by two independent Rust checkers in outward-rounded interval arithmetic (88,110,984 and 192,488,546 boxes, all closed). Computer-assisted; not peer reviewed (problems/cubes-n-dim/, release cubes-n-dim-v1).",
      "ja": "n = 4：s₄(2) = 2。近い領域は 3 次元の補題 F から手で証明。遠い領域は外向きに丸める区間演算の独立な 2 つの Rust の検査器で検査（箱 88,110,984 個と 192,488,546 個、すべて閉じた）。計算機援用で、査読は受けていない（problems/cubes-n-dim/、Release cubes-n-dim-v1）。"
+    },
+    {
+     "en": "Lean: the near-region lemma in any dimension and Lemma K, with Lemma F in dimension m as a hypothesis (no sorry; standard axioms only; problems/cubes-n-dim/lean/). The reduction, Lemma F in dimension 3 and the far region are not formalized.",
+     "ja": "Lean：任意の次元の近い領域の補題と補題 K を、次元 m の補題 F を仮定として形式化（sorry なし、標準の公理のみ。problems/cubes-n-dim/lean/）。帰着、3 次元の補題 F、遠い領域は形式化していない。"
     }
    ],
    "working_on": [
@@ -890,13 +894,18 @@
      "url": "https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim"
     },
     {
+     "label": "problems/cubes-n-dim/lean/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim/lean"
+    },
+    {
      "label": "Release cubes-n-dim-v1",
      "url": "https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1"
     }
    ],
    "releases": [],
    "url": "https://github.com/wand125/square-packing/issues/21",
-   "updated": "2026-10-16"
+   "updated": "2026-10-16",
+   "paper": "paper-cubes-n-dim.html"
   }
  ]
 }
