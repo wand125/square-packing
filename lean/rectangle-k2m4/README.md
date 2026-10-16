@@ -1,4 +1,9 @@
-# Lean: the rectangle version of s(k² − 4) = k, conditional on ValidTilt9
+# Lean: the rectangle version of s(k² − 4) = k
+
+**Unconditional result.** Combined with the kernel proof of `ValidTilt9` (release `validtilt9-lean-v1`), this gives
+`SquarePacking.Rect4.rect4 : ∀ A B : ℕ, 8 ≤ A → 8 ≤ B → ∀ a b : ℝ, a < A → b < B → ¬ PacksRect (A * B − 4) a b`
+with the standard axioms only; see [`final/`](final/) (it needs the ValidTilt9 build tree to rebuild).
+The rest of this folder builds on its own and proves the same statement conditional on `ValidTilt9`.
 
 This project proves Theorem 1 of [`problems/rectangle-upper-bounds/`](../../problems/rectangle-upper-bounds/) in
 Lean 4 with Mathlib, conditional on the finite statement `ValidTilt9` (equivalently `Valid9`) of Evan Daniel's
@@ -15,9 +20,10 @@ theorem SquarePacking.Rect4.rect4_of_valid9 (h : Valid9) : -- same conclusion
 `PacksRect n a b` (upstream, `Sqpack/Conjectures.lean`) says that n unit squares, at any positions and angles,
 with pairwise disjoint interiors, lie in [0, a] × [0, b]. `Valid9` and `ValidTilt9` are the upstream statements
 about the box cover `K4_k008_box9.txt` (`Sqpack/Bentz4.lean`, `Sqpack/ValidSplit9.lean`); the axis-parallel case
-`validAxis9` and the reduction `valid9_of_tilt_axis` are proved upstream in the kernel. `ValidTilt9` itself is a
-computation: Evan Daniel's exact `qx2_zm` run, and independently our ValidTilt9 run
-([`checks/valid7/`](../../checks/valid7/), release `records-tilt9-v1`). It is not proved in Lean.
+`validAxis9` and the reduction `valid9_of_tilt_axis` are proved upstream in the kernel. `ValidTilt9` itself is
+proved in the Lean kernel in release `validtilt9-lean-v1` (see `final/`); it is also certified by Evan Daniel's exact
+`qx2_zm` run and independently by our ValidTilt9 run ([`checks/valid7/`](../../checks/valid7/), release
+`records-tilt9-v1`).
 
 ## What is new here
 

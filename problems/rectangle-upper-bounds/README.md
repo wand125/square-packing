@@ -22,10 +22,11 @@ interval (99/100, 1] of our closed-form lower bound for squares
 Nothing is claimed about how many squares do fit: we give no packing, and we do not claim that AB − 5 is
 attained.
 
-**Status.** Computer-assisted. Theorem 1 is also proved in Lean 4 (kernel-checked, axioms `propext`,
-`Classical.choice`, `Quot.sound`) conditional on the finite statement ValidTilt9, which is certified by computation
-(see below); the Lean project is [`lean/rectangle-k2m4/`](../../lean/rectangle-k2m4/). Theorem 2 is not formalised.
-Not yet reviewed by anyone outside this project.
+**Status.** Computer-assisted. Theorem 1 is proved in Lean 4 with the standard axioms only
+(`propext`, `Classical.choice`, `Quot.sound`): the Lean project [`lean/rectangle-k2m4/`](../../lean/rectangle-k2m4/)
+proves it from the finite statement ValidTilt9, and ValidTilt9 is proved in the Lean kernel in release
+`validtilt9-lean-v1`; the combined theorem `Rect4.rect4` is in `lean/rectangle-k2m4/final/`. Theorem 2 is not
+formalised. Not yet reviewed by anyone outside this project.
 
 ## The argument for Theorem 1
 
@@ -109,7 +110,7 @@ Evan Daniel's proof of s(k² − 4) = k: the axis-parallel case and the symmetry
 evand/square-packing, and the tilted case is certified by his `qx2_zm` run. It is also checked independently
 by our checker for the tilted case, **ValidTilt9**
 ([`checks/valid7/`](../../checks/valid7/), release `records-tilt9-v1`): 28,350 roots, 0 uncertified,
-9,537,343 leaves, `RECORD OK`.
+9,537,343 leaves, `RECORD OK`. ValidTilt9 is also proved in the Lean kernel (release `validtilt9-lean-v1`).
 
 **Total mass.** Each wall of length L carries L − 6 full periods of singular (segment) mass P = 14/5 and one phase-0 line of
 segment mass E, so with C the segment mass of one corner module (none of P, C, E includes the Lebesgue part),
@@ -150,7 +151,7 @@ written from the statements and the published specifications only, without acces
 | Valid9, axis-parallel case and the symmetry reduction | Evan Daniel's Lean proof in evand/square-packing (kernel-checked) | as published there |
 | Valid9, tilted case | Evan Daniel's exact `qx2_zm` run; independently our ValidTilt9 run ([`checks/valid7/`](../../checks/valid7/), release `records-tilt9-v1`) | both pass; ours: 28,350 roots, 0 uncertified, `RECORD OK` |
 | Theorem 1: μ_{9,9} equals the box cover `K4_k008_box9.txt`; masses non-negative; total AB − 4D < AB − 4; the window agreement of Lemma R6 with the shift rule, for every window of the listed sizes | `checker/k2m4_rect_check.py` (14 sizes from 8 × 8 to 15 × 8 and 14 × 14); `indep-checker/rect_k2m4_indep.py` (17 sizes up to 20 × 8 and 17 × 19, and the total as a polynomial identity in A, B) | 0 mismatched windows in both; 38,342 window pairs in the second |
-| Theorem 1 from Valid9 (equivalently ValidTilt9): the measure μ_{A,B}, Lemma R6, the total mass for all A, B, the measure principle | Lean 4, [`lean/rectangle-k2m4/`](../../lean/rectangle-k2m4/) (extends Evan Daniel's square proof, whose files are reused unchanged) | `rect4_of_validTilt9`, no `sorry`, standard axioms only |
+| Theorem 1 (all of it) | Lean 4: [`lean/rectangle-k2m4/`](../../lean/rectangle-k2m4/) (the rectangle measure, Lemma R6, the total for all A, B, the measure principle; extends Evan Daniel's square proof, whose files are reused unchanged) together with the kernel proof of ValidTilt9 (release `validtilt9-lean-v1`) | `Rect4.rect4`, no hypotheses, standard axioms only |
 | Theorem 2: interval 34 of the closed form | [`problems/closed-form/`](../closed-form/): the Rust replay and the independent checker `cfcheck` | as published there |
 | Theorem 2: Lemmas R1 and R2 for interval 34, at δ_a, δ_b ∈ {99/100, 1} and k, m ∈ {(7,7), (7,9), (9,7), (8,11), (12,7), (7,13), (8,8), (10,14)}; S > 3/4 at both ends | `checker/validate_rect.py` (uses `../closed-form/structure/validate_family.py`); `indep-checker/rect_r1r2_indep.py` (its own reading of the family from `SPEC.md`) | all pass in both (132 and 313 checks); both give the same exact S(99/100) and S(1) |
 
