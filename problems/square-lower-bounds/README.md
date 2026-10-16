@@ -61,7 +61,7 @@ s(61) >= 8
 s(65) >= 167/20    = 8.35
 s(66) >= 843/100   = 8.43
 s(67) >= 212/25    = 8.48
-s(68) >= 851/100   = 8.51
+s(68) >= 853/100   = 8.53
 s(69) >= 431/50    = 8.62
 s(70) >= 3463/400  = 8.6575
 s(71) >= 8721/1000 = 8.721
@@ -154,7 +154,7 @@ and list earlier rungs.
 | 65 | **8.35** | 167/20 | mixed | [`mixed_n65_L835`](certificates/mixed_n65_L835) | 8.066373 (Karakus, 2026) | record | Nagamochi 8.0711…; Green 8.2900… |
 | 66 | **8.43** | 843/100 | mixed | [`mixed_n66_L843`](certificates/mixed_n66_L843) | 8.132169 (Karakus, 2026) | record | Nagamochi 8.1414…; Green 8.2900… |
 | 67 | **8.48** | 212/25 | mixed | [`mixed_n67_L848`](certificates/mixed_n67_L848) | 8.197402 (Karakus, 2026) | record | Nagamochi 8.2111…; Green 8.2900… |
-| 68 | **8.51** | 851/100 | rectangle | [`rect_n68_L851`](certificates/rect_n68_L851) | 8.262087 (Karakus, 2026) | record | Nagamochi 8.2801…; Green 8.2900… |
+| 68 | **8.53** | 853/100 | mixed | [`mixed_n68_L853`](certificates/mixed_n68_L853) | 8.262087 (Karakus, 2026) | record | Nagamochi 8.2801…; Green 8.2900… |
 | 69 | **8.62** | 431/50 | mixed | [`mixed_n69_L862`](certificates/mixed_n69_L862) | 8.326238 (Karakus, 2026) | record | Nagamochi 8.3485…; Green 8.2900… |
 | 70 | **8.6575** | 3463/400 | mixed | [`mixed_n70_L86575`](certificates/mixed_n70_L86575) | 8.389867 (Karakus, 2026) | record | Nagamochi 8.4162…; Green 8.2900… |
 | 71 | **8.721** | 8721/1000 | mixed | [`mixed_n71_L8721`](certificates/mixed_n71_L8721) | 8.452987 (Karakus, 2026) | record | Nagamochi 8.4833…; Green 8.2900… |
@@ -1680,6 +1680,16 @@ s(51) >= 3011/400 = 7.5275
 ```
 
 This supersedes `mixed_n51_L747` above. This exceeds our earlier certificate mixed_n51_L747 (7.47). For reference, Nagamochi's closed form gives `7.1644…` and Green's reported bound gives `7.3174…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 5099999/100000 with core B = 4999/5000 on a declared half-angle net of 2073 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n51_L75275/ASSET.json`).
+
+## n = 68: 8.53, a mixed certificate
+
+[`certificates/mixed_n68_L853`](certificates/mixed_n68_L853/README.md) proves
+
+```
+s(68) >= 853/100 = 8.53
+```
+
+This exceeds our earlier certificate rect_n68_L851 (8.51). For reference, Nagamochi's closed form gives `8.2801…` and Green's reported bound gives `8.2900…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 6799999/100000 with core B = 9977/10000 on a declared half-angle net of 201 directions. It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n68_L853/ASSET.json`).
 
 ## Closed-square endpoint certificate for n = 21
 
