@@ -1,10 +1,11 @@
 import Triangle37 from '../../../components/viz/Triangle37.tsx';
+import Triangle46 from '../../../components/viz/Triangle46.tsx';
 import TriangleSeries from '../../../components/viz/TriangleSeries.tsx';
 import CertificateFigure from '../../../components/viz/CertificateFigure.tsx';
 
 ## Abstract
 
-Let $s_\triangle(n)$ be the side of the smallest equilateral triangle that contains $n$ non-overlapping unit squares, at any positions and angles. We prove $s_\triangle(n)$ for $n = 2, 3, 4, 6, 7, 11, 16, 22, 29$ and $37$; in particular $s_\triangle(37) = 9 + 2/\sqrt3 \approx 10.15470$. Each upper bound is a packing with exact coordinates, checked exactly (in Lean 4 for $n = 2, 3, 4$ and the series, by two exact checkers for $n = 37$). Erich Friedman's Packing Center, "Squares in Triangles", is cited as the source of the configurations; no originality is claimed for them. Each lower bound is a finite weighted point set: every closed unit square in the triangle captures weight $\ge 1$, and the total weight is $< n$. For $n = 7, \dots, 29$ the certificate is a patch of the unit triangular lattice; at $n = 37$ the axis-parallel rows hold only 36 squares, and a different packing reaches the bound. For $n = 6$ one certificate is not enough, and the proof is a localization tree of six certificates closed by a lemma on three squares. The results are computer-assisted and checked by two independent checkers; all except $n = 6$ are also checked in Lean 4. They have not been peer reviewed.
+Let $s_\triangle(n)$ be the side of the smallest equilateral triangle that contains $n$ non-overlapping unit squares, at any positions and angles. We prove $s_\triangle(n)$ for $n = 2, 3, 4, 6, 7, 11, 16, 22, 29, 37$ and $46$; in particular $s_\triangle(37) = 9 + 2/\sqrt3 \approx 10.15470$ and $s_\triangle(46) = 10 + 2/\sqrt3 \approx 11.15470$. Each upper bound is a packing with exact coordinates, checked exactly (in Lean 4 for $n = 2, 3, 4$ and the series, by two exact checkers for $n = 37$ and $46$). Erich Friedman's Packing Center, "Squares in Triangles", is cited as the source of the configurations; no originality is claimed for them. Each lower bound is a finite weighted point set: every closed unit square in the triangle captures weight $\ge 1$, and the total weight is $< n$. For $n = 7, \dots, 29$ the certificate is a patch of the unit triangular lattice; at $n = 37$ the axis-parallel rows hold only 36 squares, and a different packing reaches the bound; at $n = 46$ the upper bound is Joshua Wolk's packing from Friedman's table. For $n = 6$ one certificate is not enough, and the proof is a localization tree of six certificates closed by a lemma on three squares. The results are computer-assisted and checked by two independent checkers; all except $n = 6$ and $n = 46$ are also checked in Lean 4. They have not been peer reviewed.
 
 ## 1. The problem and the results
 
@@ -22,8 +23,9 @@ $T_v$ is the equilateral triangle of side $v$ with vertices $(0,0)$, $(v,0)$, $(
 | 22 | $7 + 2/\sqrt3$ | 8.1547 | rows 7 + 5 + 4 + 3 + 2 + 1 | lattice, 21 points |
 | 29 | $8 + 2/\sqrt3$ | 9.1547 | rows 8 + 6 + 5 + 4 + 3 + 2 + 1 | lattice, 28 points |
 | 37 | $9 + 2/\sqrt3$ | 10.1547 | tight bottom row of 9, and 28 squares above in the shape of Friedman's $n = 28$ packing (our coordinates) | lattice, 36 points |
+| 46 | $10 + 2/\sqrt3$ | 11.1547 | Joshua Wolk's packing from Friedman's table (September 2026; our exact coordinates) | lattice, 45 points |
 
-The upper bounds are packings with exact coordinates: proved in Lean 4 for $n = 2, 3, 4$ and the series, given as a packing certificate checked by two exact checkers for $n = 37$, and given by exact coordinates for $n = 6$ (§4). The configurations are those listed in Friedman's table, which is cited as their source only. Friedman's table lists $n = 1$ and $n = 2$ as "Trivial"; the proof for $n = 2$ is included because it is the simplest instance of the method. $n = 5$ is not done (§9).
+The upper bounds are packings with exact coordinates: proved in Lean 4 for $n = 2, 3, 4$ and the series, given as a packing certificate checked by two exact checkers for $n = 37$ and $n = 46$, and given by exact coordinates for $n = 6$ (§4). The configurations are those listed in Friedman's table, which is cited as their source only. Friedman's table lists $n = 1$ and $n = 2$ as "Trivial"; the proof for $n = 2$ is included because it is the simplest instance of the method. $n = 5$ is not done (§10).
 
 ## 2. The method: weighted point sets
 
@@ -43,7 +45,7 @@ Each translated square captures weight $\ge 1$ and each point is counted at most
 
 ## 3. n = 2, 3, 4
 
-For $n = 2, 3, 4$ the upper bound is proved in Lean 4 from explicit coordinates in $\mathbb Q(\sqrt3)$ (§8).
+For $n = 2, 3, 4$ the upper bound is proved in Lean 4 from explicit coordinates in $\mathbb Q(\sqrt3)$ (§9).
 
 **$n = 2$, $v = 2 + 2/\sqrt3$.** Two squares side by side on the base; at height 1 the triangle has width $v - 2/\sqrt3 = 2$. The certificate is one point, the centroid $G$, with weight 1. *Lemma:* every closed unit square $Q \subseteq T_v$ contains $G$. By the symmetry of the triangle and of the square it is enough to take $\theta \in [0, \pi/12]$. The admissible centres form a triangle $D_\theta$ whose vertices have closed forms in $\theta$, and $G \in Q$ for every admissible centre if and only if it holds at the three vertices: twelve functions $g(\theta) \ge 0$ on $[0, \pi/12]$. A stand-alone script checks them with exact values in $\mathbb Q(\sqrt3)$ at $\theta = 0$, a second-order bound on $[0, 1/100]$ and interval enclosures on 400 sub-intervals of $[1/100, \pi/12]$. Two functions vanish at $\theta = 0$ (the two bottom-corner squares of the extremal packing), with derivatives $(2\sqrt3 - 2)/3$ and $(2 - \sqrt3)/3$, both $> 0$. Two disjoint squares cannot both contain $G$.
 
@@ -96,7 +98,7 @@ for all 2 cases × 8 orthants. Hence $0 \le \tfrac{\sqrt3}{2}(v - L) \le S \le -
 
 For $m \ge 3$ let $v_m = m + 2/\sqrt3$ and $n_m = m(m-1)/2 + 1 = T_{m-1} + 1$.
 
-**Upper bound.** Axis-parallel rows standing on the base. At height $j$ the triangle has width $v_m - 2j/\sqrt3$, so row $j$ holds $\lfloor m - 2j/\sqrt3 \rfloor$ squares. Only the bottom row is tight: at height 1 the width is exactly $m$. The rows packing is proved in Lean 4 for $m = 4, \dots, 8$ (§8).
+**Upper bound.** Axis-parallel rows standing on the base. At height $j$ the triangle has width $v_m - 2j/\sqrt3$, so row $j$ holds $\lfloor m - 2j/\sqrt3 \rfloor$ squares. Only the bottom row is tight: at height 1 the width is exactly $m$. The rows packing is proved in Lean 4 for $m = 4, \dots, 8$ (§9).
 
 **Certificate.** Take the points of the unit triangular lattice that form an equilateral triangle of side $m - 2$, that is $T_{m-1}$ points of weight 1, placed so that its centroid is the centroid of the container. The bottom row then lies at height $1/3 + \sqrt3/3$ for every $m$, at $x = 1 + 1/\sqrt3 + i$; these are exactly the shared vertical edges of a tight bottom row of $m$ squares. All pairs at distance 1 are listed for Lemma P. The certificate is invariant under the symmetry group of the triangle, and $m = 3$ gives the $n = 4$ certificate. Its total weight $T_{m-1}$ is smaller than $n_m$, so it proves $s_\triangle(n_m) \ge v_m$.
 
@@ -124,7 +126,7 @@ Let $v = 9 + 2/\sqrt3 \approx 10.15470$.
 
 **Why the rows give only 36.** In $T_v$ axis-parallel rows standing on the base hold $9 + 7 + 6 + 5 + 4 + 3 + 2 = 36$ squares; the eighth row does not fit, because at height 7 the width is $9 - 14/\sqrt3 \approx 0.917 < 1$. In general the lattice triangle has about $m^2/2$ points, while the number of squares that fit in the triangle of side $v_m$ grows only like its area, about $(\sqrt3/4)m^2 \approx 0.433m^2$. So for large $m$ the certificate gives a valid but weak lower bound; it is not a route to a statement for all $m$.
 
-**Upper bound.** A packing with exact coordinates in $\mathbb Q(\sqrt3)$. A tight bottom row of nine axis-parallel squares stands on the base, at $x = 1/\sqrt3 + i$ ($i = 0, \dots, 8$). Above height 1 lies an equilateral triangle of side 9. It holds 28 squares in the shape of Friedman's $n = 28$ packing (side $3 + 10/\sqrt3 < 9$): axis-parallel rows of 7, 6, 3 and 2 squares, each pushed against the left side, and two blocks of 3 + 2 squares, one aligned with each slanted side. Since $3 + 10/\sqrt3 < 9$ there is room to spare. The packing is checked by two independently written exact checkers (§8), both of which reject five negative controls. So
+**Upper bound.** A packing with exact coordinates in $\mathbb Q(\sqrt3)$. A tight bottom row of nine axis-parallel squares stands on the base, at $x = 1/\sqrt3 + i$ ($i = 0, \dots, 8$). Above height 1 lies an equilateral triangle of side 9. It holds 28 squares in the shape of Friedman's $n = 28$ packing (side $3 + 10/\sqrt3 < 9$): axis-parallel rows of 7, 6, 3 and 2 squares, each pushed against the left side, and two blocks of 3 + 2 squares, one aligned with each slanted side. Since $3 + 10/\sqrt3 < 9$ there is room to spare. The packing is checked by two independently written exact checkers (§9), both of which reject five negative controls. So
 
 $$
 s_\triangle(37) = 9 + \tfrac{2}{\sqrt3}.
@@ -140,7 +142,27 @@ We do not claim this construction as new: Friedman's table lists a packing of 37
 
 *The 37-square certificate at side 9 + 2/√3: the tight bottom row of nine is in the accent colour, with 28 squares above. Select either group to highlight it. Coordinates are converted from the exact certificate for drawing.*
 
-## 7. Conclusion
+## 7. n = 46
+
+Let $v = 10 + 2/\sqrt3 \approx 11.15470$.
+
+**Lower bound.** For $m = 10$ the lattice certificate of §5 has 45 points of weight 1, total $45 < 46$, and every closed unit square in $T_v$ contains one of them. Checker 1 verifies it (7,296 nodes, maximum depth 24 with limit 40), and so does checker 2 (16,309 critical angles, minimum weight 1). So no 46 non-overlapping unit squares fit in a smaller equilateral triangle.
+
+**Rows alone.** In $T_v$ axis-parallel rows standing on the base hold $10 + 8 + 7 + 6 + 5 + 4 + 3 + 1 = 44$ squares; the ninth row does not fit, because at height 8 the width is $10 - 16/\sqrt3 \approx 0.762 < 1$.
+
+**Upper bound.** A packing with exact coordinates in $\mathbb Q(\sqrt3)$. A tight bottom row of ten axis-parallel squares stands on the base, at $x = 1/\sqrt3 + i$ ($i = 0, \dots, 9$). Above it are nine more axis-parallel squares, 15 squares tilted by $60^\circ$ (aligned with the left side) and 12 squares tilted by $-60^\circ$ (aligned with the right side), placed as in the published picture. We read the positions off that picture, solved a linear program for the free offsets of each square along its row or side, and rounded them to rationals with denominator 1000. The exact centres and angles are the whole construction; the checks do not rely on the linear program. The packing is checked by the same two exact checkers as for $n = 37$ (§9), both of which reject five negative controls. So
+
+$$
+s_\triangle(46) = 10 + \tfrac{2}{\sqrt3}.
+$$
+
+The packing is Joshua Wolk's: Friedman's table lists $n = 46$ with "s = 11.15470+", found by him in September 2026. The exact value $10 + 2/\sqrt3$ is not given there. We rebuilt the packing with exact coordinates and claim no originality for it.
+
+<Triangle46 lang="en" client:visible />
+
+*Wolk's 46-square packing at side 10 + 2/√3, with our exact coordinates: the tight bottom row of ten, nine more axis-parallel squares, 15 squares tilted by 60° (along the left side) and 12 tilted by −60° (along the right side). Select a group to highlight it. Coordinates are converted from the exact certificate for drawing.*
+
+## 8. Conclusion
 
 For $n = 2, 3, 4$ and $n = 7, 11, 16, 22, 29$, a single weighted point set with total weight $< n$ captures weight $\ge 1$ in every closed unit square of $T_v$; with the centre-scaling argument of §2 and the packings this gives
 
@@ -148,27 +170,28 @@ $$
 s_\triangle(2) = 2 + \tfrac{2}{\sqrt3},\quad s_\triangle(3) = \tfrac32 + \sqrt3,\quad s_\triangle(4) = 3 + \tfrac{2}{\sqrt3},\quad s_\triangle(T_{m-1} + 1) = m + \tfrac{2}{\sqrt3}\ \ (m = 4, \dots, 8).
 $$
 
-For $n = 6$ the localization tree of §4 leaves every branch in a leaf closed by the triple lemma, so $s_\triangle(6) = 2 + 4/\sqrt3$. For $n = 37$ the lattice certificate gives the lower bound and the packing of §6 the upper bound, so $s_\triangle(37) = 9 + 2/\sqrt3$.
+For $n = 6$ the localization tree of §4 leaves every branch in a leaf closed by the triple lemma, so $s_\triangle(6) = 2 + 4/\sqrt3$. For $n = 37$ the lattice certificate gives the lower bound and the packing of §6 the upper bound, so $s_\triangle(37) = 9 + 2/\sqrt3$. For $n = 46$ the lattice certificate for $m = 10$ gives the lower bound and Wolk's packing of §7 the upper bound, so $s_\triangle(46) = 10 + 2/\sqrt3$.
 
-## 8. Verification
+## 9. Verification
 
 | Checker | Method | Covers |
 |---|---|---|
 | checker 1 | subdivides pose space (centre box × angle bin, $u = \tan(\theta/2)$); for fixed $u$ the admissible centres in a box form a convex polygon whose vertices are rational functions of $u$, and capture is checked at the vertices with exact Bernstein bounds over $\mathbb Q(\sqrt3)$; uses $D_3$ symmetry and Lemma P; standard library only | all certificates, including the six of $n = 6$ |
-| checker 2 | written from the specification, the proof notes and the certificate format, without opening checker 1's code; an exact angular sweep of a line arrangement over all $u \in [0, 1]$: critical angles from the real roots of concurrency and parallelism determinants, one rational sample in every gap, closure by upper semicontinuity; no box subdivision, no Bernstein bounds, no symmetry reduction, no pair lemma | $n = 2, 3, 4$ and the series up to $n = 37$ |
+| checker 2 | written from the specification, the proof notes and the certificate format, without opening checker 1's code; an exact angular sweep of a line arrangement over all $u \in [0, 1]$: critical angles from the real roots of concurrency and parallelism determinants, one rational sample in every gap, closure by upper semicontinuity; no box subdivision, no Bernstein bounds, no symmetry reduction, no pair lemma | $n = 2, 3, 4$, the series up to $n = 37$, and $n = 46$ |
 | checker 2, $n = 6$ | re-checks every part of the $n = 6$ proof by other methods: a cell grid for the certificates (with an exact angular sweep for one window of stage 1), interval branch and bound for the obstacle points, a sympy rederivation and interval check of (M), checks of the lemma's hypotheses and of the links between stages | $n = 6$ |
-| `check_sat.py`, `check_clip.py` (packing) | two independently written exact checkers in $\mathbb Q(\sqrt3)$: unit squares, every corner in the closed triangle and a separating edge normal for every pair (sympy); sides 1 and area 1, area 1 after clipping by the triangle and area 0 for every pairwise intersection (own number class); the file is also in the shared format `packing-certificate/1` and passes the repository's common checker `tools/packing_check/check_packing.py` | the $n = 37$ packing (upper bound); five negative controls are rejected |
+| `check_sat.py`, `check_clip.py` (packing) | two independently written exact checkers in $\mathbb Q(\sqrt3)$: unit squares, every corner in the closed triangle and a separating edge normal for every pair (sympy); sides 1 and area 1, area 1 after clipping by the triangle and area 0 for every pairwise intersection (own number class); the file is also in the shared format `packing-certificate/1` and passes the repository's common checker `tools/packing_check/check_packing.py` | the $n = 37$ and $n = 46$ packings (upper bounds); for each, five negative controls are rejected |
 
-checker 2 results for the series: critical angles 1,231 ($n = 7$), 2,311, 3,853, 5,959, 8,767 and 12,157 ($n = 37$), minimum weight 1 in every case. Negative controls (side $L + 1/100$, a point shifted, a point dropped, a weight lowered, an exclusion or the obstacle points removed) fail as expected.
+checker 2 results for the series: critical angles 1,231 ($n = 7$), 2,311, 3,853, 5,959, 8,767 and 12,157 ($n = 37$), and 16,309 for $n = 46$; minimum weight 1 in every case. Negative controls (side $L + 1/100$, a point shifted, a point dropped, a weight lowered, an exclusion or the obstacle points removed) fail as expected.
 
-**Lean 4.** Kernel-checked proofs of $s_\triangle(n)$ for $n = 2, 3, 4, 7, 11, 16, 22, 29$ and of the bound for $n = 37$ ($\forall s,\ \mathrm{PacksTri}\ 37\ s \to 9 + 2/\sqrt3 \le s$), with only the standard axioms (`propext`, `Classical.choice`, `Quot.sound`; no `sorry`, no `native_decide`). The lower bounds use a third checker, proved sound in Lean once: each leaf of a box tree carries a Farkas–Bernstein certificate, a polynomial identity with nonnegative multipliers over $\mathbb Q(\sqrt3)$ that the kernel checks coefficient by coefficient. It covers all angles directly and uses neither the $D_3$ symmetry nor Lemma P. The upper bounds for $n = 2, 3, 4$ and the series are explicit packings with centres, cosines and sines in $\mathbb Q(\sqrt3)$, checked by exact tests for containment and for disjointness (a separating edge normal) with soundness proofs; for the series one Boolean test checks the axis-parallel rows. The Python generator and both Python checkers are not trusted; the trusted base is the Lean kernel, Lean core, Mathlib and the definitions in the statements. Leaves: 3, 86, 240 for $n = 2, 3, 4$; 1,013, 1,863, 3,753, 6,884, 8,661 and 9,776 for $n = 7, \dots, 37$. $n = 6$ is not formalised in Lean.
+**Lean 4.** Kernel-checked proofs of $s_\triangle(n)$ for $n = 2, 3, 4, 7, 11, 16, 22, 29$ and of the bound for $n = 37$ ($\forall s,\ \mathrm{PacksTri}\ 37\ s \to 9 + 2/\sqrt3 \le s$), with only the standard axioms (`propext`, `Classical.choice`, `Quot.sound`; no `sorry`, no `native_decide`). The lower bounds use a third checker, proved sound in Lean once: each leaf of a box tree carries a Farkas–Bernstein certificate, a polynomial identity with nonnegative multipliers over $\mathbb Q(\sqrt3)$ that the kernel checks coefficient by coefficient. It covers all angles directly and uses neither the $D_3$ symmetry nor Lemma P. The upper bounds for $n = 2, 3, 4$ and the series are explicit packings with centres, cosines and sines in $\mathbb Q(\sqrt3)$, checked by exact tests for containment and for disjointness (a separating edge normal) with soundness proofs; for the series one Boolean test checks the axis-parallel rows. The Python generator and both Python checkers are not trusted; the trusted base is the Lean kernel, Lean core, Mathlib and the definitions in the statements. Leaves: 3, 86, 240 for $n = 2, 3, 4$; 1,013, 1,863, 3,753, 6,884, 8,661 and 9,776 for $n = 7, \dots, 37$. $n = 6$ and $n = 46$ are not formalised in Lean.
 
-## 9. Status and limitations
+## 10. Status and limitations
 
 - Computer-assisted proofs. They have not been peer reviewed.
 - $n = 6$ is checked by two independent systems but is not formalised in Lean.
 - For $n = 3, 4, 6, 7, 11, 16, 22, 29$ we are not aware of a previous proof of optimality. We checked Friedman's page (as of 2026-09-30), which gives the packings but no proofs or lower bounds, an arXiv search of abstracts, and general web searches, and did not find a lower bound for this container. If you know of one, please open an issue. For $n = 2$ no novelty is claimed.
 - For $n = 37$ the upper bound is checked by two exact checkers; the lower bound is also proved in Lean 4, the upper bound is not.
+- For $n = 46$ both bounds are checked by two exact checkers each; neither is formalised in Lean. The packing is Joshua Wolk's.
 - $n = 5$ is not done. Its best known side is $2 + 4/\sqrt3$, the same as $s_\triangle(6)$, so $s_\triangle(5) \le s_\triangle(6) = 2 + 4/\sqrt3$; the lower bound is work in progress.
 
 ## Reproducibility
@@ -184,6 +207,9 @@ From `problems/triangle` (checker 1: Python 3.10+, standard library). Each run p
 | $n = 37$ | `python checker/check.py certificates/n37/n37_cert.json --n 37 --max-depth 40 --jobs 16` |
 | regenerate the $n = 37$ certificate | `python tools/make_lattice_cert.py 9 out.json` (byte for byte) |
 | $n = 37$ packing (upper bound) | `python check_sat.py n37_packing.json` (sympy), `python check_clip.py n37_packing.json` (standard library), in `certificates/n37/upper/`; `python construct.py n37_packing.json` regenerates the file byte for byte, `python make_negatives.py` the negative controls |
+| $n = 46$ | `python checker/check.py certificates/n46/n46_cert.json --n 46 --max-depth 40 --jobs 4` |
+| regenerate the $n = 46$ certificate | `python tools/make_lattice_cert.py 10 out.json` (byte for byte) |
+| $n = 46$ packing (upper bound) | `python check_sat.py n46_packing.json` (sympy), `python check_clip.py n46_packing.json` (standard library), in `certificates/n46/upper/`; `python construct.py n46_packing.json` regenerates the file byte for byte, `python make_negatives.py` the negative controls |
 | $n = 2$ lemma, stand-alone | `python certificates/n2/check_n2.py` (sympy, mpmath) |
 | $n = 6$, stage 1 and obstacle points | `python checker/check.py certificates/n6/loc3/cert_e1_100.json --n 6 --max-depth 40 --jobs 8`, `python certificates/n6/stage2/reprove_obstacles.py`; the other certificates and the triple lemma as listed in `certificates/n6/PROOF.md` |
 | checker 1 tests | `cd checker && python -m pytest -q tests` (about 1.5 minutes) |
@@ -194,6 +220,6 @@ From `problems/triangle` (checker 1: Python 3.10+, standard library). Each run p
 
 1. E. Friedman, [Squares in Triangles](https://erich-friedman.github.io/packing/squintri/), Erich's Packing Center (source of the configurations).
 2. [problems/triangle/README.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/README.md), [SERIES.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/SERIES.md).
-3. Proofs: [n2](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n2/PROOF.md), [n3](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n3/PROOF.md), [n4](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n4/PROOF.md), [n6](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n6/PROOF.md) with [the triple lemma](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n6/triple/LEMMA.md), [n7](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n7/PROOF.md), [n37](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n37/PROOF.md) with [the n37 packing](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n37/upper/README.md).
+3. Proofs: [n2](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n2/PROOF.md), [n3](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n3/PROOF.md), [n4](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n4/PROOF.md), [n6](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n6/PROOF.md) with [the triple lemma](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n6/triple/LEMMA.md), [n7](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n7/PROOF.md), [n37](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n37/PROOF.md) with [the n37 packing](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n37/upper/README.md), [n46](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n46/PROOF.md) with [the n46 packing](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n46/upper/README.md).
 4. Checkers: [checker/README.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/checker/README.md), [checker/SPEC.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/checker/SPEC.md), [checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/checker2/README.md), [checker2/n6/README.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/checker2/n6/README.md), [checker2/n6/RESULTS.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/checker2/n6/RESULTS.md).
 5. Lean 4: [lean/triangle/README.md](https://github.com/wand125/square-packing/blob/main/lean/triangle/README.md). Packing certificates: [tools/packing_check/README.md](https://github.com/wand125/square-packing/blob/main/tools/packing_check/README.md).

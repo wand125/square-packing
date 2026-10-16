@@ -21,4 +21,6 @@ assert.deepEqual(readdirSync('dist/data/rect').filter(f=>/^k\d+/.test(f)).sort()
 for(const k of built.ks)assert.deepEqual(json(`dist/data/rect/k${k.k}.json`),source.ks.find(x=>x.k===k.k));
 assert.deepEqual(json('public/data/papers/triangle-n37.json'),json('dist/data/papers/triangle-n37.json'));
 assert.equal(json('public/data/papers/triangle-n37.json').squares.length,37);
+assert.deepEqual(json('public/data/papers/triangle-n46.json'),json('dist/data/papers/triangle-n46.json'));
+assert.equal(json('public/data/papers/triangle-n46.json').squares.length,46);
 console.log(`PASS site data: faithful shards, small index, n37 permanent asset, ${preview?'preview':'release'} filtering.`);

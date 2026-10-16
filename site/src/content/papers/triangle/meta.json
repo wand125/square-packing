@@ -4,16 +4,16 @@
   "コンピュータ支援の証明"
  ],
  "title": [
-  "Unit squares in an equilateral triangle: optimal packings for \\(n = 2, 3, 4, 6, 7, 11, 16, 22, 29\\) and \\(37\\)",
-  "正三角形に入る単位正方形：\\(n = 2, 3, 4, 6, 7, 11, 16, 22, 29, 37\\) の最適な詰め方"
+  "Unit squares in an equilateral triangle: optimal packings for \\(n = 2, 3, 4, 6, 7, 11, 16, 22, 29, 37\\) and \\(46\\)",
+  "正三角形に入る単位正方形：\\(n = 2, 3, 4, 6, 7, 11, 16, 22, 29, 37, 46\\) の最適な詰め方"
  ],
  "lead": [
-  "Exact packings give the upper bounds, and the lower bounds show that they are optimal. Each lower bound is a weighted point set checked at the container itself, checked by two independent checkers; all except n = 6 are also checked in Lean 4.",
-  "厳密な詰め方が上界を与え、下界がそれらの最適性を示す。下界はどれも容器そのもので検査する重み付きの点集合で、独立な 2 つの検査器で検査した。n = 6 以外は Lean 4 でも検査した。"
+  "Exact packings give the upper bounds, and the lower bounds show that they are optimal. Each lower bound is a weighted point set checked at the container itself, checked by two independent checkers; all except n = 6 and n = 46 are also checked in Lean 4.",
+  "厳密な詰め方が上界を与え、下界がそれらの最適性を示す。下界はどれも容器そのもので検査する重み付きの点集合で、独立な 2 つの検査器で検査した。n = 6 と n = 46 以外は Lean 4 でも検査した。"
  ],
  "result": [
-  "\\(s_\\triangle(2) = 2 + \\tfrac{2}{\\sqrt3}\\), \\(s_\\triangle(3) = \\tfrac32 + \\sqrt3\\), \\(s_\\triangle(4) = 3 + \\tfrac{2}{\\sqrt3}\\), \\(s_\\triangle(6) = 2 + \\tfrac{4}{\\sqrt3}\\), \\(s_\\triangle(T_{m-1}+1) = m + \\tfrac{2}{\\sqrt3}\\) for \\(m = 4, \\dots, 8\\), \\(s_\\triangle(37) = 9 + \\tfrac{2}{\\sqrt3}\\)",
-  "\\(s_\\triangle(2) = 2 + \\tfrac{2}{\\sqrt3}\\)、\\(s_\\triangle(3) = \\tfrac32 + \\sqrt3\\)、\\(s_\\triangle(4) = 3 + \\tfrac{2}{\\sqrt3}\\)、\\(s_\\triangle(6) = 2 + \\tfrac{4}{\\sqrt3}\\)、\\(m = 4, \\dots, 8\\) について \\(s_\\triangle(T_{m-1}+1) = m + \\tfrac{2}{\\sqrt3}\\)、\\(s_\\triangle(37) = 9 + \\tfrac{2}{\\sqrt3}\\)"
+  "\\(s_\\triangle(2) = 2 + \\tfrac{2}{\\sqrt3}\\), \\(s_\\triangle(3) = \\tfrac32 + \\sqrt3\\), \\(s_\\triangle(4) = 3 + \\tfrac{2}{\\sqrt3}\\), \\(s_\\triangle(6) = 2 + \\tfrac{4}{\\sqrt3}\\), \\(s_\\triangle(T_{m-1}+1) = m + \\tfrac{2}{\\sqrt3}\\) for \\(m = 4, \\dots, 8\\), \\(s_\\triangle(37) = 9 + \\tfrac{2}{\\sqrt3}\\), \\(s_\\triangle(46) = 10 + \\tfrac{2}{\\sqrt3}\\)",
+  "\\(s_\\triangle(2) = 2 + \\tfrac{2}{\\sqrt3}\\)、\\(s_\\triangle(3) = \\tfrac32 + \\sqrt3\\)、\\(s_\\triangle(4) = 3 + \\tfrac{2}{\\sqrt3}\\)、\\(s_\\triangle(6) = 2 + \\tfrac{4}{\\sqrt3}\\)、\\(m = 4, \\dots, 8\\) について \\(s_\\triangle(T_{m-1}+1) = m + \\tfrac{2}{\\sqrt3}\\)、\\(s_\\triangle(37) = 9 + \\tfrac{2}{\\sqrt3}\\)、\\(s_\\triangle(46) = 10 + \\tfrac{2}{\\sqrt3}\\)"
  ],
  "links": [
   [
@@ -54,6 +54,13 @@
    "en": "First version: optimal packings for n = 2, 3, 4, 6, 7, 11, 16, 22, 29 and 37.",
    "ja": "初版：n = 2, 3, 4, 6, 7, 11, 16, 22, 29, 37 の最適な詰め方。",
    "commit": "5b29f79"
+  },
+  {
+   "v": "2",
+   "date": "2026-10-16",
+   "en": "Added n = 46 (lower bound: the lattice certificate for m = 10; upper bound: Joshua Wolk's packing with our exact coordinates).",
+   "ja": "n = 46 を追加（下界は m = 10 の格子の証明書、上界は Joshua Wolk の詰め方を当方が厳密な座標にしたもの）。",
+   "commit": ""
   }
  ]
 }

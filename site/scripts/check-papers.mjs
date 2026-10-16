@@ -142,8 +142,10 @@ try {
  for(let m=4;m<=9;m++){const {v,squares,lattice}=series(m);assert.equal(squares.length,[7,11,16,22,29,36][m-4]);assert.equal(lattice.length,m*(m-1)/2);packingCheck([[0,0],[v,0],[v/2,v*Math.sqrt(3)/2]],squares);}
  const n37=JSON.parse(readFileSync('dist/data/papers/triangle-n37.json','utf8'));
  assert.equal(n37.squares.length,37);packingCheck(n37.triangle,n37.squares);
+ const n46=JSON.parse(readFileSync('dist/data/papers/triangle-n46.json','utf8'));
+ assert.equal(n46.squares.length,46);packingCheck(n46.triangle,n46.squares);
  assert(pairChord([0,0],[1,0],[.5,0],0));assert(!pairChord([0,0],[1,0],[2,0],0));
- console.log('PASS geometry: flex distances, 901 domino poses, six series, 37-square packing, chord conditions.');
+ console.log('PASS geometry: flex distances, 901 domino poses, six series, 37- and 46-square packings, chord conditions.');
  await call('Browser.getVersion');
  const {targetId}=await call('Target.createTarget',{url:'about:blank'});
  ({sessionId:session}=await call('Target.attachToTarget',{targetId,flatten:true}));
@@ -152,7 +154,7 @@ try {
  for(const width of [1280,390]) {
   await cmd('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:width===390});
   await cmd('Emulation.setTouchEmulationEnabled',{enabled:width===390});
-  for(const [slug,figures] of [['hexagon-n3',['hexagon-flex']],['domino',['domino-family']],['triangle',['triangle-series','triangle-37']],['right-isosceles',['certificate']],['cubes-in-cube',['cubes-in-cube']]]) {
+  for(const [slug,figures] of [['hexagon-n3',['hexagon-flex']],['domino',['domino-family']],['triangle',['triangle-series','triangle-37','triangle-46']],['right-isosceles',['certificate']],['cubes-in-cube',['cubes-in-cube']]]) {
    await navigate('paper-'+slug+'.html');
    for(const lang of ['en','ja']) {
     // Use the site's language control rather than changing display styles.
@@ -186,6 +188,10 @@ try {
       assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(sel+' [data-group="upper"]')}).length`),28);
       await click(sel+' button:nth-child(2)');await waitFor(`document.querySelectorAll(${JSON.stringify(sel+' .vz-muted')}).length===28`);
       await click(sel+' button:nth-child(3)');await waitFor(`document.querySelectorAll(${JSON.stringify(sel+' .vz-muted')}).length===9`);
+     } else if(figure==='triangle-46'){
+      for(const [g,k] of [['bottom',10],['upright',9],['left',15],['right',12]])assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(sel)}+' [data-group="${g}"]').length`),k);
+      for(const [i,k] of [[2,10],[3,9],[4,15],[5,12]]){await click(sel+` button:nth-child(${i})`);await waitFor(`document.querySelectorAll(${JSON.stringify(sel+' .vz-muted')}).length===${46-k}`);}
+      await click(sel+' button:nth-child(1)');await waitFor(`document.querySelectorAll(${JSON.stringify(sel+' .vz-muted')}).length===0`);
      } else if(figure==='cubes-in-cube'){
       // 6 faces per cube, the 8 points of V; n = 10 adds one cube; hiding the corners leaves the rotated cubes
       const faces=()=>evaluate(`document.querySelectorAll(${JSON.stringify(sel+' .cb-f')}).length`);

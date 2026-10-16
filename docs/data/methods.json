@@ -276,8 +276,8 @@
     "ja": "主張する値 v の容器内の有限個の重み付き点集合。捕捉：容器内の閉じた単位正方形は、位置・角度によらず総重み 1 以上の点を含む（境界上の点も数える、余裕ゼロ）。予算：総重みが n 未満。容器ごとに独立な検査器を 2 つ用意する。厳密な体は Q(√3)、Q(√2)、Q(v4)。"
    },
    "used": {
-    "en": "Equilateral triangle n = 2, 3, 4, 6, 7, 11, 16, 22, 29 and a lower bound for n = 37; right isosceles triangle n = 2, 3, 4, 6, 10, 15; 1:2 rectangle n = 4.",
-    "ja": "正三角形 n = 2, 3, 4, 6, 7, 11, 16, 22, 29 と n = 37 の下界、直角二等辺三角形 n = 2, 3, 4, 6, 10, 15、1:2 の長方形 n = 4。"
+    "en": "Equilateral triangle n = 2, 3, 4, 6, 7, 11, 16, 22, 29 and lower bounds for n = 37 and 46; right isosceles triangle n = 2, 3, 4, 6, 10, 15; 1:2 rectangle n = 4.",
+    "ja": "正三角形 n = 2, 3, 4, 6, 7, 11, 16, 22, 29 と n = 37・46 の下界、直角二等辺三角形 n = 2, 3, 4, 6, 10, 15、1:2 の長方形 n = 4。"
    },
    "origin": {
     "en": "Packings are Erich Friedman's Packing Center entries; the certificates show they are optimal. We are not aware of earlier proofs.",

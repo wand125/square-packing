@@ -41,6 +41,7 @@
 .vz-label { fill: var(--fg); font-size: .13px; }
 .vz-tone-1 { fill: color-mix(in srgb, var(--acc) 22%, transparent); stroke: var(--acc); }
 .vz-tone-2 { fill: color-mix(in srgb, var(--ok) 20%, transparent); stroke: var(--ok); }
+.vz-tone-3 { fill: color-mix(in srgb, var(--link) 20%, transparent); stroke: var(--link); }
 .vz-muted { opacity: .16; }
 .vz-readout { display: block; font-variant-numeric: tabular-nums; margin-top: 8px; overflow-wrap: anywhere; }
 .vz-note { font-size: 12px; margin: 6px 0 0; }

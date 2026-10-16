@@ -766,8 +766,8 @@
    "issue": 17,
    "state": "closed",
    "title": {
-    "en": "Unit squares in an equilateral triangle — optimality for n = 2, 3, 4, 7, 11, 16, 22, 29 and 37",
-    "ja": "正三角形の中の単位正方形 — n = 2, 3, 4, 7, 11, 16, 22, 29, 37 の最適性"
+    "en": "Unit squares in an equilateral triangle — optimality for n = 2, 3, 4, 7, 11, 16, 22, 29, 37 and 46",
+    "ja": "正三角形の中の単位正方形 — n = 2, 3, 4, 7, 11, 16, 22, 29, 37, 46 の最適性"
    },
    "goal": {
     "en": "Prove that the best known packings in Erich Friedman's Packing Center (Squares in Triangles) are optimal, for the small cases and for a series that one construction covers.",
@@ -791,12 +791,16 @@
      "ja": "n = 37：s△(37) = 9 + 2/√3。下界は格子の証明書。上界は厳密な座標の配置（certificates/n37/upper/）で、底のきつい 9 個の列と、その上に Friedman の n = 28 の配置（1997）の形の 28 個。配置は新しいとは主張しない（Friedman の表に Gianluca Costantino による 37 個の配置がある、2026 年 5 月）。"
     },
     {
+     "en": "n = 46: s△(46) = 10 + 2/√3. The lattice certificate for m = 10 gives the lower bound (45 points; checked by both checkers, not in Lean); the upper bound is Joshua Wolk's packing from Friedman's table (September 2026), given with exact coordinates (certificates/n46/upper/) and checked by two exact checkers. The packing is not claimed as new.",
+     "ja": "n = 46：s△(46) = 10 + 2/√3。下界は m = 10 の格子の証明書（45 点。2 つの検査器で検査、Lean はなし）。上界は Friedman の表にある Joshua Wolk の配置（2026 年 9 月）を厳密な座標にしたもの（certificates/n46/upper/）で、2 つの厳密な検査器で検査。配置は新しいとは主張しない。"
+    },
+    {
      "en": "Upper bounds: for n = 2, 3, 4 and the series the packings are proved in Lean 4; for n = 37 (and n = 6, #4) they are packing certificates in Q(√3), checked exactly by the two checkers in tools/packing_check/.",
      "ja": "上界：n = 2, 3, 4 と系列は Lean 4 で配置を証明。n = 37（と #4 の n = 6）は Q(√3) の配置の証明書で、tools/packing_check/ の 2 つの検査器で厳密に検査。"
     },
     {
-     "en": "The lower bounds are checked by two independent checkers and also in Lean 4. None of this has been peer reviewed (problems/triangle/, release triangle-v1). n = 6 is #4; n = 9 continues in #11.",
-     "ja": "下界は独立な 2 つの検査器と Lean 4 で検査。いずれも査読は受けていない（problems/triangle/、Release triangle-v1）。n = 6 は #4、n = 9 は #11 で続く。"
+     "en": "The lower bounds are checked by two independent checkers and, except for n = 46, also in Lean 4. None of this has been peer reviewed (problems/triangle/, release triangle-v1). n = 6 is #4; n = 9 continues in #11.",
+     "ja": "下界は独立な 2 つの検査器で検査し、n = 46 以外は Lean 4 でも検査。いずれも査読は受けていない（problems/triangle/、Release triangle-v1）。n = 6 は #4、n = 9 は #11 で続く。"
     }
    ],
    "working_on": [],
@@ -818,7 +822,7 @@
     "triangle-v1"
    ],
    "url": "https://github.com/wand125/square-packing/issues/17",
-   "updated": "2026-10-11"
+   "updated": "2026-10-16"
   },
   {
    "issue": 20,

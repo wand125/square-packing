@@ -1,10 +1,11 @@
 import Triangle37 from '../../../components/viz/Triangle37.tsx';
+import Triangle46 from '../../../components/viz/Triangle46.tsx';
 import TriangleSeries from '../../../components/viz/TriangleSeries.tsx';
 import CertificateFigure from '../../../components/viz/CertificateFigure.tsx';
 
 ## 要旨
 
-$s_\triangle(n)$ を、$n$ 個の重ならない単位正方形（位置・角度は自由）を含む最小の正三角形の一辺とする。 $n = 2, 3, 4, 6, 7, 11, 16, 22, 29, 37$ について $s_\triangle(n)$ を証明する。特に $s_\triangle(37) = 9 + 2/\sqrt3 \approx 10.15470$。 上界はどれも厳密な座標をもつ詰め方で、厳密に検査した（$n = 2, 3, 4$ と系列は Lean 4、$n = 37$ は 2 つの厳密な検査器）。Erich Friedman の Packing Center の「Squares in Triangles」は配置の出典として挙げるだけで、配置の新しさは主張しない。 下界はどれも有限の重み付きの点集合で、三角形に入る閉じた単位正方形はどれも重み $\ge 1$ を拾い、重みの合計は $< n$ である。 $n = 7, \dots, 29$ の証明書は単位三角格子の一部である。$n = 37$ では軸に平行な列に 36 個しか入らず、別の詰め方がこの値に届く。 $n = 6$ では証明書 1 つでは足りず、証明は 6 つの証明書からなる局所化の木を 3 個の正方形についての補題で閉じたものである。 結果はコンピュータ支援によるもので、独立な 2 つの検査器で検査した。$n = 6$ 以外は Lean 4 でも検査した。査読は受けていない。
+$s_\triangle(n)$ を、$n$ 個の重ならない単位正方形（位置・角度は自由）を含む最小の正三角形の一辺とする。 $n = 2, 3, 4, 6, 7, 11, 16, 22, 29, 37, 46$ について $s_\triangle(n)$ を証明する。特に $s_\triangle(37) = 9 + 2/\sqrt3 \approx 10.15470$、$s_\triangle(46) = 10 + 2/\sqrt3 \approx 11.15470$。 上界はどれも厳密な座標をもつ詰め方で、厳密に検査した（$n = 2, 3, 4$ と系列は Lean 4、$n = 37$ と $46$ は 2 つの厳密な検査器）。Erich Friedman の Packing Center の「Squares in Triangles」は配置の出典として挙げるだけで、配置の新しさは主張しない。 下界はどれも有限の重み付きの点集合で、三角形に入る閉じた単位正方形はどれも重み $\ge 1$ を拾い、重みの合計は $< n$ である。 $n = 7, \dots, 29$ の証明書は単位三角格子の一部である。$n = 37$ では軸に平行な列に 36 個しか入らず、別の詰め方がこの値に届く。$n = 46$ の上界は Friedman の表にある Joshua Wolk の詰め方である。 $n = 6$ では証明書 1 つでは足りず、証明は 6 つの証明書からなる局所化の木を 3 個の正方形についての補題で閉じたものである。 結果はコンピュータ支援によるもので、独立な 2 つの検査器で検査した。$n = 6$ と $n = 46$ 以外は Lean 4 でも検査した。査読は受けていない。
 
 ## 1. 問題と結果
 
@@ -22,8 +23,9 @@ $T_v$ を、頂点 $(0,0)$、$(v,0)$、$(v/2, v\sqrt3/2)$ の一辺 $v$ の正�
 | 22 | $7 + 2/\sqrt3$ | 8.1547 | 列 7 + 5 + 4 + 3 + 2 + 1 | 格子、点 21 個 |
 | 29 | $8 + 2/\sqrt3$ | 9.1547 | 列 8 + 6 + 5 + 4 + 3 + 2 + 1 | 格子、点 28 個 |
 | 37 | $9 + 2/\sqrt3$ | 10.1547 | きつい底の列 9 個と、その上に Friedman の $n = 28$ の詰め方の形の 28 個（座標は当方） | 格子、点 36 個 |
+| 46 | $10 + 2/\sqrt3$ | 11.1547 | Friedman の表にある Joshua Wolk の詰め方（2026 年 9 月。厳密な座標は当方） | 格子、点 45 個 |
 
-上界は厳密な座標をもつ詰め方である。$n = 2, 3, 4$ と系列は Lean 4 で証明し、$n = 37$ は 2 つの厳密な検査器で検査した詰め方の証明書で、$n = 6$ は厳密な座標で与える（§4）。配置は Friedman の表にあるもので、表はその出典として挙げるだけである。Friedman の表は $n = 1$ と $n = 2$ を「Trivial」としている。$n = 2$ の証明は、この手法のいちばん簡単な例として載せる。$n = 5$ はまだ済んでいない（§9）。
+上界は厳密な座標をもつ詰め方である。$n = 2, 3, 4$ と系列は Lean 4 で証明し、$n = 37$ と $n = 46$ は 2 つの厳密な検査器で検査した詰め方の証明書で、$n = 6$ は厳密な座標で与える（§4）。配置は Friedman の表にあるもので、表はその出典として挙げるだけである。Friedman の表は $n = 1$ と $n = 2$ を「Trivial」としている。$n = 2$ の証明は、この手法のいちばん簡単な例として載せる。$n = 5$ はまだ済んでいない（§10）。
 
 ## 2. 手法：重み付きの点集合
 
@@ -43,7 +45,7 @@ $T_v$ を、頂点 $(0,0)$、$(v,0)$、$(v/2, v\sqrt3/2)$ の一辺 $v$ の正�
 
 ## 3. n = 2, 3, 4
 
-$n = 2, 3, 4$ の上界は、$\mathbb Q(\sqrt3)$ の明示的な座標から Lean 4 で証明した（§8）。
+$n = 2, 3, 4$ の上界は、$\mathbb Q(\sqrt3)$ の明示的な座標から Lean 4 で証明した（§9）。
 
 **$n = 2$、$v = 2 + 2/\sqrt3$.** 底辺に 2 個を並べる。高さ 1 での三角形の幅は $v - 2/\sqrt3 = 2$。証明書は重み 1 の点 1 個、重心 $G$ である。 *補題:* $T_v$ に入る閉じた単位正方形 $Q$ はどれも $G$ を含む。三角形と正方形の対称性から $\theta \in [0, \pi/12]$ だけ考えればよい。 許される中心は三角形 $D_\theta$ をなし、その頂点は $\theta$ の閉じた式で書ける。すべての許される中心で $G \in Q$ となるのは 3 つの頂点でそうなるときに限るので、$[0, \pi/12]$ 上の 12 個の関数 $g(\theta) \ge 0$ に帰着する。 単独のスクリプトが、$\theta = 0$ での $\mathbb Q(\sqrt3)$ の厳密な値、$[0, 1/100]$ での 2 次の評価、$[1/100, \pi/12]$ を 400 個に分けた区間の囲い込みでこれを検査する。 $\theta = 0$ で 0 になる関数は 2 つ（最適な詰め方の底の両隅の正方形）で、その微分は $(2\sqrt3 - 2)/3$ と $(2 - \sqrt3)/3$、どちらも $> 0$。交わらない 2 個の正方形が両方とも $G$ を含むことはない。
 
@@ -96,7 +98,7 @@ $$
 
 $m \ge 3$ について $v_m = m + 2/\sqrt3$、$n_m = m(m-1)/2 + 1 = T_{m-1} + 1$ とする。
 
-**上界.** 底辺に立つ軸に平行な列。高さ $j$ での三角形の幅は $v_m - 2j/\sqrt3$ なので、列 $j$ には $\lfloor m - 2j/\sqrt3 \rfloor$ 個が入る。きついのは底の列だけで、高さ 1 での幅はちょうど $m$ である。$m = 4, \dots, 8$ の列の詰め方は Lean 4 で証明した（§8）。
+**上界.** 底辺に立つ軸に平行な列。高さ $j$ での三角形の幅は $v_m - 2j/\sqrt3$ なので、列 $j$ には $\lfloor m - 2j/\sqrt3 \rfloor$ 個が入る。きついのは底の列だけで、高さ 1 での幅はちょうど $m$ である。$m = 4, \dots, 8$ の列の詰め方は Lean 4 で証明した（§9）。
 
 **証明書.** 単位三角格子の点のうち一辺 $m - 2$ の正三角形をなすもの、すなわち重み 1 の点 $T_{m-1}$ 個を、重心が容器の重心と一致するように置く。すると底の行はどの $m$ でも高さ $1/3 + \sqrt3/3$、$x = 1 + 1/\sqrt3 + i$ にある。これはちょうど、きつく並んだ $m$ 個の底の列の共有する縦の辺である。距離 1 の組はすべて補題 P のために列挙する。証明書は三角形の対称群で不変で、$m = 3$ は $n = 4$ の証明書になる。重みの合計 $T_{m-1}$ は $n_m$ より小さいので、$s_\triangle(n_m) \ge v_m$ が示される。
 
@@ -124,7 +126,7 @@ $v = 9 + 2/\sqrt3 \approx 10.15470$ とする。
 
 **列では 36 個しか入らない理由.** $T_v$ では、底辺に立つ軸に平行な列に $9 + 7 + 6 + 5 + 4 + 3 + 2 = 36$ 個が入る。高さ 7 での幅は $9 - 14/\sqrt3 \approx 0.917 < 1$ なので、8 列目は入らない。 一般に格子の三角形の点は約 $m^2/2$ 個だが、一辺 $v_m$ の三角形に入る正方形の数は面積と同じく約 $(\sqrt3/4)m^2 \approx 0.433m^2$ でしか増えない。よって大きい $m$ では証明書は正しいが弱い下界を与え、すべての $m$ についての主張への道ではない。
 
-**上界.** $\mathbb Q(\sqrt3)$ の厳密な座標をもつ詰め方。底辺に軸に平行な 9 個のきつい底の列を $x = 1/\sqrt3 + i$（$i = 0, \dots, 8$）に立てる。高さ 1 より上には一辺 9 の正三角形があり、そこに Friedman の $n = 28$ の詰め方（辺 $3 + 10/\sqrt3 < 9$）の形で 28 個が入る。7、6、3、2 個の軸に平行な列（それぞれ左の辺に寄せる）と、斜めの 2 辺のそれぞれに沿った 3 + 2 個の塊 2 つである。$3 + 10/\sqrt3 < 9$ なので余裕がある。この詰め方は独立に書いた 2 つの厳密な検査器で検査し（§8）、どちらも 5 つの負の対照を退ける。よって
+**上界.** $\mathbb Q(\sqrt3)$ の厳密な座標をもつ詰め方。底辺に軸に平行な 9 個のきつい底の列を $x = 1/\sqrt3 + i$（$i = 0, \dots, 8$）に立てる。高さ 1 より上には一辺 9 の正三角形があり、そこに Friedman の $n = 28$ の詰め方（辺 $3 + 10/\sqrt3 < 9$）の形で 28 個が入る。7、6、3、2 個の軸に平行な列（それぞれ左の辺に寄せる）と、斜めの 2 辺のそれぞれに沿った 3 + 2 個の塊 2 つである。$3 + 10/\sqrt3 < 9$ なので余裕がある。この詰め方は独立に書いた 2 つの厳密な検査器で検査し（§9）、どちらも 5 つの負の対照を退ける。よって
 
 $$
 s_\triangle(37) = 9 + \tfrac{2}{\sqrt3}.
@@ -140,7 +142,27 @@ $$
 
 *辺長 9 + 2/√3 の37個の証明書配置。強調色は底辺に隙間なく並ぶ9個、その上に28個がある。ボタンで各群を強調できる。描画座標は厳密な証明書から変換したもの。*
 
-## 7. 結論
+## 7. n = 46
+
+$v = 10 + 2/\sqrt3 \approx 11.15470$ とする。
+
+**下界.** $m = 10$ の §5 の格子の証明書は重み 1 の点 45 個（合計 $45 < 46$）で、$T_v$ に入る閉じた単位正方形はどれもこのうち 1 点を含む。検査器 1 で検証し（節点 7,296、最大深さ 24、上限 40）、検査器 2 でも検証した（臨界角 16,309、最小の重み 1）。よって、重ならない 46 個の単位正方形はこれより小さい正三角形には入らない。
+
+**列だけでは.** $T_v$ では、底辺に立つ軸に平行な列に $10 + 8 + 7 + 6 + 5 + 4 + 3 + 1 = 44$ 個が入る。高さ 8 での幅は $10 - 16/\sqrt3 \approx 0.762 < 1$ なので、9 列目は入らない。
+
+**上界.** $\mathbb Q(\sqrt3)$ の厳密な座標をもつ詰め方。底辺に軸に平行な 10 個のきつい底の列を $x = 1/\sqrt3 + i$（$i = 0, \dots, 9$）に立てる。その上に、軸に平行な 9 個、$60^\circ$ 傾けた 15 個（左の辺に沿う）、$-60^\circ$ 傾けた 12 個（右の辺に沿う）を、公開されている図のとおりに置く。位置はその図から読み取り、各正方形の列や辺に沿った自由なずれを線形計画で解き、分母 1000 の有理数に丸めた。厳密な中心と角度がこの構成のすべてで、検査は線形計画に頼らない。この詰め方は $n = 37$ と同じ 2 つの厳密な検査器で検査し（§9）、どちらも 5 つの負の対照を退ける。よって
+
+$$
+s_\triangle(46) = 10 + \tfrac{2}{\sqrt3}.
+$$
+
+この詰め方は Joshua Wolk のものである。Friedman の表は $n = 46$ を「s = 11.15470+」とし、2026 年 9 月に彼が見つけたとしている。厳密な値 $10 + 2/\sqrt3$ は表には書かれていない。当方は詰め方を厳密な座標で作り直しただけで、新しさは主張しない。
+
+<Triangle46 lang="ja" client:visible />
+
+*辺長 10 + 2/√3 の Wolk の46個の配置（座標は当方の厳密なもの）。底辺に隙間なく並ぶ10個、軸に平行な残りの9個、60°傾けた15個（左の辺に沿う）、−60°傾けた12個（右の辺に沿う）。ボタンで各群を強調できる。描画座標は厳密な証明書から変換したもの。*
+
+## 8. 結論
 
 $n = 2, 3, 4$ と $n = 7, 11, 16, 22, 29$ では、重みの合計 $< n$ の重み付きの点集合 1 つが $T_v$ のどの閉じた単位正方形でも重み $\ge 1$ を拾う。§2 の中心の拡大の議論と詰め方から
 
@@ -148,27 +170,28 @@ $$
 s_\triangle(2) = 2 + \tfrac{2}{\sqrt3},\quad s_\triangle(3) = \tfrac32 + \sqrt3,\quad s_\triangle(4) = 3 + \tfrac{2}{\sqrt3},\quad s_\triangle(T_{m-1} + 1) = m + \tfrac{2}{\sqrt3}\ \ (m = 4, \dots, 8).
 $$
 
-$n = 6$ では §4 の局所化の木のどの枝も 3 つ組の補題で閉じる葉に行き着くので、$s_\triangle(6) = 2 + 4/\sqrt3$。$n = 37$ では格子の証明書が下界を、§6 の詰め方が上界を与えるので、$s_\triangle(37) = 9 + 2/\sqrt3$。
+$n = 6$ では §4 の局所化の木のどの枝も 3 つ組の補題で閉じる葉に行き着くので、$s_\triangle(6) = 2 + 4/\sqrt3$。$n = 37$ では格子の証明書が下界を、§6 の詰め方が上界を与えるので、$s_\triangle(37) = 9 + 2/\sqrt3$。$n = 46$ では $m = 10$ の格子の証明書が下界を、§7 の Wolk の詰め方が上界を与えるので、$s_\triangle(46) = 10 + 2/\sqrt3$。
 
-## 8. 検証
+## 9. 検証
 
 | 検査器 | 手法 | 対象 |
 |---|---|---|
 | 検査器 1 | 姿勢の空間（中心の箱 × 角度の区間、$u = \tan(\theta/2)$）を細分する。$u$ を固定すると箱の中の許される中心は凸多角形をなし、その頂点は $u$ の有理関数である。捕捉を頂点で $\mathbb Q(\sqrt3)$ 上の厳密な Bernstein の評価で検査する。$D_3$ 対称と補題 P を使う。標準ライブラリだけ | $n = 6$ の 6 つを含むすべての証明書 |
-| 検査器 2 | 仕様書、証明の文書、証明書の形式から、検査器 1 のコードを開かずに作成。すべての $u \in [0, 1]$ にわたる直線配置の厳密な角度の掃引：共点・平行の行列式の実根から臨界角をとり、各隙間で有理数の標本を 1 つとり、上半連続性で閉じる。箱の細分、Bernstein の評価、対称による簡約、組の補題は使わない | $n = 2, 3, 4$ と $n = 37$ までの系列 |
+| 検査器 2 | 仕様書、証明の文書、証明書の形式から、検査器 1 のコードを開かずに作成。すべての $u \in [0, 1]$ にわたる直線配置の厳密な角度の掃引：共点・平行の行列式の実根から臨界角をとり、各隙間で有理数の標本を 1 つとり、上半連続性で閉じる。箱の細分、Bernstein の評価、対称による簡約、組の補題は使わない | $n = 2, 3, 4$、$n = 37$ までの系列、$n = 46$ |
 | 検査器 2、$n = 6$ | $n = 6$ の証明のすべての部分を別の手法で検査し直す：証明書にはセルの格子（第 1 段の 1 つの窓には厳密な角度の掃引）、障害物の点には区間の分枝限定、(M) には sympy での導出のやり直しと区間での検査、補題の仮定と段どうしのつながりの検査 | $n = 6$ |
-| `check_sat.py`、`check_clip.py`（詰め方） | 独立に書いた $\mathbb Q(\sqrt3)$ の厳密な検査器 2 つ：単位正方形であること、すべての角が閉じた三角形に入ること、各組に分ける辺の法線があること（sympy）。辺 1・面積 1、三角形で切り取っても面積 1、各組の共通部分の面積 0（独自の数の型）。ファイルは共通の形式 `packing-certificate/1` でもあり、リポジトリの共通の検査器 `tools/packing_check/check_packing.py` を通る | $n = 37$ の詰め方（上界）。5 つの負の対照を退ける |
+| `check_sat.py`、`check_clip.py`（詰め方） | 独立に書いた $\mathbb Q(\sqrt3)$ の厳密な検査器 2 つ：単位正方形であること、すべての角が閉じた三角形に入ること、各組に分ける辺の法線があること（sympy）。辺 1・面積 1、三角形で切り取っても面積 1、各組の共通部分の面積 0（独自の数の型）。ファイルは共通の形式 `packing-certificate/1` でもあり、リポジトリの共通の検査器 `tools/packing_check/check_packing.py` を通る | $n = 37$ と $n = 46$ の詰め方（上界）。どちらも 5 つの負の対照を退ける |
 
-系列についての検査器 2 の結果：臨界角は 1,231（$n = 7$）、2,311、3,853、5,959、8,767、12,157（$n = 37$）で、最小の重みはどれも 1。負の対照（辺 $L + 1/100$、点をずらす、点を除く、重みを下げる、除外する箱や障害物の点を除く）は、予想どおり通らない。
+系列についての検査器 2 の結果：臨界角は 1,231（$n = 7$）、2,311、3,853、5,959、8,767、12,157（$n = 37$）、$n = 46$ は 16,309 で、最小の重みはどれも 1。負の対照（辺 $L + 1/100$、点をずらす、点を除く、重みを下げる、除外する箱や障害物の点を除く）は、予想どおり通らない。
 
-**Lean 4.** $n = 2, 3, 4, 7, 11, 16, 22, 29$ の $s_\triangle(n)$ と $n = 37$ の下界（$\forall s,\ \mathrm{PacksTri}\ 37\ s \to 9 + 2/\sqrt3 \le s$）をカーネルで検査した証明。使う公理は標準のもの（`propext`、`Classical.choice`、`Quot.sound`）だけで、`sorry` も `native_decide` もない。 下界には、Lean で一度だけ健全性を証明した 3 つ目の検査器を使う。箱の木の各葉は Farkas–Bernstein 証明書、すなわち $\mathbb Q(\sqrt3)$ 上の非負の乗数をもつ多項式の恒等式をもち、カーネルが係数ごとに検査する。すべての角度を直接扱い、$D_3$ 対称も補題 P も使わない。$n = 2, 3, 4$ と系列の上界は、中心・余弦・正弦が $\mathbb Q(\sqrt3)$ にある明示的な詰め方で、容器に入ることと交わらないこと（分ける辺の法線）を健全性の証明つきの厳密な判定で検査する。系列では 1 つの真偽判定が軸に平行な列を検査する。 Python の生成器と 2 つの Python の検査器は信頼しない。信頼の基盤は Lean のカーネル、Lean core、Mathlib と命題中の定義である。葉の数は $n = 2, 3, 4$ で 3、86、240、$n = 7, \dots, 37$ で 1,013、1,863、3,753、6,884、8,661、9,776。$n = 6$ は Lean で形式化していない。
+**Lean 4.** $n = 2, 3, 4, 7, 11, 16, 22, 29$ の $s_\triangle(n)$ と $n = 37$ の下界（$\forall s,\ \mathrm{PacksTri}\ 37\ s \to 9 + 2/\sqrt3 \le s$）をカーネルで検査した証明。使う公理は標準のもの（`propext`、`Classical.choice`、`Quot.sound`）だけで、`sorry` も `native_decide` もない。 下界には、Lean で一度だけ健全性を証明した 3 つ目の検査器を使う。箱の木の各葉は Farkas–Bernstein 証明書、すなわち $\mathbb Q(\sqrt3)$ 上の非負の乗数をもつ多項式の恒等式をもち、カーネルが係数ごとに検査する。すべての角度を直接扱い、$D_3$ 対称も補題 P も使わない。$n = 2, 3, 4$ と系列の上界は、中心・余弦・正弦が $\mathbb Q(\sqrt3)$ にある明示的な詰め方で、容器に入ることと交わらないこと（分ける辺の法線）を健全性の証明つきの厳密な判定で検査する。系列では 1 つの真偽判定が軸に平行な列を検査する。 Python の生成器と 2 つの Python の検査器は信頼しない。信頼の基盤は Lean のカーネル、Lean core、Mathlib と命題中の定義である。葉の数は $n = 2, 3, 4$ で 3、86、240、$n = 7, \dots, 37$ で 1,013、1,863、3,753、6,884、8,661、9,776。$n = 6$ と $n = 46$ は Lean で形式化していない。
 
-## 9. 状態と限界
+## 10. 状態と限界
 
 - コンピュータ支援の証明である。査読は受けていない。
 - $n = 6$ は独立な 2 つの系で検査したが、Lean では形式化していない。
 - $n = 3, 4, 6, 7, 11, 16, 22, 29$ について、最適性の先行する証明は把握していない。Friedman のページ（2026-09-30 時点。詰め方はあるが証明や下界はない）、arXiv の要旨の検索、一般の Web 検索を調べ、この容器の下界は見つからなかった。ご存じの方は Issue で知らせてほしい。$n = 2$ については新しさを主張しない。
 - $n = 37$ の上界は 2 つの厳密な検査器で検査した。下界は Lean 4 でも証明したが、上界はしていない。
+- $n = 46$ は上界・下界とも 2 つの厳密な検査器で検査した。どちらも Lean では形式化していない。詰め方は Joshua Wolk のものである。
 - $n = 5$ はまだ済んでいない。最良既知の辺は $s_\triangle(6)$ と同じ $2 + 4/\sqrt3$ なので $s_\triangle(5) \le s_\triangle(6) = 2 + 4/\sqrt3$。下界は作業中である。
 
 ## 再現方法
@@ -184,6 +207,9 @@ $n = 6$ では §4 の局所化の木のどの枝も 3 つ組の補題で閉じ�
 | $n = 37$ | `python checker/check.py certificates/n37/n37_cert.json --n 37 --max-depth 40 --jobs 16` |
 | $n = 37$ の証明書の再生成 | `python tools/make_lattice_cert.py 9 out.json`（バイト単位で一致） |
 | $n = 37$ の詰め方（上界） | `certificates/n37/upper/` で `python check_sat.py n37_packing.json`（sympy）、`python check_clip.py n37_packing.json`（標準ライブラリ）。`python construct.py n37_packing.json` でファイルをバイト単位で再生成、`python make_negatives.py` で負の対照を再生成 |
+| $n = 46$ | `python checker/check.py certificates/n46/n46_cert.json --n 46 --max-depth 40 --jobs 4` |
+| $n = 46$ の証明書の再生成 | `python tools/make_lattice_cert.py 10 out.json`（バイト単位で一致） |
+| $n = 46$ の詰め方（上界） | `certificates/n46/upper/` で `python check_sat.py n46_packing.json`（sympy）、`python check_clip.py n46_packing.json`（標準ライブラリ）。`python construct.py n46_packing.json` でファイルをバイト単位で再生成、`python make_negatives.py` で負の対照を再生成 |
 | $n = 2$ の補題の単独の検査 | `python certificates/n2/check_n2.py`（sympy、mpmath） |
 | $n = 6$、第 1 段と障害物の点 | `python checker/check.py certificates/n6/loc3/cert_e1_100.json --n 6 --max-depth 40 --jobs 8`、`python certificates/n6/stage2/reprove_obstacles.py`。他の証明書と 3 つ組の補題は `certificates/n6/PROOF.md` のとおり |
 | 検査器 1 のテスト | `cd checker && python -m pytest -q tests`（約 1.5 分） |
@@ -194,6 +220,6 @@ $n = 6$ では §4 の局所化の木のどの枝も 3 つ組の補題で閉じ�
 
 1. E. Friedman, [Squares in Triangles](https://erich-friedman.github.io/packing/squintri/), Erich's Packing Center（配置の出典）。
 2. [problems/triangle/README.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/README.md)、[SERIES.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/SERIES.md)。
-3. 証明：[n2](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n2/PROOF.md)、[n3](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n3/PROOF.md)、[n4](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n4/PROOF.md)、[n6](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n6/PROOF.md) と[3 つ組の補題](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n6/triple/LEMMA.md)、[n7](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n7/PROOF.md)、[n37](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n37/PROOF.md) と[n37 の詰め方](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n37/upper/README.md)。
+3. 証明：[n2](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n2/PROOF.md)、[n3](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n3/PROOF.md)、[n4](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n4/PROOF.md)、[n6](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n6/PROOF.md) と[3 つ組の補題](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n6/triple/LEMMA.md)、[n7](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n7/PROOF.md)、[n37](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n37/PROOF.md) と[n37 の詰め方](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n37/upper/README.md)、[n46](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n46/PROOF.md) と[n46 の詰め方](https://github.com/wand125/square-packing/blob/main/problems/triangle/certificates/n46/upper/README.md)。
 4. 検査器：[checker/README.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/checker/README.md)、[checker/SPEC.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/checker/SPEC.md)、[checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/checker2/README.md)、[checker2/n6/README.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/checker2/n6/README.md)、[checker2/n6/RESULTS.md](https://github.com/wand125/square-packing/blob/main/problems/triangle/checker2/n6/RESULTS.md)。
 5. Lean 4：[lean/triangle/README.md](https://github.com/wand125/square-packing/blob/main/lean/triangle/README.md)。詰め方の証明書：[tools/packing_check/README.md](https://github.com/wand125/square-packing/blob/main/tools/packing_check/README.md)。
