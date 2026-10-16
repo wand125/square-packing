@@ -1,0 +1,45 @@
+PASS 5 input SHA256: K4_k008_family.txt a66668d9d414ad1cf78b19826ce592c540c9033a0234a06b207eb776b3e8ff0f
+PASS 5 input SHA256: K4_k008_box9.txt 4151d7c4059d5dcf56130c9373e6b5b60635e1a4250f46562d7ecc4d64a27801
+SHA256 script e3aa60db7b9cde7e08975639e6fa2571c1102fab31e2c74f90dbb15b3a2e8967
+PASS 1 exact box equality: Canonical summed/merged line densities, point masses, and area rectangle
+PASS 2 nonnegative family: 110 profile pieces, 176 corner pieces; area density 1
+PASS 3 all-size mass identity: P=14/5, C=338051747203/50000000000, E=225022785617/200000000000, D=214770225571/200000000000; M=AB-4D < AB-4
+Shift rule: s_L(x)=0 if x<=3; 9-L if x>L-5; 4-ceil(x) otherwise.
+PASS 3 mass 8x8: 2985229774429/50000000000
+PASS 4 localisation 8x8: 961 window pairs
+PASS 3 mass 8x9: 3385229774429/50000000000
+PASS 4 localisation 8x9: 1116 window pairs
+PASS 3 mass 9x8: 3385229774429/50000000000
+PASS 4 localisation 9x8: 1116 window pairs
+PASS 3 mass 9x9: 3835229774429/50000000000
+PASS 4 localisation 9x9: 1296 window pairs
+PASS 3 mass 8x10: 3785229774429/50000000000
+PASS 4 localisation 8x10: 1271 window pairs
+PASS 3 mass 10x8: 3785229774429/50000000000
+PASS 4 localisation 10x8: 1271 window pairs
+PASS 3 mass 8x13: 4985229774429/50000000000
+PASS 4 localisation 8x13: 1736 window pairs
+PASS 3 mass 13x8: 4985229774429/50000000000
+PASS 4 localisation 13x8: 1736 window pairs
+PASS 3 mass 9x12: 5185229774429/50000000000
+PASS 4 localisation 9x12: 1836 window pairs
+PASS 3 mass 10x11: 5285229774429/50000000000
+PASS 4 localisation 10x11: 1886 window pairs
+PASS 3 mass 11x14: 7485229774429/50000000000
+PASS 4 localisation 11x14: 2806 window pairs
+PASS 3 mass 12x15: 8785229774429/50000000000
+PASS 4 localisation 12x15: 3366 window pairs
+PASS 3 mass 15x8: 5785229774429/50000000000
+PASS 4 localisation 15x8: 2046 window pairs
+PASS 3 mass 14x14: 9585229774429/50000000000
+PASS 4 localisation 14x14: 3721 window pairs
+PASS 3 mass 8x20: 7785229774429/50000000000
+PASS 4 localisation 8x20: 2821 window pairs
+PASS 3 mass 20x8: 7785229774429/50000000000
+PASS 4 localisation 20x8: 2821 window pairs
+PASS 3 mass 17x19: 15935229774429/50000000000
+PASS 4 localisation 17x19: 6536 window pairs
+PASS 5 script SHA256: Script digest printed above (self-hash is not embedded)
+Checked 38342 window pairs; 1296 distinct target restrictions.
+Runtime: 15.226 seconds
+PASS ALL CHECKS

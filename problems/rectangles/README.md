@@ -103,6 +103,7 @@ From the repository root:
 ## Not done yet
 
 - Lower bounds (that k squares do not fit below the edge).
+  Upper bounds for rectangles just below integer size: see [../rectangle-upper-bounds/](../rectangle-upper-bounds/).
 - k ≥ 16.
 - Further pieces for k = 11 to 15 found by the same search (a later version).
 

@@ -1,0 +1,20 @@
+inputs/K4_k008_family.txt: sha256 a66668d9d414ad1cf78b19826ce592c540c9033a0234a06b207eb776b3e8ff0f
+inputs/K4_k008_box9.txt: sha256 4151d7c4059d5dcf56130c9373e6b5b60635e1a4250f46562d7ecc4d64a27801
+(0) all masses in the family are non-negative: True (286 pieces)
+(1) mu_9,9 vs K4_k008_box9.txt: 2060 cells, equal: True, Lebesgue (Fraction(14, 5), Fraction(31, 5), Fraction(14, 5), Fraction(31, 5))
+8x8: total 2985229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 961, mismatched windows 0
+8x9: total 3385229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 1116, mismatched windows 0
+9x8: total 3385229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 1116, mismatched windows 0
+9x9: total 3835229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 1296, mismatched windows 0
+8x10: total 3785229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 1271, mismatched windows 0
+10x8: total 3785229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 1271, mismatched windows 0
+8x13: total 4985229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 1736, mismatched windows 0
+13x8: total 4985229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 1736, mismatched windows 0
+9x12: total 5185229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 1836, mismatched windows 0
+10x11: total 5285229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 1886, mismatched windows 0
+11x14: total 7485229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 2806, mismatched windows 0
+12x15: total 8785229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 3366, mismatched windows 0
+15x8: total 5785229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 2046, mismatched windows 0
+14x14: total 9585229774429/50000000000 (= AB - 4D and < AB - 4: True), windows 3721, mismatched windows 0
+D = 214770225571/200000000000 = 1.073851, 4D = 4.295405 > 4: True
+K2M4_RECT OK

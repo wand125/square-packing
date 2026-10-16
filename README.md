@@ -19,6 +19,7 @@ command, and every checker, tool and Lean project.
 | `problems/domino/` | Unit squares in a 1:2 rectangle |
 | `problems/hexagon/` | Unit squares in a regular hexagon |
 | `problems/rectangles/` | Unit squares in a rectangle: certified constructions along the edges F_k (k = 2 to 15) |
+| `problems/rectangle-upper-bounds/` | Unit squares in a rectangle just below integer size: at most AB − 5 for integers A, B ≥ 8, computer-assisted with two independent checkers |
 | `problems/closed-form/` | A closed-form lower bound a(N) on s(N) for every non-square N ≥ 49, certified on 34 intervals (release `closed-form-v1`) |
 | `problems/cubes-in-cube/` | Unit cubes in a cube: s₃(9) = s₃(10) = 2 + 1/√2, by an 8-point lemma checked by two independent interval branch-and-bound checkers |
 | `problems/cubes-n-dim/` | Two unit cubes in a cube in four dimensions: s₄(2) = 2, near region by hand, far region by two independent interval branch-and-bound checkers (release `cubes-n-dim-v1`) |
