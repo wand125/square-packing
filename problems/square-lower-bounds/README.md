@@ -26,70 +26,71 @@ the best bound of any kind is
 
 <!-- auto:claims:begin -->
 ```
-s(18) >= 941/200   = 4.705
-s(19) >= 1931/400  = 4.8275
-s(20) >= 393/80    = 4.9125
+s(18) >= 941/200    = 4.705
+s(19) >= 1931/400   = 4.8275
+s(20) >= 393/80     = 4.9125
 s(21) >= 5
-s(26) >= 1111/200  = 5.555
-s(27) >= 1131/200  = 5.655
-s(28) >= 1149/200  = 5.745
-s(29) >= 291/50    = 5.82
-s(30) >= 2357/400  = 5.8925
-s(31) >= 2391/400  = 5.9775
-s(32) >= 119/20    = 5.95
-s(37) >= 2599/400  = 6.4975
-s(38) >= 2631/400  = 6.5775
-s(39) >= 533/80    = 6.6625
-s(40) >= 1347/200  = 6.735
-s(41) >= 2721/400  = 6.8025
-s(42) >= 2739/400  = 6.8475
-s(43) >= 2777/400  = 6.9425
-s(44) >= 2799/400  = 6.9975
+s(26) >= 1111/200   = 5.555
+s(27) >= 1131/200   = 5.655
+s(28) >= 1149/200   = 5.745
+s(29) >= 291/50     = 5.82
+s(30) >= 2357/400   = 5.8925
+s(31) >= 2391/400   = 5.9775
+s(32) >= 119/20     = 5.95
+s(37) >= 2599/400   = 6.4975
+s(38) >= 2631/400   = 6.5775
+s(39) >= 533/80     = 6.6625
+s(40) >= 1347/200   = 6.735
+s(41) >= 2721/400   = 6.8025
+s(42) >= 2739/400   = 6.8475
+s(43) >= 2777/400   = 6.9425
+s(44) >= 2799/400   = 6.9975
 s(45) >= 7
-s(50) >= 37/5      = 7.4
-s(51) >= 3011/400  = 7.5275
-s(52) >= 151/20    = 7.55
-s(53) >= 3051/400  = 7.6275
-s(54) >= 1537/200  = 7.685
-s(55) >= 966/125   = 7.728
-s(56) >= 3121/400  = 7.8025
-s(57) >= 3149/400  = 7.8725
-s(58) >= 1587/200  = 7.935
+s(50) >= 37/5       = 7.4
+s(51) >= 3011/400   = 7.5275
+s(52) >= 151/20     = 7.55
+s(53) >= 3051/400   = 7.6275
+s(54) >= 1537/200   = 7.685
+s(55) >= 966/125    = 7.728
+s(56) >= 3121/400   = 7.8025
+s(57) >= 3149/400   = 7.8725
+s(58) >= 1587/200   = 7.935
 s(59) >= 8
-s(60) >= 397/50    = 7.94
+s(60) >= 397/50     = 7.94
 s(61) >= 8
-s(65) >= 167/20    = 8.35
-s(66) >= 843/100   = 8.43
-s(67) >= 212/25    = 8.48
-s(68) >= 853/100   = 8.53
-s(69) >= 431/50    = 8.62
-s(70) >= 3463/400  = 8.6575
-s(71) >= 8721/1000 = 8.721
-s(72) >= 219/25    = 8.76
-s(73) >= 8813/1000 = 8.813
-s(74) >= 3547/400  = 8.8675
-s(75) >= 447/50    = 8.94
-s(76) >= 1793/200  = 8.965
+s(65) >= 167/20     = 8.35
+s(66) >= 843/100    = 8.43
+s(67) >= 212/25     = 8.48
+s(68) >= 853/100    = 8.53
+s(69) >= 431/50     = 8.62
+s(70) >= 3463/400   = 8.6575
+s(71) >= 8721/1000  = 8.721
+s(72) >= 219/25     = 8.76
+s(73) >= 8813/1000  = 8.813
+s(74) >= 3547/400   = 8.8675
+s(75) >= 447/50     = 8.94
+s(76) >= 1793/200   = 8.965
 s(77) >= 9
-s(78) >= 1793/200  = 8.965
-s(82) >= 233/25    = 9.32
-s(83) >= 937/100   = 9.37
-s(84) >= 3769/400  = 9.4225
-s(85) >= 379/40    = 9.475
-s(86) >= 3811/400  = 9.5275
-s(87) >= 479/50    = 9.58
-s(88) >= 3853/400  = 9.6325
-s(89) >= 1937/200  = 9.685
-s(90) >= 489/50    = 9.78
-s(91) >= 783/80    = 9.7875
-s(92) >= 493/50    = 9.86
-s(93) >= 247/25    = 9.88
-s(94) >= 199/20    = 9.95
-s(95) >= 1993/200  = 9.965
-s(96) >= 997/100   = 9.97
-s(101) >= 257/25    = 10.28
-s(122) >= 563/50    = 11.26
-s(145) >= 306/25    = 12.24
+s(78) >= 1793/200   = 8.965
+s(82) >= 233/25     = 9.32
+s(83) >= 937/100    = 9.37
+s(84) >= 3769/400   = 9.4225
+s(85) >= 379/40     = 9.475
+s(86) >= 3811/400   = 9.5275
+s(87) >= 479/50     = 9.58
+s(88) >= 3853/400   = 9.6325
+s(89) >= 1937/200   = 9.685
+s(90) >= 489/50     = 9.78
+s(91) >= 783/80     = 9.7875
+s(92) >= 493/50     = 9.86
+s(93) >= 247/25     = 9.88
+s(94) >= 199/20     = 9.95
+s(95) >= 1993/200   = 9.965
+s(96) >= 997/100    = 9.97
+s(101) >= 257/25     = 10.28
+s(106) >= 10503/1000 = 10.503
+s(122) >= 563/50     = 11.26
+s(145) >= 306/25     = 12.24
 ```
 <!-- auto:claims:end -->
 
@@ -181,6 +182,7 @@ and list earlier rungs.
 | 95 | **9.965** | 1993/200 | mixed | [`mixed_n95_L9965`](certificates/mixed_n95_L9965) | 9.787088 (Karakus, 2026) | record | Nagamochi 9.8318…; Green 9.2667… |
 | 96 | **9.97** | 997/100 | mixed | [`mixed_n96_L997`](certificates/mixed_n96_L997) | 10.000000 (evand, 2026) | below | Nagamochi 9.8882…; Green 9.2667… |
 | 101 | **10.28** | 257/25 | mixed | [`mixed_n101_L1028`](certificates/mixed_n101_L1028) | 10.052487 (Karakus, 2026) | record | Nagamochi 10.0554…; Green 10.2467… |
+| 106 | **10.503** | 10503/1000 | mixed | [`mixed_n106_L10503`](certificates/mixed_n106_L10503) | 10.310708 (Karakus, 2026) | record | Nagamochi 10.3274…; Green 10.2467… |
 | 122 | **11.26** | 563/50 | mixed | [`mixed_n122_L1126`](certificates/mixed_n122_L1126) | 11.047512 (Karakus, 2026) | record | Nagamochi 11.0499…; Green 11.2293… |
 | 145 | **12.24** | 306/25 | mixed | [`mixed_n145_L1224`](certificates/mixed_n145_L1224) | 12.043396 (Karakus, 2026) | record | Nagamochi 12.0454…; Green 12.2139… |
 <!-- auto:standing:end -->
@@ -1770,6 +1772,16 @@ s(92) >= 493/50 = 9.86
 ```
 
 This supersedes `mixed_n91_L97875` above. This exceeds our earlier certificate mixed_n91_L97875 (9.7875). For reference, Nagamochi's closed form gives `9.6603…` and Green's reported bound gives `9.2667…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 9199999/100000 with core B = 9977/10000 on a declared half-angle net of 201 directions. The candidate was found by lifting a verified certificate for a smaller n through a central cross and re-solving the LP on the cross (numerical search only; not an input to the check). It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n92_L986/ASSET.json`).
+
+## n = 106: 10.503, a lifted mixed certificate
+
+[`certificates/mixed_n106_L10503`](certificates/mixed_n106_L10503/README.md) proves
+
+```
+s(106) >= 10503/1000 = 10.503
+```
+
+This exceeds the previously published lower bound 10.3107. For reference, Nagamochi's closed form gives `10.3274…` and Green's reported bound gives `10.2467…`; both are reference values only, since their published proofs are incomplete. The certificate is a rational rectangle measure of mass 10599999/100000 with core B = 9977/10000 on a declared half-angle net of 201 directions. The candidate was found by lifting a verified certificate for a smaller n through a central cross and re-solving the LP on the cross (numerical search only; not an input to the check). It is checked with the independently implemented `sqverify_fast` (source and reproduction notes in the bundle); before publication the check was run again on a fresh Ubuntu 24.04 machine (see the certificate README). The certificate data are in the release `square-lower-bounds-v1` (see `certificates/mixed_n106_L10503/ASSET.json`).
 
 ## Closed-square endpoint certificate for n = 21
 
