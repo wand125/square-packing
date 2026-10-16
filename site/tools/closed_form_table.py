@@ -8,7 +8,7 @@ Inputs (all published):
   intervals.json    problems/closed-form/intervals.json (the certified lines S_i(δ) = α_i δ + β_i)
   lower_bounds.json evand/square-packing site/www/data/lower_bounds.json (known lower bounds, n <= 324, with sources; the family s(m² − 4) = m is cited to Evan Daniel)
   timeline.json     evand/square-packing site/www/data/timeline.json (known upper bounds, with finder and year)
-  INDEX.json        wand125/square-packing INDEX.json (our published certificates, claims "s(n) >= x")
+  INDEX.json        wand125/square-packing INDEX.json (our published certificates, claims "s(n) >= x" and "No packing of n ... side x")
 The column of reference only is Nagamochi's formula (its proof has a publicly discussed gap); it is never used as a
 known bound. Green's values (reported without a recoverable proof) are left out. Lower bounds are printed rounded down, upper bounds rounded up, to 9 decimals.
 """
@@ -92,7 +92,9 @@ def main():
     tl = json.load(open(o.evand_ub))
     ours = {}
     for e in json.load(open(o.index))['problems']['square-lower-bounds']:
-        m = re.fullmatch(r's\((\d+)\)\s*(>=|=)\s*([0-9./]+)', e['claim'].replace(' ', ' ').strip())
+        m = (re.fullmatch(r's\((\d+)\)\s*(>=|=)\s*([0-9./]+)', e['claim'].replace(' ', ' ').strip())
+             # "No packing of n closed unit squares ... fits in the closed square of side x": s(n) > x
+             or re.match(r'No packing of (\d+) closed unit squares (?:\(interiors disjoint\) )?fits in the closed square of side ()([0-9/]+) ', e['claim']))
         if m:
             n, v = int(m.group(1)), F(m.group(3))
             if n not in ours or v > ours[n][0]:

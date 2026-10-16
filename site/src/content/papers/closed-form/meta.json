@@ -42,6 +42,13 @@
    "ja": "初版。N ≤ 3600 の表とブロックごとの図つき。",
    "commit": "7432824",
    "release": "closed-form-v1"
+  },
+  {
+   "v": "2",
+   "date": "2026-10-16",
+   "en": "Comparison with the known lower bounds (the paragraph, the table and the plots) updated to our certificates published up to 2026-10-16. It now also reads the certificates whose claim is stated as \"No packing … fits\"; version 1 read only claims of the form s(n) ≥ x. Counts: 3,232 above, 159 equal, 107 below.",
+   "ja": "既知の下界との比較（本文の段落・表・図）を、2026-10-16 までに公開した当方の証明書に合わせた。主張が「No packing … fits」の形の証明書も読むようにした（版 1 は s(n) ≥ x の形だけを読んでいた）。数は上回る 3,232、等しい 159、下回る 107。",
+   "commit": ""
   }
  ]
 }
