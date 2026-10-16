@@ -55,7 +55,7 @@
    "date": "2026-10-16",
    "en": "ValidTilt9: \"a Lean formalization is in progress\" replaced by the completed Lean kernel check (release validtilt9-lean-v1), in the text, the references and the table notes.",
    "ja": "ValidTilt9：「Lean での形式化は進行中」を、済んだ Lean カーネルでの検査（Release validtilt9-lean-v1）に直した（本文・参考文献・表の注）。",
-   "commit": ""
+   "commit": "0dd6ec9"
   }
  ]
 }
