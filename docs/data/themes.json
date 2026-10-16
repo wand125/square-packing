@@ -856,6 +856,47 @@
    "url": "https://github.com/wand125/square-packing/issues/20",
    "updated": "2026-10-15",
    "paper": "paper-cubes-in-cube.html"
+  },
+  {
+   "issue": 21,
+   "state": "open",
+   "title": {
+    "en": "Two unit cubes in a cube in n dimensions — s_n(2) = 2",
+    "ja": "n 次元の立方体に単位立方体 2 個 — s_n(2) = 2"
+   },
+   "goal": {
+    "en": "Let s_n(k) be the side of the smallest n-cube that holds k unit n-cubes at any positions and orientations. Prove that s_n(2) = 2 in every dimension n: two unit n-cubes never fit in a cube of side less than 2. For n = 2 this is classical; for n = 3 it follows from Lemma F (problems/cubes-in-cube/lemma_f/). We found no proof for any n ≥ 3 in the literature.",
+    "ja": "s_n(k) を、単位 n 次元立方体 k 個（位置・向きは自由）が入る最小の n 次元立方体の辺とする。すべての次元 n で s_n(2) = 2、つまり単位 n 次元立方体 2 個は辺 2 未満の立方体に入らないことを示す。n = 2 は古典的で、n = 3 は補題 F（problems/cubes-in-cube/lemma_f/）から従う。n ≥ 3 の証明は文献に見つからなかった。"
+   },
+   "method": {
+    "en": "It suffices that every unit n-cube inside [0, 2]ⁿ contains the centre; for a rotation R this is F_k(R) = Σ_i |R_ik| (2 − ‖row i of R‖₁) ≤ 1 for every column k. Near the coordinate axes a polar-decomposition argument reduces it by hand to lower dimensions (for n = 4, to Lemma F in dimension 3). Away from the axes, for a fixed n, an interval branch and bound checked by two independent programs.",
+    "ja": "[0, 2]ⁿ の中の単位 n 次元立方体がどれも中心を含めば十分。回転 R については、すべての列 k で F_k(R) = Σ_i |R_ik| (2 − ‖R の行 i‖₁) ≤ 1 という不等式になる。座標軸の近くでは極分解の議論で手により低い次元に帰着する（n = 4 では 3 次元の補題 F に）。軸から離れたところは、n を固定して区間の分枝限定で示し、独立な 2 つのプログラムで検査する。"
+   },
+   "done": [
+    {
+     "en": "n = 4: s₄(2) = 2. The near region is proved by hand from Lemma F in dimension 3; the far region is checked by two independent Rust checkers in outward-rounded interval arithmetic (88,110,984 and 192,488,546 boxes, all closed). Computer-assisted; not peer reviewed (problems/cubes-n-dim/, release cubes-n-dim-v1).",
+     "ja": "n = 4：s₄(2) = 2。近い領域は 3 次元の補題 F から手で証明。遠い領域は外向きに丸める区間演算の独立な 2 つの Rust の検査器で検査（箱 88,110,984 個と 192,488,546 個、すべて閉じた）。計算機援用で、査読は受けていない（problems/cubes-n-dim/、Release cubes-n-dim-v1）。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "A hand proof for general n.",
+     "ja": "一般の n の手による証明。"
+    }
+   ],
+   "links": [
+    {
+     "label": "problems/cubes-n-dim/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim"
+    },
+    {
+     "label": "Release cubes-n-dim-v1",
+     "url": "https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1"
+    }
+   ],
+   "releases": [],
+   "url": "https://github.com/wand125/square-packing/issues/21",
+   "updated": "2026-10-16"
   }
  ]
 }

@@ -393,6 +393,35 @@
    ]
   },
   {
+   "id": "cube-centre-lemma",
+   "name": {
+    "en": "Two unit n-cubes: the centre lemma and interval branch and bound over rotations",
+    "ja": "単位 n 次元立方体 2 個：中心の補題と回転の区間の分枝限定"
+   },
+   "what": {
+    "en": "For R ∈ O(n) let w_i be the ℓ¹ norm of row i and F_k(R) = Σ_i |R_ik| (2 − w_i). If F_k ≤ 1 for every orthogonal R and every column k, every unit cube in [0, a]ⁿ with a < 2 contains the centre in its interior, so two cubes with disjoint interiors cannot both fit. For n = 4, with c the largest |R_e1|: near an axis (c² ≥ 2/3) a polar-decomposition argument and Lemma F in dimension 3 give F_1 ≤ 1 by hand; away from the axes (c² ≤ 2/3) F_1 < 1 is checked by interval branch and bound with outward rounding, by two independent programs in different coordinates and with different symmetry reductions.",
+    "ja": "R ∈ O(n) について w_i を行 i の ℓ¹ ノルムとし、F_k(R) = Σ_i |R_ik| (2 − w_i) とする。すべての直交行列 R とすべての列 k で F_k ≤ 1 なら、a < 2 の [0, a]ⁿ の中の単位立方体はどれも中心を内部に含むので、内部が交わらない 2 個は入らない。n = 4 では c を |R_e1| の最大として、軸の近く（c² ≥ 2/3）は極分解の議論と 3 次元の補題 F から手で F_1 ≤ 1 を示し、軸から離れたところ（c² ≤ 2/3）は外向きに丸める区間の分枝限定で F_1 < 1 を検査する。検査は座標も対称性による縮約も異なる独立な 2 つのプログラムで行う。"
+   },
+   "used": {
+    "en": "Two unit 4-cubes: s₄(2) = 2.",
+    "ja": "単位 4 次元立方体 2 個：s₄(2) = 2。"
+   },
+   "origin": {
+    "en": "For n = 2 the result is classical (Friedman's survey DS7). Lemma F in dimension 3 and s₃(2) = 2 are from our earlier work on cubes in cubes (problems/cubes-in-cube/lemma_f/), and the near-region argument is the n = 3 argument from there. New here: its lift to dimension 4 (Lemma K), the far-region statement and the two checkers.",
+    "ja": "n = 2 は古典的（Friedman の概説 DS7）。3 次元の補題 F と s₃(2) = 2 は立方体についての当方の以前の仕事（problems/cubes-in-cube/lemma_f/）で、近い領域の議論はそこでの n = 3 の議論。新しいのは、その 4 次元への持ち上げ（補題 K）、遠い領域の命題、2 つの検査器。"
+   },
+   "tools": [
+    "problems/cubes-n-dim/checker",
+    "problems/cubes-n-dim/checker2",
+    "problems/cubes-n-dim/verify_logs.py"
+   ],
+   "sources": [
+    "problems/cubes-n-dim/README.md#L12-L24",
+    "problems/cubes-n-dim/README.md#L69-L80",
+    "problems/cubes-n-dim/PROOF.md"
+   ]
+  },
+  {
    "id": "n17-bb",
    "name": {
     "en": "n = 17 sub-pattern branch and bound",
