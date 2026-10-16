@@ -16,7 +16,9 @@ By monotonicity this also gives `s(78) = 9`; that value was already known from E
 (`s(60) = 8` is the case `k = 8`, due to Evan Daniel).
 
 **Status.** The certificate passes three independent sweeps, listed below. It has not been
-reviewed by anyone outside this project and has not been formalised in Lean.
+reviewed by anyone outside this project and has not been formalised in Lean. Separately, `s(77) = 9` is
+also proved in the Lean kernel as the case `k = 9` of `s(k^2 - 4) = k` for every `k >= 8`, from Evan
+Daniel's k2m4 certificate rather than this one (see lean/).
 
 ## The argument
 
