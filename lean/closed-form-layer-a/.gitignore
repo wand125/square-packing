@@ -1,0 +1,14 @@
+.lake/
+/BUILD.*
+__pycache__/
+*.pyc
+generated-sources.tar.xz
+generated-sources.tar.xz.part
+ClosedForm/Data/
+ClosedForm/Struct/
+ClosedForm/Saving/
+ClosedForm/Cloud/
+ClosedForm/PublishedStructure.lean
+ClosedForm/PublishedSaving.lean
+ClosedForm/StructuralI01.lean
+ClosedForm/FinalAudit.lean

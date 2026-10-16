@@ -1,0 +1,14 @@
+{
+  "command": [
+    "nice",
+    "-n",
+    "10",
+    "lean",
+    "PrintStatement.lean"
+  ],
+  "elapsed_seconds": 19.602,
+  "exit_code": 0,
+  "timed_out": false,
+  "lean_peak_rss_bytes": 5738397696,
+  "rss_source": "wait4 on direct nice/Lean child; independent process group"
+}

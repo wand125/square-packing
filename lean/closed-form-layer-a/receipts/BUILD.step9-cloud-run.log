@@ -1,0 +1,1477 @@
+{"intervals": 34, "modules": 1023, "largest": "I04", "mode": "checked"}
+{"intervals": 34, "endpoints": 68, "modules": 138, "mode": "checked"}
+SKIP ClosedForm.Family
+START ClosedForm.Saving
+SKIP ClosedForm.StructPermutation
+SKIP Sqpack.Basic
+SKIP Sqpack.Chord
+SKIP Sqpack.Spec
+SKIP Sqpack.ZeroMargin
+SKIP ClosedForm.Data.I01
+SKIP ClosedForm.Data.I02
+SKIP ClosedForm.Data.I03
+SKIP ClosedForm.Data.I04
+SKIP ClosedForm.Data.I05
+SKIP ClosedForm.Data.I06
+SKIP ClosedForm.Data.I07
+SKIP ClosedForm.Data.I08
+SKIP ClosedForm.Data.I09
+SKIP ClosedForm.Data.I10
+SKIP ClosedForm.Data.I11
+SKIP ClosedForm.Data.I12
+SKIP ClosedForm.Data.I13
+SKIP ClosedForm.Data.I14
+SKIP ClosedForm.Data.I15
+SKIP ClosedForm.Data.I16
+SKIP ClosedForm.Data.I17
+SKIP ClosedForm.Data.I18
+SKIP ClosedForm.Data.I19
+SKIP ClosedForm.Data.I20
+SKIP ClosedForm.Data.I21
+SKIP ClosedForm.Data.I22
+SKIP ClosedForm.Data.I23
+SKIP ClosedForm.Data.I24
+SKIP ClosedForm.Data.I25
+SKIP ClosedForm.Data.I26
+SKIP ClosedForm.Data.I27
+SKIP ClosedForm.Data.I28
+SKIP ClosedForm.Data.I29
+SKIP ClosedForm.Data.I30
+SKIP ClosedForm.Data.I31
+SKIP ClosedForm.Data.I32
+SKIP ClosedForm.Data.I33
+SKIP ClosedForm.Data.I34
+SKIP ClosedForm.Data.Intervals
+SKIP Sqpack.D4
+SKIP ClosedForm.Data.Families
+START ClosedForm.PublishedDefs
+SKIP Sqpack.Cover
+SKIP Sqpack.S32Data
+SKIP Sqpack.S32
+SKIP Sqpack.MixedMeasure
+SKIP ClosedForm.Measure
+SKIP ClosedForm.MeasureBridge
+START ClosedForm.Principle
+SKIP ClosedForm.StructureDefs
+SKIP ClosedForm.CanonicalBridge
+SKIP ClosedForm.IntegerStructure
+SKIP ClosedForm.Mass
+SKIP ClosedForm.ReflectionBridge
+SKIP ClosedForm.IntegerMeasureBridge
+START ClosedForm.LocalWindow
+SKIP ClosedForm.CornerBridge
+SKIP ClosedForm.GridCertificate
+SKIP ClosedForm.StructuralSoundness
+SKIP ClosedForm.Structure
+START ClosedForm.StructSupport
+OK ClosedForm.PublishedDefs: 96.309 s, 6478684160 bytes peak RSS
+OK ClosedForm.Principle: 93.905 s, 6517690368 bytes peak RSS
+START ClosedForm.Area
+OK ClosedForm.Saving: 99.766 s, 6525480960 bytes peak RSS
+START ClosedForm.SavingCertificate
+OK ClosedForm.StructSupport: 90.25 s, 6560792576 bytes peak RSS
+START ClosedForm.Struct.I01.Data
+SKIP ClosedForm.Struct.I02.Data
+SKIP ClosedForm.Struct.I02.FSource00
+SKIP ClosedForm.Struct.I02.FSource01
+SKIP ClosedForm.Struct.I02.FSource02
+SKIP ClosedForm.Struct.I02.FSource03
+SKIP ClosedForm.Struct.I02.FValid00
+SKIP ClosedForm.Struct.I02.FValid01
+SKIP ClosedForm.Struct.I02.PBounds
+SKIP ClosedForm.Struct.I02.PValid
+SKIP ClosedForm.Struct.I02.RValid
+SKIP ClosedForm.Struct.I02.TSource00
+SKIP ClosedForm.Struct.I02.TSource01
+SKIP ClosedForm.Struct.I02.TSource02
+SKIP ClosedForm.Struct.I02.TValid00
+SKIP ClosedForm.Struct.I03.Data
+SKIP ClosedForm.Struct.I03.FSource00
+SKIP ClosedForm.Struct.I03.FSource01
+SKIP ClosedForm.Struct.I03.FSource02
+SKIP ClosedForm.Struct.I03.FSource03
+SKIP ClosedForm.Struct.I03.FValid00
+SKIP ClosedForm.Struct.I03.FValid01
+SKIP ClosedForm.Struct.I03.PBounds
+SKIP ClosedForm.Struct.I03.PValid
+SKIP ClosedForm.Struct.I03.RValid
+SKIP ClosedForm.Struct.I03.TSource00
+SKIP ClosedForm.Struct.I03.TSource01
+SKIP ClosedForm.Struct.I03.TSource02
+SKIP ClosedForm.Struct.I03.TValid00
+START ClosedForm.Struct.I04.Data
+SKIP ClosedForm.Struct.I05.Data
+SKIP ClosedForm.Struct.I05.FSource00
+SKIP ClosedForm.Struct.I05.FSource01
+SKIP ClosedForm.Struct.I05.FSource02
+SKIP ClosedForm.Struct.I05.FSource03
+SKIP ClosedForm.Struct.I05.FValid00
+SKIP ClosedForm.Struct.I05.FValid01
+SKIP ClosedForm.Struct.I05.PBounds
+SKIP ClosedForm.Struct.I05.PValid
+SKIP ClosedForm.Struct.I05.RValid
+SKIP ClosedForm.Struct.I05.TSource00
+SKIP ClosedForm.Struct.I05.TSource01
+SKIP ClosedForm.Struct.I05.TSource02
+SKIP ClosedForm.Struct.I05.TValid00
+SKIP ClosedForm.Struct.I05.TValid01
+SKIP ClosedForm.Struct.I06.Data
+SKIP ClosedForm.Struct.I06.FSource00
+SKIP ClosedForm.Struct.I06.FSource01
+SKIP ClosedForm.Struct.I06.FValid00
+SKIP ClosedForm.Struct.I06.PBounds
+SKIP ClosedForm.Struct.I06.PValid
+SKIP ClosedForm.Struct.I06.RValid
+SKIP ClosedForm.Struct.I06.TSource00
+SKIP ClosedForm.Struct.I06.TSource01
+SKIP ClosedForm.Struct.I06.TValid00
+SKIP ClosedForm.Struct.I07.Data
+SKIP ClosedForm.Struct.I07.FSource00
+SKIP ClosedForm.Struct.I07.FSource01
+SKIP ClosedForm.Struct.I07.FSource02
+SKIP ClosedForm.Struct.I07.FValid00
+SKIP ClosedForm.Struct.I07.PBounds
+SKIP ClosedForm.Struct.I07.PValid
+SKIP ClosedForm.Struct.I07.RValid
+SKIP ClosedForm.Struct.I07.TSource00
+SKIP ClosedForm.Struct.I07.TSource01
+SKIP ClosedForm.Struct.I07.TValid00
+SKIP ClosedForm.Struct.I08.Data
+SKIP ClosedForm.Struct.I08.FSource00
+SKIP ClosedForm.Struct.I08.FSource01
+SKIP ClosedForm.Struct.I08.FValid00
+SKIP ClosedForm.Struct.I08.PBounds
+SKIP ClosedForm.Struct.I08.PValid
+SKIP ClosedForm.Struct.I08.RValid
+SKIP ClosedForm.Struct.I08.TSource00
+SKIP ClosedForm.Struct.I08.TValid
+SKIP ClosedForm.Struct.I09.Data
+SKIP ClosedForm.Struct.I09.FSource00
+SKIP ClosedForm.Struct.I09.FSource01
+SKIP ClosedForm.Struct.I09.FValid00
+SKIP ClosedForm.Struct.I09.PBounds
+SKIP ClosedForm.Struct.I09.PValid
+SKIP ClosedForm.Struct.I09.RValid
+SKIP ClosedForm.Struct.I09.TSource00
+SKIP ClosedForm.Struct.I09.TSource01
+SKIP ClosedForm.Struct.I09.TValid00
+SKIP ClosedForm.Struct.I10.Data
+SKIP ClosedForm.Struct.I10.FSource00
+SKIP ClosedForm.Struct.I10.FSource01
+SKIP ClosedForm.Struct.I10.FValid00
+SKIP ClosedForm.Struct.I10.PBounds
+SKIP ClosedForm.Struct.I10.PValid
+SKIP ClosedForm.Struct.I10.RValid
+SKIP ClosedForm.Struct.I10.TSource00
+SKIP ClosedForm.Struct.I10.TSource01
+SKIP ClosedForm.Struct.I10.TValid00
+SKIP ClosedForm.Struct.I11.Data
+SKIP ClosedForm.Struct.I11.FSource00
+SKIP ClosedForm.Struct.I11.FSource01
+SKIP ClosedForm.Struct.I11.FValid00
+SKIP ClosedForm.Struct.I11.PBounds
+SKIP ClosedForm.Struct.I11.PValid
+SKIP ClosedForm.Struct.I11.RValid
+SKIP ClosedForm.Struct.I11.TSource00
+SKIP ClosedForm.Struct.I11.TSource01
+SKIP ClosedForm.Struct.I11.TValid00
+SKIP ClosedForm.Struct.I12.Data
+SKIP ClosedForm.Struct.I12.FSource00
+SKIP ClosedForm.Struct.I12.FSource01
+SKIP ClosedForm.Struct.I12.FValid00
+SKIP ClosedForm.Struct.I12.PBounds
+SKIP ClosedForm.Struct.I12.PValid
+SKIP ClosedForm.Struct.I12.RValid
+SKIP ClosedForm.Struct.I12.TSource00
+SKIP ClosedForm.Struct.I12.TValid
+SKIP ClosedForm.Struct.I13.Data
+SKIP ClosedForm.Struct.I13.FSource00
+SKIP ClosedForm.Struct.I13.FSource01
+SKIP ClosedForm.Struct.I13.FValid00
+SKIP ClosedForm.Struct.I13.PBounds
+SKIP ClosedForm.Struct.I13.PValid
+SKIP ClosedForm.Struct.I13.RValid
+SKIP ClosedForm.Struct.I13.TSource00
+SKIP ClosedForm.Struct.I13.TValid
+SKIP ClosedForm.Struct.I14.Data
+SKIP ClosedForm.Struct.I14.FSource00
+SKIP ClosedForm.Struct.I14.FSource01
+SKIP ClosedForm.Struct.I14.FValid00
+SKIP ClosedForm.Struct.I14.PBounds
+SKIP ClosedForm.Struct.I14.PValid
+SKIP ClosedForm.Struct.I14.RValid
+SKIP ClosedForm.Struct.I14.TSource00
+SKIP ClosedForm.Struct.I14.TValid
+SKIP ClosedForm.Struct.I15.Data
+SKIP ClosedForm.Struct.I15.FSource00
+SKIP ClosedForm.Struct.I15.FSource01
+SKIP ClosedForm.Struct.I15.FValid00
+SKIP ClosedForm.Struct.I15.PBounds
+SKIP ClosedForm.Struct.I15.PValid
+SKIP ClosedForm.Struct.I15.RValid
+SKIP ClosedForm.Struct.I15.TSource00
+SKIP ClosedForm.Struct.I15.TValid
+SKIP ClosedForm.Struct.I16.Data
+SKIP ClosedForm.Struct.I16.FSource00
+SKIP ClosedForm.Struct.I16.FSource01
+SKIP ClosedForm.Struct.I16.FValid00
+SKIP ClosedForm.Struct.I16.PBounds
+SKIP ClosedForm.Struct.I16.PValid
+SKIP ClosedForm.Struct.I16.RValid
+SKIP ClosedForm.Struct.I16.TSource00
+SKIP ClosedForm.Struct.I16.TValid
+SKIP ClosedForm.Struct.I17.Data
+SKIP ClosedForm.Struct.I17.FSource00
+SKIP ClosedForm.Struct.I17.FSource01
+SKIP ClosedForm.Struct.I17.FValid00
+SKIP ClosedForm.Struct.I17.PBounds
+SKIP ClosedForm.Struct.I17.PValid
+SKIP ClosedForm.Struct.I17.RValid
+SKIP ClosedForm.Struct.I17.TSource00
+SKIP ClosedForm.Struct.I17.TValid
+SKIP ClosedForm.Struct.I18.Data
+SKIP ClosedForm.Struct.I18.FSource00
+SKIP ClosedForm.Struct.I18.FSource01
+SKIP ClosedForm.Struct.I18.FValid00
+SKIP ClosedForm.Struct.I18.PBounds
+SKIP ClosedForm.Struct.I18.PValid
+SKIP ClosedForm.Struct.I18.RValid
+SKIP ClosedForm.Struct.I18.TSource00
+SKIP ClosedForm.Struct.I18.TValid
+SKIP ClosedForm.Struct.I19.Data
+SKIP ClosedForm.Struct.I19.FSource00
+SKIP ClosedForm.Struct.I19.FSource01
+SKIP ClosedForm.Struct.I19.FValid00
+SKIP ClosedForm.Struct.I19.PBounds
+SKIP ClosedForm.Struct.I19.PValid
+SKIP ClosedForm.Struct.I19.RValid
+SKIP ClosedForm.Struct.I19.TSource00
+SKIP ClosedForm.Struct.I19.TValid
+SKIP ClosedForm.Struct.I20.Data
+SKIP ClosedForm.Struct.I20.FSource00
+SKIP ClosedForm.Struct.I20.FSource01
+SKIP ClosedForm.Struct.I20.FValid00
+SKIP ClosedForm.Struct.I20.PBounds
+SKIP ClosedForm.Struct.I20.PValid
+SKIP ClosedForm.Struct.I20.RValid
+SKIP ClosedForm.Struct.I20.TSource00
+SKIP ClosedForm.Struct.I20.TValid
+SKIP ClosedForm.Struct.I21.Data
+SKIP ClosedForm.Struct.I21.FSource00
+SKIP ClosedForm.Struct.I21.FSource01
+SKIP ClosedForm.Struct.I21.FValid00
+SKIP ClosedForm.Struct.I21.PBounds
+SKIP ClosedForm.Struct.I21.PValid
+SKIP ClosedForm.Struct.I21.RValid
+SKIP ClosedForm.Struct.I21.TSource00
+SKIP ClosedForm.Struct.I21.TValid
+SKIP ClosedForm.Struct.I22.Data
+SKIP ClosedForm.Struct.I22.FSource00
+SKIP ClosedForm.Struct.I22.FSource01
+SKIP ClosedForm.Struct.I22.FValid00
+SKIP ClosedForm.Struct.I22.PBounds
+SKIP ClosedForm.Struct.I22.PValid
+SKIP ClosedForm.Struct.I22.RValid
+SKIP ClosedForm.Struct.I22.TSource00
+SKIP ClosedForm.Struct.I22.TValid
+SKIP ClosedForm.Struct.I23.Data
+SKIP ClosedForm.Struct.I23.FSource00
+SKIP ClosedForm.Struct.I23.FSource01
+SKIP ClosedForm.Struct.I23.FValid00
+SKIP ClosedForm.Struct.I23.PBounds
+SKIP ClosedForm.Struct.I23.PValid
+SKIP ClosedForm.Struct.I23.RValid
+SKIP ClosedForm.Struct.I23.TSource00
+SKIP ClosedForm.Struct.I23.TValid
+SKIP ClosedForm.Struct.I24.Data
+SKIP ClosedForm.Struct.I24.FSource00
+SKIP ClosedForm.Struct.I24.FSource01
+SKIP ClosedForm.Struct.I24.FValid00
+SKIP ClosedForm.Struct.I24.PBounds
+SKIP ClosedForm.Struct.I24.PValid
+SKIP ClosedForm.Struct.I24.RValid
+SKIP ClosedForm.Struct.I24.TSource00
+SKIP ClosedForm.Struct.I24.TValid
+SKIP ClosedForm.Struct.I25.Data
+SKIP ClosedForm.Struct.I25.FSource00
+SKIP ClosedForm.Struct.I25.FSource01
+SKIP ClosedForm.Struct.I25.FValid00
+SKIP ClosedForm.Struct.I25.PBounds
+SKIP ClosedForm.Struct.I25.PValid
+SKIP ClosedForm.Struct.I25.RValid
+SKIP ClosedForm.Struct.I25.TSource00
+SKIP ClosedForm.Struct.I25.TValid
+SKIP ClosedForm.Struct.I26.Data
+SKIP ClosedForm.Struct.I26.FSource00
+SKIP ClosedForm.Struct.I26.FSource01
+SKIP ClosedForm.Struct.I26.FValid00
+SKIP ClosedForm.Struct.I26.PBounds
+SKIP ClosedForm.Struct.I26.PValid
+SKIP ClosedForm.Struct.I26.RValid
+SKIP ClosedForm.Struct.I26.TSource00
+SKIP ClosedForm.Struct.I26.TValid
+SKIP ClosedForm.Struct.I27.Data
+SKIP ClosedForm.Struct.I27.FSource00
+SKIP ClosedForm.Struct.I27.FSource01
+SKIP ClosedForm.Struct.I27.FValid00
+SKIP ClosedForm.Struct.I27.PBounds
+SKIP ClosedForm.Struct.I27.PValid
+SKIP ClosedForm.Struct.I27.RValid
+SKIP ClosedForm.Struct.I27.TSource00
+SKIP ClosedForm.Struct.I27.TSource01
+SKIP ClosedForm.Struct.I27.TValid00
+SKIP ClosedForm.Struct.I28.Data
+SKIP ClosedForm.Struct.I28.FSource00
+SKIP ClosedForm.Struct.I28.FSource01
+SKIP ClosedForm.Struct.I28.FSource02
+SKIP ClosedForm.Struct.I28.FValid00
+SKIP ClosedForm.Struct.I28.PBounds
+SKIP ClosedForm.Struct.I28.PValid
+SKIP ClosedForm.Struct.I28.RValid
+SKIP ClosedForm.Struct.I28.TSource00
+SKIP ClosedForm.Struct.I28.TSource01
+SKIP ClosedForm.Struct.I28.TValid00
+SKIP ClosedForm.Struct.I29.Data
+SKIP ClosedForm.Struct.I29.FSource00
+SKIP ClosedForm.Struct.I29.FSource01
+SKIP ClosedForm.Struct.I29.FSource02
+SKIP ClosedForm.Struct.I29.FValid00
+SKIP ClosedForm.Struct.I29.PBounds
+SKIP ClosedForm.Struct.I29.PValid
+SKIP ClosedForm.Struct.I29.RValid
+SKIP ClosedForm.Struct.I29.TSource00
+SKIP ClosedForm.Struct.I29.TSource01
+SKIP ClosedForm.Struct.I29.TValid00
+SKIP ClosedForm.Struct.I30.Data
+SKIP ClosedForm.Struct.I30.FSource00
+SKIP ClosedForm.Struct.I30.FSource01
+SKIP ClosedForm.Struct.I30.FSource02
+SKIP ClosedForm.Struct.I30.FValid00
+SKIP ClosedForm.Struct.I30.PBounds
+SKIP ClosedForm.Struct.I30.PValid
+SKIP ClosedForm.Struct.I30.RValid
+SKIP ClosedForm.Struct.I30.TSource00
+SKIP ClosedForm.Struct.I30.TSource01
+SKIP ClosedForm.Struct.I30.TValid00
+SKIP ClosedForm.Struct.I31.Data
+SKIP ClosedForm.Struct.I31.FSource00
+SKIP ClosedForm.Struct.I31.FSource01
+SKIP ClosedForm.Struct.I31.FSource02
+SKIP ClosedForm.Struct.I31.FValid00
+SKIP ClosedForm.Struct.I31.PBounds
+SKIP ClosedForm.Struct.I31.PValid
+SKIP ClosedForm.Struct.I31.RValid
+SKIP ClosedForm.Struct.I31.TSource00
+SKIP ClosedForm.Struct.I31.TSource01
+SKIP ClosedForm.Struct.I31.TValid00
+SKIP ClosedForm.Struct.I32.Data
+SKIP ClosedForm.Struct.I32.FSource00
+SKIP ClosedForm.Struct.I32.FSource01
+SKIP ClosedForm.Struct.I32.FSource02
+SKIP ClosedForm.Struct.I32.FValid00
+SKIP ClosedForm.Struct.I32.PBounds
+SKIP ClosedForm.Struct.I32.PValid
+SKIP ClosedForm.Struct.I32.RValid
+SKIP ClosedForm.Struct.I32.TSource00
+SKIP ClosedForm.Struct.I32.TSource01
+SKIP ClosedForm.Struct.I32.TValid00
+SKIP ClosedForm.Struct.I33.Data
+SKIP ClosedForm.Struct.I33.FSource00
+SKIP ClosedForm.Struct.I33.FSource01
+SKIP ClosedForm.Struct.I33.FSource02
+SKIP ClosedForm.Struct.I33.FValid00
+SKIP ClosedForm.Struct.I33.FValid01
+SKIP ClosedForm.Struct.I33.PBounds
+SKIP ClosedForm.Struct.I33.PValid
+SKIP ClosedForm.Struct.I33.RValid
+SKIP ClosedForm.Struct.I33.TSource00
+SKIP ClosedForm.Struct.I33.TSource01
+SKIP ClosedForm.Struct.I33.TSource02
+SKIP ClosedForm.Struct.I33.TValid00
+SKIP ClosedForm.Struct.I34.Data
+SKIP ClosedForm.Struct.I34.FSource00
+SKIP ClosedForm.Struct.I34.FSource01
+SKIP ClosedForm.Struct.I34.FSource02
+SKIP ClosedForm.Struct.I34.FValid00
+SKIP ClosedForm.Struct.I34.FValid01
+SKIP ClosedForm.Struct.I34.PBounds
+SKIP ClosedForm.Struct.I34.PValid
+SKIP ClosedForm.Struct.I34.RValid
+SKIP ClosedForm.Struct.I34.TSource00
+SKIP ClosedForm.Struct.I34.TSource01
+SKIP ClosedForm.Struct.I34.TSource02
+SKIP ClosedForm.Struct.I34.TValid00
+OK ClosedForm.LocalWindow: 92.402 s, 6593531904 bytes peak RSS
+SKIP ClosedForm.Struct.I02.CBounds
+SKIP ClosedForm.Struct.I02.CTBounds
+SKIP ClosedForm.Struct.I02.CTValid
+SKIP ClosedForm.Struct.I02.CValid
+SKIP ClosedForm.Struct.I02.Check00
+SKIP ClosedForm.Struct.I02.Check01
+SKIP ClosedForm.Struct.I02.Check02
+SKIP ClosedForm.Struct.I02.Check03
+SKIP ClosedForm.Struct.I02.Check04
+SKIP ClosedForm.Struct.I02.Check05
+SKIP ClosedForm.Struct.I02.Check06
+SKIP ClosedForm.Struct.I02.Checks
+SKIP ClosedForm.Struct.I02.FSource
+SKIP ClosedForm.Struct.I02.FValid
+SKIP ClosedForm.Struct.I02.TSource
+SKIP ClosedForm.Struct.I02.TValid
+SKIP ClosedForm.Struct.I03.CBounds
+SKIP ClosedForm.Struct.I03.CTBounds
+SKIP ClosedForm.Struct.I03.CTValid
+SKIP ClosedForm.Struct.I03.CValid
+SKIP ClosedForm.Struct.I03.Check00
+SKIP ClosedForm.Struct.I03.Check01
+SKIP ClosedForm.Struct.I03.Check02
+SKIP ClosedForm.Struct.I03.Check03
+SKIP ClosedForm.Struct.I03.Check04
+SKIP ClosedForm.Struct.I03.Check05
+SKIP ClosedForm.Struct.I03.Check06
+SKIP ClosedForm.Struct.I03.Checks
+SKIP ClosedForm.Struct.I03.FSource
+SKIP ClosedForm.Struct.I03.FValid
+SKIP ClosedForm.Struct.I03.TSource
+SKIP ClosedForm.Struct.I03.TValid
+SKIP ClosedForm.Struct.I05.CBounds
+SKIP ClosedForm.Struct.I05.CTBounds
+SKIP ClosedForm.Struct.I05.CTValid
+SKIP ClosedForm.Struct.I05.CValid
+SKIP ClosedForm.Struct.I05.Check00
+SKIP ClosedForm.Struct.I05.Check01
+SKIP ClosedForm.Struct.I05.Check02
+SKIP ClosedForm.Struct.I05.Check03
+SKIP ClosedForm.Struct.I05.Check04
+SKIP ClosedForm.Struct.I05.Check05
+SKIP ClosedForm.Struct.I05.Check06
+SKIP ClosedForm.Struct.I05.Checks
+SKIP ClosedForm.Struct.I05.FSource
+SKIP ClosedForm.Struct.I05.FValid
+SKIP ClosedForm.Struct.I05.TSource
+SKIP ClosedForm.Struct.I05.TValid
+SKIP ClosedForm.Struct.I06.CBounds
+SKIP ClosedForm.Struct.I06.CTBounds
+SKIP ClosedForm.Struct.I06.CTValid
+SKIP ClosedForm.Struct.I06.CValid
+SKIP ClosedForm.Struct.I06.Check00
+SKIP ClosedForm.Struct.I06.Check01
+SKIP ClosedForm.Struct.I06.Check02
+SKIP ClosedForm.Struct.I06.Check03
+SKIP ClosedForm.Struct.I06.Check04
+SKIP ClosedForm.Struct.I06.Check05
+SKIP ClosedForm.Struct.I06.Check06
+SKIP ClosedForm.Struct.I06.Checks
+SKIP ClosedForm.Struct.I06.FSource
+SKIP ClosedForm.Struct.I06.FValid
+SKIP ClosedForm.Struct.I06.TSource
+SKIP ClosedForm.Struct.I06.TValid
+SKIP ClosedForm.Struct.I07.CBounds
+SKIP ClosedForm.Struct.I07.CTBounds
+SKIP ClosedForm.Struct.I07.CTValid
+SKIP ClosedForm.Struct.I07.CValid
+SKIP ClosedForm.Struct.I07.Check00
+SKIP ClosedForm.Struct.I07.Check01
+SKIP ClosedForm.Struct.I07.Check02
+SKIP ClosedForm.Struct.I07.Check03
+SKIP ClosedForm.Struct.I07.Check04
+SKIP ClosedForm.Struct.I07.Check05
+SKIP ClosedForm.Struct.I07.Check06
+SKIP ClosedForm.Struct.I07.Checks
+SKIP ClosedForm.Struct.I07.FSource
+SKIP ClosedForm.Struct.I07.FValid
+SKIP ClosedForm.Struct.I07.TSource
+SKIP ClosedForm.Struct.I07.TValid
+SKIP ClosedForm.Struct.I08.CBounds
+SKIP ClosedForm.Struct.I08.CTBounds
+SKIP ClosedForm.Struct.I08.CTValid
+SKIP ClosedForm.Struct.I08.CValid
+SKIP ClosedForm.Struct.I08.Check00
+SKIP ClosedForm.Struct.I08.Check01
+SKIP ClosedForm.Struct.I08.Check02
+SKIP ClosedForm.Struct.I08.Check03
+SKIP ClosedForm.Struct.I08.Check04
+SKIP ClosedForm.Struct.I08.Check05
+SKIP ClosedForm.Struct.I08.Check06
+SKIP ClosedForm.Struct.I08.Checks
+SKIP ClosedForm.Struct.I08.FSource
+SKIP ClosedForm.Struct.I08.FValid
+SKIP ClosedForm.Struct.I08.TSource
+SKIP ClosedForm.Struct.I09.CBounds
+SKIP ClosedForm.Struct.I09.CTBounds
+SKIP ClosedForm.Struct.I09.CTValid
+SKIP ClosedForm.Struct.I09.CValid
+SKIP ClosedForm.Struct.I09.Check00
+SKIP ClosedForm.Struct.I09.Check01
+SKIP ClosedForm.Struct.I09.Check02
+SKIP ClosedForm.Struct.I09.Check03
+SKIP ClosedForm.Struct.I09.Check04
+SKIP ClosedForm.Struct.I09.Check05
+SKIP ClosedForm.Struct.I09.Check06
+SKIP ClosedForm.Struct.I09.Checks
+SKIP ClosedForm.Struct.I09.FSource
+SKIP ClosedForm.Struct.I09.FValid
+SKIP ClosedForm.Struct.I09.TSource
+SKIP ClosedForm.Struct.I09.TValid
+SKIP ClosedForm.Struct.I10.CBounds
+SKIP ClosedForm.Struct.I10.CTBounds
+SKIP ClosedForm.Struct.I10.CTValid
+SKIP ClosedForm.Struct.I10.CValid
+SKIP ClosedForm.Struct.I10.Check00
+SKIP ClosedForm.Struct.I10.Check01
+SKIP ClosedForm.Struct.I10.Check02
+SKIP ClosedForm.Struct.I10.Check03
+SKIP ClosedForm.Struct.I10.Check04
+SKIP ClosedForm.Struct.I10.Check05
+SKIP ClosedForm.Struct.I10.Check06
+SKIP ClosedForm.Struct.I10.Checks
+SKIP ClosedForm.Struct.I10.FSource
+SKIP ClosedForm.Struct.I10.FValid
+SKIP ClosedForm.Struct.I10.TSource
+SKIP ClosedForm.Struct.I10.TValid
+SKIP ClosedForm.Struct.I11.CBounds
+SKIP ClosedForm.Struct.I11.CTBounds
+SKIP ClosedForm.Struct.I11.CTValid
+SKIP ClosedForm.Struct.I11.CValid
+SKIP ClosedForm.Struct.I11.Check00
+SKIP ClosedForm.Struct.I11.Check01
+SKIP ClosedForm.Struct.I11.Check02
+SKIP ClosedForm.Struct.I11.Check03
+SKIP ClosedForm.Struct.I11.Check04
+SKIP ClosedForm.Struct.I11.Check05
+SKIP ClosedForm.Struct.I11.Check06
+SKIP ClosedForm.Struct.I11.Checks
+SKIP ClosedForm.Struct.I11.FSource
+SKIP ClosedForm.Struct.I11.FValid
+SKIP ClosedForm.Struct.I11.TSource
+SKIP ClosedForm.Struct.I11.TValid
+SKIP ClosedForm.Struct.I12.CBounds
+SKIP ClosedForm.Struct.I12.CTBounds
+SKIP ClosedForm.Struct.I12.CTValid
+SKIP ClosedForm.Struct.I12.CValid
+SKIP ClosedForm.Struct.I12.Check00
+SKIP ClosedForm.Struct.I12.Check01
+SKIP ClosedForm.Struct.I12.Check02
+SKIP ClosedForm.Struct.I12.Check03
+SKIP ClosedForm.Struct.I12.Check04
+SKIP ClosedForm.Struct.I12.Check05
+SKIP ClosedForm.Struct.I12.Check06
+SKIP ClosedForm.Struct.I12.Checks
+SKIP ClosedForm.Struct.I12.FSource
+SKIP ClosedForm.Struct.I12.FValid
+SKIP ClosedForm.Struct.I12.TSource
+SKIP ClosedForm.Struct.I13.CBounds
+SKIP ClosedForm.Struct.I13.CTBounds
+SKIP ClosedForm.Struct.I13.CTValid
+SKIP ClosedForm.Struct.I13.CValid
+SKIP ClosedForm.Struct.I13.Check00
+SKIP ClosedForm.Struct.I13.Check01
+SKIP ClosedForm.Struct.I13.Check02
+SKIP ClosedForm.Struct.I13.Check03
+SKIP ClosedForm.Struct.I13.Check04
+SKIP ClosedForm.Struct.I13.Check05
+SKIP ClosedForm.Struct.I13.Check06
+SKIP ClosedForm.Struct.I13.Checks
+SKIP ClosedForm.Struct.I13.FSource
+SKIP ClosedForm.Struct.I13.FValid
+SKIP ClosedForm.Struct.I13.TSource
+SKIP ClosedForm.Struct.I14.CBounds
+SKIP ClosedForm.Struct.I14.CTBounds
+SKIP ClosedForm.Struct.I14.CTValid
+SKIP ClosedForm.Struct.I14.CValid
+SKIP ClosedForm.Struct.I14.Check00
+SKIP ClosedForm.Struct.I14.Check01
+SKIP ClosedForm.Struct.I14.Check02
+SKIP ClosedForm.Struct.I14.Check03
+SKIP ClosedForm.Struct.I14.Check04
+SKIP ClosedForm.Struct.I14.Check05
+SKIP ClosedForm.Struct.I14.Check06
+SKIP ClosedForm.Struct.I14.Checks
+SKIP ClosedForm.Struct.I14.FSource
+SKIP ClosedForm.Struct.I14.FValid
+SKIP ClosedForm.Struct.I14.TSource
+SKIP ClosedForm.Struct.I15.CBounds
+SKIP ClosedForm.Struct.I15.CTBounds
+SKIP ClosedForm.Struct.I15.CTValid
+SKIP ClosedForm.Struct.I15.CValid
+SKIP ClosedForm.Struct.I15.Check00
+SKIP ClosedForm.Struct.I15.Check01
+SKIP ClosedForm.Struct.I15.Check02
+SKIP ClosedForm.Struct.I15.Check03
+SKIP ClosedForm.Struct.I15.Check04
+SKIP ClosedForm.Struct.I15.Check05
+SKIP ClosedForm.Struct.I15.Check06
+SKIP ClosedForm.Struct.I15.Checks
+SKIP ClosedForm.Struct.I15.FSource
+SKIP ClosedForm.Struct.I15.FValid
+SKIP ClosedForm.Struct.I15.TSource
+SKIP ClosedForm.Struct.I16.CBounds
+SKIP ClosedForm.Struct.I16.CTBounds
+SKIP ClosedForm.Struct.I16.CTValid
+SKIP ClosedForm.Struct.I16.CValid
+SKIP ClosedForm.Struct.I16.Check00
+SKIP ClosedForm.Struct.I16.Check01
+SKIP ClosedForm.Struct.I16.Check02
+SKIP ClosedForm.Struct.I16.Check03
+SKIP ClosedForm.Struct.I16.Check04
+SKIP ClosedForm.Struct.I16.Check05
+SKIP ClosedForm.Struct.I16.Check06
+SKIP ClosedForm.Struct.I16.Checks
+SKIP ClosedForm.Struct.I16.FSource
+SKIP ClosedForm.Struct.I16.FValid
+SKIP ClosedForm.Struct.I16.TSource
+SKIP ClosedForm.Struct.I17.CBounds
+SKIP ClosedForm.Struct.I17.CTBounds
+SKIP ClosedForm.Struct.I17.CTValid
+SKIP ClosedForm.Struct.I17.CValid
+SKIP ClosedForm.Struct.I17.Check00
+SKIP ClosedForm.Struct.I17.Check01
+SKIP ClosedForm.Struct.I17.Check02
+SKIP ClosedForm.Struct.I17.Check03
+SKIP ClosedForm.Struct.I17.Check04
+SKIP ClosedForm.Struct.I17.Check05
+SKIP ClosedForm.Struct.I17.Check06
+SKIP ClosedForm.Struct.I17.Checks
+SKIP ClosedForm.Struct.I17.FSource
+SKIP ClosedForm.Struct.I17.FValid
+SKIP ClosedForm.Struct.I17.TSource
+SKIP ClosedForm.Struct.I18.CBounds
+SKIP ClosedForm.Struct.I18.CTBounds
+SKIP ClosedForm.Struct.I18.CTValid
+SKIP ClosedForm.Struct.I18.CValid
+SKIP ClosedForm.Struct.I18.Check00
+SKIP ClosedForm.Struct.I18.Check01
+SKIP ClosedForm.Struct.I18.Check02
+SKIP ClosedForm.Struct.I18.Check03
+SKIP ClosedForm.Struct.I18.Check04
+SKIP ClosedForm.Struct.I18.Check05
+SKIP ClosedForm.Struct.I18.Check06
+SKIP ClosedForm.Struct.I18.Checks
+SKIP ClosedForm.Struct.I18.FSource
+SKIP ClosedForm.Struct.I18.FValid
+SKIP ClosedForm.Struct.I18.TSource
+SKIP ClosedForm.Struct.I19.CBounds
+SKIP ClosedForm.Struct.I19.CTBounds
+SKIP ClosedForm.Struct.I19.CTValid
+SKIP ClosedForm.Struct.I19.CValid
+SKIP ClosedForm.Struct.I19.Check00
+SKIP ClosedForm.Struct.I19.Check01
+SKIP ClosedForm.Struct.I19.Check02
+SKIP ClosedForm.Struct.I19.Check03
+SKIP ClosedForm.Struct.I19.Check04
+SKIP ClosedForm.Struct.I19.Check05
+SKIP ClosedForm.Struct.I19.Check06
+SKIP ClosedForm.Struct.I19.Checks
+SKIP ClosedForm.Struct.I19.FSource
+SKIP ClosedForm.Struct.I19.FValid
+SKIP ClosedForm.Struct.I19.TSource
+SKIP ClosedForm.Struct.I20.CBounds
+SKIP ClosedForm.Struct.I20.CTBounds
+SKIP ClosedForm.Struct.I20.CTValid
+SKIP ClosedForm.Struct.I20.CValid
+SKIP ClosedForm.Struct.I20.Check00
+SKIP ClosedForm.Struct.I20.Check01
+SKIP ClosedForm.Struct.I20.Check02
+SKIP ClosedForm.Struct.I20.Check03
+SKIP ClosedForm.Struct.I20.Check04
+SKIP ClosedForm.Struct.I20.Check05
+SKIP ClosedForm.Struct.I20.Check06
+SKIP ClosedForm.Struct.I20.Checks
+SKIP ClosedForm.Struct.I20.FSource
+SKIP ClosedForm.Struct.I20.FValid
+SKIP ClosedForm.Struct.I20.TSource
+SKIP ClosedForm.Struct.I21.CBounds
+SKIP ClosedForm.Struct.I21.CTBounds
+SKIP ClosedForm.Struct.I21.CTValid
+SKIP ClosedForm.Struct.I21.CValid
+SKIP ClosedForm.Struct.I21.Check00
+SKIP ClosedForm.Struct.I21.Check01
+SKIP ClosedForm.Struct.I21.Check02
+SKIP ClosedForm.Struct.I21.Check03
+SKIP ClosedForm.Struct.I21.Check04
+SKIP ClosedForm.Struct.I21.Check05
+SKIP ClosedForm.Struct.I21.Check06
+SKIP ClosedForm.Struct.I21.Checks
+SKIP ClosedForm.Struct.I21.FSource
+SKIP ClosedForm.Struct.I21.FValid
+SKIP ClosedForm.Struct.I21.TSource
+SKIP ClosedForm.Struct.I22.CBounds
+SKIP ClosedForm.Struct.I22.CTBounds
+SKIP ClosedForm.Struct.I22.CTValid
+SKIP ClosedForm.Struct.I22.CValid
+SKIP ClosedForm.Struct.I22.Check00
+SKIP ClosedForm.Struct.I22.Check01
+SKIP ClosedForm.Struct.I22.Check02
+SKIP ClosedForm.Struct.I22.Check03
+SKIP ClosedForm.Struct.I22.Check04
+SKIP ClosedForm.Struct.I22.Check05
+SKIP ClosedForm.Struct.I22.Check06
+SKIP ClosedForm.Struct.I22.Checks
+SKIP ClosedForm.Struct.I22.FSource
+SKIP ClosedForm.Struct.I22.FValid
+SKIP ClosedForm.Struct.I22.TSource
+SKIP ClosedForm.Struct.I23.CBounds
+SKIP ClosedForm.Struct.I23.CTBounds
+SKIP ClosedForm.Struct.I23.CTValid
+SKIP ClosedForm.Struct.I23.CValid
+SKIP ClosedForm.Struct.I23.Check00
+SKIP ClosedForm.Struct.I23.Check01
+SKIP ClosedForm.Struct.I23.Check02
+SKIP ClosedForm.Struct.I23.Check03
+SKIP ClosedForm.Struct.I23.Check04
+SKIP ClosedForm.Struct.I23.Check05
+SKIP ClosedForm.Struct.I23.Check06
+SKIP ClosedForm.Struct.I23.Checks
+SKIP ClosedForm.Struct.I23.FSource
+SKIP ClosedForm.Struct.I23.FValid
+SKIP ClosedForm.Struct.I23.TSource
+SKIP ClosedForm.Struct.I24.CBounds
+SKIP ClosedForm.Struct.I24.CTBounds
+SKIP ClosedForm.Struct.I24.CTValid
+SKIP ClosedForm.Struct.I24.CValid
+SKIP ClosedForm.Struct.I24.Check00
+SKIP ClosedForm.Struct.I24.Check01
+SKIP ClosedForm.Struct.I24.Check02
+SKIP ClosedForm.Struct.I24.Check03
+SKIP ClosedForm.Struct.I24.Check04
+SKIP ClosedForm.Struct.I24.Check05
+SKIP ClosedForm.Struct.I24.Check06
+SKIP ClosedForm.Struct.I24.Checks
+SKIP ClosedForm.Struct.I24.FSource
+SKIP ClosedForm.Struct.I24.FValid
+SKIP ClosedForm.Struct.I24.TSource
+SKIP ClosedForm.Struct.I25.CBounds
+SKIP ClosedForm.Struct.I25.CTBounds
+SKIP ClosedForm.Struct.I25.CTValid
+SKIP ClosedForm.Struct.I25.CValid
+SKIP ClosedForm.Struct.I25.Check00
+SKIP ClosedForm.Struct.I25.Check01
+SKIP ClosedForm.Struct.I25.Check02
+SKIP ClosedForm.Struct.I25.Check03
+SKIP ClosedForm.Struct.I25.Check04
+SKIP ClosedForm.Struct.I25.Check05
+SKIP ClosedForm.Struct.I25.Check06
+SKIP ClosedForm.Struct.I25.Checks
+SKIP ClosedForm.Struct.I25.FSource
+SKIP ClosedForm.Struct.I25.FValid
+SKIP ClosedForm.Struct.I25.TSource
+SKIP ClosedForm.Struct.I26.CBounds
+SKIP ClosedForm.Struct.I26.CTBounds
+SKIP ClosedForm.Struct.I26.CTValid
+SKIP ClosedForm.Struct.I26.CValid
+SKIP ClosedForm.Struct.I26.Check00
+SKIP ClosedForm.Struct.I26.Check01
+SKIP ClosedForm.Struct.I26.Check02
+SKIP ClosedForm.Struct.I26.Check03
+SKIP ClosedForm.Struct.I26.Check04
+SKIP ClosedForm.Struct.I26.Check05
+SKIP ClosedForm.Struct.I26.Check06
+SKIP ClosedForm.Struct.I26.Checks
+SKIP ClosedForm.Struct.I26.FSource
+SKIP ClosedForm.Struct.I26.FValid
+SKIP ClosedForm.Struct.I26.TSource
+SKIP ClosedForm.Struct.I27.CBounds
+SKIP ClosedForm.Struct.I27.CTBounds
+SKIP ClosedForm.Struct.I27.CTValid
+SKIP ClosedForm.Struct.I27.CValid
+SKIP ClosedForm.Struct.I27.Check00
+SKIP ClosedForm.Struct.I27.Check01
+SKIP ClosedForm.Struct.I27.Check02
+SKIP ClosedForm.Struct.I27.Check03
+SKIP ClosedForm.Struct.I27.Check04
+SKIP ClosedForm.Struct.I27.Check05
+SKIP ClosedForm.Struct.I27.Check06
+SKIP ClosedForm.Struct.I27.Checks
+SKIP ClosedForm.Struct.I27.FSource
+SKIP ClosedForm.Struct.I27.FValid
+SKIP ClosedForm.Struct.I27.TSource
+SKIP ClosedForm.Struct.I27.TValid
+SKIP ClosedForm.Struct.I28.CBounds
+SKIP ClosedForm.Struct.I28.CTBounds
+SKIP ClosedForm.Struct.I28.CTValid
+SKIP ClosedForm.Struct.I28.CValid
+SKIP ClosedForm.Struct.I28.Check00
+SKIP ClosedForm.Struct.I28.Check01
+SKIP ClosedForm.Struct.I28.Check02
+SKIP ClosedForm.Struct.I28.Check03
+SKIP ClosedForm.Struct.I28.Check04
+SKIP ClosedForm.Struct.I28.Check05
+SKIP ClosedForm.Struct.I28.Check06
+SKIP ClosedForm.Struct.I28.Checks
+SKIP ClosedForm.Struct.I28.FSource
+SKIP ClosedForm.Struct.I28.FValid
+SKIP ClosedForm.Struct.I28.TSource
+SKIP ClosedForm.Struct.I28.TValid
+SKIP ClosedForm.Struct.I29.CBounds
+SKIP ClosedForm.Struct.I29.CTBounds
+SKIP ClosedForm.Struct.I29.CTValid
+SKIP ClosedForm.Struct.I29.CValid
+SKIP ClosedForm.Struct.I29.Check00
+SKIP ClosedForm.Struct.I29.Check01
+SKIP ClosedForm.Struct.I29.Check02
+SKIP ClosedForm.Struct.I29.Check03
+SKIP ClosedForm.Struct.I29.Check04
+SKIP ClosedForm.Struct.I29.Check05
+SKIP ClosedForm.Struct.I29.Check06
+SKIP ClosedForm.Struct.I29.Checks
+SKIP ClosedForm.Struct.I29.FSource
+SKIP ClosedForm.Struct.I29.FValid
+SKIP ClosedForm.Struct.I29.TSource
+SKIP ClosedForm.Struct.I29.TValid
+SKIP ClosedForm.Struct.I30.CBounds
+SKIP ClosedForm.Struct.I30.CTBounds
+SKIP ClosedForm.Struct.I30.CTValid
+SKIP ClosedForm.Struct.I30.CValid
+SKIP ClosedForm.Struct.I30.Check00
+SKIP ClosedForm.Struct.I30.Check01
+SKIP ClosedForm.Struct.I30.Check02
+SKIP ClosedForm.Struct.I30.Check03
+SKIP ClosedForm.Struct.I30.Check04
+SKIP ClosedForm.Struct.I30.Check05
+SKIP ClosedForm.Struct.I30.Check06
+SKIP ClosedForm.Struct.I30.Checks
+SKIP ClosedForm.Struct.I30.FSource
+SKIP ClosedForm.Struct.I30.FValid
+SKIP ClosedForm.Struct.I30.TSource
+SKIP ClosedForm.Struct.I30.TValid
+SKIP ClosedForm.Struct.I31.CBounds
+SKIP ClosedForm.Struct.I31.CTBounds
+SKIP ClosedForm.Struct.I31.CTValid
+SKIP ClosedForm.Struct.I31.CValid
+SKIP ClosedForm.Struct.I31.Check00
+SKIP ClosedForm.Struct.I31.Check01
+SKIP ClosedForm.Struct.I31.Check02
+SKIP ClosedForm.Struct.I31.Check03
+SKIP ClosedForm.Struct.I31.Check04
+SKIP ClosedForm.Struct.I31.Check05
+SKIP ClosedForm.Struct.I31.Check06
+SKIP ClosedForm.Struct.I31.Checks
+SKIP ClosedForm.Struct.I31.FSource
+SKIP ClosedForm.Struct.I31.FValid
+SKIP ClosedForm.Struct.I31.TSource
+SKIP ClosedForm.Struct.I31.TValid
+SKIP ClosedForm.Struct.I32.CBounds
+SKIP ClosedForm.Struct.I32.CTBounds
+SKIP ClosedForm.Struct.I32.CTValid
+SKIP ClosedForm.Struct.I32.CValid
+SKIP ClosedForm.Struct.I32.Check00
+SKIP ClosedForm.Struct.I32.Check01
+SKIP ClosedForm.Struct.I32.Check02
+SKIP ClosedForm.Struct.I32.Check03
+SKIP ClosedForm.Struct.I32.Check04
+SKIP ClosedForm.Struct.I32.Check05
+SKIP ClosedForm.Struct.I32.Check06
+SKIP ClosedForm.Struct.I32.Checks
+SKIP ClosedForm.Struct.I32.FSource
+SKIP ClosedForm.Struct.I32.FValid
+SKIP ClosedForm.Struct.I32.TSource
+SKIP ClosedForm.Struct.I32.TValid
+SKIP ClosedForm.Struct.I33.CBounds
+SKIP ClosedForm.Struct.I33.CTBounds
+SKIP ClosedForm.Struct.I33.CTValid
+SKIP ClosedForm.Struct.I33.CValid
+SKIP ClosedForm.Struct.I33.Check00
+SKIP ClosedForm.Struct.I33.Check01
+SKIP ClosedForm.Struct.I33.Check02
+SKIP ClosedForm.Struct.I33.Check03
+SKIP ClosedForm.Struct.I33.Check04
+SKIP ClosedForm.Struct.I33.Check05
+SKIP ClosedForm.Struct.I33.Check06
+SKIP ClosedForm.Struct.I33.Checks
+SKIP ClosedForm.Struct.I33.FSource
+SKIP ClosedForm.Struct.I33.FValid
+SKIP ClosedForm.Struct.I33.TSource
+SKIP ClosedForm.Struct.I33.TValid
+SKIP ClosedForm.Struct.I34.CBounds
+SKIP ClosedForm.Struct.I34.CTBounds
+SKIP ClosedForm.Struct.I34.CTValid
+SKIP ClosedForm.Struct.I34.CValid
+SKIP ClosedForm.Struct.I34.Check00
+SKIP ClosedForm.Struct.I34.Check01
+SKIP ClosedForm.Struct.I34.Check02
+SKIP ClosedForm.Struct.I34.Check03
+SKIP ClosedForm.Struct.I34.Check04
+SKIP ClosedForm.Struct.I34.Check05
+SKIP ClosedForm.Struct.I34.Check06
+SKIP ClosedForm.Struct.I34.Checks
+SKIP ClosedForm.Struct.I34.FSource
+SKIP ClosedForm.Struct.I34.FValid
+SKIP ClosedForm.Struct.I34.TSource
+SKIP ClosedForm.Struct.I34.TValid
+SKIP ClosedForm.Struct.I02.Fields
+SKIP ClosedForm.Struct.I02.Geometry
+SKIP ClosedForm.Struct.I02.Relations
+SKIP ClosedForm.Struct.I03.Fields
+SKIP ClosedForm.Struct.I03.Geometry
+SKIP ClosedForm.Struct.I03.Relations
+SKIP ClosedForm.Struct.I05.Fields
+SKIP ClosedForm.Struct.I05.Geometry
+SKIP ClosedForm.Struct.I05.Relations
+SKIP ClosedForm.Struct.I06.Fields
+SKIP ClosedForm.Struct.I06.Geometry
+SKIP ClosedForm.Struct.I06.Relations
+SKIP ClosedForm.Struct.I07.Fields
+SKIP ClosedForm.Struct.I07.Geometry
+SKIP ClosedForm.Struct.I07.Relations
+SKIP ClosedForm.Struct.I08.Fields
+SKIP ClosedForm.Struct.I08.Geometry
+SKIP ClosedForm.Struct.I08.Relations
+SKIP ClosedForm.Struct.I09.Fields
+SKIP ClosedForm.Struct.I09.Geometry
+SKIP ClosedForm.Struct.I09.Relations
+SKIP ClosedForm.Struct.I10.Fields
+SKIP ClosedForm.Struct.I10.Geometry
+SKIP ClosedForm.Struct.I10.Relations
+SKIP ClosedForm.Struct.I11.Fields
+SKIP ClosedForm.Struct.I11.Geometry
+SKIP ClosedForm.Struct.I11.Relations
+SKIP ClosedForm.Struct.I12.Fields
+SKIP ClosedForm.Struct.I12.Geometry
+SKIP ClosedForm.Struct.I12.Relations
+SKIP ClosedForm.Struct.I13.Fields
+SKIP ClosedForm.Struct.I13.Geometry
+SKIP ClosedForm.Struct.I13.Relations
+SKIP ClosedForm.Struct.I14.Fields
+SKIP ClosedForm.Struct.I14.Geometry
+SKIP ClosedForm.Struct.I14.Relations
+SKIP ClosedForm.Struct.I15.Fields
+SKIP ClosedForm.Struct.I15.Geometry
+SKIP ClosedForm.Struct.I15.Relations
+SKIP ClosedForm.Struct.I16.Fields
+SKIP ClosedForm.Struct.I16.Geometry
+SKIP ClosedForm.Struct.I16.Relations
+SKIP ClosedForm.Struct.I17.Fields
+SKIP ClosedForm.Struct.I17.Geometry
+SKIP ClosedForm.Struct.I17.Relations
+SKIP ClosedForm.Struct.I18.Fields
+SKIP ClosedForm.Struct.I18.Geometry
+SKIP ClosedForm.Struct.I18.Relations
+SKIP ClosedForm.Struct.I19.Fields
+SKIP ClosedForm.Struct.I19.Geometry
+SKIP ClosedForm.Struct.I19.Relations
+SKIP ClosedForm.Struct.I20.Fields
+SKIP ClosedForm.Struct.I20.Geometry
+SKIP ClosedForm.Struct.I20.Relations
+SKIP ClosedForm.Struct.I21.Fields
+SKIP ClosedForm.Struct.I21.Geometry
+SKIP ClosedForm.Struct.I21.Relations
+SKIP ClosedForm.Struct.I22.Fields
+SKIP ClosedForm.Struct.I22.Geometry
+SKIP ClosedForm.Struct.I22.Relations
+SKIP ClosedForm.Struct.I23.Fields
+SKIP ClosedForm.Struct.I23.Geometry
+SKIP ClosedForm.Struct.I23.Relations
+SKIP ClosedForm.Struct.I24.Fields
+SKIP ClosedForm.Struct.I24.Geometry
+SKIP ClosedForm.Struct.I24.Relations
+SKIP ClosedForm.Struct.I25.Fields
+SKIP ClosedForm.Struct.I25.Geometry
+SKIP ClosedForm.Struct.I25.Relations
+SKIP ClosedForm.Struct.I26.Fields
+SKIP ClosedForm.Struct.I26.Geometry
+SKIP ClosedForm.Struct.I26.Relations
+SKIP ClosedForm.Struct.I27.Fields
+SKIP ClosedForm.Struct.I27.Geometry
+SKIP ClosedForm.Struct.I27.Relations
+SKIP ClosedForm.Struct.I28.Fields
+SKIP ClosedForm.Struct.I28.Geometry
+SKIP ClosedForm.Struct.I28.Relations
+SKIP ClosedForm.Struct.I29.Fields
+SKIP ClosedForm.Struct.I29.Geometry
+SKIP ClosedForm.Struct.I29.Relations
+SKIP ClosedForm.Struct.I30.Fields
+SKIP ClosedForm.Struct.I30.Geometry
+SKIP ClosedForm.Struct.I30.Relations
+SKIP ClosedForm.Struct.I31.Fields
+SKIP ClosedForm.Struct.I31.Geometry
+SKIP ClosedForm.Struct.I31.Relations
+SKIP ClosedForm.Struct.I32.Fields
+SKIP ClosedForm.Struct.I32.Geometry
+SKIP ClosedForm.Struct.I32.Relations
+SKIP ClosedForm.Struct.I33.Fields
+SKIP ClosedForm.Struct.I33.Geometry
+SKIP ClosedForm.Struct.I33.Relations
+SKIP ClosedForm.Struct.I34.Fields
+SKIP ClosedForm.Struct.I34.Geometry
+SKIP ClosedForm.Struct.I34.Relations
+OK ClosedForm.Area: 3.955 s, 6774071296 bytes peak RSS
+START ClosedForm.Rotation
+SKIP ClosedForm.Struct.I02.Assembly
+SKIP ClosedForm.Struct.I03.Assembly
+SKIP ClosedForm.Struct.I05.Assembly
+SKIP ClosedForm.Struct.I06.Assembly
+SKIP ClosedForm.Struct.I07.Assembly
+SKIP ClosedForm.Struct.I08.Assembly
+SKIP ClosedForm.Struct.I09.Assembly
+SKIP ClosedForm.Struct.I10.Assembly
+SKIP ClosedForm.Struct.I11.Assembly
+SKIP ClosedForm.Struct.I12.Assembly
+SKIP ClosedForm.Struct.I13.Assembly
+SKIP ClosedForm.Struct.I14.Assembly
+SKIP ClosedForm.Struct.I15.Assembly
+SKIP ClosedForm.Struct.I16.Assembly
+SKIP ClosedForm.Struct.I17.Assembly
+SKIP ClosedForm.Struct.I18.Assembly
+SKIP ClosedForm.Struct.I19.Assembly
+SKIP ClosedForm.Struct.I20.Assembly
+SKIP ClosedForm.Struct.I21.Assembly
+SKIP ClosedForm.Struct.I22.Assembly
+SKIP ClosedForm.Struct.I23.Assembly
+SKIP ClosedForm.Struct.I24.Assembly
+SKIP ClosedForm.Struct.I25.Assembly
+SKIP ClosedForm.Struct.I26.Assembly
+SKIP ClosedForm.Struct.I27.Assembly
+SKIP ClosedForm.Struct.I28.Assembly
+SKIP ClosedForm.Struct.I29.Assembly
+SKIP ClosedForm.Struct.I30.Assembly
+SKIP ClosedForm.Struct.I31.Assembly
+SKIP ClosedForm.Struct.I32.Assembly
+SKIP ClosedForm.Struct.I33.Assembly
+SKIP ClosedForm.Struct.I34.Assembly
+OK ClosedForm.SavingCertificate: 4.405 s, 6787715072 bytes peak RSS
+START ClosedForm.Saving.I02.Mass
+START ClosedForm.Saving.I03.Mass
+START ClosedForm.Saving.I05.Mass
+START ClosedForm.Saving.I06.Mass
+START ClosedForm.Saving.I07.Mass
+START ClosedForm.Saving.I08.Mass
+START ClosedForm.Saving.I09.Mass
+START ClosedForm.Saving.I10.Mass
+START ClosedForm.Saving.I11.Mass
+OK ClosedForm.Rotation: 4.456 s, 6816473088 bytes peak RSS
+START ClosedForm.LocalReduction
+OK ClosedForm.Saving.I08.Mass: 4.205 s, 6770155520 bytes peak RSS
+START ClosedForm.Saving.I08.Endpoint0
+OK ClosedForm.Saving.I09.Mass: 4.256 s, 6767128576 bytes peak RSS
+START ClosedForm.Saving.I08.Endpoint1
+OK ClosedForm.Saving.I10.Mass: 4.256 s, 6771769344 bytes peak RSS
+START ClosedForm.Saving.I09.Endpoint0
+OK ClosedForm.Saving.I06.Mass: 4.306 s, 6813396992 bytes peak RSS
+START ClosedForm.Saving.I06.Endpoint0
+OK ClosedForm.Saving.I11.Mass: 4.306 s, 6781038592 bytes peak RSS
+START ClosedForm.Saving.I06.Endpoint1
+OK ClosedForm.Saving.I07.Mass: 4.456 s, 6822301696 bytes peak RSS
+START ClosedForm.Saving.I07.Endpoint0
+OK ClosedForm.Saving.I02.Mass: 4.807 s, 6926209024 bytes peak RSS
+START ClosedForm.Saving.I02.Endpoint0
+OK ClosedForm.Saving.I03.Mass: 4.907 s, 6952357888 bytes peak RSS
+START ClosedForm.Saving.I02.Endpoint1
+OK ClosedForm.Saving.I05.Mass: 4.957 s, 6983340032 bytes peak RSS
+START ClosedForm.Saving.I03.Endpoint0
+OK ClosedForm.Saving.I08.Endpoint0: 3.955 s, 6761369600 bytes peak RSS
+START ClosedForm.Saving.I03.Endpoint1
+OK ClosedForm.Saving.I08.Endpoint1: 3.905 s, 6746251264 bytes peak RSS
+START ClosedForm.Saving.I05.Endpoint0
+OK ClosedForm.Saving.I09.Endpoint0: 3.905 s, 6752296960 bytes peak RSS
+START ClosedForm.Saving.I05.Endpoint1
+OK ClosedForm.Saving.I06.Endpoint0: 3.905 s, 6742683648 bytes peak RSS
+START ClosedForm.Saving.I07.Endpoint1
+OK ClosedForm.Saving.I06.Endpoint1: 3.905 s, 6740185088 bytes peak RSS
+START ClosedForm.Saving.I06.Assembly
+OK ClosedForm.Saving.I07.Endpoint0: 3.905 s, 6767607808 bytes peak RSS
+START ClosedForm.Saving.I08.Assembly
+OK ClosedForm.Struct.I01.Data: 12.916 s, 7060152320 bytes peak RSS
+START ClosedForm.Saving.I09.Endpoint1
+OK ClosedForm.LocalReduction: 4.906 s, 6850224128 bytes peak RSS
+START ClosedForm.Orientation
+OK ClosedForm.Saving.I02.Endpoint0: 4.005 s, 6770671616 bytes peak RSS
+START ClosedForm.Saving.I10.Endpoint0
+OK ClosedForm.Saving.I02.Endpoint1: 3.955 s, 6768168960 bytes peak RSS
+START ClosedForm.Saving.I02.Assembly
+OK ClosedForm.Saving.I03.Endpoint0: 4.005 s, 6771417088 bytes peak RSS
+START ClosedForm.Saving.I10.Endpoint1
+OK ClosedForm.Saving.I07.Endpoint1: 3.905 s, 6749655040 bytes peak RSS
+START ClosedForm.Saving.I07.Assembly
+OK ClosedForm.Saving.I03.Endpoint1: 3.955 s, 6744879104 bytes peak RSS
+START ClosedForm.Saving.I03.Assembly
+OK ClosedForm.Saving.I06.Assembly: 3.905 s, 6746849280 bytes peak RSS
+START ClosedForm.Saving.I11.Endpoint0
+OK ClosedForm.Saving.I05.Endpoint1: 3.955 s, 6742437888 bytes peak RSS
+START ClosedForm.Saving.I11.Endpoint1
+OK ClosedForm.Saving.I05.Endpoint0: 4.005 s, 6761410560 bytes peak RSS
+START ClosedForm.Saving.I05.Assembly
+OK ClosedForm.Saving.I08.Assembly: 3.855 s, 6760026112 bytes peak RSS
+START ClosedForm.Saving.I12.Mass
+OK ClosedForm.Saving.I09.Endpoint1: 3.955 s, 6763978752 bytes peak RSS
+START ClosedForm.Saving.I09.Assembly
+OK ClosedForm.Saving.I02.Assembly: 3.905 s, 6763794432 bytes peak RSS
+START ClosedForm.Saving.I13.Mass
+OK ClosedForm.Saving.I10.Endpoint0: 3.955 s, 6763905024 bytes peak RSS
+START ClosedForm.Saving.I14.Mass
+OK ClosedForm.Orientation: 4.205 s, 6791000064 bytes peak RSS
+START ClosedForm.Saving.I15.Mass
+OK ClosedForm.Saving.I10.Endpoint1: 4.005 s, 6763937792 bytes peak RSS
+START ClosedForm.Saving.I10.Assembly
+OK ClosedForm.Struct.I04.Data: 17.521 s, 7120588800 bytes peak RSS
+START ClosedForm.Saving.I16.Mass
+OK ClosedForm.Saving.I07.Assembly: 3.905 s, 6662217728 bytes peak RSS
+START ClosedForm.Saving.I17.Mass
+OK ClosedForm.Saving.I03.Assembly: 3.905 s, 6669680640 bytes peak RSS
+START ClosedForm.Saving.I18.Mass
+OK ClosedForm.Saving.I05.Assembly: 3.855 s, 6733123584 bytes peak RSS
+START ClosedForm.Saving.I19.Mass
+OK ClosedForm.Saving.I11.Endpoint0: 4.006 s, 6662627328 bytes peak RSS
+START ClosedForm.Saving.I20.Mass
+OK ClosedForm.Saving.I11.Endpoint1: 4.055 s, 6682615808 bytes peak RSS
+START ClosedForm.Saving.I11.Assembly
+OK ClosedForm.Saving.I09.Assembly: 3.855 s, 6757806080 bytes peak RSS
+START ClosedForm.Saving.I21.Mass
+OK ClosedForm.Saving.I12.Mass: 4.255 s, 6815617024 bytes peak RSS
+START ClosedForm.Saving.I12.Endpoint0
+OK ClosedForm.Saving.I10.Assembly: 3.905 s, 6760169472 bytes peak RSS
+START ClosedForm.Saving.I12.Endpoint1
+OK ClosedForm.Saving.I14.Mass: 4.205 s, 6792159232 bytes peak RSS
+START ClosedForm.Saving.I14.Endpoint0
+OK ClosedForm.Saving.I13.Mass: 4.256 s, 6790791168 bytes peak RSS
+START ClosedForm.Saving.I13.Endpoint0
+OK ClosedForm.Saving.I15.Mass: 4.255 s, 6820458496 bytes peak RSS
+START ClosedForm.Saving.I13.Endpoint1
+OK ClosedForm.Saving.I16.Mass: 4.255 s, 6816608256 bytes peak RSS
+START ClosedForm.Saving.I14.Endpoint1
+OK ClosedForm.Saving.I11.Assembly: 3.955 s, 6759677952 bytes peak RSS
+START ClosedForm.Saving.I15.Endpoint0
+OK ClosedForm.Saving.I17.Mass: 4.256 s, 6709063680 bytes peak RSS
+START ClosedForm.Saving.I15.Endpoint1
+OK ClosedForm.Saving.I18.Mass: 4.256 s, 6725087232 bytes peak RSS
+START ClosedForm.Saving.I16.Endpoint0
+OK ClosedForm.Saving.I19.Mass: 4.256 s, 6708776960 bytes peak RSS
+START ClosedForm.Saving.I16.Endpoint1
+OK ClosedForm.Saving.I20.Mass: 4.206 s, 6814089216 bytes peak RSS
+START ClosedForm.Saving.I17.Endpoint0
+OK ClosedForm.Saving.I12.Endpoint0: 3.955 s, 6760910848 bytes peak RSS
+START ClosedForm.Saving.I17.Endpoint1
+OK ClosedForm.Saving.I21.Mass: 4.256 s, 6807994368 bytes peak RSS
+START ClosedForm.Saving.I18.Endpoint0
+OK ClosedForm.Saving.I12.Endpoint1: 3.955 s, 6763016192 bytes peak RSS
+START ClosedForm.Saving.I12.Assembly
+OK ClosedForm.Saving.I14.Endpoint0: 4.005 s, 6763876352 bytes peak RSS
+START ClosedForm.Saving.I18.Endpoint1
+OK ClosedForm.Saving.I13.Endpoint0: 4.005 s, 6764253184 bytes peak RSS
+START ClosedForm.Saving.I19.Endpoint0
+OK ClosedForm.Saving.I13.Endpoint1: 3.955 s, 6764429312 bytes peak RSS
+START ClosedForm.Saving.I13.Assembly
+OK ClosedForm.Saving.I14.Endpoint1: 4.055 s, 6762090496 bytes peak RSS
+START ClosedForm.Saving.I14.Assembly
+OK ClosedForm.Saving.I15.Endpoint0: 3.955 s, 6763667456 bytes peak RSS
+START ClosedForm.Saving.I19.Endpoint1
+OK ClosedForm.Saving.I15.Endpoint1: 3.907 s, 6732902400 bytes peak RSS
+START ClosedForm.Saving.I15.Assembly
+OK ClosedForm.Saving.I16.Endpoint0: 3.906 s, 6754963456 bytes peak RSS
+START ClosedForm.Saving.I20.Endpoint0
+OK ClosedForm.Saving.I16.Endpoint1: 3.905 s, 6733643776 bytes peak RSS
+START ClosedForm.Saving.I16.Assembly
+OK ClosedForm.Saving.I17.Endpoint0: 3.855 s, 6754488320 bytes peak RSS
+START ClosedForm.Saving.I20.Endpoint1
+OK ClosedForm.Saving.I17.Endpoint1: 3.905 s, 6763790336 bytes peak RSS
+START ClosedForm.Saving.I17.Assembly
+OK ClosedForm.Saving.I18.Endpoint0: 3.956 s, 6763606016 bytes peak RSS
+START ClosedForm.Saving.I21.Endpoint0
+OK ClosedForm.Saving.I12.Assembly: 3.905 s, 6759419904 bytes peak RSS
+START ClosedForm.Saving.I21.Endpoint1
+OK ClosedForm.Saving.I13.Assembly: 3.855 s, 6743166976 bytes peak RSS
+START ClosedForm.Saving.I22.Mass
+OK ClosedForm.Saving.I18.Endpoint1: 4.005 s, 6764056576 bytes peak RSS
+START ClosedForm.Saving.I18.Assembly
+OK ClosedForm.Saving.I19.Endpoint0: 3.955 s, 6746177536 bytes peak RSS
+START ClosedForm.Saving.I23.Mass
+OK ClosedForm.Saving.I14.Assembly: 3.955 s, 6759915520 bytes peak RSS
+START ClosedForm.Saving.I24.Mass
+OK ClosedForm.Saving.I15.Assembly: 3.855 s, 6742269952 bytes peak RSS
+START ClosedForm.Saving.I25.Mass
+OK ClosedForm.Saving.I19.Endpoint1: 3.955 s, 6762053632 bytes peak RSS
+START ClosedForm.Saving.I19.Assembly
+OK ClosedForm.Saving.I16.Assembly: 3.855 s, 6724800512 bytes peak RSS
+START ClosedForm.Saving.I26.Mass
+OK ClosedForm.Saving.I20.Endpoint0: 3.956 s, 6726451200 bytes peak RSS
+START ClosedForm.Saving.I27.Mass
+OK ClosedForm.Saving.I20.Endpoint1: 3.955 s, 6744944640 bytes peak RSS
+START ClosedForm.Saving.I20.Assembly
+OK ClosedForm.Saving.I17.Assembly: 3.905 s, 6758453248 bytes peak RSS
+START ClosedForm.Saving.I28.Mass
+OK ClosedForm.Saving.I21.Endpoint0: 3.955 s, 6763479040 bytes peak RSS
+START ClosedForm.Saving.I29.Mass
+OK ClosedForm.Saving.I21.Endpoint1: 3.955 s, 6765166592 bytes peak RSS
+START ClosedForm.Saving.I21.Assembly
+OK ClosedForm.Saving.I18.Assembly: 3.855 s, 6715179008 bytes peak RSS
+START ClosedForm.Saving.I30.Mass
+OK ClosedForm.Saving.I22.Mass: 4.205 s, 6814785536 bytes peak RSS
+START ClosedForm.Saving.I22.Endpoint0
+OK ClosedForm.Saving.I23.Mass: 4.206 s, 6771785728 bytes peak RSS
+START ClosedForm.Saving.I22.Endpoint1
+OK ClosedForm.Saving.I24.Mass: 4.305 s, 6825086976 bytes peak RSS
+START ClosedForm.Saving.I23.Endpoint0
+OK ClosedForm.Saving.I19.Assembly: 3.905 s, 6652043264 bytes peak RSS
+START ClosedForm.Saving.I23.Endpoint1
+OK ClosedForm.Saving.I20.Assembly: 3.905 s, 6718898176 bytes peak RSS
+START ClosedForm.Saving.I24.Endpoint0
+OK ClosedForm.Saving.I26.Mass: 4.256 s, 6716960768 bytes peak RSS
+START ClosedForm.Saving.I24.Endpoint1
+OK ClosedForm.Saving.I25.Mass: 4.306 s, 6749093888 bytes peak RSS
+START ClosedForm.Saving.I25.Endpoint0
+OK ClosedForm.Saving.I27.Mass: 4.356 s, 6804516864 bytes peak RSS
+START ClosedForm.Saving.I25.Endpoint1
+OK ClosedForm.Saving.I21.Assembly: 3.855 s, 6761824256 bytes peak RSS
+START ClosedForm.Saving.I26.Endpoint0
+OK ClosedForm.Saving.I28.Mass: 4.556 s, 6891618304 bytes peak RSS
+START ClosedForm.Saving.I26.Endpoint1
+OK ClosedForm.Saving.I29.Mass: 4.506 s, 6892072960 bytes peak RSS
+START ClosedForm.Saving.I27.Endpoint0
+OK ClosedForm.Saving.I22.Endpoint0: 3.955 s, 6763200512 bytes peak RSS
+START ClosedForm.Saving.I27.Endpoint1
+OK ClosedForm.Saving.I22.Endpoint1: 4.005 s, 6761984000 bytes peak RSS
+START ClosedForm.Saving.I22.Assembly
+OK ClosedForm.Saving.I30.Mass: 4.606 s, 6886563840 bytes peak RSS
+START ClosedForm.Saving.I28.Endpoint0
+OK ClosedForm.Saving.I23.Endpoint0: 4.055 s, 6761480192 bytes peak RSS
+START ClosedForm.Saving.I28.Endpoint1
+OK ClosedForm.Saving.I23.Endpoint1: 4.006 s, 6763606016 bytes peak RSS
+START ClosedForm.Saving.I23.Assembly
+OK ClosedForm.Saving.I24.Endpoint0: 3.906 s, 6761787392 bytes peak RSS
+START ClosedForm.Saving.I29.Endpoint0
+OK ClosedForm.Saving.I24.Endpoint1: 3.956 s, 6763819008 bytes peak RSS
+START ClosedForm.Saving.I24.Assembly
+OK ClosedForm.Saving.I25.Endpoint0: 3.955 s, 6762237952 bytes peak RSS
+START ClosedForm.Saving.I29.Endpoint1
+OK ClosedForm.Saving.I25.Endpoint1: 3.955 s, 6763917312 bytes peak RSS
+START ClosedForm.Saving.I25.Assembly
+OK ClosedForm.Saving.I26.Endpoint0: 3.955 s, 6762143744 bytes peak RSS
+START ClosedForm.Saving.I30.Endpoint0
+OK ClosedForm.Saving.I26.Endpoint1: 4.055 s, 6764044288 bytes peak RSS
+START ClosedForm.Saving.I26.Assembly
+OK ClosedForm.Saving.I27.Endpoint0: 3.955 s, 6765875200 bytes peak RSS
+START ClosedForm.Saving.I30.Endpoint1
+OK ClosedForm.Saving.I27.Endpoint1: 3.955 s, 6765494272 bytes peak RSS
+START ClosedForm.Saving.I27.Assembly
+OK ClosedForm.Saving.I22.Assembly: 3.955 s, 6760681472 bytes peak RSS
+START ClosedForm.Saving.I31.Mass
+OK ClosedForm.Saving.I28.Endpoint0: 4.005 s, 6767759360 bytes peak RSS
+START ClosedForm.Saving.I32.Mass
+OK ClosedForm.Saving.I28.Endpoint1: 4.005 s, 6767218688 bytes peak RSS
+START ClosedForm.Saving.I28.Assembly
+OK ClosedForm.Saving.I23.Assembly: 3.906 s, 6705172480 bytes peak RSS
+START ClosedForm.Saving.I33.Mass
+OK ClosedForm.Saving.I29.Endpoint0: 4.005 s, 6706515968 bytes peak RSS
+START ClosedForm.Saving.I34.Mass
+OK ClosedForm.Saving.I24.Assembly: 3.805 s, 6760374272 bytes peak RSS
+START ClosedForm.Struct.I01.CBounds
+OK ClosedForm.Saving.I29.Endpoint1: 4.005 s, 6767247360 bytes peak RSS
+START ClosedForm.Saving.I29.Assembly
+OK ClosedForm.Saving.I25.Assembly: 3.855 s, 6757441536 bytes peak RSS
+START ClosedForm.Struct.I01.CTBounds
+OK ClosedForm.Saving.I30.Endpoint0: 3.905 s, 6767095808 bytes peak RSS
+START ClosedForm.Struct.I01.CTValid
+OK ClosedForm.Saving.I26.Assembly: 3.855 s, 6760271872 bytes peak RSS
+START ClosedForm.Struct.I01.CValid
+OK ClosedForm.Saving.I27.Assembly: 3.805 s, 6724984832 bytes peak RSS
+START ClosedForm.Struct.I01.Check00
+OK ClosedForm.Saving.I30.Endpoint1: 3.905 s, 6732038144 bytes peak RSS
+START ClosedForm.Saving.I30.Assembly
+OK ClosedForm.Saving.I31.Mass: 4.506 s, 6889205760 bytes peak RSS
+START ClosedForm.Saving.I31.Endpoint0
+OK ClosedForm.Saving.I28.Assembly: 3.905 s, 6760271872 bytes peak RSS
+START ClosedForm.Saving.I31.Endpoint1
+OK ClosedForm.Saving.I32.Mass: 4.706 s, 6908321792 bytes peak RSS
+START ClosedForm.Saving.I32.Endpoint0
+OK ClosedForm.Struct.I01.CBounds: 3.955 s, 6755647488 bytes peak RSS
+START ClosedForm.Saving.I32.Endpoint1
+OK ClosedForm.Saving.I29.Assembly: 3.905 s, 6745284608 bytes peak RSS
+START ClosedForm.Struct.I01.Check01
+OK ClosedForm.Struct.I01.CTBounds: 3.906 s, 6739451904 bytes peak RSS
+START ClosedForm.Struct.I01.Check02
+OK ClosedForm.Struct.I01.CTValid: 3.855 s, 6758879232 bytes peak RSS
+START ClosedForm.Struct.I01.Check03
+OK ClosedForm.Saving.I33.Mass: 4.807 s, 6931079168 bytes peak RSS
+START ClosedForm.Saving.I33.Endpoint0
+OK ClosedForm.Saving.I34.Mass: 4.707 s, 6930817024 bytes peak RSS
+START ClosedForm.Saving.I33.Endpoint1
+OK ClosedForm.Struct.I01.CValid: 4.005 s, 6756184064 bytes peak RSS
+START ClosedForm.Saving.I34.Endpoint0
+OK ClosedForm.Saving.I30.Assembly: 3.855 s, 6763720704 bytes peak RSS
+START ClosedForm.Saving.I34.Endpoint1
+OK ClosedForm.Struct.I01.Check00: 4.606 s, 6856110080 bytes peak RSS
+START ClosedForm.Struct.I01.Check04
+OK ClosedForm.Saving.I31.Endpoint0: 4.005 s, 6767714304 bytes peak RSS
+START ClosedForm.Struct.I01.Check05
+OK ClosedForm.Saving.I31.Endpoint1: 4.055 s, 6765629440 bytes peak RSS
+START ClosedForm.Saving.I31.Assembly
+OK ClosedForm.Saving.I32.Endpoint0: 3.955 s, 6768635904 bytes peak RSS
+START ClosedForm.Struct.I01.Check06
+OK ClosedForm.Saving.I32.Endpoint1: 3.955 s, 6768644096 bytes peak RSS
+START ClosedForm.Saving.I32.Assembly
+OK ClosedForm.Saving.I33.Endpoint0: 3.955 s, 6745309184 bytes peak RSS
+START ClosedForm.Struct.I01.FSource00
+OK ClosedForm.Saving.I33.Endpoint1: 3.955 s, 6742900736 bytes peak RSS
+START ClosedForm.Saving.I33.Assembly
+OK ClosedForm.Saving.I34.Endpoint0: 3.955 s, 6769737728 bytes peak RSS
+START ClosedForm.Struct.I01.FSource01
+OK ClosedForm.Saving.I34.Endpoint1: 3.955 s, 6767804416 bytes peak RSS
+START ClosedForm.Saving.I34.Assembly
+OK ClosedForm.Struct.I01.Check03: 5.307 s, 7095566336 bytes peak RSS
+START ClosedForm.Struct.I01.FSource02
+OK ClosedForm.Saving.I31.Assembly: 3.905 s, 6763384832 bytes peak RSS
+START ClosedForm.Struct.I01.FSource03
+OK ClosedForm.Struct.I01.Check06: 4.756 s, 6969933824 bytes peak RSS
+START ClosedForm.Struct.I01.FValid00
+OK ClosedForm.Saving.I32.Assembly: 3.905 s, 6762876928 bytes peak RSS
+START ClosedForm.Struct.I01.FValid01
+OK ClosedForm.Saving.I33.Assembly: 3.855 s, 6750494720 bytes peak RSS
+START ClosedForm.Struct.I01.PBounds
+OK ClosedForm.Saving.I34.Assembly: 3.905 s, 6765330432 bytes peak RSS
+START ClosedForm.Struct.I01.PValid
+OK ClosedForm.Struct.I01.FSource00: 4.706 s, 6747623424 bytes peak RSS
+START ClosedForm.Struct.I01.RValid
+OK ClosedForm.Struct.I01.FSource01: 4.756 s, 6764175360 bytes peak RSS
+START ClosedForm.Struct.I01.TSource00
+OK ClosedForm.Struct.I01.FSource02: 4.806 s, 6763139072 bytes peak RSS
+START ClosedForm.Struct.I01.TSource01
+OK ClosedForm.Struct.I01.FSource03: 4.756 s, 6766551040 bytes peak RSS
+START ClosedForm.Struct.I01.FSource
+OK ClosedForm.Struct.I01.FValid00: 4.055 s, 6755811328 bytes peak RSS
+START ClosedForm.Struct.I01.TSource02
+OK ClosedForm.Struct.I01.FValid01: 4.056 s, 6757756928 bytes peak RSS
+START ClosedForm.Struct.I01.FValid
+OK ClosedForm.Struct.I01.PBounds: 3.905 s, 6755966976 bytes peak RSS
+START ClosedForm.Struct.I01.TValid00
+OK ClosedForm.Struct.I01.PValid: 3.956 s, 6757920768 bytes peak RSS
+START ClosedForm.Struct.I04.CBounds
+OK ClosedForm.Struct.I01.RValid: 3.956 s, 6755835904 bytes peak RSS
+START ClosedForm.Struct.I04.CTBounds
+OK ClosedForm.Struct.I01.Check05: 12.015 s, 8385744896 bytes peak RSS
+START ClosedForm.Struct.I04.CTValid
+OK ClosedForm.Struct.I01.Check04: 12.416 s, 8450879488 bytes peak RSS
+START ClosedForm.Struct.I04.CValid
+OK ClosedForm.Struct.I01.TSource00: 4.856 s, 6765015040 bytes peak RSS
+START ClosedForm.Struct.I04.Check00
+OK ClosedForm.Struct.I01.TSource01: 4.806 s, 6764167168 bytes peak RSS
+START ClosedForm.Struct.I04.Check01
+OK ClosedForm.Struct.I01.FSource: 5.006 s, 6795812864 bytes peak RSS
+START ClosedForm.Struct.I04.Check02
+OK ClosedForm.Struct.I01.TSource02: 4.806 s, 6762311680 bytes peak RSS
+START ClosedForm.Struct.I01.TSource
+OK ClosedForm.Struct.I01.FValid: 4.356 s, 6771822592 bytes peak RSS
+START ClosedForm.Struct.I04.Check03
+OK ClosedForm.Struct.I01.TValid00: 4.056 s, 6755426304 bytes peak RSS
+START ClosedForm.Struct.I01.TValid
+OK ClosedForm.Struct.I01.Check02: 16.321 s, 9300967424 bytes peak RSS
+START ClosedForm.Struct.I04.Check04
+OK ClosedForm.Struct.I04.CBounds: 4.056 s, 6756261888 bytes peak RSS
+START ClosedForm.Struct.I04.Check05
+OK ClosedForm.Struct.I04.CTBounds: 3.905 s, 6755483648 bytes peak RSS
+START ClosedForm.Struct.I04.Check06
+OK ClosedForm.Struct.I01.Check01: 17.421 s, 9435979776 bytes peak RSS
+START ClosedForm.Struct.I01.Checks
+OK ClosedForm.Struct.I04.CTValid: 3.955 s, 6757179392 bytes peak RSS
+START ClosedForm.Struct.I04.FSource00
+OK ClosedForm.Struct.I04.CValid: 4.005 s, 6754439168 bytes peak RSS
+START ClosedForm.Struct.I04.FSource01
+OK ClosedForm.Struct.I04.Check00: 4.706 s, 6877630464 bytes peak RSS
+START ClosedForm.Struct.I04.FSource02
+OK ClosedForm.Struct.I01.TSource: 4.806 s, 6781272064 bytes peak RSS
+START ClosedForm.Struct.I04.FSource03
+OK ClosedForm.Struct.I01.TValid: 4.256 s, 6766821376 bytes peak RSS
+START ClosedForm.Struct.I01.Fields
+OK ClosedForm.Struct.I01.Checks: 3.755 s, 6700269568 bytes peak RSS
+START ClosedForm.Struct.I01.Geometry
+OK ClosedForm.Struct.I04.Check03: 5.508 s, 7131582464 bytes peak RSS
+START ClosedForm.Struct.I04.FValid00
+OK ClosedForm.Struct.I04.Check06: 4.907 s, 7001214976 bytes peak RSS
+START ClosedForm.Struct.I04.FValid01
+OK ClosedForm.Struct.I04.FSource00: 4.806 s, 6732124160 bytes peak RSS
+START ClosedForm.Struct.I04.PBounds
+OK ClosedForm.Struct.I04.FSource01: 4.756 s, 6761988096 bytes peak RSS
+START ClosedForm.Struct.I04.PValid
+OK ClosedForm.Struct.I04.FSource02: 4.806 s, 6768279552 bytes peak RSS
+START ClosedForm.Struct.I04.RValid
+OK ClosedForm.Struct.I01.Fields: 4.156 s, 6773833728 bytes peak RSS
+START ClosedForm.Struct.I04.TSource00
+OK ClosedForm.Struct.I04.FSource03: 4.756 s, 6761689088 bytes peak RSS
+START ClosedForm.Struct.I04.FSource
+OK ClosedForm.Struct.I01.Geometry: 4.155 s, 6779662336 bytes peak RSS
+START ClosedForm.Saving.I01.Mass
+OK ClosedForm.Struct.I04.FValid00: 4.056 s, 6756405248 bytes peak RSS
+START ClosedForm.Struct.I01.Relations
+OK ClosedForm.Struct.I04.FValid01: 4.056 s, 6754422784 bytes peak RSS
+START ClosedForm.Struct.I04.FValid
+OK ClosedForm.Struct.I04.PBounds: 4.005 s, 6756405248 bytes peak RSS
+START ClosedForm.Struct.I04.TSource01
+OK ClosedForm.Struct.I04.PValid: 3.955 s, 6754172928 bytes peak RSS
+START ClosedForm.Struct.I04.TSource02
+OK ClosedForm.Struct.I04.RValid: 4.005 s, 6757511168 bytes peak RSS
+START ClosedForm.Struct.I04.TValid00
+OK ClosedForm.Struct.I04.Check05: 12.966 s, 8605405184 bytes peak RSS
+START ClosedForm.Struct.I04.TValid01
+OK ClosedForm.Struct.I04.TSource00: 4.806 s, 6760873984 bytes peak RSS
+START ClosedForm.WallPeriod
+OK ClosedForm.Struct.I01.Relations: 3.905 s, 6768246784 bytes peak RSS
+START ClosedForm.Struct.I01.Assembly
+OK ClosedForm.Struct.I04.Check04: 13.418 s, 8680755200 bytes peak RSS
+OK ClosedForm.Saving.I01.Mass: 4.957 s, 7007354880 bytes peak RSS
+START ClosedForm.Saving.I01.Endpoint0
+START ClosedForm.Saving.I01.Endpoint1
+OK ClosedForm.Struct.I04.FValid: 4.356 s, 6772211712 bytes peak RSS
+OK ClosedForm.Struct.I04.FSource: 5.407 s, 6800498688 bytes peak RSS
+OK ClosedForm.Struct.I04.TSource01: 4.756 s, 6764802048 bytes peak RSS
+OK ClosedForm.Struct.I04.TSource02: 4.756 s, 6764371968 bytes peak RSS
+START ClosedForm.Struct.I04.TSource
+OK ClosedForm.Struct.I04.TValid00: 4.105 s, 6756589568 bytes peak RSS
+OK ClosedForm.Struct.I04.TValid01: 4.055 s, 6754267136 bytes peak RSS
+START ClosedForm.Struct.I04.TValid
+OK ClosedForm.Struct.I01.Assembly: 3.905 s, 6821339136 bytes peak RSS
+OK ClosedForm.Struct.I04.Check02: 18.322 s, 9754517504 bytes peak RSS
+OK ClosedForm.WallPeriod: 4.506 s, 6787600384 bytes peak RSS
+START ClosedForm.WallSeam
+OK ClosedForm.Saving.I01.Endpoint0: 3.956 s, 6741745664 bytes peak RSS
+OK ClosedForm.Saving.I01.Endpoint1: 3.955 s, 6743023616 bytes peak RSS
+START ClosedForm.Saving.I01.Assembly
+OK ClosedForm.Struct.I04.Check01: 19.273 s, 9861611520 bytes peak RSS
+START ClosedForm.Struct.I04.Checks
+OK ClosedForm.Struct.I04.TSource: 4.956 s, 6792478720 bytes peak RSS
+OK ClosedForm.Struct.I04.TValid: 3.955 s, 6763081728 bytes peak RSS
+START ClosedForm.Struct.I04.Fields
+OK ClosedForm.Struct.I04.Checks: 3.505 s, 6697213952 bytes peak RSS
+START ClosedForm.Struct.I04.Geometry
+OK ClosedForm.Saving.I01.Assembly: 3.705 s, 6735421440 bytes peak RSS
+OK ClosedForm.WallSeam: 5.957 s, 6847086592 bytes peak RSS
+START ClosedForm.WallPlacement
+OK ClosedForm.Struct.I04.Fields: 3.955 s, 6775615488 bytes peak RSS
+OK ClosedForm.Struct.I04.Geometry: 3.905 s, 6779117568 bytes peak RSS
+START ClosedForm.Saving.I04.Mass
+START ClosedForm.Struct.I04.Relations
+OK ClosedForm.WallPlacement: 3.955 s, 6793650176 bytes peak RSS
+START ClosedForm.Localization
+OK ClosedForm.Struct.I04.Relations: 3.705 s, 6742802432 bytes peak RSS
+START ClosedForm.Struct.I04.Assembly
+OK ClosedForm.Saving.I04.Mass: 4.856 s, 7013318656 bytes peak RSS
+START ClosedForm.Saving.I04.Endpoint0
+START ClosedForm.Saving.I04.Endpoint1
+OK ClosedForm.Localization: 4.656 s, 6852366336 bytes peak RSS
+START ClosedForm.PeriodicShift
+OK ClosedForm.Struct.I04.Assembly: 3.705 s, 6818713600 bytes peak RSS
+SKIP ClosedForm.PublishedStructure
+OK ClosedForm.Saving.I04.Endpoint0: 3.755 s, 6754521088 bytes peak RSS
+OK ClosedForm.Saving.I04.Endpoint1: 3.755 s, 6755598336 bytes peak RSS
+START ClosedForm.Saving.I04.Assembly
+OK ClosedForm.PeriodicShift: 4.055 s, 6860124160 bytes peak RSS
+START ClosedForm.Reduction
+OK ClosedForm.Saving.I04.Assembly: 3.655 s, 6768033792 bytes peak RSS
+START ClosedForm.PublishedSaving
+OK ClosedForm.Reduction: 4.406 s, 6838398976 bytes peak RSS
+OK ClosedForm.PublishedSaving: 4.556 s, 7215792128 bytes peak RSS
+START ClosedForm.Cloud.StatementCore
+OK ClosedForm.Cloud.StatementCore: 9.661 s, 7337271296 bytes peak RSS
+START ClosedForm.Cloud.Algebra
+OK ClosedForm.Cloud.Algebra: 10.913 s, 7372242944 bytes peak RSS
+START ClosedForm.Cloud.Statement
+OK ClosedForm.Cloud.Statement: 3.955 s, 7223332864 bytes peak RSS
+START ClosedForm.FinalAudit
+OK ClosedForm.FinalAudit: 3.655 s, 7171555328 bytes peak RSS
+'ClosedForm.published_structure' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+'ClosedForm.published_saving' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+'ClosedForm.published_structure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClosedForm.published_saving' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClosedForm.total_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClosedForm.covers_k_of_covers7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClosedForm.closed_form_of_covers' depends on axioms: [propext, Classical.choice, Quot.sound]
+

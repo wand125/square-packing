@@ -28,6 +28,7 @@ command, and every checker, tool and Lean project.
 | `lean/n11-optimality/` | Lean 4 formalization toward s(11) |
 | `lean/triangle/` | Lean 4 proofs for the triangle results |
 | `lean/rectangle-k2m4/` | Lean 4: Theorem 1 of `problems/rectangle-upper-bounds/` (at most AB − 5 for A, B ≥ 8), conditional on ValidTilt9; extends Evan Daniel's Lean proof (MIT), whose files are reused unchanged |
+| `lean/closed-form-layer-a/` | Lean 4, layer A of `problems/closed-form/`: the bound follows from the local covers of the 34 intervals (conditional; the leaf check of the records, layer B, is not done) |
 
 ## Certificates: documents in git, data in releases
 

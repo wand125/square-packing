@@ -1,0 +1,6 @@
+nice: setpriority: Operation not permitted
+ClosedForm.closed_form_of_covers
+  (hcov :
+    ∀ (i : Fin 34), ∀ δ ∈ ClosedForm.I i, ClosedForm.LocalCovers (ClosedForm.family i) (ClosedForm.familyRight i) δ)
+  (N : ℕ) : 49 ≤ N → ClosedForm.a N ≤ UnitSquarePacking.minSide N
+'ClosedForm.closed_form_of_covers' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

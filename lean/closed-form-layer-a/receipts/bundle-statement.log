@@ -1,0 +1,8 @@
+nice: setpriority: Operation not permitted
+PrintStatement.lean:2:0: error: Unknown option `pp.width`
+PrintStatement.lean:3:0: error: Unknown option `pp.maxDepth`
+ClosedForm.closed_form_of_covers
+  (hcov :
+    ∀ (i : Fin 34), ∀ δ ∈ ClosedForm.I i, ClosedForm.LocalCovers (ClosedForm.family i) (ClosedForm.familyRight i) δ)
+  (N : ℕ) : 49 ≤ N → ClosedForm.a N ≤ UnitSquarePacking.minSide N
+'ClosedForm.closed_form_of_covers' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

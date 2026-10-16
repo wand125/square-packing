@@ -1,0 +1,9 @@
+Public-content scan, 2026-10-17
+
+PASS: every staged public text file and all 1,201 archive members were scanned.
+No prohibited personal identifiers, private paths, internal session names,
+machine names, assistant tool names or Japanese text were found.
+Archive ownership metadata is blank with numeric owner/group zero.
+Short hexadecimal tokens were inspected in context: mathematical variables,
+numerals, English words, file descriptors and shell commands are not names of
+internal sessions. No upstream source was rewritten to suppress these tokens.

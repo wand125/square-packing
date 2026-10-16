@@ -1,0 +1,21 @@
+Packaging checks, 2026-10-17
+
+PASS: offline fetch installed exactly 1,201 generated files from the staged archive.
+PASS: every generated file matches generated-sources.sha256.
+PASS: every upstream file matches the unchanged UPSTREAM.sha256.
+PASS: all ClosedForm sources are classified and copied byte-for-byte.
+PASS: the adapted runner has exactly the original production dependency closure.
+PASS: the latest historical source hash matches all 1,239 production modules.
+PASS: corrupted installed sources, unsafe member names, and a complete archive
+      with one altered byte are rejected; bad archives write no source files.
+PASS: simulated compiler tests exercised scheduler build/resume, exact expected
+      matches, statement mismatch, axiom mismatch, compiler failure, forbidden
+      default-provider imports, and the persistent timeout stop rule.
+PASS: Python and Bash syntax checks.
+
+The scheduler/verifier behavior tests used simulated compiler processes and did
+not execute Lean. The only new Lean runs printed the default local statement;
+their separate receipts retain the initial failure and corrected success.
+No full production rebuild, independent kernel replay, download, push or upload
+was performed during packaging. Historical proof receipts remain identified
+separately. These checks do not establish the unproved layer B assumptions.

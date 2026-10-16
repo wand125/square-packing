@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/usr/bin/time",
+    "-l",
+    "nice",
+    "-n",
+    "10",
+    "lake",
+    "env",
+    "lean",
+    "Bench/StructuralI01.lean"
+  ],
+  "elapsed_seconds": 600.03,
+  "exit_code": -15,
+  "timed_out": true,
+  "wait4_maxrss_bytes": 1245184
+}

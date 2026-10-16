@@ -1,0 +1,2168 @@
+START ClosedForm.Family
+START ClosedForm.StructPermutation
+START Sqpack.Basic
+START Sqpack.Spec
+OK ClosedForm.StructPermutation: 23.28 s, 1523105792 bytes peak RSS
+OK ClosedForm.Family: 89.304 s, 6577217536 bytes peak RSS
+START ClosedForm.Data.I01
+START ClosedForm.Data.I02
+START ClosedForm.Data.I03
+START ClosedForm.Data.I04
+START ClosedForm.Data.I05
+START ClosedForm.Data.I06
+START ClosedForm.Data.I07
+START ClosedForm.Data.I08
+START ClosedForm.Data.I09
+START ClosedForm.Data.I10
+OK Sqpack.Basic: 89.554 s, 6641463296 bytes peak RSS
+START ClosedForm.Data.I11
+OK Sqpack.Spec: 89.904 s, 6624718848 bytes peak RSS
+START ClosedForm.Data.I12
+OK ClosedForm.Data.I08: 6.359 s, 6696218624 bytes peak RSS
+START ClosedForm.Data.I13
+OK ClosedForm.Data.I10: 6.609 s, 6701215744 bytes peak RSS
+START ClosedForm.Data.I14
+OK ClosedForm.Data.I09: 6.659 s, 6710923264 bytes peak RSS
+START ClosedForm.Data.I15
+OK ClosedForm.Data.I12: 6.209 s, 6801686528 bytes peak RSS
+START ClosedForm.Data.I16
+OK ClosedForm.Data.I11: 6.66 s, 6812225536 bytes peak RSS
+START ClosedForm.Data.I17
+OK ClosedForm.Data.I06: 7.11 s, 6724784128 bytes peak RSS
+START ClosedForm.Data.I18
+OK ClosedForm.Data.I07: 7.761 s, 6737551360 bytes peak RSS
+START ClosedForm.Data.I19
+OK ClosedForm.Data.I01: 9.313 s, 6830071808 bytes peak RSS
+START ClosedForm.Data.I20
+OK ClosedForm.Data.I02: 9.414 s, 6784589824 bytes peak RSS
+START ClosedForm.Data.I21
+OK ClosedForm.Data.I03: 9.814 s, 6812467200 bytes peak RSS
+START ClosedForm.Data.I22
+OK ClosedForm.Data.I05: 10.064 s, 6804959232 bytes peak RSS
+START ClosedForm.Data.I23
+OK ClosedForm.Data.I04: 10.464 s, 6832570368 bytes peak RSS
+START ClosedForm.Data.I24
+OK ClosedForm.Data.I13: 6.309 s, 6804119552 bytes peak RSS
+START ClosedForm.Data.I25
+OK ClosedForm.Data.I14: 6.209 s, 6800789504 bytes peak RSS
+START ClosedForm.Data.I26
+OK ClosedForm.Data.I15: 6.259 s, 6803738624 bytes peak RSS
+START ClosedForm.Data.I27
+OK ClosedForm.Data.I17: 6.159 s, 6802579456 bytes peak RSS
+START ClosedForm.Data.I28
+OK ClosedForm.Data.I16: 6.309 s, 6801297408 bytes peak RSS
+START ClosedForm.Data.I29
+OK ClosedForm.Data.I18: 6.159 s, 6802100224 bytes peak RSS
+START ClosedForm.Data.I30
+OK ClosedForm.Data.I19: 6.009 s, 6802051072 bytes peak RSS
+START ClosedForm.Data.I31
+OK ClosedForm.Data.I21: 6.058 s, 6797733888 bytes peak RSS
+START ClosedForm.Data.I32
+OK ClosedForm.Data.I20: 6.209 s, 6801825792 bytes peak RSS
+START ClosedForm.Data.I33
+OK ClosedForm.Data.I22: 6.208 s, 6805053440 bytes peak RSS
+START ClosedForm.Data.I34
+OK ClosedForm.Data.I23: 6.309 s, 6802612224 bytes peak RSS
+START ClosedForm.Data.Intervals
+OK ClosedForm.Data.I24: 6.258 s, 6799237120 bytes peak RSS
+START Sqpack.Chord
+OK ClosedForm.Data.I25: 6.209 s, 6801575936 bytes peak RSS
+OK ClosedForm.Data.I26: 6.158 s, 6808952832 bytes peak RSS
+OK ClosedForm.Data.I27: 6.76 s, 6813204480 bytes peak RSS
+OK ClosedForm.Data.Intervals: 3.905 s, 6754025472 bytes peak RSS
+OK ClosedForm.Data.I28: 7.76 s, 6834745344 bytes peak RSS
+OK ClosedForm.Data.I29: 7.811 s, 6838685696 bytes peak RSS
+OK ClosedForm.Data.I30: 7.861 s, 6835728384 bytes peak RSS
+OK ClosedForm.Data.I31: 7.81 s, 6835613696 bytes peak RSS
+OK ClosedForm.Data.I32: 8.16 s, 6826000384 bytes peak RSS
+OK ClosedForm.Data.I33: 8.46 s, 6841495552 bytes peak RSS
+OK ClosedForm.Data.I34: 8.611 s, 6861971456 bytes peak RSS
+START ClosedForm.Data.Families
+OK Sqpack.Chord: 9.962 s, 6891737088 bytes peak RSS
+START Sqpack.ZeroMargin
+OK ClosedForm.Data.Families: 3.404 s, 6809595904 bytes peak RSS
+OK Sqpack.ZeroMargin: 8.711 s, 7048753152 bytes peak RSS
+START Sqpack.D4
+OK Sqpack.D4: 4.405 s, 6824558592 bytes peak RSS
+START Sqpack.Cover
+OK Sqpack.Cover: 3.755 s, 6795407360 bytes peak RSS
+START Sqpack.S32Data
+OK Sqpack.S32Data: 7.359 s, 7142580224 bytes peak RSS
+START Sqpack.S32
+OK Sqpack.S32: 40.696 s, 12061859840 bytes peak RSS
+START Sqpack.MixedMeasure
+OK Sqpack.MixedMeasure: 4.155 s, 6850056192 bytes peak RSS
+START ClosedForm.Measure
+OK ClosedForm.Measure: 3.755 s, 6768873472 bytes peak RSS
+START ClosedForm.IntegerStructure
+START ClosedForm.Mass
+START ClosedForm.MeasureBridge
+START ClosedForm.StructureDefs
+OK ClosedForm.StructureDefs: 3.905 s, 6668558336 bytes peak RSS
+OK ClosedForm.MeasureBridge: 4.206 s, 6711840768 bytes peak RSS
+START ClosedForm.CanonicalBridge
+START ClosedForm.ReflectionBridge
+OK ClosedForm.IntegerStructure: 4.206 s, 6693675008 bytes peak RSS
+START ClosedForm.IntegerMeasureBridge
+OK ClosedForm.Mass: 8.611 s, 6750679040 bytes peak RSS
+OK ClosedForm.ReflectionBridge: 4.406 s, 6751207424 bytes peak RSS
+OK ClosedForm.IntegerMeasureBridge: 4.406 s, 6789328896 bytes peak RSS
+START ClosedForm.CornerBridge
+OK ClosedForm.CanonicalBridge: 4.556 s, 6872997888 bytes peak RSS
+OK ClosedForm.CornerBridge: 4.506 s, 6838861824 bytes peak RSS
+START ClosedForm.GridCertificate
+START ClosedForm.StructuralSoundness
+OK ClosedForm.StructuralSoundness: 4.255 s, 6696742912 bytes peak RSS
+START ClosedForm.Structure
+OK ClosedForm.GridCertificate: 4.706 s, 6727503872 bytes peak RSS
+OK ClosedForm.Structure: 3.454 s, 6728818688 bytes peak RSS
+START ClosedForm.StructSupport
+OK ClosedForm.StructSupport: 4.205 s, 6819008512 bytes peak RSS
+START ClosedForm.Struct.I01.Data
+START ClosedForm.Struct.I02.Data
+START ClosedForm.Struct.I03.Data
+START ClosedForm.Struct.I04.Data
+START ClosedForm.Struct.I05.Data
+START ClosedForm.Struct.I06.Data
+START ClosedForm.Struct.I07.Data
+START ClosedForm.Struct.I08.Data
+START ClosedForm.Struct.I09.Data
+START ClosedForm.Struct.I10.Data
+START ClosedForm.Struct.I11.Data
+START ClosedForm.Struct.I12.Data
+OK ClosedForm.Struct.I12.Data: 8.96 s, 6813560832 bytes peak RSS
+START ClosedForm.Struct.I12.CBounds
+OK ClosedForm.Struct.I08.Data: 9.011 s, 6809497600 bytes peak RSS
+START ClosedForm.Struct.I08.CBounds
+OK ClosedForm.Struct.I09.Data: 9.412 s, 6809042944 bytes peak RSS
+START ClosedForm.Struct.I08.CTBounds
+OK ClosedForm.Struct.I10.Data: 9.463 s, 6811291648 bytes peak RSS
+START ClosedForm.Struct.I08.CTValid
+OK ClosedForm.Struct.I11.Data: 9.812 s, 6836846592 bytes peak RSS
+START ClosedForm.Struct.I08.CValid
+OK ClosedForm.Struct.I06.Data: 10.263 s, 6868291584 bytes peak RSS
+START ClosedForm.Struct.I06.CBounds
+OK ClosedForm.Struct.I07.Data: 12.166 s, 6902398976 bytes peak RSS
+START ClosedForm.Struct.I06.CTBounds
+OK ClosedForm.Struct.I01.Data: 12.517 s, 6979477504 bytes peak RSS
+START ClosedForm.Struct.I01.CBounds
+OK ClosedForm.Struct.I12.CBounds: 3.855 s, 6765215744 bytes peak RSS
+START ClosedForm.Struct.I01.CTBounds
+OK ClosedForm.Struct.I08.CBounds: 3.855 s, 6762897408 bytes peak RSS
+START ClosedForm.Struct.I01.CTValid
+OK ClosedForm.Struct.I08.CTBounds: 3.805 s, 6764752896 bytes peak RSS
+START ClosedForm.Struct.I01.CValid
+OK ClosedForm.Struct.I08.CTValid: 3.805 s, 6764568576 bytes peak RSS
+START ClosedForm.Struct.I01.Check00
+OK ClosedForm.Struct.I08.CValid: 3.855 s, 6764306432 bytes peak RSS
+START ClosedForm.Struct.I01.Check01
+OK ClosedForm.Struct.I06.CBounds: 3.805 s, 6763581440 bytes peak RSS
+START ClosedForm.Struct.I01.Check02
+OK ClosedForm.Struct.I02.Data: 15.17 s, 7017959424 bytes peak RSS
+START ClosedForm.Struct.I01.Check03
+OK ClosedForm.Struct.I06.CTBounds: 3.855 s, 6761365504 bytes peak RSS
+START ClosedForm.Struct.I01.Check04
+OK ClosedForm.Struct.I01.CBounds: 3.906 s, 6766899200 bytes peak RSS
+START ClosedForm.Struct.I01.Check05
+OK ClosedForm.Struct.I01.CTBounds: 3.805 s, 6768648192 bytes peak RSS
+START ClosedForm.Struct.I01.Check06
+OK ClosedForm.Struct.I03.Data: 16.622 s, 7064514560 bytes peak RSS
+START ClosedForm.Struct.I01.FSource00
+OK ClosedForm.Struct.I01.CTValid: 3.805 s, 6769836032 bytes peak RSS
+START ClosedForm.Struct.I01.FSource01
+OK ClosedForm.Struct.I05.Data: 17.022 s, 7062740992 bytes peak RSS
+START ClosedForm.Struct.I01.FSource02
+OK ClosedForm.Struct.I04.Data: 17.123 s, 7058948096 bytes peak RSS
+START ClosedForm.Struct.I01.FSource03
+OK ClosedForm.Struct.I01.CValid: 3.956 s, 6768922624 bytes peak RSS
+START ClosedForm.Struct.I01.FValid00
+OK ClosedForm.Struct.I01.Check00: 4.556 s, 6865829888 bytes peak RSS
+START ClosedForm.Struct.I01.FValid01
+OK ClosedForm.Struct.I01.Check03: 5.307 s, 7105003520 bytes peak RSS
+START ClosedForm.Struct.I01.PBounds
+OK ClosedForm.Struct.I01.FValid00: 4.005 s, 6769229824 bytes peak RSS
+START ClosedForm.Struct.I01.PValid
+OK ClosedForm.Struct.I01.FSource00: 4.656 s, 6734352384 bytes peak RSS
+START ClosedForm.Struct.I01.RValid
+OK ClosedForm.Struct.I01.Check06: 4.706 s, 6944583680 bytes peak RSS
+START ClosedForm.Struct.I01.TSource00
+OK ClosedForm.Struct.I01.FSource01: 4.756 s, 6773166080 bytes peak RSS
+START ClosedForm.Struct.I01.TSource01
+OK ClosedForm.Struct.I01.FSource02: 4.706 s, 6775513088 bytes peak RSS
+START ClosedForm.Struct.I01.TSource02
+OK ClosedForm.Struct.I01.FSource03: 4.656 s, 6775144448 bytes peak RSS
+START ClosedForm.Struct.I01.FSource
+OK ClosedForm.Struct.I01.FValid01: 4.005 s, 6766600192 bytes peak RSS
+START ClosedForm.Struct.I01.FValid
+OK ClosedForm.Struct.I01.PBounds: 3.906 s, 6769209344 bytes peak RSS
+START ClosedForm.Struct.I01.TValid00
+OK ClosedForm.Struct.I01.PValid: 3.905 s, 6768754688 bytes peak RSS
+START ClosedForm.Struct.I02.CBounds
+OK ClosedForm.Struct.I01.RValid: 3.905 s, 6766505984 bytes peak RSS
+START ClosedForm.Struct.I02.CTBounds
+OK ClosedForm.Struct.I01.TSource00: 4.656 s, 6774591488 bytes peak RSS
+START ClosedForm.Struct.I02.CTValid
+OK ClosedForm.Struct.I01.TSource01: 4.656 s, 6777655296 bytes peak RSS
+START ClosedForm.Struct.I02.CValid
+OK ClosedForm.Struct.I01.FValid: 4.255 s, 6784151552 bytes peak RSS
+START ClosedForm.Struct.I02.Check00
+OK ClosedForm.Struct.I01.TSource02: 4.656 s, 6773301248 bytes peak RSS
+START ClosedForm.Struct.I01.TSource
+OK ClosedForm.Struct.I01.FSource: 4.856 s, 6809321472 bytes peak RSS
+START ClosedForm.Struct.I02.Check01
+OK ClosedForm.Struct.I01.Check05: 11.914 s, 8397619200 bytes peak RSS
+START ClosedForm.Struct.I02.Check02
+OK ClosedForm.Struct.I01.TValid00: 4.055 s, 6768803840 bytes peak RSS
+START ClosedForm.Struct.I01.TValid
+OK ClosedForm.Struct.I01.Check04: 12.515 s, 8458240000 bytes peak RSS
+START ClosedForm.Struct.I02.Check03
+OK ClosedForm.Struct.I02.CTBounds: 3.855 s, 6766260224 bytes peak RSS
+START ClosedForm.Struct.I02.Check04
+OK ClosedForm.Struct.I02.CBounds: 4.005 s, 6765957120 bytes peak RSS
+START ClosedForm.Struct.I02.Check05
+OK ClosedForm.Struct.I02.CTValid: 3.855 s, 6766350336 bytes peak RSS
+START ClosedForm.Struct.I02.Check06
+OK ClosedForm.Struct.I02.CValid: 4.055 s, 6734204928 bytes peak RSS
+START ClosedForm.Struct.I02.FSource00
+OK ClosedForm.Struct.I01.Check02: 16.12 s, 9347510272 bytes peak RSS
+START ClosedForm.Struct.I02.FSource01
+OK ClosedForm.Struct.I02.Check00: 4.606 s, 6814863360 bytes peak RSS
+START ClosedForm.Struct.I02.FSource02
+OK ClosedForm.Struct.I01.Check01: 17.371 s, 9481805824 bytes peak RSS
+START ClosedForm.Struct.I01.Checks
+OK ClosedForm.Struct.I01.TSource: 4.757 s, 6793453568 bytes peak RSS
+START ClosedForm.Struct.I02.FSource03
+OK ClosedForm.Struct.I01.TValid: 4.256 s, 6775799808 bytes peak RSS
+START ClosedForm.Struct.I01.Fields
+OK ClosedForm.Struct.I02.Check03: 5.157 s, 7050440704 bytes peak RSS
+START ClosedForm.Struct.I02.FValid00
+OK ClosedForm.Struct.I02.Check06: 4.706 s, 6951960576 bytes peak RSS
+START ClosedForm.Struct.I02.FValid01
+OK ClosedForm.Struct.I01.Checks: 3.655 s, 6740721664 bytes peak RSS
+START ClosedForm.Struct.I01.Geometry
+OK ClosedForm.Struct.I02.FSource00: 4.756 s, 6772486144 bytes peak RSS
+START ClosedForm.Struct.I02.PBounds
+OK ClosedForm.Struct.I02.FSource01: 4.756 s, 6776729600 bytes peak RSS
+START ClosedForm.Struct.I02.PValid
+OK ClosedForm.Struct.I02.FSource02: 4.706 s, 6773350400 bytes peak RSS
+START ClosedForm.Struct.I02.RValid
+OK ClosedForm.Struct.I02.FSource03: 4.706 s, 6776786944 bytes peak RSS
+START ClosedForm.Struct.I02.FSource
+OK ClosedForm.Struct.I01.Fields: 4.155 s, 6785216512 bytes peak RSS
+START ClosedForm.Struct.I02.TSource00
+OK ClosedForm.Struct.I02.FValid00: 4.055 s, 6763675648 bytes peak RSS
+START ClosedForm.Struct.I02.TSource01
+OK ClosedForm.Struct.I02.FValid01: 4.105 s, 6770442240 bytes peak RSS
+START ClosedForm.Struct.I02.FValid
+OK ClosedForm.Struct.I02.PBounds: 3.855 s, 6763974656 bytes peak RSS
+START ClosedForm.Struct.I02.TSource02
+OK ClosedForm.Struct.I01.Geometry: 4.105 s, 6788894720 bytes peak RSS
+START ClosedForm.Struct.I01.Relations
+OK ClosedForm.Struct.I02.PValid: 3.855 s, 6762704896 bytes peak RSS
+START ClosedForm.Struct.I02.TValid00
+OK ClosedForm.Struct.I02.RValid: 3.955 s, 6764855296 bytes peak RSS
+START ClosedForm.Struct.I03.CBounds
+OK ClosedForm.Struct.I02.Check05: 10.613 s, 8124678144 bytes peak RSS
+START ClosedForm.Struct.I03.CTBounds
+OK ClosedForm.Struct.I02.Check04: 11.013 s, 8174608384 bytes peak RSS
+START ClosedForm.Struct.I03.CTValid
+OK ClosedForm.Struct.I02.FSource: 4.506 s, 6796976128 bytes peak RSS
+START ClosedForm.Struct.I03.CValid
+OK ClosedForm.Struct.I02.TSource00: 4.807 s, 6773518336 bytes peak RSS
+START ClosedForm.Struct.I03.Check00
+OK ClosedForm.Struct.I02.Check01: 15.219 s, 9058078720 bytes peak RSS
+START ClosedForm.Struct.I03.Check01
+OK ClosedForm.Struct.I02.TSource01: 4.856 s, 6774263808 bytes peak RSS
+START ClosedForm.Struct.I03.Check02
+OK ClosedForm.Struct.I01.Relations: 3.955 s, 6771412992 bytes peak RSS
+START ClosedForm.Struct.I01.Assembly
+OK ClosedForm.Struct.I02.Check02: 14.519 s, 8982466560 bytes peak RSS
+START ClosedForm.Struct.I02.Checks
+OK ClosedForm.Struct.I02.FValid: 4.205 s, 6778994688 bytes peak RSS
+START ClosedForm.Struct.I03.Check03
+OK ClosedForm.Struct.I02.TValid00: 4.105 s, 6756184064 bytes peak RSS
+START ClosedForm.Struct.I02.TValid
+OK ClosedForm.Struct.I03.CBounds: 4.005 s, 6770769920 bytes peak RSS
+START ClosedForm.Struct.I03.Check04
+OK ClosedForm.Struct.I02.TSource02: 4.756 s, 6776176640 bytes peak RSS
+START ClosedForm.Struct.I02.TSource
+OK ClosedForm.Struct.I03.CTBounds: 3.955 s, 6768562176 bytes peak RSS
+START ClosedForm.Struct.I03.Check05
+OK ClosedForm.Struct.I03.CTValid: 3.905 s, 6768037888 bytes peak RSS
+START ClosedForm.Struct.I03.Check06
+OK ClosedForm.Struct.I03.CValid: 4.005 s, 6768222208 bytes peak RSS
+START ClosedForm.Struct.I03.FSource00
+OK ClosedForm.Struct.I03.Check00: 4.556 s, 6867996672 bytes peak RSS
+START ClosedForm.Struct.I03.FSource01
+OK ClosedForm.Struct.I02.Checks: 3.455 s, 6717657088 bytes peak RSS
+START ClosedForm.Struct.I03.FSource02
+OK ClosedForm.Struct.I01.Assembly: 3.905 s, 6846312448 bytes peak RSS
+START ClosedForm.Struct.I03.FSource03
+OK ClosedForm.Struct.I02.TValid: 4.156 s, 6772539392 bytes peak RSS
+START ClosedForm.Struct.I03.FValid00
+OK ClosedForm.Struct.I02.TSource: 4.405 s, 6785511424 bytes peak RSS
+START ClosedForm.Struct.I02.Fields
+OK ClosedForm.Struct.I03.Check03: 5.306 s, 7081828352 bytes peak RSS
+START ClosedForm.Struct.I02.Geometry
+OK ClosedForm.Struct.I03.Check06: 4.807 s, 6981455872 bytes peak RSS
+START ClosedForm.Struct.I03.FValid01
+OK ClosedForm.Struct.I03.FSource00: 4.706 s, 6777049088 bytes peak RSS
+START ClosedForm.Struct.I03.PBounds
+OK ClosedForm.Struct.I03.FSource01: 4.706 s, 6776471552 bytes peak RSS
+START ClosedForm.Struct.I03.PValid
+OK ClosedForm.Struct.I03.FSource02: 4.757 s, 6775939072 bytes peak RSS
+START ClosedForm.Struct.I03.RValid
+OK ClosedForm.Struct.I03.FValid00: 4.055 s, 6766039040 bytes peak RSS
+START ClosedForm.Struct.I03.TSource00
+OK ClosedForm.Struct.I03.FSource03: 4.706 s, 6774325248 bytes peak RSS
+START ClosedForm.Struct.I03.FSource
+OK ClosedForm.Struct.I02.Fields: 4.205 s, 6785232896 bytes peak RSS
+START ClosedForm.Struct.I03.TSource01
+OK ClosedForm.Struct.I02.Geometry: 4.155 s, 6789603328 bytes peak RSS
+START ClosedForm.Struct.I02.Relations
+OK ClosedForm.Struct.I03.FValid01: 4.105 s, 6766276608 bytes peak RSS
+START ClosedForm.Struct.I03.FValid
+OK ClosedForm.Struct.I03.PBounds: 3.855 s, 6764503040 bytes peak RSS
+START ClosedForm.Struct.I03.TSource02
+OK ClosedForm.Struct.I03.PValid: 3.905 s, 6764871680 bytes peak RSS
+START ClosedForm.Struct.I03.TValid00
+OK ClosedForm.Struct.I03.RValid: 4.006 s, 6766436352 bytes peak RSS
+START ClosedForm.Struct.I04.CBounds
+OK ClosedForm.Struct.I03.Check05: 11.614 s, 8333463552 bytes peak RSS
+START ClosedForm.Struct.I04.CTBounds
+OK ClosedForm.Struct.I03.Check04: 12.116 s, 8394444800 bytes peak RSS
+START ClosedForm.Struct.I04.CTValid
+OK ClosedForm.Struct.I03.TSource00: 4.756 s, 6776168448 bytes peak RSS
+START ClosedForm.Struct.I04.CValid
+OK ClosedForm.Struct.I02.Relations: 3.855 s, 6774554624 bytes peak RSS
+START ClosedForm.Struct.I02.Assembly
+OK ClosedForm.Struct.I03.FSource: 4.856 s, 6806622208 bytes peak RSS
+START ClosedForm.Struct.I04.Check00
+OK ClosedForm.Struct.I03.TSource01: 4.706 s, 6776967168 bytes peak RSS
+START ClosedForm.Struct.I04.Check01
+OK ClosedForm.Struct.I03.FValid: 4.305 s, 6780911616 bytes peak RSS
+START ClosedForm.Struct.I04.Check02
+OK ClosedForm.Struct.I03.TSource02: 4.756 s, 6774161408 bytes peak RSS
+START ClosedForm.Struct.I03.TSource
+OK ClosedForm.Struct.I03.Check02: 16.17 s, 9346707456 bytes peak RSS
+START ClosedForm.Struct.I04.Check03
+OK ClosedForm.Struct.I03.TValid00: 4.105 s, 6768173056 bytes peak RSS
+START ClosedForm.Struct.I03.TValid
+OK ClosedForm.Struct.I04.CBounds: 4.056 s, 6767071232 bytes peak RSS
+START ClosedForm.Struct.I04.Check04
+OK ClosedForm.Struct.I04.CTBounds: 3.905 s, 6767845376 bytes peak RSS
+START ClosedForm.Struct.I04.Check05
+OK ClosedForm.Struct.I04.CTValid: 3.855 s, 6765903872 bytes peak RSS
+START ClosedForm.Struct.I04.Check06
+OK ClosedForm.Struct.I03.Check01: 17.923 s, 9480007680 bytes peak RSS
+START ClosedForm.Struct.I03.Checks
+OK ClosedForm.Struct.I04.CValid: 4.005 s, 6764707840 bytes peak RSS
+START ClosedForm.Struct.I04.FSource00
+OK ClosedForm.Struct.I02.Assembly: 3.905 s, 6845853696 bytes peak RSS
+START ClosedForm.Struct.I04.FSource01
+OK ClosedForm.Struct.I04.Check00: 4.706 s, 6885916672 bytes peak RSS
+START ClosedForm.Struct.I04.FSource02
+OK ClosedForm.Struct.I03.TSource: 4.656 s, 6792650752 bytes peak RSS
+START ClosedForm.Struct.I04.FSource03
+OK ClosedForm.Struct.I03.TValid: 4.206 s, 6776999936 bytes peak RSS
+START ClosedForm.Struct.I03.Fields
+OK ClosedForm.Struct.I03.Checks: 3.655 s, 6742413312 bytes peak RSS
+START ClosedForm.Struct.I03.Geometry
+OK ClosedForm.Struct.I04.Check03: 5.457 s, 7141400576 bytes peak RSS
+START ClosedForm.Struct.I04.FValid00
+OK ClosedForm.Struct.I04.Check06: 4.906 s, 7012212736 bytes peak RSS
+START ClosedForm.Struct.I04.FValid01
+OK ClosedForm.Struct.I04.FSource00: 4.806 s, 6775300096 bytes peak RSS
+START ClosedForm.Struct.I04.PBounds
+OK ClosedForm.Struct.I04.FSource01: 4.806 s, 6774312960 bytes peak RSS
+START ClosedForm.Struct.I04.PValid
+OK ClosedForm.Struct.I04.FSource02: 4.706 s, 6778994688 bytes peak RSS
+START ClosedForm.Struct.I04.RValid
+OK ClosedForm.Struct.I04.FSource03: 4.756 s, 6773698560 bytes peak RSS
+START ClosedForm.Struct.I04.FSource
+OK ClosedForm.Struct.I03.Fields: 4.206 s, 6787878912 bytes peak RSS
+START ClosedForm.Struct.I04.TSource00
+OK ClosedForm.Struct.I03.Geometry: 4.105 s, 6790213632 bytes peak RSS
+START ClosedForm.Struct.I03.Relations
+OK ClosedForm.Struct.I04.FValid00: 4.056 s, 6718025728 bytes peak RSS
+START ClosedForm.Struct.I04.TSource01
+OK ClosedForm.Struct.I04.FValid01: 4.055 s, 6720204800 bytes peak RSS
+START ClosedForm.Struct.I04.FValid
+OK ClosedForm.Struct.I04.PBounds: 3.905 s, 6766436352 bytes peak RSS
+START ClosedForm.Struct.I04.TSource02
+OK ClosedForm.Struct.I04.PValid: 3.905 s, 6767054848 bytes peak RSS
+START ClosedForm.Struct.I04.TValid00
+OK ClosedForm.Struct.I04.RValid: 4.005 s, 6766604288 bytes peak RSS
+START ClosedForm.Struct.I04.TValid01
+OK ClosedForm.Struct.I03.Relations: 3.905 s, 6780669952 bytes peak RSS
+START ClosedForm.Struct.I03.Assembly
+OK ClosedForm.Struct.I04.TSource00: 4.756 s, 6776426496 bytes peak RSS
+START ClosedForm.Struct.I05.CBounds
+OK ClosedForm.Struct.I04.Check05: 13.116 s, 8615415808 bytes peak RSS
+START ClosedForm.Struct.I05.CTBounds
+OK ClosedForm.Struct.I04.FSource: 5.257 s, 6811791360 bytes peak RSS
+START ClosedForm.Struct.I05.CTValid
+OK ClosedForm.Struct.I04.Check04: 13.417 s, 8692834304 bytes peak RSS
+START ClosedForm.Struct.I05.CValid
+OK ClosedForm.Struct.I04.FValid: 4.306 s, 6761283584 bytes peak RSS
+START ClosedForm.Struct.I05.Check00
+OK ClosedForm.Struct.I04.TValid00: 4.105 s, 6767050752 bytes peak RSS
+START ClosedForm.Struct.I05.Check01
+OK ClosedForm.Struct.I04.TSource01: 4.756 s, 6754631680 bytes peak RSS
+START ClosedForm.Struct.I05.Check02
+OK ClosedForm.Struct.I04.TSource02: 4.706 s, 6774476800 bytes peak RSS
+START ClosedForm.Struct.I04.TSource
+OK ClosedForm.Struct.I04.TValid01: 4.055 s, 6766796800 bytes peak RSS
+START ClosedForm.Struct.I04.TValid
+OK ClosedForm.Struct.I03.Assembly: 4.006 s, 6844940288 bytes peak RSS
+START ClosedForm.Struct.I05.Check03
+OK ClosedForm.Struct.I04.Check02: 18.472 s, 9762566144 bytes peak RSS
+START ClosedForm.Struct.I05.Check04
+OK ClosedForm.Struct.I04.Check01: 19.123 s, 9870196736 bytes peak RSS
+START ClosedForm.Struct.I04.Checks
+OK ClosedForm.Struct.I05.CBounds: 4.005 s, 6767198208 bytes peak RSS
+START ClosedForm.Struct.I05.Check05
+OK ClosedForm.Struct.I05.CTBounds: 3.905 s, 6765973504 bytes peak RSS
+START ClosedForm.Struct.I05.Check06
+OK ClosedForm.Struct.I05.CTValid: 3.855 s, 6768152576 bytes peak RSS
+START ClosedForm.Struct.I05.FSource00
+OK ClosedForm.Struct.I05.CValid: 4.106 s, 6764994560 bytes peak RSS
+START ClosedForm.Struct.I05.FSource01
+OK ClosedForm.Struct.I05.Check00: 4.706 s, 6869745664 bytes peak RSS
+START ClosedForm.Struct.I05.FSource02
+OK ClosedForm.Struct.I04.TValid: 4.106 s, 6772101120 bytes peak RSS
+START ClosedForm.Struct.I05.FSource03
+OK ClosedForm.Struct.I04.TSource: 5.157 s, 6795612160 bytes peak RSS
+START ClosedForm.Struct.I04.Fields
+OK ClosedForm.Struct.I04.Checks: 3.655 s, 6740488192 bytes peak RSS
+START ClosedForm.Struct.I04.Geometry
+OK ClosedForm.Struct.I05.Check03: 5.357 s, 7117074432 bytes peak RSS
+START ClosedForm.Struct.I05.FValid00
+OK ClosedForm.Struct.I05.FSource00: 4.706 s, 6750347264 bytes peak RSS
+START ClosedForm.Struct.I05.FValid01
+OK ClosedForm.Struct.I05.Check06: 4.806 s, 6965907456 bytes peak RSS
+START ClosedForm.Struct.I05.PBounds
+OK ClosedForm.Struct.I05.FSource01: 4.706 s, 6776352768 bytes peak RSS
+START ClosedForm.Struct.I05.PValid
+OK ClosedForm.Struct.I05.FSource02: 4.756 s, 6772613120 bytes peak RSS
+START ClosedForm.Struct.I05.RValid
+OK ClosedForm.Struct.I05.FSource03: 4.756 s, 6773723136 bytes peak RSS
+START ClosedForm.Struct.I05.FSource
+OK ClosedForm.Struct.I04.Fields: 4.206 s, 6786531328 bytes peak RSS
+START ClosedForm.Struct.I05.TSource00
+OK ClosedForm.Struct.I04.Geometry: 4.105 s, 6788628480 bytes peak RSS
+START ClosedForm.Struct.I04.Relations
+OK ClosedForm.Struct.I05.FValid00: 4.005 s, 6766657536 bytes peak RSS
+START ClosedForm.Struct.I05.TSource01
+OK ClosedForm.Struct.I05.PBounds: 3.855 s, 6766342144 bytes peak RSS
+START ClosedForm.Struct.I05.TSource02
+OK ClosedForm.Struct.I05.FValid01: 4.005 s, 6764376064 bytes peak RSS
+START ClosedForm.Struct.I05.FValid
+OK ClosedForm.Struct.I05.PValid: 3.955 s, 6767202304 bytes peak RSS
+START ClosedForm.Struct.I05.TValid00
+OK ClosedForm.Struct.I05.RValid: 3.905 s, 6766555136 bytes peak RSS
+START ClosedForm.Struct.I05.TValid01
+OK ClosedForm.Struct.I05.TSource00: 4.706 s, 6774616064 bytes peak RSS
+START ClosedForm.Struct.I06.CTValid
+OK ClosedForm.Struct.I04.Relations: 3.905 s, 6776520704 bytes peak RSS
+START ClosedForm.Struct.I04.Assembly
+OK ClosedForm.Struct.I05.FSource: 5.106 s, 6807085056 bytes peak RSS
+START ClosedForm.Struct.I06.CValid
+OK ClosedForm.Struct.I05.Check04: 12.566 s, 8508669952 bytes peak RSS
+START ClosedForm.Struct.I06.Check00
+OK ClosedForm.Struct.I05.Check05: 12.215 s, 8443813888 bytes peak RSS
+START ClosedForm.Struct.I06.Check01
+OK ClosedForm.Struct.I05.FValid: 4.256 s, 6784073728 bytes peak RSS
+START ClosedForm.Struct.I06.Check02
+OK ClosedForm.Struct.I05.TValid00: 4.055 s, 6766841856 bytes peak RSS
+START ClosedForm.Struct.I06.Check03
+OK ClosedForm.Struct.I05.TSource01: 4.806 s, 6773899264 bytes peak RSS
+START ClosedForm.Struct.I06.Check04
+OK ClosedForm.Struct.I05.TSource02: 4.806 s, 6774165504 bytes peak RSS
+START ClosedForm.Struct.I05.TSource
+OK ClosedForm.Struct.I05.TValid01: 4.206 s, 6766776320 bytes peak RSS
+START ClosedForm.Struct.I05.TValid
+OK ClosedForm.Struct.I05.Check01: 18.072 s, 9632874496 bytes peak RSS
+START ClosedForm.Struct.I06.Check05
+OK ClosedForm.Struct.I06.CTValid: 3.955 s, 6763352064 bytes peak RSS
+START ClosedForm.Struct.I06.Check06
+OK ClosedForm.Struct.I05.Check02: 18.323 s, 9536090112 bytes peak RSS
+START ClosedForm.Struct.I05.Checks
+OK ClosedForm.Struct.I04.Assembly: 3.955 s, 6844854272 bytes peak RSS
+START ClosedForm.Struct.I06.FSource00
+OK ClosedForm.Struct.I06.CValid: 4.055 s, 6767206400 bytes peak RSS
+START ClosedForm.Struct.I06.FSource01
+OK ClosedForm.Struct.I06.Check00: 4.205 s, 6801588224 bytes peak RSS
+START ClosedForm.Struct.I06.FValid00
+OK ClosedForm.Struct.I06.Check03: 4.506 s, 6894247936 bytes peak RSS
+START ClosedForm.Struct.I06.PBounds
+OK ClosedForm.Struct.I05.TValid: 4.156 s, 6768570368 bytes peak RSS
+START ClosedForm.Struct.I06.PValid
+OK ClosedForm.Struct.I05.TSource: 4.856 s, 6782189568 bytes peak RSS
+START ClosedForm.Struct.I05.Fields
+OK ClosedForm.Struct.I05.Checks: 3.755 s, 6741225472 bytes peak RSS
+START ClosedForm.Struct.I05.Geometry
+OK ClosedForm.Struct.I06.Check06: 4.306 s, 6846705664 bytes peak RSS
+START ClosedForm.Struct.I06.RValid
+OK ClosedForm.Struct.I06.FSource00: 4.856 s, 6772793344 bytes peak RSS
+START ClosedForm.Struct.I06.TSource00
+OK ClosedForm.Struct.I06.FValid00: 4.155 s, 6765580288 bytes peak RSS
+START ClosedForm.Struct.I06.FValid
+OK ClosedForm.Struct.I06.FSource01: 4.856 s, 6772387840 bytes peak RSS
+START ClosedForm.Struct.I06.FSource
+OK ClosedForm.Struct.I06.Check04: 7.06 s, 7327866880 bytes peak RSS
+START ClosedForm.Struct.I06.TSource01
+OK ClosedForm.Struct.I06.Check01: 8.661 s, 7681089536 bytes peak RSS
+START ClosedForm.Struct.I06.TValid00
+OK ClosedForm.Struct.I06.Check02: 8.561 s, 7660216320 bytes peak RSS
+START ClosedForm.Struct.I07.CBounds
+OK ClosedForm.Struct.I06.Check05: 6.859 s, 7294664704 bytes peak RSS
+START ClosedForm.Struct.I06.Checks
+OK ClosedForm.Struct.I06.PBounds: 3.956 s, 6765535232 bytes peak RSS
+START ClosedForm.Struct.I07.CTBounds
+OK ClosedForm.Struct.I06.PValid: 3.955 s, 6763892736 bytes peak RSS
+START ClosedForm.Struct.I07.CTValid
+OK ClosedForm.Struct.I05.Fields: 4.306 s, 6787145728 bytes peak RSS
+START ClosedForm.Struct.I07.CValid
+OK ClosedForm.Struct.I05.Geometry: 4.156 s, 6790778880 bytes peak RSS
+START ClosedForm.Struct.I05.Relations
+OK ClosedForm.Struct.I06.RValid: 3.905 s, 6763892736 bytes peak RSS
+START ClosedForm.Struct.I07.Check00
+OK ClosedForm.Struct.I06.FValid: 4.105 s, 6745346048 bytes peak RSS
+START ClosedForm.Struct.I07.Check01
+OK ClosedForm.Struct.I06.TValid00: 4.055 s, 6765019136 bytes peak RSS
+START ClosedForm.Struct.I06.TValid
+OK ClosedForm.Struct.I06.TSource00: 4.806 s, 6775140352 bytes peak RSS
+START ClosedForm.Struct.I07.Check02
+OK ClosedForm.Struct.I06.FSource: 4.656 s, 6761160704 bytes peak RSS
+START ClosedForm.Struct.I07.Check03
+OK ClosedForm.Struct.I06.Checks: 3.455 s, 6720442368 bytes peak RSS
+START ClosedForm.Struct.I07.Check04
+OK ClosedForm.Struct.I06.TSource01: 4.807 s, 6772084736 bytes peak RSS
+START ClosedForm.Struct.I06.TSource
+OK ClosedForm.Struct.I07.CBounds: 3.905 s, 6765899776 bytes peak RSS
+START ClosedForm.Struct.I07.Check05
+OK ClosedForm.Struct.I07.CTBounds: 3.855 s, 6748942336 bytes peak RSS
+START ClosedForm.Struct.I07.Check06
+OK ClosedForm.Struct.I07.CTValid: 3.956 s, 6763708416 bytes peak RSS
+START ClosedForm.Struct.I07.FSource00
+OK ClosedForm.Struct.I07.CValid: 3.955 s, 6766182400 bytes peak RSS
+START ClosedForm.Struct.I07.FSource01
+OK ClosedForm.Struct.I05.Relations: 3.905 s, 6780641280 bytes peak RSS
+START ClosedForm.Struct.I05.Assembly
+OK ClosedForm.Struct.I07.Check00: 4.306 s, 6801788928 bytes peak RSS
+START ClosedForm.Struct.I07.FSource02
+OK ClosedForm.Struct.I06.TValid: 3.905 s, 6763089920 bytes peak RSS
+START ClosedForm.Struct.I07.FValid00
+OK ClosedForm.Struct.I06.TSource: 4.006 s, 6768910336 bytes peak RSS
+START ClosedForm.Struct.I06.Fields
+OK ClosedForm.Struct.I07.Check03: 4.656 s, 6934700032 bytes peak RSS
+START ClosedForm.Struct.I06.Geometry
+OK ClosedForm.Struct.I07.Check06: 4.356 s, 6874443776 bytes peak RSS
+START ClosedForm.Struct.I07.PBounds
+OK ClosedForm.Struct.I07.FSource00: 4.806 s, 6775259136 bytes peak RSS
+START ClosedForm.Struct.I07.PValid
+OK ClosedForm.Struct.I05.Assembly: 3.905 s, 6847594496 bytes peak RSS
+START ClosedForm.Struct.I07.RValid
+OK ClosedForm.Struct.I07.FSource01: 4.856 s, 6773710848 bytes peak RSS
+START ClosedForm.Struct.I07.TSource00
+OK ClosedForm.Struct.I07.FSource02: 4.756 s, 6773137408 bytes peak RSS
+START ClosedForm.Struct.I07.FSource
+OK ClosedForm.Struct.I07.FValid00: 4.056 s, 6765580288 bytes peak RSS
+START ClosedForm.Struct.I07.FValid
+OK ClosedForm.Struct.I07.Check04: 8.21 s, 7576559616 bytes peak RSS
+START ClosedForm.Struct.I07.TSource01
+OK ClosedForm.Struct.I06.Fields: 4.255 s, 6782111744 bytes peak RSS
+START ClosedForm.Struct.I07.TValid00
+OK ClosedForm.Struct.I07.Check05: 8.161 s, 7585345536 bytes peak RSS
+START ClosedForm.Struct.I08.Check00
+OK ClosedForm.Struct.I07.PBounds: 3.855 s, 6762143744 bytes peak RSS
+START ClosedForm.Struct.I08.Check01
+OK ClosedForm.Struct.I06.Geometry: 4.205 s, 6786850816 bytes peak RSS
+START ClosedForm.Struct.I06.Relations
+OK ClosedForm.Struct.I07.PValid: 3.955 s, 6766129152 bytes peak RSS
+START ClosedForm.Struct.I08.Check02
+OK ClosedForm.Struct.I07.RValid: 3.955 s, 6765838336 bytes peak RSS
+START ClosedForm.Struct.I08.Check03
+OK ClosedForm.Struct.I07.Check01: 11.214 s, 8169951232 bytes peak RSS
+START ClosedForm.Struct.I08.Check04
+OK ClosedForm.Struct.I07.Check02: 10.813 s, 8112054272 bytes peak RSS
+START ClosedForm.Struct.I07.Checks
+OK ClosedForm.Struct.I07.TSource00: 4.756 s, 6773526528 bytes peak RSS
+START ClosedForm.Struct.I08.Check05
+OK ClosedForm.Struct.I07.FSource: 4.406 s, 6786400256 bytes peak RSS
+START ClosedForm.Struct.I08.Check06
+OK ClosedForm.Struct.I07.FValid: 4.256 s, 6772183040 bytes peak RSS
+START ClosedForm.Struct.I08.FSource00
+OK ClosedForm.Struct.I07.TValid00: 4.007 s, 6763769856 bytes peak RSS
+START ClosedForm.Struct.I07.TValid
+OK ClosedForm.Struct.I08.Check00: 4.106 s, 6793711616 bytes peak RSS
+START ClosedForm.Struct.I08.FSource01
+OK ClosedForm.Struct.I06.Relations: 3.905 s, 6774169600 bytes peak RSS
+START ClosedForm.Struct.I06.Assembly
+OK ClosedForm.Struct.I07.TSource01: 4.756 s, 6773870592 bytes peak RSS
+START ClosedForm.Struct.I07.TSource
+OK ClosedForm.Struct.I08.Check03: 4.256 s, 6855745536 bytes peak RSS
+START ClosedForm.Struct.I08.FValid00
+OK ClosedForm.Struct.I07.Checks: 3.705 s, 6740467712 bytes peak RSS
+START ClosedForm.Struct.I08.PBounds
+OK ClosedForm.Struct.I08.Check06: 4.156 s, 6826745856 bytes peak RSS
+START ClosedForm.Struct.I08.PValid
+OK ClosedForm.Struct.I08.Check01: 7.61 s, 7420772352 bytes peak RSS
+START ClosedForm.Struct.I08.RValid
+OK ClosedForm.Struct.I07.TValid: 4.006 s, 6767370240 bytes peak RSS
+START ClosedForm.Struct.I08.TSource00
+OK ClosedForm.Struct.I06.Assembly: 3.905 s, 6840733696 bytes peak RSS
+START ClosedForm.Struct.I08.TValid
+OK ClosedForm.Struct.I08.Check04: 6.208 s, 7200010240 bytes peak RSS
+START ClosedForm.Struct.I09.CBounds
+OK ClosedForm.Struct.I08.FSource00: 4.856 s, 6775443456 bytes peak RSS
+START ClosedForm.Struct.I09.CTBounds
+OK ClosedForm.Struct.I08.Check02: 7.409 s, 7419957248 bytes peak RSS
+START ClosedForm.Struct.I09.CTValid
+OK ClosedForm.Struct.I08.Check05: 6.157 s, 7158657024 bytes peak RSS
+START ClosedForm.Struct.I08.Checks
+OK ClosedForm.Struct.I08.FSource01: 4.756 s, 6775668736 bytes peak RSS
+START ClosedForm.Struct.I08.FSource
+OK ClosedForm.Struct.I07.TSource: 4.456 s, 6781546496 bytes peak RSS
+START ClosedForm.Struct.I07.Fields
+OK ClosedForm.Struct.I08.FValid00: 4.106 s, 6763061248 bytes peak RSS
+START ClosedForm.Struct.I07.Geometry
+OK ClosedForm.Struct.I08.PBounds: 3.905 s, 6766718976 bytes peak RSS
+START ClosedForm.Struct.I08.FValid
+OK ClosedForm.Struct.I08.PValid: 3.906 s, 6765006848 bytes peak RSS
+START ClosedForm.Struct.I09.CValid
+OK ClosedForm.Struct.I08.RValid: 3.955 s, 6762565632 bytes peak RSS
+START ClosedForm.Struct.I09.Check00
+OK ClosedForm.Struct.I09.CBounds: 3.855 s, 6763851776 bytes peak RSS
+START ClosedForm.Struct.I09.Check01
+OK ClosedForm.Struct.I08.TValid: 4.105 s, 6764544000 bytes peak RSS
+START ClosedForm.Struct.I09.Check02
+OK ClosedForm.Struct.I09.CTBounds: 3.905 s, 6764830720 bytes peak RSS
+START ClosedForm.Struct.I09.Check03
+OK ClosedForm.Struct.I08.Checks: 3.705 s, 6738554880 bytes peak RSS
+START ClosedForm.Struct.I09.Check04
+OK ClosedForm.Struct.I09.CTValid: 3.855 s, 6765395968 bytes peak RSS
+START ClosedForm.Struct.I09.Check05
+OK ClosedForm.Struct.I08.TSource00: 4.757 s, 6775103488 bytes peak RSS
+START ClosedForm.Struct.I08.TSource
+OK ClosedForm.Struct.I08.FSource: 4.156 s, 6774059008 bytes peak RSS
+START ClosedForm.Struct.I09.Check06
+OK ClosedForm.Struct.I07.Fields: 4.306 s, 6781456384 bytes peak RSS
+START ClosedForm.Struct.I09.FSource00
+OK ClosedForm.Struct.I07.Geometry: 4.106 s, 6787043328 bytes peak RSS
+START ClosedForm.Struct.I07.Relations
+OK ClosedForm.Struct.I08.FValid: 4.005 s, 6766551040 bytes peak RSS
+START ClosedForm.Struct.I09.FSource01
+OK ClosedForm.Struct.I09.CValid: 3.905 s, 6763630592 bytes peak RSS
+START ClosedForm.Struct.I09.FValid00
+OK ClosedForm.Struct.I09.Check00: 4.106 s, 6798090240 bytes peak RSS
+START ClosedForm.Struct.I09.PBounds
+OK ClosedForm.Struct.I09.Check03: 4.256 s, 6854537216 bytes peak RSS
+START ClosedForm.Struct.I09.PValid
+OK ClosedForm.Struct.I09.Check06: 4.155 s, 6842421248 bytes peak RSS
+START ClosedForm.Struct.I09.RValid
+OK ClosedForm.Struct.I08.TSource: 4.657 s, 6775721984 bytes peak RSS
+START ClosedForm.Struct.I08.Fields
+OK ClosedForm.Struct.I07.Relations: 3.905 s, 6776561664 bytes peak RSS
+START ClosedForm.Struct.I07.Assembly
+OK ClosedForm.Struct.I09.FSource00: 4.756 s, 6768861184 bytes peak RSS
+START ClosedForm.Struct.I08.Geometry
+OK ClosedForm.Struct.I09.FSource01: 4.756 s, 6772785152 bytes peak RSS
+START ClosedForm.Struct.I09.FSource
+OK ClosedForm.Struct.I09.Check05: 6.459 s, 7194038272 bytes peak RSS
+START ClosedForm.Struct.I09.TSource00
+OK ClosedForm.Struct.I09.Check04: 6.558 s, 7242010624 bytes peak RSS
+START ClosedForm.Struct.I09.TSource01
+OK ClosedForm.Struct.I09.FValid00: 4.055 s, 6765092864 bytes peak RSS
+START ClosedForm.Struct.I09.FValid
+OK ClosedForm.Struct.I09.PBounds: 3.955 s, 6763704320 bytes peak RSS
+START ClosedForm.Struct.I09.TValid00
+OK ClosedForm.Struct.I09.Check02: 7.609 s, 7487762432 bytes peak RSS
+START ClosedForm.Struct.I10.CBounds
+OK ClosedForm.Struct.I09.Check01: 7.81 s, 7520870400 bytes peak RSS
+START ClosedForm.Struct.I09.Checks
+OK ClosedForm.Struct.I09.PValid: 3.905 s, 6765547520 bytes peak RSS
+START ClosedForm.Struct.I10.CTBounds
+OK ClosedForm.Struct.I09.RValid: 3.955 s, 6761738240 bytes peak RSS
+START ClosedForm.Struct.I10.CTValid
+OK ClosedForm.Struct.I07.Assembly: 3.905 s, 6843490304 bytes peak RSS
+START ClosedForm.Struct.I10.CValid
+OK ClosedForm.Struct.I08.Fields: 4.206 s, 6781149184 bytes peak RSS
+START ClosedForm.Struct.I10.Check00
+OK ClosedForm.Struct.I08.Geometry: 4.155 s, 6783655936 bytes peak RSS
+START ClosedForm.Struct.I08.Relations
+OK ClosedForm.Struct.I09.FSource: 4.355 s, 6776197120 bytes peak RSS
+START ClosedForm.Struct.I10.Check01
+OK ClosedForm.Struct.I09.FValid: 4.006 s, 6765989888 bytes peak RSS
+START ClosedForm.Struct.I10.Check02
+OK ClosedForm.Struct.I09.Checks: 3.655 s, 6736379904 bytes peak RSS
+START ClosedForm.Struct.I10.Check03
+OK ClosedForm.Struct.I09.TSource01: 4.656 s, 6772428800 bytes peak RSS
+START ClosedForm.Struct.I10.Check04
+OK ClosedForm.Struct.I09.TSource00: 4.756 s, 6772805632 bytes peak RSS
+START ClosedForm.Struct.I09.TSource
+OK ClosedForm.Struct.I10.CBounds: 3.905 s, 6763360256 bytes peak RSS
+START ClosedForm.Struct.I10.Check05
+OK ClosedForm.Struct.I09.TValid00: 4.055 s, 6765068288 bytes peak RSS
+START ClosedForm.Struct.I09.TValid
+OK ClosedForm.Struct.I10.CTBounds: 3.905 s, 6765027328 bytes peak RSS
+START ClosedForm.Struct.I10.Check06
+OK ClosedForm.Struct.I10.CTValid: 3.905 s, 6764544000 bytes peak RSS
+START ClosedForm.Struct.I10.FSource00
+OK ClosedForm.Struct.I10.CValid: 3.955 s, 6762995712 bytes peak RSS
+START ClosedForm.Struct.I10.FSource01
+OK ClosedForm.Struct.I10.Check00: 4.156 s, 6799228928 bytes peak RSS
+START ClosedForm.Struct.I10.FValid00
+OK ClosedForm.Struct.I08.Relations: 3.905 s, 6772740096 bytes peak RSS
+START ClosedForm.Struct.I08.Assembly
+OK ClosedForm.Struct.I09.TSource: 4.006 s, 6742605824 bytes peak RSS
+START ClosedForm.Struct.I10.PBounds
+OK ClosedForm.Struct.I09.TValid: 3.955 s, 6765572096 bytes peak RSS
+START ClosedForm.Struct.I09.Fields
+OK ClosedForm.Struct.I10.Check03: 4.356 s, 6870700032 bytes peak RSS
+START ClosedForm.Struct.I09.Geometry
+OK ClosedForm.Struct.I10.Check06: 4.205 s, 6842208256 bytes peak RSS
+START ClosedForm.Struct.I10.PValid
+OK ClosedForm.Struct.I10.FValid00: 4.055 s, 6762512384 bytes peak RSS
+START ClosedForm.Struct.I10.FValid
+OK ClosedForm.Struct.I10.FSource00: 4.756 s, 6771105792 bytes peak RSS
+START ClosedForm.Struct.I10.RValid
+OK ClosedForm.Struct.I08.Assembly: 3.955 s, 6839308288 bytes peak RSS
+START ClosedForm.Struct.I10.TSource00
+OK ClosedForm.Struct.I10.Check05: 6.458 s, 7256178688 bytes peak RSS
+START ClosedForm.Struct.I10.TSource01
+OK ClosedForm.Struct.I10.Check04: 6.608 s, 7209451520 bytes peak RSS
+START ClosedForm.Struct.I10.TValid00
+OK ClosedForm.Struct.I10.FSource01: 4.806 s, 6771765248 bytes peak RSS
+START ClosedForm.Struct.I10.FSource
+OK ClosedForm.Struct.I10.Check01: 7.81 s, 7518117888 bytes peak RSS
+START ClosedForm.Struct.I11.CBounds
+OK ClosedForm.Struct.I10.Check02: 7.66 s, 7502467072 bytes peak RSS
+START ClosedForm.Struct.I10.Checks
+OK ClosedForm.Struct.I10.PBounds: 3.855 s, 6764912640 bytes peak RSS
+START ClosedForm.Struct.I11.CTBounds
+OK ClosedForm.Struct.I09.Fields: 4.306 s, 6778929152 bytes peak RSS
+START ClosedForm.Struct.I11.CTValid
+OK ClosedForm.Struct.I09.Geometry: 4.156 s, 6783094784 bytes peak RSS
+START ClosedForm.Struct.I09.Relations
+OK ClosedForm.Struct.I10.PValid: 3.955 s, 6765015040 bytes peak RSS
+START ClosedForm.Struct.I11.CValid
+OK ClosedForm.Struct.I10.RValid: 3.905 s, 6730280960 bytes peak RSS
+START ClosedForm.Struct.I11.Check00
+OK ClosedForm.Struct.I10.FValid: 4.005 s, 6731759616 bytes peak RSS
+START ClosedForm.Struct.I11.Check01
+OK ClosedForm.Struct.I10.TValid00: 4.006 s, 6719438848 bytes peak RSS
+START ClosedForm.Struct.I10.TValid
+OK ClosedForm.Struct.I10.Checks: 3.505 s, 6738567168 bytes peak RSS
+START ClosedForm.Struct.I11.Check02
+OK ClosedForm.Struct.I10.FSource: 4.355 s, 6729691136 bytes peak RSS
+START ClosedForm.Struct.I11.Check03
+OK ClosedForm.Struct.I11.CBounds: 3.955 s, 6765006848 bytes peak RSS
+START ClosedForm.Struct.I11.Check04
+OK ClosedForm.Struct.I10.TSource00: 4.757 s, 6772326400 bytes peak RSS
+START ClosedForm.Struct.I11.Check05
+OK ClosedForm.Struct.I10.TSource01: 4.656 s, 6770372608 bytes peak RSS
+START ClosedForm.Struct.I10.TSource
+OK ClosedForm.Struct.I11.CTBounds: 3.955 s, 6762475520 bytes peak RSS
+START ClosedForm.Struct.I11.Check06
+OK ClosedForm.Struct.I11.CTValid: 3.855 s, 6765027328 bytes peak RSS
+START ClosedForm.Struct.I11.FSource00
+OK ClosedForm.Struct.I09.Relations: 3.955 s, 6771564544 bytes peak RSS
+START ClosedForm.Struct.I09.Assembly
+OK ClosedForm.Struct.I11.CValid: 3.955 s, 6763188224 bytes peak RSS
+START ClosedForm.Struct.I11.FSource01
+OK ClosedForm.Struct.I11.Check00: 4.105 s, 6798454784 bytes peak RSS
+START ClosedForm.Struct.I11.FValid00
+OK ClosedForm.Struct.I10.TValid: 3.955 s, 6762340352 bytes peak RSS
+START ClosedForm.Struct.I11.PBounds
+OK ClosedForm.Struct.I10.TSource: 3.955 s, 6768037888 bytes peak RSS
+START ClosedForm.Struct.I10.Fields
+OK ClosedForm.Struct.I11.Check03: 4.356 s, 6884868096 bytes peak RSS
+START ClosedForm.Struct.I10.Geometry
+OK ClosedForm.Struct.I11.Check06: 4.155 s, 6844805120 bytes peak RSS
+START ClosedForm.Struct.I11.PValid
+OK ClosedForm.Struct.I09.Assembly: 3.905 s, 6839488512 bytes peak RSS
+START ClosedForm.Struct.I11.RValid
+OK ClosedForm.Struct.I11.FSource00: 4.756 s, 6769094656 bytes peak RSS
+START ClosedForm.Struct.I11.TSource00
+OK ClosedForm.Struct.I11.FSource01: 4.756 s, 6772883456 bytes peak RSS
+START ClosedForm.Struct.I11.FSource
+OK ClosedForm.Struct.I11.Check05: 6.558 s, 7233777664 bytes peak RSS
+START ClosedForm.Struct.I11.TSource01
+OK ClosedForm.Struct.I11.Check04: 6.659 s, 7275364352 bytes peak RSS
+START ClosedForm.Struct.I11.TValid00
+OK ClosedForm.Struct.I11.FValid00: 4.155 s, 6762971136 bytes peak RSS
+START ClosedForm.Struct.I11.FValid
+OK ClosedForm.Struct.I11.PBounds: 4.005 s, 6765219840 bytes peak RSS
+START ClosedForm.Struct.I12.CTBounds
+OK ClosedForm.Struct.I11.Check01: 8.461 s, 7648817152 bytes peak RSS
+START ClosedForm.Struct.I12.CTValid
+OK ClosedForm.Struct.I11.Check02: 8.211 s, 7627988992 bytes peak RSS
+START ClosedForm.Struct.I11.Checks
+OK ClosedForm.Struct.I10.Geometry: 4.156 s, 6782062592 bytes peak RSS
+START ClosedForm.Struct.I10.Relations
+OK ClosedForm.Struct.I10.Fields: 4.355 s, 6783180800 bytes peak RSS
+START ClosedForm.Struct.I12.CValid
+OK ClosedForm.Struct.I11.PValid: 3.905 s, 6765121536 bytes peak RSS
+START ClosedForm.Struct.I12.Check00
+OK ClosedForm.Struct.I11.RValid: 3.905 s, 6765228032 bytes peak RSS
+START ClosedForm.Struct.I12.Check01
+OK ClosedForm.Struct.I11.TSource00: 4.756 s, 6770348032 bytes peak RSS
+START ClosedForm.Struct.I12.Check02
+OK ClosedForm.Struct.I11.TValid00: 4.105 s, 6764601344 bytes peak RSS
+START ClosedForm.Struct.I11.TValid
+OK ClosedForm.Struct.I11.FSource: 4.556 s, 6779772928 bytes peak RSS
+START ClosedForm.Struct.I12.Check03
+OK ClosedForm.Struct.I11.TSource01: 4.656 s, 6770769920 bytes peak RSS
+START ClosedForm.Struct.I11.TSource
+OK ClosedForm.Struct.I11.FValid: 4.055 s, 6766710784 bytes peak RSS
+START ClosedForm.Struct.I12.Check04
+OK ClosedForm.Struct.I12.CTBounds: 3.855 s, 6744006656 bytes peak RSS
+START ClosedForm.Struct.I12.Check05
+OK ClosedForm.Struct.I12.CTValid: 3.855 s, 6744850432 bytes peak RSS
+START ClosedForm.Struct.I12.Check06
+OK ClosedForm.Struct.I11.Checks: 3.705 s, 6738923520 bytes peak RSS
+START ClosedForm.Struct.I12.FSource00
+OK ClosedForm.Struct.I10.Relations: 3.906 s, 6754746368 bytes peak RSS
+START ClosedForm.Struct.I10.Assembly
+OK ClosedForm.Struct.I12.CValid: 3.955 s, 6747471872 bytes peak RSS
+START ClosedForm.Struct.I12.FSource01
+OK ClosedForm.Struct.I12.Check00: 4.055 s, 6792474624 bytes peak RSS
+START ClosedForm.Struct.I12.FValid00
+OK ClosedForm.Struct.I11.TValid: 3.905 s, 6765285376 bytes peak RSS
+START ClosedForm.Struct.I12.PBounds
+OK ClosedForm.Struct.I12.Check03: 4.256 s, 6869688320 bytes peak RSS
+START ClosedForm.Struct.I12.PValid
+OK ClosedForm.Struct.I11.TSource: 4.055 s, 6767611904 bytes peak RSS
+START ClosedForm.Struct.I11.Fields
+OK ClosedForm.Struct.I12.Check06: 4.106 s, 6807539712 bytes peak RSS
+START ClosedForm.Struct.I11.Geometry
+OK ClosedForm.Struct.I10.Assembly: 3.905 s, 6829854720 bytes peak RSS
+START ClosedForm.Struct.I12.RValid
+OK ClosedForm.Struct.I12.FSource00: 4.757 s, 6773948416 bytes peak RSS
+START ClosedForm.Struct.I12.TSource00
+OK ClosedForm.Struct.I12.Check01: 7.66 s, 7480143872 bytes peak RSS
+START ClosedForm.Struct.I12.TValid
+OK ClosedForm.Struct.I12.FValid00: 4.005 s, 6765379584 bytes peak RSS
+START ClosedForm.Struct.I12.FValid
+OK ClosedForm.Struct.I12.FSource01: 4.756 s, 6767194112 bytes peak RSS
+START ClosedForm.Struct.I12.FSource
+OK ClosedForm.Struct.I12.Check04: 5.958 s, 7159226368 bytes peak RSS
+START ClosedForm.Struct.I13.Data
+OK ClosedForm.Struct.I12.Check05: 5.958 s, 7143641088 bytes peak RSS
+START ClosedForm.Struct.I14.Data
+OK ClosedForm.Struct.I12.Check02: 7.56 s, 7472693248 bytes peak RSS
+START ClosedForm.Struct.I12.Checks
+OK ClosedForm.Struct.I12.PBounds: 3.905 s, 6763671552 bytes peak RSS
+START ClosedForm.Struct.I15.Data
+OK ClosedForm.Struct.I12.PValid: 3.905 s, 6763474944 bytes peak RSS
+START ClosedForm.Struct.I16.Data
+OK ClosedForm.Struct.I11.Fields: 4.356 s, 6781714432 bytes peak RSS
+START ClosedForm.Struct.I17.Data
+OK ClosedForm.Struct.I11.Geometry: 4.256 s, 6784241664 bytes peak RSS
+START ClosedForm.Struct.I11.Relations
+OK ClosedForm.Struct.I12.RValid: 3.856 s, 6763307008 bytes peak RSS
+START ClosedForm.Struct.I18.Data
+OK ClosedForm.Struct.I12.TValid: 4.055 s, 6767902720 bytes peak RSS
+START ClosedForm.Struct.I19.Data
+OK ClosedForm.Struct.I12.FValid: 4.005 s, 6764134400 bytes peak RSS
+START ClosedForm.Struct.I20.Data
+OK ClosedForm.Struct.I12.TSource00: 4.756 s, 6772625408 bytes peak RSS
+START ClosedForm.Struct.I12.TSource
+OK ClosedForm.Struct.I12.FSource: 4.255 s, 6775529472 bytes peak RSS
+START ClosedForm.Struct.I21.Data
+OK ClosedForm.Struct.I12.Checks: 3.705 s, 6736736256 bytes peak RSS
+START ClosedForm.Struct.I22.Data
+OK ClosedForm.Struct.I11.Relations: 3.905 s, 6773436416 bytes peak RSS
+START ClosedForm.Struct.I11.Assembly
+OK ClosedForm.Struct.I12.TSource: 4.506 s, 6773411840 bytes peak RSS
+START ClosedForm.Struct.I12.Fields
+OK ClosedForm.Struct.I14.Data: 9.161 s, 6917148672 bytes peak RSS
+START ClosedForm.Struct.I12.Geometry
+OK ClosedForm.Struct.I13.Data: 9.512 s, 6918844416 bytes peak RSS
+START ClosedForm.Struct.I13.CBounds
+OK ClosedForm.Struct.I11.Assembly: 3.855 s, 6838411264 bytes peak RSS
+START ClosedForm.Struct.I13.CTBounds
+OK ClosedForm.Struct.I15.Data: 9.111 s, 6917992448 bytes peak RSS
+START ClosedForm.Struct.I13.CTValid
+OK ClosedForm.Struct.I16.Data: 9.162 s, 6917709824 bytes peak RSS
+START ClosedForm.Struct.I13.CValid
+OK ClosedForm.Struct.I17.Data: 9.061 s, 6917419008 bytes peak RSS
+START ClosedForm.Struct.I13.Check00
+OK ClosedForm.Struct.I18.Data: 9.061 s, 6919909376 bytes peak RSS
+START ClosedForm.Struct.I13.Check01
+OK ClosedForm.Struct.I19.Data: 8.811 s, 6878031872 bytes peak RSS
+START ClosedForm.Struct.I13.Check02
+OK ClosedForm.Struct.I12.Fields: 4.255 s, 6781140992 bytes peak RSS
+START ClosedForm.Struct.I13.Check03
+OK ClosedForm.Struct.I20.Data: 9.012 s, 6883184640 bytes peak RSS
+START ClosedForm.Struct.I13.Check04
+OK ClosedForm.Struct.I21.Data: 8.861 s, 6905823232 bytes peak RSS
+START ClosedForm.Struct.I13.Check05
+OK ClosedForm.Struct.I12.Geometry: 4.055 s, 6780231680 bytes peak RSS
+START ClosedForm.Struct.I12.Relations
+OK ClosedForm.Struct.I13.CBounds: 3.905 s, 6764580864 bytes peak RSS
+START ClosedForm.Struct.I13.Check06
+OK ClosedForm.Struct.I22.Data: 9.162 s, 6919725056 bytes peak RSS
+START ClosedForm.Struct.I13.FSource00
+OK ClosedForm.Struct.I13.CTBounds: 3.855 s, 6762979328 bytes peak RSS
+START ClosedForm.Struct.I13.FSource01
+OK ClosedForm.Struct.I13.CTValid: 3.905 s, 6764965888 bytes peak RSS
+START ClosedForm.Struct.I13.FValid00
+OK ClosedForm.Struct.I13.CValid: 4.005 s, 6762819584 bytes peak RSS
+START ClosedForm.Struct.I13.PBounds
+OK ClosedForm.Struct.I13.Check00: 4.105 s, 6793883648 bytes peak RSS
+START ClosedForm.Struct.I13.PValid
+OK ClosedForm.Struct.I13.Check03: 4.306 s, 6871572480 bytes peak RSS
+START ClosedForm.Struct.I13.RValid
+OK ClosedForm.Struct.I12.Relations: 3.855 s, 6771937280 bytes peak RSS
+START ClosedForm.Struct.I12.Assembly
+OK ClosedForm.Struct.I13.Check06: 4.155 s, 6829768704 bytes peak RSS
+START ClosedForm.Struct.I13.TSource00
+OK ClosedForm.Struct.I13.FValid00: 4.005 s, 6764703744 bytes peak RSS
+START ClosedForm.Struct.I13.FValid
+OK ClosedForm.Struct.I13.FSource00: 4.856 s, 6772740096 bytes peak RSS
+START ClosedForm.Struct.I13.TValid
+OK ClosedForm.Struct.I13.Check04: 6.108 s, 7183437824 bytes peak RSS
+START ClosedForm.Struct.I14.CBounds
+OK ClosedForm.Struct.I13.FSource01: 4.806 s, 6772318208 bytes peak RSS
+START ClosedForm.Struct.I13.FSource
+OK ClosedForm.Struct.I13.PBounds: 3.905 s, 6762938368 bytes peak RSS
+START ClosedForm.Struct.I14.CTBounds
+OK ClosedForm.Struct.I13.Check05: 6.058 s, 7177220096 bytes peak RSS
+START ClosedForm.Struct.I14.CTValid
+OK ClosedForm.Struct.I13.PValid: 3.905 s, 6762676224 bytes peak RSS
+START ClosedForm.Struct.I14.CValid
+OK ClosedForm.Struct.I13.Check01: 7.81 s, 7506522112 bytes peak RSS
+START ClosedForm.Struct.I14.Check00
+OK ClosedForm.Struct.I13.Check02: 7.61 s, 7463784448 bytes peak RSS
+START ClosedForm.Struct.I13.Checks
+OK ClosedForm.Struct.I13.RValid: 3.905 s, 6764687360 bytes peak RSS
+START ClosedForm.Struct.I14.Check01
+OK ClosedForm.Struct.I12.Assembly: 3.905 s, 6837108736 bytes peak RSS
+START ClosedForm.Struct.I14.Check02
+OK ClosedForm.Struct.I13.FValid: 4.005 s, 6763724800 bytes peak RSS
+START ClosedForm.Struct.I14.Check03
+OK ClosedForm.Struct.I13.TSource00: 4.857 s, 6775185408 bytes peak RSS
+START ClosedForm.Struct.I13.TSource
+OK ClosedForm.Struct.I14.CBounds: 3.955 s, 6763409408 bytes peak RSS
+START ClosedForm.Struct.I14.Check04
+OK ClosedForm.Struct.I13.TValid: 4.106 s, 6765191168 bytes peak RSS
+START ClosedForm.Struct.I14.Check05
+OK ClosedForm.Struct.I14.CTBounds: 3.855 s, 6766125056 bytes peak RSS
+START ClosedForm.Struct.I14.Check06
+OK ClosedForm.Struct.I14.CTValid: 3.855 s, 6765350912 bytes peak RSS
+START ClosedForm.Struct.I14.FSource00
+OK ClosedForm.Struct.I13.FSource: 4.306 s, 6776143872 bytes peak RSS
+START ClosedForm.Struct.I14.FSource01
+OK ClosedForm.Struct.I14.CValid: 3.905 s, 6765395968 bytes peak RSS
+START ClosedForm.Struct.I14.FValid00
+OK ClosedForm.Struct.I13.Checks: 3.655 s, 6738227200 bytes peak RSS
+START ClosedForm.Struct.I14.PBounds
+OK ClosedForm.Struct.I14.Check00: 4.106 s, 6792040448 bytes peak RSS
+START ClosedForm.Struct.I14.PValid
+OK ClosedForm.Struct.I14.Check03: 4.306 s, 6863527936 bytes peak RSS
+START ClosedForm.Struct.I14.RValid
+OK ClosedForm.Struct.I14.Check06: 4.105 s, 6817615872 bytes peak RSS
+START ClosedForm.Struct.I14.TSource00
+OK ClosedForm.Struct.I13.TSource: 4.606 s, 6772871168 bytes peak RSS
+START ClosedForm.Struct.I13.Fields
+OK ClosedForm.Struct.I14.FValid00: 4.005 s, 6765297664 bytes peak RSS
+START ClosedForm.Struct.I13.Geometry
+OK ClosedForm.Struct.I14.PBounds: 3.905 s, 6765875200 bytes peak RSS
+START ClosedForm.Struct.I14.FValid
+OK ClosedForm.Struct.I14.FSource00: 4.756 s, 6771589120 bytes peak RSS
+START ClosedForm.Struct.I14.TValid
+OK ClosedForm.Struct.I14.PValid: 3.855 s, 6762225664 bytes peak RSS
+START ClosedForm.Struct.I15.CBounds
+OK ClosedForm.Struct.I14.FSource01: 4.756 s, 6772707328 bytes peak RSS
+START ClosedForm.Struct.I14.FSource
+OK ClosedForm.Struct.I14.Check01: 7.76 s, 7479803904 bytes peak RSS
+START ClosedForm.Struct.I15.CTBounds
+OK ClosedForm.Struct.I14.Check02: 7.61 s, 7462342656 bytes peak RSS
+START ClosedForm.Struct.I15.CTValid
+OK ClosedForm.Struct.I14.Check04: 5.958 s, 7159533568 bytes peak RSS
+START ClosedForm.Struct.I15.CValid
+OK ClosedForm.Struct.I14.Check05: 5.958 s, 7122911232 bytes peak RSS
+START ClosedForm.Struct.I14.Checks
+OK ClosedForm.Struct.I14.RValid: 3.855 s, 6763782144 bytes peak RSS
+START ClosedForm.Struct.I15.Check00
+OK ClosedForm.Struct.I13.Fields: 4.255 s, 6780911616 bytes peak RSS
+START ClosedForm.Struct.I15.Check01
+OK ClosedForm.Struct.I13.Geometry: 4.155 s, 6781005824 bytes peak RSS
+START ClosedForm.Struct.I13.Relations
+OK ClosedForm.Struct.I14.FValid: 3.955 s, 6764728320 bytes peak RSS
+START ClosedForm.Struct.I15.Check02
+OK ClosedForm.Struct.I15.CBounds: 3.905 s, 6754045952 bytes peak RSS
+START ClosedForm.Struct.I15.Check03
+OK ClosedForm.Struct.I14.TValid: 4.055 s, 6751223808 bytes peak RSS
+START ClosedForm.Struct.I15.Check04
+OK ClosedForm.Struct.I14.TSource00: 4.806 s, 6770733056 bytes peak RSS
+START ClosedForm.Struct.I14.TSource
+OK ClosedForm.Struct.I14.FSource: 4.256 s, 6775889920 bytes peak RSS
+START ClosedForm.Struct.I15.Check05
+OK ClosedForm.Struct.I15.CTBounds: 3.855 s, 6764519424 bytes peak RSS
+START ClosedForm.Struct.I15.Check06
+OK ClosedForm.Struct.I15.CTValid: 3.855 s, 6752296960 bytes peak RSS
+START ClosedForm.Struct.I15.FSource00
+OK ClosedForm.Struct.I14.Checks: 3.755 s, 6738210816 bytes peak RSS
+START ClosedForm.Struct.I15.FSource01
+OK ClosedForm.Struct.I15.CValid: 3.905 s, 6748319744 bytes peak RSS
+START ClosedForm.Struct.I15.FValid00
+OK ClosedForm.Struct.I15.Check00: 4.105 s, 6793326592 bytes peak RSS
+START ClosedForm.Struct.I15.PBounds
+OK ClosedForm.Struct.I13.Relations: 3.855 s, 6772609024 bytes peak RSS
+START ClosedForm.Struct.I13.Assembly
+OK ClosedForm.Struct.I15.Check03: 4.256 s, 6840909824 bytes peak RSS
+START ClosedForm.Struct.I15.PValid
+OK ClosedForm.Struct.I14.TSource: 4.506 s, 6751793152 bytes peak RSS
+START ClosedForm.Struct.I14.Fields
+OK ClosedForm.Struct.I15.Check06: 4.155 s, 6824902656 bytes peak RSS
+START ClosedForm.Struct.I14.Geometry
+OK ClosedForm.Struct.I15.FValid00: 4.005 s, 6765707264 bytes peak RSS
+START ClosedForm.Struct.I15.FValid
+OK ClosedForm.Struct.I15.FSource00: 4.756 s, 6734704640 bytes peak RSS
+START ClosedForm.Struct.I15.RValid
+OK ClosedForm.Struct.I15.FSource01: 4.756 s, 6738231296 bytes peak RSS
+START ClosedForm.Struct.I15.FSource
+OK ClosedForm.Struct.I15.Check04: 5.957 s, 7138357248 bytes peak RSS
+START ClosedForm.Struct.I15.TSource00
+OK ClosedForm.Struct.I15.Check05: 5.958 s, 7161462784 bytes peak RSS
+START ClosedForm.Struct.I15.TValid
+OK ClosedForm.Struct.I15.PBounds: 3.905 s, 6764298240 bytes peak RSS
+START ClosedForm.Struct.I16.CBounds
+OK ClosedForm.Struct.I15.Check01: 7.559 s, 7481466880 bytes peak RSS
+START ClosedForm.Struct.I16.CTBounds
+OK ClosedForm.Struct.I15.Check02: 7.46 s, 7437684736 bytes peak RSS
+START ClosedForm.Struct.I15.Checks
+OK ClosedForm.Struct.I13.Assembly: 3.905 s, 6838521856 bytes peak RSS
+START ClosedForm.Struct.I16.CTValid
+OK ClosedForm.Struct.I15.PValid: 3.855 s, 6766669824 bytes peak RSS
+START ClosedForm.Struct.I16.CValid
+OK ClosedForm.Struct.I15.FValid: 3.955 s, 6743441408 bytes peak RSS
+START ClosedForm.Struct.I16.Check00
+OK ClosedForm.Struct.I14.Fields: 4.306 s, 6781390848 bytes peak RSS
+START ClosedForm.Struct.I16.Check01
+OK ClosedForm.Struct.I14.Geometry: 4.155 s, 6759251968 bytes peak RSS
+START ClosedForm.Struct.I14.Relations
+OK ClosedForm.Struct.I15.RValid: 3.905 s, 6748262400 bytes peak RSS
+START ClosedForm.Struct.I16.Check02
+OK ClosedForm.Struct.I15.FSource: 4.306 s, 6762909696 bytes peak RSS
+START ClosedForm.Struct.I16.Check03
+OK ClosedForm.Struct.I15.TValid: 4.105 s, 6765862912 bytes peak RSS
+START ClosedForm.Struct.I16.Check04
+OK ClosedForm.Struct.I16.CBounds: 3.956 s, 6765461504 bytes peak RSS
+START ClosedForm.Struct.I16.Check05
+OK ClosedForm.Struct.I15.TSource00: 4.806 s, 6772187136 bytes peak RSS
+START ClosedForm.Struct.I15.TSource
+OK ClosedForm.Struct.I15.Checks: 3.655 s, 6741045248 bytes peak RSS
+START ClosedForm.Struct.I16.Check06
+OK ClosedForm.Struct.I16.CTBounds: 3.855 s, 6763393024 bytes peak RSS
+START ClosedForm.Struct.I16.FSource00
+OK ClosedForm.Struct.I16.CTValid: 3.905 s, 6764609536 bytes peak RSS
+START ClosedForm.Struct.I16.FSource01
+OK ClosedForm.Struct.I16.CValid: 3.905 s, 6764879872 bytes peak RSS
+START ClosedForm.Struct.I16.FValid00
+OK ClosedForm.Struct.I14.Relations: 3.905 s, 6770388992 bytes peak RSS
+START ClosedForm.Struct.I14.Assembly
+OK ClosedForm.Struct.I16.Check00: 4.106 s, 6745731072 bytes peak RSS
+START ClosedForm.Struct.I16.PBounds
+OK ClosedForm.Struct.I16.Check03: 4.256 s, 6864953344 bytes peak RSS
+START ClosedForm.Struct.I16.PValid
+OK ClosedForm.Struct.I16.Check06: 4.106 s, 6807240704 bytes peak RSS
+START ClosedForm.Struct.I16.RValid
+OK ClosedForm.Struct.I15.TSource: 4.606 s, 6752247808 bytes peak RSS
+START ClosedForm.Struct.I15.Fields
+OK ClosedForm.Struct.I16.FSource00: 4.756 s, 6755438592 bytes peak RSS
+START ClosedForm.Struct.I15.Geometry
+OK ClosedForm.Struct.I16.FValid00: 4.055 s, 6764638208 bytes peak RSS
+START ClosedForm.Struct.I16.FValid
+OK ClosedForm.Struct.I16.FSource01: 4.806 s, 6772637696 bytes peak RSS
+START ClosedForm.Struct.I16.FSource
+OK ClosedForm.Struct.I16.Check04: 5.957 s, 7157342208 bytes peak RSS
+START ClosedForm.Struct.I16.TSource00
+OK ClosedForm.Struct.I16.Check01: 7.76 s, 7431680000 bytes peak RSS
+START ClosedForm.Struct.I16.TValid
+OK ClosedForm.Struct.I16.Check05: 5.958 s, 7138603008 bytes peak RSS
+START ClosedForm.Struct.I17.CBounds
+OK ClosedForm.Struct.I14.Assembly: 3.905 s, 6830182400 bytes peak RSS
+START ClosedForm.Struct.I17.CTBounds
+OK ClosedForm.Struct.I16.PBounds: 3.905 s, 6755033088 bytes peak RSS
+START ClosedForm.Struct.I17.CTValid
+OK ClosedForm.Struct.I16.Check02: 7.51 s, 7463673856 bytes peak RSS
+START ClosedForm.Struct.I16.Checks
+OK ClosedForm.Struct.I16.PValid: 3.955 s, 6769152000 bytes peak RSS
+START ClosedForm.Struct.I17.CValid
+OK ClosedForm.Struct.I16.RValid: 3.855 s, 6764613632 bytes peak RSS
+START ClosedForm.Struct.I17.Check00
+OK ClosedForm.Struct.I15.Fields: 4.356 s, 6782234624 bytes peak RSS
+START ClosedForm.Struct.I17.Check01
+OK ClosedForm.Struct.I16.FValid: 3.955 s, 6765445120 bytes peak RSS
+START ClosedForm.Struct.I17.Check02
+OK ClosedForm.Struct.I15.Geometry: 4.256 s, 6782205952 bytes peak RSS
+START ClosedForm.Struct.I15.Relations
+OK ClosedForm.Struct.I16.Checks: 3.505 s, 6737567744 bytes peak RSS
+START ClosedForm.Struct.I17.Check03
+OK ClosedForm.Struct.I16.FSource: 4.256 s, 6775730176 bytes peak RSS
+START ClosedForm.Struct.I17.Check04
+OK ClosedForm.Struct.I17.CBounds: 3.905 s, 6768570368 bytes peak RSS
+START ClosedForm.Struct.I17.Check05
+OK ClosedForm.Struct.I16.TValid: 4.055 s, 6764634112 bytes peak RSS
+START ClosedForm.Struct.I17.Check06
+OK ClosedForm.Struct.I17.CTBounds: 3.905 s, 6744371200 bytes peak RSS
+START ClosedForm.Struct.I17.FSource00
+OK ClosedForm.Struct.I17.CTValid: 3.905 s, 6745313280 bytes peak RSS
+START ClosedForm.Struct.I17.FSource01
+OK ClosedForm.Struct.I16.TSource00: 4.756 s, 6774800384 bytes peak RSS
+START ClosedForm.Struct.I16.TSource
+OK ClosedForm.Struct.I17.CValid: 4.005 s, 6768463872 bytes peak RSS
+START ClosedForm.Struct.I17.FValid00
+OK ClosedForm.Struct.I17.Check00: 4.055 s, 6794895360 bytes peak RSS
+START ClosedForm.Struct.I17.PBounds
+OK ClosedForm.Struct.I15.Relations: 3.905 s, 6769528832 bytes peak RSS
+START ClosedForm.Struct.I15.Assembly
+OK ClosedForm.Struct.I17.Check03: 4.256 s, 6869217280 bytes peak RSS
+START ClosedForm.Struct.I17.PValid
+OK ClosedForm.Struct.I17.Check06: 4.156 s, 6831394816 bytes peak RSS
+START ClosedForm.Struct.I17.RValid
+OK ClosedForm.Struct.I17.FSource00: 4.756 s, 6756216832 bytes peak RSS
+START ClosedForm.Struct.I17.TSource00
+OK ClosedForm.Struct.I17.FSource01: 4.756 s, 6755971072 bytes peak RSS
+START ClosedForm.Struct.I17.FSource
+OK ClosedForm.Struct.I16.TSource: 4.556 s, 6772236288 bytes peak RSS
+START ClosedForm.Struct.I16.Fields
+OK ClosedForm.Struct.I17.FValid00: 4.105 s, 6767857664 bytes peak RSS
+START ClosedForm.Struct.I16.Geometry
+OK ClosedForm.Struct.I17.Check05: 5.908 s, 7159021568 bytes peak RSS
+START ClosedForm.Struct.I17.FValid
+OK ClosedForm.Struct.I17.Check04: 6.008 s, 7162490880 bytes peak RSS
+START ClosedForm.Struct.I17.TValid
+OK ClosedForm.Struct.I17.PBounds: 3.905 s, 6766428160 bytes peak RSS
+START ClosedForm.Struct.I18.CBounds
+OK ClosedForm.Struct.I17.Check01: 7.56 s, 7477321728 bytes peak RSS
+START ClosedForm.Struct.I18.CTBounds
+OK ClosedForm.Struct.I17.Check02: 7.56 s, 7465082880 bytes peak RSS
+START ClosedForm.Struct.I17.Checks
+OK ClosedForm.Struct.I15.Assembly: 3.905 s, 6836109312 bytes peak RSS
+START ClosedForm.Struct.I18.CTValid
+OK ClosedForm.Struct.I17.PValid: 3.855 s, 6768295936 bytes peak RSS
+START ClosedForm.Struct.I18.CValid
+OK ClosedForm.Struct.I17.RValid: 3.905 s, 6768652288 bytes peak RSS
+START ClosedForm.Struct.I18.Check00
+OK ClosedForm.Struct.I17.FSource: 4.256 s, 6743470080 bytes peak RSS
+START ClosedForm.Struct.I18.Check01
+OK ClosedForm.Struct.I16.Fields: 4.306 s, 6781173760 bytes peak RSS
+START ClosedForm.Struct.I18.Check02
+OK ClosedForm.Struct.I17.TSource00: 4.756 s, 6737485824 bytes peak RSS
+START ClosedForm.Struct.I17.TSource
+OK ClosedForm.Struct.I16.Geometry: 4.156 s, 6781714432 bytes peak RSS
+START ClosedForm.Struct.I16.Relations
+OK ClosedForm.Struct.I17.FValid: 4.006 s, 6735933440 bytes peak RSS
+START ClosedForm.Struct.I18.Check03
+OK ClosedForm.Struct.I17.TValid: 4.106 s, 6737055744 bytes peak RSS
+START ClosedForm.Struct.I18.Check04
+OK ClosedForm.Struct.I18.CBounds: 3.956 s, 6765867008 bytes peak RSS
+START ClosedForm.Struct.I18.Check05
+OK ClosedForm.Struct.I17.Checks: 3.705 s, 6740840448 bytes peak RSS
+START ClosedForm.Struct.I18.Check06
+OK ClosedForm.Struct.I18.CTBounds: 3.955 s, 6765068288 bytes peak RSS
+START ClosedForm.Struct.I18.FSource00
+OK ClosedForm.Struct.I18.CTValid: 3.855 s, 6766481408 bytes peak RSS
+START ClosedForm.Struct.I18.FSource01
+OK ClosedForm.Struct.I18.CValid: 3.955 s, 6766718976 bytes peak RSS
+START ClosedForm.Struct.I18.FValid00
+OK ClosedForm.Struct.I18.Check00: 4.105 s, 6793072640 bytes peak RSS
+START ClosedForm.Struct.I18.PBounds
+OK ClosedForm.Struct.I16.Relations: 3.955 s, 6772506624 bytes peak RSS
+START ClosedForm.Struct.I16.Assembly
+OK ClosedForm.Struct.I18.Check03: 4.306 s, 6866952192 bytes peak RSS
+START ClosedForm.Struct.I18.PValid
+OK ClosedForm.Struct.I17.TSource: 4.606 s, 6774169600 bytes peak RSS
+START ClosedForm.Struct.I17.Fields
+OK ClosedForm.Struct.I18.Check06: 4.105 s, 6828077056 bytes peak RSS
+START ClosedForm.Struct.I17.Geometry
+OK ClosedForm.Struct.I18.FSource00: 4.756 s, 6772105216 bytes peak RSS
+START ClosedForm.Struct.I18.RValid
+OK ClosedForm.Struct.I18.FSource01: 4.756 s, 6771810304 bytes peak RSS
+START ClosedForm.Struct.I18.FSource
+OK ClosedForm.Struct.I18.FValid00: 4.055 s, 6764183552 bytes peak RSS
+START ClosedForm.Struct.I18.FValid
+OK ClosedForm.Struct.I18.Check04: 6.008 s, 7161073664 bytes peak RSS
+START ClosedForm.Struct.I18.TSource00
+OK ClosedForm.Struct.I18.PBounds: 3.905 s, 6762467328 bytes peak RSS
+START ClosedForm.Struct.I18.TValid
+OK ClosedForm.Struct.I18.Check05: 6.008 s, 7160971264 bytes peak RSS
+START ClosedForm.Struct.I19.CBounds
+OK ClosedForm.Struct.I18.Check01: 7.66 s, 7476273152 bytes peak RSS
+START ClosedForm.Struct.I19.CTBounds
+OK ClosedForm.Struct.I18.Check02: 7.66 s, 7458951168 bytes peak RSS
+START ClosedForm.Struct.I18.Checks
+OK ClosedForm.Struct.I16.Assembly: 3.906 s, 6838063104 bytes peak RSS
+START ClosedForm.Struct.I19.CTValid
+OK ClosedForm.Struct.I18.PValid: 3.905 s, 6735544320 bytes peak RSS
+START ClosedForm.Struct.I19.CValid
+OK ClosedForm.Struct.I17.Fields: 4.256 s, 6755889152 bytes peak RSS
+START ClosedForm.Struct.I19.Check00
+OK ClosedForm.Struct.I17.Geometry: 4.206 s, 6786420736 bytes peak RSS
+START ClosedForm.Struct.I17.Relations
+OK ClosedForm.Struct.I18.RValid: 3.906 s, 6764167168 bytes peak RSS
+START ClosedForm.Struct.I19.Check01
+OK ClosedForm.Struct.I18.FValid: 3.955 s, 6767108096 bytes peak RSS
+START ClosedForm.Struct.I19.Check02
+OK ClosedForm.Struct.I18.FSource: 4.256 s, 6779432960 bytes peak RSS
+START ClosedForm.Struct.I19.Check03
+OK ClosedForm.Struct.I19.CBounds: 3.905 s, 6762815488 bytes peak RSS
+START ClosedForm.Struct.I19.Check04
+OK ClosedForm.Struct.I18.TValid: 4.055 s, 6766792704 bytes peak RSS
+START ClosedForm.Struct.I19.Check05
+OK ClosedForm.Struct.I19.CTBounds: 3.955 s, 6765375488 bytes peak RSS
+START ClosedForm.Struct.I19.Check06
+OK ClosedForm.Struct.I18.TSource00: 4.807 s, 6774423552 bytes peak RSS
+START ClosedForm.Struct.I18.TSource
+OK ClosedForm.Struct.I18.Checks: 3.655 s, 6739124224 bytes peak RSS
+START ClosedForm.Struct.I19.FSource00
+OK ClosedForm.Struct.I19.CTValid: 3.956 s, 6765338624 bytes peak RSS
+START ClosedForm.Struct.I19.FSource01
+OK ClosedForm.Struct.I19.CValid: 3.955 s, 6764732416 bytes peak RSS
+START ClosedForm.Struct.I19.FValid00
+OK ClosedForm.Struct.I19.Check00: 4.055 s, 6786351104 bytes peak RSS
+START ClosedForm.Struct.I19.PBounds
+OK ClosedForm.Struct.I17.Relations: 3.955 s, 6775623680 bytes peak RSS
+START ClosedForm.Struct.I17.Assembly
+OK ClosedForm.Struct.I19.Check03: 4.306 s, 6859395072 bytes peak RSS
+START ClosedForm.Struct.I19.PValid
+OK ClosedForm.Struct.I19.Check06: 4.106 s, 6819905536 bytes peak RSS
+START ClosedForm.Struct.I19.RValid
+OK ClosedForm.Struct.I18.TSource: 4.556 s, 6736515072 bytes peak RSS
+START ClosedForm.Struct.I18.Fields
+OK ClosedForm.Struct.I19.FSource00: 4.756 s, 6733901824 bytes peak RSS
+START ClosedForm.Struct.I18.Geometry
+OK ClosedForm.Struct.I19.Check04: 5.758 s, 7119134720 bytes peak RSS
+START ClosedForm.Struct.I19.TSource00
+OK ClosedForm.Struct.I19.Check05: 5.758 s, 7119298560 bytes peak RSS
+START ClosedForm.Struct.I19.TValid
+OK ClosedForm.Struct.I19.FValid00: 4.105 s, 6762696704 bytes peak RSS
+START ClosedForm.Struct.I19.FValid
+OK ClosedForm.Struct.I19.FSource01: 4.806 s, 6771945472 bytes peak RSS
+START ClosedForm.Struct.I19.FSource
+OK ClosedForm.Struct.I19.PBounds: 3.905 s, 6762840064 bytes peak RSS
+START ClosedForm.Struct.I20.CBounds
+OK ClosedForm.Struct.I19.Check01: 7.209 s, 7414738944 bytes peak RSS
+START ClosedForm.Struct.I20.CTBounds
+OK ClosedForm.Struct.I17.Assembly: 3.955 s, 6841827328 bytes peak RSS
+START ClosedForm.Struct.I20.CTValid
+OK ClosedForm.Struct.I19.Check02: 7.259 s, 7400615936 bytes peak RSS
+START ClosedForm.Struct.I19.Checks
+OK ClosedForm.Struct.I19.PValid: 3.905 s, 6763327488 bytes peak RSS
+START ClosedForm.Struct.I20.CValid
+OK ClosedForm.Struct.I19.RValid: 3.905 s, 6765207552 bytes peak RSS
+START ClosedForm.Struct.I20.Check00
+OK ClosedForm.Struct.I18.Fields: 4.256 s, 6782971904 bytes peak RSS
+START ClosedForm.Struct.I20.Check01
+OK ClosedForm.Struct.I18.Geometry: 4.156 s, 6782701568 bytes peak RSS
+START ClosedForm.Struct.I18.Relations
+OK ClosedForm.Struct.I19.TValid: 4.005 s, 6737334272 bytes peak RSS
+START ClosedForm.Struct.I20.Check02
+OK ClosedForm.Struct.I19.FValid: 3.955 s, 6765527040 bytes peak RSS
+START ClosedForm.Struct.I20.Check03
+OK ClosedForm.Struct.I20.CBounds: 3.905 s, 6767136768 bytes peak RSS
+START ClosedForm.Struct.I20.Check04
+OK ClosedForm.Struct.I20.CTBounds: 3.955 s, 6766301184 bytes peak RSS
+START ClosedForm.Struct.I20.Check05
+OK ClosedForm.Struct.I19.FSource: 4.206 s, 6775619584 bytes peak RSS
+START ClosedForm.Struct.I20.Check06
+OK ClosedForm.Struct.I19.TSource00: 4.756 s, 6744301568 bytes peak RSS
+START ClosedForm.Struct.I19.TSource
+OK ClosedForm.Struct.I20.CTValid: 3.956 s, 6766301184 bytes peak RSS
+START ClosedForm.Struct.I20.FSource00
+OK ClosedForm.Struct.I19.Checks: 3.705 s, 6738493440 bytes peak RSS
+START ClosedForm.Struct.I20.FSource01
+OK ClosedForm.Struct.I20.CValid: 3.956 s, 6766706688 bytes peak RSS
+START ClosedForm.Struct.I20.FValid00
+OK ClosedForm.Struct.I20.Check00: 4.106 s, 6793076736 bytes peak RSS
+START ClosedForm.Struct.I20.PBounds
+OK ClosedForm.Struct.I18.Relations: 3.905 s, 6770470912 bytes peak RSS
+START ClosedForm.Struct.I18.Assembly
+OK ClosedForm.Struct.I20.Check03: 4.256 s, 6866296832 bytes peak RSS
+START ClosedForm.Struct.I20.PValid
+OK ClosedForm.Struct.I20.Check06: 4.156 s, 6827974656 bytes peak RSS
+START ClosedForm.Struct.I20.RValid
+OK ClosedForm.Struct.I19.TSource: 4.456 s, 6771556352 bytes peak RSS
+START ClosedForm.Struct.I19.Fields
+OK ClosedForm.Struct.I20.FSource00: 4.756 s, 6770180096 bytes peak RSS
+START ClosedForm.Struct.I19.Geometry
+OK ClosedForm.Struct.I20.FSource01: 4.806 s, 6776315904 bytes peak RSS
+START ClosedForm.Struct.I20.FSource
+OK ClosedForm.Struct.I20.Check04: 5.958 s, 7159848960 bytes peak RSS
+START ClosedForm.Struct.I20.TSource00
+OK ClosedForm.Struct.I20.FValid00: 4.106 s, 6766116864 bytes peak RSS
+START ClosedForm.Struct.I20.FValid
+OK ClosedForm.Struct.I20.Check05: 6.058 s, 7161786368 bytes peak RSS
+START ClosedForm.Struct.I20.TValid
+OK ClosedForm.Struct.I20.PBounds: 3.905 s, 6766366720 bytes peak RSS
+START ClosedForm.Struct.I21.CBounds
+OK ClosedForm.Struct.I20.Check01: 7.56 s, 7474143232 bytes peak RSS
+START ClosedForm.Struct.I21.CTBounds
+OK ClosedForm.Struct.I20.Check02: 7.51 s, 7462969344 bytes peak RSS
+START ClosedForm.Struct.I20.Checks
+OK ClosedForm.Struct.I18.Assembly: 3.955 s, 6838435840 bytes peak RSS
+START ClosedForm.Struct.I21.CTValid
+OK ClosedForm.Struct.I20.PValid: 3.855 s, 6766682112 bytes peak RSS
+START ClosedForm.Struct.I21.CValid
+OK ClosedForm.Struct.I20.RValid: 3.905 s, 6764711936 bytes peak RSS
+START ClosedForm.Struct.I21.Check00
+OK ClosedForm.Struct.I19.Fields: 4.356 s, 6778851328 bytes peak RSS
+START ClosedForm.Struct.I21.Check01
+OK ClosedForm.Struct.I19.Geometry: 4.106 s, 6781034496 bytes peak RSS
+START ClosedForm.Struct.I19.Relations
+OK ClosedForm.Struct.I20.FSource: 4.356 s, 6779187200 bytes peak RSS
+START ClosedForm.Struct.I21.Check02
+OK ClosedForm.Struct.I20.FValid: 3.955 s, 6741635072 bytes peak RSS
+START ClosedForm.Struct.I21.Check03
+OK ClosedForm.Struct.I20.TValid: 4.155 s, 6764687360 bytes peak RSS
+START ClosedForm.Struct.I21.Check04
+OK ClosedForm.Struct.I21.CBounds: 3.955 s, 6763118592 bytes peak RSS
+START ClosedForm.Struct.I21.Check05
+OK ClosedForm.Struct.I21.CTBounds: 3.855 s, 6761672704 bytes peak RSS
+START ClosedForm.Struct.I21.Check06
+OK ClosedForm.Struct.I20.TSource00: 4.756 s, 6748037120 bytes peak RSS
+START ClosedForm.Struct.I20.TSource
+OK ClosedForm.Struct.I20.Checks: 3.655 s, 6739521536 bytes peak RSS
+START ClosedForm.Struct.I21.FSource00
+OK ClosedForm.Struct.I21.CTValid: 3.955 s, 6765449216 bytes peak RSS
+START ClosedForm.Struct.I21.FSource01
+OK ClosedForm.Struct.I21.CValid: 3.956 s, 6765453312 bytes peak RSS
+START ClosedForm.Struct.I21.FValid00
+OK ClosedForm.Struct.I21.Check00: 4.055 s, 6788087808 bytes peak RSS
+START ClosedForm.Struct.I21.PBounds
+OK ClosedForm.Struct.I19.Relations: 3.955 s, 6772350976 bytes peak RSS
+START ClosedForm.Struct.I19.Assembly
+OK ClosedForm.Struct.I21.Check03: 4.256 s, 6855708672 bytes peak RSS
+START ClosedForm.Struct.I21.PValid
+OK ClosedForm.Struct.I21.Check06: 4.105 s, 6792110080 bytes peak RSS
+START ClosedForm.Struct.I21.RValid
+OK ClosedForm.Struct.I20.TSource: 4.556 s, 6743572480 bytes peak RSS
+START ClosedForm.Struct.I20.Fields
+OK ClosedForm.Struct.I21.FSource00: 4.806 s, 6760275968 bytes peak RSS
+START ClosedForm.Struct.I20.Geometry
+OK ClosedForm.Struct.I21.FValid00: 4.105 s, 6765080576 bytes peak RSS
+START ClosedForm.Struct.I21.FValid
+OK ClosedForm.Struct.I21.FSource01: 4.756 s, 6775570432 bytes peak RSS
+START ClosedForm.Struct.I21.FSource
+OK ClosedForm.Struct.I21.Check05: 5.707 s, 7097262080 bytes peak RSS
+START ClosedForm.Struct.I21.TSource00
+OK ClosedForm.Struct.I21.Check04: 5.808 s, 7102087168 bytes peak RSS
+START ClosedForm.Struct.I21.TValid
+OK ClosedForm.Struct.I21.PBounds: 3.955 s, 6764793856 bytes peak RSS
+START ClosedForm.Struct.I22.CBounds
+OK ClosedForm.Struct.I21.Check01: 7.209 s, 7393837056 bytes peak RSS
+START ClosedForm.Struct.I22.CTBounds
+OK ClosedForm.Struct.I21.Check02: 7.059 s, 7388024832 bytes peak RSS
+START ClosedForm.Struct.I21.Checks
+OK ClosedForm.Struct.I19.Assembly: 3.955 s, 6839820288 bytes peak RSS
+START ClosedForm.Struct.I22.CTValid
+OK ClosedForm.Struct.I21.PValid: 3.905 s, 6765461504 bytes peak RSS
+START ClosedForm.Struct.I22.CValid
+OK ClosedForm.Struct.I21.RValid: 3.905 s, 6764978176 bytes peak RSS
+START ClosedForm.Struct.I22.Check00
+OK ClosedForm.Struct.I20.Fields: 4.306 s, 6779473920 bytes peak RSS
+START ClosedForm.Struct.I22.Check01
+OK ClosedForm.Struct.I20.Geometry: 4.156 s, 6782599168 bytes peak RSS
+START ClosedForm.Struct.I20.Relations
+OK ClosedForm.Struct.I21.FValid: 3.955 s, 6765445120 bytes peak RSS
+START ClosedForm.Struct.I22.Check02
+OK ClosedForm.Struct.I21.FSource: 4.156 s, 6773436416 bytes peak RSS
+START ClosedForm.Struct.I22.Check03
+OK ClosedForm.Struct.I21.TValid: 4.056 s, 6759251968 bytes peak RSS
+START ClosedForm.Struct.I22.Check04
+OK ClosedForm.Struct.I22.CBounds: 3.905 s, 6765703168 bytes peak RSS
+START ClosedForm.Struct.I22.Check05
+OK ClosedForm.Struct.I22.CTBounds: 3.955 s, 6764785664 bytes peak RSS
+START ClosedForm.Struct.I22.Check06
+OK ClosedForm.Struct.I21.Checks: 3.755 s, 6740561920 bytes peak RSS
+START ClosedForm.Struct.I22.FSource00
+OK ClosedForm.Struct.I21.TSource00: 4.807 s, 6766637056 bytes peak RSS
+START ClosedForm.Struct.I21.TSource
+OK ClosedForm.Struct.I22.CTValid: 3.955 s, 6765645824 bytes peak RSS
+START ClosedForm.Struct.I22.FSource01
+OK ClosedForm.Struct.I22.CValid: 4.005 s, 6766084096 bytes peak RSS
+START ClosedForm.Struct.I22.FValid00
+OK ClosedForm.Struct.I22.Check00: 4.155 s, 6792347648 bytes peak RSS
+START ClosedForm.Struct.I22.PBounds
+OK ClosedForm.Struct.I20.Relations: 3.907 s, 6773919744 bytes peak RSS
+START ClosedForm.Struct.I20.Assembly
+OK ClosedForm.Struct.I22.Check06: 4.105 s, 6824394752 bytes peak RSS
+START ClosedForm.Struct.I22.PValid
+OK ClosedForm.Struct.I22.Check03: 4.256 s, 6862942208 bytes peak RSS
+START ClosedForm.Struct.I22.RValid
+OK ClosedForm.Struct.I22.FSource00: 4.806 s, 6772514816 bytes peak RSS
+START ClosedForm.Struct.I22.TSource00
+OK ClosedForm.Struct.I21.TSource: 4.456 s, 6771068928 bytes peak RSS
+START ClosedForm.Struct.I21.Fields
+OK ClosedForm.Struct.I22.FSource01: 4.856 s, 6774087680 bytes peak RSS
+START ClosedForm.Struct.I21.Geometry
+OK ClosedForm.Struct.I22.Check04: 5.908 s, 7147941888 bytes peak RSS
+START ClosedForm.Struct.I22.FSource
+OK ClosedForm.Struct.I22.Check05: 5.908 s, 7148199936 bytes peak RSS
+START ClosedForm.Struct.I22.TValid
+OK ClosedForm.Struct.I22.FValid00: 4.056 s, 6764085248 bytes peak RSS
+START ClosedForm.Struct.I22.FValid
+OK ClosedForm.Struct.I22.PBounds: 3.905 s, 6764146688 bytes peak RSS
+START ClosedForm.Struct.I23.Data
+OK ClosedForm.Struct.I22.Check01: 7.61 s, 7475924992 bytes peak RSS
+START ClosedForm.Struct.I24.Data
+OK ClosedForm.Struct.I22.Check02: 7.46 s, 7465082880 bytes peak RSS
+START ClosedForm.Struct.I22.Checks
+OK ClosedForm.Struct.I20.Assembly: 4.006 s, 6839001088 bytes peak RSS
+START ClosedForm.Struct.I25.Data
+OK ClosedForm.Struct.I22.PValid: 3.905 s, 6749454336 bytes peak RSS
+START ClosedForm.Struct.I26.Data
+OK ClosedForm.Struct.I22.RValid: 3.905 s, 6752276480 bytes peak RSS
+START ClosedForm.Struct.I27.Data
+OK ClosedForm.Struct.I21.Fields: 4.256 s, 6762598400 bytes peak RSS
+START ClosedForm.Struct.I28.Data
+OK ClosedForm.Struct.I22.TSource00: 4.756 s, 6750711808 bytes peak RSS
+START ClosedForm.Struct.I22.TSource
+OK ClosedForm.Struct.I21.Geometry: 4.155 s, 6783471616 bytes peak RSS
+START ClosedForm.Struct.I21.Relations
+OK ClosedForm.Struct.I22.TValid: 4.055 s, 6745362432 bytes peak RSS
+START ClosedForm.Struct.I29.Data
+OK ClosedForm.Struct.I22.FValid: 4.055 s, 6766358528 bytes peak RSS
+START ClosedForm.Struct.I30.Data
+OK ClosedForm.Struct.I22.FSource: 4.255 s, 6757306368 bytes peak RSS
+START ClosedForm.Struct.I31.Data
+OK ClosedForm.Struct.I22.Checks: 3.655 s, 6738739200 bytes peak RSS
+START ClosedForm.Struct.I32.Data
+OK ClosedForm.Struct.I21.Relations: 3.805 s, 6758420480 bytes peak RSS
+START ClosedForm.Struct.I21.Assembly
+OK ClosedForm.Struct.I22.TSource: 4.506 s, 6759501824 bytes peak RSS
+START ClosedForm.Struct.I22.Fields
+OK ClosedForm.Struct.I23.Data: 9.161 s, 6917492736 bytes peak RSS
+START ClosedForm.Struct.I22.Geometry
+OK ClosedForm.Struct.I24.Data: 9.261 s, 6921871360 bytes peak RSS
+START ClosedForm.Struct.I23.CBounds
+OK ClosedForm.Struct.I25.Data: 9.012 s, 6919118848 bytes peak RSS
+START ClosedForm.Struct.I23.CTBounds
+OK ClosedForm.Struct.I26.Data: 9.112 s, 6905323520 bytes peak RSS
+START ClosedForm.Struct.I23.CTValid
+OK ClosedForm.Struct.I21.Assembly: 3.805 s, 6838411264 bytes peak RSS
+START ClosedForm.Struct.I23.CValid
+OK ClosedForm.Struct.I27.Data: 9.913 s, 6921478144 bytes peak RSS
+START ClosedForm.Struct.I23.Check00
+OK ClosedForm.Struct.I22.Fields: 4.206 s, 6782349312 bytes peak RSS
+START ClosedForm.Struct.I23.Check01
+OK ClosedForm.Struct.I22.Geometry: 4.156 s, 6783819776 bytes peak RSS
+START ClosedForm.Struct.I22.Relations
+OK ClosedForm.Struct.I23.CBounds: 3.855 s, 6763823104 bytes peak RSS
+START ClosedForm.Struct.I23.Check02
+OK ClosedForm.Struct.I23.CTBounds: 3.855 s, 6763507712 bytes peak RSS
+START ClosedForm.Struct.I23.Check03
+OK ClosedForm.Struct.I23.CTValid: 3.855 s, 6765830144 bytes peak RSS
+START ClosedForm.Struct.I23.Check04
+OK ClosedForm.Struct.I23.CValid: 3.905 s, 6763745280 bytes peak RSS
+START ClosedForm.Struct.I23.Check05
+OK ClosedForm.Struct.I28.Data: 12.166 s, 7012343808 bytes peak RSS
+START ClosedForm.Struct.I23.Check06
+OK ClosedForm.Struct.I23.Check00: 4.055 s, 6789566464 bytes peak RSS
+START ClosedForm.Struct.I23.FSource00
+OK ClosedForm.Struct.I29.Data: 12.216 s, 7017525248 bytes peak RSS
+START ClosedForm.Struct.I23.FSource01
+OK ClosedForm.Struct.I30.Data: 12.366 s, 7016341504 bytes peak RSS
+START ClosedForm.Struct.I23.FValid00
+OK ClosedForm.Struct.I31.Data: 12.265 s, 7016599552 bytes peak RSS
+START ClosedForm.Struct.I23.PBounds
+OK ClosedForm.Struct.I32.Data: 12.866 s, 7030063104 bytes peak RSS
+START ClosedForm.Struct.I23.PValid
+OK ClosedForm.Struct.I22.Relations: 3.855 s, 6773395456 bytes peak RSS
+START ClosedForm.Struct.I22.Assembly
+OK ClosedForm.Struct.I23.Check03: 4.306 s, 6865362944 bytes peak RSS
+START ClosedForm.Struct.I23.RValid
+OK ClosedForm.Struct.I23.Check06: 4.105 s, 6827147264 bytes peak RSS
+START ClosedForm.Struct.I23.TSource00
+OK ClosedForm.Struct.I23.Check01: 7.56 s, 7478063104 bytes peak RSS
+START ClosedForm.Struct.I23.TValid
+OK ClosedForm.Struct.I23.PBounds: 3.905 s, 6761664512 bytes peak RSS
+START ClosedForm.Struct.I24.CBounds
+OK ClosedForm.Struct.I23.FValid00: 4.005 s, 6765301760 bytes peak RSS
+START ClosedForm.Struct.I23.FValid
+OK ClosedForm.Struct.I23.FSource00: 4.756 s, 6771539968 bytes peak RSS
+START ClosedForm.Struct.I24.CTBounds
+OK ClosedForm.Struct.I23.FSource01: 4.806 s, 6773071872 bytes peak RSS
+START ClosedForm.Struct.I23.FSource
+OK ClosedForm.Struct.I23.Check04: 6.058 s, 7158951936 bytes peak RSS
+START ClosedForm.Struct.I24.CTValid
+OK ClosedForm.Struct.I23.Check05: 5.958 s, 7160553472 bytes peak RSS
+START ClosedForm.Struct.I24.CValid
+OK ClosedForm.Struct.I23.Check02: 7.459 s, 7462858752 bytes peak RSS
+START ClosedForm.Struct.I23.Checks
+OK ClosedForm.Struct.I23.PValid: 3.955 s, 6763790336 bytes peak RSS
+START ClosedForm.Struct.I24.Check00
+OK ClosedForm.Struct.I22.Assembly: 3.955 s, 6839865344 bytes peak RSS
+START ClosedForm.Struct.I24.Check01
+OK ClosedForm.Struct.I23.RValid: 3.905 s, 6763331584 bytes peak RSS
+START ClosedForm.Struct.I24.Check02
+OK ClosedForm.Struct.I24.CBounds: 3.905 s, 6765625344 bytes peak RSS
+START ClosedForm.Struct.I24.Check03
+OK ClosedForm.Struct.I23.TValid: 4.156 s, 6763692032 bytes peak RSS
+START ClosedForm.Struct.I24.Check04
+OK ClosedForm.Struct.I23.FValid: 3.955 s, 6764183552 bytes peak RSS
+START ClosedForm.Struct.I24.Check05
+OK ClosedForm.Struct.I23.TSource00: 4.806 s, 6773141504 bytes peak RSS
+START ClosedForm.Struct.I23.TSource
+OK ClosedForm.Struct.I24.CTBounds: 3.905 s, 6764732416 bytes peak RSS
+START ClosedForm.Struct.I24.Check06
+OK ClosedForm.Struct.I24.CTValid: 3.855 s, 6763966464 bytes peak RSS
+START ClosedForm.Struct.I24.FSource00
+OK ClosedForm.Struct.I23.FSource: 4.255 s, 6775615488 bytes peak RSS
+START ClosedForm.Struct.I24.FSource01
+OK ClosedForm.Struct.I23.Checks: 3.705 s, 6738202624 bytes peak RSS
+START ClosedForm.Struct.I24.FValid00
+OK ClosedForm.Struct.I24.CValid: 3.955 s, 6765797376 bytes peak RSS
+START ClosedForm.Struct.I24.PBounds
+OK ClosedForm.Struct.I24.Check00: 4.105 s, 6787989504 bytes peak RSS
+START ClosedForm.Struct.I24.PValid
+OK ClosedForm.Struct.I24.Check03: 4.305 s, 6873022464 bytes peak RSS
+START ClosedForm.Struct.I24.RValid
+OK ClosedForm.Struct.I24.Check06: 4.155 s, 6832242688 bytes peak RSS
+START ClosedForm.Struct.I24.TSource00
+OK ClosedForm.Struct.I23.TSource: 4.556 s, 6770237440 bytes peak RSS
+START ClosedForm.Struct.I23.Fields
+OK ClosedForm.Struct.I24.PBounds: 3.905 s, 6766866432 bytes peak RSS
+START ClosedForm.Struct.I23.Geometry
+OK ClosedForm.Struct.I24.FValid00: 4.005 s, 6765797376 bytes peak RSS
+START ClosedForm.Struct.I24.FValid
+OK ClosedForm.Struct.I24.Check01: 7.759 s, 7515193344 bytes peak RSS
+START ClosedForm.Struct.I24.TValid
+OK ClosedForm.Struct.I24.PValid: 3.855 s, 6765953024 bytes peak RSS
+START ClosedForm.Struct.I25.CBounds
+OK ClosedForm.Struct.I24.FSource00: 4.756 s, 6769987584 bytes peak RSS
+START ClosedForm.Struct.I25.CTBounds
+OK ClosedForm.Struct.I24.FSource01: 4.756 s, 6771322880 bytes peak RSS
+START ClosedForm.Struct.I24.FSource
+OK ClosedForm.Struct.I24.Check02: 7.76 s, 7503163392 bytes peak RSS
+START ClosedForm.Struct.I25.CTValid
+OK ClosedForm.Struct.I24.Check05: 6.008 s, 7162683392 bytes peak RSS
+START ClosedForm.Struct.I25.CValid
+OK ClosedForm.Struct.I24.Check04: 6.108 s, 7135809536 bytes peak RSS
+START ClosedForm.Struct.I24.Checks
+OK ClosedForm.Struct.I24.RValid: 3.955 s, 6764470272 bytes peak RSS
+START ClosedForm.Struct.I25.Check00
+OK ClosedForm.Struct.I24.FValid: 3.956 s, 6767984640 bytes peak RSS
+START ClosedForm.Struct.I25.Check01
+OK ClosedForm.Struct.I23.Fields: 4.306 s, 6781648896 bytes peak RSS
+START ClosedForm.Struct.I25.Check02
+OK ClosedForm.Struct.I23.Geometry: 4.156 s, 6783741952 bytes peak RSS
+START ClosedForm.Struct.I23.Relations
+OK ClosedForm.Struct.I24.TValid: 4.055 s, 6765891584 bytes peak RSS
+START ClosedForm.Struct.I25.Check03
+OK ClosedForm.Struct.I25.CTBounds: 3.855 s, 6765395968 bytes peak RSS
+START ClosedForm.Struct.I25.Check04
+OK ClosedForm.Struct.I25.CBounds: 3.955 s, 6762844160 bytes peak RSS
+START ClosedForm.Struct.I25.Check05
+OK ClosedForm.Struct.I24.TSource00: 4.756 s, 6771408896 bytes peak RSS
+START ClosedForm.Struct.I24.TSource
+OK ClosedForm.Struct.I25.CTValid: 3.855 s, 6763413504 bytes peak RSS
+START ClosedForm.Struct.I25.Check06
+OK ClosedForm.Struct.I24.Checks: 3.705 s, 6739329024 bytes peak RSS
+START ClosedForm.Struct.I25.FSource00
+OK ClosedForm.Struct.I25.CValid: 3.905 s, 6763495424 bytes peak RSS
+START ClosedForm.Struct.I25.FSource01
+OK ClosedForm.Struct.I24.FSource: 4.406 s, 6779068416 bytes peak RSS
+START ClosedForm.Struct.I25.FValid00
+OK ClosedForm.Struct.I25.Check00: 4.206 s, 6791843840 bytes peak RSS
+START ClosedForm.Struct.I25.PBounds
+OK ClosedForm.Struct.I23.Relations: 3.905 s, 6773014528 bytes peak RSS
+START ClosedForm.Struct.I23.Assembly
+OK ClosedForm.Struct.I25.Check03: 4.306 s, 6865641472 bytes peak RSS
+START ClosedForm.Struct.I25.PValid
+OK ClosedForm.Struct.I25.Check06: 4.105 s, 6828482560 bytes peak RSS
+START ClosedForm.Struct.I25.RValid
+OK ClosedForm.Struct.I24.TSource: 4.606 s, 6774394880 bytes peak RSS
+START ClosedForm.Struct.I24.Fields
+OK ClosedForm.Struct.I25.FValid00: 4.055 s, 6763524096 bytes peak RSS
+START ClosedForm.Struct.I24.Geometry
+OK ClosedForm.Struct.I25.FSource00: 4.706 s, 6773895168 bytes peak RSS
+START ClosedForm.Struct.I25.FValid
+OK ClosedForm.Struct.I25.FSource01: 4.756 s, 6775500800 bytes peak RSS
+START ClosedForm.Struct.I25.FSource
+OK ClosedForm.Struct.I25.Check04: 5.907 s, 7145484288 bytes peak RSS
+START ClosedForm.Struct.I25.TSource00
+OK ClosedForm.Struct.I25.Check05: 5.907 s, 7143890944 bytes peak RSS
+START ClosedForm.Struct.I25.TValid
+OK ClosedForm.Struct.I25.PBounds: 3.905 s, 6763614208 bytes peak RSS
+START ClosedForm.Struct.I26.CBounds
+OK ClosedForm.Struct.I25.Check02: 7.51 s, 7462629376 bytes peak RSS
+START ClosedForm.Struct.I26.CTBounds
+OK ClosedForm.Struct.I25.Check01: 7.66 s, 7475650560 bytes peak RSS
+START ClosedForm.Struct.I25.Checks
+OK ClosedForm.Struct.I23.Assembly: 3.955 s, 6840532992 bytes peak RSS
+START ClosedForm.Struct.I26.CTValid
+OK ClosedForm.Struct.I25.PValid: 3.855 s, 6763479040 bytes peak RSS
+START ClosedForm.Struct.I26.CValid
+OK ClosedForm.Struct.I25.RValid: 3.855 s, 6763954176 bytes peak RSS
+START ClosedForm.Struct.I26.Check00
+OK ClosedForm.Struct.I24.Fields: 4.256 s, 6781648896 bytes peak RSS
+START ClosedForm.Struct.I26.Check01
+OK ClosedForm.Struct.I24.Geometry: 4.106 s, 6784176128 bytes peak RSS
+START ClosedForm.Struct.I24.Relations
+OK ClosedForm.Struct.I25.FValid: 4.005 s, 6766063616 bytes peak RSS
+START ClosedForm.Struct.I26.Check02
+OK ClosedForm.Struct.I25.FSource: 4.306 s, 6775062528 bytes peak RSS
+START ClosedForm.Struct.I26.Check03
+OK ClosedForm.Struct.I25.TValid: 4.105 s, 6741794816 bytes peak RSS
+START ClosedForm.Struct.I26.Check04
+OK ClosedForm.Struct.I25.TSource00: 4.856 s, 6748868608 bytes peak RSS
+START ClosedForm.Struct.I25.TSource
+OK ClosedForm.Struct.I25.Checks: 3.705 s, 6737907712 bytes peak RSS
+START ClosedForm.Struct.I26.Check05
+OK ClosedForm.Struct.I26.CBounds: 4.055 s, 6764052480 bytes peak RSS
+START ClosedForm.Struct.I26.Check06
+OK ClosedForm.Struct.I26.CTBounds: 3.855 s, 6766563328 bytes peak RSS
+START ClosedForm.Struct.I26.FSource00
+OK ClosedForm.Struct.I26.CTValid: 3.856 s, 6764281856 bytes peak RSS
+START ClosedForm.Struct.I26.FSource01
+OK ClosedForm.Struct.I26.CValid: 4.005 s, 6766342144 bytes peak RSS
+START ClosedForm.Struct.I26.FValid00
+OK ClosedForm.Struct.I26.Check00: 4.055 s, 6790594560 bytes peak RSS
+START ClosedForm.Struct.I26.PBounds
+OK ClosedForm.Struct.I24.Relations: 3.905 s, 6773678080 bytes peak RSS
+START ClosedForm.Struct.I24.Assembly
+OK ClosedForm.Struct.I26.Check03: 4.356 s, 6866362368 bytes peak RSS
+START ClosedForm.Struct.I26.PValid
+OK ClosedForm.Struct.I26.Check06: 4.105 s, 6825832448 bytes peak RSS
+START ClosedForm.Struct.I26.RValid
+OK ClosedForm.Struct.I25.TSource: 4.556 s, 6772846592 bytes peak RSS
+START ClosedForm.Struct.I25.Fields
+OK ClosedForm.Struct.I26.FSource00: 4.757 s, 6772461568 bytes peak RSS
+START ClosedForm.Struct.I25.Geometry
+OK ClosedForm.Struct.I26.Check04: 6.057 s, 7159087104 bytes peak RSS
+START ClosedForm.Struct.I26.TSource00
+OK ClosedForm.Struct.I26.FValid00: 4.055 s, 6764720128 bytes peak RSS
+START ClosedForm.Struct.I26.FValid
+OK ClosedForm.Struct.I26.FSource01: 4.756 s, 6774489088 bytes peak RSS
+START ClosedForm.Struct.I26.FSource
+OK ClosedForm.Struct.I26.PBounds: 3.905 s, 6764433408 bytes peak RSS
+START ClosedForm.Struct.I26.TValid
+OK ClosedForm.Struct.I26.Check01: 7.66 s, 7477018624 bytes peak RSS
+START ClosedForm.Struct.I27.CBounds
+OK ClosedForm.Struct.I26.Check02: 7.51 s, 7463211008 bytes peak RSS
+START ClosedForm.Struct.I27.CTBounds
+OK ClosedForm.Struct.I24.Assembly: 3.955 s, 6839099392 bytes peak RSS
+START ClosedForm.Struct.I27.CTValid
+OK ClosedForm.Struct.I26.Check05: 5.957 s, 7159619584 bytes peak RSS
+START ClosedForm.Struct.I26.Checks
+OK ClosedForm.Struct.I26.PValid: 3.955 s, 6766653440 bytes peak RSS
+START ClosedForm.Struct.I27.CValid
+OK ClosedForm.Struct.I26.RValid: 3.955 s, 6766370816 bytes peak RSS
+START ClosedForm.Struct.I27.Check00
+OK ClosedForm.Struct.I25.Fields: 4.305 s, 6781890560 bytes peak RSS
+START ClosedForm.Struct.I27.Check01
+OK ClosedForm.Struct.I25.Geometry: 4.156 s, 6780534784 bytes peak RSS
+START ClosedForm.Struct.I25.Relations
+OK ClosedForm.Struct.I26.FValid: 4.005 s, 6766751744 bytes peak RSS
+START ClosedForm.Struct.I27.Check02
+OK ClosedForm.Struct.I26.TValid: 4.056 s, 6765670400 bytes peak RSS
+START ClosedForm.Struct.I27.Check03
+OK ClosedForm.Struct.I27.CBounds: 3.905 s, 6764859392 bytes peak RSS
+START ClosedForm.Struct.I27.Check04
+OK ClosedForm.Struct.I26.FSource: 4.306 s, 6774317056 bytes peak RSS
+START ClosedForm.Struct.I27.Check05
+OK ClosedForm.Struct.I27.CTBounds: 3.855 s, 6765830144 bytes peak RSS
+START ClosedForm.Struct.I27.Check06
+OK ClosedForm.Struct.I26.Checks: 3.655 s, 6737076224 bytes peak RSS
+START ClosedForm.Struct.I27.FSource00
+OK ClosedForm.Struct.I27.CTValid: 3.855 s, 6763372544 bytes peak RSS
+START ClosedForm.Struct.I27.FSource01
+OK ClosedForm.Struct.I26.TSource00: 4.756 s, 6773727232 bytes peak RSS
+START ClosedForm.Struct.I26.TSource
+OK ClosedForm.Struct.I27.CValid: 3.905 s, 6767431680 bytes peak RSS
+START ClosedForm.Struct.I27.FValid00
+OK ClosedForm.Struct.I27.Check00: 4.206 s, 6800883712 bytes peak RSS
+START ClosedForm.Struct.I27.PBounds
+OK ClosedForm.Struct.I25.Relations: 3.855 s, 6771462144 bytes peak RSS
+START ClosedForm.Struct.I25.Assembly
+OK ClosedForm.Struct.I27.Check06: 4.156 s, 6826655744 bytes peak RSS
+START ClosedForm.Struct.I27.PValid
+OK ClosedForm.Struct.I27.Check03: 4.306 s, 6870597632 bytes peak RSS
+START ClosedForm.Struct.I27.RValid
+OK ClosedForm.Struct.I27.FSource00: 4.706 s, 6757822464 bytes peak RSS
+START ClosedForm.Struct.I27.TSource00
+OK ClosedForm.Struct.I27.FSource01: 4.706 s, 6770561024 bytes peak RSS
+START ClosedForm.Struct.I27.FSource
+OK ClosedForm.Struct.I26.TSource: 4.606 s, 6773886976 bytes peak RSS
+START ClosedForm.Struct.I26.Fields
+OK ClosedForm.Struct.I27.FValid00: 4.055 s, 6765166592 bytes peak RSS
+START ClosedForm.Struct.I26.Geometry
+OK ClosedForm.Struct.I27.Check05: 6.508 s, 7283068928 bytes peak RSS
+START ClosedForm.Struct.I27.FValid
+OK ClosedForm.Struct.I27.Check04: 6.609 s, 7255060480 bytes peak RSS
+START ClosedForm.Struct.I27.TSource01
+OK ClosedForm.Struct.I27.PBounds: 3.956 s, 6765834240 bytes peak RSS
+START ClosedForm.Struct.I27.TValid00
+OK ClosedForm.Struct.I25.Assembly: 3.956 s, 6839791616 bytes peak RSS
+START ClosedForm.Struct.I28.CBounds
+OK ClosedForm.Struct.I27.Check01: 8.31 s, 7626055680 bytes peak RSS
+START ClosedForm.Struct.I28.CTBounds
+OK ClosedForm.Struct.I27.Check02: 8.161 s, 7603994624 bytes peak RSS
+START ClosedForm.Struct.I27.Checks
+OK ClosedForm.Struct.I27.PValid: 3.905 s, 6734606336 bytes peak RSS
+START ClosedForm.Struct.I28.CTValid
+OK ClosedForm.Struct.I27.RValid: 3.905 s, 6736519168 bytes peak RSS
+START ClosedForm.Struct.I28.CValid
+OK ClosedForm.Struct.I26.Fields: 4.306 s, 6779957248 bytes peak RSS
+START ClosedForm.Struct.I28.Check00
+OK ClosedForm.Struct.I27.FSource: 4.506 s, 6777520128 bytes peak RSS
+START ClosedForm.Struct.I28.Check01
+OK ClosedForm.Struct.I27.TSource00: 4.756 s, 6773071872 bytes peak RSS
+START ClosedForm.Struct.I28.Check02
+OK ClosedForm.Struct.I26.Geometry: 4.155 s, 6784987136 bytes peak RSS
+START ClosedForm.Struct.I26.Relations
+OK ClosedForm.Struct.I27.FValid: 4.006 s, 6764482560 bytes peak RSS
+START ClosedForm.Struct.I28.Check03
+OK ClosedForm.Struct.I27.TValid00: 4.056 s, 6765862912 bytes peak RSS
+START ClosedForm.Struct.I27.TValid
+OK ClosedForm.Struct.I28.CBounds: 3.905 s, 6765240320 bytes peak RSS
+START ClosedForm.Struct.I28.Check04
+OK ClosedForm.Struct.I27.TSource01: 4.656 s, 6768369664 bytes peak RSS
+START ClosedForm.Struct.I27.TSource
+OK ClosedForm.Struct.I28.CTBounds: 3.855 s, 6765154304 bytes peak RSS
+START ClosedForm.Struct.I28.Check05
+OK ClosedForm.Struct.I27.Checks: 3.705 s, 6738944000 bytes peak RSS
+START ClosedForm.Struct.I28.Check06
+OK ClosedForm.Struct.I28.CTValid: 3.855 s, 6741385216 bytes peak RSS
+START ClosedForm.Struct.I28.FSource00
+OK ClosedForm.Struct.I28.CValid: 3.905 s, 6743576576 bytes peak RSS
+START ClosedForm.Struct.I28.FSource01
+OK ClosedForm.Struct.I28.Check00: 4.306 s, 6827601920 bytes peak RSS
+START ClosedForm.Struct.I28.FSource02
+OK ClosedForm.Struct.I26.Relations: 3.955 s, 6771982336 bytes peak RSS
+START ClosedForm.Struct.I26.Assembly
+OK ClosedForm.Struct.I27.TValid: 4.005 s, 6764290048 bytes peak RSS
+START ClosedForm.Struct.I28.FValid00
+OK ClosedForm.Struct.I28.Check03: 4.606 s, 6942294016 bytes peak RSS
+START ClosedForm.Struct.I28.PBounds
+OK ClosedForm.Struct.I27.TSource: 4.055 s, 6757203968 bytes peak RSS
+START ClosedForm.Struct.I27.Fields
+OK ClosedForm.Struct.I28.Check06: 4.406 s, 6896648192 bytes peak RSS
+START ClosedForm.Struct.I27.Geometry
+OK ClosedForm.Struct.I28.FSource00: 4.806 s, 6773387264 bytes peak RSS
+START ClosedForm.Struct.I28.PValid
+OK ClosedForm.Struct.I28.FSource01: 4.756 s, 6770974720 bytes peak RSS
+START ClosedForm.Struct.I28.RValid
+OK ClosedForm.Struct.I26.Assembly: 3.905 s, 6837006336 bytes peak RSS
+START ClosedForm.Struct.I28.TSource00
+OK ClosedForm.Struct.I28.FSource02: 4.806 s, 6774116352 bytes peak RSS
+START ClosedForm.Struct.I28.FSource
+OK ClosedForm.Struct.I28.FValid00: 4.106 s, 6767996928 bytes peak RSS
+START ClosedForm.Struct.I28.FValid
+OK ClosedForm.Struct.I28.PBounds: 3.905 s, 6766977024 bytes peak RSS
+START ClosedForm.Struct.I28.TSource01
+OK ClosedForm.Struct.I27.Fields: 4.305 s, 6782320640 bytes peak RSS
+START ClosedForm.Struct.I28.TValid00
+OK ClosedForm.Struct.I28.Check05: 8.361 s, 7663304704 bytes peak RSS
+START ClosedForm.Struct.I29.CBounds
+OK ClosedForm.Struct.I28.Check04: 8.611 s, 7674028032 bytes peak RSS
+START ClosedForm.Struct.I29.CTBounds
+OK ClosedForm.Struct.I27.Geometry: 4.155 s, 6783590400 bytes peak RSS
+START ClosedForm.Struct.I27.Relations
+OK ClosedForm.Struct.I28.Check02: 10.513 s, 8075014144 bytes peak RSS
+START ClosedForm.Struct.I29.CTValid
+OK ClosedForm.Struct.I28.Check01: 10.714 s, 8112021504 bytes peak RSS
+START ClosedForm.Struct.I28.Checks
+OK ClosedForm.Struct.I28.RValid: 3.955 s, 6750158848 bytes peak RSS
+START ClosedForm.Struct.I29.CValid
+OK ClosedForm.Struct.I28.PValid: 4.005 s, 6745935872 bytes peak RSS
+START ClosedForm.Struct.I29.Check00
+OK ClosedForm.Struct.I28.TSource00: 4.856 s, 6774693888 bytes peak RSS
+START ClosedForm.Struct.I29.Check01
+OK ClosedForm.Struct.I28.FSource: 4.406 s, 6786584576 bytes peak RSS
+START ClosedForm.Struct.I29.Check02
+OK ClosedForm.Struct.I28.FValid: 4.156 s, 6772682752 bytes peak RSS
+START ClosedForm.Struct.I29.Check03
+OK ClosedForm.Struct.I29.CBounds: 3.905 s, 6767714304 bytes peak RSS
+START ClosedForm.Struct.I29.Check04
+OK ClosedForm.Struct.I28.TValid00: 4.005 s, 6764937216 bytes peak RSS
+START ClosedForm.Struct.I28.TValid
+OK ClosedForm.Struct.I28.Checks: 3.655 s, 6712713216 bytes peak RSS
+START ClosedForm.Struct.I29.Check05
+OK ClosedForm.Struct.I29.CTBounds: 3.905 s, 6766125056 bytes peak RSS
+START ClosedForm.Struct.I29.Check06
+OK ClosedForm.Struct.I28.TSource01: 4.706 s, 6773694464 bytes peak RSS
+START ClosedForm.Struct.I28.TSource
+OK ClosedForm.Struct.I29.CTValid: 3.855 s, 6737891328 bytes peak RSS
+START ClosedForm.Struct.I29.FSource00
+OK ClosedForm.Struct.I27.Relations: 3.905 s, 6769491968 bytes peak RSS
+START ClosedForm.Struct.I27.Assembly
+OK ClosedForm.Struct.I29.CValid: 3.955 s, 6767579136 bytes peak RSS
+START ClosedForm.Struct.I29.FSource01
+OK ClosedForm.Struct.I29.Check00: 4.305 s, 6826192896 bytes peak RSS
+START ClosedForm.Struct.I29.FSource02
+OK ClosedForm.Struct.I29.Check03: 4.606 s, 6942220288 bytes peak RSS
+START ClosedForm.Struct.I29.FValid00
+OK ClosedForm.Struct.I28.TValid: 4.105 s, 6767161344 bytes peak RSS
+START ClosedForm.Struct.I29.PBounds
+OK ClosedForm.Struct.I27.Assembly: 3.905 s, 6841307136 bytes peak RSS
+START ClosedForm.Struct.I29.PValid
+OK ClosedForm.Struct.I29.Check06: 4.406 s, 6883246080 bytes peak RSS
+START ClosedForm.Struct.I29.RValid
+OK ClosedForm.Struct.I28.TSource: 4.656 s, 6783954944 bytes peak RSS
+START ClosedForm.Struct.I28.Fields
+OK ClosedForm.Struct.I29.FSource00: 4.806 s, 6773202944 bytes peak RSS
+START ClosedForm.Struct.I28.Geometry
+OK ClosedForm.Struct.I29.FSource01: 4.706 s, 6775627776 bytes peak RSS
+START ClosedForm.Struct.I29.TSource00
+OK ClosedForm.Struct.I29.FSource02: 4.706 s, 6774718464 bytes peak RSS
+START ClosedForm.Struct.I29.FSource
+OK ClosedForm.Struct.I29.PBounds: 3.855 s, 6739857408 bytes peak RSS
+START ClosedForm.Struct.I29.TSource01
+OK ClosedForm.Struct.I29.FValid00: 4.006 s, 6742921216 bytes peak RSS
+START ClosedForm.Struct.I29.FValid
+OK ClosedForm.Struct.I29.PValid: 3.855 s, 6763991040 bytes peak RSS
+START ClosedForm.Struct.I29.TValid00
+OK ClosedForm.Struct.I29.RValid: 3.855 s, 6765916160 bytes peak RSS
+START ClosedForm.Struct.I30.CBounds
+OK ClosedForm.Struct.I29.Check04: 8.611 s, 7674417152 bytes peak RSS
+START ClosedForm.Struct.I30.CTBounds
+OK ClosedForm.Struct.I29.Check05: 8.411 s, 7655768064 bytes peak RSS
+START ClosedForm.Struct.I30.CTValid
+OK ClosedForm.Struct.I28.Fields: 4.306 s, 6784614400 bytes peak RSS
+START ClosedForm.Struct.I30.CValid
+OK ClosedForm.Struct.I28.Geometry: 4.155 s, 6784901120 bytes peak RSS
+START ClosedForm.Struct.I28.Relations
+OK ClosedForm.Struct.I29.Check01: 10.763 s, 8112996352 bytes peak RSS
+START ClosedForm.Struct.I30.Check00
+OK ClosedForm.Struct.I29.Check02: 10.463 s, 8083681280 bytes peak RSS
+START ClosedForm.Struct.I29.Checks
+OK ClosedForm.Struct.I29.FSource: 4.406 s, 6787276800 bytes peak RSS
+START ClosedForm.Struct.I30.Check01
+OK ClosedForm.Struct.I29.TSource00: 4.806 s, 6772547584 bytes peak RSS
+START ClosedForm.Struct.I30.Check02
+OK ClosedForm.Struct.I29.TValid00: 4.005 s, 6767017984 bytes peak RSS
+START ClosedForm.Struct.I29.TValid
+OK ClosedForm.Struct.I29.FValid: 4.156 s, 6773633024 bytes peak RSS
+START ClosedForm.Struct.I30.Check03
+OK ClosedForm.Struct.I30.CBounds: 3.905 s, 6767144960 bytes peak RSS
+START ClosedForm.Struct.I30.Check04
+OK ClosedForm.Struct.I30.CTValid: 3.805 s, 6743973888 bytes peak RSS
+START ClosedForm.Struct.I30.Check05
+OK ClosedForm.Struct.I30.CTBounds: 3.855 s, 6746312704 bytes peak RSS
+START ClosedForm.Struct.I30.Check06
+OK ClosedForm.Struct.I29.TSource01: 4.806 s, 6775427072 bytes peak RSS
+START ClosedForm.Struct.I29.TSource
+OK ClosedForm.Struct.I29.Checks: 3.454 s, 6741327872 bytes peak RSS
+START ClosedForm.Struct.I30.FSource00
+OK ClosedForm.Struct.I30.CValid: 4.005 s, 6767071232 bytes peak RSS
+START ClosedForm.Struct.I30.FSource01
+OK ClosedForm.Struct.I28.Relations: 3.905 s, 6772908032 bytes peak RSS
+START ClosedForm.Struct.I28.Assembly
+OK ClosedForm.Struct.I30.Check00: 4.306 s, 6827212800 bytes peak RSS
+START ClosedForm.Struct.I30.FSource02
+OK ClosedForm.Struct.I29.TValid: 4.055 s, 6769135616 bytes peak RSS
+START ClosedForm.Struct.I30.FValid00
+OK ClosedForm.Struct.I30.Check03: 4.556 s, 6942445568 bytes peak RSS
+START ClosedForm.Struct.I30.PBounds
+OK ClosedForm.Struct.I30.Check06: 4.456 s, 6897274880 bytes peak RSS
+START ClosedForm.Struct.I30.PValid
+OK ClosedForm.Struct.I28.Assembly: 3.955 s, 6842417152 bytes peak RSS
+START ClosedForm.Struct.I30.RValid
+OK ClosedForm.Struct.I29.TSource: 4.656 s, 6784077824 bytes peak RSS
+START ClosedForm.Struct.I29.Fields
+OK ClosedForm.Struct.I30.FSource00: 4.756 s, 6777503744 bytes peak RSS
+START ClosedForm.Struct.I29.Geometry
+OK ClosedForm.Struct.I30.FSource01: 4.756 s, 6774476800 bytes peak RSS
+START ClosedForm.Struct.I30.TSource00
+OK ClosedForm.Struct.I30.FSource02: 4.756 s, 6772191232 bytes peak RSS
+START ClosedForm.Struct.I30.FSource
+OK ClosedForm.Struct.I30.FValid00: 4.106 s, 6766682112 bytes peak RSS
+START ClosedForm.Struct.I30.FValid
+OK ClosedForm.Struct.I30.PBounds: 3.855 s, 6764515328 bytes peak RSS
+START ClosedForm.Struct.I30.TSource01
+OK ClosedForm.Struct.I30.PValid: 3.855 s, 6764806144 bytes peak RSS
+START ClosedForm.Struct.I30.TValid00
+OK ClosedForm.Struct.I30.Check05: 8.361 s, 7650689024 bytes peak RSS
+START ClosedForm.Struct.I31.CBounds
+OK ClosedForm.Struct.I30.Check04: 8.661 s, 7672852480 bytes peak RSS
+START ClosedForm.Struct.I31.CTBounds
+OK ClosedForm.Struct.I30.RValid: 3.955 s, 6765522944 bytes peak RSS
+START ClosedForm.Struct.I31.CTValid
+OK ClosedForm.Struct.I30.Check02: 10.564 s, 8074645504 bytes peak RSS
+START ClosedForm.Struct.I31.CValid
+OK ClosedForm.Struct.I30.Check01: 10.764 s, 8109940736 bytes peak RSS
+START ClosedForm.Struct.I30.Checks
+OK ClosedForm.Struct.I29.Fields: 4.356 s, 6792011776 bytes peak RSS
+START ClosedForm.Struct.I31.Check00
+OK ClosedForm.Struct.I29.Geometry: 4.155 s, 6787256320 bytes peak RSS
+START ClosedForm.Struct.I29.Relations
+OK ClosedForm.Struct.I30.TSource00: 4.756 s, 6774538240 bytes peak RSS
+START ClosedForm.Struct.I31.Check01
+OK ClosedForm.Struct.I30.FSource: 4.356 s, 6787571712 bytes peak RSS
+START ClosedForm.Struct.I31.Check02
+OK ClosedForm.Struct.I30.FValid: 4.156 s, 6773194752 bytes peak RSS
+START ClosedForm.Struct.I31.Check03
+OK ClosedForm.Struct.I31.CBounds: 3.905 s, 6759247872 bytes peak RSS
+START ClosedForm.Struct.I31.Check04
+OK ClosedForm.Struct.I30.TValid00: 4.005 s, 6758596608 bytes peak RSS
+START ClosedForm.Struct.I30.TValid
+OK ClosedForm.Struct.I31.CTBounds: 3.905 s, 6766891008 bytes peak RSS
+START ClosedForm.Struct.I31.Check05
+OK ClosedForm.Struct.I31.CTValid: 3.855 s, 6766682112 bytes peak RSS
+START ClosedForm.Struct.I31.Check06
+OK ClosedForm.Struct.I30.Checks: 3.705 s, 6741168128 bytes peak RSS
+START ClosedForm.Struct.I31.FSource00
+OK ClosedForm.Struct.I31.CValid: 3.955 s, 6766010368 bytes peak RSS
+START ClosedForm.Struct.I31.FSource01
+OK ClosedForm.Struct.I30.TSource01: 4.757 s, 6773862400 bytes peak RSS
+START ClosedForm.Struct.I30.TSource
+OK ClosedForm.Struct.I29.Relations: 3.855 s, 6777184256 bytes peak RSS
+START ClosedForm.Struct.I29.Assembly
+OK ClosedForm.Struct.I31.Check00: 4.256 s, 6827241472 bytes peak RSS
+START ClosedForm.Struct.I31.FSource02
+OK ClosedForm.Struct.I30.TValid: 4.005 s, 6766546944 bytes peak RSS
+START ClosedForm.Struct.I31.FValid00
+OK ClosedForm.Struct.I31.Check03: 4.606 s, 6942613504 bytes peak RSS
+START ClosedForm.Struct.I31.PBounds
+OK ClosedForm.Struct.I31.Check06: 4.406 s, 6893846528 bytes peak RSS
+START ClosedForm.Struct.I31.PValid
+OK ClosedForm.Struct.I29.Assembly: 3.905 s, 6842552320 bytes peak RSS
+START ClosedForm.Struct.I31.RValid
+OK ClosedForm.Struct.I31.FSource00: 4.806 s, 6774194176 bytes peak RSS
+START ClosedForm.Struct.I31.TSource00
+OK ClosedForm.Struct.I31.FSource01: 4.806 s, 6776422400 bytes peak RSS
+START ClosedForm.Struct.I31.TSource01
+OK ClosedForm.Struct.I30.TSource: 4.606 s, 6782672896 bytes peak RSS
+START ClosedForm.Struct.I30.Fields
+OK ClosedForm.Struct.I31.FSource02: 4.706 s, 6771212288 bytes peak RSS
+START ClosedForm.Struct.I30.Geometry
+OK ClosedForm.Struct.I31.FValid00: 4.056 s, 6766870528 bytes peak RSS
+START ClosedForm.Struct.I31.FSource
+OK ClosedForm.Struct.I31.PBounds: 3.905 s, 6765547520 bytes peak RSS
+START ClosedForm.Struct.I31.FValid
+OK ClosedForm.Struct.I31.Check05: 8.31 s, 7656812544 bytes peak RSS
+START ClosedForm.Struct.I31.TValid00
+OK ClosedForm.Struct.I31.Check04: 8.611 s, 7687299072 bytes peak RSS
+START ClosedForm.Struct.I32.CBounds
+OK ClosedForm.Struct.I31.PValid: 3.905 s, 6764544000 bytes peak RSS
+START ClosedForm.Struct.I32.CTBounds
+OK ClosedForm.Struct.I31.Check02: 10.613 s, 8084467712 bytes peak RSS
+START ClosedForm.Struct.I32.CTValid
+OK ClosedForm.Struct.I31.RValid: 3.905 s, 6762954752 bytes peak RSS
+START ClosedForm.Struct.I32.CValid
+OK ClosedForm.Struct.I31.Check01: 11.414 s, 8109162496 bytes peak RSS
+START ClosedForm.Struct.I31.Checks
+OK ClosedForm.Struct.I30.Fields: 4.306 s, 6783184896 bytes peak RSS
+START ClosedForm.Struct.I32.Check00
+OK ClosedForm.Struct.I31.TSource00: 4.756 s, 6776967168 bytes peak RSS
+START ClosedForm.Struct.I32.Check01
+OK ClosedForm.Struct.I31.TSource01: 4.756 s, 6776393728 bytes peak RSS
+START ClosedForm.Struct.I31.TSource
+OK ClosedForm.Struct.I30.Geometry: 4.206 s, 6785847296 bytes peak RSS
+START ClosedForm.Struct.I30.Relations
+OK ClosedForm.Struct.I32.CTBounds: 3.855 s, 6764847104 bytes peak RSS
+START ClosedForm.Struct.I32.Check02
+OK ClosedForm.Struct.I31.FValid: 4.156 s, 6772547584 bytes peak RSS
+START ClosedForm.Struct.I32.Check03
+OK ClosedForm.Struct.I32.CBounds: 3.905 s, 6766592000 bytes peak RSS
+START ClosedForm.Struct.I32.Check04
+OK ClosedForm.Struct.I31.FSource: 4.406 s, 6786580480 bytes peak RSS
+START ClosedForm.Struct.I32.Check05
+OK ClosedForm.Struct.I31.TValid00: 4.056 s, 6766268416 bytes peak RSS
+START ClosedForm.Struct.I31.TValid
+OK ClosedForm.Struct.I32.CTValid: 3.855 s, 6768107520 bytes peak RSS
+START ClosedForm.Struct.I32.Check06
+OK ClosedForm.Struct.I32.CValid: 4.005 s, 6768218112 bytes peak RSS
+START ClosedForm.Struct.I32.FSource00
+OK ClosedForm.Struct.I31.Checks: 3.655 s, 6738608128 bytes peak RSS
+START ClosedForm.Struct.I32.FSource01
+OK ClosedForm.Struct.I32.Check00: 4.356 s, 6837215232 bytes peak RSS
+START ClosedForm.Struct.I32.FSource02
+OK ClosedForm.Struct.I30.Relations: 3.905 s, 6775468032 bytes peak RSS
+START ClosedForm.Struct.I30.Assembly
+OK ClosedForm.Struct.I31.TSource: 4.656 s, 6783746048 bytes peak RSS
+START ClosedForm.Struct.I32.FValid00
+OK ClosedForm.Struct.I31.TValid: 4.055 s, 6765969408 bytes peak RSS
+START ClosedForm.Struct.I31.Fields
+OK ClosedForm.Struct.I32.Check03: 4.656 s, 6945857536 bytes peak RSS
+START ClosedForm.Struct.I31.Geometry
+OK ClosedForm.Struct.I32.Check06: 4.456 s, 6913929216 bytes peak RSS
+START ClosedForm.Struct.I32.PBounds
+OK ClosedForm.Struct.I32.FSource00: 4.756 s, 6774472704 bytes peak RSS
+START ClosedForm.Struct.I32.PValid
+OK ClosedForm.Struct.I32.FSource01: 4.706 s, 6775394304 bytes peak RSS
+START ClosedForm.Struct.I32.RValid
+OK ClosedForm.Struct.I30.Assembly: 3.955 s, 6842654720 bytes peak RSS
+START ClosedForm.Struct.I32.TSource00
+OK ClosedForm.Struct.I32.FValid00: 3.955 s, 6768238592 bytes peak RSS
+START ClosedForm.Struct.I32.FValid
+OK ClosedForm.Struct.I32.FSource02: 4.806 s, 6775267328 bytes peak RSS
+START ClosedForm.Struct.I32.FSource
+OK ClosedForm.Struct.I31.Fields: 4.306 s, 6783881216 bytes peak RSS
+START ClosedForm.Struct.I32.TSource01
+OK ClosedForm.Struct.I32.PBounds: 3.855 s, 6765903872 bytes peak RSS
+START ClosedForm.Struct.I32.TValid00
+OK ClosedForm.Struct.I31.Geometry: 4.105 s, 6784258048 bytes peak RSS
+START ClosedForm.Struct.I31.Relations
+OK ClosedForm.Struct.I32.Check05: 8.962 s, 7768367104 bytes peak RSS
+START ClosedForm.Struct.I33.Data
+OK ClosedForm.Struct.I32.Check01: 11.514 s, 8272875520 bytes peak RSS
+START ClosedForm.Struct.I34.Data
+OK ClosedForm.Struct.I32.PValid: 3.905 s, 6766034944 bytes peak RSS
+OK ClosedForm.Struct.I32.Check04: 9.212 s, 7802798080 bytes peak RSS
+OK ClosedForm.Struct.I32.RValid: 3.955 s, 6763864064 bytes peak RSS
+OK ClosedForm.Struct.I32.FValid: 4.205 s, 6773510144 bytes peak RSS
+OK ClosedForm.Struct.I32.TSource00: 4.756 s, 6777495552 bytes peak RSS
+OK ClosedForm.Struct.I32.FSource: 4.506 s, 6788485120 bytes peak RSS
+OK ClosedForm.Struct.I32.Check02: 11.264 s, 8223285248 bytes peak RSS
+START ClosedForm.Struct.I32.Checks
+OK ClosedForm.Struct.I32.TValid00: 3.955 s, 6766034944 bytes peak RSS
+START ClosedForm.Struct.I32.TValid
+OK ClosedForm.Struct.I31.Relations: 3.805 s, 6776754176 bytes peak RSS
+START ClosedForm.Struct.I31.Assembly
+OK ClosedForm.Struct.I32.TSource01: 4.656 s, 6775427072 bytes peak RSS
+START ClosedForm.Struct.I32.TSource
+OK ClosedForm.Struct.I32.Checks: 3.555 s, 6742507520 bytes peak RSS
+OK ClosedForm.Struct.I31.Assembly: 3.805 s, 6840909824 bytes peak RSS
+OK ClosedForm.Struct.I32.TValid: 3.905 s, 6771912704 bytes peak RSS
+OK ClosedForm.Struct.I32.TSource: 4.656 s, 6787948544 bytes peak RSS
+START ClosedForm.Struct.I32.Fields
+START ClosedForm.Struct.I32.Geometry
+OK ClosedForm.Struct.I32.Geometry: 3.905 s, 6769016832 bytes peak RSS
+START ClosedForm.Struct.I32.Relations
+OK ClosedForm.Struct.I32.Fields: 4.105 s, 6761869312 bytes peak RSS
+OK ClosedForm.Struct.I34.Data: 13.467 s, 7045943296 bytes peak RSS
+START ClosedForm.Struct.I34.CBounds
+START ClosedForm.Struct.I34.CTBounds
+START ClosedForm.Struct.I34.CTValid
+START ClosedForm.Struct.I34.CValid
+START ClosedForm.Struct.I34.Check00
+START ClosedForm.Struct.I34.Check01
+START ClosedForm.Struct.I34.Check02
+START ClosedForm.Struct.I34.Check03
+START ClosedForm.Struct.I34.Check04
+START ClosedForm.Struct.I34.Check05
+OK ClosedForm.Struct.I33.Data: 13.617 s, 7046258688 bytes peak RSS
+START ClosedForm.Struct.I33.CBounds
+OK ClosedForm.Struct.I32.Relations: 3.855 s, 6777241600 bytes peak RSS
+START ClosedForm.Struct.I32.Assembly
+OK ClosedForm.Struct.I34.CTBounds: 3.856 s, 6740402176 bytes peak RSS
+START ClosedForm.Struct.I33.CTBounds
+OK ClosedForm.Struct.I34.CTValid: 3.857 s, 6745743360 bytes peak RSS
+START ClosedForm.Struct.I33.CTValid
+OK ClosedForm.Struct.I34.CValid: 3.907 s, 6727237632 bytes peak RSS
+START ClosedForm.Struct.I33.CValid
+OK ClosedForm.Struct.I34.CBounds: 3.907 s, 6728069120 bytes peak RSS
+START ClosedForm.Struct.I33.Check00
+OK ClosedForm.Struct.I33.CBounds: 3.955 s, 6767779840 bytes peak RSS
+START ClosedForm.Struct.I33.Check01
+OK ClosedForm.Struct.I34.Check00: 4.357 s, 6799122432 bytes peak RSS
+START ClosedForm.Struct.I33.Check02
+OK ClosedForm.Struct.I34.Check03: 4.757 s, 6957789184 bytes peak RSS
+START ClosedForm.Struct.I33.Check03
+OK ClosedForm.Struct.I32.Assembly: 3.955 s, 6842974208 bytes peak RSS
+START ClosedForm.Struct.I33.Check04
+OK ClosedForm.Struct.I33.CTBounds: 3.855 s, 6747353088 bytes peak RSS
+START ClosedForm.Struct.I33.Check05
+OK ClosedForm.Struct.I33.CTValid: 3.855 s, 6747099136 bytes peak RSS
+START ClosedForm.Struct.I33.Check06
+OK ClosedForm.Struct.I33.CValid: 3.955 s, 6732767232 bytes peak RSS
+START ClosedForm.Struct.I33.FSource00
+OK ClosedForm.Struct.I33.Check00: 4.406 s, 6782566400 bytes peak RSS
+START ClosedForm.Struct.I33.FSource01
+OK ClosedForm.Struct.I33.Check03: 4.856 s, 6993993728 bytes peak RSS
+START ClosedForm.Struct.I33.FSource02
+OK ClosedForm.Struct.I34.Check04: 9.963 s, 7960641536 bytes peak RSS
+START ClosedForm.Struct.I33.FValid00
+OK ClosedForm.Struct.I34.Check05: 10.013 s, 7906590720 bytes peak RSS
+START ClosedForm.Struct.I33.FValid01
+OK ClosedForm.Struct.I34.Check02: 12.216 s, 8419356672 bytes peak RSS
+START ClosedForm.Struct.I33.PBounds
+OK ClosedForm.Struct.I33.Check06: 4.606 s, 6906490880 bytes peak RSS
+START ClosedForm.Struct.I33.PValid
+OK ClosedForm.Struct.I33.FSource00: 4.756 s, 6776451072 bytes peak RSS
+START ClosedForm.Struct.I33.RValid
+OK ClosedForm.Struct.I34.Check01: 12.767 s, 8481533952 bytes peak RSS
+START ClosedForm.Struct.I33.TSource00
+OK ClosedForm.Struct.I33.FSource01: 4.806 s, 6775029760 bytes peak RSS
+START ClosedForm.Struct.I33.TSource01
+OK ClosedForm.Struct.I33.FValid00: 4.005 s, 6767767552 bytes peak RSS
+START ClosedForm.Struct.I33.TSource02
+OK ClosedForm.Struct.I33.FValid01: 4.055 s, 6767693824 bytes peak RSS
+START ClosedForm.Struct.I33.FValid
+OK ClosedForm.Struct.I33.FSource02: 4.706 s, 6778085376 bytes peak RSS
+START ClosedForm.Struct.I33.FSource
+OK ClosedForm.Struct.I33.PBounds: 3.905 s, 6766358528 bytes peak RSS
+START ClosedForm.Struct.I33.TValid00
+OK ClosedForm.Struct.I33.PValid: 3.905 s, 6763831296 bytes peak RSS
+START ClosedForm.Struct.I34.Check06
+OK ClosedForm.Struct.I33.RValid: 3.905 s, 6766305280 bytes peak RSS
+START ClosedForm.Struct.I34.FSource00
+OK ClosedForm.Struct.I33.Check01: 12.716 s, 8528142336 bytes peak RSS
+START ClosedForm.Struct.I34.FSource01
+OK ClosedForm.Struct.I33.Check04: 10.263 s, 7985344512 bytes peak RSS
+START ClosedForm.Struct.I34.FSource02
+OK ClosedForm.Struct.I33.Check02: 13.116 s, 8470372352 bytes peak RSS
+START ClosedForm.Struct.I34.FValid00
+OK ClosedForm.Struct.I33.TSource00: 4.706 s, 6775287808 bytes peak RSS
+START ClosedForm.Struct.I34.FValid01
+OK ClosedForm.Struct.I33.Check05: 9.813 s, 7918399488 bytes peak RSS
+START ClosedForm.Struct.I33.Checks
+OK ClosedForm.Struct.I33.TSource01: 4.706 s, 6777532416 bytes peak RSS
+START ClosedForm.Struct.I34.PBounds
+OK ClosedForm.Struct.I33.FValid: 4.106 s, 6771671040 bytes peak RSS
+START ClosedForm.Struct.I34.PValid
+OK ClosedForm.Struct.I33.TSource02: 4.807 s, 6774546432 bytes peak RSS
+START ClosedForm.Struct.I33.TSource
+OK ClosedForm.Struct.I33.FSource: 4.907 s, 6791888896 bytes peak RSS
+START ClosedForm.Struct.I34.RValid
+OK ClosedForm.Struct.I33.TValid00: 4.056 s, 6765694976 bytes peak RSS
+START ClosedForm.Struct.I33.TValid
+OK ClosedForm.Struct.I34.Check06: 4.556 s, 6934392832 bytes peak RSS
+START ClosedForm.Struct.I34.Checks
+OK ClosedForm.Struct.I33.Checks: 3.655 s, 6742065152 bytes peak RSS
+START ClosedForm.Struct.I34.TSource00
+OK ClosedForm.Struct.I34.FSource00: 4.807 s, 6776487936 bytes peak RSS
+START ClosedForm.Struct.I34.TSource01
+OK ClosedForm.Struct.I34.FSource01: 4.706 s, 6779854848 bytes peak RSS
+START ClosedForm.Struct.I34.TSource02
+OK ClosedForm.Struct.I34.FValid00: 4.006 s, 6755921920 bytes peak RSS
+START ClosedForm.Struct.I34.TValid00
+OK ClosedForm.Struct.I34.FValid01: 4.006 s, 6753353728 bytes peak RSS
+START ClosedForm.Struct.I34.FValid
+OK ClosedForm.Struct.I34.PBounds: 3.955 s, 6768099328 bytes peak RSS
+OK ClosedForm.Struct.I34.FSource02: 4.656 s, 6780198912 bytes peak RSS
+START ClosedForm.Struct.I34.FSource
+OK ClosedForm.Struct.I34.PValid: 3.905 s, 6767992832 bytes peak RSS
+OK ClosedForm.Struct.I33.TSource: 4.156 s, 6785605632 bytes peak RSS
+OK ClosedForm.Struct.I34.RValid: 3.955 s, 6765998080 bytes peak RSS
+OK ClosedForm.Struct.I33.TValid: 4.156 s, 6775898112 bytes peak RSS
+START ClosedForm.Struct.I33.Fields
+START ClosedForm.Struct.I33.Geometry
+OK ClosedForm.Struct.I34.Checks: 3.605 s, 6744510464 bytes peak RSS
+OK ClosedForm.Struct.I34.TValid00: 3.955 s, 6757462016 bytes peak RSS
+START ClosedForm.Struct.I34.TValid
+OK ClosedForm.Struct.I34.FValid: 4.005 s, 6774145024 bytes peak RSS
+OK ClosedForm.Struct.I34.TSource00: 4.656 s, 6774935552 bytes peak RSS
+OK ClosedForm.Struct.I34.TSource01: 4.606 s, 6777208832 bytes peak RSS
+OK ClosedForm.Struct.I34.TSource02: 4.656 s, 6762962944 bytes peak RSS
+START ClosedForm.Struct.I34.TSource
+OK ClosedForm.Struct.I34.FSource: 4.756 s, 6796599296 bytes peak RSS
+OK ClosedForm.Struct.I33.Geometry: 3.955 s, 6764359680 bytes peak RSS
+START ClosedForm.Struct.I33.Relations
+OK ClosedForm.Struct.I33.Fields: 4.056 s, 6757670912 bytes peak RSS
+OK ClosedForm.Struct.I34.TValid: 3.855 s, 6773604352 bytes peak RSS
+OK ClosedForm.Struct.I34.TSource: 3.955 s, 6786355200 bytes peak RSS
+START ClosedForm.Struct.I34.Fields
+START ClosedForm.Struct.I34.Geometry
+OK ClosedForm.Struct.I33.Relations: 3.655 s, 6777147392 bytes peak RSS
+START ClosedForm.Struct.I33.Assembly
+OK ClosedForm.Struct.I34.Geometry: 3.955 s, 6727229440 bytes peak RSS
+START ClosedForm.Struct.I34.Relations
+OK ClosedForm.Struct.I34.Fields: 4.055 s, 6727319552 bytes peak RSS
+OK ClosedForm.Struct.I33.Assembly: 3.655 s, 6844776448 bytes peak RSS
+OK ClosedForm.Struct.I34.Relations: 3.605 s, 6781595648 bytes peak RSS
+START ClosedForm.Struct.I34.Assembly
+OK ClosedForm.Struct.I34.Assembly: 3.605 s, 6844596224 bytes peak RSS
+START ClosedForm.PublishedStructure
+OK ClosedForm.PublishedStructure: 3.855 s, 7252529152 bytes peak RSS
+'ClosedForm.published_structure' depends on axioms: [propext, Classical.choice, Quot.sound]
+

@@ -1,0 +1,5 @@
+'ClosedForm.closed_form_of_covers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClosedForm.covers_k_of_covers7' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClosedForm.published_saving' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClosedForm.published_structure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClosedForm.total_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
