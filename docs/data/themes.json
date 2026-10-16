@@ -660,8 +660,8 @@
      "ja": "検査器はこのリポジトリの checks/valid7/ に移した。元のリポジトリはアーカイブ済みで、Release は残っている。"
     },
     {
-     "en": "The Lean kernel versions continue in #8 (Valid7, complete) and #10 (ValidTilt9).",
-     "ja": "Lean カーネル版は #8（Valid7、完了）と #10（ValidTilt9）。"
+     "en": "The Lean kernel versions continue in #8 (Valid7, complete) and #10 (ValidTilt9, complete).",
+     "ja": "Lean カーネル版は #8（Valid7、完了）と #10（ValidTilt9、完了）。"
     }
    ],
    "working_on": [],
