@@ -236,6 +236,35 @@
    }
   },
   {
+   "id": "rect-k2m4-measure",
+   "name": {
+    "en": "Rectangles: Evan Daniel's k2m4 measure on A × B, with a localisation lemma",
+    "ja": "長方形：A × B 上の Evan Daniel の k2m4 の測度と局所化の補題"
+   },
+   "what": {
+    "en": "Corner modules at the four corners, the period-1 wall profile along the four walls and Lebesgue measure in the middle give a measure μ_{A,B} on [0, A] × [0, B] with total AB − 4D, D = 1.0738511…. Lemma R6: every closed unit square has the same mass as an integer translate of it in [0, 9]² under the 9 × 9 box cover, so Valid9 gives mass at least 1. Scaling a packing in a × b (a < A, b < B) up to A × B then bounds the count by AB − 5.",
+    "ja": "4 隅の角のモジュール、4 辺に沿った周期 1 の壁の形、中央のルベーグ測度から、[0, A] × [0, B] 上の測度 μ_{A,B}（総量 AB − 4D、D = 1.0738511…）を作る。補題 R6：どの閉じた単位正方形も、[0, 9]² の中の整数の平行移動と、9 × 9 の箱の被覆のもとで同じ質量をもつので、Valid9 から質量 1 以上。a × b（a < A, b < B）の配置を A × B まで広げると、個数は AB − 5 以下になる。"
+   },
+   "used": {
+    "en": "Rectangles: ν(a, b) ≤ AB − 5 for a < A, b < B, integers A, B ≥ 8 (Theorem 1); Theorem 2 uses interval 34 of the closed form.",
+    "ja": "長方形：整数 A, B ≥ 8 で a < A, b < B なら ν(a, b) ≤ AB − 5（定理 1）。定理 2 は閉じた式の区間 34 を使う。"
+   },
+   "origin": {
+    "en": "The measure family, the box cover and the proof of Valid9 are Evan Daniel's (evand/square-packing, MIT). The rectangle construction, Lemma R6, Lemmas R1 and R2 and the checks are ours.",
+    "ja": "測度の族・箱の被覆・Valid9 の証明は Evan Daniel のもの（evand/square-packing、MIT）。長方形の構成、補題 R6、補題 R1 と R2、検査は当方のもの。"
+   },
+   "tools": [
+    "problems/rectangle-upper-bounds/checker",
+    "problems/rectangle-upper-bounds/indep-checker",
+    "lean/rectangle-k2m4"
+   ],
+   "sources": [
+    "problems/rectangle-upper-bounds/README.md",
+    "lean/rectangle-k2m4/README.md",
+    "lean/rectangle-k2m4/final/README.md"
+   ]
+  },
+  {
    "id": "point-endpoint",
    "name": {
     "en": "Point-only endpoint bundles",

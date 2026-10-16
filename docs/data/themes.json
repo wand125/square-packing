@@ -906,6 +906,62 @@
    "url": "https://github.com/wand125/square-packing/issues/21",
    "updated": "2026-10-16",
    "paper": "paper-cubes-n-dim.html"
+  },
+  {
+   "issue": 22,
+   "state": "open",
+   "title": {
+    "en": "Unit squares in a rectangle just below integer size — at most AB − 5",
+    "ja": "整数の大きさのすぐ下の長方形の単位正方形 — 最大 AB − 5 個"
+   },
+   "goal": {
+    "en": "Bound ν(a, b), the largest number of non-overlapping unit squares (any positions, any angles) in an a × b rectangle, for rectangles just below integer size A × B.",
+    "ja": "a × b の長方形に入る、重ならない単位正方形（位置・角度は自由）の最大個数 ν(a, b) を、整数の大きさ A × B のすぐ下の長方形について上から抑える。"
+   },
+   "method": {
+    "en": "A measure on [0, A] × [0, B] with mass at least 1 on every closed unit square and total less than AB − 4, built from Evan Daniel's k2m4 family; a localisation lemma reduces every square to the 9 × 9 box cover, where the finite statement Valid9 applies. Theorem 2 uses interval 34 of our closed-form lower bound instead.",
+    "ja": "[0, A] × [0, B] 上の測度で、閉じた単位正方形のどれにも質量 1 以上を与え、総量が AB − 4 未満のもの。Evan Daniel の k2m4 の族から作る。局所化の補題で、どの正方形も 9 × 9 の箱の被覆に帰着し、そこで有限命題 Valid9 を使う。定理 2 は代わりに、当方の閉じた式の下界の区間 34 を使う。"
+   },
+   "done": [
+    {
+     "en": "Theorem 1: for integers A, B ≥ 8, if a < A and b < B then ν(a, b) ≤ AB − 5. For A = B this is the case k ≥ 8 of Evan Daniel's s(k² − 4) = k and is not new; for A ≠ B we found no earlier statement in the literature we checked.",
+     "ja": "定理 1：整数 A, B ≥ 8 で a < A かつ b < B なら ν(a, b) ≤ AB − 5。A = B では Evan Daniel の s(k² − 4) = k の k ≥ 8 の場合で、新しくない。A ≠ B については、調べた文献に先行する記述は見つからなかった。"
+    },
+    {
+     "en": "Theorem 2 (a weaker bound by a separate route): ν(A − ε, B − ε) ≤ AB − 4 for A, B ≥ 8, from interval 34 of the closed form, without the k2m4 material.",
+     "ja": "定理 2（別の経路による弱い評価）：A, B ≥ 8 で ν(A − ε, B − ε) ≤ AB − 4。閉じた式の区間 34 から示し、k2m4 の材料は使わない。"
+    },
+    {
+     "en": "Every finite statement specific to the folder is checked in exact rational arithmetic by two separately written checkers (checker/ and indep-checker/). Computer-assisted; not yet reviewed outside this project (problems/rectangle-upper-bounds/).",
+     "ja": "このフォルダに固有の有限の命題は、別々に書いた 2 つの検査器（checker/ と indep-checker/）で厳密な有理数演算により検査した。計算機援用で、プロジェクト外のレビューはまだない（problems/rectangle-upper-bounds/）。"
+    },
+    {
+     "en": "Lean: Theorem 1 is proved in Lean 4 with the standard axioms only (propext, Classical.choice, Quot.sound). lean/rectangle-k2m4/ proves it from the finite statement ValidTilt9, and ValidTilt9 is proved in the Lean kernel in release validtilt9-lean-v1; the combined theorem Rect4.rect4, with no hypotheses, is in lean/rectangle-k2m4/final/. Theorem 2 is not formalised.",
+     "ja": "Lean：定理 1 を Lean 4 で、標準の公理（propext、Classical.choice、Quot.sound）だけで証明した。lean/rectangle-k2m4/ が有限命題 ValidTilt9 から定理 1 を導き、ValidTilt9 は Release validtilt9-lean-v1 で Lean の kernel により証明されている。両者を合わせた仮定なしの定理 Rect4.rect4 は lean/rectangle-k2m4/final/ にある。定理 2 は形式化していない。"
+    }
+   ],
+   "working_on": [
+    {
+     "en": "General real sides (ν(a, b) < ab − 2S(δ_a) − 2S(δ_b)).",
+     "ja": "一般の実数の辺（ν(a, b) < ab − 2S(δ_a) − 2S(δ_b)）。"
+    }
+   ],
+   "links": [
+    {
+     "label": "problems/rectangle-upper-bounds/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/rectangle-upper-bounds"
+    },
+    {
+     "label": "lean/rectangle-k2m4/",
+     "url": "https://github.com/wand125/square-packing/tree/main/lean/rectangle-k2m4"
+    },
+    {
+     "label": "Release validtilt9-lean-v1",
+     "url": "https://github.com/wand125/square-packing/releases/tag/validtilt9-lean-v1"
+    }
+   ],
+   "releases": [],
+   "updated": "2026-10-16"
   }
  ]
 }
