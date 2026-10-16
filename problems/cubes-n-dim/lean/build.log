@@ -1,0 +1,26 @@
+⚠ [8706/8708] Built CubesNd.Basic (21s)
+warning: CubesNd/Basic.lean:1:1: * '-/':
+Copyright too short!
+
+
+Note: This linter can be disabled with `set_option linter.style.header false`
+warning: CubesNd/Basic.lean:6:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: CubesNd/Basic.lean:11:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: CubesNd/Basic.lean:12:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: CubesNd/Basic.lean:18:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: CubesNd/Basic.lean:210:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+warning: CubesNd/Basic.lean:272:100: This line exceeds the 100 character limit, please shorten it!
+
+Note: This linter can be disabled with `set_option linter.style.longLine false`
+✔ [8707/8708] Built CubesNd (20s)
+Build completed successfully (8708 jobs).

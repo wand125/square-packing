@@ -29,6 +29,7 @@ Then two cubes with disjoint interiors cannot both fit (`PROOF.md` §1). Write c
 | `PROOF.md` | The theorem, the reduction to F ≤ 1, the near-region proof, and the statement checked by computer |
 | `checker/` | First system: Rust, std only; column 1 plus a quaternion for the other columns; reduction by 9,216 |
 | `checker2/` | Second system: independent Rust, std only; a pair of quaternions; written from `SPEC.md` alone |
+| `lean/` | Lean 4 + Mathlib: the near-region lemma in any dimension and Lemma K, with Lemma F in dimension m as a hypothesis |
 | `verify_logs.py` | Checks the run logs of both systems: coverage of all tasks, no failures, tree identity |
 
 ## Results
@@ -56,6 +57,14 @@ python3 verify_logs.py logs
 ```
 
 Rust 1.86 or later is required (`f64::next_up`/`next_down`); no crates are used.
+
+## What is checked in Lean
+
+The hand part of the near region (`PROOF.md` §3) is formalized in `lean/` for any dimension. This covers the
+polar-decomposition inequality, the orthogonality of the explicit polar factor, and Lemma K. The main theorem
+`near_region` takes Lemma F in dimension m as an explicit hypothesis (`LemmaF m`) and gives F_1 ≤ 1 for m ≤ 4
+when c² ≥ 1 − 1/m. It has no `sorry`, and its only axioms are Lean's standard three. The reduction of §1, Lemma F in
+dimension 3 and the far region of §4 are not formalized.
 
 ## Review status
 

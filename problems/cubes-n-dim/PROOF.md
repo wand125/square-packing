@@ -88,6 +88,11 @@ by Lemma F₃. Hence F_1 ≤ 1 in the near region. ∎
 (The same argument proves: if Lemma F holds in dimension m ≤ 4, then in dimension m + 1 every column with
 max_e R_e1² ≥ 1 − 1/m satisfies F_1 ≤ 1. The bound w_i ≤ √m ≤ 2 used in (f) fails for m ≥ 5.)
 
+**Lean.** Steps (a)–(f) are formalized in `lean/` for any dimension m, with Lemma F in dimension m as a
+hypothesis. `near_identity` is (a)–(d), `polarQ_orth` is the orthogonality of Q in (c), `l1_QTx_le_one` is (e),
+and `lemmaK` and `rowL1_le_two` are (f). The conclusion of this section is `near_region` with m = 3. See
+`lean/README.md`.
+
 ## 4. Far region: if c² ≤ 2/3 then F_1 < 1 (computer-assisted)
 
 **Claim.** For every R ∈ O(4) with max_e R_e1² ≤ 2/3, F_1(R) < 1.

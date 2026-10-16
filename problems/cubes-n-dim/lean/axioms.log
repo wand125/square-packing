@@ -1,0 +1,6 @@
+'CubesNd.polarQ_orth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubesNd.near_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubesNd.l1_QTx_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubesNd.lemmaK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubesNd.rowL1_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubesNd.near_region' depends on axioms: [propext, Classical.choice, Quot.sound]
