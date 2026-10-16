@@ -7,6 +7,7 @@
 .cv-r input { flex: 1; }
 dl.kv { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 2px 12px; margin: 4px 0; }
 dl.kv dt { color: var(--fg2); } dl.kv dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+dl.kv dd[data-info="claim"] { white-space: normal; }   /* the long "No packing of n …" claims wrap instead of widening the page */
 .links-inline { color: var(--fg2); }
 @media (max-width: 760px) { .cv-grid { grid-template-columns: minmax(0, 1fr); } }
 .ct-pick .bar { margin: 2px 0; }
