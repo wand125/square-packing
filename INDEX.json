@@ -140,7 +140,8 @@
     "check": "python3 ../../../../tools/packing_check/check_packing.py packing_n77.json    # upper bound: the packing, exact (standard library)\npython3 ../../../../tools/packing_check/check_packing2.py packing_n77.json   # upper bound: second exact check (sympy)\npython3 ../../../../tools/packing_check/check_packing.py packing_n78.json    # upper bound: the packing, exact (standard library)\npython3 ../../../../tools/packing_check/check_packing2.py packing_n78.json   # upper bound: second exact check (sympy)\nbash verify.sh verify-work 16            # hashes, exact total, D4, zmx2 --d4 (about 20 min)",
     "check_cwd": "problems/square-lower-bounds/certificates/k2m4_n77_L9",
     "documents": [
-     "problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md"
+     "problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md",
+     "problems/square-lower-bounds/certificates/k2m4_n77_L9/lean/README.md"
     ]
    },
    {

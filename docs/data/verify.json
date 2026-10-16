@@ -274,6 +274,7 @@
   }
  ],
  "releases": [
+  {"tag": "validtilt9-lean-v1", "name": "ValidTilt9 in the Lean kernel: s(k² − 4) = k for k ≥ 8", "date": "2026-10-16"},
   {"tag": "right-isosceles-n15-v1", "name": "Right isosceles triangle: optimality certificate for n = 15", "date": "2026-10-14"},
   {
    "tag": "data/valid7-lean-certs-v1",

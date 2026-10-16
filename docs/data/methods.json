@@ -203,17 +203,20 @@
    },
    "tools": [
     "problems/square-lower-bounds/certificates/k2m5_n59_L8",
-    "problems/square-lower-bounds/certificates/k2m4_n77_L9"
+    "problems/square-lower-bounds/certificates/k2m4_n77_L9",
+    "problems/square-lower-bounds/certificates/k2m4_n77_L9/lean"
    ],
    "sources": [
     "problems/square-lower-bounds/README.md#L507-L537",
     "problems/square-lower-bounds/certificates/k2m5_n59_L8/README.md#L1-L33",
     "problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md#L1-L33",
-    "problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md#L41-L60"
+    "problems/square-lower-bounds/certificates/k2m4_n77_L9/README.md#L41-L60",
+    "problems/square-lower-bounds/certificates/k2m5_n59_L8/lean/README.md#L1-L25",
+    "problems/square-lower-bounds/certificates/k2m4_n77_L9/lean/README.md#L1-L32"
    ],
    "review_status": {
-    "en": "The s(59) = 8 and s(77) = 9 results are computer-assisted; neither has yet been reviewed outside this project or formalised in Lean.",
-    "ja": "s(59) = 8 と s(77) = 9 は計算機援用による結果。いずれもプロジェクト外のレビューと Lean での形式化は未実施。"
+    "en": "The s(59) = 8 and s(77) = 9 results are computer-assisted; neither has yet been reviewed outside this project. s(59) = 8 is also proved in the Lean kernel from this certificate (k2m5_n59_L8/lean). s(77) = 9 is proved in the Lean kernel as the case k = 9 of s(k² − 4) = k for every k ≥ 8, from Evan Daniel's k2m4 certificate rather than this one (k2m4_n77_L9/lean). Both depend only on propext, Classical.choice and Quot.sound.",
+    "ja": "s(59) = 8 と s(77) = 9 は計算機援用による結果。いずれもプロジェクト外のレビューは未実施。s(59) = 8 はこの証明書から Lean カーネルでも証明した（k2m5_n59_L8/lean）。s(77) = 9 は、すべての k ≥ 8 での s(k² − 4) = k の k = 9 の場合として Lean カーネルで証明した。ただし使ったのはこの証明書ではなく Evan Daniel の k2m4 の証明書（k2m4_n77_L9/lean）。どちらも依存は propext、Classical.choice、Quot.sound のみ。"
    },
    "result_notes": {
     "square-lower-bounds-v1:certificates/k2m5_n59_L8": {

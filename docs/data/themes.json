@@ -419,7 +419,7 @@
   },
   {
    "issue": 10,
-   "state": "open",
+   "state": "closed",
    "title": {
     "en": "ValidTilt9 in the Lean kernel — s(k² − 4) = k for all k ≥ 8 without assumptions",
     "ja": "ValidTilt9 の Lean カーネル化 — 仮定なしの s(k² − 4) = k（すべての k ≥ 8）"
@@ -440,14 +440,13 @@
     {
      "en": "s(59) = 8 in the Lean kernel on the same machinery (certificates/k2m5_n59_L8/lean/); it depends only on propext, Classical.choice and Quot.sound.",
      "ja": "同じ仕組みで s(59) = 8 を Lean カーネルで検査（certificates/k2m5_n59_L8/lean/）。依存は propext、Classical.choice、Quot.sound のみ。"
-    }
-   ],
-   "working_on": [
+    },
     {
-     "en": "The kernel run over all roots of ValidTilt9, then joining them into validTilt9 and checking the axioms of validTilt9, valid9 and bentz4.",
-     "ja": "ValidTilt9 のすべての根のカーネル検査、続いて validTilt9 への組み上げと、validTilt9・valid9・bentz4 の公理の確認。"
+     "en": "ValidTilt9 checked in the Lean kernel over all 16,200 roots and joined into validTilt9; bentz4 : ∀ k ≥ 8, minSide (k² − 4) = k depends only on propext, Classical.choice and Quot.sound (certificates/k2m4_n77_L9/lean/, Release validtilt9-lean-v1). The statement, the reduction and the certificate are Evan Daniel's.",
+     "ja": "ValidTilt9 を 16,200 個の根すべてで Lean カーネルで検査し、validTilt9 に組み上げた。bentz4 : ∀ k ≥ 8, minSide (k² − 4) = k の依存は propext、Classical.choice、Quot.sound のみ（certificates/k2m4_n77_L9/lean/、Release validtilt9-lean-v1）。主張・帰着・証明書は Evan Daniel のもの。"
     }
    ],
+   "working_on": [],
    "links": [
     {
      "label": "evand/square-packing",
@@ -456,10 +455,18 @@
     {
      "label": "k2m5_n59_L8/lean",
      "url": "https://github.com/wand125/square-packing/tree/main/problems/square-lower-bounds/certificates/k2m5_n59_L8/lean"
+    },
+    {
+     "label": "k2m4_n77_L9/lean",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/square-lower-bounds/certificates/k2m4_n77_L9/lean"
+    },
+    {
+     "label": "validtilt9-lean-v1",
+     "url": "https://github.com/wand125/square-packing/releases/tag/validtilt9-lean-v1"
     }
    ],
    "url": "https://github.com/wand125/square-packing/issues/10",
-   "updated": "2026-10-11"
+   "updated": "2026-10-16"
   },
   {
    "issue": 11,
