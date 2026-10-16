@@ -1,0 +1,28 @@
+{
+ "schema": "asset/v1",
+ "id": "triangle-v1:certificates/n46",
+ "claim": "No 46 non-overlapping unit squares fit in an equilateral triangle of side less than v = 10 + 2/√3 ≈ 11.15470; that is, s△(46) ≥ 10 + 2/√3.",
+ "release_tag": "triangle-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/triangle-v1",
+ "assets": [
+  {
+   "asset": "certificates__n46.tar.gz",
+   "size": 714,
+   "sha256": "78b473c0b94ecbd00e03340e1c3481bfb3f5cae0512d867f40318161394d9475"
+  }
+ ],
+ "unpack": "tar xzf certificates__n46.tar.gz -C problems/triangle",
+ "unpack_note": "run from the repository root; restores the data files in place next to the documents",
+ "check": "python checker/check.py certificates/n46/n46_cert.json --n 46 --max-depth 40 --jobs 16\npython tools/make_lattice_cert.py 10 out.json",
+ "check_cwd": "problems/triangle",
+ "check_note": null,
+ "check_extended": null,
+ "documents": [
+  "problems/triangle/certificates/n46/PROOF.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing",
+  "commit": null,
+  "path": "problems/triangle/certificates/n46"
+ }
+}

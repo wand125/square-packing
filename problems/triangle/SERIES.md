@@ -34,6 +34,9 @@ Axis-parallel rows standing on the base fit floor(m − 2j/√3) squares at heig
 
 - For m = 9 the rows hold only 9 + 7 + 6 + 5 + 4 + 3 + 2 = 36 squares. For n = 37 the certificate still gives
   the lower bound, and a different packing (`certificates/n37/upper/`) reaches side v_9, so s△(37) = v_9 as well.
+- For m = 10 the rows hold only 10 + 8 + 7 + 6 + 5 + 4 + 3 + 1 = 44 squares. For n = 46 the certificate gives
+  the lower bound, and Joshua Wolk's packing from Friedman's table (`certificates/n46/upper/`) reaches side
+  v_10, so s△(46) = v_10.
 
 In general the lattice triangle has about m²/2 points. The number of squares that fit in the
 triangle of side v_m grows only like its area, about (√3/4)m² ≈ 0.433m². So for large m the
@@ -49,5 +52,7 @@ certificate gives a valid but weak lower bound. It is not a route to a statement
 | 22 | 7 | s△(22) = 7 + 2/√3 | 4240 | 63 s |
 | 29 | 8 | s△(29) = 8 + 2/√3 | 5770 | 91 s |
 | 37 | 9 | s△(37) = 9 + 2/√3 (packing in `certificates/n37/upper/`) | 7668 | 171 s |
+| 46 | 10 | s△(46) = 10 + 2/√3 (packing in `certificates/n46/upper/`) | 7296 | 338 s |
 
 For n = 37 see `certificates/n37/PROOF.md` for the packing and the remarks on the value listed in Friedman's table.
+For n = 46 see `certificates/n46/PROOF.md`.

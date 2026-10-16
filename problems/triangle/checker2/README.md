@@ -153,9 +153,9 @@ A failing run prints its counterexample pose in the summary.
 - Shared inputs: the certificates, the claim, and the centre-scaling argument.
 - Tools: Python, gmpy2 (exact rationals), sympy (real-root isolation of rational polynomials).
 
-## The series n = 7, 11, 16, 22, 29, 37 (lattice certificates, side m + 2/√3)
+## The series n = 7, 11, 16, 22, 29, 37, 46 (lattice certificates, side m + 2/√3)
 
-`series_results.json` holds, for `lattice_m4.json` … `lattice_m9.json`:
+`series_results.json` holds, for `lattice_m4.json` … `lattice_m10.json`:
 
 - the certificate sha256 (identical to the certificate files published here);
 - the minimum captured weight;
@@ -174,12 +174,14 @@ symmetry and no chord-pair lemma, and checks every angle directly.
 | 7 | 22 | 21 | 5,959 | 1 | 11 min (12 processes) | verified |
 | 8 | 29 | 28 | 8,767 | 1 | 30 min (12 processes) | verified |
 | 9 | 37 | 36 | 12,157 | 1 | 92 min (12 processes) | verified |
+| 10 | 46 | 45 | 16,309 | 1 | 8.0 h (8 processes) | verified |
 
 Each total weight is `n − 1 < n`.
 
 For m = 9 the certificate gives the lower bound s△(37) ≥ 9 + 2/√3 ≈ 10.15470. The rows packing
 holds only 36 squares at this side; the upper bound comes from a different packing, in
-`../certificates/n37/upper/`.
+`../certificates/n37/upper/`. Likewise for m = 10: s△(46) ≥ 10 + 2/√3 ≈ 11.15470, the rows hold only 44
+squares, and the upper bound is in `../certificates/n46/upper/`.
 
 ### A floating-point cross-check for m = 9
 

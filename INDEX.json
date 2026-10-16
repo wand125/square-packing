@@ -5987,6 +5987,20 @@
     ]
    },
    {
+    "id": "triangle-v1:certificates/n46",
+    "claim": "No 46 non-overlapping unit squares fit in an equilateral triangle of side less than v = 10 + 2/√3 ≈ 11.15470; that is, s△(46) ≥ 10 + 2/√3.",
+    "release_tag": "triangle-v1",
+    "assets": [
+     "certificates__n46.tar.gz"
+    ],
+    "path": "problems/triangle/certificates/n46/ASSET.json",
+    "check": "python checker/check.py certificates/n46/n46_cert.json --n 46 --max-depth 40 --jobs 16\npython tools/make_lattice_cert.py 10 out.json",
+    "check_cwd": "problems/triangle",
+    "documents": [
+     "problems/triangle/certificates/n46/PROOF.md"
+    ]
+   },
+   {
     "id": "triangle-v1:certificates/n6",
     "claim": "The smallest equilateral triangle containing six non-overlapping unit squares has side v = 2 + 4/√3 ≈ 4.3094.",
     "release_tag": "triangle-v1",

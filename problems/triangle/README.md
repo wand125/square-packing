@@ -1,4 +1,4 @@
-# Unit squares in an equilateral triangle: optimal packings for n = 2, 3, 4, 6, 7, 11, 16, 22, 29 and 37
+# Unit squares in an equilateral triangle: optimal packings for n = 2, 3, 4, 6, 7, 11, 16, 22, 29, 37 and 46
 
 Let s△(n) be the side of the smallest equilateral triangle that contains n non-overlapping unit
 squares (any positions, any angles).
@@ -15,20 +15,21 @@ squares (any positions, any angles).
 | 22 | 7 + 2/√3 | 8.1547 | rows 7 + 5 + 4 + 3 + 2 + 1 | lattice, 21 points |
 | 29 | 8 + 2/√3 | 9.1547 | rows 8 + 6 + 5 + 4 + 3 + 2 + 1 | lattice, 28 points |
 | 37 | 9 + 2/√3 | 10.1547 | tight bottom row of 9, and 28 squares above in the shape of Friedman's n = 28 packing (our coordinates, `certificates/n37/upper/`) | lattice, 36 points |
+| 46 | 10 + 2/√3 | 11.1547 | Joshua Wolk's packing: tight bottom row of 10, nine more axis-parallel squares, 15 + 12 squares tilted by ±60° (our coordinates, `certificates/n46/upper/`) | lattice, 45 points |
 
 Upper bounds: our own certificates. For n = 2, 3, 4 and the series n = 7, …, 29 the packings are proved in
-Lean 4 and checked by the kernel ([`lean/triangle/`](../../lean/triangle/), see "Lean" below). For n = 6 and
-n = 37 they are packing certificates with exact coordinates in Q(√3), `certificates/n6/upper/packing.json` and
-`certificates/n37/upper/n37_packing.json`, checked exactly by the two checkers in
+Lean 4 and checked by the kernel ([`lean/triangle/`](../../lean/triangle/), see "Lean" below). For n = 6,
+37 and 46 they are packing certificates with exact coordinates in Q(√3), `certificates/n6/upper/packing.json`,
+`certificates/n37/upper/n37_packing.json` and `certificates/n46/upper/n46_packing.json`, checked exactly by the two checkers in
 [`tools/packing_check/`](../../tools/packing_check/). The packings are the ones listed in Erich Friedman's
 Packing Center, "Squares in Triangles" (https://erich-friedman.github.io/packing/squintri/); for n = 37 the table
 lists a packing by Gianluca Costantino (May 2026), and ours combines a tight bottom row with the shape of
-Friedman's n = 28 packing (1997). We claim no originality for the packings. The lower-bound certificates show that
+Friedman's n = 28 packing (1997); for n = 46 the packing is Joshua Wolk's (September 2026). We claim no originality for the packings. The lower-bound certificates show that
 they are optimal. For n = 7, …, 29 the packing is rows of axis-parallel squares standing on the base, and the
 certificate is a patch of the unit triangular lattice (all weights 1, with Lemma P); the series and why the rows
-stop being enough at n = 37 are described in `SERIES.md`.
+stop being enough at n = 37 and 46 are described in `SERIES.md`.
 The results are computer-assisted and checked by two independent checkers. The lower bounds for every n except 6
-and the upper bounds for n = 2, 3, 4, 7, …, 29 are also checked in Lean 4. They have not been peer reviewed.
+and 46 and the upper bounds for n = 2, 3, 4, 7, …, 29 are also checked in Lean 4. They have not been peer reviewed.
 
 ## Novelty
 
@@ -46,6 +47,10 @@ and the upper bounds for n = 2, 3, 4, 7, …, 29 are also checked in Lean 4. The
   Costantino (May 2026), and the part above the bottom row uses the shape of Friedman's n = 28 packing (1997).
   The table (as of 2026-10-01) lists side 10.15299, below our lower bound; we take it to be a typo. See
   `certificates/n37/PROOF.md`.
+- For n = 46 we prove s△(46) = 10 + 2/√3 ≈ 11.15470, the value listed in Friedman's table for Joshua Wolk's
+  packing (September 2026). The upper bound is that packing with our exact coordinates
+  (`certificates/n46/upper/`, two exact checkers), and the lower bound is the lattice certificate for m = 10,
+  checked by both checkers. We are not aware of a previous proof of optimality. See `certificates/n46/PROOF.md`.
 
 ## The method
 
@@ -96,7 +101,7 @@ handles the middle square of the base row, which holds both lower points on its 
 - **`checker2/`** is a second checker written from the specification, the proof notes and the
   certificate format, with a different method. Its README describes the method and what its
   author read (Independence section). It verifies the same certificates (n = 2, 3, 4 and the
-  series up to n = 37) and rejects the negative controls.
+  series up to n = 46) and rejects the negative controls.
 - **`checker2/n6/`** re-checks every part of the n = 6 proof (the six certificates, the obstacle points,
   the triple lemma and its hypotheses, and the links between the stages) by other methods, written
   without reading the first checker's code.
@@ -111,6 +116,8 @@ python checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 32 --jobs
 python checker/check.py certificates/n29/n29_cert.json --n 29 --max-depth 36 --jobs 12   # likewise n7 … n22
 python checker/check.py certificates/n37/n37_cert.json --n 37 --max-depth 40 --jobs 16
 python tools/make_lattice_cert.py 9 out.json   # regenerates certificates/n37/n37_cert.json byte for byte
+python checker/check.py certificates/n46/n46_cert.json --n 46 --max-depth 40 --jobs 16
+python tools/make_lattice_cert.py 10 out.json  # regenerates certificates/n46/n46_cert.json byte for byte
 cd checker && python -m pytest -q tests          # needs pytest; about 1.5 minutes
 
 # stand-alone check of the n = 2 lemma (needs sympy and mpmath)
