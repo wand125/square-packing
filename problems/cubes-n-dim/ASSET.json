@@ -1,0 +1,30 @@
+{
+ "schema": "asset/v1",
+ "id": "cubes-n-dim-v1:logs",
+ "claim": "s_4(2) = 2: two unit 4-cubes with disjoint interiors do not fit in a 4-cube of side < 2. The logs record the two independent computer checks of the far region (F_1(R) < 1 for R in O(4) with max_e R_e1^2 <= 2/3); the near region is the hand proof in PROOF.md.",
+ "release_tag": "cubes-n-dim-v1",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1",
+ "assets": [
+  {
+   "asset": "cubes-n-dim-logs.tar.xz",
+   "size": 560620,
+   "sha256": "62326a400e75216e92d4b862b5c5ce53e83f5db7125eeb0b0b36dd96a71e55c1"
+  }
+ ],
+ "unpack": "tar xJf cubes-n-dim-logs.tar.xz -C problems/cubes-n-dim",
+ "unpack_note": "run from the repository root; restores logs/checker and logs/checker2 next to the documents",
+ "check": "python3 verify_logs.py logs",
+ "check_cwd": "problems/cubes-n-dim",
+ "check_note": "verify_logs.py checks the logs (coverage, no failures, tree identity); re-running the checkers is described in README.md (about 4 min and 25 min with 2 threads on a laptop)",
+ "check_extended": "(cd checker && cargo build --release && ./target/release/m2bb --jobs 2 --log full.jsonl)\n(cd checker2 && cargo build --release && ./target/release/m2check2 --jobs 2 --task-seconds 3600 --log full.jsonl)",
+ "documents": [
+  "problems/cubes-n-dim/README.md",
+  "problems/cubes-n-dim/PROOF.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing",
+  "commit": null,
+  "path": "problems/cubes-n-dim",
+  "published_after": null
+ }
+}

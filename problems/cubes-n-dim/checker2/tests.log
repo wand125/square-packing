@@ -1,0 +1,148 @@
+m2check2 validation, 2026-10-14. No full run. All processes used at most 2 workers.
+$ rustc --version
+rustc 1.99.0 (b940084d7 2026-09-28)
+exit_status=0
+$ uname -m
+arm64
+exit_status=0
+$ cargo fmt -- --check
+exit_status=0
+$ cargo test --jobs 2 -- --test-threads=2
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.00s
+     Running unittests src/main.rs (target/debug/deps/m2check2-251a04db71886b80)
+
+running 8 tests
+test tests::constraints ... ok
+test tests::interval_edges ... ok
+test tests::near_and_f_closing ... ok
+test tests::failure_and_tree ... ok
+test tests::resume_and_corrupt_journal ... ok
+test tests::task_partition ... ok
+test tests::time_cap_is_failure ... ok
+test tests::randomized_geometry_and_enclosures ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.84s
+
+exit_status=0
+$ target/release/m2check2 --selftest
+selftest: 500 independent SO(4) recoveries, determinant/orthogonality, double-cover and symmetry tests passed (145 canonical rotations required negative chart sign)
+selftest: 1024 random boxes, 10240 point/corner entry and F enclosure checks passed (all 16 face pairs)
+{"selftest":true,"selftest_passed":true,"tasks":0,"tasks_total":65536,"fails":0,"ok":false}
+exit_status=0
+
+Measured trial runs (same interval/search implementation, before adding journal-validation tests):
+$ target/release/m2check2 --jobs 2 --first 0 --last 8 --log trial-start.jsonl
+tasks_total=65536 selected=[0,8) queued=8 skipped=0 jobs=2
+tree identity: 6208 = 2 * 3108 - 8 : true
+{"tasks":8,"tasks_total":65536,"new_tasks":8,"skipped":0,"boxes":6208,"discarded":1378,"near":1730,"closed":0,"max_depth":14,"fails":0,"seconds":0.131312875,"wall_seconds":0.067399208,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 32764 --last 32772 --log trial-middle.jsonl
+tasks_total=65536 selected=[32764,32772) queued=8 skipped=0 jobs=2
+tree identity: 2206 = 2 * 1107 - 8 : true
+{"tasks":8,"tasks_total":65536,"new_tasks":8,"skipped":0,"boxes":2206,"discarded":663,"near":444,"closed":0,"max_depth":14,"fails":0,"seconds":0.04667158500000001,"wall_seconds":0.0303255,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 61440 --last 61448 --log trial-late.jsonl
+tasks_total=65536 selected=[61440,61448) queued=8 skipped=0 jobs=2
+tree identity: 11132 = 2 * 5570 - 8 : true
+{"tasks":8,"tasks_total":65536,"new_tasks":8,"skipped":0,"boxes":11132,"discarded":2751,"near":2819,"closed":0,"max_depth":15,"fails":0,"seconds":0.23560974899999998,"wall_seconds":0.129927708,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 2979 --last 2983 --log trial-stratified.jsonl
+tasks_total=65536 selected=[2979,2983) queued=4 skipped=0 jobs=2
+tree identity: 4 = 2 * 4 - 4 : true
+{"tasks":4,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":4,"discarded":4,"near":0,"closed":0,"max_depth":0,"fails":0,"seconds":0.00011595799999999999,"wall_seconds":0.000357792,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 6330 --last 6334 --log trial-stratified.jsonl
+tasks_total=65536 selected=[6330,6334) queued=4 skipped=0 jobs=2
+tree identity: 160 = 2 * 84 - 8 : true
+{"tasks":8,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":160,"discarded":84,"near":0,"closed":0,"max_depth":7,"fails":0,"seconds":0.0035554989999999997,"wall_seconds":0.002302417,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 8908 --last 8912 --log trial-stratified.jsonl
+tasks_total=65536 selected=[8908,8912) queued=4 skipped=0 jobs=2
+tree identity: 1816 = 2 * 914 - 12 : true
+{"tasks":12,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":1816,"discarded":641,"near":273,"closed":0,"max_depth":13,"fails":0,"seconds":0.039099999,"wall_seconds":0.019583458,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 15063 --last 15067 --log trial-stratified.jsonl
+tasks_total=65536 selected=[15063,15067) queued=4 skipped=0 jobs=2
+tree identity: 1910 = 2 * 963 - 16 : true
+{"tasks":16,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":1910,"discarded":690,"near":273,"closed":0,"max_depth":13,"fails":0,"seconds":0.041206791,"wall_seconds":0.001501709,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 19530 --last 19534 --log trial-stratified.jsonl
+tasks_total=65536 selected=[19530,19534) queued=4 skipped=0 jobs=2
+tree identity: 1958 = 2 * 989 - 20 : true
+{"tasks":20,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":1958,"discarded":716,"near":273,"closed":0,"max_depth":13,"fails":0,"seconds":0.042285582999999995,"wall_seconds":0.000912792,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 21092 --last 21096 --log trial-stratified.jsonl
+tasks_total=65536 selected=[21092,21096) queued=4 skipped=0 jobs=2
+tree identity: 1972 = 2 * 998 - 24 : true
+{"tasks":24,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":1972,"discarded":725,"near":273,"closed":0,"max_depth":13,"fails":0,"seconds":0.042626708,"wall_seconds":0.0004025,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 27882 --last 27886 --log trial-stratified.jsonl
+tasks_total=65536 selected=[27882,27886) queued=4 skipped=0 jobs=2
+tree identity: 1988 = 2 * 1008 - 28 : true
+{"tasks":28,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":1988,"discarded":735,"near":273,"closed":0,"max_depth":13,"fails":0,"seconds":0.04300571,"wall_seconds":0.000536083,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 30644 --last 30648 --log trial-stratified.jsonl
+tasks_total=65536 selected=[30644,30648) queued=4 skipped=0 jobs=2
+tree identity: 13606 = 2 * 6819 - 32 : true
+{"tasks":32,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":13606,"discarded":4940,"near":1879,"closed":0,"max_depth":18,"fails":0,"seconds":0.289351709,"wall_seconds":0.128820334,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 35188 --last 35192 --log trial-stratified.jsonl
+tasks_total=65536 selected=[35188,35192) queued=4 skipped=0 jobs=2
+tree identity: 13610 = 2 * 6823 - 36 : true
+{"tasks":36,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":13610,"discarded":4944,"near":1879,"closed":0,"max_depth":18,"fails":0,"seconds":0.28947054299999997,"wall_seconds":0.000380084,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 38944 --last 38948 --log trial-stratified.jsonl
+tasks_total=65536 selected=[38944,38948) queued=4 skipped=0 jobs=2
+tree identity: 53886 = 2 * 26963 - 40 : true
+{"tasks":40,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":53886,"discarded":16430,"near":6699,"closed":3834,"max_depth":19,"fails":0,"seconds":1.150913584,"wall_seconds":0.668143292,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 42314 --last 42318 --log trial-stratified.jsonl
+tasks_total=65536 selected=[42314,42318) queued=4 skipped=0 jobs=2
+tree identity: 53924 = 2 * 26984 - 44 : true
+{"tasks":44,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":53924,"discarded":16450,"near":6700,"closed":3834,"max_depth":19,"fails":0,"seconds":1.151996584,"wall_seconds":0.001058417,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 47649 --last 47653 --log trial-stratified.jsonl
+tasks_total=65536 selected=[47649,47653) queued=4 skipped=0 jobs=2
+tree identity: 54296 = 2 * 27172 - 48 : true
+{"tasks":48,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":54296,"discarded":16638,"near":6700,"closed":3834,"max_depth":19,"fails":0,"seconds":1.1621166669999998,"wall_seconds":0.005964458,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 50618 --last 50622 --log trial-stratified.jsonl
+tasks_total=65536 selected=[50618,50622) queued=4 skipped=0 jobs=2
+tree identity: 54302 = 2 * 27177 - 52 : true
+{"tasks":52,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":54302,"discarded":16643,"near":6700,"closed":3834,"max_depth":19,"fails":0,"seconds":1.1623026669999998,"wall_seconds":0.000476667,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 54556 --last 54560 --log trial-stratified.jsonl
+tasks_total=65536 selected=[54556,54560) queued=4 skipped=0 jobs=2
+tree identity: 54362 = 2 * 27209 - 56 : true
+{"tasks":56,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":54362,"discarded":16675,"near":6700,"closed":3834,"max_depth":19,"fails":0,"seconds":1.1638921259999997,"wall_seconds":0.001342375,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 59499 --last 59503 --log trial-stratified.jsonl
+tasks_total=65536 selected=[59499,59503) queued=4 skipped=0 jobs=2
+tree identity: 54382 = 2 * 27221 - 60 : true
+{"tasks":60,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":54382,"discarded":16687,"near":6700,"closed":3834,"max_depth":19,"fails":0,"seconds":1.1644172089999996,"wall_seconds":0.000649375,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 62892 --last 62896 --log trial-stratified.jsonl
+tasks_total=65536 selected=[62892,62896) queued=4 skipped=0 jobs=2
+tree identity: 54572 = 2 * 27318 - 64 : true
+{"tasks":64,"tasks_total":65536,"new_tasks":4,"skipped":0,"boxes":54572,"discarded":16784,"near":6700,"closed":3834,"max_depth":19,"fails":0,"seconds":1.1686410009999997,"wall_seconds":0.002563625,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 0 --last 8 --log trial-start.jsonl
+tasks_total=65536 selected=[0,8) queued=0 skipped=8 jobs=2
+tree identity: 6208 = 2 * 3108 - 8 : true
+{"tasks":8,"tasks_total":65536,"new_tasks":0,"skipped":8,"boxes":6208,"discarded":1378,"near":1730,"closed":0,"max_depth":14,"fails":0,"seconds":0.131312875,"wall_seconds":0.00021975,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 0 --last 2 --max-depth 0 --log trial-depth-fail.jsonl
+tasks_total=65536 selected=[0,2) queued=2 skipped=0 jobs=2
+tree identity: 2 = 2 * 2 - 2 : true
+{"tasks":2,"tasks_total":65536,"new_tasks":2,"skipped":0,"boxes":2,"discarded":0,"near":0,"closed":0,"max_depth":0,"fails":2,"seconds":0.000078792,"wall_seconds":0.000259584,"tree_identity":true,"ok":false}
+exit_status=2
+$ target/release/m2check2 --jobs 2 --first 0 --last 1 --task-seconds 0.00000001 --log trial-time-fail.jsonl
+tasks_total=65536 selected=[0,1) queued=1 skipped=0 jobs=2
+tree identity: 1 = 2 * 1 - 1 : true
+{"tasks":1,"tasks_total":65536,"new_tasks":1,"skipped":0,"boxes":1,"discarded":0,"near":0,"closed":0,"max_depth":0,"fails":1,"seconds":0.000005959,"wall_seconds":0.000202792,"tree_identity":true,"ok":false}
+exit_status=2
+Failure records: trial-depth-fail.jsonl
+{"version":"m2check2-v1","grid":4,"depth_limit":0,"task":0, "boxes":1,"discarded":0,"near":0,"closed":0,"max_depth":0,"fails":1,"seconds":0.000041292,"fail_boxes":[{"reason":"max_depth","depth":0,"box":[[-1,-0.5],[-1,-0.5],[-1,-0.5],[-1,-0.5],[-1,-0.5],[-1,-0.5]]}]}
+{"version":"m2check2-v1","grid":4,"depth_limit":0,"task":1, "boxes":1,"discarded":0,"near":0,"closed":0,"max_depth":0,"fails":1,"seconds":0.0000375,"fail_boxes":[{"reason":"max_depth","depth":0,"box":[[-0.5,0],[-1,-0.5],[-1,-0.5],[-1,-0.5],[-1,-0.5],[-1,-0.5]]}]}
+Failure records: trial-time-fail.jsonl
+{"version":"m2check2-v1","grid":4,"depth_limit":60,"task":0, "boxes":1,"discarded":0,"near":0,"closed":0,"max_depth":0,"fails":1,"seconds":0.000005959,"fail_boxes":[{"reason":"time_limit","depth":0,"box":[[-1,-0.5],[-1,-0.5],[-1,-0.5],[-1,-0.5],[-1,-0.5],[-1,-0.5]]}]}

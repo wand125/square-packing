@@ -6376,6 +6376,23 @@
    {
     "manifest": "problems/n17/manifest.json"
    }
+  ],
+  "cubes-n-dim": [
+   {
+    "id": "cubes-n-dim-v1:logs",
+    "claim": "s_4(2) = 2: two unit 4-cubes with disjoint interiors do not fit in a 4-cube of side < 2. The logs record the two independent computer checks of the far region (F_1(R) < 1 for R in O(4) with max_e R_e1^2 <= 2/3); the near region is the hand proof in PROOF.md.",
+    "release_tag": "cubes-n-dim-v1",
+    "assets": [
+     "cubes-n-dim-logs.tar.xz"
+    ],
+    "path": "problems/cubes-n-dim/ASSET.json",
+    "check": "python3 verify_logs.py logs",
+    "check_cwd": "problems/cubes-n-dim",
+    "documents": [
+     "problems/cubes-n-dim/README.md",
+     "problems/cubes-n-dim/PROOF.md"
+    ]
+   }
   ]
  },
  "checks": [

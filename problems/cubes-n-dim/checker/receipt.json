@@ -1,0 +1,29 @@
+{
+ "claim": "F_1(R) < 1 for every R in O(4) with max_e R_e1^2 <= 2/3",
+ "system": "first (m2bb)",
+ "source_sha256": {
+  "src/main.rs (published)": "980e3b4f19967abba1a52225c543115d73812256fe4185c13c286a11975ee11e",
+  "src/main.rs (as run)": "8a5da12e998035b620c0fd1d04ff277b5a6e422c8d7ef8bdb83ffb00c96839b0"
+ },
+ "toolchain": "rustc 1.99.0, aarch64 macOS",
+ "date": "2026-10-14",
+ "command": "m2bb --jobs 2 --log full.jsonl",
+ "wall_time": "3 min 38 s",
+ "result": {
+  "tasks": 4096,
+  "boxes": 88110984,
+  "leaves": 44057540,
+  "infeasible": 3000039,
+  "near": 376969,
+  "closed_g": 542,
+  "closed_f": 40679990,
+  "max_depth": 22,
+  "fails": 0,
+  "max_closed_upper_bound": 0.99999999808
+ },
+ "log": {
+  "release_asset": "logs/checker/full.jsonl",
+  "sha256": "b86b4d81d7284556ddaebd8f11d4b33a290cfdddabc88cfd3fc6788025787159"
+ },
+ "source_note": "The published source is the source as run with comment-only changes: two comment lines removed (line 1, a development label, and line 312, a reviewer note) and two references in the header comment changed to point to PROOF.md. No code changed."
+}

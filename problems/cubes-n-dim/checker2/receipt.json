@@ -1,0 +1,40 @@
+{
+ "claim": "F(R) < 1 for every R in SO(4) with max_e R_e0^2 <= 2/3",
+ "system": "second (m2check2)",
+ "source_sha256": {
+  "src/main.rs (published)": "05f8fd997f75e30983a099ed9efbc8afb70f78bdb7ef6653cc68ef9949cc3889",
+  "src/main.rs (as run, retry)": "3cd1fb4150bc050c7248cf87149d5ca9703b453cc700ff55debe4f3d1a17d146",
+  "src/main.rs (as run, full run)": "f3d2b90eeaccd51b97c4e9774287b70d4c40a1f5efeddc0cdedc0b0c77332559"
+ },
+ "toolchain": "rustc 1.99.0, aarch64 macOS",
+ "date": "2026-10-14",
+ "full_run": {
+  "command": "m2check2 --jobs 2 --log full.jsonl",
+  "wall_time": "23 min 48 s",
+  "tasks": 65536,
+  "tasks_hitting_time_cap": 102,
+  "time_limit_failures": 1150,
+  "other_failures": 0
+ },
+ "retry": {
+  "command": "m2check2 --jobs 1 --first ID --last ID+1 --task-seconds 3600 --log retry/ID.jsonl (for each ID in retry_ids.txt)",
+  "tasks": 102,
+  "fails": 0,
+  "longest_task_seconds": 117.3
+ },
+ "accepted": {
+  "tasks": 65536,
+  "boxes": 192488546,
+  "leaves": 96277041,
+  "max_depth": 30,
+  "fails": 0
+ },
+ "logs": {
+  "release_asset": [
+   "logs/checker2/full.jsonl",
+   "logs/checker2/retry/*.jsonl"
+  ],
+  "full_sha256": "d42c0387365409010fc176fa1ee1fdae497820062ceec3a182cc91f878784005"
+ },
+ "source_note": "The published source is the retry source with one comment line removed (line 1070, a reviewer note in a unit test); no code changed. The full-run source differs from the retry source only in the bound accepted for --task-seconds (9.0 and the message text (0,9] instead of 3600.0 and (0,3600]). The rule for closing or discarding a box is identical in all three."
+}
