@@ -27,6 +27,7 @@ command, and every checker, tool and Lean project.
 | `tools/` | Solvers, verifiers and transfer tools (each tool folder has its own CI) |
 | `lean/n11-optimality/` | Lean 4 formalization toward s(11) |
 | `lean/triangle/` | Lean 4 proofs for the triangle results |
+| `lean/rectangle-k2m4/` | Lean 4: Theorem 1 of `problems/rectangle-upper-bounds/` (at most AB − 5 for A, B ≥ 8), conditional on ValidTilt9; extends Evan Daniel's Lean proof (MIT), whose files are reused unchanged |
 
 ## Certificates: documents in git, data in releases
 

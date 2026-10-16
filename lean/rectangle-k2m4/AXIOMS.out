@@ -1,0 +1,2 @@
+'SquarePacking.Rect4.rect4_of_valid9' depends on axioms: [propext, Classical.choice, Quot.sound]
+'SquarePacking.Rect4.rect4_of_validTilt9' depends on axioms: [propext, Classical.choice, Quot.sound]
