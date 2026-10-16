@@ -60,7 +60,7 @@
    "date": "2026-10-16",
    "en": "Added n = 46 (lower bound: the lattice certificate for m = 10; upper bound: Joshua Wolk's packing with our exact coordinates).",
    "ja": "n = 46 を追加（下界は m = 10 の格子の証明書、上界は Joshua Wolk の詰め方を当方が厳密な座標にしたもの）。",
-   "commit": ""
+   "commit": "574d27c"
   }
  ]
 }
