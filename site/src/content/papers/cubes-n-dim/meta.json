@@ -56,7 +56,7 @@
    "date": "2026-10-17",
    "en": "New §7: s_n(2) = 2 for n = 3, 4, 5 by the near-axis step of §3 and a spectral bound with exact rational certificates (problems/cubes-n-dim/spectral/), and s₆(2) = 2 by a cap, a strip and a near-axis region (spectral/n6/). §1–§6, the proof of version 1, are unchanged.",
    "ja": "§7 を追加：§3 の軸の近くの段とスペクトルの下界（厳密な有理数の証明書）で、n = 3, 4, 5 の s_n(2) = 2（problems/cubes-n-dim/spectral/）。キャップ・帯・軸の近くの領域による s₆(2) = 2（spectral/n6/）。版 1 の証明である §1〜§6 は変えていない。",
-   "commit": "",
+   "commit": "aaed7d5",
    "release": "cubes-n-dim-v2"
   }
  ]
