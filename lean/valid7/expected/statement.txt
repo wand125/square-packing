@@ -1,0 +1,3 @@
+SquarePacking.LemmaELeaf.valid7 : SquarePacking.Bentz.Valid7
+SquarePacking.LemmaELeaf.bentz (k : ℕ) : 6 ≤ k → SquarePacking.minSide (k ^ 2 - 3) = ↑k
+SquarePacking.LemmaELeaf.validTilt7 : SquarePacking.Bentz.ValidTilt7

@@ -9,6 +9,7 @@ position and every angle, has `μ₇(Q) ≥ 1`.
 By the reduction proved in Lean in evand/square-packing (`bentz_of_valid7`), Valid7 implies
 **s(k² − 3) = k for every k ≥ 6**.  That repository checks Valid7 with one program; this repository is a second,
 independently written exact check of the same statement.
+The finite claim Valid7 is also checked in the Lean kernel: see [lean/valid7](../../lean/valid7/README.md) (version 2, 2026-10).
 
 **Result (2026-10-02): Valid7 holds.**  Every pose was certified, with no symmetry reduction:
 156,800 root boxes covering centres `[0, 7]²` × `u = tan(θ/2) ∈ [−1/2, 1/2]`, 0 uncertified, 0 counterexamples;

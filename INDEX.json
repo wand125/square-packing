@@ -6502,6 +6502,10 @@
   {
    "path": "lean/triangle",
    "readme": true
+  },
+  {
+   "path": "lean/valid7",
+   "readme": true
   }
  ]
 }

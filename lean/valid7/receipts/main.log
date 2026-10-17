@@ -1,0 +1,24 @@
+	Command being timed: "lean -o LEAN_DIR/.lake/build/lib/lean/Sqpack/V7/Main.olean Sqpack/V7/Main.lean"
+	User time (seconds): 32.34
+	System time (seconds): 4.23
+	Percent of CPU this job got: 96%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:37.81
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 50618440
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 566
+	Minor (reclaiming a frame) page faults: 936999
+	Voluntary context switches: 3240
+	Involuntary context switches: 61
+	Swaps: 0
+	File system inputs: 20032
+	File system outputs: 7456
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+MAIN_RC=0
