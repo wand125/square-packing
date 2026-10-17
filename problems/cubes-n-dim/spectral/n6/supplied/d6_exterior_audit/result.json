@@ -1,0 +1,14 @@
+{
+  "four_edge_subsets": 1365,
+  "unscaled_gram_determinant_counts": {
+    "0": 285,
+    "5": 750,
+    "8": 240,
+    "9": 90
+  },
+  "normalized_max_determinant": "9/256",
+  "scalar_boundary": "1/65536",
+  "scalar_equal5": "1/78125",
+  "scalar_one_vs_four_r_one_third": "729/62748517",
+  "strict_comparisons_verified": true
+}

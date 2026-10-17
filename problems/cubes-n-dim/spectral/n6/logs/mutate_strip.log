@@ -1,0 +1,9 @@
+wrong midpoint index: rejected (record 0: vertex 11 is not the midpoint)
+leaf placed too early: rejected (leaf at record 0 (type 0) not certified: -0.6553182931772407)
+missing last record: rejected (records exhausted)
+wrong initial vertex: rejected (initial vertices differ from the stated ones)
+wrong initial simplex: rejected (assertion)
+all spectral witnesses halved: rejected (leaf at record 152 (type 1) not certified: -1.765652160779387)
+tangent coefficient increased by 0.1%: rejected (tangent coefficient too large)
+facet violating a support inequality: rejected (facet violates support inequality)
+8 of 8 broken copies rejected

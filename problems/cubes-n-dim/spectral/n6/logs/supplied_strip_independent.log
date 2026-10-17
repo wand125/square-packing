@@ -1,0 +1,280 @@
+initial frustum chain and exact volume PASS
+facets and rational Young coefficients PASS
+vertices 0 seconds 2.68
+vertices 1000 seconds 4.19
+vertices 2000 seconds 5.7
+vertices 3000 seconds 7.22
+vertices 4000 seconds 8.74
+vertices 5000 seconds 10.22
+vertices 6000 seconds 11.72
+vertices 7000 seconds 13.23
+vertices 8000 seconds 14.74
+vertices 9000 seconds 16.25
+vertices 10000 seconds 17.78
+vertices 11000 seconds 19.31
+vertices 12000 seconds 20.84
+vertices 13000 seconds 22.37
+vertices 14000 seconds 23.9
+vertices 15000 seconds 25.43
+vertices 16000 seconds 26.97
+vertices 17000 seconds 28.5
+vertices 18000 seconds 30.04
+vertices 19000 seconds 31.58
+vertices 20000 seconds 33.14
+vertices 21000 seconds 34.68
+vertices 22000 seconds 36.22
+vertices 23000 seconds 37.76
+vertices 24000 seconds 39.29
+vertices 25000 seconds 40.83
+vertices 26000 seconds 42.35
+vertices 27000 seconds 43.87
+vertices 28000 seconds 45.38
+vertices 29000 seconds 46.89
+vertices 30000 seconds 48.41
+vertices 31000 seconds 49.9
+vertices 32000 seconds 51.73
+vertices 33000 seconds 53.24
+vertices 34000 seconds 54.74
+vertices 35000 seconds 56.26
+vertices 36000 seconds 57.78
+vertices 37000 seconds 59.28
+vertices 38000 seconds 60.78
+vertices 39000 seconds 62.26
+vertices 40000 seconds 63.77
+vertices 41000 seconds 65.24
+vertices 42000 seconds 66.72
+vertices 43000 seconds 68.2
+vertices 44000 seconds 69.68
+vertices 45000 seconds 71.11
+vertices 46000 seconds 72.6
+vertices 47000 seconds 74.06
+vertices 48000 seconds 75.56
+vertices 49000 seconds 77.04
+vertices 50000 seconds 78.51
+vertices 51000 seconds 79.96
+vertices 52000 seconds 81.45
+vertices 53000 seconds 82.94
+vertices 54000 seconds 84.34
+vertices 55000 seconds 85.72
+vertices 56000 seconds 87.15
+vertices 57000 seconds 88.56
+vertices 58000 seconds 90.03
+vertices 59000 seconds 91.51
+nodes 0 remaining 6 seconds 92.95
+nodes 20000 remaining 16 seconds 93.92
+nodes 40000 remaining 14 seconds 94.95
+nodes 60000 remaining 16 seconds 95.98
+nodes 80000 remaining 12 seconds 96.95
+nodes 100000 remaining 14 seconds 97.93
+nodes 120000 remaining 20 seconds 98.97
+nodes 140000 remaining 18 seconds 100.03
+nodes 160000 remaining 16 seconds 101.08
+nodes 180000 remaining 16 seconds 102.12
+nodes 200000 remaining 14 seconds 103.17
+nodes 220000 remaining 14 seconds 104.2
+nodes 240000 remaining 22 seconds 105.23
+nodes 260000 remaining 20 seconds 106.27
+nodes 280000 remaining 16 seconds 107.33
+nodes 300000 remaining 16 seconds 108.38
+nodes 320000 remaining 16 seconds 109.44
+nodes 340000 remaining 16 seconds 110.49
+nodes 360000 remaining 14 seconds 111.53
+nodes 380000 remaining 16 seconds 112.47
+nodes 400000 remaining 14 seconds 113.46
+nodes 420000 remaining 20 seconds 114.45
+nodes 440000 remaining 18 seconds 115.41
+nodes 460000 remaining 18 seconds 116.45
+nodes 480000 remaining 18 seconds 117.49
+nodes 500000 remaining 18 seconds 118.54
+nodes 520000 remaining 14 seconds 119.6
+nodes 540000 remaining 14 seconds 120.65
+nodes 560000 remaining 16 seconds 121.69
+nodes 580000 remaining 16 seconds 122.72
+nodes 600000 remaining 16 seconds 123.76
+nodes 620000 remaining 16 seconds 124.77
+nodes 640000 remaining 18 seconds 125.77
+nodes 660000 remaining 12 seconds 126.75
+nodes 680000 remaining 18 seconds 127.72
+nodes 700000 remaining 14 seconds 128.7
+nodes 720000 remaining 12 seconds 129.7
+nodes 740000 remaining 16 seconds 130.7
+nodes 760000 remaining 14 seconds 131.66
+nodes 780000 remaining 14 seconds 132.6
+nodes 800000 remaining 14 seconds 133.6
+nodes 820000 remaining 16 seconds 134.58
+nodes 840000 remaining 14 seconds 135.55
+nodes 860000 remaining 16 seconds 136.51
+nodes 880000 remaining 12 seconds 137.5
+nodes 900000 remaining 16 seconds 138.52
+nodes 920000 remaining 18 seconds 139.53
+nodes 940000 remaining 16 seconds 140.51
+nodes 960000 remaining 14 seconds 141.54
+nodes 980000 remaining 16 seconds 142.56
+nodes 1000000 remaining 16 seconds 143.6
+nodes 1020000 remaining 14 seconds 144.61
+nodes 1040000 remaining 8 seconds 145.54
+nodes 1060000 remaining 14 seconds 146.47
+nodes 1080000 remaining 10 seconds 147.43
+nodes 1100000 remaining 10 seconds 148.39
+nodes 1120000 remaining 10 seconds 149.36
+nodes 1140000 remaining 12 seconds 150.36
+nodes 1160000 remaining 10 seconds 151.4
+nodes 1180000 remaining 10 seconds 152.42
+nodes 1200000 remaining 10 seconds 153.41
+nodes 1220000 remaining 12 seconds 154.38
+nodes 1240000 remaining 12 seconds 155.36
+nodes 1260000 remaining 12 seconds 156.38
+nodes 1280000 remaining 12 seconds 157.41
+nodes 1300000 remaining 10 seconds 158.44
+nodes 1320000 remaining 14 seconds 159.44
+nodes 1340000 remaining 10 seconds 160.47
+nodes 1360000 remaining 14 seconds 161.51
+nodes 1380000 remaining 12 seconds 162.55
+nodes 1400000 remaining 16 seconds 163.58
+nodes 1420000 remaining 14 seconds 164.63
+nodes 1440000 remaining 10 seconds 165.67
+nodes 1460000 remaining 12 seconds 166.69
+nodes 1480000 remaining 12 seconds 167.73
+nodes 1500000 remaining 18 seconds 168.78
+nodes 1520000 remaining 12 seconds 169.82
+nodes 1540000 remaining 12 seconds 170.85
+nodes 1560000 remaining 14 seconds 171.87
+nodes 1580000 remaining 10 seconds 172.91
+nodes 1600000 remaining 14 seconds 173.97
+nodes 1620000 remaining 14 seconds 174.98
+nodes 1640000 remaining 14 seconds 176.01
+nodes 1660000 remaining 14 seconds 177.05
+nodes 1680000 remaining 12 seconds 178.07
+nodes 1700000 remaining 12 seconds 179.12
+nodes 1720000 remaining 14 seconds 180.16
+nodes 1740000 remaining 14 seconds 181.2
+nodes 1760000 remaining 12 seconds 182.24
+nodes 1780000 remaining 14 seconds 183.29
+nodes 1800000 remaining 8 seconds 184.33
+nodes 1820000 remaining 14 seconds 185.36
+nodes 1840000 remaining 14 seconds 186.38
+nodes 1860000 remaining 12 seconds 187.34
+nodes 1880000 remaining 10 seconds 188.32
+nodes 1900000 remaining 12 seconds 189.31
+nodes 1920000 remaining 12 seconds 190.34
+nodes 1940000 remaining 12 seconds 191.35
+nodes 1960000 remaining 12 seconds 192.38
+nodes 1980000 remaining 12 seconds 193.44
+nodes 2000000 remaining 14 seconds 194.47
+nodes 2020000 remaining 12 seconds 195.52
+nodes 2040000 remaining 14 seconds 196.56
+nodes 2060000 remaining 18 seconds 197.56
+nodes 2080000 remaining 12 seconds 198.54
+nodes 2100000 remaining 8 seconds 199.54
+nodes 2120000 remaining 10 seconds 200.55
+nodes 2140000 remaining 14 seconds 201.57
+nodes 2160000 remaining 8 seconds 202.59
+nodes 2180000 remaining 10 seconds 203.62
+nodes 2200000 remaining 12 seconds 204.65
+nodes 2220000 remaining 10 seconds 205.66
+nodes 2240000 remaining 8 seconds 206.67
+nodes 2260000 remaining 10 seconds 207.69
+nodes 2280000 remaining 14 seconds 208.71
+nodes 2300000 remaining 12 seconds 209.73
+nodes 2320000 remaining 12 seconds 210.78
+nodes 2340000 remaining 12 seconds 211.86
+nodes 2360000 remaining 12 seconds 212.91
+nodes 2380000 remaining 12 seconds 213.95
+nodes 2400000 remaining 14 seconds 214.98
+nodes 2420000 remaining 12 seconds 216.01
+nodes 2440000 remaining 8 seconds 217.03
+nodes 2460000 remaining 12 seconds 218.05
+nodes 2480000 remaining 12 seconds 219.09
+nodes 2500000 remaining 14 seconds 220.11
+nodes 2520000 remaining 16 seconds 221.15
+nodes 2540000 remaining 6 seconds 222.18
+nodes 2560000 remaining 10 seconds 223.22
+nodes 2580000 remaining 10 seconds 224.24
+nodes 2600000 remaining 10 seconds 225.27
+nodes 2620000 remaining 16 seconds 226.3
+nodes 2640000 remaining 10 seconds 227.33
+nodes 2660000 remaining 12 seconds 228.37
+nodes 2680000 remaining 16 seconds 229.4
+nodes 2700000 remaining 12 seconds 230.43
+nodes 2720000 remaining 10 seconds 231.46
+nodes 2740000 remaining 8 seconds 232.48
+nodes 2760000 remaining 8 seconds 233.52
+nodes 2780000 remaining 14 seconds 234.54
+nodes 2800000 remaining 10 seconds 235.59
+nodes 2820000 remaining 12 seconds 236.64
+nodes 2840000 remaining 10 seconds 237.68
+nodes 2860000 remaining 8 seconds 238.73
+nodes 2880000 remaining 18 seconds 239.77
+nodes 2900000 remaining 8 seconds 240.82
+nodes 2920000 remaining 6 seconds 241.87
+nodes 2940000 remaining 16 seconds 242.93
+nodes 2960000 remaining 8 seconds 243.98
+nodes 2980000 remaining 16 seconds 245.02
+nodes 3000000 remaining 12 seconds 246.06
+nodes 3020000 remaining 12 seconds 247.09
+nodes 3040000 remaining 12 seconds 248.11
+nodes 3060000 remaining 14 seconds 249.13
+nodes 3080000 remaining 10 seconds 250.15
+nodes 3100000 remaining 8 seconds 251.18
+nodes 3120000 remaining 10 seconds 252.2
+nodes 3140000 remaining 12 seconds 253.22
+nodes 3160000 remaining 10 seconds 254.25
+nodes 3180000 remaining 10 seconds 255.27
+nodes 3200000 remaining 10 seconds 256.31
+nodes 3220000 remaining 10 seconds 257.34
+nodes 3240000 remaining 8 seconds 258.38
+nodes 3260000 remaining 12 seconds 259.41
+nodes 3280000 remaining 12 seconds 260.45
+nodes 3300000 remaining 12 seconds 261.48
+nodes 3320000 remaining 6 seconds 262.51
+nodes 3340000 remaining 14 seconds 263.54
+nodes 3360000 remaining 14 seconds 264.56
+nodes 3380000 remaining 6 seconds 265.59
+nodes 3400000 remaining 10 seconds 266.61
+nodes 3420000 remaining 8 seconds 267.64
+nodes 3440000 remaining 8 seconds 268.67
+nodes 3460000 remaining 10 seconds 269.7
+nodes 3480000 remaining 12 seconds 270.73
+nodes 3500000 remaining 8 seconds 271.77
+nodes 3520000 remaining 8 seconds 272.8
+nodes 3540000 remaining 8 seconds 273.83
+nodes 3560000 remaining 14 seconds 274.85
+nodes 3580000 remaining 6 seconds 275.88
+nodes 3600000 remaining 14 seconds 276.88
+nodes 3620000 remaining 10 seconds 277.9
+nodes 3640000 remaining 12 seconds 278.92
+nodes 3660000 remaining 14 seconds 279.94
+nodes 3680000 remaining 10 seconds 280.97
+nodes 3700000 remaining 14 seconds 281.99
+nodes 3720000 remaining 16 seconds 283.01
+nodes 3740000 remaining 16 seconds 284.04
+nodes 3760000 remaining 6 seconds 285.06
+nodes 3780000 remaining 10 seconds 286.09
+nodes 3800000 remaining 8 seconds 287.11
+nodes 3820000 remaining 8 seconds 288.12
+nodes 3840000 remaining 8 seconds 289.14
+nodes 3860000 remaining 6 seconds 290.16
+nodes 3880000 remaining 8 seconds 291.19
+nodes 3900000 remaining 6 seconds 292.23
+nodes 3920000 remaining 8 seconds 293.24
+nodes 3940000 remaining 8 seconds 294.27
+nodes 3960000 remaining 6 seconds 295.31
+nodes 3980000 remaining 6 seconds 296.35
+nodes 4000000 remaining 6 seconds 297.38
+{
+  "certificate_sha256": "0bd2317bd8c2fdc87ec9d2350ee6f136680d74430511aa70ca10467862fee149",
+  "status": "PASS",
+  "vertices": 59961,
+  "nodes": 4001519,
+  "leaf_types": [
+    1153604,
+    649006,
+    25391,
+    93810,
+    0,
+    78951
+  ],
+  "leaves": 2000762,
+  "min_slack": "561612703931427349944819446695910342712596689330222564901052447762269101157553202771688289613836584022916791656452253214556489429421137712066601040788979349/689637433119543567524720330176187288112767344270114667673278868668918793711350611830823857998427332775988429053953246390081825767565845582064379931114019487744000000",
+  "seconds": 297.5895953178406
+}

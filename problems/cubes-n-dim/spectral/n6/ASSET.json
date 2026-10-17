@@ -1,0 +1,36 @@
+{
+ "schema": "asset/v1",
+ "id": "cubes-n-dim-v2:n6-certificates",
+ "claim": "s_6(2) = 2 (with supplied/d6_proof_handoff/PROOF.md): Lemma F holds for every 6-by-6 orthogonal matrix. Exact rational certificates for max p <= 13/20 (cap) and 13/20 <= max p <= 159/200 (strip), and the C5 tree (in the tree) for the near-axis region max p >= 141/200",
+ "release_tag": "cubes-n-dim-v2",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v2",
+ "assets": [
+  {
+   "asset": "cubes-n-dim-v2-n6-cap-certificate.json.xz",
+   "size": 8272816,
+   "sha256": "2866c1c96eb64ced66b770bd70b2345d0deb4197f15eee869e31e9aa0ddc6520",
+   "unpacked_sha256": "c33aa40033275bf66488a8b781898dcb051aad39459caa6900e0d30413986b82"
+  },
+  {
+   "asset": "cubes-n-dim-v2-n6-strip-certificate.json.xz",
+   "size": 22069700,
+   "sha256": "de0a4ac37344a80cfc6d455737487f440726145c6499d86b82acf326b6bcdb45",
+   "unpacked_sha256": "0bd2317bd8c2fdc87ec9d2350ee6f136680d74430511aa70ca10467862fee149"
+  }
+ ],
+ "unpack": "xz -dc cubes-n-dim-v2-n6-cap-certificate.json.xz > problems/cubes-n-dim/spectral/n6/supplied/d6_spectral/certificate_cap65/certificate.json && xz -dc cubes-n-dim-v2-n6-strip-certificate.json.xz > problems/cubes-n-dim/spectral/n6/supplied/d6_spectral/certificate_cap795/certificate.json",
+ "unpack_note": "run from the repository root after downloading the two assets",
+ "check": "python3 -I checkers/check_d6.py cap supplied/d6_spectral/certificate_cap65/certificate.json && python3 -I checkers/check_d6.py strip supplied/d6_spectral/certificate_cap795/certificate.json && python3 -I checkers/check_c5.py supplied/general_dimension/positive_c5_exact_tree.json.gz",
+ "check_cwd": "problems/cubes-n-dim/spectral/n6",
+ "check_note": "about 2 min, 6 min and 5 s on a laptop; the supplied checkers and their commands are listed in README.md",
+ "documents": [
+  "problems/cubes-n-dim/spectral/n6/README.md",
+  "problems/cubes-n-dim/spectral/n6/supplied/d6_proof_handoff/PROOF.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing",
+  "commit": null,
+  "path": "problems/cubes-n-dim/spectral/n6",
+  "published_after": "98aace20a54eb82507774f8085713524f1ace61c"
+ }
+}

@@ -1,0 +1,4 @@
+tree sha256 (compressed) 12c4704d887eccc01d879935e495c3532fbe794a5c022255c8e40cb3d599d56d
+checker sha256 16a3fabead5ae90058a98063b92230515f778eee28ae970a449aa785b5429f89
+records 15785 {'s': 7892, 'a': 6, 'f': 7887}, max depth 24, covered relative volume 1
+PASS: positive C5 holds on every cell (fixed flows and analytic near-axis cells)

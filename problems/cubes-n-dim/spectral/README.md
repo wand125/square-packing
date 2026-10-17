@@ -1,9 +1,10 @@
-# Two unit cubes in a cube, version 2: s_n(2) = 2 for n = 3, 4, 5 by a spectral bound
+# Two unit cubes in a cube, version 2: s_n(2) = 2 for n = 3, 4, 5, 6
 
 Let s_n(k) be the side of the smallest n-cube that contains k unit n-cubes with pairwise disjoint interiors (any
 positions, any orientations). We prove
 
-**s₃(2) = s₄(2) = s₅(2) = 2:** in dimensions 3, 4 and 5, two unit cubes do not fit in a cube of side less than 2.
+**s₃(2) = s₄(2) = s₅(2) = s₆(2) = 2:** in dimensions 3, 4, 5 and 6, two unit cubes do not fit in a cube of side less
+than 2. Dimensions 3, 4 and 5 use a spectral bound (this page). Dimension 6 is in `n6/`.
 
 The upper bound is the trivial packing. The lower bound follows from a centre lemma: every unit n-cube inside
 [0, 2]ⁿ contains the centre of [0, 2]ⁿ. The proof is computer-assisted, with short exact rational certificates that
@@ -24,7 +25,8 @@ proved by induction on the dimension, starting from a one-line proof of F_2 (§2
   rest of the probability simplex. It uses branch and bound on simplices, the concavity of the trace square root, and
   rational witnesses for the matrix square root at the vertices (§5–§7).
 
-The second part fails in dimension 6: there q is negative at the uniform p.
+The spectral bound alone fails in dimension 6, because q is negative at the uniform p. Dimension 6 is proved in `n6/`
+with a different split: a cap, a strip and a near-axis argument, with further lower bounds.
 
 ## Contents
 
@@ -36,6 +38,7 @@ The second part fails in dimension 6: there q is negative at the uniform p.
 | `n3/`, `n4/` | Certificate, receipt and logs for n = 3 and n = 4 |
 | `n5/` | Receipt and logs for n = 5. Our certificate is the release asset (`n5/ASSET.json`) |
 | `n5/supplied/` | The supplied proof for n = 5 that started this version: write-up (we added only its section on the certificate format), certificate, generator and two checkers. The programs are unmodified; we ran the two checkers, not the generator |
+| `n6/` | s₆(2) = 2: the supplied proof and certificates (cap and strip as release assets), our second-system checkers, receipt and logs. See `n6/README.md` |
 | `../lean/` | Lean 4 + Mathlib: the near-axis step (§3) in any dimension, with Lemma F in the dimension below as a hypothesis |
 | `../` | Version 1: s₄(2) = 2 by two independent interval branch-and-bound checkers (release `cubes-n-dim-v1`) |
 
@@ -47,6 +50,8 @@ The second part fails in dimension 6: there q is negative at the uniform p.
 | 4 | `n4/certificate.json` | 557 | 3.2 × 10⁻⁴ | regenerated identically, 0.2 s | PASS, 0.1 s |
 | 5 | release asset (ours) | 135,255 | 4.1 × 10⁻⁷ | regenerated identically, 45 s | PASS, 30 s |
 | 5 | `n5/supplied/certificate.json` | 21,502 | 2.3 × 10⁻⁷ | supplied `replay.py` and `independent_verify.py`: pass, 2.5 s and 4.2 s | PASS, 4.5 s |
+
+For n = 6 (cap, strip and the C5 tree) see `n6/README.md`.
 
 All runs were on a laptop with Python 3.14 (NumPy 2.5 for the generator). Each `receipt.json` also records that the
 second-system checker rejected five deliberately broken copies of each certificate it was tested on: a wrong witness,
@@ -68,7 +73,8 @@ Do not use `python -O`, which disables the assertions.
 
 ## Changes from version 1
 
-- New: s₃(2) = 2 and s₅(2) = 2 in the same framework, and a new proof of s₄(2) = 2. Dimension 3 no longer depends on
+- New: s₃(2) = 2 and s₅(2) = 2 in the same framework, and a new proof of s₄(2) = 2. s₆(2) = 2 was added later in
+  `n6/`, as part of the same release. Dimension 3 no longer depends on
   the computer-assisted Lemma F of `../../cubes-in-cube/lemma_f/`, which remains an independent proof.
 - `PROOF.md` §1 and §3 are §1 and §3 of `../PROOF.md`, written for general n and m. The near-axis step is the one
   formalized in `../lean/`. Version 1 itself is unchanged.
@@ -76,7 +82,9 @@ Do not use `python -O`, which disables the assertions.
 ## Review status and provenance
 
 - **Produced with Codex.** Codex (OpenAI) produced, under our direction, the n = 5 proof (the spectral bound, the
-  triangulation and the acceptance rule) and the first n = 5 certificate (`n5/supplied/`).
+  triangulation and the acceptance rule) and the first n = 5 certificate (`n5/supplied/`). The n = 6 proof and
+  certificates (`n6/supplied/`) were also produced with Codex (OpenAI) under our direction; see `n6/README.md` for
+  our review and second system.
 - **Made by us with the same method.** Our generator (`checkers/gen_spectral.py`, the first system) made the
   certificates for n = 3 and n = 4 and the second certificate for n = 5.
 - **Written by us from the description alone.** Both of our systems were written from the written proof only. The
@@ -98,7 +106,7 @@ Do not use `python -O`, which disables the assertions.
   general question and has only partial answers. If you know of a proof, please open an issue.
 - **Our earlier work.** s₃(2) = 2 by Lemma F in `../../cubes-in-cube/lemma_f/`, and s₄(2) = 2 in `../` (release
   `cubes-n-dim-v1`). The near-axis step (§3) is from there.
-- **New here.** The spectral bound and the certificates for n = 3, 4, 5, and s₅(2) = 2.
+- **New here.** The spectral bound and the certificates for n = 3, 4, 5, s₅(2) = 2, and s₆(2) = 2 (`n6/`).
 
 ## Credit and license
 

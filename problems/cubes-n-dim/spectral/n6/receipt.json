@@ -1,0 +1,190 @@
+{
+ "schema": "receipt/v1",
+ "statement": "s_6(2) = 2: Lemma F in dimension 6 by the supplied proof (cap, strip, near-axis C5)",
+ "second_system": {
+  "written_from": "the written proof and certificate descriptions only; no supplied program was read",
+  "checkers": {
+   "checkers/check_d6.py": "101614dd9bb25b1666528022dc5d2a5e763732391992cb5da62bf565a8042463",
+   "checkers/check_c5.py": "16a3fabead5ae90058a98063b92230515f778eee28ae970a449aa785b5429f89",
+   "checkers/mutate_d6.py": "b1219e999a543fe6f994f86f92c7bde19996097e37a1343dd56706bf74d73d48",
+   "checkers/mutate_c5.py": "984c9e1a380f4676994426bae839ed7735751dd03c307adb3eb46cbffd2f6726"
+  },
+  "cap": {
+   "certificate_sha256": "c33aa40033275bf66488a8b781898dcb051aad39459caa6900e0d30413986b82",
+   "records": 1636601,
+   "leaves": 818303,
+   "by_type": {
+    "0": 818303
+   },
+   "max_depth": 32,
+   "vertices": 25755,
+   "min_leaf_slack": "80379972507043807602875671139779504905699396816027363728097560757212778054849645168716327394807038143998202243435712976221950291899163107316656403771294374935003443074231247936865362065418411595942371290944877798115900898195732246985737687893889140772422122954208323053298000347074472438430841/90688725118937389356328713095928285150796319305249884775284901979290406776297612141922723109927975990694552803997584107288963532934658935349743962913844682201703839258865801758098872376743222613835105939365560656741708158204738921548136376697717691250491663045227869829063236011476967335597634381414400",
+   "min_leaf_slack_float": 8.863281780797586e-10,
+   "verdict": "PASS"
+  },
+  "strip": {
+   "certificate_sha256": "0bd2317bd8c2fdc87ec9d2350ee6f136680d74430511aa70ca10467862fee149",
+   "records": 4001519,
+   "leaves": 2000762,
+   "by_type": {
+    "0": 1153604,
+    "1": 649006,
+    "2": 25391,
+    "3": 93810,
+    "5": 78951
+   },
+   "max_depth": 38,
+   "vertices": 59961,
+   "min_leaf_slack": "393253182620687329294471003151049470306624275910885714474966858338434019709006876137557676558632170901099534260985430384628944818961942627157291634327055251971884307491416564181351906351490875892674710451923925176937887935285638995013958527675055836217811678733612764657351747120305922810043028861/482898825975697099287237281704176873378429783965915076823382477348190485977730313693820553963806927004335410012535099517627713200957842901078855089886040603745624289480611333239061417456333810886478200503860802017360610193752012726179445161882835290686383473650812574549200050479775538856762084950016000000",
+   "min_leaf_slack_float": 8.143593677746457e-10,
+   "verdict": "PASS"
+  },
+  "c5": {
+   "tree_sha256_compressed": "12c4704d887eccc01d879935e495c3532fbe794a5c022255c8e40cb3d599d56d",
+   "records": 15785,
+   "splits": 7892,
+   "fixed_flow_leaves": 7887,
+   "analytic_leaves": 6,
+   "max_depth": 24,
+   "covered_relative_volume": "1",
+   "verdict": "PASS"
+  },
+  "initial_cover": "cap and strip: the five initial simplices lie in the domain, are pairwise separated by hyperplanes, and their volumes add up to the exact domain volume (1549579/1152000000 and 1564843799/38400000000000 in coordinates p_1..p_5)",
+  "broken_copies_rejected": {
+   "cap": "6 of 6",
+   "strip": "8 of 8",
+   "c5": "5 of 5"
+  },
+  "unused_bound": "no strip leaf uses bound type 4 (the projected exterior bound (8))"
+ },
+ "supplied_checkers": "all eight supplied commands of supplied/README.md passed (exit code 0 and a passing status line), run on a copy of supplied/",
+ "runs": [
+  {
+   "step": "check_cap",
+   "command": "python3 -I checkers/check_d6.py cap supplied/d6_spectral/certificate_cap65/certificate.json",
+   "directory": ".",
+   "start_utc": "2026-10-17T03:29:09Z",
+   "seconds": 133.5,
+   "exit_code": 0
+  },
+  {
+   "step": "check_strip",
+   "command": "python3 -I checkers/check_d6.py strip supplied/d6_spectral/certificate_cap795/certificate.json",
+   "directory": ".",
+   "start_utc": "2026-10-17T03:31:22Z",
+   "seconds": 331.3,
+   "exit_code": 0
+  },
+  {
+   "step": "check_c5",
+   "command": "python3 -I checkers/check_c5.py supplied/general_dimension/positive_c5_exact_tree.json.gz",
+   "directory": ".",
+   "start_utc": "2026-10-17T03:36:53Z",
+   "seconds": 5.0,
+   "exit_code": 0
+  },
+  {
+   "step": "mutate_c5",
+   "command": "python3 -I checkers/mutate_c5.py supplied/general_dimension/positive_c5_exact_tree.json.gz",
+   "directory": ".",
+   "start_utc": "2026-10-17T03:36:58Z",
+   "seconds": 6.4,
+   "exit_code": 0
+  },
+  {
+   "step": "mutate_cap",
+   "command": "python3 -I checkers/mutate_d6.py cap supplied/d6_spectral/certificate_cap65/certificate.json",
+   "directory": ".",
+   "start_utc": "2026-10-17T03:37:05Z",
+   "seconds": 140.1,
+   "exit_code": 0
+  },
+  {
+   "step": "mutate_strip",
+   "command": "python3 -I checkers/mutate_d6.py strip supplied/d6_spectral/certificate_cap795/certificate.json",
+   "directory": ".",
+   "start_utc": "2026-10-17T03:39:25Z",
+   "seconds": 348.7,
+   "exit_code": 0
+  },
+  {
+   "step": "supplied_cap_replay",
+   "command": "python3 -B replay.py",
+   "directory": "d6_spectral/certificate_cap65",
+   "start_utc": "2026-10-17T03:29:09Z",
+   "seconds": 120.0,
+   "exit_code": 0
+  },
+  {
+   "step": "supplied_cap_independent",
+   "command": "python3 -B independent_verify.py certificate.json",
+   "directory": "d6_spectral/certificate_cap65",
+   "start_utc": "2026-10-17T03:31:08Z",
+   "seconds": 87.9,
+   "exit_code": 0
+  },
+  {
+   "step": "supplied_strip_replay",
+   "command": "python3 -B replay.py",
+   "directory": "d6_spectral/certificate_cap795",
+   "start_utc": "2026-10-17T03:32:36Z",
+   "seconds": 277.4,
+   "exit_code": 0
+  },
+  {
+   "step": "supplied_strip_independent",
+   "command": "python3 -B verify.py ../d6_spectral/certificate_cap795/certificate.json",
+   "directory": "d6_strip_independent",
+   "start_utc": "2026-10-17T03:37:14Z",
+   "seconds": 299.3,
+   "exit_code": 0
+  },
+  {
+   "step": "supplied_c5_replay",
+   "command": "python3 -B general_dimension/replay_positive_c5_exact_tree.py",
+   "directory": ".",
+   "start_utc": "2026-10-17T03:42:13Z",
+   "seconds": 5.0,
+   "exit_code": 0
+  },
+  {
+   "step": "supplied_exterior",
+   "command": "python3 -B d6_central/replay_exterior.py",
+   "directory": ".",
+   "start_utc": "2026-10-17T03:42:18Z",
+   "seconds": 0.0,
+   "exit_code": 0
+  },
+  {
+   "step": "supplied_joint",
+   "command": "python3 -B d6_central/replay_joint.py",
+   "directory": ".",
+   "start_utc": "2026-10-17T03:42:18Z",
+   "seconds": 0.0,
+   "exit_code": 0
+  },
+  {
+   "step": "supplied_projected",
+   "command": "python3 -B d6_exterior_audit/projected_audit.py",
+   "directory": ".",
+   "start_utc": "2026-10-17T03:42:18Z",
+   "seconds": 0.3,
+   "exit_code": 0
+  }
+ ],
+ "environment": "laptop, Python 3.14.8, two processes at a time",
+ "certificates": {
+  "cap": {
+   "asset": "cubes-n-dim-v2-n6-cap-certificate.json.xz",
+   "unpacked_sha256": "c33aa40033275bf66488a8b781898dcb051aad39459caa6900e0d30413986b82"
+  },
+  "strip": {
+   "asset": "cubes-n-dim-v2-n6-strip-certificate.json.xz",
+   "unpacked_sha256": "0bd2317bd8c2fdc87ec9d2350ee6f136680d74430511aa70ca10467862fee149"
+  },
+  "c5": {
+   "path": "supplied/general_dimension/positive_c5_exact_tree.json.gz"
+  }
+ },
+ "note": "the certificates were unpacked from the release assets before these runs"
+}

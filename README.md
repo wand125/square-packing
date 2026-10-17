@@ -22,7 +22,7 @@ command, and every checker, tool and Lean project.
 | `problems/rectangle-upper-bounds/` | Unit squares in a rectangle just below integer size: at most AB − 5 for integers A, B ≥ 8, computer-assisted with two independent checkers |
 | `problems/closed-form/` | A closed-form lower bound a(N) on s(N) for every non-square N ≥ 49, certified on 34 intervals (release `closed-form-v1`) |
 | `problems/cubes-in-cube/` | Unit cubes in a cube: s₃(9) = s₃(10) = 2 + 1/√2, by an 8-point lemma checked by two independent interval branch-and-bound checkers |
-| `problems/cubes-n-dim/` | Two unit cubes in a cube: s₄(2) = 2 by hand near the axes and two interval branch-and-bound checkers (release `cubes-n-dim-v1`); in `spectral/`, s_n(2) = 2 for n = 3, 4, 5 by a spectral bound and short exact rational certificates (release `cubes-n-dim-v2`) |
+| `problems/cubes-n-dim/` | Two unit cubes in a cube: s₄(2) = 2 by hand near the axes and two interval branch-and-bound checkers (release `cubes-n-dim-v1`); in `spectral/`, s_n(2) = 2 for n = 3, 4, 5 by a spectral bound and short exact rational certificates, and for n = 6 in `spectral/n6/` (release `cubes-n-dim-v2`) |
 | `checks/valid7/` | An independent exact check of Valid7 (evand/square-packing) |
 | `tools/` | Solvers, verifiers and transfer tools (each tool folder has its own CI) |
 | `lean/n11-optimality/` | Lean 4 formalization toward s(11) |

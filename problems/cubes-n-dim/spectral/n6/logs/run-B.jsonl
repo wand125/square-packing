@@ -1,0 +1,8 @@
+{"step": "supplied_cap_replay", "command": "python3 -B replay.py", "directory": "d6_spectral/certificate_cap65", "start_utc": "2026-10-17T03:29:09Z", "seconds": 120.0, "exit_code": 0}
+{"step": "supplied_cap_independent", "command": "python3 -B independent_verify.py certificate.json", "directory": "d6_spectral/certificate_cap65", "start_utc": "2026-10-17T03:31:08Z", "seconds": 87.9, "exit_code": 0}
+{"step": "supplied_strip_replay", "command": "python3 -B replay.py", "directory": "d6_spectral/certificate_cap795", "start_utc": "2026-10-17T03:32:36Z", "seconds": 277.4, "exit_code": 0}
+{"step": "supplied_strip_independent", "command": "python3 -B verify.py ../d6_spectral/certificate_cap795/certificate.json", "directory": "d6_strip_independent", "start_utc": "2026-10-17T03:37:14Z", "seconds": 299.3, "exit_code": 0}
+{"step": "supplied_c5_replay", "command": "python3 -B general_dimension/replay_positive_c5_exact_tree.py", "directory": ".", "start_utc": "2026-10-17T03:42:13Z", "seconds": 5.0, "exit_code": 0}
+{"step": "supplied_exterior", "command": "python3 -B d6_central/replay_exterior.py", "directory": ".", "start_utc": "2026-10-17T03:42:18Z", "seconds": 0.0, "exit_code": 0}
+{"step": "supplied_joint", "command": "python3 -B d6_central/replay_joint.py", "directory": ".", "start_utc": "2026-10-17T03:42:18Z", "seconds": 0.0, "exit_code": 0}
+{"step": "supplied_projected", "command": "python3 -B d6_exterior_audit/projected_audit.py", "directory": ".", "start_utc": "2026-10-17T03:42:18Z", "seconds": 0.3, "exit_code": 0}

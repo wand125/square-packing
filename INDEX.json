@@ -6419,6 +6419,22 @@
      "problems/cubes-n-dim/spectral/README.md",
      "problems/cubes-n-dim/spectral/PROOF.md"
     ]
+   },
+   {
+    "id": "cubes-n-dim-v2:n6-certificates",
+    "claim": "s_6(2) = 2 (with supplied/d6_proof_handoff/PROOF.md): Lemma F holds for every 6-by-6 orthogonal matrix. Exact rational certificates for max p <= 13/20 (cap) and 13/20 <= max p <= 159/200 (strip), and the C5 tree (in the tree) for the near-axis region max p >= 141/200",
+    "release_tag": "cubes-n-dim-v2",
+    "assets": [
+     "cubes-n-dim-v2-n6-cap-certificate.json.xz",
+     "cubes-n-dim-v2-n6-strip-certificate.json.xz"
+    ],
+    "path": "problems/cubes-n-dim/spectral/n6/ASSET.json",
+    "check": "python3 -I checkers/check_d6.py cap supplied/d6_spectral/certificate_cap65/certificate.json && python3 -I checkers/check_d6.py strip supplied/d6_spectral/certificate_cap795/certificate.json && python3 -I checkers/check_c5.py supplied/general_dimension/positive_c5_exact_tree.json.gz",
+    "check_cwd": "problems/cubes-n-dim/spectral/n6",
+    "documents": [
+     "problems/cubes-n-dim/spectral/n6/README.md",
+     "problems/cubes-n-dim/spectral/n6/supplied/d6_proof_handoff/PROOF.md"
+    ]
    }
   ]
  },

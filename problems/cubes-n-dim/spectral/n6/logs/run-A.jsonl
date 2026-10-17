@@ -1,0 +1,6 @@
+{"step": "check_cap", "command": "python3 -I checkers/check_d6.py cap supplied/d6_spectral/certificate_cap65/certificate.json", "directory": ".", "start_utc": "2026-10-17T03:29:09Z", "seconds": 133.5, "exit_code": 0}
+{"step": "check_strip", "command": "python3 -I checkers/check_d6.py strip supplied/d6_spectral/certificate_cap795/certificate.json", "directory": ".", "start_utc": "2026-10-17T03:31:22Z", "seconds": 331.3, "exit_code": 0}
+{"step": "check_c5", "command": "python3 -I checkers/check_c5.py supplied/general_dimension/positive_c5_exact_tree.json.gz", "directory": ".", "start_utc": "2026-10-17T03:36:53Z", "seconds": 5.0, "exit_code": 0}
+{"step": "mutate_c5", "command": "python3 -I checkers/mutate_c5.py supplied/general_dimension/positive_c5_exact_tree.json.gz", "directory": ".", "start_utc": "2026-10-17T03:36:58Z", "seconds": 6.4, "exit_code": 0}
+{"step": "mutate_cap", "command": "python3 -I checkers/mutate_d6.py cap supplied/d6_spectral/certificate_cap65/certificate.json", "directory": ".", "start_utc": "2026-10-17T03:37:05Z", "seconds": 140.1, "exit_code": 0}
+{"step": "mutate_strip", "command": "python3 -I checkers/mutate_d6.py strip supplied/d6_spectral/certificate_cap795/certificate.json", "directory": ".", "start_utc": "2026-10-17T03:39:25Z", "seconds": 348.7, "exit_code": 0}

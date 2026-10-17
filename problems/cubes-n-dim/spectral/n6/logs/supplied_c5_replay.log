@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "records": 15785,
+  "counts": {
+    "s": 7892,
+    "f": 7887,
+    "a": 6
+  },
+  "maximum_depth": 24,
+  "exact_relative_volume": "1",
+  "compressed_tree_sha256": "12c4704d887eccc01d879935e495c3532fbe794a5c022255c8e40cb3d599d56d",
+  "seconds": 4.946584939956665
+}

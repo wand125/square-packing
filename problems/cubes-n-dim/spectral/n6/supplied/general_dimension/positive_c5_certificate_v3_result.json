@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "splits": 7892,
+  "leaves": {
+    "fixed_rational_flow": 7887,
+    "near_axis": 6
+  },
+  "maximum_depth": 24,
+  "sqrt_bits": 48,
+  "seconds": 8.144895076751709
+}

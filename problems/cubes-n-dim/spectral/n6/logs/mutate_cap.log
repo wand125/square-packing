@@ -1,0 +1,7 @@
+wrong midpoint index: rejected (record 0: vertex 11 is not the midpoint)
+leaf placed too early: rejected (leaf at record 0 (type 0) not certified: -1.050001702014348)
+missing last record: rejected (records exhausted)
+wrong initial vertex: rejected (initial vertices differ from the stated ones)
+wrong initial simplex: rejected (assertion)
+all spectral witnesses halved: rejected (leaf at record 9 (type 0) not certified: -2.818040057216253)
+6 of 6 broken copies rejected

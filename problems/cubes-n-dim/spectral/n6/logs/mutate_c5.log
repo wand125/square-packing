@@ -1,0 +1,6 @@
+flow parameter changed: rejected (AssertionError: record 10: demand fails)
+flow leaf relabelled analytic: rejected (AssertionError: record 10: analytic leaf too far from the axis)
+split replaced by an analytic leaf: rejected (AssertionError: record 101: analytic leaf too far from the axis)
+missing last record: rejected (AssertionError: records exhausted)
+first split on a different edge: rejected (AssertionError: record 10: demand fails)
+5 of 5 broken copies rejected

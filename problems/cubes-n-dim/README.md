@@ -31,15 +31,17 @@ Then two cubes with disjoint interiors cannot both fit (`PROOF.md` §1). Write c
 | `checker2/` | Second system: independent Rust, std only; a pair of quaternions; written from `SPEC.md` alone |
 | `lean/` | Lean 4 + Mathlib: the near-region lemma in any dimension and Lemma K, with Lemma F in dimension m as a hypothesis |
 | `verify_logs.py` | Checks the run logs of both systems: coverage of all tasks, no failures, tree identity |
-| `spectral/` | Version 2: s_n(2) = 2 for n = 3, 4, 5 by a spectral bound and short exact rational certificates (release `cubes-n-dim-v2`) |
+| `spectral/` | Version 2: s_n(2) = 2 for n = 3, 4, 5 by a spectral bound and short exact rational certificates, and n = 6 in `spectral/n6/` (release `cubes-n-dim-v2`) |
 
-## Version 2: n = 3, 4, 5 by a spectral bound
+## Version 2: n = 3, 4, 5, 6
 
 `spectral/` gives a second, shorter proof of s₄(2) = 2 and extends it to s₃(2) = 2 and s₅(2) = 2. It uses the
 near-region step of §3 for all three dimensions. Away from the axes it replaces the interval branch and bound by
 the bound 1 − F ≥ √2 Tr √(diag(p) − ppᵀ) − 2 Σ √p_i + 2, where p is the squared column, together with exact rational
 certificates (5, 557 and 21,502 simplices). Each certificate is checked by two independent systems in seconds with
-the Python standard library. See `spectral/README.md`. The version 1 proof below is unchanged.
+the Python standard library. See `spectral/README.md`. Dimension 6 (`spectral/n6/`) splits the columns into a cap, a
+strip and a near-axis region, with further lower bounds and larger certificates. The version 1 proof below is
+unchanged.
 
 ## Results
 

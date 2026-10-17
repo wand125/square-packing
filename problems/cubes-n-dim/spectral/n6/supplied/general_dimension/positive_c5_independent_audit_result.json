@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "splits": 7892,
+  "leaves": {
+    "fixed_rational_flow": 7887,
+    "near_axis": 6
+  },
+  "maximum_depth": 24,
+  "exact_relative_volume": "1",
+  "leaf_digest": "e2b3d866799d36188399784c3ac7065d97607e7b506b2b802903204a544fd18e",
+  "seconds": 9.953093528747559,
+  "witness_source": "producer proposal only; independent acceptance, norm bracket, capacities, geometry, and traversal"
+}
