@@ -1,0 +1,19 @@
+{
+ "schema": "asset/v1",
+ "id": "cubes-n-dim-v2:n3-n4",
+ "claim": "s_3(2) = s_4(2) = 2 (with spectral/PROOF.md): exact rational certificates that q(p) > 0 for max p_i <= 1 - 1/(n-1), n = 3, 4",
+ "assets": [],
+ "check": "cd n3 && python3 -B ../checkers/check_spectral.py certificate.json && cd ../n4 && python3 -B ../checkers/check_spectral.py certificate.json",
+ "check_cwd": "problems/cubes-n-dim/spectral",
+ "check_note": "the n = 3 and n = 4 certificates are in the tree; no release asset",
+ "documents": [
+  "problems/cubes-n-dim/spectral/README.md",
+  "problems/cubes-n-dim/spectral/PROOF.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing",
+  "commit": null,
+  "path": "problems/cubes-n-dim/spectral",
+  "published_after": "fa23d971d3a74dace2864f15429a7d9b18bf3ac2"
+ }
+}

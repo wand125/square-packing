@@ -24,6 +24,7 @@
  "source": {
   "repository": "wand125/square-packing",
   "commit": null,
-  "path": "problems/cubes-n-dim/spectral"
+  "path": "problems/cubes-n-dim/spectral",
+  "published_after": "fa23d971d3a74dace2864f15429a7d9b18bf3ac2"
  }
 }

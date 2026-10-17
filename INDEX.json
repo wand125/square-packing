@@ -6396,17 +6396,18 @@
    {
     "id": "cubes-n-dim-v2:n3-n4",
     "claim": "s_3(2) = s_4(2) = 2 (with spectral/PROOF.md): exact rational certificates that q(p) > 0 for max p_i <= 1 - 1/(n-1), n = 3, 4",
-    "path": "problems/cubes-n-dim/spectral",
+    "path": "problems/cubes-n-dim/spectral/ASSET.json",
     "check": "cd n3 && python3 -B ../checkers/check_spectral.py certificate.json && cd ../n4 && python3 -B ../checkers/check_spectral.py certificate.json",
     "check_cwd": "problems/cubes-n-dim/spectral",
     "documents": [
      "problems/cubes-n-dim/spectral/README.md",
      "problems/cubes-n-dim/spectral/PROOF.md"
-    ]
+    ],
+    "assets": []
    },
    {
     "id": "cubes-n-dim-v2:n5-certificate",
-    "claim": "s_5(2) = 2 (with spectral/PROOF.md); second n = 5 certificate as a release asset",
+    "claim": "q(p) > 0 on the ordered probability simplex in dimension 5 with p_1 <= 3/4 (second certificate, made by checkers/gen_spectral.py); with PROOF.md this gives Lemma F in dimension 5 and s_5(2) = 2",
     "release_tag": "cubes-n-dim-v2",
     "assets": [
      "cubes-n-dim-v2-n5-certificate.json.xz"
