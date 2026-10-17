@@ -274,6 +274,7 @@
   }
  ],
  "releases": [
+  {"tag": "cubes-n-dim-v2", "name": "Two unit cubes in a cube, n = 3, 4, 5, 6 (v2)", "date": "2026-10-17"},
   {"tag": "cubes-n-dim-v1", "name": "s₄(2) = 2: two unit 4-cubes need a 4-cube of side 2", "date": "2026-10-16"},
   {"tag": "validtilt9-lean-v1", "name": "ValidTilt9 in the Lean kernel: s(k² − 4) = k for k ≥ 8", "date": "2026-10-16"},
   {"tag": "right-isosceles-n15-v1", "name": "Right isosceles triangle: optimality certificate for n = 15", "date": "2026-10-14"},

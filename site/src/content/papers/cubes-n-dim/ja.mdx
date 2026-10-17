@@ -4,6 +4,8 @@ import Cube4Centre from '../../../components/viz/Cube4Centre.tsx';
 
 $s_n(k)$ を、内部が互いに交わらない単位 $n$ 次元立方体 $k$ 個（位置・向きは自由）が入る最小の $n$ 次元立方体の辺とする。$s_4(2) = 2$ を示す。つまり、単位 4 次元立方体 2 個は辺 2 未満の 4 次元立方体に入らない。上界は自明な配置である。下界は中心の補題から従う：$[0, 2]^4$ の中の単位 4 次元立方体はどれも $[0, 2]^4$ の中心を含む。座標軸の近くでは、この補題を 3 次元の補題 F を使って手で示す。軸から離れたところは、外向きに丸める区間の分枝限定で、独立な 2 つの検査器により検査する。結果は計算機援用で、査読は受けていない。
 
+版 2（§7）は $n = 3, 4, 5$ で $s_n(2) = 2$ を示す：軸の近くは §3 の議論で、それ以外は $1 - F$ のスペクトルの下界と短い厳密な有理数の証明書で示し、証明書は 2 つの系で数秒で検査した。その $n = 5$ の証明と $n = 5$ の最初の証明書は Codex（OpenAI）が作成した。さらに、スペクトルの下界だけでは足りない $s_6(2) = 2$ を、キャップ・帯・軸の近くの領域に分けて示す。$n = 6$ の証明と証明書も Codex（OpenAI）が作成した。
+
 ## 記法
 
 $R \in O(n)$ について $a_{ik} = |R_{ik}|$、$w_i = \sum_j |R_{ij}|$（行 $i$ の $\ell^1$ ノルム。立方体 $R[-\tfrac12, \tfrac12]^n$ の $e_i$ 方向の幅）とし、
@@ -134,6 +136,55 @@ $SO(4)$ を調べれば十分である：$\det R = -1$ なら、列 4 の符号�
 
 公開したソースと実行したソースの違いはコメント（内部のラベル、レビューのメモ、内部のメモへの参照）だけで、コードは変えていない。各 `receipt.json` に、公開したソースと実行したソースの SHA-256 を、数とともに記す。
 
+## 7. 版 2：n = 3, 4, 5, 6
+
+版 2（[spectral/](https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim/spectral)）は $s_4(2) = 2$ の 2 つ目の証明を与え、さらに $s_3(2) = 2$、$s_5(2) = 2$、そしてこの節の終わりで $s_6(2) = 2$ を示す。$n = 3, 4, 5$ では、3、4、5 次元の補題 F を次元についての帰納法で示し、各段では 1 つ下の次元の補題 F だけを使う。帰納法の出発点は補題 F₂ で、1 行で示せる：符号を除くと 2 次の直交行列は $s^2 + t^2 = 1$ として $|U| = \begin{pmatrix} s & t \\ t & s \end{pmatrix}$ なので、$w = s + t$ とおくと $F_j = w(2 - w) = 1 - (1 - w)^2 \le 1$。成分の 2 乗が $p_i$ の列について：
+
+- **軸の近く**、$\max_i p_i \ge 1 - 1/(n - 1)$：§3 の議論を $n - 1$ 次元の補題 F とともに使う。$n - 1$ 次元で行の $\ell^1$ ノルムが 2 以下であることが要り、これは $n \le 5$ で成り立つ。閾値は $n = 3, 4, 5$ で $1/2$、$2/3$、$3/4$。
+- **それ以外.** 行の符号を変えて列を $x \ge 0$ とし、$U = [x\ C]$ と書く。$C$ の各列 $y$ について $z = \operatorname{diag}(x)\,y$ の座標の和は 0 なので、$\lVert z\rVert_1 \ge \sqrt2\,\lVert z\rVert_2$。核ノルムの三角不等式とあわせて
+
+$$
+1 - F_j \ge q(p) = \sqrt2\,\operatorname{Tr}\sqrt{\operatorname{diag}(p) - p p^\top} - 2\sum_i \sqrt{p_i} + 2
+$$
+
+を得る。証明書は、$p_1 \le 1 - 1/(n - 1)$ の順序づけた確率単体の上で $q(p) > 0$ を示す。単体の分枝限定で、分割は厳密な有理数の中点で行う。単体の中では、トレースの平方根の凹性によりトレースの項を頂点での値で下から押さえ、$\sqrt t$ の弦で平方根の項を押さえる。各頂点では、対称な有理数の証拠行列と Weyl の不等式でトレースの項を押さえる。受理はどれも厳密な有理数の不等式である。
+
+$q$ は座標ベクトルの近くで負になる点がある（たとえば $p = (0.96, 0.01, 0.01, 0.01, 0.01)$ で $q \approx -0.025$）。軸の近くの段が要るのはこのためである。スペクトルの下界だけでは $n = 6$ で失敗する：一様な $p$ ですでに $q$ が負（$\approx -0.0122$）になる。6 次元は、下に述べる別の分け方で示す。
+
+| $n$ | 閾値 | 証明書 | 葉 | 葉の余裕の最小 | 第 1 系 | 第 2 系 |
+|---|---|---|---|---|---|---|
+| 3 | 1/2 | `n3/certificate.json` | 5 | 2.9 × 10⁻³ | 同一に再生成、0.1 秒 | PASS、0.0 秒 |
+| 4 | 2/3 | `n4/certificate.json` | 557 | 3.2 × 10⁻⁴ | 同一に再生成、0.2 秒 | PASS、0.1 秒 |
+| 5 | 3/4 | `n5/supplied/certificate.json` | 21,502 | 2.3 × 10⁻⁷ | 提供された `replay.py` と `independent_verify.py`：通過、2.5 秒と 4.2 秒 | PASS、4.5 秒 |
+| 5 | 3/4 | Release の asset（当方） | 135,255 | 4.1 × 10⁻⁷ | 同一に再生成、45 秒 | PASS、30 秒 |
+
+第 1 系 `checkers/gen_spectral.py` は、すべての受理を厳密に検査する生成器で、NumPy は証拠を提案するだけ。第 2 系 `checkers/check_spectral.py` は Python の標準ライブラリだけを使う独立な検査器で、仕様だけから書いた。各 receipt には、第 2 系の検査器が、検査した各証明書をわざと壊した 5 つの写しをすべて退けたことも記録してある。証明、受理の規則、証明書の形式は [spectral/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/spectral/PROOF.md) にある。
+
+**6 次元**（[spectral/n6/](https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim/spectral/n6)）. $s_6(2) = 2$ の証明は、$n = 4$ と $n = 5$ の結果を前提として使わない。成分の 2 乗が $p$ の列を、$p_1$ が最大になるように並べる。重なりのある 3 つの領域ですべての列を覆う：
+
+| 領域 | 議論 | 検査 |
+|---|---|---|
+| $\max p \le 13/20$（キャップ） | 上のスペクトルの下界に、欠けた辺の補正を足す | 厳密な有理数の証明書、単体 818,303 個 |
+| $13/20 \le \max p \le 159/200$（帯） | 各単体で 5 つの下界のどれか 1 つ：2 種類の欠けた辺の補正のどちらかをつけたスペクトルの下界、行列式の下界、まとめた行列式の下界、外冪の下界の組み合わせ | 厳密な有理数の証明書、単体 2,000,762 個 |
+| $\max p \ge 141/200$（軸の近く） | 尾の部分の 2 次の下からの評価 C5 を、補完する列にわたって足し合わせる | C5 は 7,893 個のセルの厳密な有理数の木と、解析的な符号の持ち上げの議論で |
+
+| | キャップ | 帯 | C5 の木 |
+|---|---|---|---|
+| 葉 | 818,303 | 2,000,762 | 7,893（固定流 7,887、解析的 6） |
+| 最大の深さ | 32 | 38 | 24 |
+| 葉の余裕の最小 | 8.86 × 10⁻¹⁰ | 8.14 × 10⁻¹⁰ | — |
+| 当方の検査器 | PASS、134 秒 | PASS、331 秒 | PASS、5 秒 |
+| 提供された検査器 | 2 つとも通過、120 秒と 88 秒 | 2 つとも通過、277 秒と 299 秒 | 通過、5 秒 |
+| 当方の検査器が退けた壊した写し | 6 個中 6 個 | 8 個中 8 個 | 5 個中 5 個 |
+
+キャップと帯の証明書は [cubes-n-dim-v2](https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v2) の Release の asset である。当方の検査器 `n6/checkers/check_d6.py` と `n6/checkers/check_c5.py` は Python の標準ライブラリだけを使い、すべての受理を厳密な有理数の演算で確かめる。帯の葉は射影した外冪の下界を 1 つも使わないので、証明はそれに依存しない。証明の全体は [n6/supplied/d6_proof_handoff/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/spectral/n6/supplied/d6_proof_handoff/PROOF.md) にあり、領域と実行の記録は [n6/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/spectral/n6/README.md) にある。
+
+**由来.** $n = 5$ の証明（スペクトルの下界、三角形分割、受理の規則）と $n = 5$ の最初の証明書（`n5/supplied/`）は、当方の指示のもとで Codex（OpenAI）が作成した。$n = 3$ と $n = 4$ の証明書と $n = 5$ の 2 つ目の証明書は、当方の生成器が作った。当方の 2 つの系はどちらも、書かれた証明だけから書いた：検査器は提供されたプログラムを読まずに、生成器は提供された生成器を読まずに書いた。提供された証明書について、当方の検査器は提供された 2 つの検査器と一致する。提供された証明の各段は当方が確かめた。
+
+$n = 6$ の証明と証明書（`n6/supplied/`）も、当方の指示のもとで Codex（OpenAI）が作成した。そこにある監査と帯の 2 つ目の検査器も含み、それらは同じ出所なので独立ではない。$n = 6$ の当方の 2 つの検査器は、提供されたプログラムを読まずに、書かれた証明と証明書の説明から書いた。書かれた証明の各段は当方が確かめた。$n = 6$ で使う外部の結果は、$e_j(p)^{1/j}$ の凹性 [[4]](#ref-4) と、$n = 5$ と同じトレースの平方根の単調性と凹性。
+
+3 次元では、この証明は [cubes-in-cube/lemma_f/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/lemma_f) の計算機援用の補題 F に依存しない。補題 F は独立な証明として残る。版 1 の証明である §1〜§6 は変えていない。
+
 ## 再現方法
 
 [problems/cubes-n-dim](https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim) から：
@@ -144,24 +195,30 @@ $SO(4)$ を調べれば十分である：$\det R = -1$ なら、列 4 の符号�
 | 第 2 系 | `cargo build --release`、`cargo test --release`、`./target/release/m2check2 --jobs 2 --log full.jsonl`（`checker2/` で） |
 | Lean（近い領域） | `lake exe cache get`、`lake build`、`lake env lean CheckAxioms.lean`（`lean/` で。Lean v4.33.1、Mathlib は `lake-manifest.json` で固定） |
 | 当方の実行のログ | Release [cubes-n-dim-v1](https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1) の asset を展開して `python3 verify_logs.py logs` |
+| 版 2、n = 3, 4 | `python3 -B ../checkers/check_spectral.py certificate.json`（`spectral/n3/` と `spectral/n4/` で） |
+| 版 2、n = 5（提供された証明書） | `python3 -B ../../checkers/check_spectral.py certificate.json`、`python3 -B replay.py`、`python3 -B independent_verify.py`（`spectral/n5/supplied/` で） |
+| 版 2、n = 5（当方の証明書） | Release [cubes-n-dim-v2](https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v2) の asset（`spectral/n5/ASSET.json`）を展開して `python3 -B ../checkers/check_spectral.py certificate.json`（`spectral/n5/` で） |
+| 版 2、n = 6 | Release [cubes-n-dim-v2](https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v2) の 2 つの asset を `spectral/n6/ASSET.json` のとおりに展開して、`python3 -I checkers/check_d6.py cap supplied/d6_spectral/certificate_cap65/certificate.json`、`python3 -I checkers/check_d6.py strip supplied/d6_spectral/certificate_cap795/certificate.json`、`python3 -I checkers/check_c5.py supplied/general_dimension/positive_c5_exact_tree.json.gz`（`spectral/n6/` で） |
 
-Rust 1.86 以降が必要（`f64::next_up`/`next_down`）。crate は使わない。
+Rust 1.86 以降が必要（`f64::next_up`/`next_down`）。crate は使わない。版 2 は Python 3 の標準ライブラリだけで動く（NumPy は `checkers/gen_spectral.py` で証明書を作り直すときだけ）。`python -O` は assert を無効にするので使わない。
 
 ## 状態と限界
 
 - 計算機援用の証明である。査読は受けていない。
 - Lean：近い領域の手による部分（§3）は、任意の次元について Lean 4 + Mathlib で形式化した：極分解の不等式、陽に書いた極分解の因子の直交性、補題 K。主定理 `near_region` は次元 $m$ の補題 F を明示的な仮定として受け取り、$m \le 4$ で $c^2 \ge 1 - 1/m$ のとき $F_1 \le 1$ を与える。`sorry` はなく、使う公理は Lean の標準の 3 つだけ。§1 の帰着、3 次元の補題 F、§4 の遠い領域は形式化していない。
 - 手による部分（§1〜3：帰着、4 次元での極分解の各段、補題 K）は、独立な内部のレビュアーが 1 行ずつ確かめた。同じレビュアーは、第 1 系の縮約（符号付き置換 384 個、Voronoi セル、$O(3)$ から $SO(3)$ への移行、Householder の式）と、第 2 系の仕様（実装中に行った 2 つの訂正を含む）も確かめた。
+- 版 2（§7）も計算機援用で、厳密な有理数の証明書を 2 つの系で検査した。その $n = 5$ の証明と $n = 5$ の最初の証明書は Codex（OpenAI）が作成し、証明の各段は当方が確かめた。$n = 3, 4, 5$ の軸の近くの段は §3 で、上のとおり Lean で形式化してある。$n = 6$ の証明と証明書も Codex（OpenAI）が作成し、書かれた証明の各段は当方が確かめた。
 - 外部のレビューはまだない。訂正は Issue で歓迎する。
 
 ## 出典
 
 - **古典.** $n = 2$（単位正方形 2 個には辺 2 の正方形が要る）は、Erich Friedman の概説 [[1]](#ref-1) を参照。Friedman の Packing Center の「Cubes in Cubes」[[2]](#ref-2) には立方体 2 個の下界はなく、$n \ge 3$ のどの $n$ についても $s_n(2) = 2$ の証明は文献に見つからなかった。ご存じなら Issue で知らせてほしい。
 - **当方の以前の仕事.** 3 次元の補題 F と $s_3(2) = 2$ は [cubes-in-cube/lemma_f/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/lemma_f) にある。近い領域の議論 (a)〜(c) は、そこでの $n = 3$ の議論である。
-- **ここで新しいもの.** 近い領域の議論の 4 次元への持ち上げ（補題 K）、遠い領域の命題、2 つの検査器、そして $s_4(2) = 2$。
+- **ここで新しいもの.** 近い領域の議論の 4 次元への持ち上げ（補題 K）、遠い領域の命題、2 つの検査器、そして $s_4(2) = 2$。版 2 では、スペクトルの下界、$n = 3, 4, 5$ の証明書、$s_5(2) = 2$、そして $s_6(2) = 2$。
 
 ## 参考文献
 
 1. <span id="ref-1"></span>E. Friedman, "Packing unit squares in squares: a survey and new results", *Electronic Journal of Combinatorics*, Dynamic Survey DS7.
 2. <span id="ref-2"></span>E. Friedman, [Cubes in Cubes](https://erich-friedman.github.io/packing/cubincub/), Erich's Packing Center.
-3. [problems/cubes-n-dim/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/PROOF.md)、[README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/README.md)。Release [cubes-n-dim-v1](https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1)。[Issue #21](https://github.com/wand125/square-packing/issues/21)。
+3. [problems/cubes-n-dim/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/PROOF.md)、[README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/README.md)。Release [cubes-n-dim-v1](https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1)。[spectral/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/spectral/PROOF.md)、[spectral/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/spectral/README.md)。[spectral/n6/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-n-dim/spectral/n6/README.md)。Release [cubes-n-dim-v2](https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v2)。[Issue #21](https://github.com/wand125/square-packing/issues/21)。
+4. <span id="ref-4"></span>M. Marcus and L. Lopes, *Canad. J. Math.* 9 (1957), 305–312, Theorem 2.

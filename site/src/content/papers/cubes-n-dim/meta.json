@@ -4,16 +4,16 @@
   "コンピュータ支援の証明"
  ],
  "title": [
-  "Two unit cubes in four dimensions: \\(s_4(2) = 2\\)",
-  "4 次元の単位立方体 2 個：\\(s_4(2) = 2\\)"
+  "Two unit cubes in a cube: \\(s_n(2) = 2\\) for \\(n = 3, 4, 5, 6\\)",
+  "立方体に単位立方体 2 個：\\(n = 3, 4, 5, 6\\) で \\(s_n(2) = 2\\)"
  ],
  "lead": [
-  "Every unit 4-cube inside \\([0, 2]^4\\) contains the centre, so two unit 4-cubes do not fit in a 4-cube of side less than 2. Near the axes this is proved by hand from Lemma F in dimension 3; away from them it is checked by interval branch and bound, by two independent checkers.",
-  "\\([0, 2]^4\\) の中の単位 4 次元立方体はどれも中心を含むので、単位 4 次元立方体 2 個は辺 2 未満の 4 次元立方体に入らない。軸の近くは 3 次元の補題 F から手で示し、軸から離れたところは区間の分枝限定で、独立な 2 つの検査器により検査した。"
+  "Every unit 4-cube inside \\([0, 2]^4\\) contains the centre, so two unit 4-cubes do not fit in a 4-cube of side less than 2. Near the axes this is proved by hand from Lemma F in dimension 3; away from them it is checked by interval branch and bound, by two independent checkers. Version 2 (§7) proves \\(s_n(2) = 2\\) for \\(n = 3, 4, 5\\) with a spectral bound away from the axes and short exact rational certificates, checked by two systems, and \\(s_6(2) = 2\\) with a split into a cap, a strip and a near-axis region.",
+  "\\([0, 2]^4\\) の中の単位 4 次元立方体はどれも中心を含むので、単位 4 次元立方体 2 個は辺 2 未満の 4 次元立方体に入らない。軸の近くは 3 次元の補題 F から手で示し、軸から離れたところは区間の分枝限定で、独立な 2 つの検査器により検査した。版 2（§7）は、軸から離れたところをスペクトルの下界と短い厳密な有理数の証明書で扱い、\\(n = 3, 4, 5\\) で \\(s_n(2) = 2\\) を示す。証明書は 2 つの系で検査した。さらに、キャップ・帯・軸の近くの 3 つの領域に分けて \\(s_6(2) = 2\\) を示す。"
  ],
  "result": [
-  "\\(s_4(2) = 2\\)",
-  "\\(s_4(2) = 2\\)"
+  "\\(s_3(2) = s_4(2) = s_5(2) = s_6(2) = 2\\)",
+  "\\(s_3(2) = s_4(2) = s_5(2) = s_6(2) = 2\\)"
  ],
  "author": "Hiroaki Hosono (wand125)",
  "links": [
@@ -23,9 +23,19 @@
    "https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim"
   ],
   [
+   "Version 2: spectral/",
+   "版 2：spectral/",
+   "https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim/spectral"
+  ],
+  [
    "Release cubes-n-dim-v1",
    "Release cubes-n-dim-v1",
    "https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1"
+  ],
+  [
+   "Release cubes-n-dim-v2",
+   "Release cubes-n-dim-v2",
+   "https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v2"
   ],
   [
    "Issue #21",
@@ -40,6 +50,14 @@
    "en": "First version: s₄(2) = 2.",
    "ja": "初版：s₄(2) = 2。",
    "commit": "1dc56b2"
+  },
+  {
+   "v": "2",
+   "date": "2026-10-17",
+   "en": "New §7: s_n(2) = 2 for n = 3, 4, 5 by the near-axis step of §3 and a spectral bound with exact rational certificates (problems/cubes-n-dim/spectral/), and s₆(2) = 2 by a cap, a strip and a near-axis region (spectral/n6/). §1–§6, the proof of version 1, are unchanged.",
+   "ja": "§7 を追加：§3 の軸の近くの段とスペクトルの下界（厳密な有理数の証明書）で、n = 3, 4, 5 の s_n(2) = 2（problems/cubes-n-dim/spectral/）。キャップ・帯・軸の近くの領域による s₆(2) = 2（spectral/n6/）。版 1 の証明である §1〜§6 は変えていない。",
+   "commit": "",
+   "release": "cubes-n-dim-v2"
   }
  ]
 }

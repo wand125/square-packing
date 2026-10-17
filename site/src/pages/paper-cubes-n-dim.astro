@@ -6,5 +6,5 @@ import meta from '../content/papers/cubes-n-dim/meta.json';
 import { tex } from '../lib/tex';
 const m = { ...meta, titleHtml: meta.title.map(tex), resultHtml: '<span data-l="en">' + tex(meta.result[0]) + '</span><span data-l="ja">' + tex(meta.result[1]) + '</span>' };
 ---
-<Paper file="paper-cubes-n-dim.html" title="Two Unit Cubes in Four Dimensions" meta={m}
+<Paper file="paper-cubes-n-dim.html" title="Two Unit Cubes in a Cube" meta={m}
   En={En.default} Ja={Ja.default} headingsEn={En.getHeadings()} headingsJa={Ja.getHeadings()} />

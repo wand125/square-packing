@@ -869,13 +869,21 @@
     "ja": "s_n(k) を、単位 n 次元立方体 k 個（位置・向きは自由）が入る最小の n 次元立方体の辺とする。すべての次元 n で s_n(2) = 2、つまり単位 n 次元立方体 2 個は辺 2 未満の立方体に入らないことを示す。n = 2 は古典的で、n = 3 は補題 F（problems/cubes-in-cube/lemma_f/）から従う。n ≥ 3 の証明は文献に見つからなかった。"
    },
    "method": {
-    "en": "It suffices that every unit n-cube inside [0, 2]ⁿ contains the centre; for a rotation R this is F_k(R) = Σ_i |R_ik| (2 − ‖row i of R‖₁) ≤ 1 for every column k. Near the coordinate axes a polar-decomposition argument reduces it by hand to lower dimensions (for n = 4, to Lemma F in dimension 3). Away from the axes, for a fixed n, an interval branch and bound checked by two independent programs.",
-    "ja": "[0, 2]ⁿ の中の単位 n 次元立方体がどれも中心を含めば十分。回転 R については、すべての列 k で F_k(R) = Σ_i |R_ik| (2 − ‖R の行 i‖₁) ≤ 1 という不等式になる。座標軸の近くでは極分解の議論で手により低い次元に帰着する（n = 4 では 3 次元の補題 F に）。軸から離れたところは、n を固定して区間の分枝限定で示し、独立な 2 つのプログラムで検査する。"
+    "en": "It suffices that every unit n-cube inside [0, 2]ⁿ contains the centre; for a rotation R this is F_k(R) = Σ_i |R_ik| (2 − ‖row i of R‖₁) ≤ 1 for every column k. Near the coordinate axes a polar-decomposition argument reduces it by hand to lower dimensions (for n = 4, to Lemma F in dimension 3). Away from the axes, for a fixed n, an interval branch and bound checked by two independent programs. Version 2, for n = 3, 4, 5: away from the axes, a spectral lower bound of 1 − F, proved positive by exact rational certificates on simplices. For n = 6, where that bound alone fails: a split into a cap, a strip and a near-axis region, with further lower bounds and larger certificates.",
+    "ja": "[0, 2]ⁿ の中の単位 n 次元立方体がどれも中心を含めば十分。回転 R については、すべての列 k で F_k(R) = Σ_i |R_ik| (2 − ‖R の行 i‖₁) ≤ 1 という不等式になる。座標軸の近くでは極分解の議論で手により低い次元に帰着する（n = 4 では 3 次元の補題 F に）。軸から離れたところは、n を固定して区間の分枝限定で示し、独立な 2 つのプログラムで検査する。版 2（n = 3, 4, 5）：軸から離れたところは 1 − F のスペクトルの下界を使い、その正値性を単体上の厳密な有理数の証明書で示す。その下界だけでは足りない n = 6 は、キャップ・帯・軸の近くの領域に分け、ほかの下界と大きな証明書を使う。"
    },
    "done": [
     {
      "en": "n = 4: s₄(2) = 2. The near region is proved by hand from Lemma F in dimension 3; the far region is checked by two independent Rust checkers in outward-rounded interval arithmetic (88,110,984 and 192,488,546 boxes, all closed). Computer-assisted; not peer reviewed (problems/cubes-n-dim/, release cubes-n-dim-v1).",
      "ja": "n = 4：s₄(2) = 2。近い領域は 3 次元の補題 F から手で証明。遠い領域は外向きに丸める区間演算の独立な 2 つの Rust の検査器で検査（箱 88,110,984 個と 192,488,546 個、すべて閉じた）。計算機援用で、査読は受けていない（problems/cubes-n-dim/、Release cubes-n-dim-v1）。"
+    },
+    {
+     "en": "n = 3, 4, 5: s₃(2) = s₄(2) = s₅(2) = 2 by the near-axis step and a spectral bound, with exact rational certificates (5, 557 and 21,502 simplices; a second n = 5 certificate with 135,255) checked by two systems in seconds with the Python standard library. The n = 5 proof and its first certificate were produced with Codex (OpenAI). Computer-assisted; not peer reviewed (problems/cubes-n-dim/spectral/, release cubes-n-dim-v2).",
+     "ja": "n = 3, 4, 5：軸の近くの段とスペクトルの下界で s₃(2) = s₄(2) = s₅(2) = 2。厳密な有理数の証明書（単体 5・557・21,502 個。n = 5 の 2 つ目の証明書は 135,255 個）を、Python の標準ライブラリだけの 2 つの系で数秒で検査。n = 5 の証明と最初の証明書は Codex（OpenAI）が作成。計算機援用で、査読は受けていない（problems/cubes-n-dim/spectral/、Release cubes-n-dim-v2）。"
+    },
+    {
+     "en": "n = 6: s₆(2) = 2. The columns are split into a cap (max p ≤ 13/20), a strip (13/20 ≤ max p ≤ 159/200) and a near-axis region (max p ≥ 141/200); exact rational certificates with 818,303 and 2,000,762 simplices and a C5 tree with 7,893 cells, checked by our standard-library checkers and the supplied ones. The proof and certificates were produced with Codex (OpenAI); we checked each step. Computer-assisted; not peer reviewed (problems/cubes-n-dim/spectral/n6/, release cubes-n-dim-v2).",
+     "ja": "n = 6：s₆(2) = 2。列をキャップ（max p ≤ 13/20）、帯（13/20 ≤ max p ≤ 159/200）、軸の近く（max p ≥ 141/200）に分ける。単体 818,303 個と 2,000,762 個の厳密な有理数の証明書と、7,893 セルの C5 の木を、標準ライブラリだけの当方の検査器と提供された検査器で検査。証明と証明書は Codex（OpenAI）が作成し、各段は当方が確かめた。計算機援用で、査読は受けていない（problems/cubes-n-dim/spectral/n6/、Release cubes-n-dim-v2）。"
     },
     {
      "en": "Lean: the near-region lemma in any dimension and Lemma K, with Lemma F in dimension m as a hypothesis (no sorry; standard axioms only; problems/cubes-n-dim/lean/). The reduction, Lemma F in dimension 3 and the far region are not formalized.",
@@ -894,17 +902,29 @@
      "url": "https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim"
     },
     {
+     "label": "problems/cubes-n-dim/spectral/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim/spectral"
+    },
+    {
+     "label": "problems/cubes-n-dim/spectral/n6/",
+     "url": "https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim/spectral/n6"
+    },
+    {
      "label": "problems/cubes-n-dim/lean/",
      "url": "https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim/lean"
     },
     {
      "label": "Release cubes-n-dim-v1",
      "url": "https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v1"
+    },
+    {
+     "label": "Release cubes-n-dim-v2",
+     "url": "https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v2"
     }
    ],
    "releases": [],
    "url": "https://github.com/wand125/square-packing/issues/21",
-   "updated": "2026-10-16",
+   "updated": "2026-10-17",
    "paper": "paper-cubes-n-dim.html"
   },
   {

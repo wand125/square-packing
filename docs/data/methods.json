@@ -432,8 +432,8 @@
     "ja": "R ∈ O(n) について w_i を行 i の ℓ¹ ノルムとし、F_k(R) = Σ_i |R_ik| (2 − w_i) とする。すべての直交行列 R とすべての列 k で F_k ≤ 1 なら、a < 2 の [0, a]ⁿ の中の単位立方体はどれも中心を内部に含むので、内部が交わらない 2 個は入らない。n = 4 では c を |R_e1| の最大として、軸の近く（c² ≥ 2/3）は極分解の議論と 3 次元の補題 F から手で F_1 ≤ 1 を示し、軸から離れたところ（c² ≤ 2/3）は外向きに丸める区間の分枝限定で F_1 < 1 を検査する。検査は座標も対称性による縮約も異なる独立な 2 つのプログラムで行う。"
    },
    "used": {
-    "en": "Two unit 4-cubes: s₄(2) = 2.",
-    "ja": "単位 4 次元立方体 2 個：s₄(2) = 2。"
+    "en": "Two unit 4-cubes: s₄(2) = 2 (version 1).",
+    "ja": "単位 4 次元立方体 2 個：s₄(2) = 2（版 1）。"
    },
    "origin": {
     "en": "For n = 2 the result is classical (Friedman's survey DS7). Lemma F in dimension 3 and s₃(2) = 2 are from our earlier work on cubes in cubes (problems/cubes-in-cube/lemma_f/), and the near-region argument is the n = 3 argument from there. New here: its lift to dimension 4 (Lemma K), the far-region statement and the two checkers.",
@@ -448,6 +448,62 @@
     "problems/cubes-n-dim/README.md#L12-L24",
     "problems/cubes-n-dim/README.md#L69-L80",
     "problems/cubes-n-dim/PROOF.md"
+   ]
+  },
+  {
+   "id": "cube-spectral-bound",
+   "name": {
+    "en": "Two unit n-cubes: the centre lemma and a spectral bound with rational certificates",
+    "ja": "単位 n 次元立方体 2 個：中心の補題と、有理数の証明書つきのスペクトルの下界"
+   },
+   "what": {
+    "en": "Lemma F (F_j(U) ≤ 1 for every orthogonal U and every column j) is proved in dimensions 3, 4, 5 by induction from a one-line proof in dimension 2. For a column with squared entries p: near an axis (max p_i ≥ 1 − 1/(n − 1)) the polar-decomposition step of cube-centre-lemma with Lemma F in dimension n − 1; elsewhere the zero-sum inequality ‖z‖₁ ≥ √2 ‖z‖₂ and the triangle inequality for the nuclear norm give 1 − F_j ≥ q(p) = √2 Tr √(diag(p) − ppᵀ) − 2 Σ √p_i + 2. A certificate proves q(p) > 0 on the rest of the ordered probability simplex by branch and bound on simplices: concavity of the trace square root inside a simplex, the chord bound for the square roots, and rational witness matrices with Weyl's inequality at the vertices; every acceptance is an exact rational inequality. The spectral bound alone fails in dimension 6, where q is negative at the uniform p; dimension 6 uses cube-d6-regions.",
+    "ja": "補題 F（すべての直交行列 U とすべての列 j で F_j(U) ≤ 1）を、2 次元での 1 行の証明から帰納法で 3、4、5 次元について示す。成分の 2 乗が p の列について：軸の近く（max p_i ≥ 1 − 1/(n − 1)）は cube-centre-lemma の極分解の段と n − 1 次元の補題 F で、それ以外は和が 0 のベクトルの不等式 ‖z‖₁ ≥ √2 ‖z‖₂ と核ノルムの三角不等式から 1 − F_j ≥ q(p) = √2 Tr √(diag(p) − ppᵀ) − 2 Σ √p_i + 2 を得る。証明書は、順序づけた確率単体の残りで q(p) > 0 を単体の分枝限定で示す：単体の中ではトレースの平方根の凹性と平方根の弦、頂点では有理数の証拠行列と Weyl の不等式を使い、受理はどれも厳密な有理数の不等式である。6 次元では一様な p で q が負になるので、スペクトルの下界だけでは足りない。6 次元は cube-d6-regions で扱う。"
+   },
+   "used": {
+    "en": "Two unit n-cubes: s₃(2) = s₄(2) = s₅(2) = 2.",
+    "ja": "単位 n 次元立方体 2 個：s₃(2) = s₄(2) = s₅(2) = 2。"
+   },
+   "origin": {
+    "en": "The near-axis step is that of version 1 (cube-centre-lemma). Codex (OpenAI) produced, under our direction, the n = 5 proof (the spectral bound, the triangulation and the acceptance rule) and the first n = 5 certificate; our generator and our checker were written from the written proof only. New here: the spectral bound, the certificates for n = 3, 4, 5, and s₅(2) = 2.",
+    "ja": "軸の近くの段は版 1（cube-centre-lemma）のもの。n = 5 の証明（スペクトルの下界、三角形分割、受理の規則）と n = 5 の最初の証明書は、当方の指示のもとで Codex（OpenAI）が作成した。当方の生成器と検査器は、書かれた証明だけから書いた。新しいのは、スペクトルの下界、n = 3, 4, 5 の証明書、そして s₅(2) = 2。"
+   },
+   "tools": [
+    "problems/cubes-n-dim/spectral/checkers/gen_spectral.py",
+    "problems/cubes-n-dim/spectral/checkers/check_spectral.py",
+    "problems/cubes-n-dim/spectral/n5/supplied"
+   ],
+   "sources": [
+    "problems/cubes-n-dim/spectral/README.md",
+    "problems/cubes-n-dim/spectral/PROOF.md"
+   ]
+  },
+  {
+   "id": "cube-d6-regions",
+   "name": {
+    "en": "Two unit 6-cubes: cap, strip and near-axis region",
+    "ja": "単位 6 次元立方体 2 個：キャップ・帯・軸の近くの領域"
+   },
+   "what": {
+    "en": "Lemma F in dimension 6, for a column with squared entries p sorted so that p_1 is the largest, on three overlapping regions. Cap, max p ≤ 13/20: the spectral bound of cube-spectral-bound plus a missing-edge correction, by an exact rational certificate with 818,303 simplices. Strip, 13/20 ≤ max p ≤ 159/200: on each simplex one of five lower bounds (the spectral bound with one of two missing-edge corrections, a determinant bound, a grouped determinant bound, or a combination of exterior-power bounds), by an exact rational certificate with 2,000,762 simplices. Near the axis, max p ≥ 141/200: a quadratic minorant C5 for the tail, summed over the completion columns, with C5 proved by an exact rational tree with 7,893 cells and an analytic sign-lifting argument. It does not use the results for n = 4 or n = 5 as premises.",
+    "ja": "6 次元の補題 F。成分の 2 乗が p の列を p_1 が最大になるように並べ、重なりのある 3 つの領域で示す。キャップ（max p ≤ 13/20）：cube-spectral-bound のスペクトルの下界に欠けた辺の補正を足し、単体 818,303 個の厳密な有理数の証明書で。帯（13/20 ≤ max p ≤ 159/200）：各単体で 5 つの下界（2 種類の欠けた辺の補正のどちらかをつけたスペクトルの下界、行列式の下界、まとめた行列式の下界、外冪の下界の組み合わせ）のどれか 1 つを使い、単体 2,000,762 個の厳密な有理数の証明書で。軸の近く（max p ≥ 141/200）：尾の部分の 2 次の下からの評価 C5 を補完する列にわたって足し合わせ、C5 は 7,893 セルの厳密な有理数の木と解析的な符号の持ち上げで示す。n = 4、n = 5 の結果は前提として使わない。"
+   },
+   "used": {
+    "en": "Two unit 6-cubes: s₆(2) = 2.",
+    "ja": "単位 6 次元立方体 2 個：s₆(2) = 2。"
+   },
+   "origin": {
+    "en": "The proof and certificates were produced with Codex (OpenAI) under our direction, including the audits and the second strip checker in supplied/, which are not independent of it. Our checkers check_d6.py and check_c5.py were written from the written proof and the certificate descriptions without reading any supplied program; we checked each step of the written proof. Outside results: concavity of e_j(p)^{1/j} (Marcus and Lopes, 1957), and the monotonicity and concavity of the trace square root.",
+    "ja": "証明と証明書は、当方の指示のもとで Codex（OpenAI）が作成した。supplied/ にある監査と帯の 2 つ目の検査器も含み、それらは独立ではない。当方の検査器 check_d6.py と check_c5.py は、提供されたプログラムを読まずに、書かれた証明と証明書の説明から書いた。書かれた証明の各段は当方が確かめた。外部の結果：e_j(p)^{1/j} の凹性（Marcus と Lopes、1957）と、トレースの平方根の単調性と凹性。"
+   },
+   "tools": [
+    "problems/cubes-n-dim/spectral/n6/checkers/check_d6.py",
+    "problems/cubes-n-dim/spectral/n6/checkers/check_c5.py",
+    "problems/cubes-n-dim/spectral/n6/supplied"
+   ],
+   "sources": [
+    "problems/cubes-n-dim/spectral/n6/README.md",
+    "problems/cubes-n-dim/spectral/n6/supplied/d6_proof_handoff/PROOF.md"
    ]
   },
   {
