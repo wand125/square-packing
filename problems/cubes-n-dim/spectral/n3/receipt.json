@@ -1,0 +1,71 @@
+{
+ "claim": "q(p) > 0 on the ordered probability simplex in dimension 3 with p_1 <= 1 - 1/2",
+ "environment": {
+  "date": "2026-10-17",
+  "machine": "laptop, Apple silicon (arm64), macOS 26.2",
+  "python_checker": "Python 3.14.8",
+  "python_generator": "Python 3.14.7 NumPy 2.5.4"
+ },
+ "sources": {
+  "checkers/gen_spectral.py": "65b118547d8143f2ef9742125a4fa1d031d1c552c847b6660e38e4aa6ab6ede4",
+  "checkers/check_spectral.py": "9a9f8345c7e104b5f416875a4aefc8924b4858f68ce3fbc59db8054f519d57ca"
+ },
+ "runs": [
+  {
+   "system": "first (gen_spectral.py: regenerate, every acceptance checked exactly)",
+   "exit": 0,
+   "seconds": 0.1,
+   "regenerated_sha256": "9c4a34c9f775c3051734f9f801d5392f49d9e05ba9f08ce6b29bd3e4acc03ca7",
+   "identical_to_certificate": true,
+   "vertices": 8,
+   "records": 9,
+   "leaves": 5,
+   "max_depth": 4,
+   "min_vertex_q": 0.1483592188783792,
+   "min_leaf_slack": 0.002932287132758597,
+   "log": "logs/generate.log"
+  },
+  {
+   "system": "second (check_spectral.py, written from the specification alone)",
+   "exit": 0,
+   "seconds": 0.0,
+   "passed": true,
+   "log": "logs/check.log"
+  }
+ ],
+ "certificates": {
+  "certificate.json": "9c4a34c9f775c3051734f9f801d5392f49d9e05ba9f08ce6b29bd3e4acc03ca7"
+ },
+ "broken_copies_rejected": [
+  {
+   "certificate": "certificate.json",
+   "change": "witness of the last vertex, entry [0][0] set to 1",
+   "rejected": true,
+   "message": "leaf 6 not certified"
+  },
+  {
+   "certificate": "certificate.json",
+   "change": "record 5: midpoint index increased by 1",
+   "rejected": true,
+   "message": "IndexError: list index out of range"
+  },
+  {
+   "certificate": "certificate.json",
+   "change": "record 5 replaced by null (leaf too early)",
+   "rejected": true,
+   "message": "leaf 5 not certified"
+  },
+  {
+   "certificate": "certificate.json",
+   "change": "last record removed",
+   "rejected": true,
+   "message": "records exhausted before the subdivision ended"
+  },
+  {
+   "certificate": "certificate.json",
+   "change": "last initial simplex removed",
+   "rejected": true,
+   "message": "initial simplices differ from the staircase [[2, 1, 3]]"
+  }
+ ]
+}

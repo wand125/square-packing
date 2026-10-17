@@ -1,0 +1,29 @@
+{
+ "schema": "asset/v1",
+ "id": "cubes-n-dim-v2:n5-certificate",
+ "claim": "q(p) > 0 on the ordered probability simplex in dimension 5 with p_1 <= 3/4 (second certificate, made by checkers/gen_spectral.py); with PROOF.md this gives Lemma F in dimension 5 and s_5(2) = 2",
+ "release_tag": "cubes-n-dim-v2",
+ "release_url": "https://github.com/wand125/square-packing/releases/tag/cubes-n-dim-v2",
+ "assets": [
+  {
+   "asset": "cubes-n-dim-v2-n5-certificate.json.xz",
+   "size": 2854600,
+   "sha256": "845ca0a7bb05755d86a074782b864baece28624d5efdece457645d1498eee96f",
+   "unpacked_sha256": "e2bd555ef7c7b66056185718560030b67898fb6b01b68e618caa68f088c2d28f"
+  }
+ ],
+ "unpack": "xz -dc cubes-n-dim-v2-n5-certificate.json.xz > problems/cubes-n-dim/spectral/n5/certificate.json",
+ "unpack_note": "run from the repository root after downloading the asset",
+ "check": "python3 -B ../checkers/check_spectral.py certificate.json",
+ "check_cwd": "problems/cubes-n-dim/spectral/n5",
+ "check_note": "about 30 s; supplied/certificate.json (in the tree) is a smaller certificate for the same statement",
+ "documents": [
+  "problems/cubes-n-dim/spectral/README.md",
+  "problems/cubes-n-dim/spectral/PROOF.md"
+ ],
+ "source": {
+  "repository": "wand125/square-packing",
+  "commit": null,
+  "path": "problems/cubes-n-dim/spectral"
+ }
+}

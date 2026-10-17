@@ -1,0 +1,3 @@
+$ python3 ../checkers/gen_spectral.py 3 regenerated.json   (needs NumPy)
+{"n": 3, "vertices": 8, "records": 9, "leaves": 5, "max_depth": 4, "min_vertex_q": 0.1483592188783792, "min_leaf_slack": 0.002932287132758597, "seconds": 0.0, "sha256": "9c4a34c9f775c3051734f9f801d5392f49d9e05ba9f08ce6b29bd3e4acc03ca7"}
+exit 0, 0.1 s

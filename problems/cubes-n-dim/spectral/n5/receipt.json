@@ -1,0 +1,102 @@
+{
+ "claim": "q(p) > 0 on the ordered probability simplex in dimension 5 with p_1 <= 1 - 1/4",
+ "environment": {
+  "date": "2026-10-17",
+  "machine": "laptop, Apple silicon (arm64), macOS 26.2",
+  "python_checker": "Python 3.14.8",
+  "python_generator": "Python 3.14.7 NumPy 2.5.4"
+ },
+ "sources": {
+  "checkers/gen_spectral.py": "65b118547d8143f2ef9742125a4fa1d031d1c552c847b6660e38e4aa6ab6ede4",
+  "checkers/check_spectral.py": "9a9f8345c7e104b5f416875a4aefc8924b4858f68ce3fbc59db8054f519d57ca"
+ },
+ "runs": [
+  {
+   "system": "first (gen_spectral.py: regenerate, every acceptance checked exactly)",
+   "exit": 0,
+   "seconds": 44.8,
+   "regenerated_sha256": "e2bd555ef7c7b66056185718560030b67898fb6b01b68e618caa68f088c2d28f",
+   "identical_to_certificate": true,
+   "vertices": 17904,
+   "records": 270506,
+   "leaves": 135255,
+   "max_depth": 28,
+   "min_vertex_q": 0.013262479563683795,
+   "min_leaf_slack": 4.121517887292776e-07,
+   "log": "logs/generate.log"
+  },
+  {
+   "system": "second (check_spectral.py, written from the specification alone)",
+   "exit": 0,
+   "seconds": 30.1,
+   "passed": true,
+   "log": "logs/check.log"
+  },
+  {
+   "system": "second (check_spectral.py) on supplied/certificate.json",
+   "exit": 0,
+   "seconds": 4.5,
+   "passed": true,
+   "log": "supplied/logs/check_spectral.log"
+  },
+  {
+   "system": "supplied replay.py on supplied/certificate.json",
+   "exit": 0,
+   "seconds": 2.5,
+   "passed": true,
+   "log": "supplied/logs/replay.log"
+  },
+  {
+   "system": "supplied independent_verify.py on supplied/certificate.json",
+   "exit": 0,
+   "seconds": 4.2,
+   "passed": true,
+   "log": "supplied/logs/independent_verify.log"
+  }
+ ],
+ "supplied": {
+  "supplied/PROOF.md": "046b561adc0712e7556fddbd17da2c85c8c9a66d04199f7eead2af12268c355e",
+  "supplied/certificate.json": "589d3bca403c67e96417a7e8401c56073326006a1a5f6a8b6a38ed614bacd518",
+  "supplied/certify.py": "7ab4c055fdb701fcb0008fc39cd74b744968f280ada82a993d0db71ba02348db",
+  "supplied/independent_verify.py": "9e7196510d7faed36a18db514d2e2cfb989a2a23e19ffc46767681ed17caf695",
+  "supplied/replay.py": "4fadf8549214aebb2582fd239fe5817db5d27b777fd98e25fe4cade38b8da6a6",
+  "supplied/result.json": "c05dad665f64d27c4109b2c2df9c05622d32a1e0b52afe6aaf2153658c49cc35",
+  "supplied/spectral_bound.py": "7d0c6ef61a4c603cd7660c70a6ee1a9cf02e5081457018ad6a15c88a46fefd5b"
+ },
+ "certificates": {
+  "certificate.json": "e2bd555ef7c7b66056185718560030b67898fb6b01b68e618caa68f088c2d28f",
+  "supplied/certificate.json": "589d3bca403c67e96417a7e8401c56073326006a1a5f6a8b6a38ed614bacd518"
+ },
+ "broken_copies_rejected": [
+  {
+   "certificate": "supplied/certificate.json",
+   "change": "witness of the last vertex, entry [0][0] set to 1",
+   "rejected": true,
+   "message": "leaf 42772 not certified"
+  },
+  {
+   "certificate": "supplied/certificate.json",
+   "change": "record 14334: midpoint index increased by 1",
+   "rejected": true,
+   "message": "record 14334: vertex 918 is not the midpoint"
+  },
+  {
+   "certificate": "supplied/certificate.json",
+   "change": "record 14334 replaced by null (leaf too early)",
+   "rejected": true,
+   "message": "leaf 14334 not certified"
+  },
+  {
+   "certificate": "supplied/certificate.json",
+   "change": "last record removed",
+   "rejected": true,
+   "message": "records exhausted before the subdivision ended"
+  },
+  {
+   "certificate": "supplied/certificate.json",
+   "change": "last initial simplex removed",
+   "rejected": true,
+   "message": "initial simplices differ from the staircase [[0, 2, 4, 6, 1], [2, 4, 6, 1, 3], [4, 6, 1, 3, 5], [6, 1, 3, 5, 7]]"
+  }
+ ]
+}

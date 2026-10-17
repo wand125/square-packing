@@ -1,0 +1,8 @@
+$ python3 -B ../checkers/check_spectral.py certificate.json
+sha256 d6eebf0f8d56bb1adb873e7e16f0e4907df084a5396dc70a9fd9fe109764b1ed
+geometry n=4, tau=2/3: 3 initial simplices, volumes ['1/72', '1/72', '5/648'] sum = full - corner = 23/648
+vertices: 193, min vertex q lower bound 0.0796162
+records 1111: splits 554, leaves 557, max depth 14
+min leaf slack 0.000321111 (> 1/5000000: True)
+PASS: q(p) > 0 on the ordered simplex in dimension 4 with p_1 <= 2/3
+exit 0, 0.1 s

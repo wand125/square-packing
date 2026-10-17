@@ -1,0 +1,6 @@
+$ python3 -B replay.py
+VERIFIED using exact rational arithmetic only
+vertices 2175 leaves 21502 records 43000
+minimum leaf slack 2.277398269734683e-07
+elapsed seconds 2.4798710346221924
+exit 0, 2.5 s
