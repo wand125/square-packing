@@ -4,8 +4,8 @@
   "コンピュータ支援の証明"
  ],
  "title": [
-  "Two unit cubes in a cube: \\(s_n(2) = 2\\) for \\(n = 3, 4, 5, 6\\)",
-  "立方体に単位立方体 2 個：\\(n = 3, 4, 5, 6\\) で \\(s_n(2) = 2\\)"
+  "Two unit hypercubes in a hypercube: \\(s_n(2) = 2\\) for \\(n = 3, 4, 5, 6\\)",
+  "n 次元の超立方体に単位超立方体 2 個：\\(n = 3, 4, 5, 6\\) で \\(s_n(2) = 2\\)"
  ],
  "lead": [
   "Every unit 4-cube inside \\([0, 2]^4\\) contains the centre, so two unit 4-cubes do not fit in a 4-cube of side less than 2. Near the axes this is proved by hand from Lemma F in dimension 3; away from them it is checked by interval branch and bound, by two independent checkers. Version 2 (§7) proves \\(s_n(2) = 2\\) for \\(n = 3, 4, 5\\) with a spectral bound away from the axes and short exact rational certificates, checked by two systems, and \\(s_6(2) = 2\\) with a split into a cap, a strip and a near-axis region.",
