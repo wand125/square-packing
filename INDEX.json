@@ -1,7 +1,7 @@
 {
  "schema": "index/v1",
  "repository": "wand125/square-packing",
- "generated": "2026-10-16",
+ "generated": "2026-10-18",
  "problems": {
   "closed-form": [
    {
@@ -52,6 +52,67 @@
      "problems/closed-form/README.md",
      "problems/closed-form/SPEC.md",
      "problems/closed-form/INTERVALS.md"
+    ]
+   }
+  ],
+  "cubes-n-dim": [
+   {
+    "id": "cubes-n-dim-v1:logs",
+    "claim": "s_4(2) = 2: two unit 4-cubes with disjoint interiors do not fit in a 4-cube of side < 2. The logs record the two independent computer checks of the far region (F_1(R) < 1 for R in O(4) with max_e R_e1^2 <= 2/3); the near region is the hand proof in PROOF.md.",
+    "release_tag": "cubes-n-dim-v1",
+    "assets": [
+     "cubes-n-dim-logs.tar.xz"
+    ],
+    "path": "problems/cubes-n-dim/ASSET.json",
+    "check": "python3 verify_logs.py logs",
+    "check_cwd": "problems/cubes-n-dim",
+    "documents": [
+     "problems/cubes-n-dim/README.md",
+     "problems/cubes-n-dim/PROOF.md"
+    ]
+   },
+   {
+    "id": "cubes-n-dim-v2:n3-n4",
+    "claim": "s_3(2) = s_4(2) = 2 (with spectral/PROOF.md): exact rational certificates that q(p) > 0 for max p_i <= 1 - 1/(n-1), n = 3, 4",
+    "release_tag": null,
+    "assets": [],
+    "path": "problems/cubes-n-dim/spectral/ASSET.json",
+    "check": "cd n3 && python3 -B ../checkers/check_spectral.py certificate.json && cd ../n4 && python3 -B ../checkers/check_spectral.py certificate.json",
+    "check_cwd": "problems/cubes-n-dim/spectral",
+    "documents": [
+     "problems/cubes-n-dim/spectral/README.md",
+     "problems/cubes-n-dim/spectral/PROOF.md"
+    ]
+   },
+   {
+    "id": "cubes-n-dim-v2:n5-certificate",
+    "claim": "q(p) > 0 on the ordered probability simplex in dimension 5 with p_1 <= 3/4 (second certificate, made by checkers/gen_spectral.py); with PROOF.md this gives Lemma F in dimension 5 and s_5(2) = 2",
+    "release_tag": "cubes-n-dim-v2",
+    "assets": [
+     "cubes-n-dim-v2-n5-certificate.json.xz"
+    ],
+    "path": "problems/cubes-n-dim/spectral/n5/ASSET.json",
+    "check": "python3 -B ../checkers/check_spectral.py certificate.json",
+    "check_cwd": "problems/cubes-n-dim/spectral/n5",
+    "documents": [
+     "problems/cubes-n-dim/spectral/README.md",
+     "problems/cubes-n-dim/spectral/PROOF.md"
+    ]
+   },
+   {
+    "id": "cubes-n-dim-v2:n6-certificates",
+    "claim": "s_6(2) = 2 (with supplied/d6_proof_handoff/PROOF.md): Lemma F holds for every 6-by-6 orthogonal matrix. Exact rational certificates for max p <= 13/20 (cap) and 13/20 <= max p <= 159/200 (strip), and the C5 tree (in the tree) for the near-axis region max p >= 141/200",
+    "release_tag": "cubes-n-dim-v2",
+    "assets": [
+     "cubes-n-dim-v2-n6-cap-certificate.json.xz",
+     "cubes-n-dim-v2-n6-strip-certificate.json.xz"
+    ],
+    "path": "problems/cubes-n-dim/spectral/n6/ASSET.json",
+    "check": "python3 -I checkers/check_d6.py cap supplied/d6_spectral/certificate_cap65/certificate.json && python3 -I checkers/check_d6.py strip supplied/d6_spectral/certificate_cap795/certificate.json && python3 -I checkers/check_c5.py supplied/general_dimension/positive_c5_exact_tree.json.gz",
+    "check_cwd": "problems/cubes-n-dim/spectral/n6",
+    "documents": [
+     "problems/cubes-n-dim/spectral/n6/README.md",
+     "problems/cubes-n-dim/spectral/n6/supplied/d6_proof_handoff/PROOF.md"
     ]
    }
   ],
@@ -872,6 +933,25 @@
     "check_cwd": "problems/square-lower-bounds/certificates/mixed_n42_L68475",
     "documents": [
      "problems/square-lower-bounds/certificates/mixed_n42_L68475/README.md"
+    ]
+   },
+   {
+    "id": "square-lower-bounds-v1:certificates/mixed_n42_L68725",
+    "claim": "No packing of 42 closed unit squares fits in the closed square of side 2749/400 (= 6.8725).",
+    "release_tag": "square-lower-bounds-v1",
+    "assets": [
+     "certificates__mixed_n42_L68725.tar.gz"
+    ],
+    "path": "problems/square-lower-bounds/certificates/mixed_n42_L68725/ASSET.json",
+    "check": "tar xzf check2/src/sqverify-proof-net-fe12e036c.tar.gz\n(cd sqverify_fast && cargo build --release --locked)\nbash check2/src/fine_net_check.sh sqverify_fast/target/release/sqverify-fast candidate.json out/",
+    "check_cwd": "problems/square-lower-bounds/certificates/mixed_n42_L68725",
+    "documents": [
+     "problems/square-lower-bounds/certificates/mixed_n42_L68725/README.md",
+     "problems/square-lower-bounds/certificates/mixed_n42_L68725/check2/src/INDEPENDENCE.md",
+     "problems/square-lower-bounds/certificates/mixed_n42_L68725/check2/src/REPRODUCE.md",
+     "problems/square-lower-bounds/certificates/mixed_n42_L68725/check2/src/SOUNDNESS.md",
+     "problems/square-lower-bounds/certificates/mixed_n42_L68725/check2/src/SPEC.md",
+     "problems/square-lower-bounds/certificates/mixed_n42_L68725/provenance/search-notes.md"
     ]
    },
    {
@@ -6376,66 +6456,6 @@
    {
     "manifest": "problems/n17/manifest.json"
    }
-  ],
-  "cubes-n-dim": [
-   {
-    "id": "cubes-n-dim-v1:logs",
-    "claim": "s_4(2) = 2: two unit 4-cubes with disjoint interiors do not fit in a 4-cube of side < 2. The logs record the two independent computer checks of the far region (F_1(R) < 1 for R in O(4) with max_e R_e1^2 <= 2/3); the near region is the hand proof in PROOF.md.",
-    "release_tag": "cubes-n-dim-v1",
-    "assets": [
-     "cubes-n-dim-logs.tar.xz"
-    ],
-    "path": "problems/cubes-n-dim/ASSET.json",
-    "check": "python3 verify_logs.py logs",
-    "check_cwd": "problems/cubes-n-dim",
-    "documents": [
-     "problems/cubes-n-dim/README.md",
-     "problems/cubes-n-dim/PROOF.md"
-    ]
-   },
-   {
-    "id": "cubes-n-dim-v2:n3-n4",
-    "claim": "s_3(2) = s_4(2) = 2 (with spectral/PROOF.md): exact rational certificates that q(p) > 0 for max p_i <= 1 - 1/(n-1), n = 3, 4",
-    "path": "problems/cubes-n-dim/spectral/ASSET.json",
-    "check": "cd n3 && python3 -B ../checkers/check_spectral.py certificate.json && cd ../n4 && python3 -B ../checkers/check_spectral.py certificate.json",
-    "check_cwd": "problems/cubes-n-dim/spectral",
-    "documents": [
-     "problems/cubes-n-dim/spectral/README.md",
-     "problems/cubes-n-dim/spectral/PROOF.md"
-    ],
-    "assets": []
-   },
-   {
-    "id": "cubes-n-dim-v2:n5-certificate",
-    "claim": "q(p) > 0 on the ordered probability simplex in dimension 5 with p_1 <= 3/4 (second certificate, made by checkers/gen_spectral.py); with PROOF.md this gives Lemma F in dimension 5 and s_5(2) = 2",
-    "release_tag": "cubes-n-dim-v2",
-    "assets": [
-     "cubes-n-dim-v2-n5-certificate.json.xz"
-    ],
-    "path": "problems/cubes-n-dim/spectral/n5/ASSET.json",
-    "check": "python3 -B ../checkers/check_spectral.py certificate.json",
-    "check_cwd": "problems/cubes-n-dim/spectral/n5",
-    "documents": [
-     "problems/cubes-n-dim/spectral/README.md",
-     "problems/cubes-n-dim/spectral/PROOF.md"
-    ]
-   },
-   {
-    "id": "cubes-n-dim-v2:n6-certificates",
-    "claim": "s_6(2) = 2 (with supplied/d6_proof_handoff/PROOF.md): Lemma F holds for every 6-by-6 orthogonal matrix. Exact rational certificates for max p <= 13/20 (cap) and 13/20 <= max p <= 159/200 (strip), and the C5 tree (in the tree) for the near-axis region max p >= 141/200",
-    "release_tag": "cubes-n-dim-v2",
-    "assets": [
-     "cubes-n-dim-v2-n6-cap-certificate.json.xz",
-     "cubes-n-dim-v2-n6-strip-certificate.json.xz"
-    ],
-    "path": "problems/cubes-n-dim/spectral/n6/ASSET.json",
-    "check": "python3 -I checkers/check_d6.py cap supplied/d6_spectral/certificate_cap65/certificate.json && python3 -I checkers/check_d6.py strip supplied/d6_spectral/certificate_cap795/certificate.json && python3 -I checkers/check_c5.py supplied/general_dimension/positive_c5_exact_tree.json.gz",
-    "check_cwd": "problems/cubes-n-dim/spectral/n6",
-    "documents": [
-     "problems/cubes-n-dim/spectral/n6/README.md",
-     "problems/cubes-n-dim/spectral/n6/supplied/d6_proof_handoff/PROOF.md"
-    ]
-   }
   ]
  },
  "checks": [
@@ -6496,15 +6516,19 @@
  ],
  "lean": [
   {
+   "path": "lean/closed-form-layer-a",
+   "readme": true
+  },
+  {
    "path": "lean/n11-optimality",
    "readme": true
   },
   {
-   "path": "lean/triangle",
+   "path": "lean/rectangle-k2m4",
    "readme": true
   },
   {
-   "path": "lean/rectangle-k2m4",
+   "path": "lean/triangle",
    "readme": true
   },
   {
