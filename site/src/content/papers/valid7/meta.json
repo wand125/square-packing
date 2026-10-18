@@ -22,6 +22,11 @@
    "https://github.com/wand125/square-packing/tree/main/checks/valid7"
   ],
   [
+   "Lean v2",
+   "Lean 第 2 版",
+   "https://github.com/wand125/square-packing/tree/main/lean/valid7"
+  ],
+  [
    "Release records-v1",
    "Release records-v1",
    "https://github.com/wand125/valid7-independent-check/releases/tag/records-v1"
@@ -56,6 +61,13 @@
    "en": "The Lean versions (#8 Valid7 and #10 ValidTilt9) are marked complete, with their releases.",
    "ja": "Lean 版（#8 Valid7 と #10 ValidTilt9）を完了とし、それぞれの Release を添えた。",
    "commit": "0dd6ec9"
+  },
+  {
+   "v": "3",
+   "date": "2026-10-18",
+   "en": "Version 2 of the Lean check of Valid7 (lean/valid7, release valid7-lean-v2) is linked.",
+   "ja": "Valid7 の Lean による検査の第 2 版（lean/valid7、Release valid7-lean-v2）へのリンクを添えた。",
+   "commit": ""
   }
  ]
 }

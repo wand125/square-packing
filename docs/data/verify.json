@@ -84,6 +84,12 @@
    "source": "lean/triangle/README.md#L83-L101"
   },
   {
+   "tool": "lean/valid7",
+   "en": "The Lean library at commit c5c7f00 (branch validtilt9-kernel; the recorded run used Lean v4.33.1) and Python 3; ./fetch.sh LEAN_DIR downloads and checks the generated sources from release valid7-lean-v2, then python3 verify.py LEAN_DIR --jobs N. The recorded run used about 800 CPU hours and at most 37 GB for one module.",
+   "ja": "ライブラリはコミット `c5c7f00`（ブランチ `validtilt9-kernel`。記録した実行は Lean v4.33.1）と Python 3。`./fetch.sh LEAN_DIR` が Release `valid7-lean-v2` から生成したソースを取得して検査し、続けて `python3 verify.py LEAN_DIR --jobs N`。記録した実行は約 800 CPU 時間、1 モジュールで最大 37 GB。",
+   "source": "lean/valid7/README.md#L31-L43"
+  },
+  {
    "tool": "problems/domino, problems/triangle, problems/right-isosceles: checker/",
    "en": "Python 3.10+, standard library (pytest for the tests).",
    "ja": "Python 3.10+、標準ライブラリ (テストは pytest)。",
@@ -260,6 +266,19 @@
    "source": "lean/triangle/README.md"
   },
   {
+   "path": "lean/valid7",
+   "name": {
+    "en": "valid7 (Lean)",
+    "ja": "valid7（Lean）"
+   },
+   "what": {
+    "en": "Lean 4 kernel check of Valid7, version 2: s(k² − 3) = k for every k ≥ 6, from the certificates of version 1 (evand/square-packing PR #6). Only the standard axioms; no sorry, no native_decide.",
+    "ja": "Valid7 の Lean 4 カーネルによる検査、第 2 版：任意の k ≥ 6 について s(k² − 3) = k。証明書は第 1 版（evand/square-packing PR #6）のもの。標準の公理のみで、sorry も native_decide もない。"
+   },
+   "runtime": "Lean 4 (v4.33.1)",
+   "source": "lean/valid7/README.md"
+  },
+  {
    "path": "checks/valid7",
    "name": {
     "en": "valid7",
@@ -274,6 +293,7 @@
   }
  ],
  "releases": [
+  {"tag": "valid7-lean-v2", "name": "Valid7 in the Lean kernel (v2)", "date": "2026-10-17"},
   {"tag": "cubes-n-dim-v2", "name": "Two unit cubes in a cube, n = 3, 4, 5, 6 (v2)", "date": "2026-10-17"},
   {"tag": "cubes-n-dim-v1", "name": "s₄(2) = 2: two unit 4-cubes need a 4-cube of side 2", "date": "2026-10-16"},
   {"tag": "validtilt9-lean-v1", "name": "ValidTilt9 in the Lean kernel: s(k² − 4) = k for k ≥ 8", "date": "2026-10-16"},
