@@ -52,7 +52,7 @@
    "date": "2026-10-19",
    "en": "Adds n = 21: s(21) = 7, with cone leaves and the two-point lemma in the first checker (§3.2); the first checker's runs for n = 2 to 15 were redone with that version (§5).",
    "ja": "n = 21 を追加：s(21) = 7。第 1 の検査器の錐の葉と 2 点の補題（§3.2）。n = 2〜15 の第 1 の検査器の実行はその版でやり直した（§5）。",
-   "commit": ""
+   "commit": "5a81ce1"
   }
  ]
 }
