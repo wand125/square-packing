@@ -4,16 +4,16 @@
   "コンピュータ支援の証明 · Issue #13"
  ],
  "title": [
-  "Unit squares in a right isosceles triangle: optimal packings for \\(n = 2, 3, 4, 6, 10, 15\\)",
-  "直角二等辺三角形に入る単位正方形：\\(n = 2, 3, 4, 6, 10, 15\\) の最適な詰め方"
+  "Unit squares in a right isosceles triangle: optimal packings for \\(n = 2, 3, 4, 6, 10, 15, 21\\)",
+  "直角二等辺三角形に入る単位正方形：\\(n = 2, 3, 4, 6, 10, 15, 21\\) の最適な詰め方"
  ],
  "lead": [
-  "The best known packings for these six n are optimal. Each lower bound is a weighted point set, checked in exact arithmetic in Q(√2) by two independent checkers.",
-  "この 6 つの n について、知られている最良の詰め方が最適である。各下界は重み付きの点集合で、Q(√2) の厳密な計算により独立な 2 つの検査器で検査した。"
+  "The best known packings for these seven n are optimal. Each lower bound is a weighted point set, checked in exact arithmetic in Q(√2) by two independent checkers.",
+  "この 7 つの n について、知られている最良の詰め方が最適である。各下界は重み付きの点集合で、Q(√2) の厳密な計算により独立な 2 つの検査器で検査した。"
  ],
  "result": [
-  "\\(s(2) = 2\\sqrt2,\\ \\ s(3) = 3,\\ \\ s(4) = \\tfrac{5}{\\sqrt2},\\ \\ s(6) = 4,\\ \\ s(10) = 5,\\ \\ s(15) = 6\\)",
-  "\\(s(2) = 2\\sqrt2,\\ \\ s(3) = 3,\\ \\ s(4) = \\tfrac{5}{\\sqrt2},\\ \\ s(6) = 4,\\ \\ s(10) = 5,\\ \\ s(15) = 6\\)"
+  "\\(s(2) = 2\\sqrt2,\\ \\ s(3) = 3,\\ \\ s(4) = \\tfrac{5}{\\sqrt2},\\ \\ s(6) = 4,\\ \\ s(10) = 5,\\ \\ s(15) = 6,\\ \\ s(21) = 7\\)",
+  "\\(s(2) = 2\\sqrt2,\\ \\ s(3) = 3,\\ \\ s(4) = \\tfrac{5}{\\sqrt2},\\ \\ s(6) = 4,\\ \\ s(10) = 5,\\ \\ s(15) = 6,\\ \\ s(21) = 7\\)"
  ],
  "links": [
   [
@@ -46,6 +46,13 @@
    "en": "Adds n = 15: s(15) = 6, with the degenerate staircase (§3.1) and the second checker's sweep inside pose boxes (§5).",
    "ja": "n = 15 を追加：s(15) = 6。退化した階段の扱い（§3.1）と、第 2 の検査器の姿勢の箱の中での掃引（§5）。",
    "commit": "5100848"
+  },
+  {
+   "v": "3",
+   "date": "2026-10-19",
+   "en": "Adds n = 21: s(21) = 7, with cone leaves and the two-point lemma in the first checker (§3.2); the first checker's runs for n = 2 to 15 were redone with that version (§5).",
+   "ja": "n = 21 を追加：s(21) = 7。第 1 の検査器の錐の葉と 2 点の補題（§3.2）。n = 2〜15 の第 1 の検査器の実行はその版でやり直した（§5）。",
+   "commit": ""
   }
  ]
 }

@@ -305,8 +305,8 @@
     "ja": "主張する値 v の容器内の有限個の重み付き点集合。捕捉：容器内の閉じた単位正方形は、位置・角度によらず総重み 1 以上の点を含む（境界上の点も数える、余裕ゼロ）。予算：総重みが n 未満。容器ごとに独立な検査器を 2 つ用意する。厳密な体は Q(√3)、Q(√2)、Q(v4)。"
    },
    "used": {
-    "en": "Equilateral triangle n = 2, 3, 4, 6, 7, 11, 16, 22, 29 and lower bounds for n = 37 and 46; right isosceles triangle n = 2, 3, 4, 6, 10, 15; 1:2 rectangle n = 4.",
-    "ja": "正三角形 n = 2, 3, 4, 6, 7, 11, 16, 22, 29 と n = 37・46 の下界、直角二等辺三角形 n = 2, 3, 4, 6, 10, 15、1:2 の長方形 n = 4。"
+    "en": "Equilateral triangle n = 2, 3, 4, 6, 7, 11, 16, 22, 29 and lower bounds for n = 37 and 46; right isosceles triangle n = 2, 3, 4, 6, 10, 15, 21; 1:2 rectangle n = 4.",
+    "ja": "正三角形 n = 2, 3, 4, 6, 7, 11, 16, 22, 29 と n = 37・46 の下界、直角二等辺三角形 n = 2, 3, 4, 6, 10, 15, 21、1:2 の長方形 n = 4。"
    },
    "origin": {
     "en": "Packings are Erich Friedman's Packing Center entries; the certificates show they are optimal. We are not aware of earlier proofs.",
@@ -323,8 +323,8 @@
    "sources": [
     "problems/triangle/README.md#L1-L56",
     "problems/triangle/README.md#L77-L91",
-    "problems/right-isosceles/README.md#L1-L21",
-    "problems/right-isosceles/README.md#L30-L73",
+    "problems/right-isosceles/README.md#L1-L22",
+    "problems/right-isosceles/README.md#L31-L80",
     "problems/domino/README.md#L1-L67"
    ]
   },
@@ -339,8 +339,8 @@
     "ja": "Lemma P：距離ちょうど 1 の点 p, q について、pq に沿う弦が向かい合う 2 辺を横切り [p, q] と交わる正方形は p か q を含む。この組は min(w_p, w_q) と数える。wedge lemma（ドミノ）：極値の姿勢の近くでは、正方形は角の点か中心のいずれかを捉える。検査器 1 は Farkas 結合で証明し、検査器 2 はこの補題を用いない。風車の局所補題（六角形 n = 3）：風車の近くには、互いに素な閉じた単位正方形の 3 つ組は存在しない。厳密な恒等式を sympy で、半径の条件を厳密な有理数で検査する。"
    },
    "used": {
-    "en": "Lemma P: triangle n = 4 and series, right isosceles n = 4, 6, 10, 15. Wedge lemma: 1:2 rectangle n = 4. Pinwheel local lemma: hexagon n = 3; a lemma on three squares closes triangle n = 6.",
-    "ja": "Lemma P：正三角形 n = 4 と系列、直角二等辺三角形 n = 4, 6, 10, 15。wedge lemma：1:2 長方形 n = 4。風車の局所補題：六角形 n = 3。正三角形 n = 6 は 3 つの正方形に関する補題で閉じる。"
+    "en": "Lemma P: triangle n = 4 and series, right isosceles n = 4, 6, 10, 15, 21. Wedge lemma: 1:2 rectangle n = 4. Pinwheel local lemma: hexagon n = 3; a lemma on three squares closes triangle n = 6.",
+    "ja": "Lemma P：正三角形 n = 4 と系列、直角二等辺三角形 n = 4, 6, 10, 15, 21。wedge lemma：1:2 長方形 n = 4。風車の局所補題：六角形 n = 3。正三角形 n = 6 は 3 つの正方形に関する補題で閉じる。"
    },
    "origin": {
     "en": "",
@@ -354,7 +354,7 @@
    ],
    "sources": [
     "problems/triangle/README.md#L73-L76",
-    "problems/right-isosceles/README.md#L55-L60",
+    "problems/right-isosceles/README.md#L56-L61",
     "problems/domino/README.md#L42-L50",
     "problems/hexagon/README.md#L38-L45",
     "problems/triangle/README.md#L58-L71"

@@ -93,13 +93,13 @@
    "tool": "problems/domino, problems/triangle, problems/right-isosceles: checker/",
    "en": "Python 3.10+, standard library (pytest for the tests).",
    "ja": "Python 3.10+、標準ライブラリ (テストは pytest)。",
-   "source": "problems/right-isosceles/README.md#L75-L90"
+   "source": "problems/right-isosceles/README.md#L82-L99"
   },
   {
    "tool": "problems/domino, problems/triangle, problems/right-isosceles: checker2/",
    "en": "Python with gmpy2 and sympy (sudo apt install python3-gmpy2 python3-sympy python3-pytest).",
    "ja": "Python と gmpy2、sympy (`sudo apt install python3-gmpy2 python3-sympy python3-pytest`)。",
-   "source": "problems/right-isosceles/README.md#L75-L96"
+   "source": "problems/right-isosceles/README.md#L82-L106"
   },
   {
    "tool": "problems/hexagon: stage1_checker, stage1_checker2, stage2_checker, stage2_checker2",

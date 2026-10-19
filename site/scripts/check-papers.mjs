@@ -217,7 +217,7 @@ try {
       await waitFor(`document.querySelector(${JSON.stringify(sel+' .cb-rot')}).getAttribute('points')!==${JSON.stringify(before)}`);
      } else {
       await waitFor(`+document.querySelector(${JSON.stringify(sel)}).dataset.n===4`); // the figure opens on n = 4 (start)
-      for(const [index,n,count] of [[1,2,0],[2,3,0],[3,4,1],[4,6,4],[5,10,8],[6,15,152]]){
+      for(const [index,n,count] of [[1,2,0],[2,3,0],[3,4,1],[4,6,4],[5,10,8],[6,15,152],[7,21,418]]){
        await click(sel+` .vz-chips button:nth-child(${index})`);await waitFor(`+document.querySelector(${JSON.stringify(sel)}).dataset.n===${n}`);
        assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(sel+' .vz-pair')}).length`),count);
       }
