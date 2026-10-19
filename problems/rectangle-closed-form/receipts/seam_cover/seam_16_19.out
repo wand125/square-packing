@@ -1,0 +1,4 @@
+$ python3 checker/seam_cover.py rectangle-closed-form-v1/roots_r5.json rectangle-closed-form-v1/seam_16_19/L0/record.rec rectangle-closed-form-v1/seam_16_19/L1/record.rec
+grid 17550, listed 11206, left out 6344, left out without proof 0
+pieces 11815, uncertified leaves 0, inside True, disjoint True, volume equal True
+SEAM_COVER OK

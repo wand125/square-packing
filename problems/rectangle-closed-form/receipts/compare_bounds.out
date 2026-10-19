@@ -1,0 +1,4 @@
+$ python3 checker/compare_bounds.py
+stronger than area: all 257, part 3, none 335 (of 595 pairs)
+stronger than karakus: all 231, part 6, none 358 (of 595 pairs)
+COMPARE OK

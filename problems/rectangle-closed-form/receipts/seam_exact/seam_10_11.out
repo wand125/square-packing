@@ -1,0 +1,7 @@
+$ python3 checker/seam_exact.py rectangle-closed-form-v1/seam_10_11/family_final.json families/interval_0.41_0.42/family.json families/interval_0.42_0.425/family.json --dominates rectangle-closed-form-v1/seam_10_11/L0/family.json
+structure left [S-3, S): OK
+structure right [S+n, S+n+3): OK
+band left x < S+d: OK
+band right x > S+n-d: OK
+dominates L0/family.json: OK
+extra mass e = 3543/25000 | SEAM_EXACT OK

@@ -20,6 +20,7 @@ command, and every checker, tool and Lean project.
 | `problems/hexagon/` | Unit squares in a regular hexagon |
 | `problems/rectangles/` | Unit squares in a rectangle: certified constructions along the edges F_k (k = 2 to 15) |
 | `problems/rectangle-upper-bounds/` | Unit squares in a rectangle just below integer size: at most AB − 5 for integers A, B ≥ 8, computer-assisted with two independent checkers |
+| `problems/rectangle-closed-form/` | Unit squares in a rectangle with real sides: ν(a, b) ≤ ab − 2S(δ_a) − 2S(δ_b) + 4E for sides from about 7 on, extending the closed form; seams and lemmas R1, R2 checked by two independent checkers (release `rectangle-closed-form-v1`) |
 | `problems/closed-form/` | A closed-form lower bound a(N) on s(N) for every non-square N ≥ 49, certified on 34 intervals (release `closed-form-v1`) |
 | `problems/cubes-in-cube/` | Unit cubes in a cube: s₃(9) = s₃(10) = 2 + 1/√2, by an 8-point lemma checked by two independent interval branch-and-bound checkers |
 | `problems/cubes-n-dim/` | Two unit cubes in a cube: s₄(2) = 2 by hand near the axes and two interval branch-and-bound checkers (release `cubes-n-dim-v1`); in `spectral/`, s_n(2) = 2 for n = 3, 4, 5 by a spectral bound and short exact rational certificates, and for n = 6 in `spectral/n6/` (release `cubes-n-dim-v2`) |

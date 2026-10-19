@@ -1,0 +1,21 @@
+Independent exact rectangle R1/R2 checker, all intervals; Fraction arithmetic
+SHA256 rect_r1r2_all.py 342a7a54dc816efa63f4be542dd5cbed7edfd01d19d3953dfe169501aa5d7d77
+SHA256 intervals.json a91b0b49988bc5bf8977d1e9f61e2930e2cb1be136bd4ff3140b5ee263591c0c
+interval  1 [0, 1/50] interval_0_0.02/family.json: PASS (341/341 checks, 4.9 s)
+interval  2 [1/50, 1/20] interval_0.02_0.05/family.json: PASS (341/341 checks, 6.3 s)
+interval  3 [1/20, 3/25] interval_0.05_0.12/family.json: PASS (341/341 checks, 7.3 s)
+interval  4 [3/25, 4/25] interval_0.12_0.16/family.json: PASS (341/341 checks, 7.6 s)
+interval  5 [4/25, 1/5] interval_0.16_0.2/family.json: PASS (341/341 checks, 8.6 s)
+interval  6 [1/5, 19/50] interval_0.2_0.38/family.json: PASS (341/341 checks, 4.7 s)
+interval  7 [19/50, 2/5] interval_0.38_0.4/family.json: PASS (341/341 checks, 5.8 s)
+interval  8 [2/5, 81/200] interval_0.4_0.405/family.json: PASS (341/341 checks, 4.2 s)
+interval  9 [81/200, 41/100] interval_0.405_0.41/family.json: PASS (341/341 checks, 4.6 s)
+interval 10 [41/100, 21/50] interval_0.41_0.42/family.json: PASS (341/341 checks, 4.9 s)
+interval 11 [21/50, 17/40] interval_0.42_0.425/family.json: PASS (341/341 checks, 4.7 s)
+interval 12 [17/40, 43/100] interval_0.425_0.43/family.json: PASS (341/341 checks, 3.9 s)
+interval 13 [43/100, 87/200] interval_0.43_0.435/family.json: PASS (341/341 checks, 3.5 s)
+interval 14 [87/200, 11/25] interval_0.435_0.44/family.json: PASS (341/341 checks, 3.5 s)
+interval 15 [11/25, 89/200] interval_0.44_0.445/family.json: PASS (341/341 checks, 3.5 s)
+interval 16 [89/200, 9/20] interval_0.445_0.45/family.json: PASS (341/341 checks, 3.2 s)
+interval 17 [9/20, 91/200] interval_0.45_0.455/family.json: PASS (341/341 checks, 3.2 s)
+SUMMARY: 17/17 intervals PASS, 0 FAIL; runtime 84.4 s

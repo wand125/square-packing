@@ -1,0 +1,6 @@
+$ python3 checker/paths.py
+same interval 34 {'part': 1, 'all': 33} largest k0 among useful 7
+different intervals 561 {'none': 335, 'all': 224, 'part': 2} largest k0 among useful 18
+largest E 2907373/1000000 (2.907373) for intervals 1 34 r 16 k0 54
+largest number of frontier steps 1
+PATHS OK

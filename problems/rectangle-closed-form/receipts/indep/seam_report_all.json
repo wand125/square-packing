@@ -1,0 +1,3539 @@
+{
+ "profiles": {
+  "038_040": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i002_005": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i005_012": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i012_020_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i012_020_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i020_038": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i040_042_a_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i040_042_a_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i040_042_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_a_a_a_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_a_a_a_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_a_a_b_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_a_a_b_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_a_b_a_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_a_b_a_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_a_b_b_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_a_b_b_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_b_a_a_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_b_a_a_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_b_a_b_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_b_a_b_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_b_b_a_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_b_b_a_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_b_b_b_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i042_050_b_b_b_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i050_060": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i060_080_a_a_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i060_080_a_a_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i060_080_a_b_a": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i060_080_a_b_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i060_080_b": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i080_099": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "i099_100": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  },
+  "zero_aa": {
+   "mass": "9/5",
+   "mass_is_9/5": true
+  }
+ },
+ "item4": {
+  "grid_roots": 17550,
+  "touching_roots": 11206,
+  "shared_list_equal": true
+ },
+ "pairs": {
+  "038_040__i040_042_a_a": {
+   "pair": "038_040__i040_042_a_a",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "217439/1000000",
+      "e_recorded_in_family": "217439/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "217439/1000000",
+    "e_recorded": "217439/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "217439/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12291,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "2/2",
+      "ok": true,
+      "roots": 12291,
+      "leaves": 97982,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 3135,
+       "B3T:y": 13,
+       "B3U:y": 4404,
+       "CORE": 32900,
+       "CORE1:Ty": 3932,
+       "CORE1:y": 45296,
+       "EDGE": 2255,
+       "EMPTY": 6047
+      },
+      "cpu_seconds": 7610.748691021997
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i002_005__i005_012": {
+   "pair": "i002_005__i005_012",
+   "levels": [
+    "L0",
+    "L1"
+   ],
+   "final_family": "L1/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "7657/40000",
+      "e_recorded_in_family": "7657/40000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "35949/200000",
+      "e_recorded_in_family": "35949/200000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "7657/40000",
+    "e_recorded": "7657/40000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "7657/40000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12564,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "13/13",
+      "ok": true,
+      "roots": 12083,
+      "leaves": 198312,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 22176,
+       "B3T:y": 81,
+       "B3U:y": 1390,
+       "CORE": 78451,
+       "CORE1:Ty": 67187,
+       "CORE1:y": 22735,
+       "EDGE": 2213,
+       "EMPTY": 4077,
+       "CORE1:P": 2
+      },
+      "cpu_seconds": 232874.21118314797
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 481,
+      "leaves": 481,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 278,
+       "CORE": 147,
+       "CORE1:Ty": 56
+      },
+      "cpu_seconds": 2741.331287869
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i005_012__i012_020_a": {
+   "pair": "i005_012__i012_020_a",
+   "levels": [
+    "L0",
+    "L1",
+    "L2"
+   ],
+   "final_family": "fam_r5.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "28043/250000",
+      "e_recorded_in_family": "28043/250000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "103969/1000000",
+      "e_recorded_in_family": "103969/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam_r5.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "23861/200000",
+      "e_recorded_in_family": "23861/200000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "L2/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "14663/125000",
+      "e_recorded_in_family": "14663/125000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "23861/200000",
+    "e_recorded": "23861/200000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "23861/200000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": false,
+     "L1/fam_fix.json": false,
+     "L2/fam_fix.json": false
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "L1/fam_fix.json",
+      "to": "L2/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "fam.json",
+      "to": "fam_r5.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "L1/fam_fix.json",
+      "to": "fam_r5.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "L2/fam_fix.json",
+      "to": "fam_r5.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12802,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "11/11",
+      "ok": true,
+      "roots": 9063,
+      "leaves": 171164,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 13408,
+       "B3T:y": 157,
+       "B3U:y": 49,
+       "CORE": 58052,
+       "CORE1:Ty": 79737,
+       "CORE1:y": 15093,
+       "EDGE": 1535,
+       "EMPTY": 3132,
+       "CORE1:P": 1
+      },
+      "cpu_seconds": 201987.525624924
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "10/10",
+      "ok": true,
+      "roots": 3731,
+      "leaves": 107810,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 24782,
+       "B3T:y": 82,
+       "B3U:y": 136,
+       "CORE": 36397,
+       "CORE1:Ty": 31842,
+       "CORE1:y": 13130,
+       "EDGE": 704,
+       "EMPTY": 736,
+       "CORE1:P": 1
+      },
+      "cpu_seconds": 149387.984787791
+     },
+     {
+      "record": "L2/merged.rec",
+      "family": "L2/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 8,
+      "leaves": 8,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 8
+      },
+      "cpu_seconds": 18.881625716
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i012_020_a__i012_020_b": {
+   "pair": "i012_020_a__i012_020_b",
+   "levels": [
+    "L0",
+    "L1",
+    "L2"
+   ],
+   "final_family": "fam_r5.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "85581/1000000",
+      "e_recorded_in_family": "85581/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "38279/500000",
+      "e_recorded_in_family": "38279/500000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam_r5.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "47449/500000",
+      "e_recorded_in_family": "47449/500000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "L2/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "92897/1000000",
+      "e_recorded_in_family": "92897/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "47449/500000",
+    "e_recorded": "47449/500000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "47449/500000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": false,
+     "L1/fam_fix.json": false,
+     "L2/fam_fix.json": false
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "L1/fam_fix.json",
+      "to": "L2/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "fam.json",
+      "to": "fam_r5.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "L1/fam_fix.json",
+      "to": "fam_r5.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "L2/fam_fix.json",
+      "to": "fam_r5.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 13467,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "25/25",
+      "ok": true,
+      "roots": 13087,
+      "leaves": 322179,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 53450,
+       "B3T:y": 286,
+       "B3U:y": 490,
+       "CORE": 107805,
+       "CORE1:Ty": 109888,
+       "CORE1:y": 43322,
+       "EDGE": 2538,
+       "EMPTY": 4395,
+       "CORE1:P": 5
+      },
+      "cpu_seconds": 476334.940630358
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 215,
+      "leaves": 215,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 86,
+       "B3T:y": 19,
+       "CORE": 80,
+       "CORE1:Ty": 30
+      },
+      "cpu_seconds": 127.55350636099999
+     },
+     {
+      "record": "L2/merged.rec",
+      "family": "L2/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 165,
+      "leaves": 165,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 90,
+       "CORE": 52,
+       "CORE1:Ty": 23
+      },
+      "cpu_seconds": 216.594467086
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i012_020_b__i020_038": {
+   "pair": "i012_020_b__i020_038",
+   "levels": [
+    "L0",
+    "L1",
+    "L2",
+    "L3"
+   ],
+   "final_family": "L3/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L3/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "33231/200000",
+      "e_recorded_in_family": "33231/200000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "L2/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "80507/500000",
+      "e_recorded_in_family": "80507/500000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "19429/125000",
+      "e_recorded_in_family": "19429/125000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "142237/1000000",
+      "e_recorded_in_family": "142237/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "33231/200000",
+    "e_recorded": "33231/200000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "33231/200000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true,
+     "L1/fam_fix.json": true,
+     "L2/fam_fix.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "L1/fam_fix.json",
+      "to": "L2/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "L2/fam_fix.json",
+      "to": "L3/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12683,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "4/4",
+      "ok": true,
+      "roots": 12446,
+      "leaves": 108374,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 7770,
+       "B3T:y": 56,
+       "B3U:y": 3405,
+       "CORE": 44755,
+       "CORE1:P": 9,
+       "CORE1:Ty": 13540,
+       "CORE1:y": 33680,
+       "EDGE": 2316,
+       "EMPTY": 2843
+      },
+      "cpu_seconds": 45596.18456791799
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 230,
+      "leaves": 563,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 284,
+       "CORE": 236,
+       "CORE1:Ty": 31,
+       "EMPTY": 12
+      },
+      "cpu_seconds": 1835.6153055050004
+     },
+     {
+      "record": "L2/merged.rec",
+      "family": "L2/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 2,
+      "leaves": 2,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 2
+      },
+      "cpu_seconds": 22.959996036
+     },
+     {
+      "record": "L3/merged.rec",
+      "family": "L3/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 5,
+      "leaves": 5,
+      "refusals": 0,
+      "kinds": {
+       "CORE": 5
+      },
+      "cpu_seconds": 0.03527654300000001
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i020_038__038_040": {
+   "pair": "i020_038__038_040",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "397227/1000000",
+      "e_recorded_in_family": "397227/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "397227/1000000",
+    "e_recorded": "397227/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "397227/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12494,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "13/13",
+      "ok": true,
+      "roots": 12494,
+      "leaves": 224580,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 25209,
+       "B3U:y": 5906,
+       "CORE": 92763,
+       "CORE1:Ty": 56204,
+       "CORE1:y": 37901,
+       "EDGE": 2075,
+       "EMPTY": 4416,
+       "B3T:y": 103,
+       "CORE1:P": 3
+      },
+      "cpu_seconds": 74538.53728208301
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i040_042_a_a__i040_042_a_b": {
+   "pair": "i040_042_a_a__i040_042_a_b",
+   "levels": [
+    "R1"
+   ],
+   "final_family": "fam_r1.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam_r1.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "73757/1000000",
+      "e_recorded_in_family": "73757/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "73757/1000000",
+    "e_recorded": "73757/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "73757/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "own",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11234,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam_r1.json",
+      "parts": "8/8",
+      "ok": true,
+      "roots": 11234,
+      "leaves": 178184,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 19663,
+       "B3T:y": 22,
+       "B3U:y": 1865,
+       "CORE": 78829,
+       "CORE1:Ty": 13235,
+       "CORE1:y": 43594,
+       "EDGE": 2076,
+       "EMPTY": 18900
+      },
+      "cpu_seconds": 24623.871256286002
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i040_042_b__i042_050_a_a_a_a": {
+   "pair": "i040_042_b__i042_050_a_a_a_a",
+   "levels": [
+    "L0",
+    "L1"
+   ],
+   "final_family": "L1/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "3543/25000",
+      "e_recorded_in_family": "3543/25000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "32621/250000",
+      "e_recorded_in_family": "32621/250000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "3543/25000",
+    "e_recorded": "3543/25000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "3543/25000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 13292,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "6/6",
+      "ok": true,
+      "roots": 12553,
+      "leaves": 110493,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 12903,
+       "B3T:y": 513,
+       "B3U:y": 1516,
+       "CORE": 40509,
+       "CORE1:Ty": 22257,
+       "CORE1:y": 27895,
+       "EDGE": 1956,
+       "EMPTY": 2944
+      },
+      "cpu_seconds": 23661.843263652998
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 739,
+      "leaves": 739,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 7,
+       "CORE": 530,
+       "CORE1:Ty": 202
+      },
+      "cpu_seconds": 45.43516226800001
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_a_a_a_a__i042_050_a_a_a_b": {
+   "pair": "i042_050_a_a_a_a__i042_050_a_a_a_b",
+   "levels": [
+    "R1"
+   ],
+   "final_family": "fam_r1.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam_r1.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "66143/1000000",
+      "e_recorded_in_family": "66143/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "66143/1000000",
+    "e_recorded": "66143/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "66143/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "own",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11206,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "record_part1.rec",
+      "family": "fam_r1.json",
+      "parts": "9/9",
+      "ok": true,
+      "roots": 10187,
+      "leaves": 155399,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 17681,
+       "B3T:y": 161,
+       "B3U:y": 2206,
+       "CORE": 63577,
+       "CORE1:Ty": 44349,
+       "CORE1:y": 20522,
+       "EDGE": 1895,
+       "EMPTY": 5008
+      },
+      "cpu_seconds": 35278.64698070999
+     },
+     {
+      "record": "record_part2.rec",
+      "family": "fam_r1.json",
+      "parts": "2/2",
+      "ok": true,
+      "roots": 1019,
+      "leaves": 17791,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 2606,
+       "B3T:y": 3,
+       "CORE": 7185,
+       "CORE1:Ty": 6600,
+       "CORE1:y": 682,
+       "EDGE": 164,
+       "EMPTY": 551
+      },
+      "cpu_seconds": 6327.3439243190005
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_a_a_a_a__i042_050_b_a_a_a": {
+   "pair": "i042_050_a_a_a_a__i042_050_b_a_a_a",
+   "levels": [
+    "L0",
+    "L1",
+    "L2"
+   ],
+   "final_family": "L2/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "34633/500000",
+      "e_recorded_in_family": "34633/500000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "63199/1000000",
+      "e_recorded_in_family": "63199/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "L2/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "75759/1000000",
+      "e_recorded_in_family": "75759/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "75759/1000000",
+    "e_recorded": "75759/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "75759/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true,
+     "L1/fam_fix.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "L1/fam_fix.json",
+      "to": "L2/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12459,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "11/11",
+      "ok": true,
+      "roots": 11770,
+      "leaves": 167487,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 23410,
+       "B3T:y": 376,
+       "B3U:y": 2206,
+       "CORE": 64600,
+       "CORE1:Ty": 47737,
+       "CORE1:y": 21258,
+       "EDGE": 2060,
+       "EMPTY": 5840
+      },
+      "cpu_seconds": 37305.097141949
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 552,
+      "leaves": 1257,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 90,
+       "B3T:y": 163,
+       "CORE": 28,
+       "CORE1:Ty": 976
+      },
+      "cpu_seconds": 540.9716595179999
+     },
+     {
+      "record": "L2/merged.rec",
+      "family": "L2/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 137,
+      "leaves": 515,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 52,
+       "CORE": 61,
+       "CORE1:Ty": 402
+      },
+      "cpu_seconds": 221.63511596000004
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_a_a_a_b__i042_050_b_a_a_a": {
+   "pair": "i042_050_a_a_a_b__i042_050_b_a_a_a",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "6613/100000",
+      "e_recorded_in_family": "6613/100000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "6613/100000",
+    "e_recorded": "6613/100000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "6613/100000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11339,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "8/8",
+      "ok": true,
+      "roots": 11339,
+      "leaves": 143548,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 18069,
+       "B3T:y": 132,
+       "B3U:y": 2342,
+       "CORE": 61571,
+       "CORE1:Ty": 29058,
+       "CORE1:y": 22823,
+       "EDGE": 2033,
+       "EMPTY": 7520
+      },
+      "cpu_seconds": 24170.610981609
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_a_a_b_a__i042_050_b_a_a_a": {
+   "pair": "i042_050_a_a_b_a__i042_050_b_a_a_a",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "6699/100000",
+      "e_recorded_in_family": "6699/100000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "6699/100000",
+    "e_recorded": "6699/100000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "6699/100000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11290,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "8/8",
+      "ok": true,
+      "roots": 11290,
+      "leaves": 137544,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 17003,
+       "B3T:y": 69,
+       "B3U:y": 2205,
+       "CORE": 59759,
+       "CORE1:Ty": 29651,
+       "CORE1:y": 20178,
+       "EDGE": 2169,
+       "EMPTY": 6510
+      },
+      "cpu_seconds": 22739.413808725003
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_a_a_b_b__i042_050_b_a_a_a": {
+   "pair": "i042_050_a_a_b_b__i042_050_b_a_a_a",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "2201/40000",
+      "e_recorded_in_family": "2201/40000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "2201/40000",
+    "e_recorded": "2201/40000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "2201/40000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11304,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "10/10",
+      "ok": true,
+      "roots": 11304,
+      "leaves": 169569,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 24434,
+       "B3T:y": 24,
+       "CORE": 78065,
+       "CORE1:Ty": 26314,
+       "CORE1:y": 21123,
+       "EDGE": 2026,
+       "EMPTY": 15385,
+       "B3U:y": 2198
+      },
+      "cpu_seconds": 25764.949248035
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_a_b_a_a__i042_050_b_a_a_a": {
+   "pair": "i042_050_a_b_a_a__i042_050_b_a_a_a",
+   "levels": [
+    "L0",
+    "L1"
+   ],
+   "final_family": "L1/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "59519/1000000",
+      "e_recorded_in_family": "59519/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "13501/250000",
+      "e_recorded_in_family": "13501/250000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "59519/1000000",
+    "e_recorded": "59519/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "59519/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12718,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "9/9",
+      "ok": true,
+      "roots": 11783,
+      "leaves": 163272,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 20331,
+       "B3T:y": 648,
+       "B3U:y": 4976,
+       "CORE": 62576,
+       "CORE1:Ty": 33956,
+       "CORE1:y": 32587,
+       "EDGE": 2183,
+       "EMPTY": 6015
+      },
+      "cpu_seconds": 25807.090499183003
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 935,
+      "leaves": 935,
+      "refusals": 0,
+      "kinds": {
+       "CORE": 719,
+       "CORE1:y": 216
+      },
+      "cpu_seconds": 5.048506787000001
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_a_b_a_b__i042_050_b_a_a_a": {
+   "pair": "i042_050_a_b_a_b__i042_050_b_a_a_a",
+   "levels": [
+    "L0",
+    "L1"
+   ],
+   "final_family": "L1/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "181/2500",
+      "e_recorded_in_family": "181/2500",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "6681/100000",
+      "e_recorded_in_family": "6681/100000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "181/2500",
+    "e_recorded": "181/2500",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "181/2500"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11815,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "11/11",
+      "ok": true,
+      "roots": 11492,
+      "leaves": 181317,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 29782,
+       "B3T:y": 20,
+       "B3U:y": 3718,
+       "CORE": 78794,
+       "CORE1:Ty": 22268,
+       "CORE1:y": 24874,
+       "EDGE": 2180,
+       "EMPTY": 19681
+      },
+      "cpu_seconds": 22884.164963573003
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 323,
+      "leaves": 562,
+      "refusals": 0,
+      "kinds": {
+       "B3U:y": 4,
+       "CORE": 196,
+       "CORE1:y": 362
+      },
+      "cpu_seconds": 5.132232257999999
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_a_b_b_a__i042_050_b_a_a_a": {
+   "pair": "i042_050_a_b_b_a__i042_050_b_a_a_a",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "4351/62500",
+      "e_recorded_in_family": "4351/62500",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "4351/62500",
+    "e_recorded": "4351/62500",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "4351/62500"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11311,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "11/11",
+      "ok": true,
+      "roots": 11311,
+      "leaves": 173945,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 30260,
+       "B3T:y": 25,
+       "B3U:y": 2198,
+       "CORE": 75463,
+       "CORE1:Ty": 25698,
+       "CORE1:y": 20104,
+       "EDGE": 2003,
+       "EMPTY": 18194
+      },
+      "cpu_seconds": 26205.286269611
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_a_b_b_b__i042_050_b_a_a_a": {
+   "pair": "i042_050_a_b_b_b__i042_050_b_a_a_a",
+   "levels": [
+    "L0",
+    "L1",
+    "L2"
+   ],
+   "final_family": "L2/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "70047/1000000",
+      "e_recorded_in_family": "70047/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "32393/500000",
+      "e_recorded_in_family": "32393/500000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "L2/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "75509/1000000",
+      "e_recorded_in_family": "75509/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "75509/1000000",
+    "e_recorded": "75509/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "75509/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true,
+     "L1/fam_fix.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "L1/fam_fix.json",
+      "to": "L2/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 13243,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "9/9",
+      "ok": true,
+      "roots": 12610,
+      "leaves": 145909,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 19366,
+       "B3T:y": 25,
+       "B3U:y": 4469,
+       "CORE": 57532,
+       "CORE1:Ty": 28592,
+       "CORE1:y": 28984,
+       "EDGE": 2199,
+       "EMPTY": 4742
+      },
+      "cpu_seconds": 26212.933511713
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 111,
+      "leaves": 950,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 52,
+       "B3U:y": 388,
+       "CORE": 148,
+       "CORE1:y": 362
+      },
+      "cpu_seconds": 27.589788667
+     },
+     {
+      "record": "L2/merged.rec",
+      "family": "L2/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 522,
+      "leaves": 1610,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 12,
+       "B3U:y": 272,
+       "CORE": 368,
+       "CORE1:y": 958
+      },
+      "cpu_seconds": 35.84004842400001
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_b_a_a_a__i042_050_b_a_a_b": {
+   "pair": "i042_050_b_a_a_a__i042_050_b_a_a_b",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "55433/1000000",
+      "e_recorded_in_family": "55433/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "55433/1000000",
+    "e_recorded": "55433/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "55433/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12382,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "11/11",
+      "ok": true,
+      "roots": 12382,
+      "leaves": 170280,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 21855,
+       "B3T:y": 128,
+       "B3U:y": 2198,
+       "CORE": 70676,
+       "CORE1:Ty": 45673,
+       "CORE1:y": 20964,
+       "EDGE": 2023,
+       "EMPTY": 6763
+      },
+      "cpu_seconds": 28268.246383148
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_b_a_a_a__i042_050_b_a_b_a": {
+   "pair": "i042_050_b_a_a_a__i042_050_b_a_b_a",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "7247/125000",
+      "e_recorded_in_family": "7247/125000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "7247/125000",
+    "e_recorded": "7247/125000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "7247/125000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11297,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "9/9",
+      "ok": true,
+      "roots": 11297,
+      "leaves": 167435,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 22226,
+       "B3T:y": 25,
+       "B3U:y": 2294,
+       "CORE": 76464,
+       "CORE1:Ty": 26598,
+       "CORE1:y": 23864,
+       "EDGE": 2014,
+       "EMPTY": 13950
+      },
+      "cpu_seconds": 21758.998186726
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_b_a_a_a__i042_050_b_a_b_b": {
+   "pair": "i042_050_b_a_a_a__i042_050_b_a_b_b",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "1044/15625",
+      "e_recorded_in_family": "1044/15625",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "1044/15625",
+    "e_recorded": "1044/15625",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "1044/15625"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11304,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "9/9",
+      "ok": true,
+      "roots": 11304,
+      "leaves": 153986,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 18247,
+       "B3T:y": 60,
+       "B3U:y": 2198,
+       "CORE": 67331,
+       "CORE1:Ty": 36855,
+       "CORE1:y": 19232,
+       "EDGE": 2023,
+       "EMPTY": 8040
+      },
+      "cpu_seconds": 27871.612322655998
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_b_a_a_a__i042_050_b_b_a_a": {
+   "pair": "i042_050_b_a_a_a__i042_050_b_b_a_a",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "10997/200000",
+      "e_recorded_in_family": "10997/200000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "10997/200000",
+    "e_recorded": "10997/200000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "10997/200000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11304,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "10/10",
+      "ok": true,
+      "roots": 11304,
+      "leaves": 168677,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 21006,
+       "B3T:y": 154,
+       "CORE": 70220,
+       "CORE1:Ty": 45368,
+       "CORE1:y": 20948,
+       "EDGE": 2022,
+       "EMPTY": 6761,
+       "B3U:y": 2198
+      },
+      "cpu_seconds": 33337.398317258005
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_b_a_a_a__i042_050_b_b_a_b": {
+   "pair": "i042_050_b_a_a_a__i042_050_b_b_a_b",
+   "levels": [
+    "L0",
+    "L1",
+    "L2"
+   ],
+   "final_family": "L2/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "70917/1000000",
+      "e_recorded_in_family": "70917/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "32691/500000",
+      "e_recorded_in_family": "32691/500000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "L2/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "39059/500000",
+      "e_recorded_in_family": "39059/500000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "39059/500000",
+    "e_recorded": "39059/500000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "39059/500000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true,
+     "L1/fam_fix.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     },
+     {
+      "from": "L1/fam_fix.json",
+      "to": "L2/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11885,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "8/8",
+      "ok": true,
+      "roots": 11523,
+      "leaves": 144572,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 18109,
+       "B3T:y": 49,
+       "B3U:y": 3806,
+       "CORE": 58606,
+       "CORE1:Ty": 28660,
+       "CORE1:y": 27920,
+       "EDGE": 2180,
+       "EMPTY": 5241,
+       "CORE1:P": 1
+      },
+      "cpu_seconds": 27496.236760711003
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 100,
+      "leaves": 227,
+      "refusals": 0,
+      "kinds": {
+       "B3U:y": 36,
+       "CORE": 38,
+       "CORE1:y": 153
+      },
+      "cpu_seconds": 5.174475447
+     },
+     {
+      "record": "L2/merged.rec",
+      "family": "L2/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 262,
+      "leaves": 288,
+      "refusals": 0,
+      "kinds": {
+       "CORE": 181,
+       "CORE1:y": 107
+      },
+      "cpu_seconds": 4.117411517
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_b_a_a_a__i042_050_b_b_b_a": {
+   "pair": "i042_050_b_a_a_a__i042_050_b_b_b_a",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "319/5000",
+      "e_recorded_in_family": "319/5000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "319/5000",
+    "e_recorded": "319/5000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "319/5000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11297,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "8/8",
+      "ok": true,
+      "roots": 11297,
+      "leaves": 138559,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 16930,
+       "B3T:y": 62,
+       "B3U:y": 2280,
+       "CORE": 58888,
+       "CORE1:Ty": 29474,
+       "CORE1:y": 22733,
+       "EDGE": 2231,
+       "EMPTY": 5961
+      },
+      "cpu_seconds": 27050.002131833
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_b_a_a_a__i042_050_b_b_b_b": {
+   "pair": "i042_050_b_a_a_a__i042_050_b_b_b_b",
+   "levels": [
+    "L0",
+    "L1"
+   ],
+   "final_family": "L1/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "69863/1000000",
+      "e_recorded_in_family": "69863/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "64827/1000000",
+      "e_recorded_in_family": "64827/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "69863/1000000",
+    "e_recorded": "69863/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "69863/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 11416,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "8/8",
+      "ok": true,
+      "roots": 11395,
+      "leaves": 149187,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 17712,
+       "B3T:y": 826,
+       "B3U:y": 3964,
+       "CORE": 59414,
+       "CORE1:Ty": 27408,
+       "CORE1:y": 31937,
+       "EDGE": 2200,
+       "EMPTY": 5726
+      },
+      "cpu_seconds": 25621.608686266
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 21,
+      "leaves": 81,
+      "refusals": 0,
+      "kinds": {
+       "CORE": 28,
+       "CORE1:Ty": 11,
+       "CORE1:y": 42
+      },
+      "cpu_seconds": 3.904340506
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i042_050_b_b_b_b__i050_060": {
+   "pair": "i042_050_b_b_b_b__i050_060",
+   "levels": [
+    "L0",
+    "L1"
+   ],
+   "final_family": "L1/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "319369/1000000",
+      "e_recorded_in_family": "319369/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "312401/1000000",
+      "e_recorded_in_family": "312401/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "319369/1000000",
+    "e_recorded": "319369/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "319369/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12438,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "7/7",
+      "ok": true,
+      "roots": 12410,
+      "leaves": 112358,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 12798,
+       "B3T:y": 41,
+       "B3U:y": 2490,
+       "CORE": 42769,
+       "CORE1:Ty": 27889,
+       "CORE1:y": 21671,
+       "EDGE": 2044,
+       "EMPTY": 2655,
+       "CORE1:P": 1
+      },
+      "cpu_seconds": 30858.914612779005
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 28,
+      "leaves": 28,
+      "refusals": 0,
+      "kinds": {
+       "CORE": 28
+      },
+      "cpu_seconds": 0.15835272699999994
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i050_060__i060_080_a_a_a": {
+   "pair": "i050_060__i060_080_a_a_a",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "499351/1000000",
+      "e_recorded_in_family": "499351/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "499351/1000000",
+    "e_recorded": "499351/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "499351/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12375,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "6/6",
+      "ok": true,
+      "roots": 12375,
+      "leaves": 99657,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 12427,
+       "B3T:y": 208,
+       "B3U:y": 1659,
+       "CORE": 38354,
+       "CORE1:Ty": 18081,
+       "CORE1:y": 24216,
+       "EDGE": 2112,
+       "EMPTY": 2600
+      },
+      "cpu_seconds": 29104.089998958
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i060_080_a_b_b__i060_080_b": {
+   "pair": "i060_080_a_b_b__i060_080_b",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "61993/1000000",
+      "e_recorded_in_family": "61993/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "61993/1000000",
+    "e_recorded": "61993/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "61993/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12417,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "7/7",
+      "ok": true,
+      "roots": 12417,
+      "leaves": 116684,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 14114,
+       "B3T:y": 70,
+       "B3U:y": 41,
+       "CORE": 48934,
+       "CORE1:Ty": 33475,
+       "CORE1:y": 13624,
+       "EDGE": 2233,
+       "EMPTY": 4193
+      },
+      "cpu_seconds": 68683.334285128
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i060_080_b__i080_099": {
+   "pair": "i060_080_b__i080_099",
+   "levels": [
+    "L0"
+   ],
+   "final_family": "fam.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "7923/25000",
+      "e_recorded_in_family": "7923/25000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "7923/25000",
+    "e_recorded": "7923/25000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "7923/25000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {}
+   },
+   "item3": {
+    "steps": [],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12354,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "4/4",
+      "ok": true,
+      "roots": 12354,
+      "leaves": 85794,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 5889,
+       "B3T:y": 19,
+       "B3U:y": 1434,
+       "CORE": 38695,
+       "CORE1:Ty": 17262,
+       "CORE1:y": 17040,
+       "EDGE": 2052,
+       "EMPTY": 3402,
+       "CORE1:P": 1
+      },
+      "cpu_seconds": 28356.523645214995
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "i080_099__i099_100": {
+   "pair": "i080_099__i099_100",
+   "levels": [
+    "L0",
+    "L1"
+   ],
+   "final_family": "L1/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "2467/40000",
+      "e_recorded_in_family": "2467/40000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "56063/1000000",
+      "e_recorded_in_family": "56063/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "2467/40000",
+    "e_recorded": "2467/40000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "2467/40000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 12522,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "11/11",
+      "ok": true,
+      "roots": 12515,
+      "leaves": 187992,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 21208,
+       "B3T:y": 82,
+       "B3U:y": 2912,
+       "CORE": 71597,
+       "CORE1:Ty": 47973,
+       "CORE1:y": 32408,
+       "EDGE": 2097,
+       "EMPTY": 9714,
+       "CORE1:P": 1
+      },
+      "cpu_seconds": 88159.016577804
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 7,
+      "leaves": 7,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 7
+      },
+      "cpu_seconds": 50.929449833999996
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  },
+  "zero_aa__i002_005": {
+   "pair": "zero_aa__i002_005",
+   "levels": [
+    "L0",
+    "L1"
+   ],
+   "final_family": "L1/fam_fix.json",
+   "item1": {
+    "ok": true,
+    "families": {
+     "L1/fam_fix.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "100517/1000000",
+      "e_recorded_in_family": "100517/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     },
+     "fam.json": {
+      "notes": [],
+      "left_is_3P": true,
+      "right_is_3Pp": true,
+      "nothing_outside_[2,9)": true,
+      "pieces_add_up": true,
+      "e": "89567/1000000",
+      "e_recorded_in_family": "89567/1000000",
+      "ok": true,
+      "mass_P": "9/5",
+      "mass_Pp": "9/5"
+     }
+    },
+    "e_final": "100517/1000000",
+    "e_recorded": "100517/1000000",
+    "e_equal": true,
+    "e_not_above_recorded": true,
+    "e_in_final_family": "100517/1000000"
+   },
+   "item2": {
+    "left_vertical": true,
+    "left_horizontal": true,
+    "right_vertical": true,
+    "right_horizontal": true,
+    "ok": true,
+    "by_level": {
+     "fam.json": true
+    }
+   },
+   "item3": {
+    "steps": [
+     {
+      "from": "fam.json",
+      "to": "L1/fam_fix.json",
+      "dominates": true,
+      "equal": false
+     }
+    ],
+    "ok": true
+   },
+   "item4": {
+    "list": "shared",
+    "count": 11206,
+    "equals_recomputed": true
+   },
+   "item5": {
+    "pieces": 13047,
+    "roots": 11206,
+    "pieces_outside_roots": 0,
+    "roots_uncovered": 0,
+    "roots_volume_mismatch": 0,
+    "overlapping_piece_pairs": 0,
+    "ok": true
+   },
+   "item6": {
+    "records": [
+     {
+      "record": "merged.rec",
+      "family": "fam.json",
+      "parts": "11/11",
+      "ok": true,
+      "roots": 12125,
+      "leaves": 241903,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 20205,
+       "B3T:y": 76,
+       "B3U:y": 4934,
+       "CORE": 103716,
+       "CORE1:Ty": 49795,
+       "CORE1:y": 54933,
+       "EDGE": 2659,
+       "EMPTY": 5581,
+       "CORE1:P": 4
+      },
+      "cpu_seconds": 129136.06158790397
+     },
+     {
+      "record": "L1/merged.rec",
+      "family": "L1/fam_fix.json",
+      "parts": "1/1",
+      "ok": true,
+      "roots": 922,
+      "leaves": 933,
+      "refusals": 0,
+      "kinds": {
+       "B3D": 167,
+       "CORE": 715,
+       "CORE1:Ty": 51
+      },
+      "cpu_seconds": 740.409652293
+     }
+    ],
+    "ok": true
+   },
+   "ok": true
+  }
+ },
+ "adjacent_without_seam": [
+  {
+   "a": "i040_042_a_b",
+   "b": "i040_042_b",
+   "profiles_equal": true
+  },
+  {
+   "a": "i042_050_a_a_a_b",
+   "b": "i042_050_a_a_b_a",
+   "profiles_equal": false
+  },
+  {
+   "a": "i042_050_a_a_b_a",
+   "b": "i042_050_a_a_b_b",
+   "profiles_equal": false
+  },
+  {
+   "a": "i042_050_a_a_b_b",
+   "b": "i042_050_a_b_a_a",
+   "profiles_equal": false
+  },
+  {
+   "a": "i042_050_a_b_a_a",
+   "b": "i042_050_a_b_a_b",
+   "profiles_equal": false
+  },
+  {
+   "a": "i042_050_a_b_a_b",
+   "b": "i042_050_a_b_b_a",
+   "profiles_equal": false
+  },
+  {
+   "a": "i042_050_a_b_b_a",
+   "b": "i042_050_a_b_b_b",
+   "profiles_equal": false
+  },
+  {
+   "a": "i042_050_b_a_a_b",
+   "b": "i042_050_b_a_b_a",
+   "profiles_equal": false
+  },
+  {
+   "a": "i042_050_b_a_b_a",
+   "b": "i042_050_b_a_b_b",
+   "profiles_equal": false
+  },
+  {
+   "a": "i042_050_b_a_b_b",
+   "b": "i042_050_b_b_a_a",
+   "profiles_equal": false
+  },
+  {
+   "a": "i042_050_b_b_a_a",
+   "b": "i042_050_b_b_a_b",
+   "profiles_equal": false
+  },
+  {
+   "a": "i042_050_b_b_a_b",
+   "b": "i042_050_b_b_b_a",
+   "profiles_equal": false
+  },
+  {
+   "a": "i042_050_b_b_b_a",
+   "b": "i042_050_b_b_b_b",
+   "profiles_equal": false
+  },
+  {
+   "a": "i060_080_a_a_a",
+   "b": "i060_080_a_a_b",
+   "profiles_equal": true
+  },
+  {
+   "a": "i060_080_a_a_b",
+   "b": "i060_080_a_b_a",
+   "profiles_equal": true
+  },
+  {
+   "a": "i060_080_a_b_a",
+   "b": "i060_080_a_b_b",
+   "profiles_equal": true
+  }
+ ],
+ "equal_profile_pairs": [
+  {
+   "a": "i040_042_a_b",
+   "b": "i040_042_b"
+  },
+  {
+   "a": "i060_080_a_a_a",
+   "b": "i060_080_a_a_b"
+  },
+  {
+   "a": "i060_080_a_a_b",
+   "b": "i060_080_a_b_a"
+  },
+  {
+   "a": "i060_080_a_b_a",
+   "b": "i060_080_a_b_b"
+  }
+ ],
+ "item7": {
+  "equal_profile_pairs": 4,
+  "all_equal_profiles": true,
+  "rows": 595,
+  "mismatches": [],
+  "mismatch_count": 0,
+  "e_used": "recorded e (each checked against the recomputed e in item 1)",
+  "ok": true
+ }
+}

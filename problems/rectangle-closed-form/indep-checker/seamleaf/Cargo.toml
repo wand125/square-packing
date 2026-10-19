@@ -1,0 +1,15 @@
+[package]
+name = "seamleaf"
+version = "0.1.0"
+edition = "2021"
+description = "Leaf replay of seam records with the published independent checker's leaf tests (second system)."
+
+[dependencies]
+cfcheck = { path = "../../../closed-form/indep-checker" }
+serde_json = "1"
+sha2 = "0.10"
+rayon = "1"
+num-bigint = "0.4"
+
+[profile.release]
+overflow-checks = true

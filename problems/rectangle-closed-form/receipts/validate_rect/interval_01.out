@@ -1,0 +1,136 @@
+$ python3 checker/validate_rect.py families/interval_0_0.02/family.json
+OK R2 k=7, m=7, d_a=0, d_b=0: total = ab - 2*0 - 2*0
+OK R1a k=7, m=7, d_a=0, d_b=0 corner windows [0,24/5]^2
+OK R1b k=7, m=7, d_a=0, d_b=0 quarter boxes: global = local
+OK R1c k=7, m=7, d_a=0, d_b=0 wall shifts and terminal lines
+OK C4 k=7, m=7, d_a=0, d_b=0 equals the square construction
+OK R2 k=7, m=7, d_a=0, d_b=1/50: total = ab - 2*0 - 2*43235001/1250000000
+OK R1a k=7, m=7, d_a=0, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=7, m=7, d_a=0, d_b=1/50 quarter boxes: global = local
+OK R1c k=7, m=7, d_a=0, d_b=1/50 wall shifts and terminal lines
+OK R2 k=7, m=7, d_a=1/50, d_b=0: total = ab - 2*43235001/1250000000 - 2*0
+OK R1a k=7, m=7, d_a=1/50, d_b=0 corner windows [0,24/5]^2
+OK R1b k=7, m=7, d_a=1/50, d_b=0 quarter boxes: global = local
+OK R1c k=7, m=7, d_a=1/50, d_b=0 wall shifts and terminal lines
+OK R2 k=7, m=7, d_a=1/50, d_b=1/50: total = ab - 2*43235001/1250000000 - 2*43235001/1250000000
+OK R1a k=7, m=7, d_a=1/50, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=7, m=7, d_a=1/50, d_b=1/50 quarter boxes: global = local
+OK R1c k=7, m=7, d_a=1/50, d_b=1/50 wall shifts and terminal lines
+OK C4 k=7, m=7, d_a=1/50, d_b=1/50 equals the square construction
+OK R2 k=7, m=9, d_a=0, d_b=0: total = ab - 2*0 - 2*0
+OK R1a k=7, m=9, d_a=0, d_b=0 corner windows [0,24/5]^2
+OK R1b k=7, m=9, d_a=0, d_b=0 quarter boxes: global = local
+OK R1c k=7, m=9, d_a=0, d_b=0 wall shifts and terminal lines
+OK R2 k=7, m=9, d_a=0, d_b=1/50: total = ab - 2*0 - 2*43235001/1250000000
+OK R1a k=7, m=9, d_a=0, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=7, m=9, d_a=0, d_b=1/50 quarter boxes: global = local
+OK R1c k=7, m=9, d_a=0, d_b=1/50 wall shifts and terminal lines
+OK R2 k=7, m=9, d_a=1/50, d_b=0: total = ab - 2*43235001/1250000000 - 2*0
+OK R1a k=7, m=9, d_a=1/50, d_b=0 corner windows [0,24/5]^2
+OK R1b k=7, m=9, d_a=1/50, d_b=0 quarter boxes: global = local
+OK R1c k=7, m=9, d_a=1/50, d_b=0 wall shifts and terminal lines
+OK R2 k=7, m=9, d_a=1/50, d_b=1/50: total = ab - 2*43235001/1250000000 - 2*43235001/1250000000
+OK R1a k=7, m=9, d_a=1/50, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=7, m=9, d_a=1/50, d_b=1/50 quarter boxes: global = local
+OK R1c k=7, m=9, d_a=1/50, d_b=1/50 wall shifts and terminal lines
+OK R2 k=9, m=7, d_a=0, d_b=0: total = ab - 2*0 - 2*0
+OK R1a k=9, m=7, d_a=0, d_b=0 corner windows [0,24/5]^2
+OK R1b k=9, m=7, d_a=0, d_b=0 quarter boxes: global = local
+OK R1c k=9, m=7, d_a=0, d_b=0 wall shifts and terminal lines
+OK R2 k=9, m=7, d_a=0, d_b=1/50: total = ab - 2*0 - 2*43235001/1250000000
+OK R1a k=9, m=7, d_a=0, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=9, m=7, d_a=0, d_b=1/50 quarter boxes: global = local
+OK R1c k=9, m=7, d_a=0, d_b=1/50 wall shifts and terminal lines
+OK R2 k=9, m=7, d_a=1/50, d_b=0: total = ab - 2*43235001/1250000000 - 2*0
+OK R1a k=9, m=7, d_a=1/50, d_b=0 corner windows [0,24/5]^2
+OK R1b k=9, m=7, d_a=1/50, d_b=0 quarter boxes: global = local
+OK R1c k=9, m=7, d_a=1/50, d_b=0 wall shifts and terminal lines
+OK R2 k=9, m=7, d_a=1/50, d_b=1/50: total = ab - 2*43235001/1250000000 - 2*43235001/1250000000
+OK R1a k=9, m=7, d_a=1/50, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=9, m=7, d_a=1/50, d_b=1/50 quarter boxes: global = local
+OK R1c k=9, m=7, d_a=1/50, d_b=1/50 wall shifts and terminal lines
+OK R2 k=8, m=11, d_a=0, d_b=0: total = ab - 2*0 - 2*0
+OK R1a k=8, m=11, d_a=0, d_b=0 corner windows [0,24/5]^2
+OK R1b k=8, m=11, d_a=0, d_b=0 quarter boxes: global = local
+OK R1c k=8, m=11, d_a=0, d_b=0 wall shifts and terminal lines
+OK R2 k=8, m=11, d_a=0, d_b=1/50: total = ab - 2*0 - 2*43235001/1250000000
+OK R1a k=8, m=11, d_a=0, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=8, m=11, d_a=0, d_b=1/50 quarter boxes: global = local
+OK R1c k=8, m=11, d_a=0, d_b=1/50 wall shifts and terminal lines
+OK R2 k=8, m=11, d_a=1/50, d_b=0: total = ab - 2*43235001/1250000000 - 2*0
+OK R1a k=8, m=11, d_a=1/50, d_b=0 corner windows [0,24/5]^2
+OK R1b k=8, m=11, d_a=1/50, d_b=0 quarter boxes: global = local
+OK R1c k=8, m=11, d_a=1/50, d_b=0 wall shifts and terminal lines
+OK R2 k=8, m=11, d_a=1/50, d_b=1/50: total = ab - 2*43235001/1250000000 - 2*43235001/1250000000
+OK R1a k=8, m=11, d_a=1/50, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=8, m=11, d_a=1/50, d_b=1/50 quarter boxes: global = local
+OK R1c k=8, m=11, d_a=1/50, d_b=1/50 wall shifts and terminal lines
+OK R2 k=12, m=7, d_a=0, d_b=0: total = ab - 2*0 - 2*0
+OK R1a k=12, m=7, d_a=0, d_b=0 corner windows [0,24/5]^2
+OK R1b k=12, m=7, d_a=0, d_b=0 quarter boxes: global = local
+OK R1c k=12, m=7, d_a=0, d_b=0 wall shifts and terminal lines
+OK R2 k=12, m=7, d_a=0, d_b=1/50: total = ab - 2*0 - 2*43235001/1250000000
+OK R1a k=12, m=7, d_a=0, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=12, m=7, d_a=0, d_b=1/50 quarter boxes: global = local
+OK R1c k=12, m=7, d_a=0, d_b=1/50 wall shifts and terminal lines
+OK R2 k=12, m=7, d_a=1/50, d_b=0: total = ab - 2*43235001/1250000000 - 2*0
+OK R1a k=12, m=7, d_a=1/50, d_b=0 corner windows [0,24/5]^2
+OK R1b k=12, m=7, d_a=1/50, d_b=0 quarter boxes: global = local
+OK R1c k=12, m=7, d_a=1/50, d_b=0 wall shifts and terminal lines
+OK R2 k=12, m=7, d_a=1/50, d_b=1/50: total = ab - 2*43235001/1250000000 - 2*43235001/1250000000
+OK R1a k=12, m=7, d_a=1/50, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=12, m=7, d_a=1/50, d_b=1/50 quarter boxes: global = local
+OK R1c k=12, m=7, d_a=1/50, d_b=1/50 wall shifts and terminal lines
+OK R2 k=7, m=13, d_a=0, d_b=0: total = ab - 2*0 - 2*0
+OK R1a k=7, m=13, d_a=0, d_b=0 corner windows [0,24/5]^2
+OK R1b k=7, m=13, d_a=0, d_b=0 quarter boxes: global = local
+OK R1c k=7, m=13, d_a=0, d_b=0 wall shifts and terminal lines
+OK R2 k=7, m=13, d_a=0, d_b=1/50: total = ab - 2*0 - 2*43235001/1250000000
+OK R1a k=7, m=13, d_a=0, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=7, m=13, d_a=0, d_b=1/50 quarter boxes: global = local
+OK R1c k=7, m=13, d_a=0, d_b=1/50 wall shifts and terminal lines
+OK R2 k=7, m=13, d_a=1/50, d_b=0: total = ab - 2*43235001/1250000000 - 2*0
+OK R1a k=7, m=13, d_a=1/50, d_b=0 corner windows [0,24/5]^2
+OK R1b k=7, m=13, d_a=1/50, d_b=0 quarter boxes: global = local
+OK R1c k=7, m=13, d_a=1/50, d_b=0 wall shifts and terminal lines
+OK R2 k=7, m=13, d_a=1/50, d_b=1/50: total = ab - 2*43235001/1250000000 - 2*43235001/1250000000
+OK R1a k=7, m=13, d_a=1/50, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=7, m=13, d_a=1/50, d_b=1/50 quarter boxes: global = local
+OK R1c k=7, m=13, d_a=1/50, d_b=1/50 wall shifts and terminal lines
+OK R2 k=8, m=8, d_a=0, d_b=0: total = ab - 2*0 - 2*0
+OK R1a k=8, m=8, d_a=0, d_b=0 corner windows [0,24/5]^2
+OK R1b k=8, m=8, d_a=0, d_b=0 quarter boxes: global = local
+OK R1c k=8, m=8, d_a=0, d_b=0 wall shifts and terminal lines
+OK C4 k=8, m=8, d_a=0, d_b=0 equals the square construction
+OK R2 k=8, m=8, d_a=0, d_b=1/50: total = ab - 2*0 - 2*43235001/1250000000
+OK R1a k=8, m=8, d_a=0, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=8, m=8, d_a=0, d_b=1/50 quarter boxes: global = local
+OK R1c k=8, m=8, d_a=0, d_b=1/50 wall shifts and terminal lines
+OK R2 k=8, m=8, d_a=1/50, d_b=0: total = ab - 2*43235001/1250000000 - 2*0
+OK R1a k=8, m=8, d_a=1/50, d_b=0 corner windows [0,24/5]^2
+OK R1b k=8, m=8, d_a=1/50, d_b=0 quarter boxes: global = local
+OK R1c k=8, m=8, d_a=1/50, d_b=0 wall shifts and terminal lines
+OK R2 k=8, m=8, d_a=1/50, d_b=1/50: total = ab - 2*43235001/1250000000 - 2*43235001/1250000000
+OK R1a k=8, m=8, d_a=1/50, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=8, m=8, d_a=1/50, d_b=1/50 quarter boxes: global = local
+OK R1c k=8, m=8, d_a=1/50, d_b=1/50 wall shifts and terminal lines
+OK C4 k=8, m=8, d_a=1/50, d_b=1/50 equals the square construction
+OK R2 k=10, m=14, d_a=0, d_b=0: total = ab - 2*0 - 2*0
+OK R1a k=10, m=14, d_a=0, d_b=0 corner windows [0,24/5]^2
+OK R1b k=10, m=14, d_a=0, d_b=0 quarter boxes: global = local
+OK R1c k=10, m=14, d_a=0, d_b=0 wall shifts and terminal lines
+OK R2 k=10, m=14, d_a=0, d_b=1/50: total = ab - 2*0 - 2*43235001/1250000000
+OK R1a k=10, m=14, d_a=0, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=10, m=14, d_a=0, d_b=1/50 quarter boxes: global = local
+OK R1c k=10, m=14, d_a=0, d_b=1/50 wall shifts and terminal lines
+OK R2 k=10, m=14, d_a=1/50, d_b=0: total = ab - 2*43235001/1250000000 - 2*0
+OK R1a k=10, m=14, d_a=1/50, d_b=0 corner windows [0,24/5]^2
+OK R1b k=10, m=14, d_a=1/50, d_b=0 quarter boxes: global = local
+OK R1c k=10, m=14, d_a=1/50, d_b=0 wall shifts and terminal lines
+OK R2 k=10, m=14, d_a=1/50, d_b=1/50: total = ab - 2*43235001/1250000000 - 2*43235001/1250000000
+OK R1a k=10, m=14, d_a=1/50, d_b=1/50 corner windows [0,24/5]^2
+OK R1b k=10, m=14, d_a=1/50, d_b=1/50 quarter boxes: global = local
+OK R1c k=10, m=14, d_a=1/50, d_b=1/50 wall shifts and terminal lines
+S(0) = 0 = 0.000000
+S(1/50) = 43235001/1250000000 = 0.034588
+VALIDATE_RECT OK

@@ -1,0 +1,35 @@
+$ python3 indep-checker/layout_from_release.py release inputs
+$ python3 indep-checker/seam_check2.py inputs --out report.json
+item 4: grid 17550 roots, 11206 touch the bands; shared roots_r5.json equal: True
+038_040__i040_042_a_a: item1 True (e 217439/1000000 recorded 217439/1000000 equal True), item2 True, item3 True, item4 True, item5 True (12291 pieces), item6 -: PASS
+i002_005__i005_012: item1 True (e 7657/40000 recorded 7657/40000 equal True), item2 True, item3 True, item4 True, item5 True (12564 pieces), item6 -: PASS
+i005_012__i012_020_a: item1 True (e 23861/200000 recorded 23861/200000 equal True), item2 True, item3 True, item4 True, item5 True (12802 pieces), item6 -: PASS
+i012_020_a__i012_020_b: item1 True (e 47449/500000 recorded 47449/500000 equal True), item2 True, item3 True, item4 True, item5 True (13467 pieces), item6 -: PASS
+i012_020_b__i020_038: item1 True (e 33231/200000 recorded 33231/200000 equal True), item2 True, item3 True, item4 True, item5 True (12683 pieces), item6 -: PASS
+i020_038__038_040: item1 True (e 397227/1000000 recorded 397227/1000000 equal True), item2 True, item3 True, item4 True, item5 True (12494 pieces), item6 -: PASS
+i040_042_a_a__i040_042_a_b: item1 True (e 73757/1000000 recorded 73757/1000000 equal True), item2 True, item3 True, item4 True, item5 True (11234 pieces), item6 -: PASS
+i040_042_b__i042_050_a_a_a_a: item1 True (e 3543/25000 recorded 3543/25000 equal True), item2 True, item3 True, item4 True, item5 True (13292 pieces), item6 -: PASS
+i042_050_a_a_a_a__i042_050_a_a_a_b: item1 True (e 66143/1000000 recorded 66143/1000000 equal True), item2 True, item3 True, item4 True, item5 True (11206 pieces), item6 -: PASS
+i042_050_a_a_a_a__i042_050_b_a_a_a: item1 True (e 75759/1000000 recorded 75759/1000000 equal True), item2 True, item3 True, item4 True, item5 True (12459 pieces), item6 -: PASS
+i042_050_a_a_a_b__i042_050_b_a_a_a: item1 True (e 6613/100000 recorded 6613/100000 equal True), item2 True, item3 True, item4 True, item5 True (11339 pieces), item6 -: PASS
+i042_050_a_a_b_a__i042_050_b_a_a_a: item1 True (e 6699/100000 recorded 6699/100000 equal True), item2 True, item3 True, item4 True, item5 True (11290 pieces), item6 -: PASS
+i042_050_a_a_b_b__i042_050_b_a_a_a: item1 True (e 2201/40000 recorded 2201/40000 equal True), item2 True, item3 True, item4 True, item5 True (11304 pieces), item6 -: PASS
+i042_050_a_b_a_a__i042_050_b_a_a_a: item1 True (e 59519/1000000 recorded 59519/1000000 equal True), item2 True, item3 True, item4 True, item5 True (12718 pieces), item6 -: PASS
+i042_050_a_b_a_b__i042_050_b_a_a_a: item1 True (e 181/2500 recorded 181/2500 equal True), item2 True, item3 True, item4 True, item5 True (11815 pieces), item6 -: PASS
+i042_050_a_b_b_a__i042_050_b_a_a_a: item1 True (e 4351/62500 recorded 4351/62500 equal True), item2 True, item3 True, item4 True, item5 True (11311 pieces), item6 -: PASS
+i042_050_a_b_b_b__i042_050_b_a_a_a: item1 True (e 75509/1000000 recorded 75509/1000000 equal True), item2 True, item3 True, item4 True, item5 True (13243 pieces), item6 -: PASS
+i042_050_b_a_a_a__i042_050_b_a_a_b: item1 True (e 55433/1000000 recorded 55433/1000000 equal True), item2 True, item3 True, item4 True, item5 True (12382 pieces), item6 -: PASS
+i042_050_b_a_a_a__i042_050_b_a_b_a: item1 True (e 7247/125000 recorded 7247/125000 equal True), item2 True, item3 True, item4 True, item5 True (11297 pieces), item6 -: PASS
+i042_050_b_a_a_a__i042_050_b_a_b_b: item1 True (e 1044/15625 recorded 1044/15625 equal True), item2 True, item3 True, item4 True, item5 True (11304 pieces), item6 -: PASS
+i042_050_b_a_a_a__i042_050_b_b_a_a: item1 True (e 10997/200000 recorded 10997/200000 equal True), item2 True, item3 True, item4 True, item5 True (11304 pieces), item6 -: PASS
+i042_050_b_a_a_a__i042_050_b_b_a_b: item1 True (e 39059/500000 recorded 39059/500000 equal True), item2 True, item3 True, item4 True, item5 True (11885 pieces), item6 -: PASS
+i042_050_b_a_a_a__i042_050_b_b_b_a: item1 True (e 319/5000 recorded 319/5000 equal True), item2 True, item3 True, item4 True, item5 True (11297 pieces), item6 -: PASS
+i042_050_b_a_a_a__i042_050_b_b_b_b: item1 True (e 69863/1000000 recorded 69863/1000000 equal True), item2 True, item3 True, item4 True, item5 True (11416 pieces), item6 -: PASS
+i042_050_b_b_b_b__i050_060: item1 True (e 319369/1000000 recorded 319369/1000000 equal True), item2 True, item3 True, item4 True, item5 True (12438 pieces), item6 -: PASS
+i050_060__i060_080_a_a_a: item1 True (e 499351/1000000 recorded 499351/1000000 equal True), item2 True, item3 True, item4 True, item5 True (12375 pieces), item6 -: PASS
+i060_080_a_b_b__i060_080_b: item1 True (e 61993/1000000 recorded 61993/1000000 equal True), item2 True, item3 True, item4 True, item5 True (12417 pieces), item6 -: PASS
+i060_080_b__i080_099: item1 True (e 7923/25000 recorded 7923/25000 equal True), item2 True, item3 True, item4 True, item5 True (12354 pieces), item6 -: PASS
+i080_099__i099_100: item1 True (e 2467/40000 recorded 2467/40000 equal True), item2 True, item3 True, item4 True, item5 True (12522 pieces), item6 -: PASS
+zero_aa__i002_005: item1 True (e 100517/1000000 recorded 100517/1000000 equal True), item2 True, item3 True, item4 True, item5 True (13047 pieces), item6 -: PASS
+item 7: 4 equal-profile adjacent pairs (equal: True), 595 rows compared, 0 mismatches; max E 2907373/1000000 (r 16, k0 54)
+ALL PASS

@@ -1,0 +1,9 @@
+rejected  perturbed corner mass in F (+1e-6): FAIL saving: S(99/100) >= certified line alpha_J d + beta_J: S - line = -1.000e-06
+rejected  wall period row shifted by 1/100: FAIL T minus seven periods: nonnegative seam at x = 2
+rejected  wrong d1 in the family: FAIL interval bounds equal intervals.json: [99/100, 999/1000]
+rejected  negative V density: FAIL V nonnegative densities, xl <= 2 + d0
+rejected  non-standard U: FAIL alpha = 9/5 and the standard Lebesgue quadrant
+rejected  one T row removed: FAIL T minus seven periods: nonnegative seam at x = 2
+rejected  certified line raised by 1e-9 (intervals.json): FAIL saving: S(99/100) >= certified line alpha_J d + beta_J: S - line = -1.000e-09
+rejected  one byte changed, sha binding on: FAIL input binding: family sha256 = intervals.json family_sha256: ea2d6c12903709d8
+ALL CONTROLS FAIL AS REQUIRED
