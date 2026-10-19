@@ -1,0 +1,41 @@
+{
+  "certificate_sha256": "020a4eb5e6d932cd6a27e81928b8599461f2ef95c7c9eb9269d25e04b0b51bf1",
+  "L": "7",
+  "points": 503,
+  "total_weight": "2099/100",
+  "features": 0,
+  "segments": 0,
+  "symmetry": "D1",
+  "n": 21,
+  "total_weight_lt_n": true,
+  "U": "-1+1*sqrt2",
+  "u_breaks": [
+    "0",
+    "-1+1*sqrt2"
+  ],
+  "bbox": "8",
+  "slices": true,
+  "frame": "legs",
+  "pairs": 418,
+  "exclusions": 0,
+  "checkpoint": {
+    "file": "n21f.ckpt.jsonl",
+    "reused_roots": 0
+  },
+  "root_boxes": 1024,
+  "root_grid": 32,
+  "empty_leaves": 1655,
+  "cover_leaves": 83229,
+  "excluded_leaves": 0,
+  "slice_leaves": 53,
+  "open_leaves": 1,
+  "cone_leaves": 8,
+  "cone_pieces": 136,
+  "uncertified": 0,
+  "uncertified_boxes": [],
+  "nodes": 168868,
+  "max_depth": 30,
+  "max_depth_limit": 70,
+  "seconds": 45545.163,
+  "status": "verified"
+}

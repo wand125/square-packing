@@ -14,6 +14,8 @@
     "-1+1*sqrt2"
   ],
   "bbox": "183/64",
+  "slices": false,
+  "frame": "legs",
   "pairs": 0,
   "exclusions": 0,
   "root_boxes": 16,
@@ -21,11 +23,15 @@
   "empty_leaves": 12,
   "cover_leaves": 4,
   "excluded_leaves": 0,
+  "slice_leaves": 0,
+  "open_leaves": 0,
+  "cone_leaves": 0,
+  "cone_pieces": 0,
   "uncertified": 0,
   "uncertified_boxes": [],
   "nodes": 16,
   "max_depth": 0,
   "max_depth_limit": 40,
-  "seconds": 0.113,
+  "seconds": 0.017,
   "status": "verified"
 }

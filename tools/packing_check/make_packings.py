@@ -46,8 +46,8 @@ def cert(problem, n, container, squares, field=None, defs=None, source=None, sid
 
 def right_isosceles(n):
     """Leg frame T = conv{(0,0), (L,0), (0,L)}."""
-    if n in (3, 6, 10, 15):
-        L = {3: 3, 6: 4, 10: 5, 15: 6}[n]
+    if n in (3, 6, 10, 15, 21):
+        L = {3: 3, 6: 4, 10: 5, 15: 6, 21: 7}[n]
         sq = [axis_square(str(i), str(j)) for j in range(L) for i in range(L) if i + j <= L - 2]
         assert len(sq) == n
         cont = {"kind": "right_isosceles_triangle", "side": str(L),
@@ -142,7 +142,7 @@ def grid(n, k):
 
 def targets():
     out = {}
-    for n in (2, 3, 4, 6, 10, 15):
+    for n in (2, 3, 4, 6, 10, 15, 21):
         out[f"problems/right-isosceles/certificates/n{n}/packing.json"] = right_isosceles(n)
     out["problems/hexagon/n3/packing.json"] = hexagon3()
     out["problems/domino/certificates/n4/packing.json"] = domino4()

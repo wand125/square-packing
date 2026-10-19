@@ -12,6 +12,10 @@ min(w_p, w_q) on a box where Lemma P is proved, and no point is counted twice. C
 are supported when they happen at a vertex of the admissible-centre polygon or at the endpoint of a
 u-bin.
 
+Two further devices are used for n = 21 and described in `SPEC.md`: cone leaves (`--cone`, pieces of a box at θ = 0
+cut by the ratio of the centre offset to u/(1 + u²)) and the two-point lemma (two points with at most two unproved
+edge conditions each; a multiplier λ(u) that is constant, αu or 1 − αu shows that one of them is inside at every pose).
+
 ## How to run
 
 ```bash

@@ -29,7 +29,7 @@ uncertified at depth 22.
 **Lemma.** Every closed unit square Q ⊆ T_5 contains points of total weight ≥ 1.
 
 *Proof.* Two independent exact checkers (Q(√2) arithmetic):
-- checker 1 (`python3 checker/check.py certificates/n10/n10_cert.json --n 10 --max-depth 22 --bbox 6`): symmetry D1, 2,868 nodes, 0 uncertified, maximum depth 15, 6.8 s (`check_record.json`).
+- checker 1 (`python3 checker/check.py certificates/n10/n10_cert.json --n 10 --max-depth 22 --bbox 6`): symmetry D1, 2,836 nodes, 0 uncertified, maximum depth 15, 10.0 s (`check_record.json`).
 - checker 2 (`../../checker2/sweep_q2.py`, all angles, no symmetry, no Lemma P): verified, minimum capture 1, 262 s (`../../checker2/runs/n10.json`).
 
 The theorem follows by centre scaling (`../../README.md`, "The method"): total 19/2 < 10.

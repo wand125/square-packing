@@ -17,7 +17,7 @@ symmetry, at height 3/4 above the hypotenuse.
 **Lemma.** Every closed unit square Q ⊆ T_{2√2} contains (5√2/8, 5√2/8).
 
 *Proof.* Two independent exact checkers (Q(√2) arithmetic):
-- checker 1 (`python3 checker/check.py certificates/n2/n2_cert.json --n 2`): symmetry D1, 16 nodes, 0 uncertified, maximum depth 0, 0.1 s (`check_record.json`).
+- checker 1 (`python3 checker/check.py certificates/n2/n2_cert.json --n 2`): symmetry D1, 16 nodes, 0 uncertified, maximum depth 0, < 0.1 s (`check_record.json`).
 - checker 2 (`../../checker2/sweep_q2.py`, all angles, no symmetry, no Lemma P): verified, minimum capture 1, 2 s (`../../checker2/runs/n2.json`).
 
 The theorem follows by centre scaling (`../../README.md`, "The method"): total 1 < 2.

@@ -29,7 +29,7 @@ between (1/2,3/2) and (3/2,3/2) across a tilted surface.
 **Lemma.** Every closed unit square Q ⊆ T_4 contains points of total weight ≥ 1.
 
 *Proof.* Two independent exact checkers (Q(√2) arithmetic):
-- checker 1 (`python3 checker/check.py certificates/n6/n6_cert.json --n 6 --max-depth 22`): symmetry D1, 1,122 nodes, 0 uncertified, maximum depth 13, 2.8 s (`check_record.json`).
+- checker 1 (`python3 checker/check.py certificates/n6/n6_cert.json --n 6 --max-depth 22`): symmetry D1, 1,006 nodes, 0 uncertified, maximum depth 13, 3.3 s (`check_record.json`).
 - checker 2 (`../../checker2/sweep_q2.py`, all angles, no symmetry, no Lemma P): verified, minimum capture 1, 26 s (`../../checker2/runs/n6.json`).
 
 The theorem follows by centre scaling (`../../README.md`, "The method"): total 5 < 6.

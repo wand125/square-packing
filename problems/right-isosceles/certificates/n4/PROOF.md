@@ -28,7 +28,7 @@ between the two points along the diagonal x = y, which is not a face of the axis
 **Lemma.** Every closed unit square Q ⊆ T contains points of total weight ≥ 1.
 
 *Proof.* Two independent exact checkers (Q(√2) arithmetic):
-- checker 1 (`python3 checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 22`): symmetry D1, 304 nodes, 0 uncertified, maximum depth 12, 1.0 s (`check_record.json`).
+- checker 1 (`python3 checker/check.py certificates/n4/n4_cert.json --n 4 --max-depth 22`): symmetry D1, 128 nodes, 0 uncertified, maximum depth 12, 0.9 s (`check_record.json`).
 - checker 2 (`../../checker2/sweep_q2.py`, all angles, no symmetry, no Lemma P): verified, minimum capture 1, 6 s (`../../checker2/runs/n4.json`).
 
 The theorem follows by centre scaling (`../../README.md`, "The method"): total 3 < 4.

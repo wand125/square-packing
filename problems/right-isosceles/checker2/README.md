@@ -1,4 +1,4 @@
-# Second checker: unit squares in a right isosceles triangle (n = 2, 3, 4, 6, 10, 15)
+# Second checker: unit squares in a right isosceles triangle (n = 2, 3, 4, 6, 10, 15, 21)
 
 An independent re-check of the point certificates behind:
 
@@ -10,6 +10,7 @@ An independent re-check of the point certificates behind:
 | 6 | 4 | `certificates/n6/n6_cert.json` |
 | 10 | 5 | `certificates/n10/n10_cert.json` |
 | 15 | 6 | `certificates/n15/n15_cert.json` (checked by `local_sweep.py`, see below) |
+| 21 | 7 | `certificates/n21/n21_cert.json` (checked by `local_sweep.py`, see below) |
 
 ## What is checked
 
@@ -179,3 +180,45 @@ python3 checker2/local_sweep.py checker2/controls/n15_weight_all.json --n 15 --j
 ```
 
 With `--log` and `--resume`, an interrupted run continues from the root boxes already logged.
+
+## n = 21 (`local_sweep.py`)
+
+The n = 21 certificate (503 points, L = 7) is checked by `local_sweep.py` exactly as n = 15 above. The root boxes are
+20 slices in u times a 16 × 16 grid over [0, 7]², 5,120 in all; K = 24 and maximum depth 40.
+
+### Result (2026-10-14, a cloud VM, 3 processes; `runs/n21.json`)
+
+| certificate | sha256 | points | total | root boxes | swept boxes | critical roots | min weight | time | verdict |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| n = 21 | `020a4eb5…` | 503 | 2099/100 | 5,120 | 15,927 | 1,401,937 | 1765259/1761660 | 2.9 h | verified |
+
+The total weight 2099/100 is below 21. The other counts are:
+
+- 8,775 SURE boxes;
+- 4,013 INADMISSIBLE boxes;
+- at most 46 lines in one box;
+- maximum depth 40.
+
+The minimum is attained at u = 1/31, near the centre (0.5312, 1.0010), in root box 17.
+
+The run used `local_sweep.py` with sha256 `c5916f9d…`, which differs from the file here (`2c958bee…`) only by the six
+docstring lines "Other frames and exclusions". The code is the same.
+
+### Negative control
+
+| control | root boxes run | result |
+| --- | --- | --- |
+| `controls/n21_weight99.json`: every weight × 99/100 | 17 | failed (19417849/19574000 ≈ 0.9920) |
+
+The failure is a pose at a rational angle whose capture is counted exactly: the pose of the minimum of the real run.
+The result is in `controls/n21_weight99_result.json`. It was reproduced with the file here.
+
+### Run
+
+```sh
+# from problems/right-isosceles; needs gmpy2 and sympy
+python3 checker2/local_sweep.py certificates/n21/n21_cert.json --n 21 --jobs 3 --K 24 \
+    --uslices 20 --grid 16 --log n21.log.jsonl --resume --out n21.json
+python3 checker2/local_sweep.py checker2/controls/n21_weight99.json --n 21 --jobs 1 --K 24 \
+    --uslices 20 --grid 16 --only 17 --stop-early                     # must fail
+```

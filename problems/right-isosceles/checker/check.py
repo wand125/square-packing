@@ -307,6 +307,9 @@ class Context:
     def prove_nonneg(p, ua, ub, strict=False):
         return bern_nonneg(to_bern(p, ua, ub), POLY_DEPTH, strict)
 
+    def point_bern_cached(self, pi):
+        return self.point_bern(self._cur_iv, pi)
+
     def point_bern(self, iv, pi):
         pb = iv["pbern"].get(pi)
         if pb is None:
@@ -358,11 +361,29 @@ def parallel(li: Line, lj: Line) -> bool:
 
 
 # =========================================================================== one box
-def box_vertices(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, open_side=None):
+def cone_lines(D, cone):
+    """Faces of a cone piece (SPEC "Cone leaves"): with s = sx (x - X), t = sy (y - Y) and g(u) = u / D(u), the piece
+    is a_lo g <= s <= a_hi g, b_lo g <= t <= b_hi g inside the box (a bound None is the box face; a_lo = 0 is the face
+    through the corner and adds no line).  Each face is a line with a constant normal and offset O = C D + a u
+    (degree 2, as the box faces), so all degrees stay within DEG."""
+    X, Y, sx, sy, alo, ahi, blo, bhi = cone
+    out = []
+    for (nx, ny, C, sg), lo, hi in (((ONE, ZERO, X, sx), alo, ahi), ((ZERO, ONE, Y, sy), blo, bhi)):
+        sgq = Q2(sg)
+        if lo != 0:          # s >= lo g  <=>  D (-sg n . c) <= -sg C D - lo u
+            out.append(Line(-sgq * nx, -sgq * ny, padd(pscale(D, -sgq * Q2(C)), [ZERO, Q2(-lo)]), ("cone", "lo")))
+        if hi is not None:   # s <= hi g  <=>  D (sg n . c) <= sg C D + hi u
+            out.append(Line(sgq * nx, sgq * ny, padd(pscale(D, sgq * Q2(C)), [ZERO, Q2(hi)]), ("cone", "hi")))
+    return out
+
+
+def box_vertices(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, open_side=None, cone=None):
     """Return (iv, feasible) where feasible is the list of (key, Pair) vertex candidates of
     P_theta that are not proved infeasible on the box, or (iv, None) if the box is proved EMPTY.
     Every extreme point of P_theta, for every u in [ua, ub], is V(u) for some Pair in the list.
-    With open_side "lo" ("hi") the claims hold for u in (ua, ub] ([ua, ub)) only (see certify_box)."""
+    With open_side "lo" ("hi") the claims hold for u in (ua, ub] ([ua, ub)) only (see certify_box).
+    With cone (see cone_lines) P_theta is cut further by the faces of the cone piece; the tests on the rectangle
+    alone (emptiness, redundancy of a container side) stay valid for the smaller set."""
     iv = ctx.interval(ua, ub)
     samples, fD = iv["samples"], iv["fD"]
     corners = [(Q2(x0), Q2(y0)), (Q2(x0), Q2(y1)), (Q2(x1), Q2(y0)), (Q2(x1), Q2(y1))]
@@ -411,6 +432,8 @@ def box_vertices(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, open_side=None):
         if not dropped:
             rect_kept.append((None, r))
     all_lines = [(i, ln) for i, ln in lines if i not in drop_adm] + rect_kept
+    if cone is not None:
+        all_lines += [(None, ln) for ln in cone_lines(D, cone)]
 
     # ---- vertex candidates: non-parallel pairs, minus provably infeasible ones
     feasible = []
@@ -447,7 +470,7 @@ def float_vertices(iv, feasible):
     return fverts, fE
 
 
-def certify_box(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, open_side=None):
+def certify_box(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, open_side=None, cone=None):
     """Return "EMPTY", "COVER" or None (not certified).  x0..y1 are Fractions.
 
     With open_side "lo" ("hi") the answer is for u in (ua, ub] ([ua, ub)) only: vertex candidates that are
@@ -456,11 +479,12 @@ def certify_box(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, open_side=None):
     between a side and the hypotenuse); the pair of the side and a box face is a vertex there and outside
     P_theta for every u > ua, but no proof on the closed interval can drop it.  The end itself is then checked
     by slice_cover (run_root)."""
-    iv, feasible = box_vertices(ctx, x0, x1, y0, y1, ua, ub, open_side)
+    iv, feasible = box_vertices(ctx, x0, x1, y0, y1, ua, ub, open_side, cone)
     if feasible is None:
         return "EMPTY"
 
     # ---- COVER: float-screen candidate points, then prove exactly, heaviest first
+    ctx._cur_iv = iv
     fverts, fE = float_vertices(iv, feasible)
     cands = []
     total = 0.0
@@ -494,7 +518,7 @@ def certify_box(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, open_side=None):
         # (min over vertices of the sum, README 6b)
         total += max(sum(v for v, _ in seg_order),
                      _joint_float_estimate(ctx, [si for _, si in seg_order], fverts, fE))
-    if total < 1 - 1e-12 and not ctx.chord_pairs and not ctx.features:
+    if total < 1 - 1e-12 and not ctx.chord_pairs and not ctx.features and cone is None:
         return None
     B_D2half = iv["B_D2half"]
     pairbern = []
@@ -523,16 +547,41 @@ def certify_box(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, open_side=None):
             acc += w
             if acc >= 1:
                 return "COVER"
+    # Two-point lemma (SPEC "Two-point lemma"; on cone pieces before Lemma P so that a heavy switching point is not
+    # spent on a light chord partner): two points that are never both outside.  Each point is counted at most once
+    # overall, as for Lemma P.
+    if cone is not None:
+        acc = two_point_credit(ctx, fverts, fE, pairbern, B_D2half, used, acc, ua, ub)
+        if acc >= 1:
+            return "COVER"
+
     # Lemma P: for a chord pair (p, q) with |q - p| = 1, every pose of the box contains p or q.
     # Each point is counted at most once overall, so the bound min(w_p, w_q) is sound.
-    for i, j, M in ctx.chord_pairs:
-        if i in used or j in used:
-            continue
-        if chord_pair_holds(ctx, iv, i, M, feasible):
-            acc += min(ctx.points[i][2], ctx.points[j][2])
-            used.update((i, j))
-            if acc >= 1:
+    def lemma_p(acc, used):
+        for i, j, M in ctx.chord_pairs:
+            if i in used or j in used:
+                continue
+            if chord_pair_holds(ctx, iv, i, M, feasible):
+                acc += min(ctx.points[i][2], ctx.points[j][2])
+                used.update((i, j))
+                if acc >= 1:
+                    break
+        return acc
+
+    acc0, used0 = acc, set(used)
+    acc = lemma_p(acc, used)
+    if acc >= 1:
+        return "COVER"
+    # Boxes at the end u = 0 (SPEC "Two-point lemma"): if Lemma P falls short, count again from the point credit,
+    # two-point lemma first, then Lemma P on the points left; the larger of the two counts is kept (each is sound).
+    if cone is None and ua.is_zero():
+        acc2 = two_point_credit(ctx, fverts, fE, pairbern, B_D2half, used0, acc0, ua, ub)
+        if acc2 > acc0:
+            if acc2 < 1:
+                acc2 = lemma_p(acc2, used0)
+            if acc2 >= 1:
                 return "COVER"
+            acc = max(acc, acc2)
     # Segment masses (README 6b): separate mass, so they add to every term above.
     if seg_order is None and ctx.segments:
         seg_order = segment_order()       # exact point proofs fell short of the float screen
@@ -558,6 +607,159 @@ def certify_box(ctx: Context, x0, x1, y0, y1, ua: Q2, ub: Q2, open_side=None):
         if base + max(J, acc - base) >= 1:
             return "COVER"
     return None
+
+
+def _cond_bern(B_D2half, BT, BW, sg):
+    """Bernstein vector of D^2/2 - sg (T_k - W_k): >= 0 iff the point is on the inner side of that edge."""
+    S = bsub(BT, BW)
+    return bsub(B_D2half, S) if sg > 0 else badd(B_D2half, S)
+
+
+TWO_POINT_MAXFAIL = 2    # failing edge conditions allowed per point in the two-point lemma
+
+
+def _bern_elevate(bc):
+    """Degree elevation by one (exact)."""
+    n = len(bc) - 1
+    return [(bc[k] * Fraction(n + 1 - k, n + 1) if k <= n else ZERO) + (bc[k - 1] * Fraction(k, n + 1) if k >= 1 else ZERO)
+            for k in range(n + 2)]
+
+
+def _bern_times_u(bc, ua: Q2, ub: Q2):
+    """Bernstein vector (one degree higher) of u * p on [ua, ub] (exact)."""
+    n = len(bc) - 1
+    return [(bc[k] * ua * Fraction(n + 1 - k, n + 1) if k <= n else ZERO) + (bc[k - 1] * ub * Fraction(k, n + 1) if k >= 1 else ZERO)
+            for k in range(n + 2)]
+
+
+def _lam_bounds(x, y):
+    """Float: the set of lam in [0, 1] with lam x + (1 - lam) y >= 0, as (lo, hi) (lo > hi: empty)."""
+    if x > y:
+        return (-y / (x - y), 1.0) if y < 0 else (0.0, 1.0)
+    if x < y:
+        return (0.0, y / (y - x)) if x < 0 else (0.0, 1.0)
+    return (0.0, 1.0) if x >= 0 else (2.0, -1.0)
+
+
+def _lam_choice(f1, f2, us, ub_f):
+    """Float guidance: a multiplier lam(u) with lam C1 + (1 - lam) C2 >= 0 at every sample: a constant ("c", lam),
+    lam = alpha u ("u", alpha) or lam = 1 - alpha u ("v", alpha), with 0 <= alpha <= 1 / ub; None if none fits."""
+    bounds = [_lam_bounds(x, y) for x, y in zip(f1, f2)]
+    lo = max(b[0] for b in bounds)
+    hi = min(b[1] for b in bounds)
+    if lo <= hi + 1e-12:
+        lam = Fraction((lo + hi) / 2).limit_denominator(1024)
+        return ("c", min(max(lam, Fraction(0)), Fraction(1)))
+    for kind in ("u", "v"):
+        alo, ahi = 0.0, 1.0 / ub_f
+        for (l, h), u in zip(bounds, us):
+            if kind == "v":                   # alpha u = 1 - lam must lie in [1 - h, 1 - l]
+                l, h = 1.0 - h, 1.0 - l
+            if u <= 0:
+                if l > 1e-12:
+                    alo = 2.0 * ahi + 1.0
+                    break
+                continue
+            alo, ahi = max(alo, l / u), min(ahi, h / u)
+        if alo <= ahi + 1e-12 and ahi > 0:
+            return (kind, Fraction((alo + ahi) / 2).limit_denominator(1024))
+    return None
+
+
+def two_point_credit(ctx, fverts, fE, pairbern, B_D2half, used, acc, ua: Q2, ub: Q2):
+    """Two-point lemma (SPEC "Two-point lemma").  For a point q and an edge condition C_q,k,sg(c, u) = 1/2 - sg (q - c) .
+    e_k(u) (affine in c for fixed u; q is in the closed square iff all four are >= 0), let F_q be the conditions of q
+    not proved >= 0 at every vertex candidate for every u of the box (at most TWO_POINT_MAXFAIL of them).  If for
+    every C1 in F_q1 and C2 in F_q2 there is lam(u) in [0, 1] (a constant, or alpha u) with
+    lam C1 + (1 - lam) C2 >= 0 at every vertex for every u (lam a constant, alpha u or 1 - alpha u), then for each u that combination is >= 0 on P_theta
+    (convex, the combination is affine in c), so C1 < 0 and C2 < 0 never hold together: if q1 is outside, some
+    C1 in F_q1 is < 0, hence every C2 in F_q2 is >= 0 and q2 is inside.  So q1 or q2 is in the closed square, and
+    min(w1, w2) may be added (each point used once).  Floats choose the points, the sets F and lam; every accepted
+    inequality is exact."""
+    nS = len(fE)
+    us = [s for s in ctx._cur_iv["samples"]]
+    ub_f = float(ub)
+    info = []
+    for pi, (px, py) in enumerate(ctx.fpoints):
+        if pi in used or ctx.points[pi][2] == 0:
+            continue
+        vals, near = {}, True
+        for v, fv in enumerate(fverts):
+            for si, ((vx, vy), ((a1, b1), (a2, b2))) in enumerate(zip(fv, fE)):
+                dx, dy = px - vx, py - vy
+                t = (dx * a1 + dy * b1, dx * a2 + dy * b2)
+                if abs(t[0]) > 1.5 or abs(t[1]) > 1.5:
+                    near = False
+                    break
+                for k in (0, 1):
+                    for sg in (1, -1):
+                        vals.setdefault((k, sg), []).append(0.5 - sg * t[k])
+            if not near:
+                break
+        if not near or len(vals) < 4:
+            continue
+        fail = [key for key, v in vals.items() if min(v) < FLOAT_TOL]
+        # a failing condition must hold at some sample (a switch); otherwise q is outside on the whole box
+        if 0 < len(fail) <= TWO_POINT_MAXFAIL and all(max(vals[key]) > -FLOAT_TOL for key in fail):
+            info.append((ctx.points[pi][2], pi, fail, vals))
+    info.sort(key=lambda t: -t[0])
+    uss = us * len(fverts)                    # the sample u of each entry of vals[...]
+    held = {}                                 # (point, condition) -> proved >= 0 on the box
+
+    def holds(pi, BT, k, sg):
+        key = (pi, k, sg)
+        if key not in held:
+            held[key] = all(bern_nonneg(_cond_bern(B_D2half, BT[k], BW[k], sg), POLY_DEPTH) for BW in pairbern)
+        return held[key]
+
+    for a in range(len(info)):
+        w1, p1, F1, v1 = info[a]
+        if p1 in used:
+            continue
+        for b in range(a + 1, len(info)):
+            w2, p2, F2, v2 = info[b]
+            if p2 in used:
+                continue
+            lams = {}
+            for c1 in F1:
+                for c2 in F2:
+                    lc = _lam_choice(v1[c1], v2[c2], uss, ub_f)
+                    if lc is None:
+                        break
+                    lams[(c1, c2)] = lc
+                else:
+                    continue
+                break
+            if len(lams) < len(F1) * len(F2):
+                continue
+            BT1, BT2 = ctx.point_bern_cached(p1), ctx.point_bern_cached(p2)
+            ok = all(holds(p, BT, k, sg) for p, BT, F in ((p1, BT1, F1), (p2, BT2, F2))
+                     for k in (0, 1) for sg in (1, -1) if (k, sg) not in F)
+            for ((k1, s1), (k2, s2)), (kind, lam) in lams.items():
+                if not ok:
+                    break
+                if kind != "c" and not (lam >= 0 and ZERO <= ua and Q2(lam) * ub <= ONE):
+                    ok = False
+                    break
+                for BW in pairbern:
+                    c1 = _cond_bern(B_D2half, BT1[k1], BW[k1], s1)
+                    c2 = _cond_bern(B_D2half, BT2[k2], BW[k2], s2)
+                    if kind == "c":
+                        comb = [x * lam + y * (1 - lam) for x, y in zip(c1, c2)]
+                    elif kind == "u":         # lam = alpha u: c2 + alpha u (c1 - c2), one degree higher
+                        comb = badd(_bern_elevate(c2), [z * lam for z in _bern_times_u(bsub(c1, c2), ua, ub)])
+                    else:                     # lam = 1 - alpha u: c1 + alpha u (c2 - c1)
+                        comb = badd(_bern_elevate(c1), [z * lam for z in _bern_times_u(bsub(c2, c1), ua, ub)])
+                    if not bern_nonneg(comb, POLY_DEPTH):
+                        ok = False
+                        break
+            if ok:
+                acc += min(w1, w2)
+                used.update((p1, p2))
+                if acc >= 1:
+                    return acc
+                break
+    return acc
 
 
 # --------------------------------------------------------------------------- segments
@@ -1073,6 +1275,81 @@ def slice_cover(ctx: Context, x0, x1, y0, y1, u0: Q2) -> bool:
     return False
 
 
+# =========================================================================== cone leaves
+CONE_A0 = Fraction(4)        # first split of the scaled offsets s / u, t / u
+CONE_BUDGET = 200            # pieces tried in one cone leaf (successful leaves of n21_frs3 used <= 18, 10/18)
+CONE_ZMIN = Fraction(1, 16)  # scaled-offset width below which a failing piece is split in u
+CONE_AMAX = 64               # an infinite range [a_lo, inf) with a_lo >= this is split in u only
+
+
+def crossing_corners(ctx: Context, x0, x1, y0, y1):
+    """Box corners (X, Y) where the theta = 0 square centred there has points of positive weight on a vertical
+    edge and on a horizontal edge (exact).  Guidance only: any corner gives a sound cone leaf."""
+    out = []
+    half = Q2(HALF)
+    for X in (x0, x1):
+        for Y in (y0, y1):
+            Xq, Yq = Q2(X), Q2(Y)
+            v = h = False
+            for px, py, w in ctx.points:
+                if w == 0:
+                    continue
+                inx = Xq - half <= px <= Xq + half
+                iny = Yq - half <= py <= Yq + half
+                if iny and (px == Xq - half or px == Xq + half):
+                    v = True
+                if inx and (py == Yq - half or py == Yq + half):
+                    h = True
+                if v and h:
+                    out.append((X, Y))
+                    break
+    return out
+
+
+def cone_leaf(ctx: Context, bx, corner, u_scale, record=None):
+    """SPEC "Cone leaves": the box bx (u-interval starting at u_lo = 0) is certified at u = 0 by slice_cover and
+    on (0, ub] by cone pieces around the corner, a_lo g <= s <= a_hi g, b_lo g <= t <= b_hi g (s, t the distances
+    from the corner into the box, g = u / (1 + u^2) > 0 for u > 0).  The ranges [a_lo, a_hi] are a partition of [0, inf), so the pieces cover every
+    pose of the box with u > 0.  Returns the number of pieces used, or 0 if not certified within CONE_BUDGET."""
+    x0, x1, y0, y1, ua, ub = bx
+    if not slice_cover(ctx, x0, x1, y0, y1, ua):
+        return 0
+    X, Y = corner
+    sx = 1 if X == x0 else -1
+    sy = 1 if Y == y0 else -1
+    Wx, Wy = x1 - x0, y1 - y0
+    A0 = CONE_A0
+    stack = [(alo, ahi, blo, bhi, ua, ub) for alo, ahi in ((Fraction(0), A0), (A0, None))
+             for blo, bhi in ((Fraction(0), A0), (A0, None))]
+    used = 0
+    while stack:
+        alo, ahi, blo, bhi, pa, pb = stack.pop()
+        used += 1
+        if used > CONE_BUDGET:
+            return 0
+        side = "lo" if pa == ua else None
+        if certify_box(ctx, x0, x1, y0, y1, pa, pb, side, cone=(X, Y, sx, sy, alo, ahi, blo, bhi)) is not None:
+            if record is not None:
+                record.append((alo, ahi, blo, bhi, pa, pb))
+            continue
+        # split in the scaled offsets first (pieces at u = 0 are scale invariant, halving u alone never helps), down
+        # to CONE_ZMIN, then u (the higher-order terms shrink with u); an infinite range [a_lo, inf) splits at 2 a_lo
+        # while a_lo < CONE_AMAX
+        za = (ahi - alo) if ahi is not None else (alo if alo < CONE_AMAX else 0)
+        zb = (bhi - blo) if bhi is not None else (blo if blo < CONE_AMAX else 0)
+        if max(za, zb) > CONE_ZMIN:
+            if za >= zb:
+                m = (alo + ahi) / 2 if ahi is not None else 2 * alo
+                stack += [(alo, m, blo, bhi, pa, pb), (m, ahi, blo, bhi, pa, pb)]
+            else:
+                m = (blo + bhi) / 2 if bhi is not None else 2 * blo
+                stack += [(alo, ahi, blo, m, pa, pb), (alo, ahi, m, bhi, pa, pb)]
+        else:
+            um = (pa + pb) * HALF
+            stack += [(alo, ahi, blo, bhi, pa, um), (alo, ahi, blo, bhi, um, pb)]
+    return used
+
+
 # =========================================================================== driver
 _WORKER_CTX = None
 
@@ -1117,7 +1394,9 @@ def run_root(task):
            Q2.parse(task[4]), Q2.parse(task[5]))
     max_depth = ctx.opts["max_depth"]
     u_scale = ctx.opts["u_scale"]
-    st = {"EMPTY": 0, "COVER": 0, "EXCLUDED": 0, "SLICE": 0, "OPEN": 0, "uncertified": 0, "nodes": 0, "max_depth": 0, "unc_list": []}
+    st = {"EMPTY": 0, "COVER": 0, "EXCLUDED": 0, "SLICE": 0, "OPEN": 0, "CONE": 0, "cone_pieces": 0, "uncertified": 0,
+          "nodes": 0, "max_depth": 0, "unc_list": []}
+    cw = Fraction(ctx.opts["cone"]) if ctx.opts.get("cone") else None
     excl = ctx.opts.get("exclusions_parsed") or []
     u_lo = Q2.parse(ctx.opts["u_lo"]) if ctx.opts.get("u_lo") else None
     u_hi = Q2.parse(ctx.opts["u_hi"]) if ctx.opts.get("u_hi") else None
@@ -1145,6 +1424,16 @@ def run_root(task):
                     (bx[5] == u_hi and certify_box(ctx, *bx, open_side="hi") is not None
                      and slice_cover(ctx, *bx[:4], u_hi)):
                 res = "OPEN"        # the half-open interval by certify_box, the end u0 by slice_cover
+            elif cw is not None and bx[4] == u_lo and u_lo.is_zero():
+                # cone leaf, tried once on the way down: when both widths are <= cw and one of them is > cw / 2
+                wx, wy = bx[1] - bx[0], bx[3] - bx[2]
+                if wx <= cw and wy <= cw and (2 * wx > cw or 2 * wy > cw):
+                    for corner in crossing_corners(ctx, *bx[:4]):
+                        k = cone_leaf(ctx, bx, corner, u_scale)
+                        if k:
+                            res = "CONE"
+                            st["cone_pieces"] += k
+                            break
         if res is not None:
             st[res] += 1
         elif d >= max_depth:
@@ -1190,7 +1479,7 @@ def rational_upper(v: Q2, den=64) -> Fraction:
 
 
 def check(cert, root=4, max_depth=40, jobs=1, u_breaks=(), U=None, u_scale=4, n=None, bbox=None, roots_from=None,
-          slices=False, checkpoint=None):
+          slices=False, checkpoint=None, cone=None):
     """Run the checker.  `cert` is a path or an already-parsed dict.  Returns the summary dict."""
     t0 = time.time()
     raw, L, sym, points, pairs, features, segments = load_certificate(cert)
@@ -1259,6 +1548,7 @@ def check(cert, root=4, max_depth=40, jobs=1, u_breaks=(), U=None, u_scale=4, n=
                                  "max_depth_limit": prev.get("max_depth_limit")}
     opts = {"max_depth": max_depth, "u_scale": u_scale, "frame_H": None if FRAME_H is None else str(FRAME_H),
             "u_lo": str(ubr[0]) if slices else None, "u_hi": str(ubr[-1]) if slices else None,
+            "cone": str(Fraction(cone)) if cone else None,
             "pairs": [(str(p[0]), str(p[1]), str(q[0]), str(q[1])) for p, q in pairs],
             "features": [([(str(x), str(y)) for x, y in sites], k, str(w)) for sites, k, w in features],
             "segments": [((str(p[0]), str(p[1])), (str(q[0]), str(q[1])), str(rho))
@@ -1333,15 +1623,17 @@ def check(cert, root=4, max_depth=40, jobs=1, u_breaks=(), U=None, u_scale=4, n=
     if ck is not None:
         ck.close()
     results = [done[t] for t in tasks]
-    agg = {"EMPTY": 0, "COVER": 0, "EXCLUDED": 0, "SLICE": 0, "OPEN": 0, "uncertified": 0, "nodes": 0, "max_depth": 0}
+    agg = {"EMPTY": 0, "COVER": 0, "EXCLUDED": 0, "SLICE": 0, "OPEN": 0, "CONE": 0, "cone_pieces": 0, "uncertified": 0,
+           "nodes": 0, "max_depth": 0}
     unc = []
     for r in results:
-        for k in ("EMPTY", "COVER", "EXCLUDED", "SLICE", "OPEN", "uncertified", "nodes"):
+        for k in ("EMPTY", "COVER", "EXCLUDED", "SLICE", "OPEN", "CONE", "cone_pieces", "uncertified", "nodes"):
             agg[k] += r.get(k, 0)
         agg["max_depth"] = max(agg["max_depth"], r["max_depth"])
         unc.extend(r["unc_list"])
     summary.update(
         root_boxes=len(tasks), root_grid=root, empty_leaves=agg["EMPTY"], cover_leaves=agg["COVER"], excluded_leaves=agg["EXCLUDED"], slice_leaves=agg["SLICE"], open_leaves=agg["OPEN"],
+        cone_leaves=agg["CONE"], cone_pieces=agg["cone_pieces"],
         uncertified=agg["uncertified"], uncertified_boxes=unc[:MAX_LISTED_UNCERTIFIED],
         nodes=agg["nodes"], max_depth=agg["max_depth"], max_depth_limit=max_depth,
         seconds=round(time.time() - t0, 3),
@@ -1364,11 +1656,13 @@ def main(argv=None):
     ap.add_argument("--bbox", default=None, help="rational side of the root bounding box [0, B]^2 (B >= L)")
     ap.add_argument("--u-scale", type=float, default=4.0, help="weight of the u side when choosing the split")
     ap.add_argument("--checkpoint", default=None, help="JSON-lines file of finished root boxes; resumes a stopped run")
+    ap.add_argument("--cone", default=None, help="with --slices: try cone leaves (SPEC) on boxes at u = 0 whose widths "
+                    "are <= this rational and one of them > half of it, around corners where points sit on both edges")
     a = ap.parse_args(argv)
     breaks = [s for s in a.u_breaks.split(",") if s.strip()]
     s = check(a.cert, root=a.root, max_depth=a.max_depth, jobs=a.jobs, u_breaks=breaks,
               u_scale=a.u_scale, n=a.n, bbox=a.bbox, roots_from=a.roots_from, slices=a.slices,
-              checkpoint=a.checkpoint)
+              checkpoint=a.checkpoint, cone=a.cone)
     print(json.dumps(s, indent=2))
     print(f"total weight = {s['total_weight']}", file=sys.stderr)
     if a.n is not None:

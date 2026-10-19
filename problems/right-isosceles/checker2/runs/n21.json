@@ -1,0 +1,50 @@
+{
+  "certificate": "certificates/n21/n21_cert.json",
+  "sha256": "020a4eb5e6d932cd6a27e81928b8599461f2ef95c7c9eb9269d25e04b0b51bf1",
+  "L": "X=7 Y=7",
+  "points": 503,
+  "total_weight": "2099/100",
+  "root_boxes": 5120,
+  "roots_run": 5120,
+  "K": 24,
+  "maxdepth": 40,
+  "counts": {
+    "inadmissible": 4013,
+    "sure": 8775,
+    "sweep": 15927,
+    "split": 23595,
+    "max_depth": 40,
+    "lines_max": 46,
+    "samples": 1417864,
+    "roots": 1401937
+  },
+  "min_sweep_capture": "1765259/1761660",
+  "min_at": [
+    [
+      "0",
+      "1/20",
+      "7/16",
+      "7/8",
+      "7/16",
+      "7/8"
+    ],
+    [
+      "1/31",
+      [
+        [
+          "511/962",
+          "511/962"
+        ],
+        [
+          "962/961",
+          "962/961"
+        ]
+      ]
+    ]
+  ],
+  "status": "verified",
+  "seconds": 10371.0,
+  "n": 21,
+  "total_below_n": true,
+  "note": "run with local_sweep.py sha256 c5916f9d866905f9733361c5d26c94fc33d18198872b6a03dcf367bd78aaf1b6, which differs from the published local_sweep.py (2c958bee883c3b6cb50dc57cd8f31f7702765b56be086dbcf2b70ace3f570d6b) only by the six docstring lines \"Other frames and exclusions\"; seconds is wall-clock time with 3 processes"
+}

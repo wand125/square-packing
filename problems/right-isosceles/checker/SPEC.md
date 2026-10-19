@@ -156,3 +156,80 @@ Added after an independent review (2026-10-12, "sound"): the upper end — symme
 [5/4, 3/2] × [1/2, 3/4] × [3/4, 1] (the D1 image of the wedge, where the square turns the other way) verifies with an
 open-side leaf and fails before this change; and the open-side test keeps real vertices — on [1/2, 3/4] × [5/4, y1] ×
 [0, 1/1000] it drops candidates for y1 = 3/2 (three lines meet at u = 0) and none for y1 = 1499/1000 or 14999999/10^7.
+
+## Cone leaves at a degenerate pose on the end u = 0 (2026-10-15, n = 21)
+
+**Why.** At θ = 0 a square whose corner touches the hypotenuse and whose four edges lie on lines of the certificate's
+grid (n21_frs3: centre (7/8, 41/8), points on all four edges) has, near that pose, a capture that depends on the
+*direction* of approach: an edge point (x0, s) of the left edge is inside iff dx ≤ (s − cy) tan θ + (sec θ − 1)/2, so
+which edge points are inside depends on the ratios dx/u, dy/u. Every box with the pose at a corner contains all ratios,
+so no single point set is inside on the whole box, although every pose captures ≥ 1.009 (exact). Subdivision never
+closes such a box (the first run of n21_frs3 stalled there, 10/15).
+
+**Cone pieces.** Let B = [x0, x1] × [y0, y1] × [0, ub] be a box at the end u = 0 of the u-range and (X, Y) one of its
+corners. With s = σx (x − X) ≥ 0, t = σy (y − Y) ≥ 0 on B (σ = ±1) and g(u) = u / (1 + u²) (> 0 for u > 0), a cone
+piece is
+
+    K(a_lo, a_hi, b_lo, b_hi; [p_a, p_b]) = { pose of B : u ∈ [p_a, p_b], a_lo g ≤ s ≤ a_hi g, b_lo g ≤ t ≤ b_hi g },
+
+where a_hi = ∞ (b_hi = ∞) means no upper bound beyond the box face. Its faces are lines with constant normals and
+offsets O = C D + a u (degree 2 after multiplying by D = 1 + u², like the box faces), so `box_vertices` and every
+existing exact test (vertex candidates, `pair_infeasible`, `captured`, Lemma P, the open-side test) apply unchanged to
+the polygon P_θ = (box ∩ container ∩ cone faces) for each u. The tests that look only at the rectangle (a container
+side empty on the rectangle, or redundant on it) stay valid for the smaller set.
+
+**Cone leaf** ("CONE", counted in `cone_leaves`; pieces in `cone_pieces`), `cone_leaf`:
+1. `slice_cover` at u = 0 for B (as for an open-side leaf);
+2. start with the four pieces [0, 4] × [0, 4], [0, 4] × [4, ∞), [4, ∞) × [0, 4], [4, ∞) × [4, ∞) in (a, b) and
+   u ∈ [0, ub]; each piece must be certified by `certify_box(..., cone=…)` (with the open side "lo" when p_a = 0), or
+   is split in two: in a or b while a width exceeds `CONE_ZMIN` = 1/16 (a finite range at its midpoint, an infinite
+   range [a_lo, ∞) at 2 a_lo while a_lo < `CONE_AMAX` = 64), else in u at the midpoint (pieces at u = 0 are invariant
+   under scaling, so halving u alone does not help; it only shrinks the higher-order terms); at most `CONE_BUDGET` =
+   200 pieces (4000 until 10/18; the successful cone leaves of n21_frs3 used at most 18, and a failing leaf with 4000
+   pieces took about 40 minutes).
+For every u ∈ (0, ub] and every pose of B, s/g and t/g lie in [0, ∞), which the a- and b-ranges partition, and u lies
+in one of the u-ranges; so the pieces cover every pose of B with u > 0, and step 1 covers u = 0. The choice of split
+points is guidance only.
+
+**Two-point lemma** (2026-10-15 for cone pieces; generalised 2026-10-18 and also used on ordinary boxes at the end
+u = 0). For a point q and one of its four edge conditions C(c, u) = 1/2 − σ (q − c) · e_k(u) (affine in the centre c
+for fixed u; q is in the closed square iff all four are ≥ 0), let F_q be a set of at most `TWO_POINT_MAXFAIL` = 2
+conditions of q such that the other conditions of q are ≥ 0 at every vertex candidate for every u of the box. If for
+two points q1, q2 and every pair (C1, C2) ∈ F_q1 × F_q2 there is a multiplier λ(u) ∈ [0, 1] on the u-interval with
+
+    λ(u) C1 + (1 − λ(u)) C2 ≥ 0 at every vertex candidate for every u of the box,
+
+then for each u the combination is ≥ 0 on the convex polygon P_θ (it is affine in c), so C1 < 0 and C2 < 0 never hold
+at the same pose. If q1 is outside the closed square, some C1 ∈ F_q1 is < 0 (the other conditions hold), hence every
+C2 ∈ F_q2 is ≥ 0 and q2 is inside. So q1 or q2 is in the closed square: min(w1, w2) is added, each point used at most
+once in the whole count (as in Lemma P). λ is a rational constant, λ = α u or λ = 1 − α u, with rational α, 0 ≤ α
+and α u_b ≤ 1 (u_a ≥ 0), checked exactly; the last two forms are needed where the switch is of second order in θ
+(below). The inequalities are proved on Bernstein vectors (D² times each condition, linear in the cached vectors; for
+α u the product with u and the degree elevation are exact, giving degree 5). Floats pick the points, the sets F and λ;
+as guidance, a point is a candidate only if each condition in F_q holds at some float sample (otherwise q is outside on
+the whole box).
+
+Where. On a cone piece before Lemma P, so that a heavy switching point is not spent on a light chord partner (needed
+at points where two switch lines meet on the admissible boundary, e.g. a = b = 1/4 at (7/8, 41/8), where the cell
+with both points outside is not admissible). On an ordinary box with u_a = 0 (also with an open side): when the
+count with Lemma P falls short, the count is redone from the exactly captured points with the two-point lemma first
+and Lemma P on the points left; each count is sound and the larger is kept.
+
+Why the second form (n21_frs3, 10/18). At θ = 0 the square [33/8, 41/8] × [0, 1] is flush with the leg y = 0. Without
+three points its capture is 0.98703; R = (41/8, 1/2) (w 0.023) lies on its right edge, L = (33/8, 1/2) (w 0.0083)
+on its left edge, C = (33/8, 1) (w 0.0735) at its top-left corner. Every admissible pose near it contains R or C (float
+minimum 1.010), but the switch between R (right edge) and C (top edge) is of second order: at the vertex
+c = (37/8 − ε, (sin θ + cos θ)/2) of P_θ, C_R ≈ −ε + 3θ²/4 and C_C,top ≈ θ ε − θ³/4, so a constant λ fails on every
+box with u_a = 0 and ε > 0 (λ = 0 is forced at θ = 0, λ > θ/3 at ε = 0), and a cone piece cannot separate the
+switch either (its scaling is first order). A weight α u ≈ θ/2 on C_R (λ = 1 − α u on C_C,top, α near 1) makes the
+combination ≈ θ ε / 2 + θ³ / 8 ≥ 0 to leading order (the exact test is on the Bernstein vectors; the expansion is
+only the reason). C's left condition pairs with R's right one with a constant λ (at λ = 1/2 the combination does not
+depend on c). The first run stalled there (10/16): Lemma P on (L, R) gives only 0.995. With the lemma a box
+[37/8 − w, 37/8] × [1/2, 1/2 + w] × [0, u_b] is certified once u_b ≤ w (tests, w = 1/128 … 1/1024); for larger u_b a
+vertex of the rectangle that is admissible only for small u makes C's top condition fail at the other angles of the
+box, and the subdivision halves u.
+
+**When.** Option `--cone W` (with `--slices`, off by default): a box at u = 0 that fails `certify_box`, the endpoint
+slice and the open-side leaf, whose widths are ≤ W with one of them > W/2 (so one level of the descent), tries a cone
+leaf around each corner where positive-weight points lie on a vertical and on a horizontal edge of the θ = 0 square
+(guidance only; any corner gives a sound leaf). If none succeeds, subdivision continues as before.

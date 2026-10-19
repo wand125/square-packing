@@ -22,7 +22,7 @@ The set is invariant under the reflection (x, y) ↦ (y, x), the symmetry of T_3
 two of the four points.
 
 *Proof.* Two independent exact checkers (Q(√2) arithmetic):
-- checker 1 (`python3 checker/check.py certificates/n3/n3_cert.json --n 3`): symmetry D1, 62 nodes, 0 uncertified, maximum depth 4, 0.2 s (`check_record.json`).
+- checker 1 (`python3 checker/check.py certificates/n3/n3_cert.json --n 3`): symmetry D1, 62 nodes, 0 uncertified, maximum depth 4, 0.1 s (`check_record.json`).
 - checker 2 (`../../checker2/sweep_q2.py`, all angles, no symmetry, no Lemma P): verified, minimum capture 1, 7 s (`../../checker2/runs/n3.json`).
 
 The theorem follows by centre scaling (`../../README.md`, "The method"): three disjoint closed

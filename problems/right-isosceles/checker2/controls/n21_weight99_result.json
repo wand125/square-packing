@@ -1,0 +1,49 @@
+{
+  "certificate": "checker2/controls/n21_weight99.json",
+  "sha256": "fc8506973301f8f2aa78d065de10caf4c35799080145abf7a403f7f2782f3be3",
+  "L": "X=7 Y=7",
+  "points": 503,
+  "total_weight": "207801/10000",
+  "root_boxes": 5120,
+  "roots_run": 1,
+  "K": 24,
+  "maxdepth": 40,
+  "counts": {
+    "inadmissible": 0,
+    "sure": 0,
+    "sweep": 1,
+    "split": 0,
+    "max_depth": 0,
+    "lines_max": 27,
+    "samples": 39,
+    "roots": 38
+  },
+  "min_sweep_capture": "19417849/19574000",
+  "min_at": [
+    [
+      "0",
+      "1/20",
+      "7/16",
+      "7/8",
+      "7/16",
+      "7/8"
+    ],
+    [
+      "1/31",
+      [
+        [
+          "511/962",
+          "511/962"
+        ],
+        [
+          "962/961",
+          "962/961"
+        ]
+      ]
+    ]
+  ],
+  "status": "failed",
+  "seconds": 0.9,
+  "n": 21,
+  "total_below_n": true
+}

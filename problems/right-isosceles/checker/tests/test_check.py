@@ -174,8 +174,8 @@ def test_open_end_keeps_real_vertices():
     rec = []
     orig = C.box_vertices
 
-    def bv(ctx, x0, x1, y0, y1, ua, ub, open_side=None):
-        iv, f = orig(ctx, x0, x1, y0, y1, ua, ub, open_side)
+    def bv(ctx, x0, x1, y0, y1, ua, ub, open_side=None, cone=None):
+        iv, f = orig(ctx, x0, x1, y0, y1, ua, ub, open_side, cone)
         if open_side is None:
             rec.append((len(f or []), len(orig(ctx, x0, x1, y0, y1, ua, ub, "lo")[1] or [])))
         return iv, f
@@ -192,3 +192,100 @@ def test_open_end_keeps_real_vertices():
     assert opened < closed
     for y1 in ("1499/1000", "14999999/10000000"):
         assert got[y1][0] == got[y1][1]
+
+
+# Cone leaves (SPEC "Cone leaves"): the wedged hypotenuse crossing of n21_frs3 at (7/8, 41/8), theta = 0.
+import os as _os
+_N21 = _os.path.join(_os.path.dirname(__file__), "data", "n21_frs3.json")
+_CONE_BOX = (Fraction(7, 8), Fraction(15, 16), Fraction(81, 16), Fraction(41, 8))
+
+
+def _n21_ctx(scale=None):
+    import check as C
+    from q2 import Q2
+    raw, L, sym, pts, pairs, feats, segs = C.load_certificate(_N21)
+    if scale is not None:
+        pts = [(x, y, w * scale) for x, y, w in pts]
+    opts = {"max_depth": 30, "u_scale": 4, "frame_H": None, "u_lo": "0", "u_hi": None, "cone": "1/16",
+            "pairs": [(str(p[0]), str(p[1]), str(q[0]), str(q[1])) for p, q in pairs], "features": [], "segments": []}
+    C._init_worker(str(L), [(str(x), str(y), str(w)) for x, y, w in pts], opts)
+    return C, C._WORKER_CTX, Q2
+
+
+def test_cone_leaf_wedged_crossing():
+    # the box that the plain checker never closes is one cone leaf; the corner is found by crossing_corners
+    C, ctx, Q2 = _n21_ctx()
+    ub = Q2.parse("-1/4+1/4*sqrt2") * Fraction(1, 16)
+    bx = _CONE_BOX + (Q2(0), ub)
+    assert (Fraction(7, 8), Fraction(41, 8)) in C.crossing_corners(ctx, *bx[:4])
+    assert C.certify_box(ctx, *bx) is None and C.certify_box(ctx, *bx, open_side="lo") is None
+    rec = []
+    assert C.cone_leaf(ctx, bx, (Fraction(7, 8), Fraction(41, 8)), 4, record=rec) > 0
+    # the certified pieces cover the box for u > 0: exact sample poses, each in some piece
+    import random
+    rnd = random.Random(1)
+    for _ in range(300):
+        u = Fraction(rnd.randint(1, 10**6), 10**6) * Fraction(1, 400)
+        x = Fraction(7, 8) + Fraction(rnd.randint(0, 10**6), 10**6) / 16
+        y = Fraction(41, 8) - Fraction(rnd.randint(0, 10**6), 10**6) / 16
+        g = u / (1 + u * u)
+        a, b = (x - Fraction(7, 8)) / g, (Fraction(41, 8) - y) / g
+        assert any(alo <= a and (ahi is None or a <= ahi) and blo <= b and (bhi is None or b <= bhi)
+                   and Q2(u) >= pa and Q2(u) <= pb for alo, ahi, blo, bhi, pa, pb in rec)
+
+
+def test_cone_leaf_negative():
+    # weights x 97/100: the exact capture near the corner drops below 1 (1.0211 x 0.97 < 1), the leaf must fail
+    C, ctx, Q2 = _n21_ctx(Fraction(97, 100))
+    ub = Q2.parse("-1/4+1/4*sqrt2") * Fraction(1, 16)
+    bx = _CONE_BOX + (Q2(0), ub)
+    old = C.CONE_BUDGET
+    C.CONE_BUDGET = 300          # the positive case needs 18 pieces; failing is decided by the budget
+    try:
+        assert C.cone_leaf(ctx, bx, (Fraction(7, 8), Fraction(41, 8)), 4) == 0
+    finally:
+        C.CONE_BUDGET = old
+
+
+# Two-point lemma on ordinary boxes at u = 0 (SPEC "Two-point lemma", 10/18): the square [33/8, 41/8] x [0, 1] of
+# n21_frs3 flush with the leg y = 0; R = (41/8, 1/2) or C = (33/8, 1) is inside, with a multiplier 1 - alpha u.
+_FLUSH = (Fraction(37, 8), Fraction(1, 2))
+
+
+def _flush_box(Q2, w, ue):
+    X, Y = _FLUSH
+    return (X - w, X, Y, Y + w, Q2(0), Q2(ue))
+
+
+def test_bern_times_u_and_elevate():
+    import check as C
+    from poly import to_bern, P
+    from q2 import Q2
+    ua, ub = Q2.parse("1/7"), Q2.parse("-1/4+1/4*sqrt2")
+    p = P(Q2(3), Q2(-2), Q2.parse("1/2+sqrt2"), Q2(0), Q2(5))
+    up = [Q2(0)] + list(p)
+    assert C._bern_times_u(to_bern(p, ua, ub), ua, ub) == to_bern(up, ua, ub, 5)
+    assert C._bern_elevate(to_bern(p, ua, ub)) == to_bern(p, ua, ub, 5)
+
+
+def test_two_point_flush_corner():
+    C, ctx, Q2 = _n21_ctx()
+    w = Fraction(1, 256)
+    for ue in (w, w / 4):
+        bx = _flush_box(Q2, w, ue)
+        assert C.certify_box(ctx, *bx) == "COVER"
+        assert C.certify_box(ctx, *bx, open_side="lo") == "COVER"
+    orig = C.two_point_credit
+    C.two_point_credit = lambda ctx, fv, fE, pb, B, used, acc, ua, ub: acc
+    try:
+        assert C.certify_box(ctx, *_flush_box(Q2, w, w)) is None     # Lemma P alone: 0.995
+    finally:
+        C.two_point_credit = orig
+
+
+def test_two_point_flush_corner_negative():
+    # weights x 98/100: 1.0100 x 0.98 < 1, the box must not be certified
+    C, ctx, Q2 = _n21_ctx(Fraction(98, 100))
+    w = Fraction(1, 256)
+    assert C.certify_box(ctx, *_flush_box(Q2, w, w)) is None
+    assert C.certify_box(ctx, *_flush_box(Q2, w, w), open_side="lo") is None

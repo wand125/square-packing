@@ -1,4 +1,4 @@
-# Unit squares in a right isosceles triangle: optimal packings for n = 2, 3, 4, 6, 10, 15
+# Unit squares in a right isosceles triangle: optimal packings for n = 2, 3, 4, 6, 10, 15, 21
 
 Let s(n) be the leg length of the smallest right isosceles triangle that contains n non-overlapping
 unit squares (any positions, any angles).
@@ -11,11 +11,12 @@ unit squares (any positions, any angles).
 | 6 | 4 | 4 | axis-parallel staircase, rows 3 + 2 + 1 | 7 points (total 5) and Lemma P |
 | 10 | 5 | 5 | axis-parallel staircase, rows 4 + 3 + 2 + 1 | 15 points (total 19/2) and Lemma P |
 | 15 | 6 | 6 | axis-parallel staircase, rows 5 + 4 + 3 + 2 + 1 | 505 points (total 1499/100) and Lemma P |
+| 21 | 7 | 7 | axis-parallel staircase, rows 6 + 5 + 4 + 3 + 2 + 1 | 503 points (total 2099/100), Lemma P, cone leaves and the two-point lemma |
 
 Upper bounds: our packing certificates `certificates/nX/packing.json` (exact coordinates), checked
 exactly by the two checkers in [`tools/packing_check/`](../../tools/packing_check/). The packings are
 the ones listed in Erich Friedman's Packing Center, "Squares in Right Isosceles Triangles"
-(https://erich-friedman.github.io/packing/squintan/), where n = 2, 3, 6, 10 and 15 are listed as "Trivial"
+(https://erich-friedman.github.io/packing/squintan/), where n = 2, 3, 6, 10, 15 and 21 are listed as "Trivial"
 and the packing for n = 4 was found by Erich Friedman in March 2005; we claim no originality for them.
 The lower-bound certificates show that these packings are optimal. The results are computer-assisted and checked by two independent checkers.
 They have not been peer reviewed.
@@ -52,12 +53,18 @@ Then n squares do not fit in a triangle with legs L < v.
 
 With the packing of leg v, this gives s(n) = v. Details are in `certificates/n*/PROOF.md`.
 
-**Lemma P (used for n = 4, 6, 10, 15).** For two points p, q at distance exactly 1, a square whose chord
+**Lemma P (used for n = 4, 6, 10, 15, 21).** For two points p, q at distance exactly 1, a square whose chord
 along the line pq crosses two opposite edges and meets the segment [p, q] contains p or q. It handles
 poses where the captured point switches from p to q across a surface that is not parallel to the axes,
 for example a square standing on the middle of the hypotenuse for n = 4. The pair counts min(w_p, w_q),
 and no point is counted twice. Lemma P is used only by the first checker; the second checker counts the
 points exactly in every cell and does not need it.
+
+**Cone leaves and the two-point lemma (used for n = 21).** At θ = 0 the staircase for n = 21 has squares where two
+switches between captured points meet: a corner on the hypotenuse with both other edges on grid lines, and a square
+flush with a leg where the switch is of second order in θ. Checker 1 cuts the boxes at the first kind into cone
+pieces, and closes the second kind with a two-point lemma whose multiplier depends on u. Both are described in
+`checker/SPEC.md` and `certificates/n21/PROOF.md`. Checker 2 does not need them.
 
 ## Two independent checkers
 
@@ -68,9 +75,9 @@ points exactly in every cell and does not need it.
   - Standard library only.
 - **`checker2/`** is a second checker written from the specifications, the proof notes and the
   certificate format, with a different method (an exact sweep over all angles, without Bernstein bounds,
-  the symmetry or Lemma P; for n = 2 to 10 over the whole arrangement, for n = 15 inside small pose boxes
-  by `local_sweep.py`). Its README describes the method and what its author read.
-  It verifies the same six certificates and rejects the negative controls in `checker2/controls/`.
+  the symmetry or Lemma P; for n = 2 to 10 over the whole arrangement, for n = 15 and 21 inside small pose
+  boxes by `local_sweep.py`). Its README describes the method and what its author read.
+  It verifies the same seven certificates and rejects the negative controls in `checker2/controls/`.
 
 ## Reproducing
 
@@ -87,12 +94,16 @@ python3 checker/check.py certificates/n6/n6_cert.json --n 6 --max-depth 22 --job
 python3 checker/check.py certificates/n10/n10_cert.json --n 10 --max-depth 22 --bbox 6 --jobs 8
 python3 checker/check.py certificates/n15/n15_cert.json --n 15 --bbox 8 --slices --max-depth 70 --root 32 --jobs 8 \
     --checkpoint n15.ckpt.jsonl                     # hours; resumable
+python3 checker/check.py certificates/n21/n21_cert.json --n 21 --bbox 8 --slices --max-depth 70 --root 32 --cone 1/16 \
+    --jobs 8 --checkpoint n21.ckpt.jsonl            # about 25 core-hours; resumable
 cd checker && python3 -m pytest -q tests          # needs pytest; a few seconds
 
 # checker 2 (needs gmpy2 and sympy)
 python3 checker2/sweep_q2.py certificates/n10/n10_cert.json --n 10 --jobs 8
 python3 checker2/local_sweep.py certificates/n15/n15_cert.json --n 15 --jobs 8 --K 24 --uslices 20 --grid 16 \
     --log n15.log.jsonl --resume --out n15.json      # hours; resumable; see checker2/README.md
+python3 checker2/local_sweep.py certificates/n21/n21_cert.json --n 21 --jobs 8 --K 24 --uslices 20 --grid 16 \
+    --log n21.log.jsonl --resume --out n21.json      # hours; resumable; see checker2/README.md
 
 # the packings (upper bounds); the second checker needs sympy
 python3 ../../tools/packing_check/check_packing.py  certificates/n4/packing.json
@@ -101,18 +112,21 @@ python3 ../../tools/packing_check/check_packing2.py certificates/n4/packing.json
 
 Each run prints a JSON summary with `"status": "verified"`. The summary also contains the certificate's
 sha256, the exact total weight and whether it is < n. The recorded runs are
-`certificates/n*/check_record.json` (checker 1) and `checker2/runs/n*.json` (checker 2; for n = 15 the
-summary reports the minimum capture over the swept cells, 3512157/3504100). On one machine
-checker 1 takes under 10 s for each certificate up to n = 10 and about 6.8 core-hours for n = 15, and checker 2
-between 2 s (n = 2) and about 4.5 minutes (n = 10), and about 2.7 hours for n = 15.
+`certificates/n*/check_record.json` (checker 1) and `checker2/runs/n*.json` (checker 2; for n = 15 and 21 the
+summary reports the minimum capture over the swept cells, 3512157/3504100 and 1765259/1761660). On one machine
+checker 1 takes under 10 s for each certificate up to n = 10, about 11 core-hours for n = 15 and about 25
+core-hours for n = 21. Checker 2 takes between 2 s (n = 2) and about 4.5 minutes (n = 10), about 2.7 hours for
+n = 15 and about 2.9 hours for n = 21 (three processes each).
 
 `--bbox 6` for n = 10 only changes the root grid (it covers [0, 6]² instead of [0, 5 + 1/64]²), so that
 the line x = 3/2 is a face of the boxes; see `certificates/n10/PROOF.md`. For n = 15, `--bbox 8 --root 32` puts the
 integer and half-integer lines on box faces, and `--slices` turns on the end-of-range leaves; see
-`certificates/n15/PROOF.md`. `--checkpoint` only saves finished root boxes so that a stopped run can continue.
+`certificates/n15/PROOF.md`. n = 21 uses the same grid, and `--cone 1/16` turns on the cone leaves
+(`certificates/n21/PROOF.md`). `--checkpoint` only saves finished root boxes so that a stopped run can continue.
 
 `tools/` has the exact random probe used as a sanity check, the float LPs that found the certificates
-(`lp_repair.py` adds the box rows at the degenerate poses for n = 15) and the script that adds the unit-distance pairs. They are not part of the proofs.
+(`lp_repair.py` adds the box rows at the degenerate poses for n = 15; `tools/n21/` has its later version and the
+screens and additive repairs used for n = 21) and the script that adds the unit-distance pairs. They are not part of the proofs.
 
 ## Not done
 
@@ -120,6 +134,7 @@ integer and half-integer lines on box faces, and `--slices` turns on the end-of-
   (a packing of n squares then has room to move).
 - n = 7, 8, 11, 13: in the best known packings a row of tilted squares along the hypotenuse has room to
   slide, which a single point certificate cannot handle.
+- n = 28 and the larger triangular numbers (staircase with legs k + 1): work in progress.
 - n = 9, 12 (7/√2, 4√2): the packings are rigid staircases (rows 5 + 3 + 1 and 6 + 4 + 2 on the hypotenuse), but a single point certificate is not enough; work in progress.
 
 ## Licence

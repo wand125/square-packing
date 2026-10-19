@@ -98,7 +98,7 @@ files on disk).
 
 | result | file |
 |---|---|
-| right isosceles triangle, n = 2, 3, 4, 6, 10, 15 | `problems/right-isosceles/certificates/nX/packing.json` |
+| right isosceles triangle, n = 2, 3, 4, 6, 10, 15, 21 | `problems/right-isosceles/certificates/nX/packing.json` |
 | regular hexagon, n = 3 | `problems/hexagon/n3/packing.json` |
 | 1 × 2 rectangle, n = 4 | `problems/domino/certificates/n4/packing.json` |
 | square, s(22) = … = s(25) = 5 | `problems/square-lower-bounds/point_n21_L5/packing_n22.json` … `packing_n25.json` |

@@ -19,8 +19,8 @@ distance exactly 1).
 
 *Proof.* Two independent exact checkers (Q(√2) arithmetic):
 - checker 1 (`python3 checker/check.py certificates/n15/n15_cert.json --n 15 --bbox 8 --slices --max-depth 70 --root 32`):
-  symmetry D1, 1,024 root boxes, 181,112 nodes, 89,856 cover leaves, 1,162 empty leaves, 48 slice leaves, 2 open-end
-  leaves, 0 uncertified, maximum depth 26, about 6.8 hours on one core (`check_record.json`; one line per root box in
+  symmetry D1, 1,024 root boxes, 176,166 nodes, 87,416 cover leaves, 1,133 empty leaves, 45 slice leaves, 1 open-end
+  leaf, 0 uncertified, maximum depth 26, about 5.6 hours on two cores (`check_record.json`; one line per root box in
   `check_record_roots.jsonl`, which the run wrote under the name given in the record's `checkpoint` field).
 - checker 2 (`../../checker2/`, all angles, no symmetry, no Lemma P): verified, minimum capture 3512157/3504100,
   about 2.7 hours (`../../checker2/runs/n15.json`).

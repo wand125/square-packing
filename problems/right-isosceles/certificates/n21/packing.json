@@ -1,0 +1,153 @@
+{
+ "format": "packing-certificate/1",
+ "problem": "squares in a right isosceles triangle, n = 21",
+ "n": 21,
+ "container": {
+  "kind": "right_isosceles_triangle",
+  "side": "7",
+  "vertices": [
+   [
+    "0",
+    "0"
+   ],
+   [
+    "7",
+    "0"
+   ],
+   [
+    "0",
+    "7"
+   ]
+  ]
+ },
+ "packing": "axis-parallel staircase with rows 6, 5, 4, 3, 2, 1 in the corner of the right angle",
+ "source": "Erich Friedman, Packing Center, \"Squares in Right Isosceles Triangles\"",
+ "squares": [
+  {
+   "axis": [
+    "0",
+    "0"
+   ]
+  },
+  {
+   "axis": [
+    "1",
+    "0"
+   ]
+  },
+  {
+   "axis": [
+    "2",
+    "0"
+   ]
+  },
+  {
+   "axis": [
+    "3",
+    "0"
+   ]
+  },
+  {
+   "axis": [
+    "4",
+    "0"
+   ]
+  },
+  {
+   "axis": [
+    "5",
+    "0"
+   ]
+  },
+  {
+   "axis": [
+    "0",
+    "1"
+   ]
+  },
+  {
+   "axis": [
+    "1",
+    "1"
+   ]
+  },
+  {
+   "axis": [
+    "2",
+    "1"
+   ]
+  },
+  {
+   "axis": [
+    "3",
+    "1"
+   ]
+  },
+  {
+   "axis": [
+    "4",
+    "1"
+   ]
+  },
+  {
+   "axis": [
+    "0",
+    "2"
+   ]
+  },
+  {
+   "axis": [
+    "1",
+    "2"
+   ]
+  },
+  {
+   "axis": [
+    "2",
+    "2"
+   ]
+  },
+  {
+   "axis": [
+    "3",
+    "2"
+   ]
+  },
+  {
+   "axis": [
+    "0",
+    "3"
+   ]
+  },
+  {
+   "axis": [
+    "1",
+    "3"
+   ]
+  },
+  {
+   "axis": [
+    "2",
+    "3"
+   ]
+  },
+  {
+   "axis": [
+    "0",
+    "4"
+   ]
+  },
+  {
+   "axis": [
+    "1",
+    "4"
+   ]
+  },
+  {
+   "axis": [
+    "0",
+    "5"
+   ]
+  }
+ ]
+}
