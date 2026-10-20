@@ -46,7 +46,7 @@ $$
 
 **閉包による角度 0.** $\theta \notin (\pi/2)\mathbb Z$ ではどの線分も $Q$ の辺と平行でないので、質量は姿勢について連続であり、どこでも上半連続である。$\theta = 0$ の許される姿勢は、$\theta > 0$ の許される姿勢の極限である。よって $\theta \ne 0$ のすべてで $\mu \ge 1$ なら、$\theta = 0$ でも成り立つ。
 
-**角度を固定した場合.** $\theta$ を固定すると、質量は中心について、直線の配置の上で区分的に 2 次式である（補題 F1）。Brunn–Minkowski により $\sqrt{\operatorname{area}(Q \cap S)}$ は凹なので、面の内部に最小はない（補題 F2）。中心の箱の上の最小は、配置の頂点か、辺の 1 次元の臨界点でとられる。
+**角度を固定した場合.** $\theta$ を固定すると、質量は中心について、直線の配置の上で区分的に 2 次式である（補題 F1）。どちらの被覆でも、多角形の部分は密度が一様な凸多角形 1 枚（Lebesgue の正方形 $S$）で、線分の部分は各面の上で 1 次式である。Brunn–Minkowski により $\sqrt{\operatorname{area}(Q \cap S)}$ は凹なので、面の内部に最小はない（補題 F2）。中心の箱の上の最小は、配置の頂点か、辺の 1 次元の臨界点でとられる。補題 F2 にはこの前提が欠かせない（2026-10-20 に気づいた）。多角形の片が 2 枚以上あるか、密度の違う片があると、面の内部に最小が出うる。そのような被覆では、検査器は `src/faces.py` の面の掃き出し（補題 B5）も走らせる。2 つの被覆はどちらも前提を満たすので、ここでの結果は変わらない。
 
 **Tier A：箱の芯による下界.** 姿勢の箱（中心の箱 $\times$ $u$ の区間）のどの正方形も、ある有理多角形（角度方向の芯の内側の近似を中心の箱で削ったもの）を含むので、$\mu(Q) \ge \mu(\text{芯})$ を厳密に計算する。ルベーグの正方形 $S$ については、$O$ を有理数の外側の包として
 
@@ -92,7 +92,7 @@ $$
 
 - 2 つの有限の命題のコンピュータによる検査である。結果 $s(k^2-3) = k$、$s(k^2-4) = k$ とその帰着は Evan Daniel によるもの。
 - `check_record.py` は記録の被覆と分割の構造、および EMPTY の葉を厳密に再検査するが、CORE と TIERB2 の葉の証明のやり直しは無作為の標本だけである。
-- 元のリポジトリ [wand125/valid7-independent-check](https://github.com/wand125/valid7-independent-check) はアーカイブ済みで、コードは現在 [checks/valid7](https://github.com/wand125/square-packing/tree/main/checks/valid7) にある。Lean 版は別のテーマで、どちらも完了：[#8](https://github.com/wand125/square-packing/issues/8)（Valid7、Release [data/valid7-lean-certs-v1](https://github.com/wand125/square-packing/releases/tag/data/valid7-lean-certs-v1)）、[#10](https://github.com/wand125/square-packing/issues/10)（ValidTilt9、Release [validtilt9-lean-v1](https://github.com/wand125/square-packing/releases/tag/validtilt9-lean-v1)）。Valid7 は第 2 版として、同じ証明書から Lean のカーネルで改めて検査した：[lean/valid7](https://github.com/wand125/square-packing/tree/main/lean/valid7)（Release [valid7-lean-v2](https://github.com/wand125/square-packing/releases/tag/valid7-lean-v2)）。第 2 版は `validTilt7` も証明し、記録した実行は約 800 CPU 時間だった。
+- 元のリポジトリ [wand125/valid7-independent-check](https://github.com/wand125/valid7-independent-check) はアーカイブ済みで、コードは現在 [checks/valid7](https://github.com/wand125/square-packing/tree/main/checks/valid7) にある。Lean 版は別のテーマで、どちらも完了：[#8](https://github.com/wand125/square-packing/issues/8)（Valid7、Release [data/valid7-lean-certs-v1](https://github.com/wand125/square-packing/releases/tag/data/valid7-lean-certs-v1)）、[#10](https://github.com/wand125/square-packing/issues/10)（ValidTilt9、Release [validtilt9-lean-v1](https://github.com/wand125/square-packing/releases/tag/validtilt9-lean-v1)）。Valid7 は第 2 版として、同じ証明書から Lean のカーネルで改めて検査した：[lean/valid7](https://github.com/wand125/square-packing/tree/main/lean/valid7)（Release [valid7-lean-v2](https://github.com/wand125/square-packing/releases/tag/valid7-lean-v2)）。第 2 版は `validTilt7 : Bentz.ValidTilt7`（Valid7 の傾いた部分：$[0,7]^2$ に含まれ、中心が $[0,7/2]^2$ にあり、角が $0 < \theta \le 45^\circ$ の閉じた単位正方形は、どれも質量が $\ge 1$）も証明し、記録した実行は約 800 CPU 時間だった。
 
 ## 再現方法
 

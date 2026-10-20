@@ -208,7 +208,9 @@ $\varsigma_A = -\operatorname{sgn} p$、$\varsigma_B = \operatorname{sgn} r$ と
    - $a_0\cdot(q_\sigma - f) = a_0\cdot e + a\,\nu\cdot\sigma$ なので、$q_\sigma$ についての条件 (i) は $\nu\cdot d + a\,\nu\cdot\sigma \le \tfrac12 a_{0x}\lVert\nu\rVert$ から従う。
 3. *A と B がともに (i) をみたさないことはない.*
    - $\nu\cdot\sigma_A = \varsigma_A(\nu_y + \nu_z)$、$\nu\cdot\sigma_B = \varsigma_B(\nu_y - \nu_z)$ である。
-   - ともにみたさないなら $\nu\cdot d + a\cdot\min(|\nu_y + \nu_z|, |\nu_y - \nu_z|) > \tfrac12 a_{0x}\lVert\nu\rVert$。最小値は $\sqrt{((\nu_y + \nu_z)^2 + (\nu_y - \nu_z)^2)/2} = \lVert\nu\rVert$ 以下なので、$\nu\cdot d > (\tfrac12 a_{0x} - a)\lVert\nu\rVert$。
+   - 符号 $\varsigma_A$、$\varsigma_B$ は段 1 で $p$ と $r$ から決めたもので、$\nu$ からは決めていない。そのためこの 2 つの数の符号は分からない。そこで、どちらの符号でも成り立つ上界 $\nu\cdot\sigma_A \le |\nu_y + \nu_z|$ と $\nu\cdot\sigma_B \le |\nu_y - \nu_z|$ だけを使う。
+   - $A$ と $B$ のどちらでも段 2 の十分条件がみたされないとする。上の上界から $\nu\cdot d + a|\nu_y + \nu_z| > \tfrac12 a_{0x}\lVert\nu\rVert$ かつ $\nu\cdot d + a|\nu_y - \nu_z| > \tfrac12 a_{0x}\lVert\nu\rVert$。したがって $\nu\cdot d + a\cdot\min(|\nu_y + \nu_z|, |\nu_y - \nu_z|) > \tfrac12 a_{0x}\lVert\nu\rVert$。
+   - 最小値は $\sqrt{((\nu_y + \nu_z)^2 + (\nu_y - \nu_z)^2)/2} = \lVert\nu\rVert$ 以下なので、$\nu\cdot d > (\tfrac12 a_{0x} - a)\lVert\nu\rVert$。
    - しかし $\nu\cdot d \le \lVert\nu\rVert\lVert d\rVert < (\tfrac12 a_{0x} - a)\lVert\nu\rVert$ であり、$\nu \ne 0$ のとき矛盾する。
    - $\nu = 0$ なら $a_{0x} = 1$ かつ $\sigma_x = 0$ なので、(i) はすべての $\sigma$ について成り立つ。 $\blacksquare$
 

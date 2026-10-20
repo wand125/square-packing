@@ -105,12 +105,12 @@ The second implementation of each stage was written without reading the first on
 | packing (upper bound) | `python3 tools/packing_check/check_packing.py problems/hexagon/n3/packing.json`, and the same with `check_packing2.py` (repository root) | under a second |
 | checksums | `sha256sum -c SHA256SUMS` (root) | seconds |
 | local lemma | `python ll_exact.py`, `python ll_radius.py` (`n3/local_lemma/`) | seconds; the float search about 20 min |
-| stage 1, impl. 1 | `python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4` | about 7 min |
-| stage 1, impl. 2 | `python hexcheck.py ../n3/stage1_cert.json --jobs 14 --grid 8` | about 2 h 50 min |
-| stage 2, impl. 1 | `python bb_rig_batch.py --workers 16 --boxes 0-741` | about 54 core-hours |
-| stage 2, impl. 2 | `cargo build --release`, then `hexs2 --cert ../n3/stage1_cert.json --threads 16 --max-depth 80` | about 6 core-hours |
+| stage 1, impl. 1 | `python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4` (`stage1_checker/`) | about 7 min |
+| stage 1, impl. 2 | `python hexcheck.py ../n3/stage1_cert.json --jobs 14 --grid 8` (`stage1_checker2/`) | about 2 h 50 min |
+| stage 2, impl. 1 | `python bb_rig_batch.py --workers 16 --boxes 0-741` (`stage2_checker/`) | about 54 core-hours |
+| stage 2, impl. 2 | `cargo build --release`, then `./target/release/hexs2 --cert ../n3/stage1_cert.json --threads 16 --max-depth 80` (`stage2_checker2/`) | about 6 core-hours |
 
-A single stage-2 box is a quick test: `python bb_rig.py --box 2` (about 1.5 min) or `hexs2 --k 2 --max-depth 80` (about 30 s).
+A single stage-2 box is a quick test: `python bb_rig.py --box 2` (about 1.5 min, `stage2_checker/`) or `./target/release/hexs2 --k 2 --max-depth 80` (about 30 s, `stage2_checker2/`).
 
 ## References
 

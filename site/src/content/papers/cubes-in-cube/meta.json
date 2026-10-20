@@ -40,6 +40,13 @@
    "en": "First version: s₃(9) = s₃(10) = 2 + 1/√2.",
    "ja": "初版：s₃(9) = s₃(10) = 2 + 1/√2。",
    "commit": "7418838"
+  },
+  {
+   "v": "2",
+   "date": "2026-10-21",
+   "en": "Lemma L, step 3: say why the signs are replaced by absolute values (review, 10/21).",
+   "ja": "補題 L の段 3：符号を絶対値で置き換える理由を書いた（査読の指摘、10/21）。",
+   "commit": ""
   }
  ]
 }

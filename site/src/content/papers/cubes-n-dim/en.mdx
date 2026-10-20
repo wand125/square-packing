@@ -109,7 +109,7 @@ It suffices to check $SO(4)$: if $\det R = -1$, negating column 4 gives a matrix
 
 | | first system (`checker/`) | second system (`checker2/`) |
 |---|---|---|
-| coordinates | column 1 by $t = (u_2, u_3, u_4)/u_1$; columns 2–4 as $N_u S$, $S \in SO(3)$ by a quaternion | $R(p, q)\,x = p\,x\,\bar q$, two unit quaternions, each on the 4 faces of the cube $[-1, 1]^4$ |
+| coordinates | column 1 by $t = (u_2, u_3, u_4)/u_1$; columns 2–4 as $N_u S$, $S \in SO(3)$ by a quaternion | $R(p, q)\,x = p\,x\,\bar q$, two quaternions, each scaled so that a coordinate of largest magnitude is $+1$, i.e. each on one of the 4 facets $\{x_i = +1\}$ of $[-1, 1]^4$ (this gives $R$ only up to sign; $-R \in SO(4)$ and $F$ depends only on $|R|$, and the symmetry reduction keeps a box unless it excludes both signs) |
 | symmetry | sorted column 1 (384) and the Voronoi cell of the binary octahedral group (24) as coordinates | sorted column 1 and row 1 imposed as constraints C1–C3; a box is discarded only if every point violates them, for both $R$ and $-R$ |
 | bound on $F$ | mean-value form with interval forward-mode AD, also $2\lVert u\rVert_1 - 1 - \sum a_e \lVert m_e\rVert_1$ and $G(u)$ | mean-value form with interval AD, $F$'s own upper bound only |
 | near rule | box inside $u_1^2 \ge 2/3$ | box inside $\max_e \mathrm{lo}(\lvert R_{e1}\rvert)^2 \ge 2/3$ |
@@ -147,7 +147,7 @@ $$
 1 - F_j \ge q(p) = \sqrt2\,\operatorname{Tr}\sqrt{\operatorname{diag}(p) - p p^\top} - 2\sum_i \sqrt{p_i} + 2 .
 $$
 
-A certificate proves $q(p) > 0$ on the ordered probability simplex with $p_1 \le 1 - 1/(n - 1)$. It is a branch and bound on simplices, split at exact rational midpoints. Inside a simplex, the concavity of the trace square root bounds the trace term from below by its values at the vertices, and the chord of $\sqrt t$ bounds the square-root terms. At each vertex a symmetric rational witness matrix with Weyl's inequality bounds the trace term. Every acceptance is an exact rational inequality.
+A certificate proves $q(p) > 0$ on the ordered probability simplex with $p_1 \le 1 - 1/(n - 1)$. It is a branch and bound on simplices, split at exact rational midpoints. Inside a simplex, the concavity of the trace square root bounds the trace term from below by its values at the vertices, and the square-root terms are bounded from above: in each coordinate $\sqrt t$ lies above its chord between the smallest and largest vertex values $l, u$, by at most $(\sqrt u - \sqrt l)^2 / (4(\sqrt u + \sqrt l))$, so $\sqrt{p_i}$ exceeds the convex combination of its vertex values by at most this amount. At each vertex a symmetric rational witness matrix with Weyl's inequality bounds the trace term. Every acceptance is an exact rational inequality.
 
 $q$ is negative at some points near a coordinate vector (for example $q \approx -0.025$ at $p = (0.96, 0.01, 0.01, 0.01, 0.01)$), which is why the near-axis step is needed. The spectral bound alone fails for $n = 6$: there $q$ is already negative at the uniform $p$ ($\approx -0.0122$). Dimension 6 is proved with a different split, below.
 

@@ -150,7 +150,7 @@ For publication two keys that no checker reads (`note`, a free-text comment, and
 ## 9. Status and limitations
 
 - The proof is computer-assisted and has not been peer reviewed.
-- The Python record checker used during development is not published: it shares code with the search tools, so it is not independent of them. An independent checker has not yet been written; one would be welcome.
+- The Python record checker used during development is not published: it shares code with the search tools, so it is not independent of them. A separately written exact checker, `cfcheck` ([`indep-checker/`](https://github.com/wand125/square-packing/tree/main/problems/closed-form/indep-checker)), was written from SPEC.md and the published assets only and shares no code with `replay4d`, `seam4d_core` or `validate_family.py`. It replayed intervals 1 and 34 completely, including the structure of their families: 91,044 root boxes and 3,138,681 leaves, every leaf accepted, 0 refusals (for interval 1, 24,226 root boxes were resumed from checkpoints written by earlier runs of the same checker on the same inputs). Intervals 2 to 33 have not been replayed by `cfcheck`; for them the leaves rest on `replay4d` alone. `cfcheck` was written with AI assistance (OpenAI Codex), was reviewed by the author, and has not been peer reviewed.
 - No claim is made for $N \le 48$. For square $N = k^2$ the area bound gives $s(N) = k$.
 - Rectangular and other containers are not treated here.
 

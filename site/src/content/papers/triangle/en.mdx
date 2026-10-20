@@ -88,7 +88,7 @@ $$
 S \le -c\,(|\varphi_0| + |\varphi_1| + |\varphi_3|), \quad c > 0, \tag{M}
 $$
 
-for all 2 cases × 8 orthants. Hence $0 \le \tfrac{\sqrt3}{2}(v - L) \le S \le -c\|\varphi\|_1$, so $L \ge v$. Without the hypothesis on $t$ the lemma is false: if square 3 slides up by more than 0.155, squares 0 and 1 are free to move right, and the triple alone is not rigid. In the full packing squares 2, 4 and 5 bound the slide; the localization supplies this bound.
+for all 2 cases × 8 orthants. Hence $\tfrac{\sqrt3}{2}(v - L) \le S \le -c\|\varphi\|_1 \le 0$, so $L \ge v$. Without the hypothesis on $t$ the lemma is false: if square 3 slides up by more than 0.155, squares 0 and 1 are free to move right, and the triple alone is not rigid. In the full packing squares 2, 4 and 5 bound the slide; the localization supplies this bound.
 
 <CertificateFigure cont="triangle" ns="6" client:visible />
 
@@ -98,7 +98,7 @@ for all 2 cases × 8 orthants. Hence $0 \le \tfrac{\sqrt3}{2}(v - L) \le S \le -
 
 For $m \ge 3$ let $v_m = m + 2/\sqrt3$ and $n_m = m(m-1)/2 + 1 = T_{m-1} + 1$.
 
-**Upper bound.** Axis-parallel rows standing on the base. At height $j$ the triangle has width $v_m - 2j/\sqrt3$, so row $j$ holds $\lfloor m - 2j/\sqrt3 \rfloor$ squares. Only the bottom row is tight: at height 1 the width is exactly $m$. The rows packing is proved in Lean 4 for $m = 4, \dots, 8$ (§9).
+**Upper bound.** Axis-parallel rows standing on the base. At height $j$ the triangle has width $v_m - 2j/\sqrt3$, so row $j$ ($j = 0, 1, \dots$; it lies between heights $j$ and $j + 1$, and its top has width $m - 2j/\sqrt3$) holds $\lfloor m - 2j/\sqrt3 \rfloor$ squares. Only the bottom row is tight: at height 1 the width is exactly $m$. The rows packing is proved in Lean 4 for $m = 4, \dots, 8$ (§9).
 
 **Certificate.** Take the points of the unit triangular lattice that form an equilateral triangle of side $m - 2$, that is $T_{m-1}$ points of weight 1, placed so that its centroid is the centroid of the container. The bottom row then lies at height $1/3 + \sqrt3/3$ for every $m$, at $x = 1 + 1/\sqrt3 + i$; these are exactly the shared vertical edges of a tight bottom row of $m$ squares. All pairs at distance 1 are listed for Lemma P. The certificate is invariant under the symmetry group of the triangle, and $m = 3$ gives the $n = 4$ certificate. Its total weight $T_{m-1}$ is smaller than $n_m$, so it proves $s_\triangle(n_m) \ge v_m$.
 
@@ -124,7 +124,7 @@ Let $v = 9 + 2/\sqrt3 \approx 10.15470$.
 
 **Lower bound.** For $m = 9$ the lattice certificate has 36 points of weight 1, total $36 < 37$, and every closed unit square in $T_v$ contains one of them (7668 nodes, maximum depth 25 with limit 40). So no 37 non-overlapping unit squares fit in a smaller equilateral triangle.
 
-**Why the rows give only 36.** In $T_v$ axis-parallel rows standing on the base hold $9 + 7 + 6 + 5 + 4 + 3 + 2 = 36$ squares; the eighth row does not fit, because at height 7 the width is $9 - 14/\sqrt3 \approx 0.917 < 1$. In general the lattice triangle has about $m^2/2$ points, while the number of squares that fit in the triangle of side $v_m$ grows only like its area, about $(\sqrt3/4)m^2 \approx 0.433m^2$. So for large $m$ the certificate gives a valid but weak lower bound; it is not a route to a statement for all $m$.
+**Why the rows give only 36.** In $T_v$ axis-parallel rows standing on the base hold $9 + 7 + 6 + 5 + 4 + 3 + 2 = 36$ squares; the eighth row does not fit, because at its top, height 8, the width is $9 - 14/\sqrt3 \approx 0.917 < 1$. In general the lattice triangle has about $m^2/2$ points, while the number of squares that fit in the triangle of side $v_m$ grows only like its area, about $(\sqrt3/4)m^2 \approx 0.433m^2$. So for large $m$ the certificate gives a valid but weak lower bound; it is not a route to a statement for all $m$.
 
 **Upper bound.** A packing with exact coordinates in $\mathbb Q(\sqrt3)$. A tight bottom row of nine axis-parallel squares stands on the base, at $x = 1/\sqrt3 + i$ ($i = 0, \dots, 8$). Above height 1 lies an equilateral triangle of side 9. It holds 28 squares in the shape of Friedman's $n = 28$ packing (side $3 + 10/\sqrt3 < 9$): axis-parallel rows of 7, 6, 3 and 2 squares, each pushed against the left side, and two blocks of 3 + 2 squares, one aligned with each slanted side. Since $3 + 10/\sqrt3 < 9$ there is room to spare. The packing is checked by two independently written exact checkers (§9), both of which reject five negative controls. So
 
@@ -148,7 +148,7 @@ Let $v = 10 + 2/\sqrt3 \approx 11.15470$.
 
 **Lower bound.** For $m = 10$ the lattice certificate of §5 has 45 points of weight 1, total $45 < 46$, and every closed unit square in $T_v$ contains one of them. Checker 1 verifies it (7,296 nodes, maximum depth 24 with limit 40), and so does checker 2 (16,309 critical angles, minimum weight 1). So no 46 non-overlapping unit squares fit in a smaller equilateral triangle.
 
-**Rows alone.** In $T_v$ axis-parallel rows standing on the base hold $10 + 8 + 7 + 6 + 5 + 4 + 3 + 1 = 44$ squares; the ninth row does not fit, because at height 8 the width is $10 - 16/\sqrt3 \approx 0.762 < 1$.
+**Rows alone.** In $T_v$ axis-parallel rows standing on the base hold $10 + 8 + 7 + 6 + 5 + 4 + 3 + 1 = 44$ squares; the ninth row does not fit, because at its top, height 9, the width is $10 - 16/\sqrt3 \approx 0.762 < 1$.
 
 **Upper bound.** A packing with exact coordinates in $\mathbb Q(\sqrt3)$. A tight bottom row of ten axis-parallel squares stands on the base, at $x = 1/\sqrt3 + i$ ($i = 0, \dots, 9$). Above it are nine more axis-parallel squares, 15 squares tilted by $60^\circ$ (aligned with the left side) and 12 squares tilted by $-60^\circ$ (aligned with the right side), placed as in the published picture. We read the positions off that picture, solved a linear program for the free offsets of each square along its row or side, and rounded them to rationals with denominator 1000. The exact centres and angles are the whole construction; the checks do not rely on the linear program. The packing is checked by the same two exact checkers as for $n = 37$ (§9), both of which reject five negative controls. So
 

@@ -208,7 +208,9 @@ The first condition, $t_0(q) \ge -\tfrac12$, is a hypothesis.
    - Since $a_0\cdot(q_\sigma - f) = a_0\cdot e + a\,\nu\cdot\sigma$, condition (i) for $q_\sigma$ follows from $\nu\cdot d + a\,\nu\cdot\sigma \le \tfrac12 a_{0x}\lVert\nu\rVert$.
 3. *A and B cannot both fail (i).*
    - We have $\nu\cdot\sigma_A = \varsigma_A(\nu_y + \nu_z)$ and $\nu\cdot\sigma_B = \varsigma_B(\nu_y - \nu_z)$.
-   - If both fail, then $\nu\cdot d + a\cdot\min(|\nu_y + \nu_z|, |\nu_y - \nu_z|) > \tfrac12 a_{0x}\lVert\nu\rVert$. The minimum is at most $\sqrt{((\nu_y + \nu_z)^2 + (\nu_y - \nu_z)^2)/2} = \lVert\nu\rVert$, so $\nu\cdot d > (\tfrac12 a_{0x} - a)\lVert\nu\rVert$.
+   - The signs $\varsigma_A$ and $\varsigma_B$ were fixed in step 1 by $p$ and $r$, not by $\nu$, so the signs of these two numbers are not known. We therefore use only the bounds $\nu\cdot\sigma_A \le |\nu_y + \nu_z|$ and $\nu\cdot\sigma_B \le |\nu_y - \nu_z|$, which hold for either sign.
+   - Suppose the sufficient condition of step 2 fails for both $A$ and $B$. By these bounds, $\nu\cdot d + a|\nu_y + \nu_z| > \tfrac12 a_{0x}\lVert\nu\rVert$ and $\nu\cdot d + a|\nu_y - \nu_z| > \tfrac12 a_{0x}\lVert\nu\rVert$. Hence $\nu\cdot d + a\cdot\min(|\nu_y + \nu_z|, |\nu_y - \nu_z|) > \tfrac12 a_{0x}\lVert\nu\rVert$.
+   - The minimum is at most $\sqrt{((\nu_y + \nu_z)^2 + (\nu_y - \nu_z)^2)/2} = \lVert\nu\rVert$, so $\nu\cdot d > (\tfrac12 a_{0x} - a)\lVert\nu\rVert$.
    - But $\nu\cdot d \le \lVert\nu\rVert\lVert d\rVert < (\tfrac12 a_{0x} - a)\lVert\nu\rVert$, a contradiction when $\nu \ne 0$.
    - If $\nu = 0$, then $a_{0x} = 1$ and $\sigma_x = 0$, so (i) holds for every $\sigma$. $\blacksquare$
 

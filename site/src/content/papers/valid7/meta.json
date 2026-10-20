@@ -68,6 +68,13 @@
    "en": "Version 2 of the Lean check of Valid7 (lean/valid7, release valid7-lean-v2) is linked.",
    "ja": "Valid7 の Lean による検査の第 2 版（lean/valid7、Release valid7-lean-v2）へのリンクを添えた。",
    "commit": "5feae40"
+  },
+  {
+   "v": "4",
+   "date": "2026-10-21",
+   "en": "Lemma F2 now states its hypothesis (one convex polygon piece of uniform density), which both covers satisfy, and the face sweep (Lemma B5) for other covers; a one-line definition of ValidTilt7 is added.",
+   "ja": "補題 F2 にその前提（密度が一様な凸多角形 1 枚）を書き足し、2 つの被覆が前提を満たすことと、ほかの被覆には面の掃き出し（補題 B5）を使うことを添えた。ValidTilt7 の一言の定義を添えた。",
+   "commit": ""
   }
  ]
 }

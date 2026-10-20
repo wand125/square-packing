@@ -103,7 +103,7 @@ regions overlap on c² = 2/3, so their union is all of O(4).
 
 | | first system (`checker/`) | second system (`checker2/`) |
 |---|---|---|
-| coordinates | column 1 by t = (u_2, u_3, u_4)/u_1; columns 2–4 as N_u S, S ∈ SO(3) by a quaternion | R(p, q) x = p x q̄, two unit quaternions, each on the 4 faces of the cube [−1, 1]⁴ |
+| coordinates | column 1 by t = (u_2, u_3, u_4)/u_1; columns 2–4 as N_u S, S ∈ SO(3) by a quaternion | R(p, q) x = p x q̄, two quaternions, each scaled so that a coordinate of largest magnitude is +1, i.e. each on one of the 4 facets {x_i = +1} of [−1, 1]⁴ (this gives R only up to sign; −R ∈ SO(4) and F depends only on |R|, and the symmetry reduction keeps a box unless it excludes both signs) |
 | symmetry | sorted column 1 (384) and the Voronoi cell of the binary octahedral group (24) as coordinates | sorted column 1 and row 1 imposed as constraints C1–C3; a box is discarded only if every point violates them, for both R and −R |
 | bound on F | mean-value form with interval forward-mode AD, also 2‖u‖₁ − 1 − Σ a_e‖m_e‖₁ and G(u) | mean-value form with interval AD, F's own upper bound only |
 | near rule | box inside u_1² ≥ 2/3 | box inside max_e lo(|R_e1|)² ≥ 2/3 |

@@ -105,12 +105,12 @@ $$
 | 配置（上界） | `python3 tools/packing_check/check_packing.py problems/hexagon/n3/packing.json`、`check_packing2.py` でも同じ（リポジトリのルートで） | 1 秒未満 |
 | チェックサム | `sha256sum -c SHA256SUMS`（ルート） | 数秒 |
 | 局所補題 | `python ll_exact.py`、`python ll_radius.py`（`n3/local_lemma/`） | 数秒。浮動小数点の探索は約 20 分 |
-| 第 1 段・実装 1 | `python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4` | 約 7 分 |
-| 第 1 段・実装 2 | `python hexcheck.py ../n3/stage1_cert.json --jobs 14 --grid 8` | 約 2 時間 50 分 |
-| 第 2 段・実装 1 | `python bb_rig_batch.py --workers 16 --boxes 0-741` | 約 54 コア時間 |
-| 第 2 段・実装 2 | `cargo build --release` のあと `hexs2 --cert ../n3/stage1_cert.json --threads 16 --max-depth 80` | 約 6 コア時間 |
+| 第 1 段・実装 1 | `python check_hex.py ../n3/stage1_cert.json --n 3 --root 8 --max-depth 32 --u-scale 16 --jobs 4`（`stage1_checker/`） | 約 7 分 |
+| 第 1 段・実装 2 | `python hexcheck.py ../n3/stage1_cert.json --jobs 14 --grid 8`（`stage1_checker2/`） | 約 2 時間 50 分 |
+| 第 2 段・実装 1 | `python bb_rig_batch.py --workers 16 --boxes 0-741`（`stage2_checker/`） | 約 54 コア時間 |
+| 第 2 段・実装 2 | `cargo build --release` のあと `./target/release/hexs2 --cert ../n3/stage1_cert.json --threads 16 --max-depth 80`（`stage2_checker2/`） | 約 6 コア時間 |
 
-第 2 段の箱 1 個なら短時間で試せる：`python bb_rig.py --box 2`（約 1.5 分）、`hexs2 --k 2 --max-depth 80`（約 30 秒）。
+第 2 段の箱 1 個なら短時間で試せる：`python bb_rig.py --box 2`（約 1.5 分、`stage2_checker/`）、`./target/release/hexs2 --k 2 --max-depth 80`（約 30 秒、`stage2_checker2/`）。
 
 ## 参考文献
 

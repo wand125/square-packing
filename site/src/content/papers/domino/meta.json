@@ -44,6 +44,13 @@
    "en": "First version: s(4) = v4 ≈ 1.9302833.",
    "ja": "初版：s(4) = v4 ≈ 1.9302833。",
    "commit": "5b29f79"
+  },
+  {
+   "v": "2",
+   "date": "2026-10-21",
+   "en": "Correction after review: the vertices of the square L are listed in order around it. No change to the result or the certificates.",
+   "ja": "査読による訂正：正方形 L の頂点を一周の順に並べた。結果と証明書は変わらない。",
+   "commit": ""
   }
  ]
 }
