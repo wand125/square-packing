@@ -10,12 +10,19 @@ of degree <= 2 on every face of the arrangement of the lines
   (b) edge e of Q through a breakpoint P (where the linear density on a mass line changes, or a polygon vertex).
 Inside a face the incidence pattern is fixed: each segment's captured length is affine in c, each polygon's
 captured area is a polynomial of degree <= 2.
-Lemma F2 (no interior minima).  On a face, the polygon term g(c) = area((Q(c)) ∩ S) is either identically 0 or
-positive, and on {g > 0} the function sqrt(g) is concave (Brunn-Minkowski).  So Hess(g) = 2 grad h grad h^T +
-2 h Hess(h) with h = sqrt(g) has at most one positive eigenvalue, and so does Hess(mu) (the segment part is affine).
-A quadratic with this property attains its minimum over a closed convex face on the boundary (if it is PSD it has
-rank <= 1 and is affine along its kernel).  Hence the minimum over the box is attained at a vertex of the
-arrangement restricted to the box, or at the 1-D critical point of an edge between two consecutive vertices.
+Lemma F2 (no interior minima; ONE convex polygon piece).  Assume the polygon part of the cover that can meet the
+squares of the box is a single convex polygon S with one density (f2_hypothesis below).  On a face, the polygon term
+g(c) = area((Q(c)) ∩ S) is either identically 0 or positive, and on {g > 0} the function sqrt(g) is concave
+(Brunn-Minkowski, for the translates of two convex bodies).  So Hess(g) = 2 grad h grad h^T + 2 h Hess(h) with
+h = sqrt(g) has at most one positive eigenvalue, and so does Hess(mu) (the segment part is affine).  A quadratic with
+this property attains its minimum over a closed convex face on the boundary (if it is PSD it has rank <= 1 and is
+affine along its kernel).  Hence the minimum over the box is attained at a vertex of the arrangement restricted to
+the box, or at the 1-D critical point of an edge between two consecutive vertices.
+The hypothesis is essential (found 2026-10-20): with two or more polygon pieces, or pieces of different densities,
+the Hessian of the sum can be positive definite (two vertices of Q entering two rectangles through a vertical and a
+horizontal side), and with an affine segment term the minimum over a face can be interior.  Covers outside the
+hypothesis are handled by the face sweep of faces.py (Lemma B5), which tier_b2.certify runs in that case; box_min
+below (fixed rational u) refuses them.
 """
 from fractions import Fraction as F
 from collections import defaultdict
@@ -156,6 +163,26 @@ def poly_mass(loc, x, y, u, fr=None):
     return m
 
 
+def convex(vs):
+    """The polygon (vertex list, either orientation) is convex: all turns have one sign (collinear allowed)."""
+    n = len(vs)
+    sgn = 0
+    for i in range(n):
+        P, R, T = vs[i], vs[(i + 1) % n], vs[(i + 2) % n]
+        z = (R[0] - P[0]) * (T[1] - R[1]) - (R[1] - P[1]) * (T[0] - R[0])
+        if z != 0:
+            if sgn == 0:
+                sgn = 1 if z > 0 else -1
+            elif (z > 0) != (sgn > 0):
+                return False
+    return True
+
+
+def f2_hypothesis(loc):
+    """Lemma F2 applies: at most one polygon piece can meet the squares of the box, and it is convex."""
+    return len(loc.polys) <= 1 and all(convex(vs) for vs, _ in loc.polys)
+
+
 def norm(l):
     a, b, k = l
     d = a if a != 0 else b
@@ -166,6 +193,7 @@ def norm(l):
 def box_min(loc, side, u, x0, x1, y0, y1, keep=False):
     """Min over admissible centres in the box.  side = container side.  Returns (value, point, kind) or None;
     with keep=True also the list of all candidates [(value, point, kind)]."""
+    assert f2_hypothesis(loc), 'box_min relies on Lemma F2: one convex polygon piece (see faces.py otherwise)'
     fr = frame(u)
     c, s, verts, normals = fr
     lo = (abs(c) + abs(s)) / 2

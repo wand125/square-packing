@@ -39,9 +39,18 @@ Poses `Q(c, θ) = c + R_θ [−½, ½]²` with `u = tan(θ/2) ∈ [−½, ½]` (
   exactly.  For the Lebesgue square `S` also `area(Q ∩ S) ≥ 1 − area(O \ S)` with `O` a rational outer hull, so
   that squares inside `S` (mass exactly 1) cost nothing.  Adaptive bisection.
 * **Fixed angle** (`src/solver.py`).  At fixed `θ` the mass is piecewise quadratic in the centre on an
-  arrangement of lines (Lemma F1).  By Brunn–Minkowski, `√area(Q ∩ S)` is concave, so no face has an interior
-  minimum (Lemma F2): the minimum over a centre box is at a vertex of the arrangement or at the 1-D critical point
-  of an edge.
+  arrangement of lines (Lemma F1).  The cover has exactly one polygon piece, the convex Lebesgue square `S`, with
+  one density, and the segment part is affine on every face.  By Brunn–Minkowski, `√area(Q ∩ S)` is concave, so
+  the Hessian of the mass on a face has at most one positive eigenvalue and no face has an interior minimum
+  (Lemma F2): the minimum over a centre box is at a vertex of the arrangement or at the 1-D critical point of an
+  edge.  **Lemma F2 needs this hypothesis** (one convex polygon piece of uniform density; `solver.f2_hypothesis`).
+  With two or more polygon pieces, or pieces of different densities, the Hessian of the sum can be positive
+  definite and a face can have an interior minimum.  For such covers `tier_b2.certify` also runs the face sweep of
+  `src/faces.py` (Lemma B5): on each interval between the critical values of `u` it enumerates the faces of the
+  arrangement exactly and, where the face quadratic has a positive definite Hessian and its critical point lies in
+  the closed face, proves the value there `≥ 1`.  `tests/P1_faces.txt` is a positive control (two rectangles and
+  two segments): the vertex/edge test alone reports ok, the face sweep finds the interior minimum `0.998… < 1`.
+  The Valid7 cover satisfies the hypothesis, so its records are unchanged by this (added 2026-10-20).
 * **Tier B, exact in `u`** (`src/tier_b2.py`, `src/rf.py`, `src/tier_b.py`).  Near the zero-margin families
   (squares touching a wall, squares with edges on the heavy integer lines; their mass grows like `1 + c|u|`,
   `c ≈ 0.40–0.48`).  Every vertex candidate is the intersection of two lines whose coefficients are rational

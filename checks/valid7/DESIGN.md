@@ -26,12 +26,37 @@ exact enumeration at `t = 0` is kept only as a cross-check.
 polygon edge line) and (b) an edge of `Q` through a breakpoint (density change on a mass line, polygon vertex).
 After multiplying by `1 + u^2` their coefficients are polynomials in `u` of degree <= 2.
 
-**Lemma F2 (no interior minima).** On a face, the polygon term `g(c) = area(Q(c) ∩ S)` is identically 0 or
-positive, and `sqrt(g)` is concave where positive (Brunn-Minkowski for the translates of two convex bodies). So
-`Hess g = 2 ∇h ∇h^T + 2h Hess h` (`h = sqrt g`) has at most one positive eigenvalue; the segment part is affine.
-A quadratic with at most one positive eigenvalue attains its minimum over a closed convex face on the boundary.
-Hence the minimum over a centre box is at a vertex of the arrangement (box sides and the admissibility lines
-included) or at the 1-D critical point of an edge between consecutive vertices. No face enumeration is needed.
+**Lemma F2 (no interior minima; one convex polygon piece).** Assume the polygon part of the cover that can meet
+the squares of the box is a single convex polygon `S` with one density. On a face, the polygon term
+`g(c) = area(Q(c) ∩ S)` is identically 0 or positive, and `sqrt(g)` is concave where positive (Brunn-Minkowski for
+the translates of two convex bodies). So `Hess g = 2 ∇h ∇h^T + 2h Hess h` (`h = sqrt g`) has at most one positive
+eigenvalue; the segment part is affine. A quadratic with at most one positive eigenvalue attains its minimum over
+a closed convex face on the boundary. Hence the minimum over a centre box is at a vertex of the arrangement (box
+sides and the admissibility lines included) or at the 1-D critical point of an edge between consecutive vertices.
+No face enumeration is needed.
+
+*The hypothesis is essential* (noticed 2026-10-20 while generalising the checker). For two polygon pieces `S1, S2`
+the Hessian of `area(Q ∩ S1) + area(Q ∩ S2)` is the sum of two matrices each with at most one positive eigenvalue
+and can be positive definite (two vertices of `Q` entering two axis-parallel rectangles through a vertical and a
+horizontal side at small `t`); with an affine segment term the minimum over a face is then interior. The Valid7
+cover satisfies the hypothesis (800 axis-parallel segments and one Lebesgue square), so nothing certified here
+depended on the general statement. For covers outside the hypothesis `tier_b2.certify` runs the face sweep of
+`src/faces.py`:
+
+**Lemma B5 (face sweep).** Let `L` be the line list of `tier_b2.certify` (it contains the sides of the centre box
+and of the admissible region `R(u)`), and `U` the real roots in `(a, b)` of every pairwise determinant and every
+`3 x 3` determinant (concurrency) of lines of `L` that are not identically zero. Between consecutive points of
+`U ∪ {a, b}` the arrangement of `L` inside the box has a fixed combinatorial structure, so its faces are enumerated
+exactly at one rational sample `u0` of each interval, each face being a polygon whose vertices are `L_i ∩ L_j` for
+fixed pairs. On a face `mu` is one quadratic `q(u; c)` (Lemma F1); its Hessian `H` and gradient are obtained from
+the values at three vertices and the midpoints of their three chords. Where `det H > 0` and `tr H > 0` the critical
+point `c* = V1 − H^{-1} g` is a strict minimum and `q* = q(V1) − g^T H^{-1} g / 2` is a lower bound of `q` on the
+plane; it suffices that for every `u` of the interval with `det H > 0`, `tr H > 0`: `q* ≥ 1` or `c* ∉ cl F`. Where
+`H` is not positive definite the minimum over the closed face is on its boundary (vertices and edge critical
+points, Lemmas B3, B4). All signs are decided exactly on the open pieces between the roots of the rational
+functions of `u`, with the guards of the symbolic evaluation splitting the pieces as in `check_value`. Positive
+control: `tests/P1_faces.txt` (two rectangles, two segments; vertex/edge test ok, face sweep fails with a witness
+whose exact mass is below 1).
 
 The same code runs on `u` a `Fraction` (exact fixed-angle solver) or `u` an `RF` (Step 3, Tier B).
 

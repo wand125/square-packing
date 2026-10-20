@@ -212,6 +212,14 @@ def certify(loc, side, box, a, b, stats=None, max_runs=2000):
             if not r['ok']:
                 return {'ok': False, 'why': 'edge:' + r['why'], 'line': i, 'at': r.get('at')}
         res['edge_runs'] = nruns
+        if not solver.f2_hypothesis(loc):
+            # Lemma F2 does not apply (several polygon pieces, or a non-convex one): the minimum over a face can be
+            # interior.  Lemma B5 (faces.py) checks the interior critical point of every face, exactly in u.
+            import faces
+            fc = faces.face_check(loc, Lp, a, b)
+            res['face_intervals'], res['faces'] = fc['intervals'], fc['faces']
+            if not fc['ok']:
+                return {'ok': False, 'why': 'face', 'pose': fc['info'], 'lines': len(L)}
     return res
 
 
