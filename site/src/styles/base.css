@@ -93,6 +93,10 @@ a.ext::before { content: ""; display: inline-block; width: 0.8em; height: 0.8em;
 .gf-row svg .th-sq { fill: color-mix(in srgb, var(--link) 25%, transparent); stroke: var(--link); stroke-width: 1; }
 .gc-f svg .th-c { fill: var(--bg2); stroke: var(--fg2); stroke-width: 1; }
 .gc-f svg .th-sq { fill: color-mix(in srgb, var(--link) 25%, transparent); stroke: var(--link); stroke-width: 1; }
+.gc-f svg .gf4-box { fill: none; stroke: var(--fg2); stroke-width: 1; opacity: .6; }
+.gc-f svg .gf4-ax { fill: none; stroke: var(--fg2); stroke-width: .6; opacity: .45; }
+.gc-f svg .gf4-rot { fill: none; stroke: var(--link); stroke-width: 1.2; }
+.gc-f svg .gf4-cell { fill: none; stroke: var(--acc); stroke-width: 1.6; }
 h2.top-h { font-size: 18px; margin-top: 20px; padding-bottom: 4px; border-bottom: 1px solid var(--line); }
 .intro { max-width: 72ch; margin-top: 12px; color: var(--fg); }
 .intro p { margin: 0 0 6px; }

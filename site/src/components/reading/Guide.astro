@@ -4,10 +4,10 @@ import Section from '../ui/Section.astro';
 import T from '../ui/T.astro';
 import {readFigure} from '../../lib/data';
 import {pageDescriptions} from '../../lib/page-list';
-import {certificateFigure, rectanglesFigure, containersFigure, playerFigure, thumb} from '../../lib/figures';
+import {certificateFigure, rectanglesFigure, containersFigure, playerFigure, cubesFigure, cubes4Figure, thumb} from '../../lib/figures';
 import {url, PAGES, PREVIEW} from '../../lib/sitemap';
 const papers = PAGES.filter(p => p.file.startsWith('paper-') && (PREVIEW || !p.preview));
-const figures: Record<string, () => string> = {'certificate.html': certificateFigure, 'rect-regions.html': rectanglesFigure, 'containers.html': containersFigure, 'rect-player.html': playerFigure};
+const figures: Record<string, () => string> = {'certificate.html': certificateFigure, 'rect-regions.html': rectanglesFigure, 'containers.html': containersFigure, 'rect-player.html': playerFigure, 'cubes.html': cubesFigure, 'cubes4-survey.html': cubes4Figure};
 ---
 <div class="home">
 <Section en="Pages"><div class="gcards">{pageDescriptions.filter(p => p.group === 'exp').map(p => <Card href={url(p.file)}><span class="gc-t"><T en={p.en} ja={p.ja}/></span><span class="gc-f" set:html={figures[p.file]?.() || ''}/><span class="gc-d"><T en={p.descEn} ja={p.descJa}/></span></Card>)}</div></Section>

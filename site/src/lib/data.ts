@@ -23,5 +23,6 @@ export const readIndex = () => json<Index>(repoRoot, 'INDEX.json');
 export const readManifest = () => json<{published: Published[]}>(repoRoot, 'problems/n17/manifest.json');
 export const readRepoText = (file: string) => readFileSync(resolve(repoRoot, file), 'utf8');
 export const readEditorial = <K extends keyof Editorial>(file: K): Editorial[K] => json<Editorial[K]>(docsRoot, file);
-interface Figures { 'containers.json': Container[]; 'rect-regions.json': RectRegions; 'cert-point-n29.json': {L: string; atoms: [number, number, number][]} }
+interface Figures { 'containers.json': Container[]; 'rect-regions.json': RectRegions; 'cert-point-n29.json': {L: string; atoms: [number, number, number][]};
+  'cubes4-survey.json': {n: number; rows: {k: number; s_float: number; cubes: {c: number[]; R: number[][]; axis_parallel: boolean}[]}[]} }
 export const readFigure = <K extends keyof Figures>(file: K): Figures[K] => json<Figures[K]>(resolve('public/data'), file);

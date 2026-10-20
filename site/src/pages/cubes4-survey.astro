@@ -1,0 +1,354 @@
+---
+// A survey of the packings of k unit 4-cubes, k = 17 to 30, each with an exact certificate. Data: public/data/
+// cubes4-survey.json, gathered by tools/cubes4_survey.py from the survey materials of problems/cubes-n-dim. Each cube is drawn as its projection to three dimensions.
+import {readFileSync} from 'node:fs';
+import Base from '../layouts/Base.astro';
+import T from '../components/ui/T.astro';
+import '../styles/paper.css';
+type Cube = {c: number[]; R: number[][]; axis_parallel: boolean};
+type Row = {k: number; s_float: number; published: {value: string; form: string; source: string; url: string; commit: string};
+  origin_kind: string; origin?: string; starting_point_author: string | null; release: string | null;
+  certificate: {file: string; sha256: string; checked_by_two_systems: boolean}; cubes: Cube[]; s_exact?: string};
+const rows: Row[] = JSON.parse(readFileSync('public/data/cubes4-survey.json', 'utf8')).rows;
+// tilt: the largest angle between an edge (a column of R) and the nearest coordinate axis
+const tilt = (q: Cube) => Math.acos(Math.min(1, Math.min(...[0, 1, 2, 3].map(j => Math.max(...q.R.map(r => Math.abs(r[j]))))))) * 180 / Math.PI;
+const GH = 'https://github.com/wand125/square-packing/blob/main/';
+// the k whose published sides agree to 4 decimals (18–25: 2.7071; 26–29: 2.9428) share one place in the grid: the
+// card of the largest k is shown, the chips switch between them
+const side4 = (r: Row) => parseFloat(r.published.value).toFixed(4);
+const groupOf = (r: Row) => rows.filter(o => side4(o) === side4(r)).map(o => o.k);
+// the published value to compare with: the closed form 2 + 1/√m when the source gives one, else the printed decimal
+const target = (r: Row) => { const m = r.published.form.match(/^2 \+ 1\/√(\d+)/); return m ? 2 + 1 / Math.sqrt(+m[1]) : parseFloat(r.published.value); };
+// ours − published, as ±m × 10^e with a superscript exponent
+const SUP = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+function diff(r: Row): string {
+  const d = r.s_float - target(r), [m, e] = Math.abs(d).toExponential(1).split('e');
+  return (d > 0 ? '+' : '−') + m + ' × 10' + (e.startsWith('-') ? '⁻' : '') + e.replace(/^[+-]/, '').split('').map(c => SUP[+c]).join('');
+}
+const ORIGIN: Record<string, (r: Row) => [string, string]> = {
+  'own-equal': r => /product of two 5-square packings/.test(r.origin ?? '') ? ['ours: the product of two packings of 5 squares in the square of side 2 + 1/√2', '当方の構成：辺 2 + 1/√2 の正方形に 5 個の正方形を入れた配置 2 つの積'] : ['our own search', '当方の探索'],
+  'own-subset': () => ['the packing of k = 25 with cubes removed', 'k = 25 の配置から立方体を除いたもの'],
+  'external': r => [`published coordinates of ${r.starting_point_author}, tightened and certified by us`, `${r.starting_point_author} の公開座標を当方が締め直し、証明書を付けた`],
+  'own-record': r => [`container shrinking by us, from the published packing of ${r.starting_point_author}`, `${r.starting_point_author} の公開の配置から当方が容器を縮めた`],
+};
+---
+<Base file="cubes4-survey.html" title="Unit 4-Cubes in a 4-Cube">
+<div class="c4s">
+<h1><T en="Unit 4-cubes in a 4-cube, k = 17 to 30" ja="4 次元の立方体に単位 4 次元立方体 k 個（k = 17〜30）" /></h1>
+<p class="c4s-lede"><T en="For each k from 17 to 30: the smallest published container side for k unit 4-cubes, and a packing of ours with an exact certificate, drawn as a parallel projection that turns in four dimensions. A survey of known values; the one new value is k = 30. The values of k whose published sides agree to four decimals (18 to 25, and 26 to 29) share one card, showing the largest k; the numbers at its top switch between them." ja="k = 17〜30 のそれぞれについて、単位 4 次元立方体 k 個の容器の辺の公開値と、厳密な証明書を付けた当方の配置を、4 次元で回る平行投影の図で描く。既知の値の資料で、新しい値は k = 30 だけ。公開値が小数 4 桁まで同じ k（18〜25 と 26〜29）は 1 枚のカードにまとめて最も大きい k を表示し、上の数字で切り替える。" /></p>
+<div class="c4s-key" aria-hidden="true"><span class="c4s-sw ax"></span><T en="axis-parallel" ja="軸に平行" /><span class="c4s-sw rot"></span><T en="rotated (one colour per orientation)" ja="回転（向きごとに色）" /></div>
+<label class="c4s-sync"><input type="checkbox" checked /> <T en="Sync all cards (views and turns)" ja="全カードを同期する（視点と回転）" /></label>
+<script type="application/json" id="c4s-data" set:html={JSON.stringify(rows.map(r => ({k: r.k, s: r.s_float, cubes: r.cubes.map(q => ({c: q.c.map(x => +x.toFixed(7)), R: q.R.map(row => row.map(x => +x.toFixed(7))), ax: q.axis_parallel, t: +tilt(q).toFixed(2)}))})))} />
+<div class="c4s-grid">
+{rows.map(r => <section class={r.origin_kind === 'own-record' ? 'c4s-card rec' : 'c4s-card'} id={`k${r.k}`} data-group={groupOf(r).join(',')} hidden={Math.max(...groupOf(r)) !== r.k}>
+  <header class="c4s-h"><span class="c4s-k">k = {groupOf(r).length > 1 ? <span class="c4s-ks">{groupOf(r).map(k => <button type="button" data-k={k} aria-pressed={k === r.k ? 'true' : 'false'}>{k}</button>)}</span> : r.k}</span>{r.origin_kind === 'own-record' && <span class="c4s-tag"><T en="new record" ja="新記録" /></span>}<span class="c4s-s num">s = {r.s_exact ? <>{r.s_exact} ≈ {r.s_float.toFixed(9)}</> : r.s_float.toFixed(12)}</span></header>
+  <figure class="c4s-3d"><svg viewBox="-1.02 -1.02 2.04 2.04" role="img" aria-label={`k = ${r.k}, 3D`} data-k={r.k}></svg>
+  </figure>
+  <div class="c4s-ctl">
+    <div class="c4s-cells" role="group" aria-label="cells">
+      {[1, -1].map(sg => [0, 1, 2, 3].map(j => <button type="button" data-j={j} data-s={sg} aria-pressed="false"><span class="c4s-fill"></span><span class="lab">{sg > 0 ? '+' : '−'}x{'₁₂₃₄'[j]}</span></button>))}
+      <span class="c4s-dir"><span class="c4s-dir-l"><T en="view" ja="視線" /></span>{[0, 1, 2, 3].map(j => <label>x{'₁₂₃₄'[j]}<input type="number" step="0.05" min="-1" max="1" data-j={j} /></label>)}</span>
+    </div>
+    <div class="c4s-dp" data-kind="4" title="4D"><div class="c4s-dp-g" aria-label="turn in 4D">
+      <button type="button" class="u" data-d="U" aria-label="up">▲</button><button type="button" class="l" data-d="L" aria-label="left">◀</button><button type="button" class="c" data-d="C" aria-label="reset">●</button><button type="button" class="r" data-d="R" aria-label="right">▶</button><button type="button" class="d" data-d="D" aria-label="down">▼</button><button type="button" class="ul" data-d="UL" aria-label="up left">◤</button><button type="button" class="ur" data-d="UR" aria-label="up right">◥</button><button type="button" class="dl" data-d="DL" aria-label="down left">◣</button><button type="button" class="dr" data-d="DR" aria-label="down right">◢</button>
+    </div></div>
+    <div class="c4s-dp" data-kind="3" title="3D"><div class="c4s-dp-g" aria-label="turn in 3D">
+      <button type="button" class="u" data-d="U" aria-label="up">▲</button><button type="button" class="l" data-d="L" aria-label="left">◀</button><button type="button" class="c" data-d="C" aria-label="reset">●</button><button type="button" class="r" data-d="R" aria-label="right">▶</button><button type="button" class="d" data-d="D" aria-label="down">▼</button><button type="button" class="ul" data-d="UL" aria-label="up left">◤</button><button type="button" class="ur" data-d="UR" aria-label="up right">◥</button><button type="button" class="dl" data-d="DL" aria-label="down left">◣</button><button type="button" class="dr" data-d="DR" aria-label="down right">◢</button>
+    </div></div>
+    <span class="c4s-chips"><button type="button" data-split><T en="Two cubes" ja="2 つの立方体" /></button><button type="button" data-oct><T en="Octagon" ja="八角形" /></button><button type="button" data-view="3"><T en="Hexagon" ja="六角形" /></button><button type="button" data-view="0"><T en="Oblique" ja="斜め" /></button><button type="button" data-view="1"><T en="Top" ja="上" /></button><button type="button" data-view="2"><T en="Side" ja="横" /></button><button type="button" data-spin aria-pressed="false"><T en="Rotate" ja="回す" /></button><button type="button" data-spin4 aria-pressed="false"><T en="Turn in 4D" ja="4 次元で回す" /></button></span>
+  </div>
+  <dl class="c4s-dl">
+    <dt><T en="published" ja="公開値" /></dt><dd class="num">{r.published.value}{r.published.form && r.published.form.startsWith('2') ? <> ({r.published.form.split(' ≈')[0]})</> : r.published.form ? <> ({r.published.form})</> : ''}</dd>
+    <dt><T en="ours − published" ja="当方 − 公開値" /></dt><dd class="num">{r.s_exact && r.published.form.startsWith(r.s_exact) ? <T en="0 (exact)" ja="0（厳密）" /> : diff(r)}</dd>
+    <dt><T en="source" ja="出典" /></dt><dd><a href={r.published.url}>{r.published.source}</a></dd>
+    <dt><T en="packing" ja="配置" /></dt><dd><T en={ORIGIN[r.origin_kind](r)[0]} ja={ORIGIN[r.origin_kind](r)[1]} /></dd>
+    <dt><T en="rotated" ja="回転" /></dt><dd class="num">{r.cubes.filter(q => !q.axis_parallel).length} / {r.k}</dd>
+    <dt><T en="certificate" ja="証明書" /></dt><dd>{r.release ? <a href={GH + r.certificate.file}><code>{r.certificate.file.split('/').pop()}</code></a> : <code>{r.certificate.file.split(' ')[0].split('/').pop()}</code>} <code class="dim">{r.certificate.sha256.slice(0, 8)}</code>{r.certificate.checked_by_two_systems && <> · <span class="nw"><T en="two checkers" ja="2 系統で検査" /></span></>}{r.release ? <> · <a href={`https://github.com/wand125/square-packing/releases/tag/${r.release}`}>{r.release}</a></> : <> · <span class="nw"><T en="not yet published" ja="未公開" /></span></>}</dd>
+  </dl>
+  <output class="c4s-out dim" aria-live="polite"></output>
+</section>)}
+</div>
+<p class="dim c4s-foot"><T en="Hiroaki Hosono (wand125). The published values and the starting packings are from hockyy/tesseract-packing and xavierdmello/tesseract-packing, as named on each card. A certificate marked “two checkers” is accepted by two independent exact checkers." ja="Hiroaki Hosono (wand125)。公開値と出発点の配置は hockyy/tesseract-packing と xavierdmello/tesseract-packing のもので、カードごとに書いた。「2 系統で検査」と書いた証明書は、独立した 2 つの厳密な検査器が受理した。" /></p>
+</div>
+<script>
+// 3D: project c + R t (t ∈ {±1/2}⁴) to three dimensions (the first three rows of W), centred and scaled by 1/s,
+// then turn the view (yaw about the vertical axis, pitch) and draw the 32 edges of each cube orthographically.
+type Q = {c: number[]; R: number[][]; ax: boolean; t: number};
+const data: {k: number; s: number; cubes: Q[]}[] = JSON.parse(document.getElementById('c4s-data')!.textContent!);
+const T = [...Array(16)].map((_, m) => [0, 1, 2, 3].map(j => (m >> j & 1) ? .5 : -.5));
+const E: [number, number][] = [];
+for (let m = 0; m < 16; m++) for (let j = 0; j < 4; j++) if (!(m >> j & 1)) E.push([m, m | 1 << j]);
+// views: oblique, top, side, and along the diagonal (1, 1, 1) of the figure, where a cube shows as a regular hexagon
+const VIEWS = [[-0.6, 0.45], [0, Math.PI / 2], [0, 0], [-Math.PI / 4, Math.atan(Math.SQRT1_2)]];
+const sync = document.querySelector<HTMLInputElement>('.c4s-sync input')!;
+// The orientation in 4D is W (4 × 4, orthonormal, det +1): its first three rows give the 3D projection, its last row
+// h is the hidden direction, along which we look. The boundary of the container is made of 8 cubes (cells), one on
+// each side x_j = 0 or x_j = s; the cell in front is the one whose outward normal ±e_j is nearest to h.
+type St = {W: number[][]; yaw: number; pitch: number; spin: boolean; spin4: boolean;
+  anim: null | {W0: number[][]; h0: number[]; v: number[]; phi: number; t0: number; dur: number}};
+const det3 = (M: number[][]) => M[0][0] * (M[1][1] * M[2][2] - M[1][2] * M[2][1]) - M[0][1] * (M[1][0] * M[2][2] - M[1][2] * M[2][0]) + M[0][2] * (M[1][0] * M[2][1] - M[1][1] * M[2][0]);
+// the fourth row: n with n·v = det[r0; r1; r2; v], so that det W = +1
+const fullW = (P: number[][]) => [...P, [0, 1, 2, 3].map(j => ((j % 2) ? 1 : -1) * det3(P.map(r => r.filter((_, k) => k !== j))))];
+function orth(P: number[][]) {
+  const rows: number[][] = [];
+  for (let r = 0; r < 3; r++) { let v = P[r];
+    for (const w of rows) { const d = v.reduce((t, x, j) => t + x * w[j], 0); v = v.map((x, j) => x - d * w[j]); }
+    const n = Math.hypot(...v); rows.push(v.map(x => x / n)); }
+  return fullW(rows);
+}
+const dot4 = (a: number[], b: number[]) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2] + a[3] * b[3];
+// turn every row of W by phi in the plane of the orthonormal pair (p, q): p goes towards q
+const turn = (W: number[][], p: number[], q: number[], phi: number) => { const c = Math.cos(phi) - 1, s = Math.sin(phi);
+  return W.map(r => { const a = dot4(r, p), b = dot4(r, q); return r.map((x, j) => x + c * (a * p[j] + b * q[j]) + s * (a * q[j] - b * p[j])); }); };
+const ease = (u: number) => u * u * (3 - 2 * u);
+// the screen direction (dx, dy; y down) as a vector of the 3D figure, then as a vector of R⁴ (through the rows of W)
+function screenDir(st: St, dx: number, dy: number) {
+  const cy = Math.cos(st.yaw), sy = Math.sin(st.yaw), cp = Math.cos(st.pitch), sp = Math.sin(st.pitch);
+  const u = [dx * cy - dy * sy * sp, -dx * sy - dy * cy * sp, -dy * cp], nu = Math.hypot(...u);
+  return [0, 1, 2, 3].map(j => (u[0] * st.W[0][j] + u[1] * st.W[1][j] + u[2] * st.W[2][j]) / nu);
+}
+function curPos(st: St, now: number) {
+  if (!st.anim) return st;
+  const {W0, h0, v, phi, t0, dur} = st.anim, u = Math.min(1, (now - t0) / dur);
+  st.W = turn(W0, h0, v, phi * ease(u)); if (u >= 1) { st.W = orth(st.W.slice(0, 3)); st.anim = null; }
+  return st;
+}
+// to face cell s·e_j: the shortest turn of the hidden direction to it (through the screen's horizontal when opposite)
+const gotoCell = (st: St, j: number, sg: number, now: number) => gotoDir(st, [0, 1, 2, 3].map(k => k === j ? sg : 0), now);
+// to look along the unit vector t
+function gotoDir(st: St, t: number[], now: number) {
+  curPos(st, now); const h0 = st.W[3], c = dot4(h0, t);
+  if (c > 1 - 1e-9) return;
+  let v = t.map((x, k) => x - c * h0[k]), n = Math.hypot(...v);
+  if (n < 1e-6) { v = screenDir(st, 1, 0); n = 1; }
+  v = v.map(x => x / n); const phi = Math.acos(Math.max(-1, Math.min(1, c)));
+  st.anim = {W0: st.W.map(r => [...r]), h0: [...h0], v, phi, t0: now, dur: 250 + 450 * phi / (Math.PI / 2)};
+}
+// the cell in front: the sign and the coordinate of the largest entry of h
+const front = (st: St) => { const h = st.W[3], a = h.map(Math.abs), j = a.indexOf(Math.max(...a)); return {j, sg: h[j] < 0 ? -1 : 1, c: a[j]}; };
+// the 4D key: a turn by δ in the plane of the screen direction of the key and the hidden direction, so the hidden
+// side comes in from the side of the key; holding it turns on and on
+function rot4(st: St, dx: number, dy: number, delta: number) {
+  st.anim = null; const d = screenDir(st, dx, dy); st.W = orth(turn(st.W, st.W[3], d, delta).slice(0, 3));
+}
+const R2 = Math.SQRT1_2;
+const capture = (el: Element, e: PointerEvent) => { try { el.setPointerCapture(e.pointerId); } catch { /* not a live pointer */ } };
+const DIRS: Record<string, [number, number]> = {U: [0, -1], D: [0, 1], L: [-1, 0], R: [1, 0], UL: [-R2, -R2], UR: [R2, -R2], DL: [-R2, R2], DR: [R2, R2]};
+// the 3D key and dragging turn freely: the pitch is not clamped, so the view can go over the top
+const turn3 = (st: St, dx: number, dy: number, amount: number) => { st.yaw -= dx * amount; st.pitch -= dy * amount; };
+const W_START = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]];
+// "octagon": the screen shows R⁴ along the plane where e_j goes to (cos jπ/4, sin jπ/4), so the container is a regular
+// octagon made of parallelograms (the 2-faces); seen with yaw = pitch = 0, the screen is the plane of rows 0 and 2
+function octagonView(st: St) {
+  const a = [0, 1, 2, 3].map(j => Math.cos(j * Math.PI / 4) / Math.SQRT2), b = [0, 1, 2, 3].map(j => Math.sin(j * Math.PI / 4) / Math.SQRT2);
+  let c = [0, 0, 0, 0];
+  for (const e of [[0, 0, 0, 1], [0, 0, 1, 0], [0, 1, 0, 0], [1, 0, 0, 0]]) { const v = e.map((x, j) => x - dot4(e, a) * a[j] - dot4(e, b) * b[j]); if (Math.hypot(...v) > .3) { c = v; break; } }
+  st.anim = null; st.W = orth([a, c, b]); st.yaw = 0; st.pitch = 0;
+}
+// "two cubes" (the starting view): the octagon orientation, with the 3D view turned so that the cell −x₂ and the cell
+// behind it show as two cubes laid over each other, all edges in parallelograms of about the same length
+const TWO_CUBES = [-0.6152, -2.7794];
+function twoCubesView(st: St) { octagonView(st); [st.yaw, st.pitch] = TWO_CUBES; }
+const cards = data.map(d => {
+  const svg = document.querySelector<SVGSVGElement>(`.c4s-3d svg[data-k="${d.k}"]`)!, card = svg.closest<HTMLElement>('.c4s-card')!;
+  // the vertices in 4D, centred on the container and scaled by 1/s; the container's own vertices are T
+  const V = d.cubes.map(q => T.map(t => [0, 1, 2, 3].map(a => (q.c[a] + q.R[a].reduce((u, r, j) => u + r * t[j], 0)) / d.s - .5)));
+  const ns = 'http://www.w3.org/2000/svg', box = document.createElementNS(ns, 'path');
+  box.setAttribute('class', 'c4s-wbox'); svg.append(box);
+  // one colour per orientation: cubes whose axes (the columns of R, up to sign and order) agree to 10⁻⁴ share it
+  const orient = (q: Q) => [0, 1, 2, 3].map(j => { const col = q.R.map(r => r[j]), f = col.find(x => Math.abs(x) > 1e-6) ?? 1;
+    return col.map(x => (Math.sign(f) * x).toFixed(4).replace('-0.0000', '0.0000')).join(','); }).sort().join('|');
+  const keys: string[] = [];
+  const paths = d.cubes.map((q, i) => {
+    const key = orient(q); if (!q.ax && !keys.includes(key)) keys.push(key);
+    const p = document.createElementNS(ns, 'path');
+    p.setAttribute('class', q.ax ? 'c4s-q c4s-w ax' : 'c4s-q c4s-w');
+    // hues by the golden angle, skipping the orange of the front cell
+    const hue = (keys.indexOf(key) * 137.508 + 200) % 360;
+    if (!q.ax) p.style.setProperty('--h', `hsl(${hue >= 12 && hue < 58 ? hue + 46 : hue} 70% 55%)`);
+    p.dataset.o = String(keys.indexOf(key) + 1);
+    p.dataset.i = String(i); p.dataset.t = q.t.toFixed(2); p.dataset.c = q.c.map(x => x.toFixed(4)).join(', ');
+    svg.append(p); return p;
+  });
+  const back = document.createElementNS(ns, 'path'); back.setAttribute('class', 'c4s-wcell back'); svg.append(back);
+  const cell = document.createElementNS(ns, 'path'); cell.setAttribute('class', 'c4s-wcell'); svg.append(cell);
+  const st: St = {W: W_START.map(r => [...r]), yaw: VIEWS[3][0], pitch: VIEWS[3][1], spin: false, spin4: true, anim: null};
+  twoCubesView(st);
+  return {svg, card, V, box, cell, back, paths, st, seen: false, dirty: true, cells: card.querySelectorAll<HTMLButtonElement>('.c4s-cells button')};
+});
+type Card = typeof cards[number];
+function draw(c: Card) {
+  const {st} = c; curPos(st, performance.now()); const P = st.W, f = front(st);
+  const cy = Math.cos(st.yaw), sy = Math.sin(st.yaw), cp = Math.cos(st.pitch), sp = Math.sin(st.pitch);
+  const dot = (r: number[], v: number[]) => r[0] * v[0] + r[1] * v[1] + r[2] * v[2] + r[3] * v[3];
+  const pr = (v: number[]) => { const X = dot(P[0], v), Y = dot(P[1], v), Z = dot(P[2], v), x1 = cy * X - sy * Y, y1 = sy * X + cy * Y;
+    return `${x1.toFixed(4)} ${(-(Z * cp + y1 * sp)).toFixed(4)}`; };
+  const d = (P: number[][]) => { const S = P.map(pr); return E.map(([u, w]) => `M${S[u]}L${S[w]}`).join(''); };
+  c.box.setAttribute('d', d(T)); c.V.forEach((P, i) => c.paths[i].setAttribute('d', d(P))); c.dirty = false;
+  // the 12 edges of the front cell of the container (its vertices have x_j = 0 or s)
+  const S = T.map(pr), bit = f.sg > 0 ? 1 : 0, cellD = (b: number) => E.filter(([u, w]) => (u >> f.j & 1) === b && (w >> f.j & 1) === b).map(([u, w]) => `M${S[u]}L${S[w]}`).join('');
+  c.cell.setAttribute('d', cellD(bit)); c.back.setAttribute('d', cellD(1 - bit));
+}
+// the labels and the controls of a card follow its state
+function show(c: Card) {
+  const {st, card} = c; curPos(st, performance.now());
+  const f = front(st), h = st.W[3], exact = f.c > 1 - 1e-6;
+  // each cell button: how much it faces us (the bar), and which one is in front
+  // the view direction: the four inputs follow it, except the one being typed in
+  card.querySelectorAll<HTMLInputElement>('.c4s-dir input').forEach(inp => { if (inp !== document.activeElement) inp.value = (Math.abs(h[+inp.dataset.j!]) < 0.005 ? 0 : h[+inp.dataset.j!]).toFixed(2); });
+  c.cells.forEach(b => { const j = +b.dataset.j!, sg = +b.dataset.s!, w = Math.max(0, sg * h[j]);
+    b.querySelector<HTMLElement>('.c4s-fill')!.style.width = `${(w * 100).toFixed(1)}%`;
+    const on = j === f.j && sg === f.sg; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on && exact)); });
+  card.querySelector('[data-spin]')!.setAttribute('aria-pressed', String(st.spin));
+  card.querySelector('[data-spin4]')!.setAttribute('aria-pressed', String(st.spin4));
+  c.dirty = true; if (c.seen) draw(c);
+}
+// a change made on one card: with the sync check on, every card takes the same state
+let raf = 0, last = 0;
+// a held key: [card, '3' or '4', direction]
+let hold: null | [Card, string, string] = null;
+function change(c: Card, f: (st: St) => void) {
+  for (const o of sync.checked ? cards : [c]) { f(o.st); show(o); }
+  if (!raf && (hold || cards.some(o => o.st.spin || o.st.spin4 || o.st.anim))) raf = requestAnimationFrame(tick);
+}
+function tick(now: number) {
+  const dt = Math.min(50, now - (last || now)); last = now;
+  if (hold) { const [hc, kind, d] = hold, [dx, dy] = DIRS[d]; change(hc, st => kind === '3' ? turn3(st, dx, dy, dt * 0.0015) : rot4(st, dx, dy, dt * 0.0015)); }
+  for (const c of cards) {
+    const {st} = c; if (!st.spin && !st.spin4 && !st.anim) continue;
+    curPos(st, now);
+    if (st.spin) st.yaw += dt * 0.0005;
+    // "Turn in 4D" turns on in the plane of the screen's horizontal and the hidden direction
+    if (st.spin4 && !st.anim) rot4(st, 1, 0, dt * 0.0005);
+    if (c.seen) show(c); else c.dirty = true;
+  }
+  raf = hold || cards.some(o => o.st.spin || o.st.spin4 || o.st.anim) ? requestAnimationFrame(tick) : 0; if (!raf) last = 0;
+}
+const io = new IntersectionObserver(es => es.forEach(e => { const c = cards.find(c => c.svg === e.target)!; c.seen = e.isIntersecting; if (c.seen && c.dirty) draw(c); }), {rootMargin: '200px'});
+cards.forEach(c => {
+  io.observe(c.svg); show(c);
+  // typing a view direction turns to it (normalised) by the shortest turn
+  const dirIn = [...c.card.querySelectorAll<HTMLInputElement>('.c4s-dir input')];
+  dirIn.forEach(inp => inp.addEventListener('change', () => { const v = dirIn.map(i => +i.value || 0), n = Math.hypot(...v); if (n < 1e-9) return;
+    const now = performance.now(); inp.blur(); change(c, st => gotoDir(st, v.map(x => x / n), now)); }));
+  // a cell button turns to face that cell
+  c.cells.forEach(b => b.addEventListener('click', () => { const now = performance.now(); change(c, st => gotoCell(st, +b.dataset.j!, +b.dataset.s!, now)); }));
+  // the two keys: a press turns a little, holding keeps turning; the middle resets (3D: oblique view; 4D: nearest corner)
+  c.card.querySelectorAll<HTMLElement>('.c4s-dp').forEach(dp => { const kind = dp.dataset.kind!;
+    dp.querySelectorAll<HTMLButtonElement>('button').forEach(b => { const d = b.dataset.d!;
+      const press = () => { const now = performance.now();
+        if (d === 'C') { change(c, st => { if (kind === '3') { [st.yaw, st.pitch] = VIEWS[3]; } else { curPos(st, now);
+          const f = front(st); gotoCell(st, f.j, f.sg, now); } }); return; }
+        const [dx, dy] = DIRS[d]; change(c, st => { st.anim = null; kind === '3' ? turn3(st, dx, dy, 0.05) : rot4(st, dx, dy, 0.05); });
+        hold = [c, kind, d]; if (!raf) raf = requestAnimationFrame(tick); };
+      b.addEventListener('pointerdown', e => { e.preventDefault(); capture(b, e); press(); });
+      const release = () => { if (hold && hold[0] === c && hold[2] === d) hold = null; };
+      b.addEventListener('pointerup', release); b.addEventListener('pointercancel', release); b.addEventListener('lostpointercapture', release);
+      b.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); press(); hold = null; } });
+    }); });
+  c.card.querySelectorAll<HTMLButtonElement>('[data-view]').forEach(btn => btn.addEventListener('click', () => change(c, st => { [st.yaw, st.pitch] = VIEWS[+btn.dataset.view!]; })));
+  c.card.querySelector('[data-oct]')!.addEventListener('click', () => change(c, st => octagonView(st)));
+  c.card.querySelector('[data-split]')!.addEventListener('click', () => change(c, st => twoCubesView(st)));
+  c.card.querySelector('[data-spin]')!.addEventListener('click', () => { const v = !c.st.spin; change(c, st => st.spin = v); });
+  c.card.querySelector('[data-spin4]')!.addEventListener('click', () => { const v = !c.st.spin4; change(c, st => st.spin4 = v); });
+  // dragging turns the view by the pointer's steps (Shift: a turn in 4D), so a running turn goes on at the same time
+  let g: null | [number, number] = null;
+  c.svg.addEventListener('pointerdown', e => { g = [e.clientX, e.clientY]; capture(c.svg, e); });
+  c.svg.addEventListener('pointermove', e => { if (!g) return; const ddx = e.clientX - g[0], ddy = e.clientY - g[1]; g = [e.clientX, e.clientY];
+    // with Shift the drag turns in 4D: the hidden direction moves with the pointer
+    const len = Math.hypot(ddx, ddy); if (!len) return;
+    change(c, st => { if (e.shiftKey) rot4(st, ddx / len, ddy / len, len * .01); else { st.yaw -= ddx * .01; st.pitch += ddy * .01; } }); });
+  const up = () => g = null; c.svg.addEventListener('pointerup', up); c.svg.addEventListener('pointercancel', up);
+});
+// turning the sync on brings every card to the state of the first card in view
+sync.addEventListener('change', () => { if (!sync.checked) return; const src = cards.find(c => c.seen) ?? cards[0];
+  curPos(src.st, performance.now()); const {W, yaw, pitch, spin, spin4} = src.st;
+  change(src, st => { Object.assign(st, {yaw, pitch, spin, spin4}); if (st !== src.st) { st.anim = null; st.W = W.map(r => [...r]); } }); });
+// marking a cube in all three views of its card (after the 3D paths exist)
+document.querySelectorAll<HTMLElement>('.c4s-card').forEach(card => {
+  const out = card.querySelector('.c4s-out')!, qs = card.querySelectorAll<SVGPolygonElement>('.c4s-q');
+  const pick = (q: SVGPolygonElement | null) => {
+    const i = q?.dataset.i;
+    qs.forEach(p => p.classList.toggle('on', p.dataset.i === i));
+    card.classList.toggle('picking', !!q);
+    if (!q) return;
+    const ja = document.documentElement.lang === 'ja';
+    out.textContent = ja ? `立方体 ${+i! + 1}：中心 (${q.dataset.c})、傾き ${q.dataset.t}°` : `cube ${+i! + 1}: centre (${q.dataset.c}), tilt ${q.dataset.t}°`;
+  };
+  qs.forEach(q => { q.addEventListener('pointerenter', () => pick(q)); q.addEventListener('click', () => pick(q)); });
+  card.addEventListener('pointerleave', () => pick(null));
+});
+// the chips of a group: show the card of that k in the same place
+document.querySelectorAll<HTMLButtonElement>('.c4s-ks button').forEach(b => b.addEventListener('click', () => {
+  const from = b.closest<HTMLElement>('.c4s-card')!, to = document.getElementById(`k${b.dataset.k}`)!;
+  if (from === to) return; from.hidden = true; to.hidden = false;
+  const c = cards.find(o => o.card === to); if (c) show(c);
+}));
+document.addEventListener('langchange', () => cards.forEach(show));
+// the figures turn in 4D from the start
+raf = requestAnimationFrame(tick);
+</script>
+<style is:global>
+.c4s h1 { font-size: 20px; margin: 4px 0 8px; text-wrap: balance; }
+.c4s-key { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-size: 12px; color: var(--fg2); margin: 10px 0; }
+.c4s-sw { width: 14px; height: 10px; border-radius: 2px; border: 1px solid; }
+.c4s-sw.ax { background: color-mix(in srgb, var(--fg2) 30%, transparent); border-color: var(--fg2); }
+.c4s-sw.rot { background: linear-gradient(90deg, hsl(20 70% 55%), hsl(157 70% 55%), hsl(295 70% 55%)); border-color: transparent; margin-left: 10px; }
+.c4s-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1100px) { .c4s-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .c4s-grid { grid-template-columns: minmax(0, 1fr); } }
+.c4s-card { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; background: var(--bg2); min-width: 0; scroll-margin-top: 64px; }
+.c4s-card.rec { border-color: var(--acc); }
+.c4s-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.c4s-k { font-weight: 600; font-size: 15px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.c4s-ks { display: flex; flex-wrap: wrap; gap: 3px; }
+.c4s .c4s-dir input { min-height: 0; height: 26px; }
+.c4s .c4s-ks button { min-height: 28px; min-width: 30px; padding: 0 6px; font-size: 13px; font-weight: 600; }
+.c4s .c4s-ks button[aria-pressed="true"] { color: var(--acc); border-color: var(--acc); }
+.c4s-s { margin-left: auto; font-size: 13px; }
+.c4s-tag { font-size: 11px; color: var(--acc); border: 1px solid var(--acc); border-radius: 3px; padding: 0 5px; }
+.c4s .num { font-variant-numeric: tabular-nums; }
+.c4s-box { fill: var(--bg); stroke: var(--fg2); stroke-width: .6; }
+.c4s-q { --h: var(--fg2); fill: var(--h); stroke: var(--h); fill-opacity: .35; stroke-width: .5; stroke-linejoin: round; cursor: pointer; transition: opacity .12s; }
+.c4s-q.ax { fill-opacity: .18; }
+.c4s-card.picking .c4s-q { opacity: .2; }
+.c4s-card.picking .c4s-q.on { opacity: 1; fill-opacity: .75; stroke-width: 1.2; }
+.c4s-dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 2px 10px; font-size: 12px; margin: 6px 0 0; }
+.c4s-dl dt { color: var(--fg2); } .c4s-dl dd { margin: 0; overflow-wrap: anywhere; }
+.c4s .c4s-dl dd a:not(.c4s-x) { display: inline; min-height: 0; overflow-wrap: anywhere; }
+.c4s-3d { margin: 6px 0 0; }
+.c4s-3d svg { width: 100%; max-width: 360px; display: block; margin: 0 auto; aspect-ratio: 1; cursor: grab; touch-action: pan-y; background: var(--bg); border-radius: 4px; }
+.c4s-3d svg:active { cursor: grabbing; }
+.c4s-3d figcaption { text-align: center; font-size: 11px; color: var(--fg2); font-variant-numeric: tabular-nums; }
+.c4s-wbox { fill: none; stroke: var(--fg2); stroke-width: 1; vector-effect: non-scaling-stroke; opacity: .7; }
+.c4s-q.c4s-w { fill: none; stroke-width: 1; vector-effect: non-scaling-stroke; pointer-events: stroke; }
+.c4s-q.c4s-w.ax { stroke-opacity: .55; }
+.c4s-card.picking .c4s-q.c4s-w.on { stroke-width: 2.4; }
+.c4s-sync { display: flex; align-items: center; gap: 8px; font-size: 13px; margin: 0 0 12px; min-height: 44px; }
+.c4s-sync input { accent-color: var(--acc); width: 18px; height: 18px; }
+.c4s-ctl { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 8px; font-size: 12px; margin: 6px 0 8px; }
+.c4s-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.c4s-ctl button { min-height: 32px; padding: 2px 8px; font-size: 12px; }
+.c4s-ctl button[aria-pressed="true"] { color: var(--acc); border-color: var(--acc); }
+.c4s-cells { display: grid; grid-template-columns: repeat(4, 40px); gap: 3px; justify-items: stretch; align-content: center; }
+.c4s-ctl .c4s-cells button { position: relative; min-height: 0; height: 30px; padding: 0; font-size: 12px; overflow: hidden; font-variant-numeric: tabular-nums; }
+.c4s-cells .c4s-fill { position: absolute; left: 0; bottom: 0; height: 3px; background: var(--fg2); opacity: .7; }
+.c4s-cells .lab { position: relative; }
+.c4s-ctl .c4s-cells button.on { color: var(--acc); border-color: var(--acc); }
+.c4s-cells button.on .c4s-fill { background: var(--acc); opacity: 1; }
+.c4s-dir { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2px 6px; font-size: 11px; color: var(--fg2); margin-top: 4px; }
+.c4s-dir label { display: flex; align-items: center; gap: 2px; min-height: 0; }
+.c4s-dir input { width: 52px; font: 12px var(--mono); padding: 2px 3px; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 3px; }
+.c4s-wcell { fill: none; stroke: var(--acc); stroke-width: 2; vector-effect: non-scaling-stroke; opacity: .9; pointer-events: none; }
+.c4s-wcell.back { stroke-width: 1.2; opacity: .45; }
+.c4s-dp { display: flex; flex-direction: column; align-items: center; gap: 2px; flex: none; }
+.c4s-dp-g { display: grid; grid-template-columns: repeat(3, 30px); grid-template-rows: repeat(3, 30px); gap: 2px; }
+.c4s-ctl .c4s-dp-g button { min-height: 0; width: 30px; height: 30px; padding: 0; font-size: 12px; line-height: 1; touch-action: none; user-select: none; -webkit-user-select: none; }
+.c4s-dp-g .u { grid-area: 1 / 2; } .c4s-dp-g .l { grid-area: 2 / 1; } .c4s-dp-g .c { grid-area: 2 / 2; font-size: 9px; color: var(--fg2); } .c4s-dp-g .r { grid-area: 2 / 3; } .c4s-dp-g .d { grid-area: 3 / 2; } .c4s-dp-g .ul { grid-area: 1 / 1; } .c4s-dp-g .ur { grid-area: 1 / 3; } .c4s-dp-g .dl { grid-area: 3 / 1; } .c4s-dp-g .dr { grid-area: 3 / 3; }
+.c4s-dp-g .ul, .c4s-dp-g .ur, .c4s-dp-g .dl, .c4s-dp-g .dr { font-size: 10px; color: var(--fg2); }
+.c4s-dp-l { font-size: 11px; color: var(--fg2); }
+.c4s-out { display: block; font-size: 12px; min-height: 2.6em; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.c4s-lede { color: var(--fg2); margin: 0 0 8px; max-width: 76ch; }
+.c4s-foot { font-size: 12px; margin-top: 16px; }
+</style>
+</Base>
