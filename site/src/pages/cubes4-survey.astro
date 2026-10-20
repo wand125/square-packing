@@ -17,6 +17,9 @@ const GH = 'https://github.com/wand125/square-packing/blob/main/';
 // grid: the card of the largest k is shown, the chips switch between them
 const side = (r: Row) => r.s_exact ?? `k${r.k}`;
 const groupOf = (r: Row) => rows.filter(o => side(o) === side(r)).map(o => o.k);
+// for the k sheet on phones: the groups in order, each with a square drawn to its side (sides 2.5 to 3 spread over 12 to 28 px)
+const groups = rows.filter(r => groupOf(r)[0] === r.k).map(r => rows.filter(o => groupOf(r).includes(o.k)));
+const box = (r: Row) => +(12 + (r.s_float - 2.5) / 0.5 * 16).toFixed(1);
 // the published value to compare with: the closed form 2 + 1/√m when the source gives one, else the printed decimal
 const target = (r: Row) => { const m = r.published.form.match(/^2 \+ 1\/√(\d+)/); return m ? 2 + 1 / Math.sqrt(+m[1]) : parseFloat(r.published.value); };
 // ours − published, as ±m × 10^e with a superscript exponent
@@ -81,7 +84,7 @@ const conjectured = (r: Row) => /conjectured/.test(r.published.form);
   <button type="button" class="c4s-r-spin" aria-pressed="false" aria-label="rotate">↻</button>
   <button type="button" class="c4s-r-spin4" aria-pressed="false" aria-label="turn in 4D">4D</button>
 </div>
-<dialog class="phone-k-sheet c4s-sheet c4s-ksheet" aria-label="k"><div class="c4s-sheet-ks">{rows.map(r => <button type="button" data-goto={r.k} class={r.origin_kind === 'own-record' ? 'rec' : undefined}>{r.k}</button>)}</div></dialog>
+<dialog class="phone-k-sheet c4s-sheet c4s-ksheet" aria-label="k"><div class="c4s-sheet-ks">{groups.map(g => <div class="c4s-kg"><svg class="c4s-kg-ico" viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><rect x={15 - box(g[0]) / 2} y={15 - box(g[0]) / 2} width={box(g[0])} height={box(g[0])} /></svg><div class="c4s-kg-ks">{g.map(r => <button type="button" data-goto={r.k} class={r.origin_kind === 'own-record' ? 'rec' : undefined}>{r.k}</button>)}</div></div>)}</div></dialog>
 <dialog class="phone-k-sheet c4s-sheet c4s-vsheet" aria-label="views"><div class="c4s-vsheet-dir"></div><div class="c4s-sheet-vs">{[['split', 'Two cubes', '二重立方体'], ['oct', 'Octagon', '八角形'], ['0', 'Oblique', '斜め'], ['1', 'Top', '上'], ['2', 'Side', '横']].map(([v, en, ja]) => <button type="button" data-v={v}><T en={en} ja={ja} /></button>)}</div></dialog>
 <dialog class="phone-k-sheet c4s-sheet c4s-isheet" aria-label="about"><div class="c4s-isheet-body"></div></dialog>
 <p class="dim c4s-foot"><T en="Hiroaki Hosono (wand125). The published values and the starting packings are from hockyy/tesseract-packing and xavierdmello/tesseract-packing, as named on each card. A certificate marked “two checkers” is accepted by two independent exact checkers." ja="Hiroaki Hosono (wand125)。公開値と出発点の配置は hockyy/tesseract-packing と xavierdmello/tesseract-packing のもので、カードごとに書いた。「2 系統で検査」と書いた証明書は、独立した 2 つの厳密な検査器が受理した。" /></p>
@@ -451,7 +454,13 @@ raf = requestAnimationFrame(tick);
 .c4s-rail button { width: 46px; height: 46px; min-height: 0; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; background: var(--bg2); font-size: 18px; font-weight: 600; font-family: var(--mono); }
 .c4s-rail button[aria-pressed="true"] { color: var(--acc); border-color: var(--acc); }
 .c4s-rail .c4s-r-i { font-style: italic; font-family: Georgia, serif; }
-.c4s-sheet-ks, .c4s-sheet-vs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.c4s-sheet-vs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+/* the k sheet: one row per side, its square drawn to scale, dividers between the sides */
+.c4s-sheet-ks { display: flex; flex-direction: column; gap: 8px; }
+.c4s-kg { display: flex; align-items: center; gap: 10px; }
+.c4s-kg-ico { flex: none; } .c4s-kg-ico rect { fill: color-mix(in srgb, var(--link) 18%, transparent); stroke: var(--link); stroke-width: 1.4; }
+.c4s-kg-ks { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+.c4s-kg + .c4s-kg { border-top: 1px solid var(--line); padding-top: 8px; }
 .c4s-sheet-ks button { min-width: 52px; min-height: 48px; font: 600 16px var(--mono); }
 .c4s-sheet-ks button.rec { box-shadow: inset 0 -3px 0 var(--acc); }
 .c4s-sheet-ks button[aria-pressed="true"], .c4s-sheet-vs button:focus-visible { color: var(--acc); border-color: var(--acc); }
