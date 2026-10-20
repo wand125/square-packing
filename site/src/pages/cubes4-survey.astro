@@ -13,10 +13,10 @@ const rows: Row[] = JSON.parse(readFileSync('public/data/cubes4-survey.json', 'u
 // tilt: the largest angle between an edge (a column of R) and the nearest coordinate axis
 const tilt = (q: Cube) => Math.acos(Math.min(1, Math.min(...[0, 1, 2, 3].map(j => Math.max(...q.R.map(r => Math.abs(r[j]))))))) * 180 / Math.PI;
 const GH = 'https://github.com/wand125/square-packing/blob/main/';
-// the k whose published sides agree to 4 decimals (18–25: 2.7071; 26–29: 2.9428) share one place in the grid: the
-// card of the largest k is shown, the chips switch between them
-const side4 = (r: Row) => parseFloat(r.published.value).toFixed(4);
-const groupOf = (r: Row) => rows.filter(o => side4(o) === side4(r)).map(o => o.k);
+// the k with the same side (the same exact closed form: 18–25 at 2 + 1/√2, 26–29 at 2 + 2√2/3) share one place in the
+// grid: the card of the largest k is shown, the chips switch between them
+const side = (r: Row) => r.s_exact ?? `k${r.k}`;
+const groupOf = (r: Row) => rows.filter(o => side(o) === side(r)).map(o => o.k);
 // the published value to compare with: the closed form 2 + 1/√m when the source gives one, else the printed decimal
 const target = (r: Row) => { const m = r.published.form.match(/^2 \+ 1\/√(\d+)/); return m ? 2 + 1 / Math.sqrt(+m[1]) : parseFloat(r.published.value); };
 // ours − published, as ±m × 10^e with a superscript exponent
@@ -41,7 +41,7 @@ const conjectured = (r: Row) => /conjectured/.test(r.published.form);
 <Base file="cubes4-survey.html" title="Unit 4-Cubes in a 4-Cube">
 <div class="c4s">
 <h1><T en="Unit 4-cubes in a 4-cube, k = 17 to 30" ja="4 次元の立方体に単位 4 次元立方体 k 個（k = 17〜30）" /></h1>
-<p class="c4s-lede"><T en="For each k from 17 to 30: the smallest published container side for k unit 4-cubes, and a packing of ours with an exact certificate, drawn as a parallel projection that turns in four dimensions. A survey of known values; the new values are k = 27, 28, 29 and 30. The values of k whose published sides agree to four decimals (18 to 25, and 26 to 29) share one card, showing the largest k; the numbers at its top switch between them." ja="k = 17〜30 のそれぞれについて、単位 4 次元立方体 k 個の容器の辺の公開値と、厳密な証明書を付けた当方の配置を、4 次元で回る平行投影の図で描く。既知の値の資料で、新しい値は k = 27、28、29、30。公開値が小数 4 桁まで同じ k（18〜25 と 26〜29）は 1 枚のカードにまとめて最も大きい k を表示し、上の数字で切り替える。" /></p>
+<p class="c4s-lede"><T en="For each k from 17 to 30: the smallest published container side for k unit 4-cubes, and a packing of ours with an exact certificate, drawn as a parallel projection that turns in four dimensions. A survey of known values; the new values are k = 27, 28, 29 and 30. The values of k with the same side (18 to 25 at 2 + 1/√2, 26 to 29 at 2 + 2√2/3) share one card, showing the largest k; the smaller k are its packing with cubes removed, and the numbers at the top of the card switch between them." ja="k = 17〜30 のそれぞれについて、単位 4 次元立方体 k 個の容器の辺の公開値と、厳密な証明書を付けた当方の配置を、4 次元で回る平行投影の図で描く。既知の値の資料で、新しい値は k = 27、28、29、30。辺が同じ k（18〜25 は 2 + 1/√2、26〜29 は 2 + 2√2/3）は 1 枚のカードにまとめて最も大きい k を表示する。小さい k はその配置から立方体を除いたもので、カード上部の数字で切り替える。" /></p>
 <div class="c4s-key" aria-hidden="true"><span class="c4s-sw ax"></span><T en="axis-parallel" ja="軸に平行" /><span class="c4s-sw rot"></span><T en="rotated (one colour per orientation)" ja="回転（向きごとに色）" /></div>
 <label class="c4s-sync"><input type="checkbox" checked /> <T en="Sync all cards (views and turns)" ja="全カードを同期する（視点と回転）" /></label>
 <script type="application/json" id="c4s-data" set:html={JSON.stringify(rows.map(r => ({k: r.k, s: r.s_float, cubes: r.cubes.map(q => ({c: q.c.map(x => +x.toFixed(7)), R: q.R.map(row => row.map(x => +x.toFixed(7))), ax: q.axis_parallel, t: +tilt(q).toFixed(2)}))})))} />
