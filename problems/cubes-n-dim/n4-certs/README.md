@@ -1,4 +1,4 @@
-# Unit 4-cubes in a 4-cube, k = 17–29: exact certificates for the best known packings (v2)
+# Unit 4-cubes in a 4-cube, k = 17–29: exact certificates for the best known packings (v3)
 
 Let s_4(k) be the side of the smallest 4-cube that contains k unit 4-cubes with pairwise disjoint interiors (any
 positions, any orientations). This bundle gives, for k = 17–29, an exact certificate of a packing in a quadratic field: the side is exactly
@@ -8,18 +8,23 @@ side for k = 27, 28 and 29**: the published packings for k = 26–29 (hockyy/tes
 45° turns and the centres re-solved by a linear programme, all four fit in the side 2 + 2√2/3 = 2.9428090416
 exactly, which is below the published side by 1.7·10⁻⁷ (k = 27), 1.7·10⁻⁵ (k = 28) and 2.2·10⁻⁵ (k = 29), and
 confirms the conjectured closed form for k = 26. Version 1 of this bundle (Release `cubes-n-dim-n4-certs-v1`) had
-rational certificates at the published values for k = 26–29. The record for k = 30 (side 2.9876881, improving
+rational certificates at the published values for k = 26–29; version 2 introduced the exact packings for k = 26–29.
+**Version 3 (this version) changes no side**: every certificate is rewritten in the canonical form of `SPEC-ALG.md`
+(canonical frames, loose cubes placed by lexicographic linear programmes, cubes sorted, lowest terms, fixed key order
+and no whitespace, so that a packing has one file and one SHA-256), and the two families are nested: k = 18–24 are
+subsets of the k = 25 packing and k = 26–28 are subsets of the k = 29 packing, each obtained from the next larger one
+by removing one cube by the rule of the specification. The record for k = 30 (side 2.9876881, improving
 2.9895684) is published separately in the Release `cubes-n-dim-n4k30-v1`. The accompanying survey page shows the
 packings in projection.
 
 | k | best known s | published by | packing in this bundle | certified s |
 |---|---|---|---|---|
 | 17 | 2.577350 ≈ 2 + 1/√3 | xavierdmello/tesseract-packing | our search: the 16-grid opened up plus one cube tilted in all four coordinates | 2 + (1/3)√3 = 2 + 1/√3 exactly |
-| 18–24 | 2.707107 = 2 + 1/√2 | xavierdmello/tesseract-packing (product of two 5-square packings) | nested subsets of our k = 25 packing: the 16 axis-parallel cubes kept, the doubly rotated centre cube removed first, then singly rotated cubes one at a time | 2 + (1/2)√2 exactly |
+| 18–24 | 2.707107 = 2 + 1/√2 | xavierdmello/tesseract-packing (product of two 5-square packings) | nested subsets of our k = 25 packing (one cube removed at each step by the rule of `SPEC-ALG.md`: the doubly rotated centre cube first, then singly rotated cubes; the 16 axis-parallel cubes stay) | 2 + (1/2)√2 exactly |
 | 25 | 2.707107 = 2 + 1/√2 | xavierdmello/tesseract-packing (product of two 5-square packings) | our construction: the product of two 5-square packings of side 2 + 1/√2, tightened | 2 + (1/2)√2 exactly |
-| 26 | 2.942809042 ≈ 2 + 2√2/3 | hockyy/tesseract-packing | published coordinates (a), frames fixed to 45° turns, centres re-solved by LP | 2 + (2/3)√2 exactly |
+| 26 | 2.942809042 ≈ 2 + 2√2/3 | hockyy/tesseract-packing | subset of our k = 27 packing (one cube removed) | 2 + (2/3)√2 exactly |
 | 27 | 2.942809214 | hockyy/tesseract-packing | subset of our k = 28 packing (one cube removed) | 2 + (2/3)√2 exactly (**new**, −1.7·10⁻⁷) |
-| 28 | 2.942826011 | hockyy/tesseract-packing | published coordinates (a), frames fixed to 45° turns, centres re-solved by LP | 2 + (2/3)√2 exactly (**new**, −1.7·10⁻⁵) |
+| 28 | 2.942826011 | hockyy/tesseract-packing | subset of our k = 29 packing (one cube removed) | 2 + (2/3)√2 exactly (**new**, −1.7·10⁻⁵) |
 | 29 | 2.942830937 | hockyy/tesseract-packing (coordinates: xavierdmello) | published coordinates (b), frames fixed to 45° turns, centres re-solved by LP | 2 + (2/3)√2 exactly (**new**, −2.2·10⁻⁵) |
 
 Sources: xavierdmello/tesseract-packing (https://github.com/xavierdmello/tesseract-packing, branch research, commit
@@ -35,6 +40,16 @@ linear in the centres once the frames are fixed), reading the optimal vertex off
 our work. The published packings carry small tilts of the frames (up to about 13°); the exact packings show that the
 tilts are not needed. For k = 17 the packing was found by
 our own search and reaches the published value exactly; for k = 18–25 the packings are our own construction.
+
+## Canonical form
+
+All thirteen files are in the canonical form defined in `SPEC-ALG.md` (section "Canonical form"): numbers in lowest
+terms; each frame replaced by the lexicographically largest of its 384 equivalents under the symmetries of the cube;
+with the frames and the side fixed, the centres of loose cubes placed by lexicographic minimisation (a sequence of linear
+programmes whose optimal vertex is read back exactly); cubes sorted by centre; keys `format, n, k, d, s, c, R` in this
+order, compact JSON, one final newline. Re-running the canonicalisation on a canonical file returns the same file.
+The nested families (18–24 from 25; 26–28 from 29) remove, at each step, a cube chosen by the rule of the specification
+(most rotated planes, then fewest contacts, then last in the order); the cubes removed are listed in `NESTING.md`.
 
 ## Two certificate formats
 

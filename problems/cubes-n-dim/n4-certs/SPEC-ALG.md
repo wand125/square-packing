@@ -46,3 +46,32 @@ Output ACCEPT/REJECT with the reason, exit code 0 only on ACCEPT; print s as the
 A frame with one entry changed (not orthogonal); s decreased by ["0", "1/1000000"]; a centre moved by 1/64 into a
 neighbour; two centres made equal; a number given as a JSON float; d changed from 2 to 3 (the same file must then be
 rejected at orthogonality or at the container, since √2 entries become √3).
+
+## Canonical form (added 2026-10-20)
+
+A certificate is in canonical form when all of the following hold. The checker does not require canonical form; it
+exists so that the same packing is always written as the same file (and has the same SHA-256).
+
+1. **Numbers.** Every rational is in lowest terms with a positive denominator, written `"p/q"`, or `"p"` when the
+   denominator is 1 (so `"0"`, `"-1/2"`, `"3"`). In a pair `["a", "b"]` a zero part is `"0"`.
+2. **Frames.** A unit cube is invariant under the 2ⁿ·n! signed permutation matrices P, so R_i and R_i·P describe
+   the same cube. The canonical frame is the matrix R_i·P whose row-major list of n² entries is lexicographically
+   largest, comparing entries exactly in Q(√d) (sign of a + b√d as in the checker).
+3. **Loose freedom.** Fix s and the canonical frames. For every pair take the candidate axis that separates the two
+   cubes with the largest margin in the input packing, with the sign of a·(c_i − c_j) from the input; the separation
+   conditions along these fixed axes and the container conditions are then linear in the centres. The centres are
+   pushed by lexicographic minimisation: in the current cube order, for each cube and each coordinate in turn, the
+   coordinate is minimised over the feasible set with all earlier coordinates held at their minima (a sequence of
+   linear programmes); the optimum is a vertex, so its coordinates are elements of Q(√d) and are written exactly.
+   After the push the cubes are re-ordered (rule 4) and the push is repeated until the order no longer changes.
+4. **Order of the cubes.** Cubes are sorted lexicographically by centre (c_i[0], then c_i[1], …, compared exactly),
+   ties broken by the row-major entries of the canonical frame.
+5. **File.** Exactly the keys `format`, `n`, `k`, `d`, `s`, `c`, `R`, in this order, JSON with no whitespace
+   (separators `,` and `:`), one final newline. No other key.
+
+**Nested subsets.** When several k share one packing, the certificate for k − 1 is the certificate for k with one
+cube removed and nothing else changed (positions and order kept), so that the k − 1 cubes are a subset of the k
+cubes. The cube removed is chosen by: among the cubes with the largest number of rotated coordinate planes (a plane
+(p, q) counts as rotated when one of the off-diagonal entries R[p][q], R[q][p] is neither 0 nor ±1), the one
+with the fewest contacts (walls touched exactly plus pairs whose best separation margin is exactly 0); ties are
+broken by taking the last one in the canonical order. A nested family is therefore determined by its largest member.

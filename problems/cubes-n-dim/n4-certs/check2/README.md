@@ -1,4 +1,4 @@
-# Second checker for the n = 4 certificates (v2)
+# Second checker for the n = 4 certificates (v3, canonical form)
 
 All 13 certificates in `../certs/` (k = 17 … 29) are in the `alg-v1` format of `../SPEC-ALG.md`. Each number is a
 pair of rationals `["a", "b"]` meaning a + b√d. The certificates use d = 3 for k = 17 and d = 2 for the others.
@@ -32,8 +32,12 @@ All 13 certificates are accepted. In every certificate the smallest wall slack i
 
 Further checks:
 
-- **Nesting.** n4k18 … n4k24 are subsets of n4k25: comparing their (centre, frame) pairs as sets shows
-  18 ⊂ 19 ⊂ … ⊂ 25. Each of them keeps the 16 axis-parallel cubes of n4k25. Likewise, n4k27 is a subset of n4k28.
+- **Nesting.** Two families of certificates are nested: 18 ⊂ 19 ⊂ … ⊂ 25 and 26 ⊂ 27 ⊂ 28 ⊂ 29. Each smaller
+  certificate is the next larger one with exactly one cube removed. Nothing else changes: s, d, n, and the positions,
+  frames and order of the remaining cubes are the same. `canon_check2.py --nest` checks this. It also recomputes the
+  removal rule of `../SPEC-ALG.md`: among the cubes with the most rotated coordinate planes, take the one with the
+  fewest contacts (walls touched exactly, plus pairs whose best separation margin is exactly 0), and break ties by
+  taking the last one. In all 10 steps the cube removed is the one the rule gives, as listed in `../NESTING.md`.
 - **Comparison with the published values.** The comparison is exact: s = 2 + 2√2/3 < p is the same as
   √2 < (3/2)(p − 2), which is decided by squaring.
 
@@ -45,6 +49,39 @@ Further checks:
 
 - **Touching pairs.** In n4k26 … n4k29 many pairs touch with gap exactly 0. In floating point these show as
   "overlaps" of about 10⁻¹⁶. The exact check accepts them.
+
+## Canonical form
+
+`canon_check2.py` checks the rules of the "Canonical form" section of `../SPEC-ALG.md`. It was written from that
+text alone, and the first checker does not do this check. The rules checked are:
+
+- **Rule 1.** Every rational is in lowest terms with a positive denominator, written `"p"` when the denominator
+  is 1, and a zero part is `"0"`.
+- **Rule 2.** Each frame is the lexicographically largest R·P over the 384 signed permutation matrices P, with the
+  row-major entries compared exactly.
+- **Rule 4.** The cubes are sorted by centre, then by frame.
+- **Rule 5.** The file has exactly the keys `format`, `n`, `k`, `d`, `s`, `c`, `R`, in this order. It is compact
+  JSON with no whitespace and ends with one newline.
+
+Rule 3, the lexicographic push of the centres, is not checked, because it would need the linear programmes
+themselves. It does not affect validity, which is the checker's verdict.
+
+All 13 certificates are canonical by rules 1, 2, 4 and 5. `canon_neg_tests.py` breaks the form of each certificate
+in 10 ways and requires `canon_check2.py` to object to every copy. The packing itself is left unchanged. The 10
+corruptions are:
+
+- `"2/1"` written for 2;
+- a fraction not in lowest terms;
+- zero written as `"0/1"`;
+- the first and last cubes swapped;
+- two columns of a frame swapped;
+- a frame column negated;
+- indented JSON;
+- no final newline;
+- the keys in the wrong order;
+- an extra key.
+
+On all 13 certificates every broken copy is rejected, 130 in total.
 
 ## Corruption tests
 
@@ -78,6 +115,10 @@ here for reference and are not needed for the certificates of this version.
 ```sh
 # from the bundle root; Python 3
 for f in certs/n4k*.json; do python3 -I check2/alg_check2.py "$f"; done     # each line: ACCEPT
+python3 -I check2/canon_check2.py certs/n4k*.json                           # each line: canonical
+python3 -I check2/canon_check2.py --nest certs/n4k1[89].json certs/n4k2[0-5].json
+python3 -I check2/canon_check2.py --nest certs/n4k2[6-9].json
+for f in certs/n4k*.json; do python3 -I check2/canon_neg_tests.py "$f"; done  # each ends with ALL OK
 python3 -I check2/alg_neg_tests.py certs/n4k*.json                          # ends with ALL OK
 python3 -I check2/alg_hand_tests.py                                         # ends with ALL OK
 ```
