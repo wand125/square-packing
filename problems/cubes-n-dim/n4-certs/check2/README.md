@@ -1,91 +1,83 @@
-# Second checkers for the n = 4 certificates
+# Second checker for the n = 4 certificates (v2)
 
-The 13 certificates in `../certs/` come in two formats:
+All 13 certificates in `../certs/` (k = 17 … 29) are in the `alg-v1` format of `../SPEC-ALG.md`. Each number is a
+pair of rationals `["a", "b"]` meaning a + b√d. The certificates use d = 3 for k = 17 and d = 2 for the others.
+`alg_check2.py` checks them. It was written from the specification alone: the first checker `../check_alg.py` was not
+read. It uses only the Python standard library (`fractions.Fraction`), and no floating-point number enters any
+decision. It prints ACCEPT or REJECT with the reason and exits 0 for ACCEPT, 1 for REJECT and 2 for unreadable input.
 
-| certificates | format | second checker |
-|---|---|---|
-| n4k26, n4k27, n4k28, n4k29 | rational (`A_i` skew-symmetric, `c_i`, `s` as `"p/q"` strings) | `cert_check2.py` |
-| n4k17 | `alg-v1` over Q(√3) (`../SPEC-ALG.md`): every number is `["a", "b"]` = a + b√d | `alg_check2.py` |
-| n4k18 … n4k25 | `alg-v1` over Q(√2) | `alg_check2.py` |
+## What it checks
 
-Both checkers were written from the specifications alone. They do not read the first checkers `../check_cert.py` and
-`../check_alg.py`. They use only the Python standard library (`fractions.Fraction`), and no floating-point number
-enters any decision. Each prints ACCEPT or REJECT with the reason, and exits 0 for ACCEPT, 1 for REJECT, 2 for
-unreadable input.
+The certificate describes k cubes with centres c_i and frames R_i in the container [0, s]⁴. All arithmetic is exact
+in Q(√d), and the sign of a + b√d is decided by comparing a² with d·b².
 
-## What they check
-
-For k cubes in [0, s]⁴, with centres c_i and frames R_i:
-
-1. **Shape.** Every number must be a string `"p/q"` or `"p"`. In alg-v1 it is a pair of such strings. JSON numbers,
-   decimals and other strings are refused.
-2. **Frames.**
-   - Rational format: A_i must be skew-symmetric. R_i = (I − A_i)⁻¹(I + A_i) is computed by exact Gauss–Jordan
-     elimination, and RᵀR = I and det R = 1 are then verified.
-   - alg-v1: the columns of R_i must be orthonormal, exactly in Q(√d).
-3. **Container.** c_i[r] − h_r ≥ 0 and s − c_i[r] − h_r ≥ 0, with h_r = ½ Σ_m |R_i[r][m]|.
-4. **Separation.** Every pair i < j must be separated by some candidate axis a:
-   2|a · (c_i − c_j)| ≥ Σ_m |a · R_i[:, m]| + Σ_m |a · R_j[:, m]|. The candidates are the generalised cross products
-   of k′ columns of R_i and 3 − k′ columns of R_j (56 axes per pair).
-
-In Q(√d), the sign of a + b√d is decided exactly by comparing a² with d·b².
+1. **Shape.** Every number is a pair of strings of the form `"p/q"` or `"p"`. JSON numbers, decimals and anything
+   else are refused.
+2. **Frames.** The columns of every R_i are orthonormal.
+3. **Container.** For every cube and coordinate, c_i[r] − h_r ≥ 0 and s − c_i[r] − h_r ≥ 0, where
+   h_r = ½ Σ_m |R_i[r][m]|.
+4. **Separation.** For every pair i < j some candidate axis a satisfies
+   2|a · (c_i − c_j)| ≥ Σ_m |a · R_i[:, m]| + Σ_m |a · R_j[:, m]|. The candidate axes are the generalised cross
+   products of k′ columns of R_i and 3 − k′ columns of R_j, which gives 56 axes per pair.
 
 ## Results
 
-All 13 certificates are accepted, each in a few seconds. In every certificate the smallest wall slack is 0.
+All 13 certificates are accepted. In every certificate the smallest wall slack is 0.
 
-| certificate | s (exact) | s (decimal) |
+| certificates | s (exact) | s (decimal) |
 |---|---|---|
 | n4k17 | 2 + √3/3 | ≈ 2.577350269190 |
 | n4k18 … n4k25 | 2 + √2/2 | ≈ 2.707106781187 |
-| n4k26 | rational | ≈ 2.94280904194 |
-| n4k27 | rational | ≈ 2.94280921431 |
-| n4k28 | rational | ≈ 2.94282601089 |
-| n4k29 | rational | ≈ 2.94283093693 |
+| n4k26 … n4k29 | 2 + 2√2/3 | ≈ 2.942809041582 |
 
-The certificates n4k18 … n4k24 are subsets of n4k25. Comparing their (centre, frame) pairs as sets shows that they
-are nested, 18 ⊂ 19 ⊂ … ⊂ 25, and that each keeps the 16 axis-parallel cubes of n4k25.
+Further checks:
+
+- **Nesting.** n4k18 … n4k24 are subsets of n4k25: comparing their (centre, frame) pairs as sets shows
+  18 ⊂ 19 ⊂ … ⊂ 25. Each of them keeps the 16 axis-parallel cubes of n4k25. Likewise, n4k27 is a subset of n4k28.
+- **Comparison with the published values.** The comparison is exact: s = 2 + 2√2/3 < p is the same as
+  √2 < (3/2)(p − 2), which is decided by squaring.
+
+  | k | published value p | p − s |
+  |---|---|---|
+  | 27 | 2.942809214 | 1.72 · 10⁻⁷ |
+  | 28 | 2.942826011 | 1.70 · 10⁻⁵ |
+  | 29 | 2.942830937 | 2.19 · 10⁻⁵ |
+
+- **Touching pairs.** In n4k26 … n4k29 many pairs touch with gap exactly 0. In floating point these show as
+  "overlaps" of about 10⁻¹⁶. The exact check accepts them.
 
 ## Corruption tests
 
-Each test script makes broken copies of a certificate and requires every copy to be rejected.
+`alg_neg_tests.py` makes 15 broken copies of each certificate and requires every copy to be rejected. The copies are:
 
-- **`neg_tests.py`** (rational certificates, 14 kinds):
-  - a cube moved onto another;
-  - all centres pulled towards the middle by a factor 1 − 10⁻⁶;
-  - s reduced by 10⁻¹²;
-  - a cube touching the wall pushed out by 10⁻¹²;
-  - non-skew A_0, and a nonzero diagonal entry in A_0;
-  - several malformed inputs.
+- one frame entry changed;
+- s reduced by 10⁻⁶, once in the rational part and once in the √d part;
+- one cube of the tightest pair moved by 1/64 towards the other;
+- two centres made equal;
+- d changed (2 ↔ 3);
+- malformed numbers: a JSON float, a decimal string, a zero denominator, a bare `"sqrt2"`;
+- k larger than the lists;
+- a frame with a missing row;
+- a wrong format tag;
+- n = 1;
+- truncated JSON.
 
-  On the 4 rational certificates, all 56 broken copies are rejected. An informative case turns a cube by about
-  0.02 rad; it is rejected too.
-- **`alg_neg_tests.py`** (alg-v1 certificates, 15 kinds; needs NumPy, used only to choose which pair to corrupt):
-  - one frame entry changed;
-  - s reduced by 10⁻⁶ in the rational part and in the √d part;
-  - one cube of the tightest pair moved by 1/64 towards the other;
-  - two centres made equal;
-  - d changed from 2 to 3;
-  - a JSON float, a decimal string, a zero denominator and a bare `"sqrt2"`;
-  - k too large, a frame with a missing row, a wrong format tag, n = 1 and truncated JSON.
+NumPy is used only to choose the tightest pair. On the 13 certificates all 195 broken copies are rejected.
 
-  On the 9 alg-v1 certificates (one over Q(√3), eight over Q(√2)), all 135 broken copies are rejected; for n4k17 the
-  d change is 3 → 2 and the √d change is in √3.
-- **`hand_tests.py`** (10 cases) and **`alg_hand_tests.py`** (7 cases): small exact cases are accepted as built and
-  rejected after a tiny change. They cover:
-  - axis-parallel cubes in [0, 2]ⁿ;
-  - squares turned by 45° and 30° that exactly fill [0, √2]² and [0, (1 + √3)/2]²;
-  - two 45° squares touching corner to corner.
+`alg_hand_tests.py` runs 7 small exact cases. Squares turned by 45° and by 30° fill [0, √2]² and [0, (1 + √3)/2]²
+exactly, and two 45° squares touch corner to corner. Each case is accepted as built and rejected after a 10⁻⁶ change.
+
+## Earlier version
+
+In the first version of this bundle, n4k17 and n4k26 … n4k29 were rational certificates with A_i skew-symmetric. The
+second checker for that format is `cert_check2.py`, with its tests `neg_tests.py` and `hand_tests.py`. They are kept
+here for reference and are not needed for the certificates of this version.
 
 ## Run
 
 ```sh
-# from problems/cubes-n-dim/n4-certs; Python 3
-for k in 26 27 28 29; do python3 -I check2/cert_check2.py certs/n4k$k.json; done          # each: ACCEPT
-for k in 17 18 19 20 21 22 23 24 25; do python3 -I check2/alg_check2.py certs/n4k$k.json; done   # each: ACCEPT
-python3 -I check2/neg_tests.py certs/n4k26.json certs/n4k27.json certs/n4k28.json certs/n4k29.json
-python3 -I check2/alg_neg_tests.py certs/n4k17.json certs/n4k18.json certs/n4k19.json certs/n4k20.json certs/n4k21.json \
-    certs/n4k22.json certs/n4k23.json certs/n4k24.json certs/n4k25.json
-python3 -I check2/hand_tests.py
-python3 -I check2/alg_hand_tests.py                                                        # each script: ALL OK
+# from the bundle root; Python 3
+for f in certs/n4k*.json; do python3 -I check2/alg_check2.py "$f"; done     # each line: ACCEPT
+python3 -I check2/alg_neg_tests.py certs/n4k*.json                          # ends with ALL OK
+python3 -I check2/alg_hand_tests.py                                         # ends with ALL OK
 ```
