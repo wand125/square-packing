@@ -50,7 +50,7 @@
    "date": "2026-10-21",
    "en": "Correction after review: the vertices of the square L are listed in order around it. No change to the result or the certificates.",
    "ja": "査読による訂正：正方形 L の頂点を一周の順に並べた。結果と証明書は変わらない。",
-   "commit": ""
+   "commit": "1f70ab3"
   }
  ]
 }

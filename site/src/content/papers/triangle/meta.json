@@ -67,7 +67,7 @@
    "date": "2026-10-21",
    "en": "Corrections from a review: in §6 and §7 the width that stops the next row is at its top (heights 8 and 9, not 7 and 8); in §4 the end of the triple lemma reads √3/2 (v − L) ≤ S ≤ −c‖φ‖₁ ≤ 0 (the leading 0 ≤ was unfounded); §5 states that rows are numbered from j = 0.",
    "ja": "査読による訂正：§6・§7 で次の列を止める幅は列の上端（高さ 8・9。7・8 ではない）での値、§4 の 3 つ組の補題の結びは √3/2 (v − L) ≤ S ≤ −c‖φ‖₁ ≤ 0（先頭の 0 ≤ は根拠がなかった）、§5 に列の番号は j = 0 から数えることを添えた。",
-   "commit": ""
+   "commit": "1f70ab3"
   }
  ]
 }

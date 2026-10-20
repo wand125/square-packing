@@ -64,7 +64,7 @@
    "date": "2026-10-21",
    "en": "Corrections of wording after review: the quaternion faces in the §4 table (the 4 facets x_i = +1, R up to sign) and the square-root terms in §7 (the chord gives an upper bound after adding its largest gap). No change to the proofs, certificates or checkers.",
    "ja": "査読による書き方の訂正：§4 の表の四元数の面（x_i = +1 の 4 面、R は符号を除いて決まる）と、§7 の平方根の項（弦に最大の差を足して上から押さえる）。証明・証明書・検査器は変えていない。",
-   "commit": ""
+   "commit": "1f70ab3"
   }
  ]
 }

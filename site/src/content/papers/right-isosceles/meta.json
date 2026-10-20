@@ -59,7 +59,7 @@
    "date": "2026-10-21",
    "en": "Clarifies how the sign of a number a + b√2 is decided exactly (§2). No change to the results or the certificates.",
    "ja": "a + b√2 の形の数の符号を厳密に決める方法の説明を明確にした（§2）。結果と証明書は変わらない。",
-   "commit": ""
+   "commit": "1f70ab3"
   }
  ]
 }

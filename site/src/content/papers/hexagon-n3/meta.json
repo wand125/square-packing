@@ -50,7 +50,7 @@
    "date": "2026-10-21",
    "en": "Reproducibility table: the directory of each stage-1 and stage-2 command, and the path of the built hexs2.",
    "ja": "再現方法の表：第 1 段・第 2 段の各コマンドを実行するフォルダと、ビルドした hexs2 のパスを書いた。",
-   "commit": ""
+   "commit": "1f70ab3"
   }
  ]
 }
