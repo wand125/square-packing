@@ -47,7 +47,7 @@ const conjectured = (r: Row) => /conjectured/.test(r.published.form);
 <script type="application/json" id="c4s-data" set:html={JSON.stringify(rows.map(r => ({k: r.k, s: r.s_float, cubes: r.cubes.map(q => ({c: q.c.map(x => +x.toFixed(7)), R: q.R.map(row => row.map(x => +x.toFixed(7))), ax: q.axis_parallel, t: +tilt(q).toFixed(2)}))})))} />
 <div class="c4s-grid">
 {rows.map(r => <section class={r.origin_kind === 'own-record' ? 'c4s-card rec' : 'c4s-card'} id={`k${r.k}`} data-group={groupOf(r).join(',')} hidden={Math.max(...groupOf(r)) !== r.k}>
-  <header class="c4s-h"><span class="c4s-k">k = {groupOf(r).length > 1 ? <span class="c4s-ks">{groupOf(r).map(k => <button type="button" data-k={k} aria-pressed={k === r.k ? 'true' : 'false'} class={rows.find(o => o.k === k)?.origin_kind === 'own-record' ? 'rec' : undefined}>{k}</button>)}</span> : r.k}</span>{r.origin_kind === 'own-record' && <span class="c4s-tag"><T en="new record" ja="新記録" /></span>}<span class="c4s-s num">s = {r.s_exact ? <>{r.s_exact} ≈ {r.s_float.toFixed(9)}</> : r.s_float.toFixed(12)}</span></header>
+  <header class="c4s-h"><span class="c4s-kp">k = {r.k}</span><span class="c4s-k">k = {groupOf(r).length > 1 ? <span class="c4s-ks">{groupOf(r).map(k => <button type="button" data-k={k} aria-pressed={k === r.k ? 'true' : 'false'} class={rows.find(o => o.k === k)?.origin_kind === 'own-record' ? 'rec' : undefined}>{k}</button>)}</span> : r.k}</span>{r.origin_kind === 'own-record' && <span class="c4s-tag"><T en="new record" ja="新記録" /></span>}<span class="c4s-s num">s = {r.s_exact ? <>{r.s_exact} ≈ {r.s_float.toFixed(9)}</> : r.s_float.toFixed(12)}</span></header>
   <figure class="c4s-3d"><svg viewBox="-1.02 -1.02 2.04 2.04" role="img" aria-label={`k = ${r.k}, 3D`} data-k={r.k}></svg>
   </figure>
   <div class="c4s-ctl">
@@ -56,12 +56,12 @@ const conjectured = (r: Row) => /conjectured/.test(r.published.form);
       <span class="c4s-dir"><span class="c4s-dir-l"><T en="view" ja="視線" /></span>{[0, 1, 2, 3].map(j => <label>x{'₁₂₃₄'[j]}<input type="number" step="0.05" min="-1" max="1" data-j={j} /></label>)}</span>
     </div>
     <div class="c4s-dp" data-kind="4" title="4D"><div class="c4s-dp-g" aria-label="turn in 4D">
-      <button type="button" class="u" data-d="U" aria-label="up">▲</button><button type="button" class="l" data-d="L" aria-label="left">◀</button><button type="button" class="c" data-d="C" aria-label="reset">●</button><button type="button" class="r" data-d="R" aria-label="right">▶</button><button type="button" class="d" data-d="D" aria-label="down">▼</button><button type="button" class="ul" data-d="UL" aria-label="up left">◤</button><button type="button" class="ur" data-d="UR" aria-label="up right">◥</button><button type="button" class="dl" data-d="DL" aria-label="down left">◣</button><button type="button" class="dr" data-d="DR" aria-label="down right">◢</button>
+      <button type="button" class="u" data-d="U" aria-label="up">▲</button><button type="button" class="l" data-d="L" aria-label="left">◀</button><button type="button" class="c" data-d="C" aria-label="nearest cell in front">4D</button><button type="button" class="r" data-d="R" aria-label="right">▶</button><button type="button" class="d" data-d="D" aria-label="down">▼</button><button type="button" class="ul" data-d="UL" aria-label="up left">◤</button><button type="button" class="ur" data-d="UR" aria-label="up right">◥</button><button type="button" class="dl" data-d="DL" aria-label="down left">◣</button><button type="button" class="dr" data-d="DR" aria-label="down right">◢</button>
     </div></div>
     <div class="c4s-dp" data-kind="3" title="3D"><div class="c4s-dp-g" aria-label="turn in 3D">
-      <button type="button" class="u" data-d="U" aria-label="up">▲</button><button type="button" class="l" data-d="L" aria-label="left">◀</button><button type="button" class="c" data-d="C" aria-label="reset">●</button><button type="button" class="r" data-d="R" aria-label="right">▶</button><button type="button" class="d" data-d="D" aria-label="down">▼</button><button type="button" class="ul" data-d="UL" aria-label="up left">◤</button><button type="button" class="ur" data-d="UR" aria-label="up right">◥</button><button type="button" class="dl" data-d="DL" aria-label="down left">◣</button><button type="button" class="dr" data-d="DR" aria-label="down right">◢</button>
+      <button type="button" class="u" data-d="U" aria-label="up">▲</button><button type="button" class="l" data-d="L" aria-label="left">◀</button><button type="button" class="c" data-d="C" aria-label="starting 3D view">3D</button><button type="button" class="r" data-d="R" aria-label="right">▶</button><button type="button" class="d" data-d="D" aria-label="down">▼</button><button type="button" class="ul" data-d="UL" aria-label="up left">◤</button><button type="button" class="ur" data-d="UR" aria-label="up right">◥</button><button type="button" class="dl" data-d="DL" aria-label="down left">◣</button><button type="button" class="dr" data-d="DR" aria-label="down right">◢</button>
     </div></div>
-    <span class="c4s-chips"><button type="button" data-split><T en="Two cubes" ja="2 つの立方体" /></button><button type="button" data-oct><T en="Octagon" ja="八角形" /></button><button type="button" data-view="3"><T en="Hexagon" ja="六角形" /></button><button type="button" data-view="0"><T en="Oblique" ja="斜め" /></button><button type="button" data-view="1"><T en="Top" ja="上" /></button><button type="button" data-view="2"><T en="Side" ja="横" /></button><button type="button" data-spin aria-pressed="false"><T en="Rotate" ja="回す" /></button><button type="button" data-spin4 aria-pressed="false"><T en="Turn in 4D" ja="4 次元で回す" /></button></span>
+    <span class="c4s-chips"><button type="button" data-split><T en="Two cubes" ja="二重立方体" /></button><button type="button" data-oct><T en="Octagon" ja="八角形" /></button><button type="button" data-view="0"><T en="Oblique" ja="斜め" /></button><button type="button" data-view="1"><T en="Top" ja="上" /></button><button type="button" data-view="2"><T en="Side" ja="横" /></button><button type="button" data-spin aria-pressed="false"><T en="Rotate" ja="回す" /></button><button type="button" data-spin4 aria-pressed="false"><T en="Turn in 4D" ja="4 次元で回す" /></button></span>
   </div>
   <dl class="c4s-dl">
     <dt><T en="published" ja="公開値" /></dt><dd class="num">{r.published.value}{conjectured(r) ? <> (<T en={`conjectured by the source: ${r.published.form.split(' ≈')[0]}`} ja={`出典の予想：${r.published.form.split(' ≈')[0]}`} />)</> : r.published.form && r.published.form.startsWith('2') ? <> ({r.published.form.split(' ≈')[0]})</> : r.published.form ? <> ({r.published.form})</> : ''}</dd>
@@ -74,6 +74,16 @@ const conjectured = (r: Row) => /conjectured/.test(r.published.form);
   <output class="c4s-out dim" aria-live="polite"></output>
 </section>)}
 </div>
+<div class="c4s-rail" aria-label="controls">
+  <button type="button" class="c4s-r-k" aria-haspopup="dialog" aria-label="k"></button>
+  <button type="button" class="c4s-r-i" aria-haspopup="dialog" aria-label="about">i</button>
+  <button type="button" class="c4s-r-v" aria-haspopup="dialog" aria-label="views"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6S2 12 2 12zM12 9.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button>
+  <button type="button" class="c4s-r-spin" aria-pressed="false" aria-label="rotate">↻</button>
+  <button type="button" class="c4s-r-spin4" aria-pressed="false" aria-label="turn in 4D">4D</button>
+</div>
+<dialog class="phone-k-sheet c4s-sheet c4s-ksheet" aria-label="k"><div class="c4s-sheet-ks">{rows.map(r => <button type="button" data-goto={r.k} class={r.origin_kind === 'own-record' ? 'rec' : undefined}>{r.k}</button>)}</div></dialog>
+<dialog class="phone-k-sheet c4s-sheet c4s-vsheet" aria-label="views"><div class="c4s-vsheet-dir"></div><div class="c4s-sheet-vs">{[['split', 'Two cubes', '二重立方体'], ['oct', 'Octagon', '八角形'], ['0', 'Oblique', '斜め'], ['1', 'Top', '上'], ['2', 'Side', '横']].map(([v, en, ja]) => <button type="button" data-v={v}><T en={en} ja={ja} /></button>)}</div></dialog>
+<dialog class="phone-k-sheet c4s-sheet c4s-isheet" aria-label="about"><div class="c4s-isheet-body"></div></dialog>
 <p class="dim c4s-foot"><T en="Hiroaki Hosono (wand125). The published values and the starting packings are from hockyy/tesseract-packing and xavierdmello/tesseract-packing, as named on each card. A certificate marked “two checkers” is accepted by two independent exact checkers." ja="Hiroaki Hosono (wand125)。公開値と出発点の配置は hockyy/tesseract-packing と xavierdmello/tesseract-packing のもので、カードごとに書いた。「2 系統で検査」と書いた証明書は、独立した 2 つの厳密な検査器が受理した。" /></p>
 </div>
 <script>
@@ -151,7 +161,7 @@ function octagonView(st: St) {
   for (const e of [[0, 0, 0, 1], [0, 0, 1, 0], [0, 1, 0, 0], [1, 0, 0, 0]]) { const v = e.map((x, j) => x - dot4(e, a) * a[j] - dot4(e, b) * b[j]); if (Math.hypot(...v) > .3) { c = v; break; } }
   st.anim = null; st.W = orth([a, c, b]); st.yaw = 0; st.pitch = 0;
 }
-// "two cubes" (the starting view): the octagon orientation, with the 3D view turned so that the cell −x₂ and the cell
+// "double cube" (the starting view): the octagon orientation, with the 3D view turned so that the cell −x₂ and the cell
 // behind it show as two cubes laid over each other, all edges in parallelograms of about the same length
 const TWO_CUBES = [-0.6152, -2.7794];
 function twoCubesView(st: St) { octagonView(st); [st.yaw, st.pitch] = TWO_CUBES; }
@@ -180,7 +190,7 @@ const cards = data.map(d => {
   const cell = document.createElementNS(ns, 'path'); cell.setAttribute('class', 'c4s-wcell'); svg.append(cell);
   const st: St = {W: W_START.map(r => [...r]), yaw: VIEWS[3][0], pitch: VIEWS[3][1], spin: false, spin4: true, anim: null};
   twoCubesView(st);
-  return {svg, card, V, box, cell, back, paths, st, seen: false, dirty: true, cells: card.querySelectorAll<HTMLButtonElement>('.c4s-cells button')};
+  return {svg, card, V, box, cell, back, paths, dirIn: [...card.querySelectorAll<HTMLInputElement>('.c4s-dir input')], st, seen: false, dirty: true, cells: card.querySelectorAll<HTMLButtonElement>('.c4s-cells button')};
 });
 type Card = typeof cards[number];
 function draw(c: Card) {
@@ -201,7 +211,7 @@ function show(c: Card) {
   const f = front(st), h = st.W[3], exact = f.c > 1 - 1e-6;
   // each cell button: how much it faces us (the bar), and which one is in front
   // the view direction: the four inputs follow it, except the one being typed in
-  card.querySelectorAll<HTMLInputElement>('.c4s-dir input').forEach(inp => { if (inp !== document.activeElement) inp.value = (Math.abs(h[+inp.dataset.j!]) < 0.005 ? 0 : h[+inp.dataset.j!]).toFixed(2); });
+  c.dirIn.forEach(inp => { if (!inp.dataset.editing) inp.value = (Math.abs(h[+inp.dataset.j!]) < 0.005 ? 0 : h[+inp.dataset.j!]).toFixed(2); });
   c.cells.forEach(b => { const j = +b.dataset.j!, sg = +b.dataset.s!, w = Math.max(0, sg * h[j]);
     b.querySelector<HTMLElement>('.c4s-fill')!.style.width = `${(w * 100).toFixed(1)}%`;
     const on = j === f.j && sg === f.sg; b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on && exact)); });
@@ -234,8 +244,9 @@ const io = new IntersectionObserver(es => es.forEach(e => { const c = cards.find
 cards.forEach(c => {
   io.observe(c.svg); show(c);
   // typing a view direction turns to it (normalised) by the shortest turn
-  const dirIn = [...c.card.querySelectorAll<HTMLInputElement>('.c4s-dir input')];
-  dirIn.forEach(inp => inp.addEventListener('change', () => { const v = dirIn.map(i => +i.value || 0), n = Math.hypot(...v); if (n < 1e-9) return;
+  const dirIn = c.dirIn;
+  dirIn.forEach(inp => { inp.addEventListener('input', () => inp.dataset.editing = '1'); inp.addEventListener('blur', () => delete inp.dataset.editing); });
+  dirIn.forEach(inp => inp.addEventListener('change', () => { delete inp.dataset.editing; const v = dirIn.map(i => +i.value || 0), n = Math.hypot(...v); if (n < 1e-9) return;
     const now = performance.now(); inp.blur(); change(c, st => gotoDir(st, v.map(x => x / n), now)); }));
   // a cell button turns to face that cell
   c.cells.forEach(b => b.addEventListener('click', () => { const now = performance.now(); change(c, st => gotoCell(st, +b.dataset.j!, +b.dataset.s!, now)); }));
@@ -243,7 +254,7 @@ cards.forEach(c => {
   c.card.querySelectorAll<HTMLElement>('.c4s-dp').forEach(dp => { const kind = dp.dataset.kind!;
     dp.querySelectorAll<HTMLButtonElement>('button').forEach(b => { const d = b.dataset.d!;
       const press = () => { const now = performance.now();
-        if (d === 'C') { change(c, st => { if (kind === '3') { [st.yaw, st.pitch] = VIEWS[3]; } else { curPos(st, now);
+        if (d === 'C') { change(c, st => { if (kind === '3') { [st.yaw, st.pitch] = TWO_CUBES; } else { curPos(st, now);
           const f = front(st); gotoCell(st, f.j, f.sg, now); } }); return; }
         const [dx, dy] = DIRS[d]; change(c, st => { st.anim = null; kind === '3' ? turn3(st, dx, dy, 0.05) : rot4(st, dx, dy, 0.05); });
         hold = [c, kind, d]; if (!raf) raf = requestAnimationFrame(tick); };
@@ -258,13 +269,18 @@ cards.forEach(c => {
   c.card.querySelector('[data-spin]')!.addEventListener('click', () => { const v = !c.st.spin; change(c, st => st.spin = v); });
   c.card.querySelector('[data-spin4]')!.addEventListener('click', () => { const v = !c.st.spin4; change(c, st => st.spin4 = v); });
   // dragging turns the view by the pointer's steps (Shift: a turn in 4D), so a running turn goes on at the same time
-  let g: null | [number, number] = null;
-  c.svg.addEventListener('pointerdown', e => { g = [e.clientX, e.clientY]; capture(c.svg, e); });
-  c.svg.addEventListener('pointermove', e => { if (!g) return; const ddx = e.clientX - g[0], ddy = e.clientY - g[1]; g = [e.clientX, e.clientY];
-    // with Shift the drag turns in 4D: the hidden direction moves with the pointer
-    const len = Math.hypot(ddx, ddy); if (!len) return;
-    change(c, st => { if (e.shiftKey) rot4(st, ddx / len, ddy / len, len * .01); else { st.yaw -= ddx * .01; st.pitch += ddy * .01; } }); });
-  const up = () => g = null; c.svg.addEventListener('pointerup', up); c.svg.addEventListener('pointercancel', up);
+  // the pointers on the figure: one turns the 3D view (with Shift: 4D); two (a two-finger drag) turn in 4D by the
+  // movement of their midpoint
+  const pts = new Map<number, [number, number]>();
+  const mid = () => { const v = [...pts.values()]; return [v.reduce((t, p) => t + p[0], 0) / v.length, v.reduce((t, p) => t + p[1], 0) / v.length]; };
+  let last: number[] | null = null;
+  c.svg.addEventListener('pointerdown', e => { pts.set(e.pointerId, [e.clientX, e.clientY]); last = mid(); capture(c.svg, e); });
+  c.svg.addEventListener('pointermove', e => { if (!pts.has(e.pointerId) || !last) return; pts.set(e.pointerId, [e.clientX, e.clientY]);
+    const m = mid(), ddx = m[0] - last[0], ddy = m[1] - last[1], len = Math.hypot(ddx, ddy); last = m; if (!len) return;
+    const four = e.shiftKey || pts.size >= 2;
+    change(c, st => { if (four) rot4(st, ddx / len, ddy / len, len * .01); else { st.yaw -= ddx * .01; st.pitch += ddy * .01; } }); });
+  const up = (e: PointerEvent) => { pts.delete(e.pointerId); last = pts.size ? mid() : null; };
+  c.svg.addEventListener('pointerup', up); c.svg.addEventListener('pointercancel', up);
 });
 // turning the sync on brings every card to the state of the first card in view
 sync.addEventListener('change', () => { if (!sync.checked) return; const src = cards.find(c => c.seen) ?? cards[0];
@@ -287,10 +303,62 @@ document.querySelectorAll<HTMLElement>('.c4s-card').forEach(card => {
 // the chips of a group: show the card of that k in the same place
 document.querySelectorAll<HTMLButtonElement>('.c4s-ks button').forEach(b => b.addEventListener('click', () => {
   const from = b.closest<HTMLElement>('.c4s-card')!, to = document.getElementById(`k${b.dataset.k}`)!;
-  if (from === to) return; from.hidden = true; to.hidden = false;
+  if (from === to) return; from.hidden = true; to.hidden = false; from.classList.remove('cur'); if (root.classList.contains('c4s-phone')) to.classList.add('cur');
   const c = cards.find(o => o.card === to); if (c) show(c);
 }));
 document.addEventListener('langchange', () => cards.forEach(show));
+// phones (as the other visualizers): one card fills the screen between the bars; k, views and the card's details
+// open in sheets from the rail; the figure takes one finger for 3D and two for 4D
+import {PHONE} from '../lib/media';
+const root = document.querySelector<HTMLElement>('.c4s')!, rail = root.querySelector<HTMLElement>('.c4s-rail')!;
+const kSheet = root.querySelector<HTMLDialogElement>('.c4s-ksheet')!, vSheet = root.querySelector<HTMLDialogElement>('.c4s-vsheet')!, iSheet = root.querySelector<HTMLDialogElement>('.c4s-isheet')!;
+const phone = matchMedia(PHONE);
+let cur = cards[0];
+function showCard(k: number) {
+  const to = document.getElementById(`k${k}`)!, c = cards.find(o => o.card === to)!;
+  to.dataset.group!.split(',').forEach(g => { const el = document.getElementById(`k${g}`)!; el.hidden = el !== to;
+    el.querySelectorAll<HTMLButtonElement>('.c4s-ks button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === String(k)))); });
+  cards.forEach(o => o.card.classList.toggle('cur', o === c)); cur = c; railSync(); show(c);
+}
+function railSync() {
+  rail.querySelector('.c4s-r-k')!.textContent = String(data.find((_, i) => cards[i] === cur)!.k);
+  rail.querySelector('.c4s-r-spin')!.setAttribute('aria-pressed', String(cur.st.spin));
+  rail.querySelector('.c4s-r-spin4')!.setAttribute('aria-pressed', String(cur.st.spin4));
+  kSheet.querySelectorAll<HTMLButtonElement>('[data-goto]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.goto === rail.querySelector('.c4s-r-k')!.textContent)));
+}
+const fit = () => { const tb = document.querySelector('.topbar') as HTMLElement | null, bb = document.querySelector('.tabbar') as HTMLElement | null;
+  // a bar that is shown (the tab bar is fixed, so offsetParent does not tell) bounds the frame
+  const shown = (el: HTMLElement | null) => !!el && getComputedStyle(el).display !== 'none' && el.getBoundingClientRect().height > 0;
+  const top = shown(tb) ? tb!.getBoundingClientRect().bottom : 0, bottom = shown(bb) ? bb!.getBoundingClientRect().top : innerHeight;
+  root.style.setProperty('--c4-top', `${top}px`); root.style.setProperty('--c4-h', `${Math.max(240, bottom - top)}px`); };
+function mode() { root.classList.toggle('c4s-phone', phone.matches); if (phone.matches) { fit(); showCard(+(cards.find(o => !o.card.hidden && o.card.classList.contains('cur'))?.card.id.slice(1) ?? data[0].k)); } }
+phone.addEventListener('change', mode); addEventListener('resize', () => phone.matches && fit()); visualViewport?.addEventListener('resize', () => phone.matches && fit());
+const sheetClose = (d: HTMLDialogElement) => d.addEventListener('click', e => { if (e.target === d || (e.target as Element).closest('button')) d.close(); });
+// (a change in the view direction keeps the views sheet open, so several numbers can be set)
+[kSheet, vSheet, iSheet].forEach(sheetClose);
+rail.querySelector('.c4s-r-k')!.addEventListener('click', () => kSheet.showModal());
+// the views sheet also holds the four numbers of the view direction: the current card's inputs move in while it is
+// open (their listeners go with them) and back when it closes
+const dirSlot = vSheet.querySelector('.c4s-vsheet-dir')!;
+let dirHome: [Element, Comment] | null = null;
+rail.querySelector('.c4s-r-v')!.addEventListener('click', () => {
+  if (dirHome) { dirHome[1].replaceWith(dirHome[0]); dirHome = null; }   // a close not yet handled
+  const dir = cur.dirIn[0].closest('.c4s-dir')!, mark = document.createComment('dir'); dir.before(mark); dirSlot.append(dir); dirHome = [dir, mark];
+  vSheet.showModal(); });
+vSheet.addEventListener('close', () => { if (dirHome) { dirHome[1].replaceWith(dirHome[0]); dirHome = null; } });
+rail.querySelector('.c4s-r-i')!.addEventListener('click', () => {
+  // the card's details, the summary, the colour key and the credits
+  const body = iSheet.querySelector('.c4s-isheet-body')!; body.replaceChildren();
+  for (const sel of ['.c4s-h', '.c4s-dl']) body.append(cur.card.querySelector(sel)!.cloneNode(true));
+  body.querySelector('.c4s-k')?.remove();
+  for (const sel of ['.c4s-lede', '.c4s-key', '.c4s-foot']) body.append(root.querySelector(sel)!.cloneNode(true));
+  iSheet.showModal(); });
+rail.querySelector('.c4s-r-spin')!.addEventListener('click', () => { cur.card.querySelector<HTMLButtonElement>('[data-spin]')!.click(); railSync(); });
+rail.querySelector('.c4s-r-spin4')!.addEventListener('click', () => { cur.card.querySelector<HTMLButtonElement>('[data-spin4]')!.click(); railSync(); });
+kSheet.querySelectorAll<HTMLButtonElement>('[data-goto]').forEach(b => b.addEventListener('click', () => showCard(+b.dataset.goto!)));
+vSheet.querySelectorAll<HTMLButtonElement>('[data-v]').forEach(b => b.addEventListener('click', () => {
+  const v = b.dataset.v!; cur.card.querySelector<HTMLButtonElement>(v === 'split' ? '[data-split]' : v === 'oct' ? '[data-oct]' : `[data-view="${v}"]`)!.click(); }));
+mode();
 // the figures turn in 4D from the start
 raf = requestAnimationFrame(tick);
 </script>
@@ -335,6 +403,9 @@ raf = requestAnimationFrame(tick);
 .c4s-sync input { accent-color: var(--acc); width: 18px; height: 18px; }
 .c4s-ctl { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 8px; font-size: 12px; margin: 6px 0 8px; }
 .c4s-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+/* the view and turn buttons in one line */
+.c4s-ctl > .c4s-chips { flex-wrap: nowrap; gap: 3px; justify-content: center; max-width: 100%; }
+.c4s .c4s-ctl > .c4s-chips button { padding: 2px 5px; font-size: 11.5px; white-space: nowrap; flex: 0 1 auto; min-width: 0; }
 .c4s-ctl button { min-height: 32px; padding: 2px 8px; font-size: 12px; }
 .c4s-ctl button[aria-pressed="true"] { color: var(--acc); border-color: var(--acc); }
 .c4s-cells { display: grid; grid-template-columns: repeat(4, 40px); gap: 3px; justify-items: stretch; align-content: center; }
@@ -344,6 +415,7 @@ raf = requestAnimationFrame(tick);
 .c4s-ctl .c4s-cells button.on { color: var(--acc); border-color: var(--acc); }
 .c4s-cells button.on .c4s-fill { background: var(--acc); opacity: 1; }
 .c4s-dir { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2px 6px; font-size: 11px; color: var(--fg2); margin-top: 4px; }
+.c4s-dir-l { white-space: nowrap; }
 .c4s-dir label { display: flex; align-items: center; gap: 2px; min-height: 0; }
 .c4s-dir input { width: 52px; font: 12px var(--mono); padding: 2px 3px; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 3px; }
 .c4s-wcell { fill: none; stroke: var(--acc); stroke-width: 2; vector-effect: non-scaling-stroke; opacity: .9; pointer-events: none; }
@@ -351,9 +423,59 @@ raf = requestAnimationFrame(tick);
 .c4s-dp { display: flex; flex-direction: column; align-items: center; gap: 2px; flex: none; }
 .c4s-dp-g { display: grid; grid-template-columns: repeat(3, 30px); grid-template-rows: repeat(3, 30px); gap: 2px; }
 .c4s-ctl .c4s-dp-g button { min-height: 0; width: 30px; height: 30px; padding: 0; font-size: 12px; line-height: 1; touch-action: none; user-select: none; -webkit-user-select: none; }
-.c4s-dp-g .u { grid-area: 1 / 2; } .c4s-dp-g .l { grid-area: 2 / 1; } .c4s-dp-g .c { grid-area: 2 / 2; font-size: 9px; color: var(--fg2); } .c4s-dp-g .r { grid-area: 2 / 3; } .c4s-dp-g .d { grid-area: 3 / 2; } .c4s-dp-g .ul { grid-area: 1 / 1; } .c4s-dp-g .ur { grid-area: 1 / 3; } .c4s-dp-g .dl { grid-area: 3 / 1; } .c4s-dp-g .dr { grid-area: 3 / 3; }
+.c4s-dp-g .u { grid-area: 1 / 2; } .c4s-dp-g .l { grid-area: 2 / 1; } .c4s-dp-g .c { grid-area: 2 / 2; font-size: 10px; font-weight: 600; color: var(--fg2); } .c4s-dp-g .r { grid-area: 2 / 3; } .c4s-dp-g .d { grid-area: 3 / 2; } .c4s-dp-g .ul { grid-area: 1 / 1; } .c4s-dp-g .ur { grid-area: 1 / 3; } .c4s-dp-g .dl { grid-area: 3 / 1; } .c4s-dp-g .dr { grid-area: 3 / 3; }
 .c4s-dp-g .ul, .c4s-dp-g .ur, .c4s-dp-g .dl, .c4s-dp-g .dr { font-size: 10px; color: var(--fg2); }
 .c4s-dp-l { font-size: 11px; color: var(--fg2); }
+/* phone view (the class c4s-phone, set by the script from the PHONE query): one card fills the space between the bars */
+.c4s-rail, .c4s-kp { display: none; }
+.c4s-phone > h1, .c4s-phone .c4s-lede, .c4s-phone .c4s-key, .c4s-phone .c4s-sync, .c4s-phone > .c4s-foot { display: none; }
+.c4s-phone .c4s-card:not(.cur) { display: none; }
+.c4s-phone .c4s-card.cur { position: fixed; left: 0; right: 0; top: var(--c4-top, 0px); height: var(--c4-h, 100dvh); z-index: 5; border: 0; border-radius: 0; background: var(--bg); padding: 8px 10px; overflow-y: auto; display: flex; flex-direction: column; }
+.c4s-phone .c4s-card .c4s-k, .c4s-phone .c4s-card .c4s-dl, .c4s-phone .c4s-out, .c4s-phone .c4s-ctl > .c4s-chips { display: none; }
+.c4s-phone .c4s-kp { display: inline; font-weight: 600; font-size: 20px; font-family: var(--mono); }
+.c4s-phone .c4s-card.cur { overflow: hidden; padding: 6px 0 0; }
+.c4s-phone .c4s-h { padding: 0 10px; }
+/* the 3D viewer is the main area: it takes the height left above the control panel */
+.c4s-phone .c4s-3d { flex: 1 1 0; min-height: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; margin: 0; }
+.c4s-phone .c4s-3d svg { width: auto; height: 100%; max-width: 100%; max-height: 100%; touch-action: none; background: transparent; }
+/* the control panel, docked at the bottom */
+.c4s-phone .c4s-ctl .c4s-cells button { height: 32px; }
+.c4s-phone .c4s-card .c4s-dir { display: none; }
+.c4s-vsheet-dir { margin-bottom: 12px; }
+.c4s-vsheet-dir .c4s-dir { display: flex; font-size: 13px; }
+.c4s .c4s-vsheet-dir .c4s-dir input { width: 58px; height: 36px; font-size: 15px; }
+.c4s-phone .c4s-dp-g { grid-template-columns: repeat(3, 36px); grid-template-rows: repeat(3, 36px); }
+.c4s-phone .c4s-ctl .c4s-dp-g button { width: 36px; height: 36px; }
+.c4s-phone .c4s-ctl { flex: none; margin: 0; gap: 6px 22px; padding: 8px 8px calc(10px + env(safe-area-inset-bottom, 0px)); background: var(--bg2); border-top: 1px solid var(--line); border-radius: 14px 14px 0 0; }
+.c4s-phone .c4s-rail { display: flex; flex-direction: column; gap: 10px; position: fixed; right: 8px; top: calc(var(--c4-top, 0px) + 52px); z-index: 6; }
+.c4s-rail button { width: 46px; height: 46px; min-height: 0; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; background: var(--bg2); font-size: 18px; font-weight: 600; font-family: var(--mono); }
+.c4s-rail button[aria-pressed="true"] { color: var(--acc); border-color: var(--acc); }
+.c4s-rail .c4s-r-i { font-style: italic; font-family: Georgia, serif; }
+.c4s-sheet-ks, .c4s-sheet-vs { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.c4s-sheet-ks button { min-width: 52px; min-height: 48px; font: 600 16px var(--mono); }
+.c4s-sheet-ks button.rec { box-shadow: inset 0 -3px 0 var(--acc); }
+.c4s-sheet-ks button[aria-pressed="true"], .c4s-sheet-vs button:focus-visible { color: var(--acc); border-color: var(--acc); }
+.c4s-sheet-vs button { min-height: 44px; padding: 4px 14px; }
+.c4s-isheet-body { display: flex; flex-direction: column; gap: 10px; font-size: 13px; }
+.c4s-isheet-body .c4s-kp { display: inline; font-weight: 600; }
+.c4s-isheet-body .c4s-dl { display: grid; }
+.c4s-isheet-body .c4s-lede, .c4s-isheet-body .c4s-key { display: block; } .c4s-isheet-body .c4s-key { display: flex; }
+/* phones: the cell buttons with the view direction across the card, the 4D and 3D keys side by side and larger for
+   thumbs, the view buttons below */
+@media (max-width: 640px) {
+  .c4s-card { padding: 8px 8px 10px; }
+  .c4s-ctl { display: grid; grid-template-columns: auto auto; justify-content: center; gap: 10px 22px; }
+  .c4s-cells { grid-column: 1 / -1; grid-template-columns: repeat(4, minmax(0, 60px)); justify-content: center; width: 100%; }
+  .c4s-ctl .c4s-cells button { height: 36px; font-size: 13px; }
+  .c4s-dir { flex-wrap: nowrap; gap: 4px; }
+  .c4s .c4s-dir input { width: 50px; height: 30px; font-size: 13px; }
+  .c4s-dp-g { grid-template-columns: repeat(3, 40px); grid-template-rows: repeat(3, 40px); gap: 3px; }
+  .c4s-ctl .c4s-dp-g button { width: 40px; height: 40px; font-size: 14px; }
+  .c4s-ctl > .c4s-chips { grid-column: 1 / -1; justify-content: center; }
+  .c4s-ctl > .c4s-chips button { min-height: 34px; padding: 2px 9px; }
+  .c4s-h { gap: 4px 8px; }
+  .c4s .c4s-ks button { min-height: 32px; min-width: 32px; }
+}
 .c4s-out { display: block; font-size: 12px; min-height: 2.6em; margin-top: 6px; font-variant-numeric: tabular-nums; }
 .c4s-lede { color: var(--fg2); margin: 0 0 8px; max-width: 76ch; }
 .c4s-foot { font-size: 12px; margin-top: 16px; }
