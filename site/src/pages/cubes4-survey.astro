@@ -25,23 +25,29 @@ function diff(r: Row): string {
   const d = r.s_float - target(r), [m, e] = Math.abs(d).toExponential(1).split('e');
   return (d > 0 ? '+' : '−') + m + ' × 10' + (e.startsWith('-') ? '⁻' : '') + e.replace(/^[+-]/, '').split('').map(c => SUP[+c]).join('');
 }
-const ORIGIN: Record<string, (r: Row) => [string, string]> = {
-  'own-equal': r => /product of two 5-square packings/.test(r.origin ?? '') ? ['ours: the product of two packings of 5 squares in the square of side 2 + 1/√2', '当方の構成：辺 2 + 1/√2 の正方形に 5 個の正方形を入れた配置 2 つの積'] : ['our own search', '当方の探索'],
-  'own-subset': () => ['the packing of k = 25 with cubes removed', 'k = 25 の配置から立方体を除いたもの'],
-  'external': r => [`published coordinates of ${r.starting_point_author}, tightened and certified by us`, `${r.starting_point_author} の公開座標を当方が締め直し、証明書を付けた`],
-  'own-record': r => [`container shrinking by us, from the published packing of ${r.starting_point_author}`, `${r.starting_point_author} の公開の配置から当方が容器を縮めた`],
-};
+// how the packing was made, from the origin text of the survey (a subset, the frames-and-LP rebuild, the product)
+function origin(r: Row): [string, string] {
+  const o = r.origin ?? '', a = r.starting_point_author, sub = o.match(/subset of our k = (\d+)/);
+  if (sub) return [`the packing of k = ${sub[1]} with cubes removed`, `k = ${sub[1]} の配置から立方体を除いたもの`];
+  if (/frames fixed to signed permutations/.test(o)) return [`from the published packing of ${a}: frames set to signed permutations and 45° turns, centres re-solved by a linear programme`, `${a} の公開の配置から：枠を符号付きの置換と 45° の回転に固定し、中心を線形計画で解き直した`];
+  if (/product of two 5-square packings/.test(o)) return ['ours: the product of two packings of 5 squares in the square of side 2 + 1/√2', '当方の構成：辺 2 + 1/√2 の正方形に 5 個の正方形を入れた配置 2 つの積'];
+  if (r.origin_kind === 'own-record') return [`container shrinking by us, from the published packing of ${a}`, `${a} の公開の配置から当方が容器を縮めた`];
+  if (r.origin_kind === 'external') return [`published coordinates of ${a}, tightened and certified by us`, `${a} の公開座標を当方が締め直し、証明書を付けた`];
+  return ['our own search', '当方の探索'];
+}
+// a closed form the source gives only as a conjecture
+const conjectured = (r: Row) => /conjectured/.test(r.published.form);
 ---
 <Base file="cubes4-survey.html" title="Unit 4-Cubes in a 4-Cube">
 <div class="c4s">
 <h1><T en="Unit 4-cubes in a 4-cube, k = 17 to 30" ja="4 次元の立方体に単位 4 次元立方体 k 個（k = 17〜30）" /></h1>
-<p class="c4s-lede"><T en="For each k from 17 to 30: the smallest published container side for k unit 4-cubes, and a packing of ours with an exact certificate, drawn as a parallel projection that turns in four dimensions. A survey of known values; the one new value is k = 30. The values of k whose published sides agree to four decimals (18 to 25, and 26 to 29) share one card, showing the largest k; the numbers at its top switch between them." ja="k = 17〜30 のそれぞれについて、単位 4 次元立方体 k 個の容器の辺の公開値と、厳密な証明書を付けた当方の配置を、4 次元で回る平行投影の図で描く。既知の値の資料で、新しい値は k = 30 だけ。公開値が小数 4 桁まで同じ k（18〜25 と 26〜29）は 1 枚のカードにまとめて最も大きい k を表示し、上の数字で切り替える。" /></p>
+<p class="c4s-lede"><T en="For each k from 17 to 30: the smallest published container side for k unit 4-cubes, and a packing of ours with an exact certificate, drawn as a parallel projection that turns in four dimensions. A survey of known values; the new values are k = 27, 28, 29 and 30. The values of k whose published sides agree to four decimals (18 to 25, and 26 to 29) share one card, showing the largest k; the numbers at its top switch between them." ja="k = 17〜30 のそれぞれについて、単位 4 次元立方体 k 個の容器の辺の公開値と、厳密な証明書を付けた当方の配置を、4 次元で回る平行投影の図で描く。既知の値の資料で、新しい値は k = 27、28、29、30。公開値が小数 4 桁まで同じ k（18〜25 と 26〜29）は 1 枚のカードにまとめて最も大きい k を表示し、上の数字で切り替える。" /></p>
 <div class="c4s-key" aria-hidden="true"><span class="c4s-sw ax"></span><T en="axis-parallel" ja="軸に平行" /><span class="c4s-sw rot"></span><T en="rotated (one colour per orientation)" ja="回転（向きごとに色）" /></div>
 <label class="c4s-sync"><input type="checkbox" checked /> <T en="Sync all cards (views and turns)" ja="全カードを同期する（視点と回転）" /></label>
 <script type="application/json" id="c4s-data" set:html={JSON.stringify(rows.map(r => ({k: r.k, s: r.s_float, cubes: r.cubes.map(q => ({c: q.c.map(x => +x.toFixed(7)), R: q.R.map(row => row.map(x => +x.toFixed(7))), ax: q.axis_parallel, t: +tilt(q).toFixed(2)}))})))} />
 <div class="c4s-grid">
 {rows.map(r => <section class={r.origin_kind === 'own-record' ? 'c4s-card rec' : 'c4s-card'} id={`k${r.k}`} data-group={groupOf(r).join(',')} hidden={Math.max(...groupOf(r)) !== r.k}>
-  <header class="c4s-h"><span class="c4s-k">k = {groupOf(r).length > 1 ? <span class="c4s-ks">{groupOf(r).map(k => <button type="button" data-k={k} aria-pressed={k === r.k ? 'true' : 'false'}>{k}</button>)}</span> : r.k}</span>{r.origin_kind === 'own-record' && <span class="c4s-tag"><T en="new record" ja="新記録" /></span>}<span class="c4s-s num">s = {r.s_exact ? <>{r.s_exact} ≈ {r.s_float.toFixed(9)}</> : r.s_float.toFixed(12)}</span></header>
+  <header class="c4s-h"><span class="c4s-k">k = {groupOf(r).length > 1 ? <span class="c4s-ks">{groupOf(r).map(k => <button type="button" data-k={k} aria-pressed={k === r.k ? 'true' : 'false'} class={rows.find(o => o.k === k)?.origin_kind === 'own-record' ? 'rec' : undefined}>{k}</button>)}</span> : r.k}</span>{r.origin_kind === 'own-record' && <span class="c4s-tag"><T en="new record" ja="新記録" /></span>}<span class="c4s-s num">s = {r.s_exact ? <>{r.s_exact} ≈ {r.s_float.toFixed(9)}</> : r.s_float.toFixed(12)}</span></header>
   <figure class="c4s-3d"><svg viewBox="-1.02 -1.02 2.04 2.04" role="img" aria-label={`k = ${r.k}, 3D`} data-k={r.k}></svg>
   </figure>
   <div class="c4s-ctl">
@@ -58,10 +64,10 @@ const ORIGIN: Record<string, (r: Row) => [string, string]> = {
     <span class="c4s-chips"><button type="button" data-split><T en="Two cubes" ja="2 つの立方体" /></button><button type="button" data-oct><T en="Octagon" ja="八角形" /></button><button type="button" data-view="3"><T en="Hexagon" ja="六角形" /></button><button type="button" data-view="0"><T en="Oblique" ja="斜め" /></button><button type="button" data-view="1"><T en="Top" ja="上" /></button><button type="button" data-view="2"><T en="Side" ja="横" /></button><button type="button" data-spin aria-pressed="false"><T en="Rotate" ja="回す" /></button><button type="button" data-spin4 aria-pressed="false"><T en="Turn in 4D" ja="4 次元で回す" /></button></span>
   </div>
   <dl class="c4s-dl">
-    <dt><T en="published" ja="公開値" /></dt><dd class="num">{r.published.value}{r.published.form && r.published.form.startsWith('2') ? <> ({r.published.form.split(' ≈')[0]})</> : r.published.form ? <> ({r.published.form})</> : ''}</dd>
-    <dt><T en="ours − published" ja="当方 − 公開値" /></dt><dd class="num">{r.s_exact && r.published.form.startsWith(r.s_exact) ? <T en="0 (exact)" ja="0（厳密）" /> : diff(r)}</dd>
+    <dt><T en="published" ja="公開値" /></dt><dd class="num">{r.published.value}{conjectured(r) ? <> (<T en={`conjectured by the source: ${r.published.form.split(' ≈')[0]}`} ja={`出典の予想：${r.published.form.split(' ≈')[0]}`} />)</> : r.published.form && r.published.form.startsWith('2') ? <> ({r.published.form.split(' ≈')[0]})</> : r.published.form ? <> ({r.published.form})</> : ''}</dd>
+    <dt><T en="ours − published" ja="当方 − 公開値" /></dt><dd class="num">{r.s_exact && r.published.form.startsWith(r.s_exact) ? (conjectured(r) ? <T en="0 (the conjectured closed form, exactly)" ja="0（予想された閉じた式にちょうど一致）" /> : <T en="0 (exact)" ja="0（厳密）" />) : diff(r)}</dd>
     <dt><T en="source" ja="出典" /></dt><dd><a href={r.published.url}>{r.published.source}</a></dd>
-    <dt><T en="packing" ja="配置" /></dt><dd><T en={ORIGIN[r.origin_kind](r)[0]} ja={ORIGIN[r.origin_kind](r)[1]} /></dd>
+    <dt><T en="packing" ja="配置" /></dt><dd><T en={origin(r)[0]} ja={origin(r)[1]} /></dd>
     <dt><T en="rotated" ja="回転" /></dt><dd class="num">{r.cubes.filter(q => !q.axis_parallel).length} / {r.k}</dd>
     <dt><T en="certificate" ja="証明書" /></dt><dd>{r.release ? <a href={GH + r.certificate.file}><code>{r.certificate.file.split('/').pop()}</code></a> : <code>{r.certificate.file.split(' ')[0].split('/').pop()}</code>} <code class="dim">{r.certificate.sha256.slice(0, 8)}</code>{r.certificate.checked_by_two_systems && <> · <span class="nw"><T en="two checkers" ja="2 系統で検査" /></span></>}{r.release ? <> · <a href={`https://github.com/wand125/square-packing/releases/tag/${r.release}`}>{r.release}</a></> : <> · <span class="nw"><T en="not yet published" ja="未公開" /></span></>}</dd>
   </dl>
@@ -304,6 +310,7 @@ raf = requestAnimationFrame(tick);
 .c4s-ks { display: flex; flex-wrap: wrap; gap: 3px; }
 .c4s .c4s-dir input { min-height: 0; height: 26px; }
 .c4s .c4s-ks button { min-height: 28px; min-width: 30px; padding: 0 6px; font-size: 13px; font-weight: 600; }
+.c4s .c4s-ks button.rec { box-shadow: inset 0 -2px 0 var(--acc); }
 .c4s .c4s-ks button[aria-pressed="true"] { color: var(--acc); border-color: var(--acc); }
 .c4s-s { margin-left: auto; font-size: 13px; }
 .c4s-tag { font-size: 11px; color: var(--acc); border: 1px solid var(--acc); border-radius: 3px; padding: 0 5px; }
