@@ -32,6 +32,7 @@ Then two cubes with disjoint interiors cannot both fit (`PROOF.md` §1). Write c
 | `lean/` | Lean 4 + Mathlib: the near-region lemma in any dimension and Lemma K, with Lemma F in dimension m as a hypothesis |
 | `verify_logs.py` | Checks the run logs of both systems: coverage of all tasks, no failures, tree identity |
 | `spectral/` | Version 2: s_n(2) = 2 for n = 3, 4, 5 by a spectral bound and short exact rational certificates, and n = 6 in `spectral/n6/` (release `cubes-n-dim-v2`) |
+| `n4k30/` | An upper bound: 30 unit 4-cubes in a 4-cube of side 2.9876880563, with an exact rational certificate and two independent checkers (release `cubes-n-dim-n4k30-v1`) |
 
 ## Version 2: n = 3, 4, 5, 6
 
