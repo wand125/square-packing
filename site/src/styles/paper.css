@@ -112,3 +112,26 @@
 .c4-ctl label { flex-wrap: nowrap; }
 .c4-ctl input[type="range"] { flex: 1; width: auto; }
 .c4-ctl .num { min-width: 4.5em; text-align: right; }
+/* what holds the side (Cube4Tight): the plane large on the left; on the right the 4D view above the 3D section */
+.c4h-row { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 12px; align-items: start; }
+.c4h-side { display: flex; flex-direction: column; gap: 8px; }
+.c4h-2d, .c4h-3d, .c4h-4d { width: 100%; display: block; }
+.c4h-3d, .c4h-4d { cursor: grab; touch-action: none; }
+.c4h-4d { border: 1px solid var(--line); border-radius: 4px; background: var(--bg); }
+@media (max-width: 600px) { .c4h-row { grid-template-columns: minmax(0, 1fr); } .c4h-side { flex-direction: row; } .c4h-side > svg { width: 50%; } }
+.c4h-box { fill: var(--bg); stroke: var(--fg2); stroke-width: .6; }
+.c4h-edge { fill: none; stroke: var(--fg2); stroke-width: .012; opacity: .5; }
+.c4h-hold { fill: color-mix(in srgb, var(--link) 30%, transparent); stroke: var(--link); vector-effect: non-scaling-stroke; stroke-width: 1.4; stroke-linejoin: round; }
+.c4h-far { fill: color-mix(in srgb, var(--fg2) 8%, transparent); stroke: var(--fg2); stroke-opacity: .35; vector-effect: non-scaling-stroke; stroke-width: .8; }
+.c4h-wall { stroke: var(--acc); stroke-width: 1.6; }
+.c4h-wallf { fill: color-mix(in srgb, var(--acc) 14%, transparent); stroke: var(--acc); stroke-width: .015; }
+.c4h-pt { fill: var(--acc); stroke: var(--bg); stroke-width: .6; }
+.c4h-pt3 { fill: var(--acc); stroke: var(--bg); stroke-width: .012; }
+.c4h-num { fill: var(--fg); font-size: 5px; font-weight: 600; }
+.c4h-lab { fill: var(--fg2); font-size: 6px; }
+.c4h-4box { fill: none; stroke: var(--fg2); stroke-width: 1; vector-effect: non-scaling-stroke; opacity: .7; }
+.c4h-4far { fill: none; stroke: var(--fg2); stroke-width: .6; vector-effect: non-scaling-stroke; opacity: .25; }
+.c4h-cutp { fill: color-mix(in srgb, var(--acc) 22%, transparent); stroke: var(--acc); stroke-width: .02; }
+.c4h-4cut3 { fill: none; stroke: var(--acc); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 3 2; opacity: .9; }
+.c4h-4cut2 { fill: color-mix(in srgb, var(--acc) 35%, transparent); stroke: var(--acc); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.c4h-4hold { fill: none; stroke: var(--link); stroke-width: 1.4; vector-effect: non-scaling-stroke; }

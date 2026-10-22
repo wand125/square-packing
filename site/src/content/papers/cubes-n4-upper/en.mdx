@@ -1,0 +1,212 @@
+import Cube4Tight from '../../../components/viz/Cube4Tight.tsx';
+
+## Abstract
+
+Let $s_4(k)$ be the side of the smallest 4-cube that contains $k$ unit 4-cubes with pairwise disjoint interiors, at any positions and orientations. We give packings with exact certificates (written in a quadratic field for $k \le 29$, in rational numbers for $k = 30$) that show
+$$
+\begin{gathered} s_4(17) \le 2 + \tfrac{1}{\sqrt3}, \\ s_4(k) \le 2 + \tfrac{1}{\sqrt2} \quad (18 \le k \le 25), \\ s_4(k) \le 2 + \tfrac{2\sqrt2}{3} \quad (26 \le k \le 29), \\ s_4(30) \le 2.9876881. \end{gathered}
+$$
+For $k = 27$, $28$ and $29$ the side $2 + 2\sqrt2/3 \approx 2.9428090416$ is below the published values $2.942809214$, $2.942826011$ and $2.942830937$, by $1.7\cdot10^{-7}$, $1.7\cdot10^{-5}$ and $2.2\cdot10^{-5}$. For $k = 26$ it is the closed form the source conjectured for its published value $2.942809042$; for $k = 17$ to $25$ it agrees with the published value to the printed digits, now with an exact packing. Every packing is certified: for $k \le 29$ it is a file of exact numbers in $\mathbb Q(\sqrt3)$ or $\mathbb Q(\sqrt2)$, for $k = 30$ a file of rationals, and two checkers written independently decide containment and pairwise separation with exact arithmetic. The packing for $k = 25$ is the product of two packings of 5 unit squares in the square of side $2 + 1/\sqrt2$, and its validity is also checked by hand (§4). The packings for $k = 18$ to $24$ are the one for $k = 25$ with cubes removed, and those for $k = 26$ to $28$ the one for $k = 29$ with cubes removed. For $k = 30$ a rational certificate gives the side $2.9876881$, below the published $2.989568410$ by $0.0018804$ (§6). We prove no lower bounds: whether these sides are optimal is open. The certificates are checked by computer and have not been peer reviewed.
+
+## Notation
+
+- A unit 4-cube is $Q = c + R\,[-\tfrac12, \tfrac12]^4$ with centre $c \in \mathbb R^4$ and frame $R$, an orthogonal $4 \times 4$ matrix whose columns are the axes of the cube. The container is $[0, s]^4$.
+- $h_r = \tfrac12 \sum_m |R_{rm}|$, half the $\ell^1$ norm of row $r$ of $R$. Then $Q \subseteq [0, s]^4$ iff $h_r \le c_r \le s - h_r$ for $r = 1, \dots, 4$.
+- A cube is *turned $45°$ in the plane $(x_p, x_q)$* when two of its axes are $(e_p \pm e_q)/\sqrt2$ and the other two are the remaining coordinate vectors. An *axis-parallel* cube has $R$ a signed permutation matrix.
+- *Published* values are those of the sources ([Sources](#sources)), as printed there.
+
+## 1. Results
+
+| $k$ | published | our side $s$ (exact) | $s$ − published | packing |
+|---|---|---|---|---|
+| 17 | $2.577350$ | $2 + \sqrt3/3 = 2 + 1/\sqrt3$ | $0$ (to the printed digits) | 16 axis-parallel cubes and one cube turned in all four coordinates (§3) |
+| 18–24 | $2.707107$ | $2 + \sqrt2/2 = 2 + 1/\sqrt2$ | $0$ (to the printed digits) | the packing of $k = 25$ with cubes removed (§4) |
+| 25 | $2.707107$ | $2 + 1/\sqrt2$ | $0$ (to the printed digits) | product of two 5-square packings (§4) |
+| 26 | $2.942809042$ | $2 + 2\sqrt2/3$ | $0$ (the closed form conjectured by the source) | the packing of $k = 29$ with cubes removed (§5) |
+| 27 | $2.942809214$ | $2 + 2\sqrt2/3$ | $-1.7\cdot10^{-7}$ | the packing of $k = 29$ with cubes removed (§5) |
+| 28 | $2.942826011$ | $2 + 2\sqrt2/3$ | $-1.7\cdot10^{-5}$ | the packing of $k = 29$ with one cube removed (§5) |
+| 29 | $2.942830937$ | $2 + 2\sqrt2/3$ | $-2.2\cdot10^{-5}$ | 15 axis-parallel cubes and 14 turned cubes (§5) |
+| 30 | $2.989568410$ | $2.9876880563\ldots$ (rational) | $-1.9\cdot10^{-3}$ | general frames, rational certificate (§6) |
+
+**Theorem.** $s_4(17) \le 2 + 1/\sqrt3$; $s_4(k) \le 2 + 1/\sqrt2$ for $18 \le k \le 25$; $s_4(k) \le 2 + 2\sqrt2/3$ for $26 \le k \le 29$; $s_4(30) \le 2.9876880563\ldots$, the rational number in `certs/n4k30.json`.
+
+*Proof.* For each $k \le 29$ the certificate `certs/n4k{k}.json` of the Release `cubes-n-dim-n4-certs-v3` is a packing of $k$ unit 4-cubes in $[0, s]^4$ with $s$ as in the table, accepted by both checkers of §2. For $k = 25$ (and so for $18 \le k \le 24$) the hand proof of §4 also applies. For $k = 30$ the certificate of §6 is accepted by two checkers. $\blacksquare$
+
+The comparisons with the published values are exact: for a published $p$, $2 + 2\sqrt2/3 < p$ is the same as $\sqrt2 < \tfrac32(p - 2)$, which holds for $p = 2.942809214$, $2.942826011$, $2.942830937$ (square both sides; the right side is positive). The differences in the table are rounded.
+
+## 2. Certificates and checkers
+
+A certificate (format `alg-v1`) lists $k$ centres and $k$ frames; every number is a pair $(a, b)$ of rationals meaning $a + b\sqrt d$, with $d = 3$ for $k = 17$ and $d = 2$ for $k = 18$ to $29$. The side is stored the same way: $(2, \tfrac13)$, $(2, \tfrac12)$ or $(2, \tfrac23)$. It is accepted iff, with exact arithmetic in $\mathbb Q(\sqrt d)$:
+
+1. every frame is orthogonal, $R_i^{\mathsf T} R_i = I$;
+2. every cube is in the container, $h_r \le c_r \le s - h_r$ for every coordinate;
+3. every pair $i < j$ has a separating axis $a$ among the generalised cross products of $t$ columns of $R_i$ and $3 - t$ columns of $R_j$, $t = 0, \dots, 3$ (56 candidates):
+$$
+2\,|a\cdot(c_i - c_j)| \ \ge\ \sum_m |a\cdot R_i e_m| + \sum_m |a\cdot R_j e_m|.
+$$
+
+Condition 3 says that the projections of the two cubes on the line $\mathbb R a$ overlap at most in one point, so the interiors are disjoint (separating-axis theorem for two convex polytopes). The sign of $a + b\sqrt d$ is decided exactly by comparing $a^2$ with $d\,b^2$; no floating-point number enters a decision.
+
+The first checker is `check_alg.py`. The second, in `check2/`, was written from the specification `SPEC-ALG.md` alone, without reading the first; it comes with tests that alter each certificate in several ways and require a rejection, and with small hand-made cases. Both accept all 13 certificates; each takes about a second.
+
+The certificates are in a canonical form (`SPEC-ALG.md`): numbers in lowest terms; each frame replaced by the lexicographically largest of its 384 equivalents under the symmetries of the cube; with the frames and the side fixed, the centres of cubes that can move pushed by lexicographic linear programmes, whose optimal vertices are read back exactly; cubes sorted by centre. So a packing has one file and one SHA-256. The tables below are read from these files, and the numbering of the cubes is their order there.
+
+**What holds the side.** The figures below show, for each side, the cubes and walls that hold it: with the frames and the side fixed, the linear programme over the centres that minimises the side, and the contacts and walls with positive multipliers in its dual. For $k = 17$ and $25$ such a chain alone gives the formula of the side, so it is a proof that the side cannot shrink with those frames. For $k = 29$ and $30$ it shows only the active contacts at the optimum with the frames fixed; it is not a proof of local optimality.
+
+## 3. k = 17: side 2 + 1/√3
+
+Let $s = 2 + 1/\sqrt3 = 2 + \sqrt3/3 \approx 2.5773503$. The packing has 16 axis-parallel cubes and one turned cube, number 8, with centre $(1 + \sqrt3/6)(1, 1, 1, 1)$ and frame
+$$
+R_8 = \frac{1}{\sqrt3}\begin{pmatrix} 1 & 1 & 1 & 0 \\ 1 & 0 & -1 & 1 \\ 0 & -1 & 1 & 1 \\ 1 & -1 & 0 & -1 \end{pmatrix}.
+$$
+The rows of $R_8$ are orthogonal and of length 1, so $R_8$ is orthogonal. Each row has three entries $\pm1/\sqrt3$, so $h_r = \tfrac12\cdot 3/\sqrt3 = \sqrt3/2$ for every $r$, and cube 8 occupies $[1 - \sqrt3/3,\ 1 + 2\sqrt3/3]$ in every coordinate, inside $[0, s]$. Every axis of cube 8 has three non-zero coordinates, so it is turned in all four coordinates.
+
+<Cube4Tight lang="en" k={17} p0={[0, 1.2886751, 1.2886751, 1.2886751]} e={[1, 0, 0, 0]} f={[0, 0.5773503, 0.5773503, -0.5773503]} g={[0, 0.4082483, 0.4082483, 0.8164966]} lab={["x₁", "(x₂ + x₃ − x₄)/√3", "(x₂ + x₃ + 2x₄)/√6"]} hold={[1, 7, 8]} points={[[0.75, 1, 1, 1.5773503], [0.75, 1.5773503, 1.5773503, 1]]} walls={[[1, 0], [2, 0], [3, 1], [1, 1], [2, 1], [3, 0]]} client:visible />
+
+*What holds the side for $k = 17$: the chain wall – cube 1 – cube 8 – cube 7 – wall. Cube 1 is pressed on the walls $x_2 = 0$, $x_3 = 0$, $x_4 = s$, cube 7 on $x_2 = s$, $x_3 = s$, $x_4 = 0$, and cube 8 touches both, at $(x_2, x_3, x_4) = (1, 1, s - 1)$ and $(s - 1, s - 1, 1)$; the chain runs along $(0, 1, 1, -1)$. The section is the plane through the centre of the container spanned by $e_1$ and $(0, 1, 1, -1)/\sqrt3$, so that the walls, cubes 1, 8, 7 and the walls lie on one line; the contacts are the orange dots (at $x_1 = \tfrac34$; each contact is a segment $1 - \sqrt3/3 \le x_1 \le 1$).*
+
+The 16 axis-parallel cubes take one place each among the $2^4$ ways of choosing, in each coordinate, the low value $\tfrac12$ or a high value $\tfrac32$ or $s - \tfrac12 = \tfrac32 + \sqrt3/3$. In the table "—" marks an axis-parallel cube.
+
+| # | centre $c$ | turned in |
+|---|---|---|
+| 0 | $(\tfrac{1}{2}, \tfrac{1}{2}, \tfrac{1}{2}, \tfrac{1}{2})$ | — |
+| 1 | $(\tfrac{1}{2}, \tfrac{1}{2}, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3)$ | — |
+| 2 | $(\tfrac{1}{2}, \tfrac{1}{2}, \tfrac{3}{2}, \tfrac{1}{2})$ | — |
+| 3 | $(\tfrac{1}{2}, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3)$ | — |
+| 4 | $(\tfrac{1}{2}, \tfrac{3}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3)$ | — |
+| 5 | $(\tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{1}{2}, \tfrac{1}{2})$ | — |
+| 6 | $(\tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{1}{2}, \tfrac{3}{2})$ | — |
+| 7 | $(\tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{1}{2})$ | — |
+| 8 | $(1 + \tfrac{1}{6}\sqrt3, 1 + \tfrac{1}{6}\sqrt3, 1 + \tfrac{1}{6}\sqrt3, 1 + \tfrac{1}{6}\sqrt3)$ | all four coordinates (§3) |
+| 9 | $(\tfrac{3}{2}, \tfrac{1}{2}, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3)$ | — |
+| 10 | $(\tfrac{3}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{1}{2})$ | — |
+| 11 | $(\tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{1}{2}, \tfrac{1}{2}, \tfrac{1}{2})$ | — |
+| 12 | $(\tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{1}{2})$ | — |
+| 13 | $(\tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{3}{2})$ | — |
+| 14 | $(\tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{3}{2}, \tfrac{1}{2}, \tfrac{1}{2})$ | — |
+| 15 | $(\tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3)$ | — |
+| 16 | $(\tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3, \tfrac{3}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt3)$ | — |
+
+The packing was found by our own search. It reaches the published value $2.577350$, which is $2 + 1/\sqrt3$ to the printed digits, with an exact certificate.
+
+## 4. k = 18 to 25: side 2 + 1/√2
+
+Let $s = 2 + 1/\sqrt2 = 2 + \sqrt2/2 \approx 2.7071068$. In the square $[0, s]^2$, 5 unit squares fit: the four corner squares $[0,1]^2$, $[s-1, s]\times[0,1]$, $[0,1]\times[s-1,s]$, $[s-1,s]^2$, and the square with centre $(s/2, s/2)$ turned $45°$, which is the diamond $|x - s/2| + |y - s/2| \le 1/\sqrt2$. The diamond meets each corner square only at a corner point such as $(1, 1)$, since $|1 - s/2| + |1 - s/2| = s - 2 = 1/\sqrt2$.
+
+**Lemma (products).** If $S_1, \dots, S_5$ and $T_1, \dots, T_5$ are unit squares in $[0, s]^2$ with pairwise disjoint interiors, then the 25 products $S_a \times T_b$ are unit 4-cubes in $[0, s]^4$ with pairwise disjoint interiors.
+
+*Proof.* A product of two unit squares, each turned in its own plane, is a unit 4-cube whose frame is block diagonal, and it lies in $[0, s]^2 \times [0, s]^2$. The interior of $S_a \times T_b$ is $\operatorname{int} S_a \times \operatorname{int} T_b$. For $(a, b) \ne (a', b')$, either $a \ne a'$ and the first factors have disjoint interiors, or $b \ne b'$ and the second factors do; in both cases the products have disjoint interiors. $\blacksquare$
+
+<Cube4Tight lang="en" k={25} p0={[0.5, 0.5, 1.3535534, 1.3535534]} e={[0, 0, 1, 0]} f={[0, 0, 0, 1]} g={[0, 1, 0, 0]} lab={["x₃", "x₄", "x₂"]} hold={[0, 2, 4]} points={[[0.5, 0.5, 1, 1], [0.5, 0.5, 1.7071068, 1.7071068]]} walls={[[2, 0], [3, 0], [2, 1], [3, 1]]} client:visible />
+
+*What holds the side for $k = 25$: the chain wall – cube 0 – cube 2 – cube 4 – wall along the diagonal of the plane $(x_3, x_4)$, at any $x_1, x_2 \in [0, 1]$. Cube 0 is pressed on $x_3 = x_4 = 0$, cube 4 on $x_3 = x_4 = s$, and cube 2, turned in $(x_3, x_4)$, touches them at $(x_3, x_4) = (1, 1)$ and $(s - 1, s - 1)$: along the diagonal, $\sqrt2 + 1 + \sqrt2 = s\sqrt2$ (the diagonals of the two corner squares and the width of cube 2), which is $s = 2 + 1/\sqrt2$. Plane $x_1 = x_2 = \tfrac12$; the 3D section is $x_1 = \tfrac12$.*
+
+So $s_4(25) \le 2 + 1/\sqrt2$. In the packing, 16 cubes are axis-parallel (corner × corner), 4 are turned $45°$ in $(x_3, x_4)$ (corner × centre), 4 in $(x_1, x_2)$ (centre × corner), and one in both planes (centre × centre). The certificate `n4k25.json` writes this packing in canonical form; the axis-parallel cubes keep the centres $\tfrac12$ and $s - \tfrac12$ in every coordinate, and the turned squares the centre $s/2 = 1 + \sqrt2/4$ in their plane.
+
+The packings for $k = 18$ to $24$ are nested: each is the next larger one with one cube removed, nothing else changed. The cube removed is chosen by the rule of `SPEC-ALG.md` (most rotated coordinate planes, then fewest contacts, then last in the order). The rule counts rotated planes on the entries of the canonical frame: a plane $(x_p, x_q)$ counts when $R_{pq}$ or $R_{qp}$ is neither $0$ nor $\pm1$, so a cube turned $45°$ in one plane can count more than one plane, depending on how its canonical frame orders the axes (`NESTING.md` lists the counts). From 25 to 24 it removes the cube turned in both planes, then one cube turned in one plane at each step; the 16 axis-parallel cubes stay. Removing cubes from a packing leaves a packing, so these certificates add nothing to the bound beyond $s_4(k) \le s_4(25)$; they give each $k$ its own file. The source (xavierdmello/tesseract-packing) describes its packings for these $k$ as the product of two 5-square packings.
+
+| from $k$ | to $k$ | cube removed (number in the larger file) |
+|---|---|---|
+| 25 | 24 | 12 |
+| 24 | 23 | 21 |
+| 23 | 22 | 13 |
+| 22 | 21 | 15 |
+| 21 | 20 | 12 |
+| 20 | 19 | 11 |
+| 19 | 18 | 7 |
+
+## 5. k = 26 to 29: side 2 + 2√2/3
+
+Let $s = 2 + 2\sqrt2/3 \approx 2.9428090416$. The packing for $k = 29$ has 15 axis-parallel cubes, 13 cubes turned $45°$ in one coordinate plane (5 in $(x_1, x_2)$, 4 in $(x_3, x_4)$, 2 in $(x_2, x_3)$, 2 in $(x_1, x_4)$) and one cube turned in both $(x_1, x_2)$ and $(x_3, x_4)$. The coordinates take the values $\tfrac12$, $\tfrac32$, $\tfrac32 + \sqrt2/3$, $s - \tfrac12 = \tfrac32 + 2\sqrt2/3$ and, for turned cubes, also $1 + \sqrt2/6$, $1 + \sqrt2/3$, $1 + \sqrt2/2$, $4\sqrt2/3$ and $2 + \sqrt2/6$.
+
+| # | centre $c$ | turned in |
+|---|---|---|
+| 0 | $(\tfrac{1}{2}, \tfrac{1}{2}, \tfrac{1}{2}, \tfrac{1}{2})$ | — |
+| 1 | $(\tfrac{1}{2}, \tfrac{1}{2}, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt2)$ | — |
+| 2 | $(\tfrac{1}{2}, \tfrac{1}{2}, 1 + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{6}\sqrt2)$ | $(x_3, x_4)$ |
+| 3 | $(\tfrac{1}{2}, \tfrac{1}{2}, \tfrac{3}{2}, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2)$ | — |
+| 4 | $(\tfrac{1}{2}, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2})$ | — |
+| 5 | $(\tfrac{1}{2}, 1 + \tfrac{1}{2}\sqrt2, 1 + \tfrac{1}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2)$ | $(x_2, x_3)$ |
+| 6 | $(\tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt2, \tfrac{1}{2}, \tfrac{1}{2})$ | — |
+| 7 | $(\tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{6}\sqrt2)$ | $(x_3, x_4)$ |
+| 8 | $(\tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2})$ | — |
+| 9 | $(\tfrac{1}{2}, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2)$ | — |
+| 10 | $(\tfrac{1}{2}, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2)$ | — |
+| 11 | $(1 + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{6}\sqrt2, \tfrac{1}{2}, \tfrac{1}{2})$ | $(x_1, x_2)$ |
+| 12 | $(1 + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{6}\sqrt2, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt2)$ | $(x_1, x_2)$ |
+| 13 | $(1 + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{6}\sqrt2, 1 + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{6}\sqrt2)$ | $(x_1, x_2)$, $(x_3, x_4)$ |
+| 14 | $(1 + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{6}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2})$ | $(x_1, x_2)$ |
+| 15 | $(1 + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{6}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{3}{2} + \tfrac{1}{3}\sqrt2)$ | $(x_1, x_2)$ |
+| 16 | $(1 + \tfrac{1}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2}, 1 + \tfrac{1}{2}\sqrt2)$ | $(x_1, x_4)$ |
+| 17 | $(1 + \tfrac{1}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, 1 + \tfrac{1}{2}\sqrt2)$ | $(x_1, x_4)$ |
+| 18 | $(\tfrac{3}{2}, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2})$ | — |
+| 19 | $(\tfrac{4}{3}\sqrt2, 2 + \tfrac{1}{6}\sqrt2, \tfrac{1}{2}, \tfrac{1}{2})$ | $(x_1, x_2)$ |
+| 20 | $(\tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2}, \tfrac{1}{2}, \tfrac{1}{2})$ | — |
+| 21 | $(\tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2}, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{1}{3}\sqrt2)$ | — |
+| 22 | $(\tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2}, 1 + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{6}\sqrt2)$ | $(x_3, x_4)$ |
+| 23 | $(\tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2}, \tfrac{3}{2}, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2)$ | — |
+| 24 | $(\tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2})$ | — |
+| 25 | $(\tfrac{3}{2} + \tfrac{2}{3}\sqrt2, 1 + \tfrac{1}{2}\sqrt2, 1 + \tfrac{1}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2)$ | $(x_2, x_3)$ |
+| 26 | $(\tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{3}{2} + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{3}\sqrt2, 1 + \tfrac{1}{6}\sqrt2)$ | $(x_3, x_4)$ |
+| 27 | $(\tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{1}{2}, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2)$ | — |
+| 28 | $(\tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2, \tfrac{3}{2} + \tfrac{2}{3}\sqrt2)$ | — |
+
+<Cube4Tight lang="en" k={29} p0={[0.5, 1.4714045, 1.4714045, 2.442809]} e={[0, 1, 0, 0]} f={[0, 0, 1, 0]} g={[0, 0, 0, 1]} lab={["x₂", "x₃", "x₄"]} hold={[3, 5, 9, 10]} points={[[0.5, 1, 1.4714045, 2.442809], [0.5, 1.942809, 1, 2.442809], [0.5, 1.942809, 1.942809, 2.442809]]} walls={[[1, 0], [1, 1], [2, 0], [2, 1]]} client:visible />
+
+*What holds the side for $k = 29$: the chain wall – cube 3 – cube 5 – cubes 9 and 10 – walls, in the plane $(x_2, x_3)$ at $x_1 = \tfrac12$, $x_4 = s - \tfrac12$. Cube 3 is pressed on $x_2 = 0$, cube 5 (turned in $(x_2, x_3)$) touches cube 3 at $(x_2, x_3) = (1, 1 + \sqrt2/3)$ and cubes 9 and 10 at $(s - 1, 1)$ and $(s - 1, s - 1)$, and cubes 9 and 10 are pressed on $x_2 = s$ and on $x_3 = 0$ and $x_3 = s$.*
+
+<Cube4Tight lang="en" k={29} p0={[1.0, 1.0, 0.5, 2.2]} e={[0.808122, 0.404061, 0.4285714, 0.0]} f={[-0.5088907, 0.1125731, 0.8534386, 0.0]} g={[0,0,0,1]} lab={["u","v","x₄"]} hold={[1,12,25,28]} points={[[1.0, 1.0, 0.5, 2.2], [1.942809, 1.4714045, 1.0, 2.2], [2.442809, 1.942809, 1.942809, 2.2]]} walls={[[0,0],[1,0],[2,0],[0,1],[1,1],[2,1]]} client:visible />
+
+*A second, different set of contacts that holds the side for $k = 29$: cubes 1, 12, 25 and 28 and the walls they press on, through two cubes turned in different planes (12 in $(x_1, x_2)$, 25 in $(x_2, x_3)$). Cube 1 is pressed on $x_1 = 0$ and $x_2 = 0$, cube 12 on $x_3 = 0$, cube 25 on $x_1 = s$, cube 28 on $x_2 = s$ and $x_3 = s$. The plane is the one through the three contacts (orange dots) at $x_4 = 2.2$, with $u$ along the contacts of cubes 1, 12 and 12, 25; the 3D section is $x_4 = 2.2$.*
+
+**How the packing was obtained.** The published packing for $k = 29$ (xavierdmello/tesseract-packing, side $2.9428309369$, which refines hockyy/tesseract-packing's $2.942833710$) was the starting point. Its frames carry small tilts, up to about $13°$. We replaced every frame by the nearest signed permutation composed with $45°$ turns in one or two coordinate planes. Once the frames are fixed, the separation conditions along fixed axes and the container conditions are linear in the centres, so with the side fixed at $2 + 2\sqrt2/3$ a linear programme finds centres; its optimal vertex is read back exactly in $\mathbb Q(\sqrt2)$ and certified. The exact packing shows that the tilts are not needed. The centres in the file are those of the canonical form of §2: with the same frames and side, the cubes that can move are placed by the lexicographic linear programmes. The arrangement itself (the 25-cube product frame opened up, with cubes in “cross cells”, in the words of the source) is due to the authors of the published packings.
+
+The packings for $k = 26$ to $28$ are nested in the packing for $k = 29$, by the same rule as in §4: from 29 to 28 cube 17 is removed, from 28 to 27 cube 16 (both turned in $(x_1, x_4)$), and from 27 to 26 cube 13 (turned in two planes). The packing for $k = 26$ therefore has 15 axis-parallel cubes and 11 turned cubes. For $k = 26$ the source printed $2.942809042$ and conjectured the closed form $2 + 2\sqrt2/3$; the certificate shows that this side is attained.
+
+## 6. k = 30: side 2.9876881
+
+The packing for $k = 30$ has side $s = 2.9876880563\ldots$, the rational number in the certificate (a numerator and a denominator of 108 and 107 digits), below the published value $2.989568410$ by $0.0018804$. It is not in a quadratic field: the certificate (the rational format of the README of Release `cubes-n-dim-n4k30-v1`) gives each centre as rationals and each frame as the Cayley transform $R_i = (I - A_i)^{-1}(I + A_i)$ of a skew-symmetric rational matrix $A_i$, so that $R_i$ is orthogonal exactly; containment and the separation of every pair along the 56 candidate axes are then checked with exact rational arithmetic, as in §2. No frame is a signed permutation; four are within $10^{-6}$ of one.
+
+<Cube4Tight lang="en" k={30} p0={[1.493844, 1.493844, 0.5, 1.9876881]} e={[1, 0, 0, 0]} f={[0, 1, 0, 0]} g={[0, 0, 0, 1]} lab={["x₁", "x₂", "x₄"]} hold={[6, 10, 16]} points={[[1, 1.2806, 0.5, 1.9876881], [1.9876881, 1, 0.5, 1.9876881]]} walls={[[0, 0], [0, 1], [1, 0], [3, 1]]} client:visible />
+
+*What holds the side for $k = 30$: two chains meeting at cube 6, cubes 16, 10, 6 and cubes 6, 11, 18; their sections look the same, so only the first is drawn: cubes 16, 10 and 6 (the plane $x_3 = \tfrac12$, $x_4 = s - 1$ through both contacts; the 3D section is $x_3 = \tfrac12$). Cube 16 is pressed on $x_1 = s$ and $x_2 = 0$, cube 10 on $x_4 = s$, cube 6 on $x_1 = 0$ (and $x_3 = 0$); the contacts are the orange dots. The certificate of $k = 30$ is rational, so these contacts are not exactly zero: the gaps are within $10^{-6}$ (about $10^{-9}$ between cubes, up to $2\times10^{-7}$ at the walls). In the second chain cube 11 is pressed on $x_2 = s$ and cube 18 on $x_3 = s$ and $x_4 = 0$ (plane $x_1 = 0.6$, $x_2 = s - 1$).*
+
+
+**How the packing was obtained.** The published packing for $k = 30$ (side $2.989568410$, the same coordinates in hockyy/tesseract-packing and xavierdmello/tesseract-packing) was the starting point. The side was fixed and lowered in steps of $0.0005$; at each step the centres and frames of the 30 cubes were moved to minimise a quadratic penalty on the overlap of pairs, measured along the 56 candidate axes, and on wall violation. At the third step ($s = 2.98807$) the frames changed substantially and the penalty vanished; the packing was then made legal and tightened by sequential quadratic programming with the separating directions as variables, down to the floating-point side $2.98768826$. The certificate rounds the Cayley parameters and the centres to the denominator $2^{40}$, re-checks separation exactly and recomputes the side exactly; the floating-point packing kept a wall margin of $10^{-7}$, which the exact recomputation removes. The result is a different packing from the published one, reached from it; the credit for the starting packing belongs to its authors. The same continuation from the published packings for $k = 26$ to $29$ gave no improvement.
+
+## 7. Reproducing the checks
+
+The Release `cubes-n-dim-n4-certs-v3` and the folder [problems/cubes-n-dim/n4-certs/](https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim/n4-certs) hold the 13 certificates `certs/n4k17.json` to `certs/n4k29.json`, both checkers, `SPEC-ALG.md`, `NESTING.md` (the cubes removed) and `SHA256SUMS`. With Python 3 and nothing else, from that folder:
+
+```sh
+# first checker: 13 × ACCEPT
+python3 -I check_alg.py certs/n4k*.json
+# second checker: 13 × ACCEPT
+for f in certs/n4k*.json; do python3 -I check2/alg_check2.py "$f"; done
+# canonical form
+python3 -I check2/canon_check2.py certs/n4k*.json
+# nesting and the removal rule
+python3 -I check2/canon_check2.py --nest certs/n4k1[89].json certs/n4k2[0-5].json
+python3 -I check2/canon_check2.py --nest certs/n4k2[6-9].json
+```
+
+For $k = 30$, from the folder [problems/cubes-n-dim/n4k30/](https://github.com/wand125/square-packing/tree/main/problems/cubes-n-dim/n4k30) (Release `cubes-n-dim-n4k30-v1`):
+
+```sh
+# first and second checker: ACCEPT
+python3 -I check_cert.py certs/n4k30.json
+python3 -I check2/cert_check2.py certs/n4k30.json
+# corrupted copies are all rejected
+python3 -I check2/neg_tests.py certs/n4k30.json
+```
+
+All packings for $k = 17$ to $30$ can be viewed, turning in four dimensions, on the page [Unit 4-cubes in a 4-cube](cubes4-survey.html).
+
+## Sources
+
+- [xavierdmello/tesseract-packing](https://github.com/xavierdmello/tesseract-packing/tree/fb230875c852da2199e3036ad6b09633d6eacb7b) (branch research, commit `fb230875c852`): the published values for $k = 17$ to $25$; the published value $2.942830937$ for $k = 29$ and its coordinates (`results/best/d4_n29.json`).
+- [hockyy/tesseract-packing](https://github.com/hockyy/tesseract-packing/tree/e75c790976a051b973341e21eedeaa8c2f66fae8) (branch main, commit `e75c790976a0`): the published values for $k = 26$ to $28$, the conjectured closed form for $k = 26$, the earlier value $2.942833710$ for $k = 29$, and the published packing for $k = 30$ (`results/n30_side_2.989568410.json`; the same coordinates are in xavierdmello `results/best/d4_n30.json`).
+
+Both repositories check their packings in floating point and publish no exact certificates. The packings for $k = 26$ to $30$ start from their published coordinates; the exact frames, the linear programme, the certificates and the checkers are ours.
+
+Hiroaki Hosono (wand125).

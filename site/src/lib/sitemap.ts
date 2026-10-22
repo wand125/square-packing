@@ -27,6 +27,7 @@ export const PAGES: Page[] = [
   { file: 'paper-cubes-in-cube.html', en: 'Unit cubes in a cube', ja: '立方体の中の単位立方体', title: 'Unit Cubes in a Cube', group: '' },
   { file: 'paper-cubes-n-dim.html', en: 'Two unit hypercubes, n = 3–6', ja: '単位超立方体 2 個（n = 3〜6）', title: 'Two Unit Hypercubes in a Hypercube', group: '' },
   { file: 'cubes.html', en: 'Cubes in a cube', ja: '立方体の容器', title: 'Cubes in a Cube', group: 'viz' },
+  { file: 'paper-cubes-n4-upper.html', en: 'Unit 4-cubes, k = 17–30', ja: '単位 4 次元立方体 k = 17〜30', title: 'Exact Packings of Unit 4-Cubes', group: '' },
   { file: 'cubes4-survey.html', en: '4-cubes, k = 17–30', ja: '4 次元 k = 17〜30', title: 'Unit 4-Cubes in a 4-Cube', group: 'viz' },
   { file: 'paper-hexagon-n3.html', en: 'Hexagon, n = 3', ja: '正六角形 n = 3', title: 'Three Unit Squares in a Regular Hexagon', group: '' },
 ];

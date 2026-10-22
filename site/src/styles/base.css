@@ -126,6 +126,8 @@ a.ref-item.ext::before { content: none; }
 .ref-item .ref-ico svg { width: 40px; height: 40px; }
 .ref-item .ref-ico svg .th-c { fill: var(--bg2); stroke: var(--fg2); stroke-width: 1.5; }
 .ref-item .ref-ico svg .th-sq { fill: color-mix(in srgb, var(--link) 30%, transparent); stroke: var(--link); stroke-width: 1; }
+.ref-item .ref-ico svg .gf4-box { fill: none; stroke: var(--fg2); stroke-width: 1.3; }
+.ref-item .ref-ico svg .gf4-cell { fill: color-mix(in srgb, var(--link) 18%, transparent); stroke: var(--link); stroke-width: 2.2; stroke-linejoin: round; }
 .ref-item > span:last-child { min-width: 0; }
 .issue-pop { display: none; } .issue-pop[open] { display: block; }
 /* a page shown inside a popup (?embed=1): no site bars */

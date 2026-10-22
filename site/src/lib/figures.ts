@@ -50,6 +50,8 @@ function cubesIcon(S: number, cubes: [V3, boolean][], dot = false) {
 }
 const PAPER_ICON: Record<string, [string, number]> = {'paper-hexagon-n3.html': ['hexagon', 3], 'paper-domino.html': ['domino', 4], 'paper-triangle.html': ['triangle', 6], 'paper-right-isosceles.html': ['right-isosceles', 10]};
 export function paperIcon(file: string) {
+ // the 4-cubes paper: the container (a 4-cube) in the page's starting view, the cell in front in colour
+ if (file === 'paper-cubes-n4-upper.html') return fourCubeFigure(64, false);
  // the closed-form bound: a square container with its four walls and corners of segments
  if (file === 'paper-closed-form.html') return `<svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"><rect x="3" y="3" width="58" height="58" class="th-c"/><rect x="13" y="13" width="38" height="38" class="th-sq"/>${[7, 9, 11].map(v => `<path d="M${v} 3V61M${64 - v} 3V61M3 ${v}H61M3 ${64 - v}H61" stroke="currentColor" stroke-width="0.6" opacity="0.55"/>`).join('')}</svg>`;
  // the plots: the closed-form bound against the known lower bounds, by block
@@ -70,7 +72,9 @@ export function paperIcon(file: string) {
 
 // the 4-cubes page: k = 17 in the starting view of cubes4-survey.astro (the octagon orientation in 4D, the 3D view turned
 // so the container shows as two cubes); the 16 axis-parallel cubes faint, the rotated one in colour, the cell in front orange
-export function cubes4Figure() {
+export function cubes4Figure() { return fourCubeFigure(220, true); }
+// the 4-cubes paper: the container alone in the same view, the cell in front in colour
+function fourCubeFigure(size: number, packing: boolean) {
  const d = readFigure('cubes4-survey.json').rows.find(r => r.k === 17)!, s = d.s_float;
  const a = [0, 1, 2, 3].map(j => Math.cos(j * Math.PI / 4) / Math.SQRT2), b = [0, 1, 2, 3].map(j => Math.sin(j * Math.PI / 4) / Math.SQRT2);
  const e4 = [0, 0, 0, 1], dot = (u: number[], v: number[]) => u.reduce((t, x, j) => t + x * v[j], 0);
@@ -79,13 +83,14 @@ export function cubes4Figure() {
  const pr = (v: number[]) => { const X = dot(a, v), Y = dot(c, v), Z = dot(b, v), x1 = cy * X - sy * Y, y1 = sy * X + cy * Y; return [x1, -(Z * cp + y1 * sp)]; };
  const T = [...Array(16)].map((_, m) => [0, 1, 2, 3].map(j => (m >> j & 1) ? .5 : -.5)), E: [number, number][] = [];
  for (let m = 0; m < 16; m++) for (let j = 0; j < 4; j++) if (!(m >> j & 1)) E.push([m, m | 1 << j]);
- const sc = 100, P = (q: number[]) => `${(110 + q[0] * sc).toFixed(1)} ${(110 + q[1] * sc).toFixed(1)}`;
+ const sc = size / 2.2, P = (q: number[]) => `${(size / 2 + q[0] * sc).toFixed(1)} ${(size / 2 + q[1] * sc).toFixed(1)}`;
  const path = (V: number[][], es: [number, number][], cls: string) => `<path class="${cls}" d="${es.map(([u, w]) => `M${P(pr(V[u]))}L${P(pr(V[w]))}`).join('')}"/>`;
  const cube = (q: {c: number[]; R: number[][]}) => T.map(t => [0, 1, 2, 3].map(i => (q.c[i] + q.R[i].reduce((u, r, j) => u + r * t[j], 0)) / s - .5));
  // the cell in front: the sign and coordinate of the largest entry of the hidden direction
  const h = [0, 1, 2, 3].map(j => { const m = [a, c, b].map(r => r.filter((_, k) => k !== j)); const det = m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) + m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]); return ((j % 2) ? 1 : -1) * det; });
  const fj = h.map(Math.abs).indexOf(Math.max(...h.map(Math.abs))), bit = h[fj] < 0 ? 0 : 1;
- return svg(220, path(T, E, 'gf4-box') + d.cubes.filter(q => q.axis_parallel).map(q => path(cube(q), E, 'gf4-ax')).join('') + d.cubes.filter(q => !q.axis_parallel).map(q => path(cube(q), E, 'gf4-rot')).join('') + path(T, E.filter(([u, w]) => (u >> fj & 1) === bit && (w >> fj & 1) === bit), 'gf4-cell'));
+ const body = path(T, E, 'gf4-box') + (packing ? d.cubes.filter(q => q.axis_parallel).map(q => path(cube(q), E, 'gf4-ax')).join('') + d.cubes.filter(q => !q.axis_parallel).map(q => path(cube(q), E, 'gf4-rot')).join('') : '') + path(T, E.filter(([u, w]) => (u >> fj & 1) === bit && (w >> fj & 1) === bit), 'gf4-cell');
+ return `<svg viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" aria-hidden="true">${body}</svg>`;
 }
 // the cubes page: the 9 unit cubes in the cube of side 2 + 1/√2, eight corner cubes and one turned 45° at the centre
 export function cubesFigure() { const S = 2 + Math.SQRT1_2, lo = 0.5, hi = S - 0.5, cs: [V3, boolean][] = [];

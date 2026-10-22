@@ -30,12 +30,12 @@ function diff(r: Row): string {
 }
 // how the packing was made, from the origin text of the survey (a subset, the frames-and-LP rebuild, the product)
 function origin(r: Row): [string, string] {
-  const o = r.origin ?? '', a = r.starting_point_author, sub = o.match(/subset of our k = (\d+)/);
+  const o = r.origin ?? '', a = r.starting_point_author, aj = (a ?? '').replaceAll(' and ', ' と ').replace('(coordinates:', '（座標：').replace(/\)$/, '）'), sub = o.match(/subset of our k = (\d+)/);
   if (sub) return [`the packing of k = ${sub[1]} with cubes removed`, `k = ${sub[1]} の配置から立方体を除いたもの`];
-  if (/frames fixed to signed permutations/.test(o)) return [`from the published packing of ${a}: frames set to signed permutations and 45° turns, centres re-solved by a linear programme`, `${a} の公開の配置から：枠を符号付きの置換と 45° の回転に固定し、中心を線形計画で解き直した`];
+  if (/frames fixed to signed permutations/.test(o)) return [`from the published packing of ${a}: frames set to signed permutations and 45° turns, centres re-solved by a linear programme`, `${aj} の公開の配置から：枠を符号付きの置換と 45° の回転に固定し、中心を線形計画で解き直した`];
   if (/product of two 5-square packings/.test(o)) return ['ours: the product of two packings of 5 squares in the square of side 2 + 1/√2', '当方の構成：辺 2 + 1/√2 の正方形に 5 個の正方形を入れた配置 2 つの積'];
-  if (r.origin_kind === 'own-record') return [`container shrinking by us, from the published packing of ${a}`, `${a} の公開の配置から当方が容器を縮めた`];
-  if (r.origin_kind === 'external') return [`published coordinates of ${a}, tightened and certified by us`, `${a} の公開座標を当方が締め直し、証明書を付けた`];
+  if (r.origin_kind === 'own-record') return [`container shrinking by us, from the published packing of ${a}`, `${aj} の公開の配置から当方が容器を縮めた`];
+  if (r.origin_kind === 'external') return [`published coordinates of ${a}, tightened and certified by us`, `${aj} の公開座標を当方が締め直し、証明書を付けた`];
   return ['our own search', '当方の探索'];
 }
 // a closed form the source gives only as a conjecture
@@ -44,7 +44,7 @@ const conjectured = (r: Row) => /conjectured/.test(r.published.form);
 <Base file="cubes4-survey.html" title="Unit 4-Cubes in a 4-Cube">
 <div class="c4s">
 <h1><T en="Unit 4-cubes in a 4-cube, k = 17 to 30" ja="4 次元の立方体に単位 4 次元立方体 k 個（k = 17〜30）" /></h1>
-<p class="c4s-lede"><T en="For each k from 17 to 30: the smallest published container side for k unit 4-cubes, and a packing of ours with an exact certificate, drawn as a parallel projection that turns in four dimensions. A survey of known values; the new values are k = 27, 28, 29 and 30. The values of k with the same side (18 to 25 at 2 + 1/√2, 26 to 29 at 2 + 2√2/3) share one card, showing the largest k; the smaller k are its packing with cubes removed, and the numbers at the top of the card switch between them." ja="k = 17〜30 のそれぞれについて、単位 4 次元立方体 k 個の容器の辺の公開値と、厳密な証明書を付けた当方の配置を、4 次元で回る平行投影の図で描く。既知の値の資料で、新しい値は k = 27、28、29、30。辺が同じ k（18〜25 は 2 + 1/√2、26〜29 は 2 + 2√2/3）は 1 枚のカードにまとめて最も大きい k を表示する。小さい k はその配置から立方体を除いたもので、カード上部の数字で切り替える。" /></p>
+<p class="c4s-lede"><T en="For each k from 17 to 30: the smallest published container side for k unit 4-cubes, and a packing of ours with an exact certificate, drawn as a parallel projection that turns in four dimensions. A survey of known values; the new records are k = 27, 28, 29 and 30. The values of k whose packings here have the same side (18 to 25 at 2 + 1/√2, 26 to 29 at 2 + 2√2/3) share one card, showing the largest k; the smaller k are its packing with cubes removed, and the numbers at the top of the card switch between them." ja="k = 17〜30 のそれぞれについて、単位 4 次元立方体 k 個が入る容器の辺の公開されている最小の値と、厳密な証明書を付けた当方の配置を、4 次元で回る平行投影の図で描く。既知の値の資料で、新記録は k = 27、28、29、30。当方の配置で辺が同じ k（18〜25 は 2 + 1/√2、26〜29 は 2 + 2√2/3）は 1 枚のカードにまとめて最も大きい k を表示する。小さい k はその配置から立方体を除いたもので、カード上部の数字で切り替える。" /></p>
 <div class="c4s-key" aria-hidden="true"><span class="c4s-sw ax"></span><T en="axis-parallel" ja="軸に平行" /><span class="c4s-sw rot"></span><T en="rotated (one colour per orientation)" ja="回転（向きごとに色）" /></div>
 <label class="c4s-sync"><input type="checkbox" checked /> <T en="Sync all cards (views and turns)" ja="全カードを同期する（視点と回転）" /></label>
 <script type="application/json" id="c4s-data" set:html={JSON.stringify(rows.map(r => ({k: r.k, s: r.s_float, cubes: r.cubes.map(q => ({c: q.c.map(x => +x.toFixed(7)), R: q.R.map(row => row.map(x => +x.toFixed(7))), ax: q.axis_parallel, t: +tilt(q).toFixed(2)}))})))} />
@@ -68,7 +68,7 @@ const conjectured = (r: Row) => /conjectured/.test(r.published.form);
   </div>
   <dl class="c4s-dl">
     <dt><T en="published" ja="公開値" /></dt><dd class="num">{r.published.value}{conjectured(r) ? <> (<T en={`conjectured by the source: ${r.published.form.split(' ≈')[0]}`} ja={`出典の予想：${r.published.form.split(' ≈')[0]}`} />)</> : r.published.form && r.published.form.startsWith('2') ? <> ({r.published.form.split(' ≈')[0]})</> : r.published.form ? <> ({r.published.form})</> : ''}</dd>
-    <dt><T en="ours − published" ja="当方 − 公開値" /></dt><dd class="num">{r.s_exact && r.published.form.startsWith(r.s_exact) ? (conjectured(r) ? <T en="0 (the conjectured closed form, exactly)" ja="0（予想された閉じた式にちょうど一致）" /> : <T en="0 (exact)" ja="0（厳密）" />) : diff(r)}</dd>
+    <dt><T en="ours − published" ja="当方 − 公開値" /></dt><dd class="num">{r.s_exact && r.published.form.startsWith(r.s_exact) ? (conjectured(r) ? <>{diff(r)} <T en="(from the printed value; equal to the conjectured closed form)" ja="（印字された値との差。予想された閉じた式にはちょうど一致）" /></> : <T en="0 (exact)" ja="0（厳密）" />) : diff(r)}</dd>
     <dt><T en="source" ja="出典" /></dt><dd><a href={r.published.url}>{r.published.source}</a></dd>
     <dt><T en="packing" ja="配置" /></dt><dd><T en={origin(r)[0]} ja={origin(r)[1]} /></dd>
     <dt><T en="rotated" ja="回転" /></dt><dd class="num">{r.cubes.filter(q => !q.axis_parallel).length} / {r.k}</dd>
@@ -87,7 +87,7 @@ const conjectured = (r: Row) => /conjectured/.test(r.published.form);
 <dialog class="phone-k-sheet c4s-sheet c4s-ksheet" aria-label="k"><div class="c4s-sheet-ks">{groups.map(g => <div class="c4s-kg"><svg class="c4s-kg-ico" viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><rect x={15 - box(g[0]) / 2} y={15 - box(g[0]) / 2} width={box(g[0])} height={box(g[0])} /></svg><div class="c4s-kg-ks">{g.map(r => <button type="button" data-goto={r.k} class={r.origin_kind === 'own-record' ? 'rec' : undefined}>{r.k}</button>)}</div></div>)}</div></dialog>
 <dialog class="phone-k-sheet c4s-sheet c4s-vsheet" aria-label="views"><div class="c4s-vsheet-dir"></div><div class="c4s-sheet-vs">{[['split', 'Two cubes', '二重立方体'], ['oct', 'Octagon', '八角形'], ['0', 'Oblique', '斜め'], ['1', 'Top', '上'], ['2', 'Side', '横']].map(([v, en, ja]) => <button type="button" data-v={v}><T en={en} ja={ja} /></button>)}</div></dialog>
 <dialog class="phone-k-sheet c4s-sheet c4s-isheet" aria-label="about"><div class="c4s-isheet-body"></div></dialog>
-<p class="dim c4s-foot"><T en="Hiroaki Hosono (wand125). The published values and the starting packings are from hockyy/tesseract-packing and xavierdmello/tesseract-packing, as named on each card. A certificate marked “two checkers” is accepted by two independent exact checkers." ja="Hiroaki Hosono (wand125)。公開値と出発点の配置は hockyy/tesseract-packing と xavierdmello/tesseract-packing のもので、カードごとに書いた。「2 系統で検査」と書いた証明書は、独立した 2 つの厳密な検査器が受理した。" /></p>
+<p class="dim c4s-foot"><T en="Hiroaki Hosono (wand125). The published values are from hockyy/tesseract-packing and xavierdmello/tesseract-packing, as named on each card; for k = 26 to 30 the packings start from their published coordinates. A certificate marked “two checkers” is accepted by two independent exact checkers." ja="Hiroaki Hosono (wand125)。公開値は hockyy/tesseract-packing と xavierdmello/tesseract-packing のもので、カードごとに書いた。k = 26〜30 の配置はその公開座標から出発した。「2 系統で検査」と書いた証明書は、独立した 2 つの厳密な検査器が受理した。" /></p>
 </div>
 <script>
 // 3D: project c + R t (t ∈ {±1/2}⁴) to three dimensions (the first three rows of W), centred and scaled by 1/s,
