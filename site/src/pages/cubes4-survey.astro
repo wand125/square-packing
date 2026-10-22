@@ -4,6 +4,7 @@
 import {readFileSync} from 'node:fs';
 import Base from '../layouts/Base.astro';
 import T from '../components/ui/T.astro';
+import {url} from '../lib/sitemap';
 import '../styles/paper.css';
 type Cube = {c: number[]; R: number[][]; axis_parallel: boolean};
 type Row = {k: number; s_float: number; published: {value: string; form: string; source: string; url: string; commit: string};
@@ -44,7 +45,7 @@ const conjectured = (r: Row) => /conjectured/.test(r.published.form);
 <Base file="cubes4-survey.html" title="Unit 4-Cubes in a 4-Cube">
 <div class="c4s">
 <h1><T en="Unit 4-cubes in a 4-cube, k = 17 to 30" ja="4 次元の立方体に単位 4 次元立方体 k 個（k = 17〜30）" /></h1>
-<p class="c4s-lede"><T en="For each k from 17 to 30: the smallest published container side for k unit 4-cubes, and a packing of ours with an exact certificate, drawn as a parallel projection that turns in four dimensions. A survey of known values; the new records are k = 27, 28, 29 and 30. The values of k whose packings here have the same side (18 to 25 at 2 + 1/√2, 26 to 29 at 2 + 2√2/3) share one card, showing the largest k; the smaller k are its packing with cubes removed, and the numbers at the top of the card switch between them." ja="k = 17〜30 のそれぞれについて、単位 4 次元立方体 k 個が入る容器の辺の公開されている最小の値と、厳密な証明書を付けた当方の配置を、4 次元で回る平行投影の図で描く。既知の値の資料で、新記録は k = 27、28、29、30。当方の配置で辺が同じ k（18〜25 は 2 + 1/√2、26〜29 は 2 + 2√2/3）は 1 枚のカードにまとめて最も大きい k を表示する。小さい k はその配置から立方体を除いたもので、カード上部の数字で切り替える。" /></p>
+<p class="c4s-lede"><T en="For each k from 17 to 30: the smallest published container side for k unit 4-cubes, and a packing of ours with an exact certificate, drawn as a parallel projection that turns in four dimensions. A survey of known values; the new records are k = 27, 28, 29 and 30. The values of k whose packings here have the same side (18 to 25 at 2 + 1/√2, 26 to 29 at 2 + 2√2/3) share one card, showing the largest k; the smaller k are its packing with cubes removed, and the numbers at the top of the card switch between them." ja="k = 17〜30 のそれぞれについて、単位 4 次元立方体 k 個が入る容器の辺の公開されている最小の値と、厳密な証明書を付けた当方の配置を、4 次元で回る平行投影の図で描く。既知の値の資料で、新記録は k = 27、28、29、30。当方の配置で辺が同じ k（18〜25 は 2 + 1/√2、26〜29 は 2 + 2√2/3）は 1 枚のカードにまとめて最も大きい k を表示する。小さい k はその配置から立方体を除いたもので、カード上部の数字で切り替える。" />{' '}<a href={url('paper-cubes-n4-upper.html')}><T en="The paper on these packings and their certificates" ja="これらの配置と証明書についての論文" /></a></p>
 <div class="c4s-key" aria-hidden="true"><span class="c4s-sw ax"></span><T en="axis-parallel" ja="軸に平行" /><span class="c4s-sw rot"></span><T en="rotated (one colour per orientation)" ja="回転（向きごとに色）" /></div>
 <label class="c4s-sync"><input type="checkbox" checked /> <T en="Sync all cards (views and turns)" ja="全カードを同期する（視点と回転）" /></label>
 <script type="application/json" id="c4s-data" set:html={JSON.stringify(rows.map(r => ({k: r.k, s: r.s_float, cubes: r.cubes.map(q => ({c: q.c.map(x => +x.toFixed(7)), R: q.R.map(row => row.map(x => +x.toFixed(7))), ax: q.axis_parallel, t: +tilt(q).toFixed(2)}))})))} />
