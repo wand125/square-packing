@@ -69,7 +69,7 @@
    "date": "2026-10-22",
    "en": "The abstract and §1 now say that the bound is one square root on each interval except where the cap applies, where it is constant; r and W are defined where they first appear in §4; the fourfold symmetry and the 68 families are described more precisely, and the English wording is revised.",
    "ja": "要旨と §1 に、各区間で根号 1 本になるのは上限の効かない所で、効く所では定数になることを書き足した。§4 で r と W を初出で定義し、4 回回転対称と 68 個の族の説明を正確にし、英文の言い回しを直した。",
-   "commit": ""
+   "commit": "ff06e5f"
   }
  ]
 }

@@ -57,7 +57,7 @@
    "date": "2026-10-22",
    "en": "§2 says why the translated squares stay disjoint as closed squares; §4 says why the hypothesis of inequalities (i) and (ii) holds throughout the neighbourhood of the lemma, and §5 applies them only where that hypothesis holds; the English wording is revised.",
    "ja": "§2 に、ずらした正方形が閉じた正方形としても交わらない理由を、§4 に、不等式 (i)(ii) の前提が補題の近傍でつねに成り立つ理由を書き、§5 では前提が成り立つところでだけ使うとした。英文の言い回しを直した。",
-   "commit": ""
+   "commit": "ff06e5f"
   }
  ]
 }

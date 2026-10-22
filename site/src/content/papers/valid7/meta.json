@@ -81,7 +81,7 @@
    "date": "2026-10-22",
    "en": "The abstract now states exactly what the separate program re-checks (the record structure in full, a random sample of the other leaves) and that both statements are also verified in the Lean 4 kernel; definitions of s(n), roots and leaves, the handling of u = 0, and the Lean root counts are added, and the prose is edited.",
    "ja": "要旨で、別のプログラムが再検査する範囲（記録の構造は全部、残りの葉は無作為の標本）を正確に書き、2 つの命題が Lean 4 のカーネルでも検証されていることを添えた。s(n)・根・葉の定義、u = 0 の扱い、Lean の根の数を足し、文章を整えた。",
-   "commit": ""
+   "commit": "ff06e5f"
   }
  ]
 }

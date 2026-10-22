@@ -74,7 +74,7 @@
    "date": "2026-10-22",
    "en": "Corrected the scope of the Lean 4 check (the lower bounds except n = 6 and 46, and the upper bounds for n = 2, 3, 4 and the series; the n = 37 upper bound is checked by two exact checkers), and revised the English wording.",
    "ja": "Lean 4 で検査した範囲を訂正し（n = 6・46 以外の下界と、n = 2, 3, 4 と系列の上界。n = 37 の上界は 2 つの厳密な検査器で検査）、英文の言い回しを直した。",
-   "commit": ""
+   "commit": "ff06e5f"
   }
  ]
 }
