@@ -1,4 +1,7 @@
-# Unit cubes in a cube: s₃(9) = s₃(10) = 2 + 1/√2
+# Unit cubes in a cube: s₃(9) = s₃(10) = 2 + 1/√2 and s₃(25) = s₃(26) = 3
+
+**s₃(25) = s₃(26) = 3** (added 2026-10): proved with a closed counting measure and two independent checkers; see
+[`closed-measure/`](closed-measure/). The rest of this page is about n = 9, 10.
 
 Let s₃(n) be the side of the smallest cube that contains n unit cubes with pairwise disjoint interiors (any
 positions, any orientations).
@@ -53,6 +56,7 @@ equality exactly; no epsilon is used anywhere.
 | `upper/` | Exact packings for n = 8, 9, 10 and two exact checkers |
 | `checker/` | First system: Rust interval branch and bound (quaternions; 1,152-fold reduction: 24 rotations of the cube and 48 symmetries of the container) |
 | `checker2/` | Second system: independent Rust implementation (ZYZ Euler angles; 32-fold reduction: the 8 reflections and a quarter turn about one cube axis) |
+| `closed-measure/` | s₃(25) = s₃(26) = 3: closed measure, SPEC, two checkers and their receipts |
 
 ## Results
 

@@ -1,0 +1,29 @@
+split {"dir": "shards_test/pos", "n": 3, "volume_fraction": {"s00": 1.30385160446167e-08, "s01": 1.30385160446167e-08, "s02": 1.210719347000122e-08}}
+s00 short run paused 7 10
+re-split {"dir": "shards_test/pos/s00/split", "n": 2, "volume_fraction": {"s00": 6.51925802230835e-09, "s01": 6.51925802230835e-09}}
+sub s00 complete
+sub s01 complete
+s01 complete
+s02 complete
+POSITIVE complete: {"ok": true, "status": "complete", "sigma": "27/20", "fingerprint": "4ad6edfd8818c9f87a66b27d9d4c23528e02eabe75c40c793b15821843fb6993", "shards": 4, "boxes": 138, "leaves_by_rule": {"bound": 75, "outside": 0, "unresolved": 0}, "pending": 0, "closed_volume_exact": "4421431253412704926325390474271219430476491685296653886900992080871424 / 2^256", "closed_fraction": 3.818422555923462e-08, "max_depth": 32, "lemma_counts": [1878, 0, 0, 0, 0, 56], "seconds": 1.016337374, "merged_chain": "caee87ce8b8ae7f42b6b5001a49b5a7473bfa89353574bcecec7f393b5d2f4c5", "tool_sha256": "8ee2d0ccd8c05d572019261b88c7c8a31f02800888111458b51ac7c67c3a6385"}
+root guard (expect fail): {"ok": false, "error": "the top manifest is not the root (use --subtree only in tests)"}
+NEG drop_shard: {"ok": false, "error": "root: shards are not a partition of the parent pending list (missing 6, foreign 0)"}
+NEG stray_dir: {"ok": false, "error": "root: shard directories not in the manifest: ['s03']"}
+NEG dup_box: {"ok": false, "error": "root/s01: volume 1509757013360435828501352844873099317723680087662272058941802173956096 != 1941116160034846065216025086265413408501874398422921218639459937943552 (x 2^-256)"}
+NEG edit_init: {"ok": false, "error": "root/s01: shard_init.json changed"}
+NEG parent_hist: {"ok": false, "error": "root/parent: volume 4421536565704373483512088392298903100908810580392054436012246391848960 != 4421431253412704926325390474271219430476491685296653886900992080871424 (x 2^-256)"}
+NEG fingerprint: {"ok": false, "error": "root/s01: fingerprint or caps"}
+NEG swapped: {"ok": false, "error": "root/s02: volume 1509757013360435828501352844873099317723680087662272058941802173956096 != 1401917226691833269322684784525020795029131509972109769017387732959232 (x 2^-256)"}
+NEG receipt_unresolved: {"ok": false, "error": "root/s01: not complete"}
+NEG receipt_sigma: {"ok": false, "error": "root/s01: sigma or caps in the receipt"}
+NEG fewer_leaves: {"ok": false, "error": "root/s01: volume 1482797066693285188706685829786079687050042943239731486460698563706880 != 1509757013360435828501352844873099317723680087662272058941802173956096 (x 2^-256)"}
+NEG not_resumed: {"ok": false, "error": "root/s01: receipt is not a resumed run of this shard"}
+partial split {"dir": "shards_test/fresh", "n": 3, "volume_fraction": {"s00": 1.30385160446167e-08, "s01": 1.30385160446167e-08, "s02": 1.210719347000122e-08}}
+POSITIVE partial: {"ok": true, "status": "partial", "sigma": "27/20", "fingerprint": "4ad6edfd8818c9f87a66b27d9d4c23528e02eabe75c40c793b15821843fb6993", "shards": 3, "boxes": 0, "leaves_by_rule": {"bound": 0, "outside": 0, "unresolved": 0}, "pending": 12, "closed_volume_exact": "0 / 2^256", "closed_fraction": 0.0, "max_depth": 0, "lemma_counts": [0, 0, 0, 0, 0, 0], "seconds": 0, "merged_chain": "740de580d7171cc99718377eda5b4f59b954dcd5528bd4db90c91ae77c020116", "tool_sha256": "8ee2d0ccd8c05d572019261b88c7c8a31f02800888111458b51ac7c67c3a6385"}
+NEGP other_parent: {"ok": false, "error": "root/s01: initial chain (a shard of another parent?)"}
+NEGP other_parent_rechained: {"ok": false, "error": "root: shards are not a partition of the parent pending list (missing 3, foreign 5)"}
+NEGP dup_box: {"ok": false, "error": "root: a box is in two shards"}
+NEGP swap_ckpt: {"ok": false, "error": "root/s02: volume 1509757013360435828501352844873099317723680087662272058941802173956096 != 1401917226691833269322684784525020795029131509972109769017387732959232 (x 2^-256)"}
+NEGP foreign_box: {"ok": false, "error": "root: shards are not a partition of the parent pending list (missing 0, foreign 1)"}
+NEGP drop_shard: {"ok": false, "error": "root: shards are not a partition of the parent pending list (missing 6, foreign 0)"}
+ALL TESTS PASSED

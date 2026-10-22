@@ -1,0 +1,32 @@
+soundness 400 12 nonzero 334 failures 0
+rules [428, 405, 411, 428, 537, 545]
+{
+  "status": "passed",
+  "boxes": 400,
+  "poses_per_box": 12,
+  "cell_depth": 6,
+  "nonzero_bounds": 334,
+  "minimum_margin": 0.19190550780979132,
+  "rule_queries": 1000,
+  "rule_hits": [
+    428,
+    405,
+    411,
+    428,
+    537,
+    545
+  ],
+  "symmetry_images": 144,
+  "max_symmetry_error": 3.9968028886505635e-15,
+  "data_mutations_rejected": [
+    true,
+    true,
+    true
+  ],
+  "exact_total": "106377314281014471867/5764607523034234880",
+  "thread_count": 1,
+  "two_thread_test": "not run: explicit one-thread resource limit",
+  "resume_determinism": true,
+  "seconds": 135.70721233298536,
+  "failures": []
+}

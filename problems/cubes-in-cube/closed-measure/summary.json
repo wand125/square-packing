@@ -1,0 +1,51 @@
+{
+ "claim": "s3(25) = s3(26) = 3",
+ "sigma": "27/20",
+ "n_claim": 25,
+ "measure_sha256": "565dbf5dd0059aa90929e4151d85fafdeef002a1b9e9aaf83f2e6243b2d393e0",
+ "T": {
+  "hi": 18.45352243946449,
+  "lo": 18.453522439463402
+ },
+ "scaled_T": {
+  "hi": 24.912255293277074,
+  "lo": 24.91225529327558
+ },
+ "system1": {
+  "receipt": "checker1/receipt.json",
+  "receipt_sha256": "101391d4a131e0301c68eeab72a32b92b0edb1396789a2b421f96c5fe9e9c4cb",
+  "status": "complete",
+  "pending": 0,
+  "unresolved": 0,
+  "boxes": 72779027,
+  "max_depth": 51,
+  "leaf_chain": "dc3ff3b9350e6f3ee30f7c1b841678c8b14b8895bec01dd7d892453de06a3293",
+  "measure_sha256": "565dbf5dd0059aa90929e4151d85fafdeef002a1b9e9aaf83f2e6243b2d393e0",
+  "n_claim": 25,
+  "T": {
+   "hi": 18.45352243946449,
+   "lo": 18.453522439463402
+  }
+ },
+ "system2": {
+  "receipt": "checker2/shards_s27_20/merged_receipt.json",
+  "receipt_sha256": "ef601a1ecde81bbb0aba25cd9084588057e6cdeb2db9f1cfdfa1a305c3cc7784",
+  "status": "complete",
+  "pending": 0,
+  "unresolved": 0,
+  "shards": 24,
+  "boxes": 387289685,
+  "max_depth": 48,
+  "merged_chain": "9d9f972b7bd896518a802da12a088fd31ac1167b2642f8b8b74740574c8c636e",
+  "closed_volume_exact": "115792089237316195423570985008687907853269984665640564039457584007913129639936 / 2^256",
+  "fingerprint": "4ad6edfd8818c9f87a66b27d9d4c23528e02eabe75c40c793b15821843fb6993",
+  "merge_tool_sha256": "8ee2d0ccd8c05d572019261b88c7c8a31f02800888111458b51ac7c67c3a6385",
+  "measure_sha256": "565dbf5dd0059aa90929e4151d85fafdeef002a1b9e9aaf83f2e6243b2d393e0",
+  "n_claim": 25,
+  "T": [
+   18.453522439463402,
+   18.45352243946449
+  ]
+ },
+ "note": "Copied from the receipts for reading; the receipts are authoritative."
+}

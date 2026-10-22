@@ -1,0 +1,25 @@
+   Compiling m4b-cert1 v0.1.0 (.)
+    Finished `release` profile [optimized] target(s) in 2.48s
+     Running unittests src/lib.rs (target/release/deps/m4b_cert1-1a8e570a2d93c53b)
+
+running 5 tests
+test tests::collected_centre_at_both_corners ... ok
+test tests::dyadic_partition_and_unresolved_leaf ... ok
+test tests::measure_partner_counts_and_inside_rule ... ok
+test tests::outward_underflow_and_rationals ... ok
+test tests::symmetry_ties_and_strict_outside ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/release/deps/m4b_cert1-cf1e9c7cd7b64074)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests m4b_cert1
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
