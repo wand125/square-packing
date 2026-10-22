@@ -7,33 +7,33 @@ Let $s(n)$ be the smallest $v$ such that $n$ non-overlapping unit squares, at an
 
 ## 1. The packing (upper bound)
 
-Let $R_v = [0, 2v] \times [0, v]$. Let $\beta \approx 40.518^\circ$ be such that $t = \tan(\beta/2)$ is the root of $t^3 - 5t^2 - t + 1 = 0$ in $(0, 1)$, and write $c = \cos\beta$, $s = \sin\beta$. The four squares in $R_v$, with $v = v_4$, are
+Let $R_v = [0, 2v] \times [0, v]$. Let $\beta \approx 40.518^\circ$ be such that $t = \tan(\beta/2)$ is the root of $t^3 - 5t^2 - t + 1 = 0$ in $(0, 1)$, and set $c = \cos\beta$, $s = \sin\beta$. The four squares in $R_v$, with $v = v_4$, are
 
-- $A = [0, 1] \times [v-1, v]$ and $B = [2v-1, 2v] \times [0, 1]$ (axis-parallel, in opposite corners);
+- $A = [0, 1] \times [v-1, v]$ and $B = [2v-1, 2v] \times [0, 1]$ (axis-parallel squares in opposite corners);
 - $L$, the square with vertices $b,\ b + (s, c),\ b + (s - c, s + c),\ b + (-c, s)$, where $b = (2c, 0)$;
 - $U$, the image of $L$ under the point reflection through the centre $(v, v/2)$.
 
-$L$ touches the bottom side at $b$. The corner $(1, v-1)$ of $A$ lies on its upper-left edge. Its upper-right edge lies on a line through the centre, where it meets the corresponding edge of $U$. For a general angle the same contacts give a one-parameter family of packings, with short side
+The square $L$ touches the bottom edge at $b$. The corner $(1, v-1)$ of $A$ lies on its upper-left edge. Its upper-right edge lies on a line through the centre, where it meets the corresponding edge of $U$. For a general angle, the same contacts yield a one-parameter family of packings, with short side
 
 $$
 s(\beta) = \frac{2(\sin\beta + \cos\beta)(1 + \sin\beta)}{(\sin\beta + \cos\beta)^2 + \sin^2\beta}.
 $$
 
-Its derivative vanishes exactly at $\tan(\beta/2) \in \{0, \pm 1\}$ or at a root of $t^3 - 5t^2 - t + 1$, and $v_4 = s(\beta^*)$ is the minimum. The minimal polynomial $5x^3 + 8x^2 - 32x - 4$ of $v_4$ is the resultant of $x - s(t)$ and $t^3 - 5t^2 - t + 1$.
+Its derivative vanishes precisely at $\tan(\beta/2) \in \{0, \pm 1\}$ or at a root of $t^3 - 5t^2 - t + 1$, and $v_4 = s(\beta^*)$ is the minimum. In terms of $t$, $s = n(t)/d(t)$ with $n(t) = 2(1 + 2t - t^2)(1 + t)^2$ and $d(t) = (1 + 2t - t^2)^2 + 4t^2$, which have no common factor. The resultant with respect to $t$ of $x\,d(t) - n(t)$ and $t^3 - 5t^2 - t + 1$ is $256(5x^3 + 8x^2 - 32x - 4)$, and $5x^3 + 8x^2 - 32x - 4$ is the minimal polynomial of $v_4$.
 
-**Packing certificate.** The upper bound is our packing certificate `certificates/n4/packing.json`: these four squares, with exact coordinates in $\mathbb Q(t)$. It is checked exactly by the two checkers in `tools/packing_check/` (§6): every square lies in the closed $v_4 \times 2v_4$ rectangle, no two interiors overlap, and the short side is the largest real root of $5x^3 + 8x^2 - 32x - 4$. The packing is the one listed in Erich Friedman's Packing Center ("Squares in Dominoes", found by Evert Stenlund in June 2010); we claim no originality for it.
+**Packing certificate.** The upper bound is our packing certificate `certificates/n4/packing.json`, containing these four squares with exact coordinates in $\mathbb Q(t)$. Two independent checkers in `tools/packing_check/` (§6) verify the certificate in exact arithmetic: each square is contained in the closed $v_4 \times 2v_4$ rectangle, no two squares overlap in their interiors, and the short side is the largest real root of $5x^3 + 8x^2 - 32x - 4$. The configuration is listed in Erich Friedman's Packing Center ("Squares in Dominoes", found by Evert Stenlund in June 2010); we claim no originality for it.
 
 <DominoFamily lang="en" client:visible />
 
-*The four-square family with the contacts of §1. Move β to compare s(β) with its minimum; β∗ returns to the root-defined optimal angle. A and B stay in opposite corners; L and U are point reflections.*
+*The four-square family with the contacts of §1. Move β to compare s(β) with its minimum; β∗ returns to the root-defined optimal angle. Squares A and B stay in opposite corners; L and U are related by point reflection.*
 
 <CertificateFigure cont="domino" ns="4" client:visible />
 
-*The packing in $R_{v_4}$ and the 7 points of the certificate, area proportional to weight.*
+*The packing in $R_{v_4}$ and the 7 points of the certificate, with area proportional to weight.*
 
 ## 2. The weighted point set
 
-The certificate lives in $K = \mathbb Q(v_4)$. It has 7 points of weight $1/2$ each, total $7/2$:
+The certificate is defined in $K = \mathbb Q(v_4)$. It contains 7 points, each of weight $1/2$, with total weight $7/2$:
 
 | Points | Weight | Role |
 |---|---|---|
@@ -41,47 +41,47 @@ The certificate lives in $K = \mathbb Q(v_4)$. It has 7 points of weight $1/2$ e
 | $(v, v/2)$ | $1/2$ | the centre, on the contact line of $L$ and $U$ |
 | $(v, v/2 \pm 2286/10000)$ | $1/2$ each | on the vertical axis |
 
-It also lists 4 *wedges*: each corner point paired with the centre (§4). The checkers prove two things:
+It also lists 4 *wedges*, pairing each corner point with the centre (§4). The checkers establish two properties:
 
-1. **Capture.** Every closed unit square $Q \subseteq R_{v_4}$, at any position and any angle, contains points of total weight $\ge 1$. A point on the boundary of $Q$ counts. This is checked at the container itself, with margin zero.
+1. **Capture.** Every closed unit square $Q \subseteq R_{v_4}$, in arbitrary position and orientation, contains points of total weight $\ge 1$. A point on the boundary of $Q$ counts. This condition is verified directly on the container with margin zero.
 2. **Budget.** The total weight is $7/2 < 4$.
 
 **Exact numbers.** $v_4$ is a cubic irrational. The cubic is irreducible over $\mathbb Q$ and has three real roots, so $v_4$ has no expression in real radicals. Both checkers work exactly in $K$, with elements $a + b v_4 + c v_4^2$; signs are decided by refining a rational isolating interval of $v_4$.
 
 ## 3. From the certificate to the lower bound
 
-Suppose 4 squares $Q_i$ with disjoint interiors fit in $R_L$ with $L < v_4$. Put $\lambda = v_4/L > 1$, $m = (L, L/2)$ and $m' = (v_4, v_4/2)$. Move each square without rotating it, so that its centre goes from $c_i$ to $c_i' = m' + \lambda(c_i - m)$.
+Suppose 4 squares $Q_i$ with disjoint interiors fit in $R_L$ with $L < v_4$. Set $\lambda = v_4/L > 1$, $m = (L, L/2)$, and $m' = (v_4, v_4/2)$. Translate each square without rotation so that its centre moves from $c_i$ to $c_i' = m' + \lambda(c_i - m)$.
 
-- **Containment.** A unit square at angle $\theta$ has half-widths $h_x, h_y \le v_4/2$. It lies in $R_L$ iff $|c_x - L| \le L - h_x$ and $|c_y - L/2| \le L/2 - h_y$. Then $$ |c'_x - v_4| = \lambda |c_x - L| \le \lambda(L - h_x) = v_4 - \lambda h_x \le v_4 - h_x, $$ and the same for $y$, so each moved square lies in $R_{v_4}$.
-- **Disjointness.** For two of them let $D = (Q_i - c_i) + (c_j - Q_j)$, a convex set with $0$ in its interior; $\operatorname{int} Q_i \cap \operatorname{int} Q_j = \emptyset$ means $c_j - c_i \notin \operatorname{int} D$. If $\lambda(c_j - c_i)$ were in $D$, then $c_j - c_i = \tfrac1\lambda \cdot \lambda(c_j - c_i) + (1 - \tfrac1\lambda)\cdot 0$ would be in $\operatorname{int} D$. So the moved closed squares are disjoint.
+- **Containment.** Let $h_x, h_y \ge 0$ be the half-widths of a unit square at angle $\theta$. It lies in $R_L$ if and only if $|c_x - L| \le L - h_x$ and $|c_y - L/2| \le L/2 - h_y$. Then $$ |c'_x - v_4| = \lambda |c_x - L| \le \lambda(L - h_x) = v_4 - \lambda h_x \le v_4 - h_x, $$ and the same holds for $y$, so each translated square lies in $R_{v_4}$.
+- **Disjointness.** For any two squares, let $D = (Q_i - c_i) + (c_j - Q_j)$, a convex set with $0$ in its interior; the condition $\operatorname{int} Q_i \cap \operatorname{int} Q_j = \emptyset$ means $c_j - c_i \notin \operatorname{int} D$. If $\lambda(c_j - c_i)$ were in $D$, then $c_j - c_i = \tfrac1\lambda \cdot \lambda(c_j - c_i) + (1 - \tfrac1\lambda)\cdot 0$ would lie in $\operatorname{int} D$. Thus the translated closed squares are disjoint.
 
 Each moved square captures weight $\ge 1$ and they share no point, so the total weight would be $\ge 4$, which contradicts $7/2 < 4$.
 
 ## 4. Margin zero and the wedge lemma
 
-In the packing every square captures exactly what it must, and the shared points lie on two squares at once:
+In the packing, every square captures exactly what it must, and shared points lie on two squares at once:
 
 - $A$ captures $(1, v-1)$ and $(1, 1)$, both on its boundary;
-- $L$ captures $(1, v-1)$ (on an edge), the centre (on an edge) and $(v, v/2 - 2286/10000)$ (inside);
+- $L$ captures $(1, v-1)$ on an edge, the centre on an edge, and $(v, v/2 - 2286/10000)$ in its interior;
 - $U$ and $B$ are the images under the point reflection.
 
-So the corner points and the centre carry the overlap: 4 squares $\times$ weight 1 $= 4$, but the total is only $7/2$.
+The corner points and the centre therefore carry the overlap: 4 squares $\times$ weight 1 $= 4$, but the total weight is only $7/2$.
 
-The packing is not rigid to first order: $L$ and $U$ can rotate together, with overlap only of order $t^2$. Near the extremal pose a square captures the corner point or the centre, and which one switches. Box subdivision alone cannot certify that.
+The packing is not rigid to first order: $L$ and $U$ can rotate together, with overlap only of order $t^2$. Near the extremal pose, a square captures either the corner point or the centre, and this choice switches. Box subdivision alone cannot certify this.
 
-**Wedge lemma (checker 1).** For a wedge $(p, q)$ and a box of poses, every pose of the box contains $p$ or $q$. Each combination of sides of the square is excluded either because the point is never strictly beyond that side on the box, or by a Farkas combination of the two side constraints with one admissibility line. Taking the corner and the centre with the two adjacent sides of $L$ that face them, and the bottom side, the combination reduces exactly to $v \le s(\beta)$, whose equality case is $\beta^*$. The critical angle
+**Wedge lemma (checker 1).** For a wedge $(p, q)$ and a box of poses, every pose in the box contains $p$ or $q$. Each combination of sides of the square is excluded either because the point is never strictly beyond that side on the box, or by a Farkas combination of the two side constraints with one admissibility line. An *admissibility line* is one of the linear constraints $n \cdot c \le b(\theta)$ on the centre $c$ that say a vertex of the square lies on the inner side of a side of the container; the square lies in the container exactly when all of them hold. A *Farkas combination* adds the two strict constraints "$p$ (resp. $q$) is beyond its side of the square" and the admissibility line with nonnegative coefficients, not both of the first two zero, so that $c$ cancels; the remaining inequality in the angle alone is shown to fail on the whole angle bin, so no pose of the box misses both $p$ and $q$ in this way. Taking the corner and the centre with the two adjacent sides of $L$ facing them, along with the bottom side, the combination reduces exactly to $v \le s(\beta)$, with equality at $\beta^*$. The critical angle
 
 $$
 u^* = \frac{-21 - 11 v_4 + 15 v_4^2}{37} \approx 0.369102
 $$
 
-is the root of $t^3 - 5t^2 - t + 1$ in $(0, 1)$; it is passed to checker 1 as a bin endpoint, and the identities $u^{*3} - 5u^{*2} - u^* + 1 = 0$ and $s(u^*) = v_4$ are checked exactly in $K$.
+is the root of $t^3 - 5t^2 - t + 1$ in $(0, 1)$. It is passed to checker 1 as a bin endpoint, and the identities $u^{*3} - 5u^{*2} - u^* + 1 = 0$ and $s(u^*) = v_4$ are verified exactly in $K$.
 
-Checker 2 does not use this lemma. It handles the contact as a critical angle of an exact angular sweep (§6).
+Checker 2 does not use this lemma; it handles the contact as a critical angle in an exact angular sweep (§6).
 
 ## 5. Conclusion
 
-By §2 and §3, 4 squares do not fit in $R_L$ for any $L < v_4$, so $s(4) \ge v_4$. With the packing (§1),
+By §2 and §3, 4 squares do not fit in $R_L$ for any $L < v_4$, so $s(4) \ge v_4$. Together with the packing (§1),
 
 $$
 s(4) = v_4 \approx 1.93028330671426938847, \qquad 5v_4^3 + 8v_4^2 - 32v_4 - 4 = 0. \qquad \blacksquare
@@ -89,7 +89,7 @@ $$
 
 ## 6. Verification
 
-**Upper bound.** The packing certificate is checked by two programs that share no code. Both decide in exact arithmetic that the container has the claimed shape and size, that every square is a closed unit square contained in the closed container, and that no two squares have overlapping interiors (contact along edges or at corners is allowed). Both work in a real number field given by the minimal polynomial of its generator and a rational isolating interval.
+**Upper bound.** The packing certificate is verified by two programs that share no code. Both determine in exact arithmetic that the container has the claimed shape and size, that every square is a closed unit square contained in the closed container, and that no two squares have overlapping interiors (contact along edges or at vertices is permitted). Both work in a real number field specified by the minimal polynomial of its generator and a rational isolating interval.
 
 |  | `check_packing.py` (method 1) | `check_packing2.py` (method 2) |
 |---|---|---|
@@ -98,7 +98,7 @@ $$
 | short side | Sturm count above $193/100$ | sympy's real root isolation |
 | arithmetic | own polynomial arithmetic over `Fraction`; standard library | sympy polynomials over $\mathbb Q$, mpmath intervals |
 
-A test runs both programs on 14 broken variants, which must all be rejected; among them is a tilt of this packing by a tiny change of angle.
+A test suite runs both programs on 14 invalid variants, all of which must be rejected; among them is a tilt of this packing by a tiny change of angle.
 
 **Lower bound.** Both checkers verify the point certificate at $L = v_4$ exactly, and both reject the control at $L = v_4 + 10^{-6}$.
 
@@ -107,7 +107,7 @@ A test runs both programs on 14 broken variants, which must all be rejected; amo
 | 1 (`checker/`) | Subdivides pose space (centre box $\times$ angle bin, $u = \tan(\theta/2)$). Capture is checked at the vertices of the admissible polygon with exact Bernstein bounds over $K$. Uses the $D_2$ symmetry of the rectangle and the wedge lemma. Standard library only. A verdict is "verified" only with 0 uncertified leaves. |
 | 2 (`checker2/`) | An exact angular sweep of a line arrangement over every $u \in [0, 1]$. No symmetry, no wedges, no box subdivision. Critical-angle polynomials are mapped to rational polynomials by the norm. The switching contact at $u^*$ is a critical angle, covered by a closure argument (captured weight is upper semicontinuous). Its field implementation was written from the specification in `checker/README.md` only, without reading checker 1's code, and was tested against 80-digit sympy values on 3,000 random elements with no mismatches. |
 
-Checker 2 runs (the certificates below $v_4$ are not needed for the theorem; they show the route there):
+Checker 2 runs (certificates below $v_4$ are not needed for the theorem; they show the path there):
 
 | Certificate | $L$ | Points | Total | Min captured | Critical angles | Verdict |
 |---|---|---|---|---|---|---|
@@ -118,20 +118,20 @@ Checker 2 runs (the certificates below $v_4$ are not needed for the theorem; the
 | `n4_cert` | $v_4$ | 7 | 7/2 | 1 | 1,723 | verified |
 | control $v_4 + 10^{-6}$ (must fail) | $v_4 + 10^{-6}$ | 7 | 7/2 | 1/2 | 1,735 | failed, with an explicit pose |
 
-The 3-point bound works exactly up to $v = (1 + 2\sqrt2)/2 \approx 1.91421$; beyond that, a square at $45^\circ$ standing on the bottom side fits between two of the three points.
+The 3-point bound works exactly up to $v = (1 + 2\sqrt2)/2 \approx 1.91421$; beyond that, a square at $45^\circ$ resting on the bottom side fits between two of the three points.
 
-**Controls.** Three certificates that must be rejected; all three fail as expected.
+**Controls.** Three certificates must be rejected; all three fail as expected.
 
 - The same 7 points at $L = v_4 + 10^{-3}$: rejected by checker 1.
-- The same 7 points at $L = v_4 + 10^{-6}$: rejected by checker 1, and by checker 2 with an exactly checked pose $u = 121/329$ (next to $u^* \approx 0.3691$) of captured weight $1/2$. At these sides a packing of 4 squares with slack exists, so no certificate of total $< 4$ can be valid.
-- The certificate at $L = v_4$ without the wedges: rejected by checker 1, whose boxes near the extremal pose stay uncertified at any depth. This is not a mathematical failure; it shows that the wedge lemma is what closes checker 1's proof at the extremal pose. Checker 2 does not use wedges and verifies the certificate.
+- The same 7 points at $L = v_4 + 10^{-6}$: rejected by checker 1, and by checker 2 via an exactly verified pose $u = 121/329$ (near $u^* \approx 0.3691$) of captured weight $1/2$. For these side lengths, 4 squares can be packed with slack, so no certificate of total weight $< 4$ can be valid.
+- The certificate at $L = v_4$ without the wedges: rejected by checker 1, whose boxes near the extremal pose remain uncertified at any depth. This is not a mathematical failure; it shows that the wedge lemma is what completes checker 1's proof at the extremal pose. Checker 2 does not use wedges and verifies the certificate.
 
 ## 7. Status and limitations
 
-- A computer-assisted proof, checked by two independent checkers. It has not been peer reviewed, and it has not been formalised in Lean.
-- On Friedman's page (as of 2026-10-01), the entries other than the "Trivial" ones give packings only, with no proofs or lower bounds. We are not aware of a previous proof that $s(4) = 1.930+$; if you know of one, please open an issue.
-- Checker 1 cannot certify a margin-zero contact strictly inside an angle bin; the breakpoint must be given with `--u-breaks`.
-- Other $n$ are not done. The next non-trivial entry is $n = 9$, $s(9) = 2 + \sqrt2/3$ (Stenlund 2010).
+- This is a computer-assisted proof, verified by two independent checkers. It has not been peer-reviewed, nor has it been formalized in Lean.
+- On Friedman's page (as of 2026-10-01), the entries other than the "Trivial" ones give packings only, with no proofs or lower bounds. We are not aware of any prior proof that $s(4) = 1.930+$; if you know of one, please open an issue.
+- Checker 1 cannot certify a margin-zero contact strictly inside an angular bin; the breakpoint must be supplied with `--u-breaks`.
+- Other values of $n$ have not been treated. The next non-trivial entry is $n = 9$, with $s(9) = 2 + \sqrt2/3$ (Stenlund 2010).
 
 ## Reproducibility
 
@@ -149,7 +149,7 @@ Run from `problems/domino`. The data files are restored from the release asset `
 | the packing, method 2 (needs sympy) | `python ../../tools/packing_check/check_packing2.py certificates/n4/packing.json` | prints a line ending in `VALID` |
 | control $v_4 + 10^{-6}$ (must fail) | `python checker/check.py controls/control_v4_plus_1e-6.json --n 4 --max-depth 30 --jobs 4 --u-breaks "K[-21/37;-11/37;15/37]"` |  |
 
-The packing checkers print `INVALID` with the reasons (exit code 1) on failure; `--json` prints a JSON report. Each checker-1 run prints a JSON summary with `"status": "verified"`, the certificate's sha256, the exact total weight and whether it is $< n$. The recorded runs are `certificates/n4/check_record.json`, `certificates/n4/below/*.check_record.json` and `checker2/results/`.
+The packing checkers print `INVALID` with the failure reasons (exit code 1) upon failure; `--json` prints a JSON report. Each checker-1 run outputs a JSON summary with `"status": "verified"`, the certificate's sha256, the exact total weight, and whether it is $< n$. The recorded runs are `certificates/n4/check_record.json`, `certificates/n4/below/*.check_record.json`, and `checker2/results/`.
 
 ## References
 
@@ -157,3 +157,4 @@ The packing checkers print `INVALID` with the reasons (exit code 1) on failure; 
 2. [certificates/n4/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/domino/certificates/n4/PROOF.md), [problems/domino/README.md](https://github.com/wand125/square-packing/blob/main/problems/domino/README.md).
 3. The checkers and controls: [checker/README.md](https://github.com/wand125/square-packing/blob/main/problems/domino/checker/README.md), [checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/domino/checker2/README.md), [controls/README.md](https://github.com/wand125/square-packing/blob/main/problems/domino/controls/README.md).
 4. The packing certificate and its checkers: [certificates/n4/packing.json](https://github.com/wand125/square-packing/blob/main/problems/domino/certificates/n4/packing.json), [tools/packing_check/README.md](https://github.com/wand125/square-packing/blob/main/tools/packing_check/README.md).
+

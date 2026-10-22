@@ -60,6 +60,13 @@
    "en": "Clarifies how the sign of a number a + b√2 is decided exactly (§2). No change to the results or the certificates.",
    "ja": "a + b√2 の形の数の符号を厳密に決める方法の説明を明確にした（§2）。結果と証明書は変わらない。",
    "commit": "1f70ab3"
+  },
+  {
+   "v": "5",
+   "date": "2026-10-22",
+   "en": "The proof states how the centre scaling treats G, that the second checker's disc argument uses the inradius of the container, and how the general case reduces to the standard form T_v; h, the vertices in the two-point lemma, the offsets of the cone leaves and T_L are defined, the equilateral checker is linked, and the English wording is revised.",
+   "ja": "中心の拡大で G をどう扱うか、検査器 2 の円板の議論が容器の内接円半径を使うこと、一般の場合を標準形 T_v に帰着する方法を書いた。h・2 点の補題の頂点・錐の葉のずれ・T_L を定義し、正三角形の検査器へのリンクを付け、英文の言い回しを直した。",
+   "commit": ""
   }
  ]
 }

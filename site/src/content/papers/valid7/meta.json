@@ -75,6 +75,13 @@
    "en": "Lemma F2 now states its hypothesis (one convex polygon piece of uniform density), which both covers satisfy, and the face sweep (Lemma B5) for other covers; a one-line definition of ValidTilt7 is added.",
    "ja": "補題 F2 にその前提（密度が一様な凸多角形 1 枚）を書き足し、2 つの被覆が前提を満たすことと、ほかの被覆には面の掃き出し（補題 B5）を使うことを添えた。ValidTilt7 の一言の定義を添えた。",
    "commit": "1f70ab3"
+  },
+  {
+   "v": "5",
+   "date": "2026-10-22",
+   "en": "The abstract now states exactly what the separate program re-checks (the record structure in full, a random sample of the other leaves) and that both statements are also verified in the Lean 4 kernel; definitions of s(n), roots and leaves, the handling of u = 0, and the Lean root counts are added, and the prose is edited.",
+   "ja": "要旨で、別のプログラムが再検査する範囲（記録の構造は全部、残りの葉は無作為の標本）を正確に書き、2 つの命題が Lean 4 のカーネルでも検証されていることを添えた。s(n)・根・葉の定義、u = 0 の扱い、Lean の根の数を足し、文章を整えた。",
+   "commit": ""
   }
  ]
 }

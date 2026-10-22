@@ -65,6 +65,13 @@
    "en": "Corrections of wording after review: the quaternion faces in the §4 table (the 4 facets x_i = +1, R up to sign) and the square-root terms in §7 (the chord gives an upper bound after adding its largest gap). No change to the proofs, certificates or checkers.",
    "ja": "査読による書き方の訂正：§4 の表の四元数の面（x_i = +1 の 4 面、R は符号を除いて決まる）と、§7 の平方根の項（弦に最大の差を足して上から押さえる）。証明・証明書・検査器は変えていない。",
    "commit": "1f70ab3"
+  },
+  {
+   "v": "4",
+   "date": "2026-10-22",
+   "en": "Second review: §7 states that the column is moved to the first position (so the bound is on 1 − F_1, not 1 − F_j), defines the ordered probability simplex and e_j, and points to the sections of the n = 6 proof where the bounds named in the tables are defined. Wording edits elsewhere. No change to the proofs, certificates or checkers.",
+   "ja": "2 回目の査読：§7 で列を第 1 列に移すことを明記（下界は 1 − F_j ではなく 1 − F_1）、順序づけた確率単体と e_j を定義、表に名前だけある n = 6 の下界の定義の場所（証明の節）を示した。ほかは英文の書き方の修正。証明・証明書・検査器は変えていない。",
+   "commit": ""
   }
  ]
 }

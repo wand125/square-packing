@@ -8,8 +8,8 @@
   "正三角形に入る単位正方形：\\(n = 2, 3, 4, 6, 7, 11, 16, 22, 29, 37, 46\\) の最適な詰め方"
  ],
  "lead": [
-  "Exact packings give the upper bounds, and the lower bounds show that they are optimal. Each lower bound is a weighted point set checked at the container itself, checked by two independent checkers; all except n = 6 and n = 46 are also checked in Lean 4.",
-  "厳密な詰め方が上界を与え、下界がそれらの最適性を示す。下界はどれも容器そのもので検査する重み付きの点集合で、独立な 2 つの検査器で検査した。n = 6 と n = 46 以外は Lean 4 でも検査した。"
+  "Exact packings give the upper bounds, and the lower bounds show that they are optimal. Each lower bound is a weighted point set checked at the container itself, checked by two independent checkers; the lower bounds except n = 6 and n = 46, and the upper bounds for n = 2, 3, 4 and the series, are also checked in Lean 4.",
+  "厳密な詰め方が上界を与え、下界がそれらの最適性を示す。下界はどれも容器そのもので検査する重み付きの点集合で、独立な 2 つの検査器で検査した。n = 6 と n = 46 以外の下界と、n = 2, 3, 4 と系列の上界は Lean 4 でも検査した。"
  ],
  "result": [
   "\\(s_\\triangle(2) = 2 + \\tfrac{2}{\\sqrt3}\\), \\(s_\\triangle(3) = \\tfrac32 + \\sqrt3\\), \\(s_\\triangle(4) = 3 + \\tfrac{2}{\\sqrt3}\\), \\(s_\\triangle(6) = 2 + \\tfrac{4}{\\sqrt3}\\), \\(s_\\triangle(T_{m-1}+1) = m + \\tfrac{2}{\\sqrt3}\\) for \\(m = 4, \\dots, 8\\), \\(s_\\triangle(37) = 9 + \\tfrac{2}{\\sqrt3}\\), \\(s_\\triangle(46) = 10 + \\tfrac{2}{\\sqrt3}\\)",
@@ -68,6 +68,13 @@
    "en": "Corrections from a review: in §6 and §7 the width that stops the next row is at its top (heights 8 and 9, not 7 and 8); in §4 the end of the triple lemma reads √3/2 (v − L) ≤ S ≤ −c‖φ‖₁ ≤ 0 (the leading 0 ≤ was unfounded); §5 states that rows are numbered from j = 0.",
    "ja": "査読による訂正：§6・§7 で次の列を止める幅は列の上端（高さ 8・9。7・8 ではない）での値、§4 の 3 つ組の補題の結びは √3/2 (v − L) ≤ S ≤ −c‖φ‖₁ ≤ 0（先頭の 0 ≤ は根拠がなかった）、§5 に列の番号は j = 0 から数えることを添えた。",
    "commit": "1f70ab3"
+  },
+  {
+   "v": "4",
+   "date": "2026-10-22",
+   "en": "Corrected the scope of the Lean 4 check (the lower bounds except n = 6 and 46, and the upper bounds for n = 2, 3, 4 and the series; the n = 37 upper bound is checked by two exact checkers), and revised the English wording.",
+   "ja": "Lean 4 で検査した範囲を訂正し（n = 6・46 以外の下界と、n = 2, 3, 4 と系列の上界。n = 37 の上界は 2 つの厳密な検査器で検査）、英文の言い回しを直した。",
+   "commit": ""
   }
  ]
 }

@@ -63,6 +63,13 @@
    "en": "The independent checker cfcheck: the statement that no independent checker had been written replaced by its result: intervals 1 and 34 replayed completely, 0 refusals; intervals 2 to 33 not replayed by it.",
    "ja": "独立な検査器 cfcheck：「独立な検査器はまだ書かれていない」を、その結果に直した。区間 1 と 34 を最後まで再生し、拒否 0。区間 2〜33 はこの検査器で再生していない。",
    "commit": "1f70ab3"
+  },
+  {
+   "v": "5",
+   "date": "2026-10-22",
+   "en": "The abstract and §1 now say that the bound is one square root on each interval except where the cap applies, where it is constant; r and W are defined where they first appear in §4; the fourfold symmetry and the 68 families are described more precisely, and the English wording is revised.",
+   "ja": "要旨と §1 に、各区間で根号 1 本になるのは上限の効かない所で、効く所では定数になることを書き足した。§4 で r と W を初出で定義し、4 回回転対称と 68 個の族の説明を正確にし、英文の言い回しを直した。",
+   "commit": ""
   }
  ]
 }

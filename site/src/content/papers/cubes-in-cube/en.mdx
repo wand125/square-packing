@@ -2,41 +2,41 @@ import CubesInCube from '../../../components/viz/CubesInCube.tsx';
 
 ## Abstract
 
-Let $s_3(n)$ be the side of the smallest cube that contains $n$ unit cubes with pairwise disjoint interiors, at any positions and orientations. We prove $s_3(9) = s_3(10) = 2 + 1/\sqrt2$. The upper bounds are the packings listed on Erich Friedman's Packing Center page "Cubes in Cubes": 8 corner cubes and one or two cubes turned $45^\circ$ about a vertical axis. We write them exactly in $\mathbb Q(\sqrt2)$ and check them with two exact checkers; we claim no originality for them. The lower bound is new as far as we know. It rests on an 8-point lemma: with $s = 2 + 1/\sqrt2$, every closed unit cube in $[0, s]^3$ contains a point of $V = \{1, s-1\}^3$. A scaling argument then rules out 9 cubes in a smaller cube. The 8-point lemma is proved by an interval branch and bound over the six parameters of a pose, in which every box is closed by one of five rules proved here: a point test, a centre rule from Lemma F, a wall lemma, a pair lemma and a local sign lemma. The bound is attained, so the margin is zero at several poses; every rule is a closed inequality and no epsilon is used. The branch and bound was run by two independent checkers, both complete with 0 unresolved boxes. The proof is computer-assisted and has not been peer reviewed.
+Let $s_3(n)$ be the side length of the smallest cube containing $n$ unit cubes with pairwise disjoint interiors, in arbitrary positions and orientations. We prove that $s_3(9) = s_3(10) = 2 + 1/\sqrt2$. The upper bounds are given by the packings listed on Erich Friedman's Packing Center page "Cubes in Cubes": 8 corner cubes and one or two cubes rotated by $45^\circ$ about a vertical axis. We write them exactly in $\mathbb Q(\sqrt2)$ and verify them with two exact checkers; we claim no originality for these configurations. To our knowledge, the lower bound is new. It rests on an 8-point lemma: with $s = 2 + 1/\sqrt2$, every closed unit cube in $[0, s]^3$ contains a point of $V = \{1, s-1\}^3$. A scaling argument then rules out 9 cubes in a smaller cube. The 8-point lemma is proved by an interval branch-and-bound algorithm over the six parameters of a pose. Every box is closed by one of five rules established here: a point test, a centre rule from Lemma F, a wall lemma, a pair lemma, and a local sign lemma. Because the bound is attained, the margin is zero at several poses; every rule is a closed inequality, and no epsilon is used. The branch-and-bound search was executed by two independent checkers, both completing with 0 unresolved boxes. The proof is computer-assisted and has not been peer reviewed.
 
 ## Notation
 
-- $s = 2 + 1/\sqrt2$, so $s - 2 = 1/\sqrt2$, and $V = \{1, s-1\}^3$ is a set of 8 points.
-- A *pose* is a pair $(R, c)$ with $R \in SO(3)$ and $c \in \mathbb R^3$. Its cube is $Q = \{c + Rt : \lVert t\rVert_\infty \le \tfrac12\}$. The columns $a_0, a_1, a_2$ of $R$ are the cube's axes.
-- For a point $p$, the local coordinates are $t_i(p) = a_i \cdot (p - c)$, and $p \in Q$ iff $|t_i(p)| \le \tfrac12$ for $i = 0, 1, 2$.
-- $h_w = \tfrac12 \sum_j |R_{wj}|$, half the $\ell^1$ norm of row $w$ of $R$. $Q \subseteq [0, s]^3$ iff $h_w \le c_w \le s - h_w$ for every world axis $w$ (support function). Every row is a unit vector, so $\tfrac12 \le h_w \le \sqrt3/2 < s/2$.
+- We set $s = 2 + 1/\sqrt2$, so that $s - 2 = 1/\sqrt2$, and $V = \{1, s-1\}^3$ is a set of 8 points.
+- A *pose* is a pair $(R, c)$ with $R \in SO(3)$ and $c \in \mathbb R^3$. The corresponding cube is $Q = \{c + Rt : \lVert t\rVert_\infty \le \tfrac12\}$. The columns $a_0, a_1, a_2$ of $R$ are the cube's axes.
+- For a point $p$, the local coordinates are $t_i(p) = a_i \cdot (p - c)$. Then $p \in Q$ if and only if $|t_i(p)| \le \tfrac12$ for $i = 0, 1, 2$.
+- Let $h_w = \tfrac12 \sum_j |R_{wj}|$ denote half the $\ell^1$ norm of row $w$ of $R$. Then $Q \subseteq [0, s]^3$ if and only if $h_w \le c_w \le s - h_w$ for every world axis $w$ (via the support function). Since every row is a unit vector, $\tfrac12 \le h_w \le \sqrt3/2 < s/2$.
 
 ## 1. Main lemma and the scaling argument
 
-**Main lemma (8-point lemma).** Every closed unit cube $Q \subseteq [0, s]^3$ contains a point of $V$. A point on the boundary of $Q$ counts.
+**Main lemma (8-point lemma).** Every closed unit cube $Q \subseteq [0, s]^3$ contains a point of $V$. Points on the boundary of $Q$ are included.
 
 **Theorem.** $s_3(9) = s_3(10) = s$.
 
-*Proof.* Upper bound: [upper/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/upper) gives exact packings of 9 and 10 unit cubes in $[0, s]^3$, written in $\mathbb Q(\sqrt2)$. Each is checked by two independent exact checkers. They are the packings listed on Erich Friedman's page ([Sources](#sources)).
+*Proof.* For the upper bound, [upper/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/upper) provides exact packings of 9 and 10 unit cubes in $[0, s]^3$ over $\mathbb Q(\sqrt2)$. Each configuration is verified by two independent exact checkers. These are the packings listed on Erich Friedman's page ([Sources](#sources)).
 
-Lower bound: suppose 9 unit cubes with pairwise disjoint interiors fit in $[0, L]^3$ with $L < s$. Then we can find 9 closed unit cubes in $[0, s]^3$ that are pairwise disjoint, as follows.
+For the lower bound, suppose that 9 unit cubes with pairwise disjoint interiors fit into $[0, L]^3$ with $L < s$. We can then construct 9 pairwise disjoint closed unit cubes in $[0, s]^3$ as follows.
 
-- Put $\lambda = L/s < 1$.
-- Translate each cube by $(1/\lambda - 1)\, c_i$, where $c_i$ is its centre. The new centre is $c_i/\lambda$ and the orientation is unchanged.
-- The translated cube lies in $[0, s]^3$. With $h_w$ the support values of the cube, the original cube satisfies $h_w \le c_{i,w} \le L - h_w$. Dividing by $\lambda$ gives
+- Set $\lambda = L/s < 1$.
+- Translate each cube by $(1/\lambda - 1)\, c_i$, where $c_i$ is its centre. The new centre is $c_i/\lambda$, and the orientation remains unchanged.
+- The translated cube lies in $[0, s]^3$. Indeed, let $h_w$ denote the support values of the cube. The original cube satisfies $h_w \le c_{i,w} \le L - h_w$. Dividing by $\lambda$ yields
   $$
   h_w \le h_w/\lambda \le c_{i,w}/\lambda \le (L - h_w)/\lambda = s - h_w/\lambda \le s - h_w,
   $$
   which is the containment condition for the translated cube.
-- Two cubes with disjoint interiors have a separating direction $u$ with $u\cdot(c_j - c_i) \ge \sigma_i(u) + \sigma_j(u) > 0$ ($\sigma$ the support values). After the translation the left side is multiplied by $1/\lambda > 1$, so the inequality becomes strict and the closed cubes are disjoint.
+- Any two cubes with disjoint interiors admit a separating direction $u$ satisfying $u\cdot(c_j - c_i) \ge \sigma_i(u) + \sigma_j(u) > 0$, where $\sigma$ denotes the support values. Under translation, the left-hand side is multiplied by $1/\lambda > 1$. The inequality therefore becomes strict, so the closed cubes are disjoint.
 
-By the main lemma each of the 9 closed cubes contains a point of $V$. Since $|V| = 8$, two of them share a point, which contradicts disjointness. Hence $s_3(9) \ge s$, and $s_3(10) \ge s_3(9) \ge s$. $\blacksquare$
+By the main lemma, each of the 9 closed cubes contains a point of $V$. Since $|V| = 8$, two of these cubes must share a point, which contradicts disjointness. It follows that $s_3(9) \ge s$, and therefore $s_3(10) \ge s_3(9) \ge s$. $\blacksquare$
 
-The rest of this paper proves the main lemma. A pose with $\lVert t\rVert_\infty \le \tfrac12$ at a point counts as containing it, and every inequality below is closed. The bound is attained (9 cubes fit at side $s$), so no strict margin can be bought; the zero-margin poses are handled exactly by the lemmas below.
+The remainder of this paper proves the main lemma. A pose with $\lVert t\rVert_\infty \le \tfrac12$ at a point counts as containing that point, and every inequality below is closed. The bound is attained (9 cubes fit into a cube of side $s$). Consequently, no strict margin is available, and zero-margin poses are handled exactly by the lemmas below.
 
 ### The packings
 
-[upper/configs.py](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/upper/configs.py) writes three packings exactly in $\mathbb Q(\sqrt2)$:
+The script [upper/configs.py](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/upper/configs.py) provides three packings exactly in $\mathbb Q(\sqrt2)$:
 
 | Packing | Side | Cubes | Gives |
 |---|---|---|---|
@@ -44,36 +44,36 @@ The rest of this paper proves the main lemma. A pose with $\lVert t\rVert_\infty
 | n9_s | $s$ | 8 corner cubes, plus 1 cube at the centre rotated $45^\circ$ about $z$ | $s_3(9) \le s$ |
 | n10_s | $s$ | 8 corner cubes, plus 2 such rotated cubes in the central column, at $z \in [0, 1]$ and $[s-1, s]$ | $s_3(10) \le s$ |
 
-The horizontal section of a rotated cube is the diamond $|x - s/2| + |y - s/2| \le 1/\sqrt2$. It touches the corner cubes only at points such as $(1, 1)$.
+The horizontal cross section of a rotated cube is the diamond $|x - s/2| + |y - s/2| \le 1/\sqrt2$. It touches the corner cubes only at points such as $(1, 1)$.
 
 <CubesInCube lang="en" client:visible />
 
-*The packings for $n = 9$ and $10$ at side $s$, drawn from the exact coordinates of upper/configs.py. The 8 points of $V$ can be shown; each corner cube contains one of them at its inner vertex, and each rotated cube has points of $V$ on its boundary.*
+*The packings for $n = 9$ and $10$ at side $s$, drawn from the exact coordinates of upper/configs.py. The 8 points of $V$ can be shown with the checkbox; each corner cube contains one of them at its inner vertex, and each rotated cube has points of $V$ on its boundary.*
 
-Two independent exact checks accept all three packings:
+Two independent exact checks verify all three packings:
 
-- `check_sympy.py` (exact arithmetic in sympy): every vertex lies in $[0, s]^3$; interiors are pairwise disjoint, by the separating-axis theorem over the 15 axes (touching is allowed); every $R$ is orthogonal with determinant 1.
-- `check_q2.py` (no sympy; its own field $\mathbb Q(\sqrt2)$ on Python Fractions, with an exact sign test): containment by vertices; disjoint interiors, by computing the exact volume of $A \cap B$. Each cube's faces are clipped by the other's closed half-spaces and the divergence theorem is applied. The volume must be exactly 0.
+- `check_sympy.py` (exact arithmetic via sympy): every vertex lies in $[0, s]^3$; interiors are pairwise disjoint by the separating-axis theorem over the 15 candidate axes (boundary contact is permitted); every matrix $R$ is orthogonal with determinant 1.
+- `check_q2.py` (independent of sympy, implementing the field $\mathbb Q(\sqrt2)$ with Python Fractions and an exact sign test): containment is checked via vertices; disjointness of interiors is verified by computing the exact volume of $A \cap B$. Each cube's faces are clipped against the other's closed half-spaces, and the divergence theorem is applied. The intersection volume must equal 0 exactly.
 
-Both reject the negative controls: two stacked rotated cubes overlapping by 0.4 in height, and a cube protruding through the floor (`check_q2.py`). As a sanity check of the volume routine, the cube with itself gives 1, a half-shifted copy gives $\tfrac12$, and the cube rotated $45^\circ$ about its own centre gives $2(\sqrt2 - 1)$.
+Both checkers reject the negative controls: two stacked rotated cubes overlapping by 0.4 in height, and a cube protruding through the floor (`check_q2.py`). To validate the volume routine, the intersection of a cube with itself yields 1, a half-shifted copy yields $\tfrac12$, and a copy rotated by $45^\circ$ about its centre yields $2(\sqrt2 - 1)$.
 
 ## 2. Lemma F (centre lemma)
 
-**Lemma F.** For every $R \in SO(3)$ and every column $k$, $F_k(R) := \sum_w |R_{wk}|\,(2 - 2h_w) \le 1$.
+**Lemma F.** For every $R \in SO(3)$ and every column index $k$, $F_k(R) := \sum_w |R_{wk}|\,(2 - 2h_w) \le 1$.
 
-This is the inequality behind $s_3(2) = 2$. The proof (§2.2, §2.3) is a hand proof when some $|R_{wk}| \ge 1/\sqrt2$, and a computer proof elsewhere, by two independent exact or interval checkers.
+This is the inequality behind $s_3(2) = 2$. The proof (§2.2, §2.3) proceeds by hand when some $|R_{wk}| \ge 1/\sqrt2$, and by computer elsewhere, using two independent exact or interval checkers.
 
 **Corollary (centre rule).** If $|p_w - c_w| \le 1 - h_w$ for every $w$, then $p \in Q$.
 
 *Proof.* $|t_i(p)| \le \sum_w |R_{wi}|\,|p_w - c_w| \le \sum_w |R_{wi}|(1 - h_w) = \tfrac12 F_i(R) \le \tfrac12$. $\blacksquare$
 
-At the wall $p_w = 1$ with $h_w \le c_w \le 1$, the condition reads $1 - c_w \le 1 - h_w$, which always holds. The checkers use the parametrisation $c_w = h_w + u_w(s - 2h_w)$, $u_w \in [0, 1]$, which keeps this exact under interval arithmetic.
+At the wall $p_w = 1$ with $h_w \le c_w \le 1$, the condition reduces to $1 - c_w \le 1 - h_w$, which always holds. The checkers use the parametrisation $c_w = h_w + u_w(s - 2h_w)$ for $u_w \in [0, 1]$, which keeps this exact under interval arithmetic.
 
 ### 2.1 Lemma F and s₃(2) = 2
 
-In this section write $a_{ik} = |R_{ik}|$ and $w_i = \sum_j |R_{ij}|$ (the $\ell^1$ norm of row $i$, i.e. the width of the cube $R[-\tfrac12, \tfrac12]^3$ in direction $e_i$; $w_i = 2h_i$), so that $F_k(R) = \sum_i a_{ik}(2 - w_i)$. Lemma F is symmetric under signs and under permutations of rows and columns, so it may be stated for $R \in O(3)$. The proof below uses only orthogonality.
+Throughout this section, write $a_{ik} = |R_{ik}|$ and $w_i = \sum_j |R_{ij}|$ (the $\ell^1$ norm of row $i$, which is the width of the cube $R[-\tfrac12, \tfrac12]^3$ in direction $e_i$; here $w_i = 2h_i$). Then $F_k(R) = \sum_i a_{ik}(2 - w_i)$. Lemma F is invariant under sign changes and permutations of rows and columns, so it holds for $R \in O(3)$. The proof below uses only orthogonality.
 
-**Corollary ($s_3(2) = 2$).** Let $a < 2$. If a unit cube $C = c + R[-\tfrac12, \tfrac12]^3$ lies in $K_a = [-a/2, a/2]^3$, then the centre 0 of $K_a$ lies in the interior of $C$. Hence two unit cubes with disjoint interiors do not fit in a cube of side $a < 2$. With monotonicity and the $2\times2\times2$ packing, $s_3(n) = 2$ for $2 \le n \le 8$.
+**Corollary ($s_3(2) = 2$).** Let $a < 2$. If a unit cube $C = c + R[-\tfrac12, \tfrac12]^3$ is contained in $K_a = [-a/2, a/2]^3$, then the centre 0 of $K_a$ lies in the interior of $C$. Hence two unit cubes with disjoint interiors cannot fit into a cube of side $a < 2$. By monotonicity and the $2\times2\times2$ packing, $s_3(n) = 2$ for $2 \le n \le 8$.
 
 *Proof of the corollary.*
 
@@ -82,18 +82,20 @@ In this section write $a_{ik} = |R_{ik}|$ and $w_i = \sum_j |R_{ij}|$ (the $\ell
 - Hence $|u_k\cdot c| \le \sum_i a_{ik}|c_i| \le \sum_i a_{ik}(a - w_i)/2 < \sum_i a_{ik}(2 - w_i)/2 = F_k/2$. The inequality is strict because $a < 2$ and $\sum_i a_{ik} \ge 1$.
 - By Lemma F, $|u_k\cdot c| < \tfrac12$, a contradiction. $\blacksquare$
 
-We claim no novelty for $s_3(n) = 2$, $2 \le n \le 8$; it is included because the main proof uses Lemma F.
+We claim no novelty for $s_3(n) = 2$ with $2 \le n \le 8$; this result is included because the main proof uses Lemma F.
 
-### 2.2 Near an axis: if some |R_ik| ≥ 1/√2, then F_k ≤ 1 (hand proof)
+### 2.2 Near an axis: if some entry of column k has |R_ik| ≥ 1/√2, then F_k ≤ 1 (hand proof)
 
 By permuting and negating rows and columns, take $k = 1$, $i = 1$ and $R_{11} = \cos\theta \ge 1/\sqrt2$, with $0 \le \theta \le \pi/4$. Let $x = (R_{21}, R_{31})$ (so $\lVert x\rVert_2 = \sin\theta$), let $M$ be the lower-right $2\times2$ block, and let $u$ be column 1.
 
-(a) Since $\sum_i a_{i1}w_i = 1 + \sum_i a_{i1}v_i$ with $v_i = w_i - a_{i1}$,
+(a) Since $\sum_i a_{i1}w_i = 1 + \sum_i a_{i1}v_i$ with $v_i = w_i - a_{i1}$, we have
 $$
 1 - F_1 = 2(1 - \cos\theta) - 2\lVert x\rVert_1 + a_{11}(|R_{12}| + |R_{13}|) + \sum_{i=2,3} |x_i|\,\lVert M_i\rVert_1.
 $$
 
-(b) Columns 1 and $j$ are orthogonal: $R_{11}R_{1j} + (M^{\mathsf T}x)_j = 0$. Hence $a_{11}(|R_{12}| + |R_{13}|) = \lVert M^{\mathsf T}x\rVert_1$.
+(b) Columns 1 and $j$ are orthogonal, so $R_{11}R_{1j} + (M^{\mathsf T}x)_j = 0$. Hence $a_{11}(|R_{12}| + |R_{13}|) = \lVert M^{\mathsf T}x\rVert_1$.
+
+If $\theta = 0$, then $x = 0$ and $R_{11} = 1$, so (b) gives $R_{12} = R_{13} = 0$ and (a) gives $1 - F_1 = 0$. From here on assume $0 < \theta \le \pi/4$.
 
 (c) Polar decomposition of $M$.
 
@@ -105,7 +107,7 @@ $$
   \sum_i |x_i|\,\lVert M_i\rVert_1 \ge \sum_i |x_i|\,\lVert Q_i\rVert_1 - (1 - \cos\theta)\,\lVert Q^{\mathsf T}x\rVert_1.
   $$
 
-(d) Together:
+(d) Combining these estimates yields
 $$
 1 - F_1 \ge K_2 + 2(1 - \cos\theta)(1 - \lVert Q^{\mathsf T}x\rVert_1), \qquad K_2 = \lVert Q^{\mathsf T}x\rVert_1 + \sum_i |x_i|\,\lVert Q_i\rVert_1 - 2\lVert x\rVert_1.
 $$
@@ -113,18 +115,18 @@ $$
 (e) $K_2 \ge 0$ (the planar case).
 
 - Every row and column of $Q$ has $\ell^1$ norm $L = |\cos\varphi| + |\sin\varphi| \in [1, \sqrt2]$.
-- The $\ell^1$ operator norm of $Q$ is its largest column $\ell^1$ norm, so $\lVert x\rVert_1 = \lVert Q(Q^{\mathsf T}x)\rVert_1 \le L\,\lVert Q^{\mathsf T}x\rVert_1$.
-- Hence $K_2 \ge \lVert x\rVert_1(1/L + L - 2) = \lVert x\rVert_1(L - 1)^2/L \ge 0$.
+- The $\ell^1$ operator norm of $Q$ is its maximum column $\ell^1$ norm, so $\lVert x\rVert_1 = \lVert Q(Q^{\mathsf T}x)\rVert_1 \le L\,\lVert Q^{\mathsf T}x\rVert_1$.
+- We therefore obtain $K_2 \ge \lVert x\rVert_1(1/L + L - 2) = \lVert x\rVert_1(L - 1)^2/L \ge 0$.
 
 (f) $\lVert Q^{\mathsf T}x\rVert_1 \le \sqrt2\,\lVert x\rVert_2 = \sqrt2\sin\theta \le 1$, because $\theta \le \pi/4$.
 
 So $1 - F_1 \ge 2(1 - \cos\theta)(1 - \sqrt2\sin\theta) \ge 0$. $\blacksquare$
 
-Equality $F_k = 1$ holds at $\theta = 0$, i.e. when the column is a coordinate axis. Away from it the margin grows quadratically. This zero margin is the reason the near-axis part is proved by hand.
+Equality $F_k = 1$ is attained at $\theta = 0$, that is, when the column is a coordinate axis. Away from it, the margin grows quadratically. This zero margin is the reason the near-axis part is proved by hand.
 
-### 2.3 Far from the axes: if every |R_ik| ≤ 1/√2, then F_k < 1 (computer proof)
+### 2.3 Far from the axes: if every entry of column k has |R_ik| ≤ 1/√2, then F_k < 1 (computer proof)
 
-Two independent checkers cover $SO(3)$ and, for every box and column, close the box if either some $|R_{ik}|^2 > \tfrac12$ throughout the box (§2.2 applies), or $F_k < 1$ throughout the box. Otherwise the box is split.
+Two independent checkers cover $SO(3)$. For each box and column, they close the box if either some entry $R_{ik}$ of column $k$ satisfies $|R_{ik}|^2 > \tfrac12$ throughout the box (§2.2 applies), or $F_k < 1$ holds throughout the box. Otherwise, the box is subdivided.
 
 | | First system (`far_bb.py`) | Second system (`check2/far_check2.py`) |
 |---|---|---|
@@ -132,29 +134,29 @@ Two independent checkers cover $SO(3)$ and, for every box and column, close the 
 | Arithmetic | exact rational interval arithmetic (Python `Fraction`) | `mpmath` interval arithmetic at 64 bits, with $\pi$ enclosed as an interval |
 | Result | 1,567,228 boxes, 783,616 closed, max depth 21, ok | 594,431 boxes, 297,216 leaves, max depth 22, ok |
 
-The second system was written without reading `far_bb.py`. In floating point (4×10⁷ random rotations), the largest $F_k$ in the far region is about $0.8284 = 2\sqrt2 - 2$. It occurs near the boundary $|R_{ik}| = 1/\sqrt2$, which leaves a margin of about 0.17.
+The second checker was written without reading `far_bb.py`. In floating-point tests over 4×10⁷ random rotations, the maximum value of $F_k$ in the far region is approximately $0.8284 = 2\sqrt2 - 2$. It occurs near the boundary $|R_{ik}| = 1/\sqrt2$, which leaves a margin of about 0.17.
 
 ## 3. Wall lemma
 
-**Wall lemma.** Let $p \in V$ with $p_w = 1$, and assume $c_w \ge h_w$ (lower wall). Suppose that for an axis $i$ and a sign $\sigma$ we have $\sigma R_{wi} > 0$ and $|R_{wj}| + |t_j(p)| \le \tfrac12$ for both $j \ne i$. Then $\sigma t_i(p) \le \tfrac12$.
+**Wall lemma.** Let $p \in V$ satisfy $p_w = 1$, and assume $c_w \ge h_w$ (lower wall). Suppose that for an axis $i$ and a sign $\sigma$ we have $\sigma R_{wi} > 0$ and $|R_{wj}| + |t_j(p)| \le \tfrac12$ for both $j \ne i$. Then $\sigma t_i(p) \le \tfrac12$.
 
-*Proof.* Row $w$ of $p - c = Rt$ gives $\sum_j R_{wj}t_j = 1 - c_w \le 1 - h_w$. Put $\rho = |R_{wi}| = \sigma R_{wi} > 0$. Then
+*Proof.* Row $w$ of $p - c = Rt$ gives $\sum_j R_{wj}t_j = 1 - c_w \le 1 - h_w$. Let $\rho = |R_{wi}| = \sigma R_{wi} > 0$. Then
 $$
 \rho\cdot\sigma t_i = R_{wi}t_i \le 1 - h_w + \sum_{j\ne i} |R_{wj}||t_j| = 1 - \tfrac12\rho - \sum_{j\ne i} |R_{wj}|(\tfrac12 - |t_j|).
 $$
 By hypothesis $\tfrac12 - |t_j| \ge |R_{wj}|$, so the last sum is at least $\sum_{j\ne i} R_{wj}^2 = 1 - \rho^2$. Hence $\rho\cdot\sigma t_i \le \rho^2 - \tfrac12\rho$, so $\sigma t_i \le \rho - \tfrac12 \le \tfrac12$. $\blacksquare$
 
-The upper wall ($p_w = s - 1$, $c_w \le s - h_w$) is the mirror image $c \mapsto s - c$.
+The case of the upper wall ($p_w = s - 1$, $c_w \le s - h_w$) follows by reflection under $c \mapsto s - c$.
 
-**Tightening at a wall.** If $p_w = 1$, $c_w \ge h_w$ and $R_{wk} \ge 0$, then
+**Tightening at a wall.** If $p_w = 1$, $c_w \ge h_w$, and $R_{wk} \ge 0$, then
 $$
 R_{wk}(p_w - c_w) \le R_{wk}(1 - h_w) = \tfrac12 - \tfrac12(1 - R_{wk})^2 - \tfrac12 R_{wk}\sigma_{wk}, \qquad \sigma_{wk} = \sum_{j\ne k} |R_{wj}|.
 $$
-The identity follows from $2h_w = R_{wk} + \sigma_{wk}$. The bound replaces the $w$-term of the upper bound of $t_k(p)$ and avoids interval dependency. The case $R_{wk} \le 0$ (lower bound) and the upper wall are mirror images.
+This identity follows directly from $2h_w = R_{wk} + \sigma_{wk}$. The bound replaces the $w$-term in the upper bound of $t_k(p)$ and avoids interval dependency. The case $R_{wk} \le 0$ (lower bound) and the upper wall are mirror images.
 
 ## 4. Pair lemma
 
-Let $p, q \in V$ differ in exactly two coordinates. Then $d = q - p$ has two entries $\pm1/\sqrt2$, so $|d| = 1$, and there are 12 such pairs. We have $t_i(q) = t_i(p) + a_i\cdot d$, and $|a_i\cdot d| \le 1$.
+Let $p, q \in V$ differ in exactly two coordinates. Then $d = q - p$ has two nonzero entries equal to $\pm1/\sqrt2$, so $|d| = 1$; there are 12 such pairs. We have $t_i(q) = t_i(p) + a_i\cdot d$, and $|a_i\cdot d| \le 1$.
 
 **Pair lemma.** Suppose that for some axis $i$ and sign $\sigma$:
 
@@ -168,15 +170,15 @@ Then $p \in Q$ or $q \in Q$.
 
 ## 5. Local sign lemma
 
-The checkers do not close one pose by the rules above: the cube rotated $45^\circ$ about the $x$ axis, touching the wall $x = 0$, with centre $(\tfrac12, s/2, s/2)$. Its four points with $x = 1$ lie at the midpoints of the edges of its face $x = 1$. Near this pose, which of them is contained switches with the sign of two continuous quantities. No box around the pose can therefore be closed by naming one point. The following lemma names two points and closes a whole neighbourhood, including the pose itself.
+The checkers do not close one pose under the rules above: the cube rotated by $45^\circ$ about the $x$ axis, touching the wall $x = 0$, with centre $(\tfrac12, s/2, s/2)$. Its four points with $x = 1$ lie at the midpoints of the edges of its face $x = 1$. Near this pose, which of them is contained switches with the sign of two continuous quantities. No box enclosing the pose can therefore be closed by naming a single point. The following lemma names two points and closes an entire neighbourhood, including the pose itself.
 
 Notation:
 
-- $g = (1, s/2, s/2)$, the centre of the four points with $x = 1$;
-- the four points are $q_\sigma = g + a(0, \sigma_y, \sigma_z)$, with $\sigma \in \{\pm1\}^2$ and $a = s/2 - 1 = 1/(2\sqrt2)$;
-- $f = c + \tfrac12 a_0$, the centre of the far face;
-- $e = g - f$, $p = a_1\cdot e$ and $r = a_2\cdot e$;
-- $\nu = (a_{0y}, a_{0z})$ and $d = (s/2 - c_y, s/2 - c_z)$.
+- Let $g = (1, s/2, s/2)$ be the centre of the four points with $x = 1$.
+- These four points are $q_\sigma = g + a(0, \sigma_y, \sigma_z)$, with $\sigma \in \{\pm1\}^2$ and $a = s/2 - 1 = 1/(2\sqrt2)$.
+- Let $f = c + \tfrac12 a_0$ be the centre of the far face.
+- Set $e = g - f$, $p = a_1\cdot e$, and $r = a_2\cdot e$.
+- Define $\nu = (a_{0y}, a_{0z})$ and $d = (s/2 - c_y, s/2 - c_z)$.
 
 **Lemma L.** Assume all of the following:
 
@@ -187,9 +189,9 @@ Notation:
 - $|r| + a|a_{2y} + a_{2z}| \le \tfrac12$ and $|p| + a|a_{1y} - a_{1z}| \le \tfrac12$;
 - $t_0(q_\sigma) \ge -\tfrac12$ for all four $\sigma$.
 
-Put $\varsigma_A = -\operatorname{sgn} p$ and $\varsigma_B = \operatorname{sgn} r$ (either sign if $p = 0$ or $r = 0$). Then $A = q_{(\varsigma_A, \varsigma_A)}$ or $B = q_{(\varsigma_B, -\varsigma_B)}$ lies in $Q$.
+Set $\varsigma_A = -\operatorname{sgn} p$ and $\varsigma_B = \operatorname{sgn} r$ (choosing either sign if $p = 0$ or $r = 0$). Then at least one of $A = q_{(\varsigma_A, \varsigma_A)}$ or $B = q_{(\varsigma_B, -\varsigma_B)}$ lies in $Q$.
 
-*Proof.* For a point $q$, $q \in Q$ iff $t_0(q) \ge -\tfrac12$ and the following three conditions hold:
+*Proof.* A point $q$ satisfies $q \in Q$ if and only if $t_0(q) \ge -\tfrac12$ and the following three conditions hold:
 
 - (i) $a_0\cdot(q - f) \le 0$, i.e. $t_0(q) \le \tfrac12$;
 - (ii) $|a_1\cdot(q - f)| \le \tfrac12$;
@@ -211,18 +213,18 @@ The first condition, $t_0(q) \ge -\tfrac12$, is a hypothesis.
    - The signs $\varsigma_A$ and $\varsigma_B$ were fixed in step 1 by $p$ and $r$, not by $\nu$, so the signs of these two numbers are not known. We therefore use only the bounds $\nu\cdot\sigma_A \le |\nu_y + \nu_z|$ and $\nu\cdot\sigma_B \le |\nu_y - \nu_z|$, which hold for either sign.
    - Suppose the sufficient condition of step 2 fails for both $A$ and $B$. By these bounds, $\nu\cdot d + a|\nu_y + \nu_z| > \tfrac12 a_{0x}\lVert\nu\rVert$ and $\nu\cdot d + a|\nu_y - \nu_z| > \tfrac12 a_{0x}\lVert\nu\rVert$. Hence $\nu\cdot d + a\cdot\min(|\nu_y + \nu_z|, |\nu_y - \nu_z|) > \tfrac12 a_{0x}\lVert\nu\rVert$.
    - The minimum is at most $\sqrt{((\nu_y + \nu_z)^2 + (\nu_y - \nu_z)^2)/2} = \lVert\nu\rVert$, so $\nu\cdot d > (\tfrac12 a_{0x} - a)\lVert\nu\rVert$.
-   - But $\nu\cdot d \le \lVert\nu\rVert\lVert d\rVert < (\tfrac12 a_{0x} - a)\lVert\nu\rVert$, a contradiction when $\nu \ne 0$.
+   - But the Cauchy-Schwarz inequality gives $\nu\cdot d \le \lVert\nu\rVert\lVert d\rVert < (\tfrac12 a_{0x} - a)\lVert\nu\rVert$, a contradiction when $\nu \ne 0$.
    - If $\nu = 0$, then $a_{0x} = 1$ and $\sigma_x = 0$, so (i) holds for every $\sigma$. $\blacksquare$
 
 *Remarks.*
 
-- The proof uses only that $(a_0, a_1, a_2)$ is an orthonormal frame with $Q = \{c + \sum t_k a_k : |t_k| \le \tfrac12\}$. Orientation is never used, so the lemma applies to any signed permutation of the columns of $R$.
+- The proof uses only that $(a_0, a_1, a_2)$ is an orthonormal frame with $Q = \{c + \sum t_k a_k : |t_k| \le \tfrac12\}$. Because orientation is never used, the lemma applies to any signed permutation of the columns of $R$.
 - The images of the lemma under the symmetries of the container that fix $V$ (coordinate permutations and reflections $c \mapsto s - c$) hold as well.
-- At the pose itself, $p = r = 0$, $A$ lies on an edge of $Q$ and (i) holds with equality. Since $Q$ is closed, $A \in Q$.
+- At the pose itself, $p = r = 0$, $A$ lies on an edge of $Q$, and (i) holds with equality. Since $Q$ is closed, $A \in Q$.
 
 ## 6. Computer part
 
-The main lemma is reduced to finitely many interval inequalities over a 6-parameter domain (rotation and centre). Two independent checkers cover the whole domain, using §2 to §5 as closing rules. Each box is closed by one rule, or split. Both use the centre parametrisation $c_w = h_w + u_w(s - 2h_w)$ with $u \in [0, 1]^3$, which is exactly the set of feasible centres, including all wall, edge and corner contacts.
+The main lemma reduces to finitely many interval inequalities over a 6-parameter domain parametrising rotation and centre. Two independent checkers exhaust the entire domain using §2 through §5 as closing rules. Each box is closed by one rule, or split. Both implementations use the centre parametrisation $c_w = h_w + u_w(s - 2h_w)$ with $u \in [0, 1]^3$, which represents exactly the set of feasible centres, including all wall, edge, and corner contacts.
 
 | | First checker ([checker/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/checker)) | Second checker ([checker2/](https://github.com/wand125/square-packing/tree/main/problems/cubes-in-cube/checker2)) |
 |---|---|---|
@@ -251,12 +253,12 @@ No epsilon or tolerance appears in any closing inequality. Each checker writes a
 | first | complete, 0 unresolved | 6,539,999 | 42 | point 1,791,261, pair 1,243,037, outside 202,285, wall 19,593, centre 10,553, local_ab 3,271 | `8f974e817092a7e3a5a7247e4b6679d0ca9ada2739369e7dabd5b18c86a236b9` |
 | second | complete, 0 unresolved | 784,835,241 | 45 | point 292,654,066, pair 94,356,391, wall 3,774,181, centre 1,295,486, local 337,497 | `c56bdc3b51ef3015cc1856cf00e61ac1218d40c1746200e192b5a66fb8dd2ca2` |
 
-`outside` marks boxes outside the fundamental region of the first checker's symmetry reduction; a box is marked so only when a strict interval inequality puts it entirely outside the closed region.
+The label `outside` marks boxes outside the fundamental region of the first checker's symmetry reduction; a box is marked so only when a strict interval inequality places it entirely outside the closed region.
 
 **Validation.** None of these tests is part of the proof.
 
-- First checker: 100,000 random poses (20,000 at walls), with the witness of each closing box checked in floating point, 0 false closures; 9,356 boxes of radius $10^{-4}$ to $10^{-2}$ near the $45^\circ$ wall pose, of which 4,962 close by `local_ab` and 248,100 poses sampled in them all contain $A$ or $B$; 863,544 poses sampled from the leaf stream, 0 failures, the worst excess 0.0, which is equality at the $45^\circ$ pose.
-- Second checker: 100,000 random poses and 20,000 poses at walls, 0 false closures; each rule alone on 20,000 further boxes; 432 boxes around the images of the $45^\circ$ wall pose, all closed by `local`; 20,000 random boxes with 1,487,928 sampled poses and 6,000 boxes around the $45^\circ$ wall pose with 579,488 sampled poses, 0 failures; determinism and resume tests.
+- First checker: 100,000 random poses (20,000 at walls), with the witness of each closing box checked in floating point, yielding 0 false closures; 9,356 boxes of radius $10^{-4}$ to $10^{-2}$ near the $45^\circ$ wall pose, of which 4,962 close by `local_ab`, and 248,100 poses sampled in them all contain $A$ or $B$; 863,544 poses sampled from the leaf stream, 0 failures, with the worst excess 0.0, corresponding to equality at the $45^\circ$ pose.
+- Second checker: 100,000 random poses and 20,000 poses at walls, yielding 0 false closures; each rule alone tested on 20,000 further boxes; 432 boxes around the images of the $45^\circ$ wall pose, all closed by `local`; 20,000 random boxes with 1,487,928 sampled poses and 6,000 boxes around the $45^\circ$ wall pose with 579,488 sampled poses, yielding 0 failures; determinism and resume tests.
 
 ## Reproducibility
 
@@ -267,19 +269,19 @@ No epsilon or tolerance appears in any closing inequality. Each checker writes a
 | first checker | `cargo build --release --offline`, then `./target/release/m5-checker --threads 2 --seconds 1150 --output run` (`checker/`) | about 3 min with 2 threads on a laptop |
 | second checker | `cargo build --release --offline`, then `./target/release/m5-check2 --server --threads 16 --seconds 1209600 --depth 72 --checkpoint-seconds 60 --output full` (`checker2/`) | about 4.7 thread-hours; 18 min with 16 threads |
 
-The first run must report `"status": "complete"`, `"unresolved": 0`, `"closed_volume_fraction": 1.0` and the leaf digest above; the second, `"status": "complete"`, `"pending": 0`, `"unresolved": 0` and its digest. The second checker covers a domain about 36 times larger, because it reduces by 32 of the 1,152 symmetries.
+The first run must report `"status": "complete"`, `"unresolved": 0`, `"closed_volume_fraction": 1.0`, and the leaf digest above; the second must report `"status": "complete"`, `"pending": 0`, `"unresolved": 0`, and its digest. The second checker covers a domain about 36 times larger because it reduces by only 32 of the 1,152 symmetries.
 
 ## Status and limitations
 
-- A computer-assisted proof, checked by two independent checkers. It has not been peer reviewed and is not formalised in Lean.
+- This is a computer-assisted proof, checked by two independent checkers. It has not been peer reviewed and is not formalised in Lean.
 - Friedman's page lists the packings for $n = 9$ and $n = 10$ at side $2 + 1/\sqrt2$, with no proof of optimality. We found no published proof of a lower bound $s_3(9) \ge 2 + 1/\sqrt2$; if you know of one, please open an issue.
 
 ## Sources
 
 Our results build on three layers of earlier work:
 
-- **Classical.** The point-set method is the standard lower-bound technique for packing unit squares in squares, described in Erich Friedman's survey [[1]](#ref-1). The packings of 9 and 10 cubes at side $2 + 1/\sqrt2$ are listed on Erich Friedman's Packing Center page "Cubes in Cubes" [[2]](#ref-2). As far as we found, no proof of their optimality has been published.
-- **Our earlier lemmas.** These come from our work on $s_3(2) = 2$ and on $s_3(k^3 - 1) = k$: Lemma F (§2), the wall lemma (§3) and the pair lemma (§4).
+- **Classical.** The point-set method is the standard lower-bound technique for packing unit squares in squares, described in Erich Friedman's survey [[1]](#ref-1). The packings of 9 and 10 cubes at side $2 + 1/\sqrt2$ are listed on Erich Friedman's Packing Center page "Cubes in Cubes" [[2]](#ref-2). As far as we could find, no proof of their optimality has been published.
+- **Our earlier lemmas.** These come from our work on $s_3(2) = 2$ and on $s_3(k^3 - 1) = k$: Lemma F (§2), the wall lemma (§3), and the pair lemma (§4).
 - **New here.** The 8-point main lemma, the local sign lemma (§5), and the two checkers.
 
 ## References
@@ -287,3 +289,4 @@ Our results build on three layers of earlier work:
 1. <span id="ref-1"></span>E. Friedman, "Packing unit squares in squares: a survey and new results", *Electronic Journal of Combinatorics*, Dynamic Survey DS7.
 2. <span id="ref-2"></span>E. Friedman, [Cubes in Cubes](https://erich-friedman.github.io/packing/cubincub/), Erich's Packing Center.
 3. [problems/cubes-in-cube/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/PROOF.md), [README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/README.md), [lemma_f/PROOF.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/lemma_f/PROOF.md), [checker/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/checker/README.md), [checker2/README.md](https://github.com/wand125/square-packing/blob/main/problems/cubes-in-cube/checker2/README.md).
+

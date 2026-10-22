@@ -47,6 +47,13 @@
    "en": "Lemma L, step 3: say why the signs are replaced by absolute values (review, 10/21).",
    "ja": "補題 L の段 3：符号を絶対値で置き換える理由を書いた（査読の指摘、10/21）。",
    "commit": "1f70ab3"
+  },
+  {
+   "v": "3",
+   "date": "2026-10-22",
+   "en": "Lemma F, §2.2: the case θ = 0 is treated separately; the headings of §2.2 and §2.3 say that the entries are in column k; English wording edited (review, 10/22).",
+   "ja": "補題 F の §2.2：θ = 0 の場合を分けて書いた。§2.2・§2.3 の見出しで成分が列 k のものだと明記した。英語の文を整えた（査読の指摘、10/22）。",
+   "commit": ""
   }
  ]
 }

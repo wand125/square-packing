@@ -1,11 +1,11 @@
 
 ## 要旨
 
-[evand/square-packing](https://github.com/evand/square-packing) で Evan Daniel は、すべての $k \ge 6$ で $s(k^2-3) = k$、すべての $k \ge 8$ で $s(k^2-4) = k$ を証明している。 どちらの証明も、混合測度の被覆（質量をもつ線分と、正方形の上のルベーグ測度）についての有限の命題 1 つ、**Valid7** と **ValidTilt9** に帰着される。 同リポジトリはそれぞれの命題を自前のプログラムで検査している。我々は同じ命題を検査する 2 つ目の厳密な検査器を、被覆の形式の仕様書と命題だけから書いた。1 つ目の検査器とその補題の文書は読んでいない。 対称性による削減は使わず、角度 0 は閉包の議論で扱い、判定はすべて厳密な有理数の計算（$u = \tan(\theta/2)$ の多項式と Sturm 列による根の分離）で行う。 Valid7 は成り立つ。根の箱 156,800 個すべてを証明し、未証明 0、反例 0。ValidTilt9 も成り立つ。根 28,350 個すべてを証明し、未証明 0、反例 0。 葉はすべて記録し、記録は公開して別のプログラムで再検査している。
+[evand/square-packing](https://github.com/evand/square-packing) で Evan Daniel は、すべての $k \ge 6$ で $s(k^2-3) = k$、すべての $k \ge 8$ で $s(k^2-4) = k$ を証明している。 どちらの証明も、混合測度の被覆（質量をもつ線分と、正方形の上のルベーグ測度）についての有限の命題 1 つ、**Valid7** と **ValidTilt9** に帰着される。 同リポジトリはそれぞれの命題を自前のプログラムで検査している。我々は同じ命題を検査する 2 つ目の厳密な検査器を、被覆の形式の仕様書と命題だけから書いた。1 つ目の検査器とその補題の文書は読んでいない。 対称性による削減は使わず、角度 0 は閉包の議論で扱い、判定はすべて厳密な有理数の計算（$u = \tan(\theta/2)$ の多項式と Sturm 列による根の分離）で行う。 Valid7 は成り立つ。根の箱 156,800 個すべてを証明し、未証明 0、反例 0。ValidTilt9 も成り立つ。根 28,350 個すべてを証明し、未証明 0、反例 0。 葉はすべて記録し、記録は公開している。別のプログラムが記録の構造（根、二分による分割、空の葉）を厳密に再検査し、残りの葉は無作為の標本について証明をやり直す。この検査器とは独立に、2 つの命題はどちらも、証明書から根ごとに Lean 4 のカーネルでも検証されている。
 
 ## 1. 検査する命題
 
-命題・被覆・帰着は Evan Daniel によるもの（[evand/square-packing](https://github.com/evand/square-packing)）で、我々は命題を検査するだけである。 姿勢 $Q(c, \theta) = c + R_\theta[-\tfrac12, \tfrac12]^2$ は、中心 $c$ で角度 $\theta$ だけ回した閉じた単位正方形を表す。
+命題・被覆・帰着は Evan Daniel によるもの（[evand/square-packing](https://github.com/evand/square-packing)）で、我々は命題を検査するだけである。 ここで $s(n)$ は、内部が互いに交わらない $n$ 個の単位正方形を含む最小の正方形の辺の長さである。 姿勢 $Q(c, \theta) = c + R_\theta[-\tfrac12, \tfrac12]^2$ は、中心 $c$ で角度 $\theta$ だけ回した閉じた単位正方形を表す。
 
 **Valid7.** $\mu_7$ を正方形 $[0,7]^2$ の混合測度の被覆 `L4_k02_box7.txt`（`s12/certificates/k2m3/` から）とする。$1/5$ の格子の 60 本の線の上に、長さ $1/5$ の軸に平行な線分 800 本（それぞれ一様な密度）があり、さらに $[9/5, 26/5]^2$ の上にルベーグ測度がある。質量の合計は
 
@@ -60,7 +60,7 @@ $$
 
 **厳密な基本部品.** 全体を厳密な有理数（`fractions.Fraction`）で計算する。$u$ の多項式には python-flint を使い、根の分離は自前の Sturm 列による。判定に浮動小数点数は一切入らない。
 
-**記録.** 葉はすべて記録する。`check_record.py` は駆動部の制御の流れとは独立に、根が領域の直積格子にちょうど一致すること（すべての記録ファイルを通して各根 1 回）、各根の葉がその二分による分割になっていること、EMPTY の葉が許される中心を含まないこと（厳密）、Tier B の葉が $u = 0$ を含まないことを再検査する。任意で、無作為に選んだ葉について Tier A と Tier B をやり直す。
+**記録.** 「根」は、領域の最初の格子の 1 つの箱（中心の箱 $\times$ $u$ の区間）である。各根を適応的に二分し、最後に残った箱を「葉」と呼んで、その種類（Tier A は CORE、Tier B は TIERB か TIERB2、許される中心がなければ EMPTY）とともに記録する。葉はすべて記録する。`check_record.py` は駆動部の制御の流れとは独立に、根が領域の直積格子にちょうど一致すること（すべての記録ファイルを通して各根 1 回）、各根の葉がその二分による分割になっていること、EMPTY の葉が許される中心を含まないこと（厳密）、Tier B の葉が $u = 0$ を含まないことを再検査する。どの根も $u = 0$ を内部に含まないので、$u = 0$ は葉の端にしかならない。Tier B は葉の開いた $u$ の区間で下界を示し、$\theta = 0$ の姿勢は上の閉包の議論で扱われる。任意で、無作為に選んだ葉について Tier A と Tier B をやり直す。
 
 **試験.** タイトな配置を 1 つずつ相対 $10^{-4}$ だけ下げた 3 つの変異被覆（壁の族、ルベーグの正方形、$[1,2]^2$ の角の族）はどれも拒否され、Tier B は質量が厳密に 1 未満になる具体的な姿勢を示す。
 
@@ -92,7 +92,7 @@ $$
 
 - 2 つの有限の命題のコンピュータによる検査である。結果 $s(k^2-3) = k$、$s(k^2-4) = k$ とその帰着は Evan Daniel によるもの。
 - `check_record.py` は記録の被覆と分割の構造、および EMPTY の葉を厳密に再検査するが、CORE と TIERB2 の葉の証明のやり直しは無作為の標本だけである。
-- 元のリポジトリ [wand125/valid7-independent-check](https://github.com/wand125/valid7-independent-check) はアーカイブ済みで、コードは現在 [checks/valid7](https://github.com/wand125/square-packing/tree/main/checks/valid7) にある。Lean 版は別のテーマで、どちらも完了：[#8](https://github.com/wand125/square-packing/issues/8)（Valid7、Release [data/valid7-lean-certs-v1](https://github.com/wand125/square-packing/releases/tag/data/valid7-lean-certs-v1)）、[#10](https://github.com/wand125/square-packing/issues/10)（ValidTilt9、Release [validtilt9-lean-v1](https://github.com/wand125/square-packing/releases/tag/validtilt9-lean-v1)）。Valid7 は第 2 版として、同じ証明書から Lean のカーネルで改めて検査した：[lean/valid7](https://github.com/wand125/square-packing/tree/main/lean/valid7)（Release [valid7-lean-v2](https://github.com/wand125/square-packing/releases/tag/valid7-lean-v2)）。第 2 版は `validTilt7 : Bentz.ValidTilt7`（Valid7 の傾いた部分：$[0,7]^2$ に含まれ、中心が $[0,7/2]^2$ にあり、角が $0 < \theta \le 45^\circ$ の閉じた単位正方形は、どれも質量が $\ge 1$）も証明し、記録した実行は約 800 CPU 時間だった。
+- 元のリポジトリ [wand125/valid7-independent-check](https://github.com/wand125/valid7-independent-check) はアーカイブ済みで、コードは現在 [checks/valid7](https://github.com/wand125/square-packing/tree/main/checks/valid7) にある。Lean 版は別のテーマで、どちらも完了：[#8](https://github.com/wand125/square-packing/issues/8)（Valid7、Release [data/valid7-lean-certs-v1](https://github.com/wand125/square-packing/releases/tag/data/valid7-lean-certs-v1)）、[#10](https://github.com/wand125/square-packing/issues/10)（ValidTilt9、Release [validtilt9-lean-v1](https://github.com/wand125/square-packing/releases/tag/validtilt9-lean-v1)）。Valid7 は第 2 版として、同じ証明書から Lean のカーネルで改めて検査した：[lean/valid7](https://github.com/wand125/square-packing/tree/main/lean/valid7)（Release [valid7-lean-v2](https://github.com/wand125/square-packing/releases/tag/valid7-lean-v2)）。第 2 版は `validTilt7 : Bentz.ValidTilt7`（Valid7 の傾いた部分：$[0,7]^2$ に含まれ、中心が $[0,7/2]^2$ にあり、角が $0 < \theta \le 45^\circ$ の閉じた単位正方形は、どれも質量が $\ge 1$）も証明し、記録した実行は約 800 CPU 時間だった。Lean の証明は独自の根と証明書（Valid7 は 9,800 根、ValidTilt9 は 16,200 根）を使い、この検査器の根や葉は使っていない。
 
 ## 再現方法
 

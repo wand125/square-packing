@@ -51,6 +51,13 @@
    "en": "Correction after review: the vertices of the square L are listed in order around it. No change to the result or the certificates.",
    "ja": "査読による訂正：正方形 L の頂点を一周の順に並べた。結果と証明書は変わらない。",
    "commit": "1f70ab3"
+  },
+  {
+   "v": "3",
+   "date": "2026-10-22",
+   "en": "Section 1 now states the resultant with the denominator of s(t) cleared; the admissibility line and the Farkas combination are defined in §4, an unused bound is removed from §3, and the wording is polished.",
+   "ja": "§1 の終結式を s(t) の分母を払った形にし、§4 で容器の直線と Farkas 結合を定義し、§3 の使っていない不等式を除き、言い回しを整えた。",
+   "commit": ""
   }
  ]
 }
