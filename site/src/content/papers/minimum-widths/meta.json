@@ -44,7 +44,7 @@
       "date": "2026-10-25",
       "en": "First working manuscript: statement, argument, retained evidence and explicit limits; no fresh computation.",
       "ja": "初稿：定理・論証・保存証拠と限界を記述。新しい計算は実行していません。",
-      "commit": ""
+      "commit": "433ea80f92171b1c93ae2aa8c4ef9a19d889b46b"
     }
   ]
 }
