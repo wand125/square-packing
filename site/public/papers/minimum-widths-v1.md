@@ -1,0 +1,283 @@
+# Minimum Widths for Unit Squares in Thin Rectangles
+
+## Abstract
+
+We present a computer-assisted determination of the minimum width needed to pack $N$ unit squares, with arbitrary rotations and pairwise disjoint interiors, in a rectangle of height $1851/1000\le a<2$. For odd $N\ge11$, the width is $4+2(N-2)\sqrt2-(N-1)a$. For even $N\ge12$, it is the minimum of an explicit rationally parametrised function, attained by a staggered configuration with two upright end caps. The representative minimising angle is unique. The proof separates a finite all-sequence type-forcing certificate from analytical minimisation and attainment. We describe the exact acceptance obligations and the retained two-system evidence. The result does not determine the entire rectangle frontier for 16--20 squares.
+
+## 1. Introduction and notation
+
+Let $\nu(x,a)$ be the maximum number of closed unit squares contained in $[0,x]\times[0,a]$ with pairwise disjoint interiors, allowing arbitrary orientations. Contacts are permitted. Write
+
+$$
+B_N(a)=\inf\{x>0:\nu(x,a)\ge N\}.
+$$
+
+Friedman's rectangle problem [1] records limiting packings and boundary pieces for small numbers of squares. Here it supplies construction history, not a certificate excluding every smaller packing. Nagamochi [2] studies broader rectangle counting bounds with nominal side parameters at least two. Karakuş's preprint [3] reports a defect in the scoring assertion of that proof and provides a separate weaker rectangle bound. Neither scoring argument is used here.
+
+Our question fixes a height strictly below two and determines the width uniformly in the number of squares. The proof below does not depend on the separate strip and strict zipper-corner lemmas studied elsewhere in this project.
+
+The search for better 16--20-square constructions at other heights is a separate upper-bound project. Its tables are not proof of the complete feasible frontier and are not used to establish the theorem below.
+
+No priority claim is made. The references were checked at the levels described in Section 8; this is not an exhaustive literature search.
+
+## 2. Main theorem
+
+Represent an orientation by $t=\tan(\theta/2)$ and let
+
+$$
+\mathcal O=\left[2\arctan\frac{4339}{12800},\;2\arctan\frac{4553}{8800}\right].
+$$
+
+For $\theta\in\mathcal O$, put $c=\cos\theta$, $s=\sin\theta$, $h=c+s$, $b=3a/2-1$, and
+
+$$
+P=\frac{2h-a}{h^2-1},\qquad
+Q=1+\frac{2h-b}{h^2-1},\qquad
+A=\frac{2-a}{4}(\tan\theta-\cot\theta).
+$$
+
+Define
+
+$$
+G_N(\theta;a)=(N-4)P+2Q-2|A|.
+$$
+
+All denominators are positive on this angle interval. The symbol $h$ denotes a square's bounding-box side length, whereas $a$ is the container height.
+
+**Theorem 2.1 (exact thin-strip width; computer-assisted).** For every $1851/1000\le a<2$:
+
+1. For odd $N\ge11$,
+   $$
+   B_N(a)=4+2(N-2)\sqrt2-(N-1)a.
+   $$
+2. For even $N\ge12$,
+   $$
+   B_N(a)=\min_{\theta\in\mathcal O}G_N(\theta;a).
+   $$
+   The representative minimiser $\theta_N(a)>\pi/4$ is unique and lies below $2\arctan(43/100)$. Its reflection $\pi/2-\theta_N(a)$ gives the other minimising orientation. The value is attained by a staggered packing.
+
+The theorem combines the retained two-system results on $[1851/1000,19/10]$ and $[19/10,2)$, including the separate coverage for $N=11$. The mathematical argument is given below, with its finite proof obligations exposed in Section 6. The new manuscript is not itself a fresh replay of those computations.
+
+## 3. Certified type forcing
+
+Put $g=2\sqrt2-a$ and $F_0=4-2\sqrt2$. The retained certificate establishes the following assertion for every $N\ge11$: a packing of width at most
+
+$$
+(N-1)g+F_0
+$$
+
+has two near-upright end caps, its $N-2$ interior squares have angles in $\mathcal O$, and the centres of the interior squares alternate between the closed lower and upper halves of the container (the midpoint belongs to both). Every non-type sequence has strictly greater width.
+
+This is an all-sequence assertion. The verification covers angle/height cells and all transitions, not just configurations found in a search. Exact separating-axis bounds and rational potentials control non-type transitions. Calibrated type transitions use angular variation. A saturated dynamic-programming layer and its checked fixed point cover arbitrarily large $N$.
+
+The threshold is sufficient for the equality theorem as follows. The $45^\circ$ construction has width $(N-1)g+F_0$. For even $N$, $G_N(\pi/4;a)$ equals that threshold, so $\min G_N$ is no larger. An arbitrary packing wider than the threshold already satisfies the claimed lower bound. Any packing at or below the threshold is forced into the type, where Section 4 applies. Section 5 constructs a packing attaining the resulting value. Thus type forcing alone is not being substituted for minimisation or attainment.
+
+The finite verification includes transitions into a type sequence, not only transitions within one. Near height two it uses a corrected absolute-value inequality for nearly upright squares. Earlier computations with the superseded signed inequality are excluded from the evidence.
+
+## 4. The lower bound inside the type
+
+### 4.1. Pair and cap inequalities
+
+For interior angles $\theta_1,\ldots,\theta_{N-2}$ define
+
+$$
+\mathrm{TV}=\sum_{i=1}^{N-3}|\theta_{i+1}-\theta_i|.
+$$
+
+The retained pair calibration gives a lower bound per radian of $\theta$. Its constant can be chosen as
+
+$$
+k=\frac15\quad\left(\frac{1851}{1000}\le a\le\frac{19}{10}\right),
+\qquad
+k=\frac{227}{2000}\quad\left(\frac{19}{10}\le a<2\right).
+$$
+
+Together with the cap comparison, summing the inequalities produces one $P$-term for each non-end interior square, end-interior terms $Q\pm A$, and the nonnegative contribution $k\,\mathrm{TV}$. The same certified bounds give $|\partial_\theta A|\le k$.
+
+The cap comparison is applied to pairs at their original positions. It does not assume that simultaneously moving arbitrary caps preserves a packing. The lower-height cap comparison is a separate certified dependency; the upper-height argument must not be extrapolated below 1.9 without it.
+
+### 4.2. Reduction to a common angle
+
+Choose an interior angle $\bar\theta$ closest to $\pi/4$. Both $P$ and $Q$ decrease as $h$ increases. Indeed,
+
+$$
+\frac{d}{dh}\frac{2h-z}{h^2-1}
+=-\frac{2(h^2-zh+1)}{(h^2-1)^2}<0
+$$
+
+for $z=a$ or $z=b$, since $z<2$ in the claimed range. Consequently each $P$- and $Q$-term is at least its value at $\bar\theta$.
+
+For even $N$, the two endpoint $A$-terms have the same sign pattern. Replacing them by $-2|A(\bar\theta)|$ loses at most
+
+$$
+k\bigl(|\theta_1-\bar\theta|+|\theta_{N-2}-\bar\theta|\bigr)
+\le k\,\mathrm{TV}.
+$$
+
+The variation contribution absorbs this loss. The occupied width is therefore at least $G_N(\bar\theta;a)$, and hence at least its minimum.
+
+For odd $N$, the endpoint $A$-terms have opposite signs. Their difference is absorbed by $k\,\mathrm{TV}$. The remainder is minimised when $h=\sqrt2$, giving
+
+$$
+(N-4)P(\pi/4)+2Q(\pi/4)
+=4+2(N-2)\sqrt2-(N-1)a.
+$$
+
+### 4.3. Uniqueness and the critical equation
+
+In this paragraph differentiation is with respect to **$t$**, not per radian of $\theta$. On
+
+$$
+I=[\sqrt2-1,4553/8800],
+$$
+
+the retained exact polynomial checks establish
+
+$$
+P_{tt}>0,\qquad P_{tt}+2Q_{tt}-2A_{tt}>0.
+$$
+
+On the upper-angle side $A\ge0$, and
+
+$$
+G_{N,tt}=(N-5)P_{tt}+(P_{tt}+2Q_{tt}-2A_{tt})>0.
+$$
+
+The derivative at $t=\sqrt2-1$ is
+
+$$
+G_{N,t}=-(2-a)(2+\sqrt2)<0,
+$$
+
+while the checked derivative at $t=43/100$ is positive for $N\ge12$. This yields a unique representative critical point below that endpoint. The reflection of the lower-angle part of $\mathcal O$ lies in the checked upper interval, so it adds no smaller value. Reflection gives the other minimising orientation.
+
+The rational parametrisation of $c,s$ turns the critical-point equation into a polynomial equation in $t$, with rational polynomial coefficients in $a$, after multiplication by positive denominators. The minimising parameter is therefore an algebraic function of $a$. When $a$ is algebraic, its parameter and minimum width are algebraic numbers. For an arbitrary real $a$, no algebraicity over the rationals is asserted, and the angle $2\arctan t$ is not being called an algebraic number. Convexity and endpoint signs here are certificate dependencies, not deductions from a plot.
+
+## 5. Attaining configurations
+
+Use two upright caps and $N-2$ interiors at one angle, on alternating walls. Let
+
+$$
+f_+=\frac{1-s(a-h)}c,\qquad
+f_-=\frac{1-c(a-h)}s,
+$$
+
+$$
+c_+=\frac{(1+h)/2-s(a-(1+h)/2)}c,\qquad
+c_-=\frac{(1+h)/2-c(a-(1+h)/2)}s.
+$$
+
+Interior centres have height $h/2$ or $a-h/2$. Each cap has centre height $1/2$ or $a-1/2$, on the wall opposite its neighbour. Starting with cap centre $x=1/2$, take consecutive horizontal increments $c_\pm$ at the caps and $f_\pm$ between interiors, according to the alternating wall pattern.
+
+Adjacent pairs touch on an appropriate face normal. On the angle interval containing every minimiser, the retained attainment checks establish
+
+$$
+f_\pm>h/2,\qquad
+c_\sigma+f_{\sigma'}>(1+h)/2,\qquad
+c_\sigma>(h-1)/2
+$$
+
+for the required sign choices. The first two inequalities separate nonadjacent pairs horizontally; longer chains add positive increments. The last makes the caps outermost. The cap--cap pair is also separated, since a cap increment and two interior increments already exceed one.
+
+Containment follows from $h\le\sqrt2<a$. Thus the width is exactly one plus the sum of the horizontal increments. For even $N$, choose the starting wall to obtain
+
+$$
+1+2c_{\sigma_0}+f_{-\sigma_0}
+ +(N-4)(f_++f_-)/2
+=(N-4)P+2Q-2|A|.
+$$
+
+For odd $N$, use $\theta=\pi/4$; the same sum is the formula in Theorem 2.1. Choosing the critical orientation in the even case gives exact attainment. The alternating sequence puts the two upright caps on the same wall for odd numbers of squares and on opposite walls for even numbers (Figure 1).
+
+For fixed $t$, the individual expressions in the analysis and attainment checks are affine in $a$. The accepted endpoint certificates therefore extend pointwise through the two height intervals. This is applied to individual inequalities, not to a presumed endpoint extremum of an arbitrary minimum of affine branches.
+
+A nearby rational-half-angle placement certificate may have a small positive width slack. Such a certificate is evidence of a packing near the optimum, not equality of its width with the critical value.
+
+![Alternating-wall constructions for odd and even numbers of squares.](figures/parity-packing.pdf)
+
+*Figure 1. The construction of Section 5 at height 1.9: eleven squares at 45 degrees (the odd optimum), and twelve squares at the illustrative rational half-angle parameter 427/1000. Orange squares are the two upright end caps; blue squares alternate between the walls. The even panel illustrates a feasible construction at the displayed angle, not the exact critical-angle optimum. Coordinates are rounded only for drawing; the figure is not a packing certificate.*
+
+![Height-width formulas for eleven squares and illustrative twelve-square constructions.](figures/height-width.pdf)
+
+*Figure 2. Height and width on the theorem interval. The odd curve is the exact formula for eleven squares. The even curve is the width of the twelve-square construction at the fixed half-angle parameter 427/1000; it is an upper bound, while the theorem takes the minimum over all admissible angles. The right endpoint at height two is excluded. Lines are drawn from the stated formulas and do not establish the finite lower-bound computation.*
+
+## 6. Exact computations and reproducibility
+
+### 6.1. Retained evidence
+
+All identifiers below are relative to rect_search/claude/g2. These are existing internal receipts, not new checks carried out for this paper or an external peer review.
+
+| Ingredient | Specification or receipt |
+|---|---|
+| state cover, exact bounds, DP and saturation rules | STAGE1\_DP\_SPEC.md |
+| upper-height analysis and attainment | STAGE2\_INTERVAL.md |
+| upper-height evidence, including the corrected final interval and $N=11$ coverage | EVIDENCE\_INDEX.md |
+| lower-height type forcing, repaired transitions and saturation | s4e/RECEIPT.md |
+| lower-height calibration and cap comparison | s4b/CAL\_LOW\_SPEC.md; s4b/CAP\_UPRIGHT\_LOW\_SPEC.md |
+| lower-height analysis and attainment | s4b/STAGE2\_LOW.md; s4b/STAGE2\_LOW\_RECEIPT.md |
+| upper-height calibration | CAL\_INTERVAL\_SPEC.md |
+
+The final lower-height verification record, dated 21 October 2026, documents checks by the first implementation and a second implementation derived from the specifications, followed by internal mathematical review. It reports complete interval and Sturm checks separately from the 36 finite placement tests. Those placements are not a proof of all heights or all $N$.
+
+For $a\in[1851/1000,1852/1000]$, the s4g retake establishes $N\ge24$ using its individual finite layers together with its saturated tail; the first-system output labels that tail $N\ge26$, rather than $N\ge24$. Separate s3q fixed-$N$ runs cover $11\le N\le26$. Their union covers every $N\ge11$. On $[1852/1000,1854/1000]$, the chord runs cover $N\ge12$ and separate runs cover $N=11$. Later-height runs cover the remainder. The corrected absolute-form final interval and the separate $N=11$ subdivision at height 1.9 must be included.
+
+The second implementation was written from specifications rather than the first implementation's code, as recorded by its read log and receipts. That independence is a retained provenance claim, not a new independent audit performed during manuscript preparation.
+
+### 6.2. Acceptance obligations
+
+A complete replay must check the closed state cover, all SAT branches, potential coverage, every transition (including entry to and exit from a type run), the integer rounding model, and the saturated-layer fixed point. It must also check the full-domain calibration and cap inequalities, the polynomial signs and root counts, the affinity argument and the attainment inequalities. Positive output on selected intervals, floating LP feasibility, placement samples or a root count alone are insufficient.
+
+### 6.3. Retained command interfaces
+
+The following examples use the working directory rect_search/claude/g2. They are **instructions, not commands executed for this manuscript**.
+
+```text
+python3 s4b/stage2_low.py 1851/1000 19/10
+python3 s4b/stage2_low_affine.py
+python3 check2_9b/stage2_iv_check2.py --a-lo 1851/1000 --a-end 19/10
+python3 s4b/attain_low.py 43/100
+python3 check2_9b/attain_check2.py --a-lo 1851/1000 --a-hi 19/10
+python3 check2_9b/cal_low_check2.py 1851/1000
+python3 check2_9b/cal_low_check2.py 19/10
+python3 check2_9b/cap_upright_check2.py 1024 128 --hcap1
+python3 check2_9b/stage2_iv_check2.py
+python3 check2_9b/attain_check2.py
+```
+
+These source interfaces cover analysis, calibration and attainment; they are not an exhaustive type-forcing replay. For that part the retained chord checker takes interval endpoints, state/certificate files and an output path, with proof-variant switches:
+
+```text
+python3 check2_9b/g2s1_chord.py ALO AHI STATES CERT --out OUT
+    [--all] [--phi0] [--nosat] [--L N] [--uu]
+```
+
+The accepted interval/input lists and result headers are indexed in the evidence documents. In particular, fixed-$N$ no-saturation runs do not replace the separately required saturation check. The final interval $[1.999,2)$ requires the second checker's near-upright switch, `--uu`, with the accepted absolute-form rule; the switch is read when its interval object is constructed.
+
+Python 3, SymPy and NumPy occur in the retained implementations. Before submission, a frozen portable supplement must pin their actual dependency/environment records, corrected production code and all accepted input/output identities. Missing versions are not invented here. No recorded hash was recomputed and no new public supplement was assembled in this task.
+
+## 7. Limits and remaining work
+
+The endpoint $a=1851/1000$ is included; $a=2$ is excluded. The theorem does not include $N\le10$. The strict zipper-corner theorem from the other workstream does not fill the missing height-two boundary.
+
+The retained lower-end gap is approximately
+
+$$
+a_{11}\le a<1851/1000,\qquad
+a_{11}=\frac{18\sqrt2-7}{10}\approx1.8455844.
+$$
+
+This expression marks the intersection of the odd eleven-square staggered line with width eleven; it is not a proved common transition for every $N$. Extending the all-packing theorem below 1.851 requires additional accepted proof coverage. A negative DP lower bound is inconclusive, not a counterexample packing.
+
+The full frontier for $N=16,17,18,19,20$ at other heights remains a separate problem. Construction tables and packing certificates establish upper bounds only; they do not exclude smaller packings.
+
+This version is a working paper, with TeX and PDF companions, and has not been submitted to a journal or externally peer reviewed. A complete portable computational supplement, including its environment and replay inventory, remains to be assembled. The assembled mathematical text has received a limited independent consistency review against the retained records; that review is not a fresh execution of the proof computations. A broader literature and priority search, and final authorship and acknowledgements, also remain. No mathematical checker, solver, placement test or certificate replay was run in preparing this text or its figures.
+
+## 8. References and verification level
+
+[1] Erich Friedman, *Problem of the Month (June 2010)*, Math Magic. <https://erich-friedman.github.io/mathmagic/0610.html>. Primary problem page and displayed construction table inspected on 25 October 2026.
+
+[2] Hiroshi Nagamochi, *Packing Unit Squares in a Rectangle*, The Electronic Journal of Combinatorics **12** (2005), Research Paper R37. <https://doi.org/10.37236/1934>. Journal bibliographic record and abstract inspected; its proof is not reused.
+
+[3] Hakan Karakuş, *A counterexample to Nagamochi's scoring lemma and a new rectangle packing bound*, arXiv:2609.37410v1 (2026). <https://arxiv.org/abs/2609.37410v1>. Author, title, submission date and abstract inspected; the full proof was not audited here.
+
+Internal source identifiers for the proposed computational supplement are listed in Section 6. They are project evidence records, not fabricated public bibliographic entries.

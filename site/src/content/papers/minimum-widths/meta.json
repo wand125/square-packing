@@ -1,0 +1,50 @@
+{
+  "kicker": [
+    "Working draft · computer-assisted theorem",
+    "作業稿・コンピュータ支援の定理"
+  ],
+  "title": [
+    "Minimum Widths for Unit Squares in Thin Rectangles",
+    "薄い長方形に入る単位正方形の最小幅"
+  ],
+  "lead": [
+    "How wide must a rectangle below height two be to hold N rotated unit squares? For heights 1.851 ≤ a < 2, we give the minimum width for odd N ≥ 11 and even N ≥ 12, with explanatory figures and full English and Japanese text. Working draft; the portable computational supplement remains incomplete.",
+    "高さ2未満の長方形に、自由な向きの単位正方形をN個入れるには、どれだけの幅が必要か。高さ1.851以上2未満、奇数N≥11・偶数N≥12の最小幅を、図と日英全文で説明します。作業稿であり、可搬な計算付録は未完成です。"
+  ],
+  "result": [
+    "Odd \\(N\\ge11\\): \\(B_N(a)=4+2(N-2)\\sqrt2-(N-1)a\\). Even \\(N\\ge12\\): \\(B_N(a)=\\min_{\\theta\\in\\mathcal O}G_N(\\theta;a)\\).",
+    "奇数 \\(N\\ge11\\)：\\(B_N(a)=4+2(N-2)\\sqrt2-(N-1)a\\)。偶数 \\(N\\ge12\\)：\\(B_N(a)=\\min_{\\theta\\in\\mathcal O}G_N(\\theta;a)\\)。"
+  ],
+  "author": "Working draft prepared for Hiroaki Hosono; authorship pending",
+  "links": [
+    [
+      "PDF (working draft)",
+      "PDF（作業稿）",
+      "papers/minimum-widths-v1.pdf"
+    ],
+    [
+      "TeX source",
+      "TeXソース",
+      "papers/minimum-widths-v1.tex"
+    ],
+    [
+      "Manuscript source",
+      "原稿ソース",
+      "papers/minimum-widths-v1.md"
+    ],
+    [
+      "TeX + figures (ZIP)",
+      "TeX・図一式（ZIP）",
+      "papers/minimum-widths-v1-source.zip"
+    ]
+  ],
+  "versions": [
+    {
+      "v": "1",
+      "date": "2026-10-25",
+      "en": "First working manuscript: statement, argument, retained evidence and explicit limits; no fresh computation.",
+      "ja": "初稿：定理・論証・保存証拠と限界を記述。新しい計算は実行していません。",
+      "commit": ""
+    }
+  ]
+}

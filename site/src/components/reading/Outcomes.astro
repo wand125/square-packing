@@ -1,5 +1,6 @@
 ---
 import Section from '../ui/Section.astro';
+import T from '../ui/T.astro';
 import DataTable from '../ui/DataTable.astro';
 import {readEditorial} from '../../lib/data';
 import {a, bi, bd, esc, row, cell, paperLink} from '../../lib/reading';
@@ -18,4 +19,4 @@ const ICONS: Record<string, string> = {
 };
 const pageRows = pageDescriptions.filter(p => p.group === 'out').map(p => (p.file === 'themes.html' ? (r: string) => r.replace('<tr>', '<tr class="phone-hide">') : (r: string) => r)(row([cell(a(url(p.file),bi(p.en,p.ja)),'nw'),cell(bi(p.descEn,p.descJa))]))).join('');
 ---
-<div class="home"><div class="phone-hide"><Section en="Themes (tracking issues)"><DataTable headers={['Issue',bi('State','状態'),bi('Theme','テーマ'),bi('Updated','更新')]} rows={themeRows} headless/></Section></div><Section en="Pages"><div class="phone-hide"><DataTable headers={['', '']} rows={pageRows} headless/></div><div class="page-items desk-hide">{pageDescriptions.filter(p => p.group === 'out' && p.file !== 'themes.html').map(p => <a class="page-item" href={url(p.file)}><span class="page-ico" set:html={ICONS[p.file] || ''}/><span class="page-txt"><b set:html={bi(p.en,p.ja)}/><span class="dim" set:html={bi(p.descEn,p.descJa)}/></span></a>)}</div></Section></div>
+<div class="home"><Section en="New working manuscript" ja="新しい論文草稿"><p><a href={url('paper-minimum-widths.html')}><T en="Minimum Widths for Unit Squares in Thin Rectangles" ja="薄い長方形に入る単位正方形の最小幅" /></a></p><p class="dim"><T en="25 October 2026 · Working draft. Portable computational supplement and independent manuscript acceptance pending." ja="2026年10月25日・作業稿。可搬な計算付録と本原稿の独立受入は未完。" /></p></Section><div class="phone-hide"><Section en="Themes (tracking issues)"><DataTable headers={['Issue',bi('State','状態'),bi('Theme','テーマ'),bi('Updated','更新')]} rows={themeRows} headless/></Section></div><Section en="Pages"><div class="phone-hide"><DataTable headers={['', '']} rows={pageRows} headless/></div><div class="page-items desk-hide">{pageDescriptions.filter(p => p.group === 'out' && p.file !== 'themes.html').map(p => <a class="page-item" href={url(p.file)}><span class="page-ico" set:html={ICONS[p.file] || ''}/><span class="page-txt"><b set:html={bi(p.en,p.ja)}/><span class="dim" set:html={bi(p.descEn,p.descJa)}/></span></a>)}</div></Section></div>

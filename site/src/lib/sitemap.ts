@@ -17,6 +17,7 @@ export const PAGES: Page[] = [
   { file: 'verify.html', en: 'Verify', ja: 'Verify', title: 'Checking the Certificates', group: 'out' },
   { file: 'about.html', en: 'Credits', ja: 'クレジット', title: 'Square Packing Credits', group: '' },
   { file: 'rect-player.html', en: 'Player', ja: '再生', title: 'Rectangles Player', group: '' },
+  { file: 'paper-minimum-widths.html', en: 'Minimum widths (draft)', ja: '最小幅（作業稿）', title: 'Minimum Widths for Unit Squares in Thin Rectangles', group: '' },
   { file: 'paper-triangle.html', en: 'Equilateral triangle', ja: '正三角形', title: 'Unit Squares in an Equilateral Triangle', group: '' },
   { file: 'paper-domino.html', en: '1×2 rectangle, n = 4', ja: '1×2 長方形 n = 4', title: 'Four Unit Squares in a 1×2 Rectangle', group: '' },
   { file: 'paper-right-isosceles.html', en: 'Right isosceles triangle', ja: '直角二等辺三角形', title: 'Unit Squares in a Right Isosceles Triangle', group: '' },
