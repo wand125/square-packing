@@ -20,22 +20,22 @@
     [
       "PDF (working draft)",
       "PDF（作業稿）",
-      "papers/minimum-widths-v1.pdf"
+      "papers/minimum-widths-v2.pdf"
     ],
     [
       "TeX source",
       "TeXソース",
-      "papers/minimum-widths-v1.tex"
+      "papers/minimum-widths-v2.tex"
     ],
     [
       "Manuscript source",
       "原稿ソース",
-      "papers/minimum-widths-v1.md"
+      "papers/minimum-widths-v2.md"
     ],
     [
       "TeX + figures (ZIP)",
       "TeX・図一式（ZIP）",
-      "papers/minimum-widths-v1-source.zip"
+      "papers/minimum-widths-v2-source.zip"
     ]
   ],
   "versions": [
@@ -45,6 +45,13 @@
       "en": "First working manuscript: statement, argument, retained evidence and explicit limits; no fresh computation.",
       "ja": "初稿：定理・論証・保存証拠と限界を記述。新しい計算は実行していません。",
       "commit": "433ea80f92171b1c93ae2aa8c4ef9a19d889b46b"
+    },
+    {
+      "v": "2",
+      "date": "2026-10-25",
+      "en": "Expanded definitions and proof explanations, corrected one-sided derivative notation, and added a live number/height illustration and public article-source bundle. The theorem is unchanged; no new certificate replay.",
+      "ja": "定義・証明の説明・右微分の記号を整備し、個数と高さの対話図、公開用の論文ソース一式を追加。定理は不変で、新しい証明書再生は行っていません。",
+      "commit": ""
     }
   ]
 }
