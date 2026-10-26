@@ -1,5 +1,4 @@
 import MinimumWidthsFigures from '../../../components/viz/MinimumWidthsFigures.tsx';
-import MinimumWidthsInteractive from '../../../components/viz/MinimumWidthsInteractive.tsx';
 
 ## Abstract
 
@@ -58,8 +57,6 @@ All denominators are positive on this angle interval. The symbol $h$ denotes a s
 Both formulas are attained by two upright end caps and $N-2$ interior squares at one common angle, placed on alternating walls. For odd $N$, the two caps touch the same wall and the optimal common angle is $\pi/4$. For even $N$, the caps touch opposite walls and the optimal angle is selected by the one-variable minimum in the theorem. Figure 1 shows examples of this general construction; the proof of attainment for every size is given in Section 5.
 
 An interactive illustration in the online version allows the number of squares and the height to vary. Decimal widths and angles in that illustration are floating-point approximations; the exact claims are the formulas above. The finite range of the controls does not limit the theorem. The illustration displays the attaining family and is not a proof computation.
-
-<MinimumWidthsInteractive lang="en" client:load />
 
 The theorem combines the retained two-system results on $[1851/1000,19/10]$ and $[19/10,2)$, including the separate coverage for $N=11$. The mathematical argument is given below, with its finite proof obligations exposed in Section 6.
 
@@ -189,33 +186,127 @@ $$
 
 ### 4.3. Uniqueness and the critical equation
 
-In this paragraph differentiation is with respect to **$t$**, not per radian of $\theta$. On
+For even $N\ge12$, the minimisation in this subsection has an analytic proof. Set
 
 $$
-I=[\sqrt2-1,4553/8800],
+\begin{gathered}
+m=N-2\ge10,\qquad \varepsilon=2-a\in(0,149/1000],\\
+x=\tan(\theta-\pi/4),\qquad y=\sqrt{1+x^2},\qquad r=\sqrt2.
+\end{gathered}
 $$
 
-the retained exact polynomial checks establish
+On the upper-angle branch, $0\le x<1$. Substitution into the definition of
+$G_N$ gives the following function of $x$:
 
 $$
-P_{tt}>0,\qquad P_{tt}+2Q_{tt}-2A_{tt}>0.
+F(x)=G_N(\theta;a)
+=2+m\frac{2y}{r+y}
+ +m\varepsilon\frac{1+x^2}{1-x^2}
+ +\varepsilon\frac{1-x}{1+x}.
 $$
 
-On the open upper-angle side $t>\sqrt2-1$, $A\ge0$, and
+For $f(x)=2y/(r+y)$, direct differentiation gives
 
 $$
-G_{N,tt}=(N-5)P_{tt}+(P_{tt}+2Q_{tt}-2A_{tt})>0.
+f''(x)=\frac{2r(r-y)(2y^2+2ry+1)}{y^3(r+y)^3}>0,
 $$
 
-The full function has an absolute-value cusp at $t_0=\sqrt2-1$. The derivative here is the right derivative of the upper-angle branch:
+since $1\le y<r$. Consequently
 
 $$
-G_{N,t}(t_0+;a)=-(2-a)(2+\sqrt2)<0,
+F''(x)=m f''(x)
+ +\frac{4m\varepsilon(1+3x^2)}{(1-x^2)^3}
+ +\frac{4\varepsilon}{(1+x)^3}>0.
 $$
 
-while the checked derivative at $t=43/100$ is positive for $N\ge12$. This yields a unique representative critical point below that endpoint. The reflection of the lower-angle part of $\mathcal O$ lies in the checked upper interval, so it adds no smaller value. Reflection gives the other minimising orientation.
+These derivatives are with respect to $x$, rather than the half-angle
+parameter $t$ or the angle $\theta$. Moreover, $F'(0+)=-2\varepsilon<0$.
+The full function has an absolute-value cusp at $\theta=\pi/4$; the last
+identity concerns its smooth upper branch.
 
-The rational parametrisation of $c,s$ turns the critical-point equation into a polynomial equation in $t$, with rational polynomial coefficients in $a$, after multiplication by positive denominators. The minimising parameter is therefore an algebraic function of $a$. When $a$ is algebraic, its parameter and minimum width are algebraic numbers. For an arbitrary real $a$, no algebraicity over the rationals is asserted, and the angle $2\arctan t$ is not being called an algebraic number. Convexity and endpoint signs here are certificate dependencies, not deductions from a plot.
+We next locate a positive derivative uniformly in $m$ and $a$. For $0<x<1$,
+put
+
+$$
+J(x)=r\left(y+\frac2y\right)-4
+     =\frac{r(r-y)^2}{y}>0,
+\qquad
+R(x)=mJ(x)-\varepsilon(x+x^{-1}-2m-2).
+$$
+
+Then
+
+$$
+F'(x)=\frac{2xR(x)}{(1-x^2)^2}.
+$$
+
+Let $b=53/2000$. The identity $J'(x)=-rx(1-x^2)/y^3\ge-rx$,
+the inequalities $r>7071/5000$ and $b^2/2<1/2500$, and integration from
+zero yield
+
+$$
+J(b)\ge r(3-b^2/2)-4>\frac{3025429}{12500000}.
+$$
+
+Also $0<b+b^{-1}-22<16$. Since $R(b)$ increases with $m$, and at $m=10$
+decreases with $\varepsilon$, it follows that
+
+$$
+R(b)>\frac{3025429}{1250000}-\frac{149\cdot16}{1000}
+=\frac{45429}{1250000}>0.
+$$
+
+Strict convexity and the two derivative signs therefore give a unique
+minimiser $x_*\in(0,b)$ on the entire upper-angle branch. If
+$\alpha=\arctan(43/100)$, then
+
+$$
+\tan(2\alpha-\pi/4)=\frac{449}{16751}>\frac{53}{2000}.
+$$
+
+Here $0<2\alpha-\pi/4<\pi/4$, and tangent is strictly increasing on this interval. Thus the representative
+minimising half-angle satisfies
+$\sqrt2-1<t_*<43/100$. Reflection in $\theta=\pi/4$ preserves $G_N$ and
+gives the unique lower-angle minimiser. Its half-angle is
+$(1-t_*)/(1+t_*)>57/143$. Both minimisers belong to $\mathcal O$, since
+$4339/12800<57/143<\sqrt2-1$ and $43/100<4553/8800$.
+Hence restricting to $\mathcal O$ does not change this minimum.
+
+For completeness, this critical value has an algebraic description of
+degree at most six over $\mathbb Q(a)$. Put $K=2m-(m+1)\varepsilon>0$.
+The equation $R(x_*)=0$ is equivalent to
+
+$$
+mr x_*(3+x_*^2)
+ =[2Kx_*+\varepsilon(1+x_*^2)]\sqrt{1+x_*^2}.
+$$
+
+Both sides are positive. Squaring therefore introduces no additional
+root in $(0,1)$ and gives
+
+$$
+2m^2x^2(3+x^2)^2
+ -[2Kx+\varepsilon(1+x^2)]^2(1+x^2)=0.
+$$
+
+At its unique root in $(0,1)$ the minimum is
+
+$$
+F(x_*)=2+\frac{K(1+x_*^2)+2\varepsilon/x_*}{3+x_*^2}.
+$$
+
+Thus the minimum belongs to $\mathbb Q(a,x_*)$. The half-angle parameter satisfies
+
+$$
+(1+x_*)t_*^2+2(1-x_*)t_*-(1+x_*)=0.
+$$
+
+If $a$ is algebraic, the minimum and the half-angle parameter are therefore
+algebraic numbers; no such claim
+over $\mathbb Q$ is made for arbitrary real $a$, nor is the angle itself
+being called algebraic. The configuration-class restriction, pair and cap
+calibrations, and attainment remain separate obligations from this
+one-variable minimisation.
 
 ## 5. Attaining configurations
 
@@ -279,7 +370,7 @@ The verification records document that the second implementation was written fro
 
 ### 6.2. Acceptance obligations
 
-A complete replay must check the closed state cover, all SAT branches, potential coverage, every transition (including entry to and exit from runs of compatible interior states), the integer rounding model, and the saturated-layer fixed point. It must also check the full-domain calibration and cap inequalities, the polynomial signs and root counts, the affinity argument and the attainment inequalities. Positive output on selected intervals, floating LP feasibility, placement samples or a root count alone are insufficient.
+A complete replay must check the closed state cover, all SAT branches, potential coverage, every transition (including entry to and exit from runs of compatible interior states), the integer rounding model, and the saturated-layer fixed point. It must also check the full-domain calibration and cap inequalities, the polynomial checks used in those bounds, the affinity argument and the attainment inequalities. The critical-angle minimisation in Section 4.3 is proved analytically and does not require a separate computational convexity or root-count certificate. Positive output on selected intervals, floating LP feasibility, placement samples or a root count alone are insufficient.
 
 ### 6.3. Availability of the computational supplement
 

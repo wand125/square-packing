@@ -20,22 +20,22 @@
     [
       "PDF (working draft)",
       "PDF（作業稿）",
-      "papers/minimum-widths-v2.pdf"
+      "papers/minimum-widths-v3.pdf"
     ],
     [
       "TeX source",
       "TeXソース",
-      "papers/minimum-widths-v2.tex"
+      "papers/minimum-widths-v3.tex"
     ],
     [
       "Manuscript source",
       "原稿ソース",
-      "papers/minimum-widths-v2.md"
+      "papers/minimum-widths-v3.md"
     ],
     [
       "TeX + figures (ZIP)",
       "TeX・図一式（ZIP）",
-      "papers/minimum-widths-v2-source.zip"
+      "papers/minimum-widths-v3-source.zip"
     ]
   ],
   "versions": [
@@ -45,6 +45,12 @@
       "en": "First working manuscript, including editorial clarifications and an interactive illustration. Mathematical content unchanged; no new certificate replay.",
       "ja": "初版。説明・記号の整備と対話図を含みます。数学の内容は不変で、新しい証明書再生は行っていません。",
       "commit": "1aaa21476e2f596291e96e96efd4695ea38da3e5"
+    },
+    {
+      "v": "2",
+      "date": "2026-10-26",
+      "en": "Analytic proof of the even-case critical-angle minimisation: strict convexity, a uniform angle bound and a sextic equation. Geometric reduction, calibration and attainment dependencies are retained; no new certificate replay.",
+      "ja": "偶数の場合の停留角の最小化を、狭義凸性・一様な角度上界・6次方程式によって解析的に証明。配置型への還元・較正・達成の依存条件は保持し、新しい証明書再生は行っていません。"
     }
   ],
   "wide": true
