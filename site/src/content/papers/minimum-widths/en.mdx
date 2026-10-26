@@ -1,4 +1,5 @@
 import MinimumWidthsFigures from '../../../components/viz/MinimumWidthsFigures.tsx';
+import MinimumWidthsInteractive from '../../../components/viz/MinimumWidthsInteractive.tsx';
 
 ## Abstract
 
@@ -57,6 +58,8 @@ All denominators are positive on this angle interval. The symbol $h$ denotes a s
 Both formulas are attained by two upright end caps and $N-2$ interior squares at one common angle, placed on alternating walls. For odd $N$, the two caps touch the same wall and the optimal common angle is $\pi/4$. For even $N$, the caps touch opposite walls and the optimal angle is selected by the one-variable minimum in the theorem. Figure 1 shows examples of this general construction; the proof of attainment for every size is given in Section 5.
 
 An interactive illustration in the online version allows the number of squares and the height to vary. Decimal widths and angles in that illustration are floating-point approximations; the exact claims are the formulas above. The finite range of the controls does not limit the theorem. The illustration displays the attaining family and is not a proof computation.
+
+<MinimumWidthsInteractive lang="en" client:load />
 
 The theorem combines the retained two-system results on $[1851/1000,19/10]$ and $[19/10,2)$, including the separate coverage for $N=11$. The mathematical argument is given below, with its finite proof obligations exposed in Section 6.
 
