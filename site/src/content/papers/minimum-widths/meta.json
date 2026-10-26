@@ -50,7 +50,8 @@
       "v": "2",
       "date": "2026-10-26",
       "en": "Analytic proof of the even-case critical-angle minimisation: strict convexity, a uniform angle bound and a sextic equation. Geometric reduction, calibration and attainment dependencies are retained; no new certificate replay.",
-      "ja": "偶数の場合の停留角の最小化を、狭義凸性・一様な角度上界・6次方程式によって解析的に証明。配置型への還元・較正・達成の依存条件は保持し、新しい証明書再生は行っていません。"
+      "ja": "偶数の場合の停留角の最小化を、狭義凸性・一様な角度上界・6次方程式によって解析的に証明。配置型への還元・較正・達成の依存条件は保持し、新しい証明書再生は行っていません。",
+      "commit": "fa06666ca7b348e02643c3b04120f77e293a3328"
     }
   ],
   "wide": true
