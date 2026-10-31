@@ -62,7 +62,7 @@
    "issue": 2,
    "url": "https://github.com/wand125/square-packing/issues/2",
    "state": "open",
-   "updated": "2026-10-11",
+   "updated": "2026-10-31",
    "title": {
     "en": "Improving lower bounds for s(n), n ≤ 324",
     "ja": "s(n)（n ≤ 324）の下界の更新"
@@ -83,12 +83,16 @@
     {
      "en": "For n = 18, 19 and 26 the next step of 0.0025 fails, so this method stops at the published values (other methods are not ruled out).",
      "ja": "n = 18, 19, 26 は次の 0.0025 の刻みで失敗するため、この方法では公開済みの値が限界（他の方法を否定するものではない）。"
+    },
+    {
+     "en": "n = 44: closed on 2026-10-31. s(44) = 7 was proved by Mohsen Khalili and Sara Gharabaghi (jlevy/squares #842). Our published lower bound s(44) > 6.9975 stands as before.",
+     "ja": "n = 44：2026-10-31 に終了。s(44) = 7 は Mohsen Khalili・Sara Gharabaghi が証明（jlevy/squares #842）。当方の公開済みの下界 s(44) > 6.9975 はそのまま。"
     }
    ],
    "working_on": [
     {
-     "en": "n = 20 and n = 27–31 at the next step, and n = 37–44 and 50 at the current threshold.",
-     "ja": "n = 20 と n = 27〜31 は次の刻み、n = 37〜44 と 50 は現在の閾値。"
+     "en": "n = 20 and n = 27–31 at the next step, and n = 37–43 and 50 at the current threshold.",
+     "ja": "n = 20 と n = 27〜31 は次の刻み、n = 37〜43 と 50 は現在の閾値。"
     }
    ],
    "links": [
